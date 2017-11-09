@@ -81,7 +81,7 @@ class vlan(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface', u'Ethernet', u'switchport', u'trunk', u'allowed', u'vlanoper', u'vlan']
+      return [u'interface', u'ethernet', u'switchport', u'trunk', u'allowed', u'vlanoper', u'vlan']
 
   def _get_add_(self):
     """

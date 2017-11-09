@@ -46,8 +46,8 @@ class stub(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__stub_area_metric = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..1048575']}), is_leaf=True, yang_name="stub-area-metric", rest_name="stub-area-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='uint32', is_config=True)
-    self.__stub_area_no_summary = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="stub-area-no-summary", rest_name="no-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Do not send summary LSA into stub area', u'cli-optional-in-sequence': None, u'alt-name': u'no-summary', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)
+    self.__stub_area_metric = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..1048575']}), is_leaf=True, yang_name="stub-area-metric", rest_name="stub-area-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='uint32', is_config=True)
+    self.__stub_area_no_summary = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="stub-area-no-summary", rest_name="stub-area-no-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -83,7 +83,7 @@ class stub(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'ipv6', u'router', u'ospf', u'area', u'stub']
+      return [u'routing-system', u'ipv6', u'router', u'ospf', u'area', u'stub']
 
   def _get_stub_area_no_summary(self):
     """
@@ -106,12 +106,12 @@ class stub(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="stub-area-no-summary", rest_name="no-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Do not send summary LSA into stub area', u'cli-optional-in-sequence': None, u'alt-name': u'no-summary', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="stub-area-no-summary", rest_name="stub-area-no-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """stub_area_no_summary must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="stub-area-no-summary", rest_name="no-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Do not send summary LSA into stub area', u'cli-optional-in-sequence': None, u'alt-name': u'no-summary', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="stub-area-no-summary", rest_name="stub-area-no-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)""",
         })
 
     self.__stub_area_no_summary = t
@@ -119,7 +119,7 @@ class stub(PybindBase):
       self._set()
 
   def _unset_stub_area_no_summary(self):
-    self.__stub_area_no_summary = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="stub-area-no-summary", rest_name="no-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Do not send summary LSA into stub area', u'cli-optional-in-sequence': None, u'alt-name': u'no-summary', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)
+    self.__stub_area_no_summary = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="stub-area-no-summary", rest_name="stub-area-no-summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)
 
 
   def _get_stub_area_metric(self):
@@ -143,12 +143,12 @@ class stub(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..1048575']}), is_leaf=True, yang_name="stub-area-metric", rest_name="stub-area-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..1048575']}), is_leaf=True, yang_name="stub-area-metric", rest_name="stub-area-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """stub_area_metric must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..1048575']}), is_leaf=True, yang_name="stub-area-metric", rest_name="stub-area-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..1048575']}), is_leaf=True, yang_name="stub-area-metric", rest_name="stub-area-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='uint32', is_config=True)""",
         })
 
     self.__stub_area_metric = t
@@ -156,7 +156,7 @@ class stub(PybindBase):
       self._set()
 
   def _unset_stub_area_metric(self):
-    self.__stub_area_metric = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..1048575']}), is_leaf=True, yang_name="stub-area-metric", rest_name="stub-area-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='uint32', is_config=True)
+    self.__stub_area_metric = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..1048575']}), is_leaf=True, yang_name="stub-area-metric", rest_name="stub-area-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='uint32', is_config=True)
 
   stub_area_no_summary = __builtin__.property(_get_stub_area_no_summary, _set_stub_area_no_summary)
   stub_area_metric = __builtin__.property(_get_stub_area_metric, _set_stub_area_metric)

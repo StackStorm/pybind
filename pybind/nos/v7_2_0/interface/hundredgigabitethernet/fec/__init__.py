@@ -44,7 +44,7 @@ class fec(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__fec_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fec-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable forward error correction.', u'alt-name': u'enable', u'cli-run-template': u'$(fec-enable)==true?fec enable:no fec enable\n'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+    self.__fec_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fec-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -99,12 +99,12 @@ class fec(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fec-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable forward error correction.', u'alt-name': u'enable', u'cli-run-template': u'$(fec-enable)==true?fec enable:no fec enable\n'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fec-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fec_enable must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fec-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable forward error correction.', u'alt-name': u'enable', u'cli-run-template': u'$(fec-enable)==true?fec enable:no fec enable\n'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fec-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)""",
         })
 
     self.__fec_enable = t
@@ -112,7 +112,7 @@ class fec(PybindBase):
       self._set()
 
   def _unset_fec_enable(self):
-    self.__fec_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fec-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable forward error correction.', u'alt-name': u'enable', u'cli-run-template': u'$(fec-enable)==true?fec enable:no fec enable\n'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+    self.__fec_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fec-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
 
   fec_enable = __builtin__.property(_get_fec_enable, _set_fec_enable)
 

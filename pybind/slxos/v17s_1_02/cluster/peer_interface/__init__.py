@@ -44,8 +44,8 @@ class peer_interface(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__peer_if_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..10']}), is_leaf=True, yang_name="peer-if-name", rest_name="peer-if-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-suppress-show-conf-path': None, u'info': u'Peer Interface Name', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='string-type', is_config=True)
-    self.__peer_if_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'Ethernet': {'value': 8}, u'Port-channel': {'value': 3}},), is_leaf=True, yang_name="peer-if-type", rest_name="peer-if-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-show-conf-path': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None, u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='enumeration', is_config=True)
+    self.__peer_if_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..10']}), is_leaf=True, yang_name="peer-if-name", rest_name="peer-if-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='string-type', is_config=True)
+    self.__peer_if_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'Ethernet': {'value': 8}, u'Port-channel': {'value': 3}},), is_leaf=True, yang_name="peer-if-type", rest_name="peer-if-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='enumeration', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class peer_interface(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'Ethernet': {'value': 8}, u'Port-channel': {'value': 3}},), is_leaf=True, yang_name="peer-if-type", rest_name="peer-if-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-show-conf-path': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None, u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='enumeration', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'Ethernet': {'value': 8}, u'Port-channel': {'value': 3}},), is_leaf=True, yang_name="peer-if-type", rest_name="peer-if-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """peer_if_type must be of a type compatible with enumeration""",
           'defined-type': "brocade-mct:enumeration",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'Ethernet': {'value': 8}, u'Port-channel': {'value': 3}},), is_leaf=True, yang_name="peer-if-type", rest_name="peer-if-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-show-conf-path': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None, u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='enumeration', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'Ethernet': {'value': 8}, u'Port-channel': {'value': 3}},), is_leaf=True, yang_name="peer-if-type", rest_name="peer-if-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='enumeration', is_config=True)""",
         })
 
     self.__peer_if_type = t
@@ -113,7 +113,7 @@ class peer_interface(PybindBase):
       self._set()
 
   def _unset_peer_if_type(self):
-    self.__peer_if_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'Ethernet': {'value': 8}, u'Port-channel': {'value': 3}},), is_leaf=True, yang_name="peer-if-type", rest_name="peer-if-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-show-conf-path': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None, u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='enumeration', is_config=True)
+    self.__peer_if_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'Ethernet': {'value': 8}, u'Port-channel': {'value': 3}},), is_leaf=True, yang_name="peer-if-type", rest_name="peer-if-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='enumeration', is_config=True)
 
 
   def _get_peer_if_name(self):
@@ -133,12 +133,12 @@ class peer_interface(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..10']}), is_leaf=True, yang_name="peer-if-name", rest_name="peer-if-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-suppress-show-conf-path': None, u'info': u'Peer Interface Name', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='string-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..10']}), is_leaf=True, yang_name="peer-if-name", rest_name="peer-if-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='string-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """peer_if_name must be of a type compatible with string-type""",
           'defined-type': "brocade-mct:string-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..10']}), is_leaf=True, yang_name="peer-if-name", rest_name="peer-if-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-suppress-show-conf-path': None, u'info': u'Peer Interface Name', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='string-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..10']}), is_leaf=True, yang_name="peer-if-name", rest_name="peer-if-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='string-type', is_config=True)""",
         })
 
     self.__peer_if_name = t
@@ -146,7 +146,7 @@ class peer_interface(PybindBase):
       self._set()
 
   def _unset_peer_if_name(self):
-    self.__peer_if_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..10']}), is_leaf=True, yang_name="peer-if-name", rest_name="peer-if-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-suppress-show-conf-path': None, u'info': u'Peer Interface Name', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='string-type', is_config=True)
+    self.__peer_if_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..10']}), is_leaf=True, yang_name="peer-if-name", rest_name="peer-if-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='string-type', is_config=True)
 
   peer_if_type = __builtin__.property(_get_peer_if_type, _set_peer_if_type)
   peer_if_name = __builtin__.property(_get_peer_if_name, _set_peer_if_name)

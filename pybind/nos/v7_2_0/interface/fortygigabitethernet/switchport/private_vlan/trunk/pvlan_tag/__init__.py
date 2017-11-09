@@ -47,7 +47,7 @@ trunk port.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__pvlan_tag_native_vlan = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="pvlan-tag-native-vlan", rest_name="native-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Private-Vlan native \nVLAN characteristics of the Layer2 trunk \ninterface for classifying untagged traffic', u'cli-run-template': u'$(../../../../mode/private-vlan/private-vlan-trunk/trunk-basic?$(.?switchport private-vlan trunk tag native-vlan:no switchport private-vlan trunk tag native-vlan)\n:\\r)', u'alt-name': u'native-vlan', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+    self.__pvlan_tag_native_vlan = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="pvlan-tag-native-vlan", rest_name="native-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'native-vlan'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -110,12 +110,12 @@ un-tagged traffic.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="pvlan-tag-native-vlan", rest_name="native-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Private-Vlan native \nVLAN characteristics of the Layer2 trunk \ninterface for classifying untagged traffic', u'cli-run-template': u'$(../../../../mode/private-vlan/private-vlan-trunk/trunk-basic?$(.?switchport private-vlan trunk tag native-vlan:no switchport private-vlan trunk tag native-vlan)\n:\\r)', u'alt-name': u'native-vlan', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="pvlan-tag-native-vlan", rest_name="native-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'native-vlan'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """pvlan_tag_native_vlan must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="pvlan-tag-native-vlan", rest_name="native-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Private-Vlan native \nVLAN characteristics of the Layer2 trunk \ninterface for classifying untagged traffic', u'cli-run-template': u'$(../../../../mode/private-vlan/private-vlan-trunk/trunk-basic?$(.?switchport private-vlan trunk tag native-vlan:no switchport private-vlan trunk tag native-vlan)\n:\\r)', u'alt-name': u'native-vlan', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="pvlan-tag-native-vlan", rest_name="native-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'native-vlan'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)""",
         })
 
     self.__pvlan_tag_native_vlan = t
@@ -123,7 +123,7 @@ un-tagged traffic.
       self._set()
 
   def _unset_pvlan_tag_native_vlan(self):
-    self.__pvlan_tag_native_vlan = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="pvlan-tag-native-vlan", rest_name="native-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the Private-Vlan native \nVLAN characteristics of the Layer2 trunk \ninterface for classifying untagged traffic', u'cli-run-template': u'$(../../../../mode/private-vlan/private-vlan-trunk/trunk-basic?$(.?switchport private-vlan trunk tag native-vlan:no switchport private-vlan trunk tag native-vlan)\n:\\r)', u'alt-name': u'native-vlan', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+    self.__pvlan_tag_native_vlan = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="pvlan-tag-native-vlan", rest_name="native-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'native-vlan'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
 
   pvlan_tag_native_vlan = __builtin__.property(_get_pvlan_tag_native_vlan, _set_pvlan_tag_native_vlan)
 

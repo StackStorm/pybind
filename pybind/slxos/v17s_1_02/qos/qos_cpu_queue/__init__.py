@@ -18,7 +18,7 @@ class qos_cpu_queue(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__cpu',)
 
   _yang_name = 'qos-cpu-queue'
-  _rest_name = ''
+  _rest_name = 'qos-cpu-queue'
 
   _pybind_generated_by = 'container'
 
@@ -45,7 +45,7 @@ class qos_cpu_queue(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__cpu = YANGDynClass(base=cpu.cpu, is_container='container', presence=False, yang_name="cpu", rest_name="cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU QoS', u'cli-full-command': None, u'cli-full-no': None, u'cli-add-mode': None, u'cli-mode-name': u'config-qos-cpu'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
+    self.__cpu = YANGDynClass(base=cpu.cpu, is_container='container', presence=False, yang_name="cpu", rest_name="cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class qos_cpu_queue(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'qos']
+      return [u'qos', u'qos-cpu-queue']
 
   def _get_cpu(self):
     """
@@ -100,12 +100,12 @@ class qos_cpu_queue(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=cpu.cpu, is_container='container', presence=False, yang_name="cpu", rest_name="cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU QoS', u'cli-full-command': None, u'cli-full-no': None, u'cli-add-mode': None, u'cli-mode-name': u'config-qos-cpu'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=cpu.cpu, is_container='container', presence=False, yang_name="cpu", rest_name="cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """cpu must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=cpu.cpu, is_container='container', presence=False, yang_name="cpu", rest_name="cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU QoS', u'cli-full-command': None, u'cli-full-no': None, u'cli-add-mode': None, u'cli-mode-name': u'config-qos-cpu'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=cpu.cpu, is_container='container', presence=False, yang_name="cpu", rest_name="cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)""",
         })
 
     self.__cpu = t
@@ -113,7 +113,7 @@ class qos_cpu_queue(PybindBase):
       self._set()
 
   def _unset_cpu(self):
-    self.__cpu = YANGDynClass(base=cpu.cpu, is_container='container', presence=False, yang_name="cpu", rest_name="cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU QoS', u'cli-full-command': None, u'cli-full-no': None, u'cli-add-mode': None, u'cli-mode-name': u'config-qos-cpu'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
+    self.__cpu = YANGDynClass(base=cpu.cpu, is_container='container', presence=False, yang_name="cpu", rest_name="cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
 
   cpu = __builtin__.property(_get_cpu, _set_cpu)
 

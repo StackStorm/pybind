@@ -45,7 +45,7 @@ class use_vrf(PybindBase):
     else:
       self._extmethods = False
     self.__use_vrf_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0 .. max']}), is_leaf=True, yang_name="use-vrf-name", rest_name="use-vrf-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='string', is_config=True)
-    self.__ssh_vrf_shutdown = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ssh-vrf-shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Shutdown SSH server on given vrf', u'cli-full-command': None, u'alt-name': u'shutdown'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='empty', is_config=True)
+    self.__ssh_vrf_shutdown = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ssh-vrf-shutdown", rest_name="ssh-vrf-shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class use_vrf(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'ssh', u'server', u'use-vrf']
+      return [u'ssh-sa', u'ssh', u'server', u'ssh-vrf-cont', u'use-vrf']
 
   def _get_use_vrf_name(self):
     """
@@ -138,12 +138,12 @@ class use_vrf(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ssh-vrf-shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Shutdown SSH server on given vrf', u'cli-full-command': None, u'alt-name': u'shutdown'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ssh-vrf-shutdown", rest_name="ssh-vrf-shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ssh_vrf_shutdown must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ssh-vrf-shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Shutdown SSH server on given vrf', u'cli-full-command': None, u'alt-name': u'shutdown'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ssh-vrf-shutdown", rest_name="ssh-vrf-shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='empty', is_config=True)""",
         })
 
     self.__ssh_vrf_shutdown = t
@@ -151,7 +151,7 @@ class use_vrf(PybindBase):
       self._set()
 
   def _unset_ssh_vrf_shutdown(self):
-    self.__ssh_vrf_shutdown = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ssh-vrf-shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Shutdown SSH server on given vrf', u'cli-full-command': None, u'alt-name': u'shutdown'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='empty', is_config=True)
+    self.__ssh_vrf_shutdown = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ssh-vrf-shutdown", rest_name="ssh-vrf-shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='empty', is_config=True)
 
   use_vrf_name = __builtin__.property(_get_use_vrf_name, _set_use_vrf_name)
   ssh_vrf_shutdown = __builtin__.property(_get_ssh_vrf_shutdown, _set_ssh_vrf_shutdown)

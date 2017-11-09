@@ -45,7 +45,7 @@ class cpu(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__slot = YANGDynClass(base=YANGListType("slot_id",slot.slot, yang_name="slot", rest_name="slot", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='slot-id', extensions={u'tailf-common': {u'info': u'Configure CPU QoS on slot', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'QosCpuPortConfig'}}), is_container='list', yang_name="slot", rest_name="slot", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU QoS on slot', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'QosCpuPortConfig'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='list', is_config=True)
+    self.__slot = YANGDynClass(base=YANGListType("slot_id",slot.slot, yang_name="slot", rest_name="slot", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='slot-id', extensions=None), is_container='list', yang_name="slot", rest_name="slot", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class cpu(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("slot_id",slot.slot, yang_name="slot", rest_name="slot", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='slot-id', extensions={u'tailf-common': {u'info': u'Configure CPU QoS on slot', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'QosCpuPortConfig'}}), is_container='list', yang_name="slot", rest_name="slot", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU QoS on slot', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'QosCpuPortConfig'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("slot_id",slot.slot, yang_name="slot", rest_name="slot", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='slot-id', extensions=None), is_container='list', yang_name="slot", rest_name="slot", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """slot must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("slot_id",slot.slot, yang_name="slot", rest_name="slot", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='slot-id', extensions={u'tailf-common': {u'info': u'Configure CPU QoS on slot', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'QosCpuPortConfig'}}), is_container='list', yang_name="slot", rest_name="slot", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU QoS on slot', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'QosCpuPortConfig'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("slot_id",slot.slot, yang_name="slot", rest_name="slot", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='slot-id', extensions=None), is_container='list', yang_name="slot", rest_name="slot", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='list', is_config=True)""",
         })
 
     self.__slot = t
@@ -113,7 +113,7 @@ class cpu(PybindBase):
       self._set()
 
   def _unset_slot(self):
-    self.__slot = YANGDynClass(base=YANGListType("slot_id",slot.slot, yang_name="slot", rest_name="slot", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='slot-id', extensions={u'tailf-common': {u'info': u'Configure CPU QoS on slot', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'QosCpuPortConfig'}}), is_container='list', yang_name="slot", rest_name="slot", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU QoS on slot', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'QosCpuPortConfig'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='list', is_config=True)
+    self.__slot = YANGDynClass(base=YANGListType("slot_id",slot.slot, yang_name="slot", rest_name="slot", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='slot-id', extensions=None), is_container='list', yang_name="slot", rest_name="slot", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='list', is_config=True)
 
   slot = __builtin__.property(_get_slot, _set_slot)
 

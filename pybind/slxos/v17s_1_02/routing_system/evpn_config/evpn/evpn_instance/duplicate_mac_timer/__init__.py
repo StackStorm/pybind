@@ -46,8 +46,8 @@ class duplicate_mac_timer(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__duplicate_mac_timer_value = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'5..300']}), is_leaf=True, yang_name="duplicate-mac-timer-value", rest_name="duplicate-mac-timer-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Duplicate mac timer value in seconds', u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='dup-mac-timer', is_config=True)
-    self.__max_count = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'3..10']}), is_leaf=True, yang_name="max-count", rest_name="max-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Max count.'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='max-count', is_config=True)
+    self.__duplicate_mac_timer_value = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'5..300']}), is_leaf=True, yang_name="duplicate-mac-timer-value", rest_name="duplicate-mac-timer-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='dup-mac-timer', is_config=True)
+    self.__max_count = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'3..10']}), is_leaf=True, yang_name="max-count", rest_name="max-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='max-count', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -83,7 +83,7 @@ class duplicate_mac_timer(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'evpn', u'evpn-instance', u'duplicate-mac-timer']
+      return [u'routing-system', u'evpn-config', u'evpn', u'evpn-instance', u'duplicate-mac-timer']
 
   def _get_duplicate_mac_timer_value(self):
     """
@@ -102,12 +102,12 @@ class duplicate_mac_timer(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'5..300']}), is_leaf=True, yang_name="duplicate-mac-timer-value", rest_name="duplicate-mac-timer-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Duplicate mac timer value in seconds', u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='dup-mac-timer', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'5..300']}), is_leaf=True, yang_name="duplicate-mac-timer-value", rest_name="duplicate-mac-timer-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='dup-mac-timer', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """duplicate_mac_timer_value must be of a type compatible with dup-mac-timer""",
           'defined-type': "brocade-bgp:dup-mac-timer",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'5..300']}), is_leaf=True, yang_name="duplicate-mac-timer-value", rest_name="duplicate-mac-timer-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Duplicate mac timer value in seconds', u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='dup-mac-timer', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'5..300']}), is_leaf=True, yang_name="duplicate-mac-timer-value", rest_name="duplicate-mac-timer-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='dup-mac-timer', is_config=True)""",
         })
 
     self.__duplicate_mac_timer_value = t
@@ -115,7 +115,7 @@ class duplicate_mac_timer(PybindBase):
       self._set()
 
   def _unset_duplicate_mac_timer_value(self):
-    self.__duplicate_mac_timer_value = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'5..300']}), is_leaf=True, yang_name="duplicate-mac-timer-value", rest_name="duplicate-mac-timer-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Duplicate mac timer value in seconds', u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='dup-mac-timer', is_config=True)
+    self.__duplicate_mac_timer_value = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'5..300']}), is_leaf=True, yang_name="duplicate-mac-timer-value", rest_name="duplicate-mac-timer-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='dup-mac-timer', is_config=True)
 
 
   def _get_max_count(self):
@@ -139,12 +139,12 @@ class duplicate_mac_timer(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'3..10']}), is_leaf=True, yang_name="max-count", rest_name="max-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Max count.'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='max-count', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'3..10']}), is_leaf=True, yang_name="max-count", rest_name="max-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='max-count', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """max_count must be of a type compatible with max-count""",
           'defined-type': "brocade-bgp:max-count",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'3..10']}), is_leaf=True, yang_name="max-count", rest_name="max-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Max count.'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='max-count', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'3..10']}), is_leaf=True, yang_name="max-count", rest_name="max-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='max-count', is_config=True)""",
         })
 
     self.__max_count = t
@@ -152,7 +152,7 @@ class duplicate_mac_timer(PybindBase):
       self._set()
 
   def _unset_max_count(self):
-    self.__max_count = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'3..10']}), is_leaf=True, yang_name="max-count", rest_name="max-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Max count.'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='max-count', is_config=True)
+    self.__max_count = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'3..10']}), is_leaf=True, yang_name="max-count", rest_name="max-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='max-count', is_config=True)
 
   duplicate_mac_timer_value = __builtin__.property(_get_duplicate_mac_timer_value, _set_duplicate_mac_timer_value)
   max_count = __builtin__.property(_get_max_count, _set_max_count)

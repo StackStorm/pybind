@@ -16,6 +16,7 @@ import ip
 import ipv6
 import track
 import edge_loop_detection
+import fcoeport
 import mac
 import hide_vrrp_holer
 import ip_acl_interface
@@ -36,7 +37,7 @@ class port_channel(PybindBase):
   YANG Description: The list of port-channels in the managed device. Each
 entry represents a port-channel.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__name','__cee','__vlag','__po_speed','__ifindex','__description','__shutdown','__minimum_links','__snmp','__mtu','__switchport_basic','__switchport','__mac_learning','__ip','__ipv6','__track','__edge_loop_detection','__load_balance','__mac','__hide_vrrp_holer','__ip_acl_interface','__service_policy','__port_profile_port','__port_profile_to_interface_associations','__priority_tag_enable','__qos','__vlan','__bpdu_drop','__tunnel','__spanning_tree',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__name','__cee','__vlag','__po_speed','__ifindex','__description','__shutdown','__minimum_links','__snmp','__mtu','__switchport_basic','__switchport','__mac_learning','__ip','__ipv6','__track','__edge_loop_detection','__load_balance','__fcoeport','__mac','__hide_vrrp_holer','__ip_acl_interface','__service_policy','__port_profile_port','__port_profile_to_interface_associations','__priority_tag_enable','__qos','__vlan','__bpdu_drop','__tunnel','__spanning_tree',)
 
   _yang_name = 'port-channel'
   _rest_name = 'Port-channel'
@@ -90,6 +91,7 @@ entry represents a port-channel.
     self.__mac = YANGDynClass(base=mac.mac, is_container='container', presence=False, yang_name="mac", rest_name="mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure MAC parameters', u'callpoint': u'MacaclAccessgroupIntPoCP', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_MAC_ACL_CONFIG'}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='container', is_config=True)
     self.__load_balance = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'src-dst-ip-port': {'value': 6}, u'src-mac-vid': {'value': 2}, u'src-dst-ip': {'value': 4}, u'src-dst-ip-mac-vid': {'value': 5}, u'dst-mac-vid': {'value': 1}, u'src-dst-mac-vid': {'value': 3}, u'src-dst-ip-mac-vid-port': {'value': 7}},), default=unicode("src-dst-ip-mac-vid-port"), is_leaf=True, yang_name="load-balance", rest_name="load-balance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Load balancing Commands'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='enumeration', is_config=True)
     self.__po_speed = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'40000': {'value': 3}, u'100': {'value': 5}, u'10000': {'value': 2}, u'100000': {'value': 4}, u'1000': {'value': 1}},), default=unicode("10000"), is_leaf=True, yang_name="po-speed", rest_name="speed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set speed informational parameter', u'alt-name': u'speed'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='enumeration', is_config=True)
+    self.__fcoeport = YANGDynClass(base=fcoeport.fcoeport, is_container='container', presence=False, yang_name="fcoeport", rest_name="fcoeport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the LAG to enable FCoE', u'display-when': u'(/vcsmode/vcs-mode = "true") or (/fcoe-fsb/fcoe-fsb-enable)', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_FEATURE_FCOE', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'callpoint': u'fcoeport_attr_lag_cp'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
     self.__name = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..6144']}), is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None, u'cli-custom-range': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='portchannel-type', is_config=True)
     self.__switchport = YANGDynClass(base=switchport.switchport, is_container='container', presence=False, yang_name="switchport", rest_name="switchport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the switching characteristics of the Layer2 \ninterface', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_MODE_SWITCHPORT_CONFIG', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     self.__tunnel = YANGDynClass(base=tunnel.tunnel, is_container='container', presence=False, yang_name="tunnel", rest_name="tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'po-stp-config', u'sort-priority': u'98', u'display-when': u'/vcsmode/vcs-mode = "true"', u'cli-incomplete-no': None, u'info': u'Tunneling parameters'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
@@ -794,6 +796,39 @@ datagram that can be sent on the interface.
     self.__load_balance = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'src-dst-ip-port': {'value': 6}, u'src-mac-vid': {'value': 2}, u'src-dst-ip': {'value': 4}, u'src-dst-ip-mac-vid': {'value': 5}, u'dst-mac-vid': {'value': 1}, u'src-dst-mac-vid': {'value': 3}, u'src-dst-ip-mac-vid-port': {'value': 7}},), default=unicode("src-dst-ip-mac-vid-port"), is_leaf=True, yang_name="load-balance", rest_name="load-balance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Load balancing Commands'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='enumeration', is_config=True)
 
 
+  def _get_fcoeport(self):
+    """
+    Getter method for fcoeport, mapped from YANG variable /interface/port_channel/fcoeport (container)
+    """
+    return self.__fcoeport
+      
+  def _set_fcoeport(self, v, load=False):
+    """
+    Setter method for fcoeport, mapped from YANG variable /interface/port_channel/fcoeport (container)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_fcoeport is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_fcoeport() directly.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=fcoeport.fcoeport, is_container='container', presence=False, yang_name="fcoeport", rest_name="fcoeport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the LAG to enable FCoE', u'display-when': u'(/vcsmode/vcs-mode = "true") or (/fcoe-fsb/fcoe-fsb-enable)', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_FEATURE_FCOE', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'callpoint': u'fcoeport_attr_lag_cp'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """fcoeport must be of a type compatible with container""",
+          'defined-type': "container",
+          'generated-type': """YANGDynClass(base=fcoeport.fcoeport, is_container='container', presence=False, yang_name="fcoeport", rest_name="fcoeport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the LAG to enable FCoE', u'display-when': u'(/vcsmode/vcs-mode = "true") or (/fcoe-fsb/fcoe-fsb-enable)', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_FEATURE_FCOE', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'callpoint': u'fcoeport_attr_lag_cp'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)""",
+        })
+
+    self.__fcoeport = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_fcoeport(self):
+    self.__fcoeport = YANGDynClass(base=fcoeport.fcoeport, is_container='container', presence=False, yang_name="fcoeport", rest_name="fcoeport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the LAG to enable FCoE', u'display-when': u'(/vcsmode/vcs-mode = "true") or (/fcoe-fsb/fcoe-fsb-enable)', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_FEATURE_FCOE', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'callpoint': u'fcoeport_attr_lag_cp'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
+
+
   def _get_mac(self):
     """
     Getter method for mac, mapped from YANG variable /interface/port_channel/mac (container)
@@ -1225,6 +1260,7 @@ following MAC learning process.
   track = __builtin__.property(_get_track, _set_track)
   edge_loop_detection = __builtin__.property(_get_edge_loop_detection, _set_edge_loop_detection)
   load_balance = __builtin__.property(_get_load_balance, _set_load_balance)
+  fcoeport = __builtin__.property(_get_fcoeport, _set_fcoeport)
   mac = __builtin__.property(_get_mac, _set_mac)
   hide_vrrp_holer = __builtin__.property(_get_hide_vrrp_holer, _set_hide_vrrp_holer)
   ip_acl_interface = __builtin__.property(_get_ip_acl_interface, _set_ip_acl_interface)
@@ -1239,6 +1275,6 @@ following MAC learning process.
   spanning_tree = __builtin__.property(_get_spanning_tree, _set_spanning_tree)
 
 
-  _pyangbind_elements = {'name': name, 'cee': cee, 'vlag': vlag, 'po_speed': po_speed, 'ifindex': ifindex, 'description': description, 'shutdown': shutdown, 'minimum_links': minimum_links, 'snmp': snmp, 'mtu': mtu, 'switchport_basic': switchport_basic, 'switchport': switchport, 'mac_learning': mac_learning, 'ip': ip, 'ipv6': ipv6, 'track': track, 'edge_loop_detection': edge_loop_detection, 'load_balance': load_balance, 'mac': mac, 'hide_vrrp_holer': hide_vrrp_holer, 'ip_acl_interface': ip_acl_interface, 'service_policy': service_policy, 'port_profile_port': port_profile_port, 'port_profile_to_interface_associations': port_profile_to_interface_associations, 'priority_tag_enable': priority_tag_enable, 'qos': qos, 'vlan': vlan, 'bpdu_drop': bpdu_drop, 'tunnel': tunnel, 'spanning_tree': spanning_tree, }
+  _pyangbind_elements = {'name': name, 'cee': cee, 'vlag': vlag, 'po_speed': po_speed, 'ifindex': ifindex, 'description': description, 'shutdown': shutdown, 'minimum_links': minimum_links, 'snmp': snmp, 'mtu': mtu, 'switchport_basic': switchport_basic, 'switchport': switchport, 'mac_learning': mac_learning, 'ip': ip, 'ipv6': ipv6, 'track': track, 'edge_loop_detection': edge_loop_detection, 'load_balance': load_balance, 'fcoeport': fcoeport, 'mac': mac, 'hide_vrrp_holer': hide_vrrp_holer, 'ip_acl_interface': ip_acl_interface, 'service_policy': service_policy, 'port_profile_port': port_profile_port, 'port_profile_to_interface_associations': port_profile_to_interface_associations, 'priority_tag_enable': priority_tag_enable, 'qos': qos, 'vlan': vlan, 'bpdu_drop': bpdu_drop, 'tunnel': tunnel, 'spanning_tree': spanning_tree, }
 
 

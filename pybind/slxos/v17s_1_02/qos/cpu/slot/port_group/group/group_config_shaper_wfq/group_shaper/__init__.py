@@ -17,7 +17,7 @@ class group_shaper(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__group_shaper_rate','__group_shaper_burst_size',)
 
   _yang_name = 'group-shaper'
-  _rest_name = 'shaper'
+  _rest_name = 'group-shaper'
 
   _pybind_generated_by = 'container'
 
@@ -44,8 +44,8 @@ class group_shaper(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__group_shaper_rate = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..100000']}), is_leaf=True, yang_name="group-shaper-rate", rest_name="rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU group shaper rate', u'alt-name': u'rate', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='shaper-rate', is_config=True)
-    self.__group_shaper_burst_size = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'1..64']}), is_leaf=True, yang_name="group-shaper-burst-size", rest_name="burst", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU group shaper burst size', u'alt-name': u'burst'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='burst-size', is_config=True)
+    self.__group_shaper_rate = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..100000']}), is_leaf=True, yang_name="group-shaper-rate", rest_name="group-shaper-rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='shaper-rate', is_config=True)
+    self.__group_shaper_burst_size = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'1..64']}), is_leaf=True, yang_name="group-shaper-burst-size", rest_name="group-shaper-burst-size", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='burst-size', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class group_shaper(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'qos', u'cpu', u'slot', u'group', u'shaper']
+      return [u'qos', u'cpu', u'slot', u'port-group', u'group', u'group-config-shaper-wfq', u'group-shaper']
 
   def _get_group_shaper_rate(self):
     """
@@ -100,12 +100,12 @@ class group_shaper(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..100000']}), is_leaf=True, yang_name="group-shaper-rate", rest_name="rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU group shaper rate', u'alt-name': u'rate', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='shaper-rate', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..100000']}), is_leaf=True, yang_name="group-shaper-rate", rest_name="group-shaper-rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='shaper-rate', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """group_shaper_rate must be of a type compatible with shaper-rate""",
           'defined-type': "brocade-qos-cpu:shaper-rate",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..100000']}), is_leaf=True, yang_name="group-shaper-rate", rest_name="rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU group shaper rate', u'alt-name': u'rate', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='shaper-rate', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..100000']}), is_leaf=True, yang_name="group-shaper-rate", rest_name="group-shaper-rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='shaper-rate', is_config=True)""",
         })
 
     self.__group_shaper_rate = t
@@ -113,7 +113,7 @@ class group_shaper(PybindBase):
       self._set()
 
   def _unset_group_shaper_rate(self):
-    self.__group_shaper_rate = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..100000']}), is_leaf=True, yang_name="group-shaper-rate", rest_name="rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU group shaper rate', u'alt-name': u'rate', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='shaper-rate', is_config=True)
+    self.__group_shaper_rate = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..100000']}), is_leaf=True, yang_name="group-shaper-rate", rest_name="group-shaper-rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='shaper-rate', is_config=True)
 
 
   def _get_group_shaper_burst_size(self):
@@ -133,12 +133,12 @@ class group_shaper(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'1..64']}), is_leaf=True, yang_name="group-shaper-burst-size", rest_name="burst", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU group shaper burst size', u'alt-name': u'burst'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='burst-size', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'1..64']}), is_leaf=True, yang_name="group-shaper-burst-size", rest_name="group-shaper-burst-size", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='burst-size', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """group_shaper_burst_size must be of a type compatible with burst-size""",
           'defined-type': "brocade-qos-cpu:burst-size",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'1..64']}), is_leaf=True, yang_name="group-shaper-burst-size", rest_name="burst", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU group shaper burst size', u'alt-name': u'burst'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='burst-size', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'1..64']}), is_leaf=True, yang_name="group-shaper-burst-size", rest_name="group-shaper-burst-size", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='burst-size', is_config=True)""",
         })
 
     self.__group_shaper_burst_size = t
@@ -146,7 +146,7 @@ class group_shaper(PybindBase):
       self._set()
 
   def _unset_group_shaper_burst_size(self):
-    self.__group_shaper_burst_size = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'1..64']}), is_leaf=True, yang_name="group-shaper-burst-size", rest_name="burst", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU group shaper burst size', u'alt-name': u'burst'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='burst-size', is_config=True)
+    self.__group_shaper_burst_size = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'1..64']}), is_leaf=True, yang_name="group-shaper-burst-size", rest_name="group-shaper-burst-size", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='burst-size', is_config=True)
 
   group_shaper_rate = __builtin__.property(_get_group_shaper_rate, _set_group_shaper_rate)
   group_shaper_burst_size = __builtin__.property(_get_group_shaper_burst_size, _set_group_shaper_burst_size)

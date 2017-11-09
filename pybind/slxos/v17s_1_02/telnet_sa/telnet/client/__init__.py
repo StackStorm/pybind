@@ -45,7 +45,7 @@ class client(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__source_interface = YANGDynClass(base=source_interface.source_interface, is_container='container', presence=False, yang_name="source-interface", rest_name="source-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Telnet source interface', u'cli-sequence-commands': None, u'cli-full-no': None, u'callpoint': u'telnet_client_source_interface_cp'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
+    self.__source_interface = YANGDynClass(base=source_interface.source_interface, is_container='container', presence=False, yang_name="source-interface", rest_name="source-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class client(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'telnet', u'client']
+      return [u'telnet-sa', u'telnet', u'client']
 
   def _get_source_interface(self):
     """
@@ -100,12 +100,12 @@ class client(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=source_interface.source_interface, is_container='container', presence=False, yang_name="source-interface", rest_name="source-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Telnet source interface', u'cli-sequence-commands': None, u'cli-full-no': None, u'callpoint': u'telnet_client_source_interface_cp'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=source_interface.source_interface, is_container='container', presence=False, yang_name="source-interface", rest_name="source-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """source_interface must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=source_interface.source_interface, is_container='container', presence=False, yang_name="source-interface", rest_name="source-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Telnet source interface', u'cli-sequence-commands': None, u'cli-full-no': None, u'callpoint': u'telnet_client_source_interface_cp'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=source_interface.source_interface, is_container='container', presence=False, yang_name="source-interface", rest_name="source-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)""",
         })
 
     self.__source_interface = t
@@ -113,7 +113,7 @@ class client(PybindBase):
       self._set()
 
   def _unset_source_interface(self):
-    self.__source_interface = YANGDynClass(base=source_interface.source_interface, is_container='container', presence=False, yang_name="source-interface", rest_name="source-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Telnet source interface', u'cli-sequence-commands': None, u'cli-full-no': None, u'callpoint': u'telnet_client_source_interface_cp'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
+    self.__source_interface = YANGDynClass(base=source_interface.source_interface, is_container='container', presence=False, yang_name="source-interface", rest_name="source-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
 
   source_interface = __builtin__.property(_get_source_interface, _set_source_interface)
 

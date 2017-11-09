@@ -45,8 +45,8 @@ class timers(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__throttle = YANGDynClass(base=throttle.throttle, is_container='container', presence=False, yang_name="throttle", rest_name="throttle", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The OSPF SPF timers.', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
-    self.__lsa_group_pacing = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..1800']}), is_leaf=True, yang_name="lsa-group-pacing", rest_name="lsa-group-pacing", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'OSPF LSA group pacing timer'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='common-def:time-interval-sec', is_config=True)
+    self.__throttle = YANGDynClass(base=throttle.throttle, is_container='container', presence=False, yang_name="throttle", rest_name="throttle", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+    self.__lsa_group_pacing = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..1800']}), is_leaf=True, yang_name="lsa-group-pacing", rest_name="lsa-group-pacing", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='common-def:time-interval-sec', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -101,12 +101,12 @@ class timers(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..1800']}), is_leaf=True, yang_name="lsa-group-pacing", rest_name="lsa-group-pacing", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'OSPF LSA group pacing timer'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='common-def:time-interval-sec', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..1800']}), is_leaf=True, yang_name="lsa-group-pacing", rest_name="lsa-group-pacing", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='common-def:time-interval-sec', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsa_group_pacing must be of a type compatible with common-def:time-interval-sec""",
           'defined-type': "common-def:time-interval-sec",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..1800']}), is_leaf=True, yang_name="lsa-group-pacing", rest_name="lsa-group-pacing", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'OSPF LSA group pacing timer'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='common-def:time-interval-sec', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..1800']}), is_leaf=True, yang_name="lsa-group-pacing", rest_name="lsa-group-pacing", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='common-def:time-interval-sec', is_config=True)""",
         })
 
     self.__lsa_group_pacing = t
@@ -114,7 +114,7 @@ class timers(PybindBase):
       self._set()
 
   def _unset_lsa_group_pacing(self):
-    self.__lsa_group_pacing = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..1800']}), is_leaf=True, yang_name="lsa-group-pacing", rest_name="lsa-group-pacing", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'OSPF LSA group pacing timer'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='common-def:time-interval-sec', is_config=True)
+    self.__lsa_group_pacing = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..1800']}), is_leaf=True, yang_name="lsa-group-pacing", rest_name="lsa-group-pacing", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='common-def:time-interval-sec', is_config=True)
 
 
   def _get_throttle(self):
@@ -134,12 +134,12 @@ class timers(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=throttle.throttle, is_container='container', presence=False, yang_name="throttle", rest_name="throttle", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The OSPF SPF timers.', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=throttle.throttle, is_container='container', presence=False, yang_name="throttle", rest_name="throttle", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """throttle must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=throttle.throttle, is_container='container', presence=False, yang_name="throttle", rest_name="throttle", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The OSPF SPF timers.', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=throttle.throttle, is_container='container', presence=False, yang_name="throttle", rest_name="throttle", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)""",
         })
 
     self.__throttle = t
@@ -147,7 +147,7 @@ class timers(PybindBase):
       self._set()
 
   def _unset_throttle(self):
-    self.__throttle = YANGDynClass(base=throttle.throttle, is_container='container', presence=False, yang_name="throttle", rest_name="throttle", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The OSPF SPF timers.', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+    self.__throttle = YANGDynClass(base=throttle.throttle, is_container='container', presence=False, yang_name="throttle", rest_name="throttle", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
 
   lsa_group_pacing = __builtin__.property(_get_lsa_group_pacing, _set_lsa_group_pacing)
   throttle = __builtin__.property(_get_throttle, _set_throttle)

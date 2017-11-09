@@ -45,7 +45,7 @@ class attach(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__rbridge_id = YANGDynClass(base=rbridge_id.rbridge_id, is_container='container', presence=False, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure rbridges on which to setup this gateway', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
+    self.__rbridge_id = YANGDynClass(base=rbridge_id.rbridge_id, is_container='container', presence=False, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class attach(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=rbridge_id.rbridge_id, is_container='container', presence=False, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure rbridges on which to setup this gateway', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=rbridge_id.rbridge_id, is_container='container', presence=False, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rbridge_id must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=rbridge_id.rbridge_id, is_container='container', presence=False, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure rbridges on which to setup this gateway', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=rbridge_id.rbridge_id, is_container='container', presence=False, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)""",
         })
 
     self.__rbridge_id = t
@@ -113,7 +113,7 @@ class attach(PybindBase):
       self._set()
 
   def _unset_rbridge_id(self):
-    self.__rbridge_id = YANGDynClass(base=rbridge_id.rbridge_id, is_container='container', presence=False, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure rbridges on which to setup this gateway', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
+    self.__rbridge_id = YANGDynClass(base=rbridge_id.rbridge_id, is_container='container', presence=False, yang_name="rbridge-id", rest_name="rbridge-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
 
   rbridge_id = __builtin__.property(_get_rbridge_id, _set_rbridge_id)
 

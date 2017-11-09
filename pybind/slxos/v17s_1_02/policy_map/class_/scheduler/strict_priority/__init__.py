@@ -44,23 +44,23 @@ class strict_priority(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__dwrr_traffic_class3 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class3", rest_name="dwrr-traffic-class3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../priority-number< 4', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
-    self.__dwrr_traffic_class2 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class2", rest_name="dwrr-traffic-class2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../priority-number< 5', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
-    self.__dwrr_traffic_class1 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class1", rest_name="dwrr-traffic-class1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../priority-number< 6', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
-    self.__dwrr_traffic_class0 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class0", rest_name="dwrr-traffic-class0", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../priority-number < 7', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
-    self.__dwrr_traffic_class6 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class6", rest_name="dwrr-traffic-class6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../priority-number< 1', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
-    self.__dwrr_traffic_class5 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class5", rest_name="dwrr-traffic-class5", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../priority-number< 2', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
-    self.__dwrr_traffic_class4 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class4", rest_name="dwrr-traffic-class4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../priority-number< 3', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
-    self.__TC6 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC6", rest_name="TC6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-optional-in-sequence': None, u'display-when': u'../priority-number> 1'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
-    self.__TC2 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC2", rest_name="TC2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-optional-in-sequence': None, u'display-when': u'../priority-number> 5'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
-    self.__TC4 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC4", rest_name="TC4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-optional-in-sequence': None, u'display-when': u'../priority-number> 3'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
-    self.__TC5 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC5", rest_name="TC5", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-optional-in-sequence': None, u'display-when': u'../priority-number> 2'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
-    self.__dwrr_traffic_class_last = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class-last", rest_name="dwrr-traffic-class-last", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
-    self.__TC3 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC3", rest_name="TC3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-optional-in-sequence': None, u'display-when': u'../priority-number> 4'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
-    self.__TC1 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC1", rest_name="TC1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-optional-in-sequence': None, u'display-when': u'../priority-number> 6'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
-    self.__TC7 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC7", rest_name="TC7", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-optional-in-sequence': None, u'display-when': u'../priority-number> 0'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
-    self.__scheduler_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dwrr': {'value': 1}},), is_leaf=True, yang_name="scheduler-type", rest_name="scheduler-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='enumeration', is_config=True)
-    self.__priority_number = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="priority-number", rest_name="priority-number", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint8', is_config=True)
+    self.__dwrr_traffic_class3 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class3", rest_name="dwrr-traffic-class3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
+    self.__dwrr_traffic_class2 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class2", rest_name="dwrr-traffic-class2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
+    self.__dwrr_traffic_class1 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class1", rest_name="dwrr-traffic-class1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
+    self.__dwrr_traffic_class0 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class0", rest_name="dwrr-traffic-class0", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
+    self.__dwrr_traffic_class6 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class6", rest_name="dwrr-traffic-class6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
+    self.__dwrr_traffic_class5 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class5", rest_name="dwrr-traffic-class5", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
+    self.__dwrr_traffic_class4 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class4", rest_name="dwrr-traffic-class4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
+    self.__TC6 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC6", rest_name="TC6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
+    self.__TC2 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC2", rest_name="TC2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
+    self.__TC4 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC4", rest_name="TC4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
+    self.__TC5 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC5", rest_name="TC5", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
+    self.__dwrr_traffic_class_last = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class-last", rest_name="dwrr-traffic-class-last", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
+    self.__TC3 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC3", rest_name="TC3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
+    self.__TC1 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC1", rest_name="TC1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
+    self.__TC7 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC7", rest_name="TC7", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
+    self.__scheduler_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dwrr': {'value': 1}},), is_leaf=True, yang_name="scheduler-type", rest_name="scheduler-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='enumeration', is_config=True)
+    self.__priority_number = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="priority-number", rest_name="priority-number", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint8', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -115,12 +115,12 @@ class strict_priority(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="priority-number", rest_name="priority-number", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint8', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="priority-number", rest_name="priority-number", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint8', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """priority_number must be of a type compatible with uint8""",
           'defined-type': "uint8",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="priority-number", rest_name="priority-number", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint8', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="priority-number", rest_name="priority-number", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint8', is_config=True)""",
         })
 
     self.__priority_number = t
@@ -128,7 +128,7 @@ class strict_priority(PybindBase):
       self._set()
 
   def _unset_priority_number(self):
-    self.__priority_number = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="priority-number", rest_name="priority-number", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint8', is_config=True)
+    self.__priority_number = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="priority-number", rest_name="priority-number", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint8', is_config=True)
 
 
   def _get_scheduler_type(self):
@@ -148,12 +148,12 @@ class strict_priority(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dwrr': {'value': 1}},), is_leaf=True, yang_name="scheduler-type", rest_name="scheduler-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='enumeration', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dwrr': {'value': 1}},), is_leaf=True, yang_name="scheduler-type", rest_name="scheduler-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """scheduler_type must be of a type compatible with enumeration""",
           'defined-type': "brocade-qos-mqc:enumeration",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dwrr': {'value': 1}},), is_leaf=True, yang_name="scheduler-type", rest_name="scheduler-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='enumeration', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dwrr': {'value': 1}},), is_leaf=True, yang_name="scheduler-type", rest_name="scheduler-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='enumeration', is_config=True)""",
         })
 
     self.__scheduler_type = t
@@ -161,7 +161,7 @@ class strict_priority(PybindBase):
       self._set()
 
   def _unset_scheduler_type(self):
-    self.__scheduler_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dwrr': {'value': 1}},), is_leaf=True, yang_name="scheduler-type", rest_name="scheduler-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='enumeration', is_config=True)
+    self.__scheduler_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dwrr': {'value': 1}},), is_leaf=True, yang_name="scheduler-type", rest_name="scheduler-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='enumeration', is_config=True)
 
 
   def _get_dwrr_traffic_class0(self):
@@ -181,12 +181,12 @@ class strict_priority(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class0", rest_name="dwrr-traffic-class0", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../priority-number < 7', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class0", rest_name="dwrr-traffic-class0", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dwrr_traffic_class0 must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class0", rest_name="dwrr-traffic-class0", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../priority-number < 7', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class0", rest_name="dwrr-traffic-class0", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)""",
         })
 
     self.__dwrr_traffic_class0 = t
@@ -194,7 +194,7 @@ class strict_priority(PybindBase):
       self._set()
 
   def _unset_dwrr_traffic_class0(self):
-    self.__dwrr_traffic_class0 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class0", rest_name="dwrr-traffic-class0", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../priority-number < 7', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
+    self.__dwrr_traffic_class0 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class0", rest_name="dwrr-traffic-class0", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
 
 
   def _get_dwrr_traffic_class1(self):
@@ -214,12 +214,12 @@ class strict_priority(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class1", rest_name="dwrr-traffic-class1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../priority-number< 6', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class1", rest_name="dwrr-traffic-class1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dwrr_traffic_class1 must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class1", rest_name="dwrr-traffic-class1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../priority-number< 6', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class1", rest_name="dwrr-traffic-class1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)""",
         })
 
     self.__dwrr_traffic_class1 = t
@@ -227,7 +227,7 @@ class strict_priority(PybindBase):
       self._set()
 
   def _unset_dwrr_traffic_class1(self):
-    self.__dwrr_traffic_class1 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class1", rest_name="dwrr-traffic-class1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../priority-number< 6', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
+    self.__dwrr_traffic_class1 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class1", rest_name="dwrr-traffic-class1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
 
 
   def _get_dwrr_traffic_class2(self):
@@ -247,12 +247,12 @@ class strict_priority(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class2", rest_name="dwrr-traffic-class2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../priority-number< 5', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class2", rest_name="dwrr-traffic-class2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dwrr_traffic_class2 must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class2", rest_name="dwrr-traffic-class2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../priority-number< 5', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class2", rest_name="dwrr-traffic-class2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)""",
         })
 
     self.__dwrr_traffic_class2 = t
@@ -260,7 +260,7 @@ class strict_priority(PybindBase):
       self._set()
 
   def _unset_dwrr_traffic_class2(self):
-    self.__dwrr_traffic_class2 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class2", rest_name="dwrr-traffic-class2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../priority-number< 5', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
+    self.__dwrr_traffic_class2 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class2", rest_name="dwrr-traffic-class2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
 
 
   def _get_dwrr_traffic_class3(self):
@@ -280,12 +280,12 @@ class strict_priority(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class3", rest_name="dwrr-traffic-class3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../priority-number< 4', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class3", rest_name="dwrr-traffic-class3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dwrr_traffic_class3 must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class3", rest_name="dwrr-traffic-class3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../priority-number< 4', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class3", rest_name="dwrr-traffic-class3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)""",
         })
 
     self.__dwrr_traffic_class3 = t
@@ -293,7 +293,7 @@ class strict_priority(PybindBase):
       self._set()
 
   def _unset_dwrr_traffic_class3(self):
-    self.__dwrr_traffic_class3 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class3", rest_name="dwrr-traffic-class3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../priority-number< 4', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
+    self.__dwrr_traffic_class3 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class3", rest_name="dwrr-traffic-class3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
 
 
   def _get_dwrr_traffic_class4(self):
@@ -313,12 +313,12 @@ class strict_priority(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class4", rest_name="dwrr-traffic-class4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../priority-number< 3', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class4", rest_name="dwrr-traffic-class4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dwrr_traffic_class4 must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class4", rest_name="dwrr-traffic-class4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../priority-number< 3', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class4", rest_name="dwrr-traffic-class4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)""",
         })
 
     self.__dwrr_traffic_class4 = t
@@ -326,7 +326,7 @@ class strict_priority(PybindBase):
       self._set()
 
   def _unset_dwrr_traffic_class4(self):
-    self.__dwrr_traffic_class4 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class4", rest_name="dwrr-traffic-class4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../priority-number< 3', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
+    self.__dwrr_traffic_class4 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class4", rest_name="dwrr-traffic-class4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
 
 
   def _get_dwrr_traffic_class5(self):
@@ -346,12 +346,12 @@ class strict_priority(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class5", rest_name="dwrr-traffic-class5", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../priority-number< 2', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class5", rest_name="dwrr-traffic-class5", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dwrr_traffic_class5 must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class5", rest_name="dwrr-traffic-class5", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../priority-number< 2', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class5", rest_name="dwrr-traffic-class5", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)""",
         })
 
     self.__dwrr_traffic_class5 = t
@@ -359,7 +359,7 @@ class strict_priority(PybindBase):
       self._set()
 
   def _unset_dwrr_traffic_class5(self):
-    self.__dwrr_traffic_class5 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class5", rest_name="dwrr-traffic-class5", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../priority-number< 2', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
+    self.__dwrr_traffic_class5 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class5", rest_name="dwrr-traffic-class5", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
 
 
   def _get_dwrr_traffic_class6(self):
@@ -379,12 +379,12 @@ class strict_priority(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class6", rest_name="dwrr-traffic-class6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../priority-number< 1', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class6", rest_name="dwrr-traffic-class6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dwrr_traffic_class6 must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class6", rest_name="dwrr-traffic-class6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../priority-number< 1', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class6", rest_name="dwrr-traffic-class6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)""",
         })
 
     self.__dwrr_traffic_class6 = t
@@ -392,7 +392,7 @@ class strict_priority(PybindBase):
       self._set()
 
   def _unset_dwrr_traffic_class6(self):
-    self.__dwrr_traffic_class6 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class6", rest_name="dwrr-traffic-class6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'../priority-number< 1', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
+    self.__dwrr_traffic_class6 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class6", rest_name="dwrr-traffic-class6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
 
 
   def _get_dwrr_traffic_class_last(self):
@@ -412,12 +412,12 @@ class strict_priority(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class-last", rest_name="dwrr-traffic-class-last", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class-last", rest_name="dwrr-traffic-class-last", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dwrr_traffic_class_last must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class-last", rest_name="dwrr-traffic-class-last", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class-last", rest_name="dwrr-traffic-class-last", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)""",
         })
 
     self.__dwrr_traffic_class_last = t
@@ -425,7 +425,7 @@ class strict_priority(PybindBase):
       self._set()
 
   def _unset_dwrr_traffic_class_last(self):
-    self.__dwrr_traffic_class_last = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class-last", rest_name="dwrr-traffic-class-last", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
+    self.__dwrr_traffic_class_last = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="dwrr-traffic-class-last", rest_name="dwrr-traffic-class-last", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='uint32', is_config=True)
 
 
   def _get_TC1(self):
@@ -445,12 +445,12 @@ class strict_priority(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC1", rest_name="TC1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-optional-in-sequence': None, u'display-when': u'../priority-number> 6'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC1", rest_name="TC1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """TC1 must be of a type compatible with shaping-rate-limit""",
           'defined-type': "brocade-qos-mqc:shaping-rate-limit",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC1", rest_name="TC1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-optional-in-sequence': None, u'display-when': u'../priority-number> 6'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC1", rest_name="TC1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)""",
         })
 
     self.__TC1 = t
@@ -458,7 +458,7 @@ class strict_priority(PybindBase):
       self._set()
 
   def _unset_TC1(self):
-    self.__TC1 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC1", rest_name="TC1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-optional-in-sequence': None, u'display-when': u'../priority-number> 6'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
+    self.__TC1 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC1", rest_name="TC1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
 
 
   def _get_TC2(self):
@@ -478,12 +478,12 @@ class strict_priority(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC2", rest_name="TC2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-optional-in-sequence': None, u'display-when': u'../priority-number> 5'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC2", rest_name="TC2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """TC2 must be of a type compatible with shaping-rate-limit""",
           'defined-type': "brocade-qos-mqc:shaping-rate-limit",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC2", rest_name="TC2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-optional-in-sequence': None, u'display-when': u'../priority-number> 5'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC2", rest_name="TC2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)""",
         })
 
     self.__TC2 = t
@@ -491,7 +491,7 @@ class strict_priority(PybindBase):
       self._set()
 
   def _unset_TC2(self):
-    self.__TC2 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC2", rest_name="TC2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-optional-in-sequence': None, u'display-when': u'../priority-number> 5'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
+    self.__TC2 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC2", rest_name="TC2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
 
 
   def _get_TC3(self):
@@ -511,12 +511,12 @@ class strict_priority(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC3", rest_name="TC3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-optional-in-sequence': None, u'display-when': u'../priority-number> 4'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC3", rest_name="TC3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """TC3 must be of a type compatible with shaping-rate-limit""",
           'defined-type': "brocade-qos-mqc:shaping-rate-limit",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC3", rest_name="TC3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-optional-in-sequence': None, u'display-when': u'../priority-number> 4'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC3", rest_name="TC3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)""",
         })
 
     self.__TC3 = t
@@ -524,7 +524,7 @@ class strict_priority(PybindBase):
       self._set()
 
   def _unset_TC3(self):
-    self.__TC3 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC3", rest_name="TC3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-optional-in-sequence': None, u'display-when': u'../priority-number> 4'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
+    self.__TC3 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC3", rest_name="TC3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
 
 
   def _get_TC4(self):
@@ -544,12 +544,12 @@ class strict_priority(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC4", rest_name="TC4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-optional-in-sequence': None, u'display-when': u'../priority-number> 3'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC4", rest_name="TC4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """TC4 must be of a type compatible with shaping-rate-limit""",
           'defined-type': "brocade-qos-mqc:shaping-rate-limit",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC4", rest_name="TC4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-optional-in-sequence': None, u'display-when': u'../priority-number> 3'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC4", rest_name="TC4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)""",
         })
 
     self.__TC4 = t
@@ -557,7 +557,7 @@ class strict_priority(PybindBase):
       self._set()
 
   def _unset_TC4(self):
-    self.__TC4 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC4", rest_name="TC4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-optional-in-sequence': None, u'display-when': u'../priority-number> 3'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
+    self.__TC4 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC4", rest_name="TC4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
 
 
   def _get_TC5(self):
@@ -577,12 +577,12 @@ class strict_priority(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC5", rest_name="TC5", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-optional-in-sequence': None, u'display-when': u'../priority-number> 2'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC5", rest_name="TC5", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """TC5 must be of a type compatible with shaping-rate-limit""",
           'defined-type': "brocade-qos-mqc:shaping-rate-limit",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC5", rest_name="TC5", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-optional-in-sequence': None, u'display-when': u'../priority-number> 2'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC5", rest_name="TC5", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)""",
         })
 
     self.__TC5 = t
@@ -590,7 +590,7 @@ class strict_priority(PybindBase):
       self._set()
 
   def _unset_TC5(self):
-    self.__TC5 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC5", rest_name="TC5", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-optional-in-sequence': None, u'display-when': u'../priority-number> 2'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
+    self.__TC5 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC5", rest_name="TC5", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
 
 
   def _get_TC6(self):
@@ -610,12 +610,12 @@ class strict_priority(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC6", rest_name="TC6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-optional-in-sequence': None, u'display-when': u'../priority-number> 1'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC6", rest_name="TC6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """TC6 must be of a type compatible with shaping-rate-limit""",
           'defined-type': "brocade-qos-mqc:shaping-rate-limit",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC6", rest_name="TC6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-optional-in-sequence': None, u'display-when': u'../priority-number> 1'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC6", rest_name="TC6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)""",
         })
 
     self.__TC6 = t
@@ -623,7 +623,7 @@ class strict_priority(PybindBase):
       self._set()
 
   def _unset_TC6(self):
-    self.__TC6 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC6", rest_name="TC6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-optional-in-sequence': None, u'display-when': u'../priority-number> 1'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
+    self.__TC6 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC6", rest_name="TC6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
 
 
   def _get_TC7(self):
@@ -643,12 +643,12 @@ class strict_priority(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC7", rest_name="TC7", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-optional-in-sequence': None, u'display-when': u'../priority-number> 0'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC7", rest_name="TC7", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """TC7 must be of a type compatible with shaping-rate-limit""",
           'defined-type': "brocade-qos-mqc:shaping-rate-limit",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC7", rest_name="TC7", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-optional-in-sequence': None, u'display-when': u'../priority-number> 0'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC7", rest_name="TC7", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)""",
         })
 
     self.__TC7 = t
@@ -656,7 +656,7 @@ class strict_priority(PybindBase):
       self._set()
 
   def _unset_TC7(self):
-    self.__TC7 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC7", rest_name="TC7", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-optional-in-sequence': None, u'display-when': u'../priority-number> 0'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
+    self.__TC7 = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="TC7", rest_name="TC7", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
 
   priority_number = __builtin__.property(_get_priority_number, _set_priority_number)
   scheduler_type = __builtin__.property(_get_scheduler_type, _set_scheduler_type)

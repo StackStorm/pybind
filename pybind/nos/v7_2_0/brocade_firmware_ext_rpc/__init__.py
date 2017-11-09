@@ -49,7 +49,7 @@ All rights reserved.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__show_firmware_version = YANGDynClass(base=show_firmware_version.show_firmware_version, is_leaf=True, yang_name="show-firmware-version", rest_name="show-firmware-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showfirmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='rpc', is_config=True)
+    self.__show_firmware_version = YANGDynClass(base=show_firmware_version.show_firmware_version, is_leaf=True, yang_name="show-firmware-version", rest_name="show-firmware-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='rpc', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -108,12 +108,12 @@ All rights reserved.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=show_firmware_version.show_firmware_version, is_leaf=True, yang_name="show-firmware-version", rest_name="show-firmware-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showfirmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_firmware_version.show_firmware_version, is_leaf=True, yang_name="show-firmware-version", rest_name="show-firmware-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_firmware_version must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_firmware_version.show_firmware_version, is_leaf=True, yang_name="show-firmware-version", rest_name="show-firmware-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showfirmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_firmware_version.show_firmware_version, is_leaf=True, yang_name="show-firmware-version", rest_name="show-firmware-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_firmware_version = t
@@ -121,7 +121,7 @@ All rights reserved.
       self._set()
 
   def _unset_show_firmware_version(self):
-    self.__show_firmware_version = YANGDynClass(base=show_firmware_version.show_firmware_version, is_leaf=True, yang_name="show-firmware-version", rest_name="show-firmware-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'showfirmware'}}, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='rpc', is_config=True)
+    self.__show_firmware_version = YANGDynClass(base=show_firmware_version.show_firmware_version, is_leaf=True, yang_name="show-firmware-version", rest_name="show-firmware-version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware-ext', defining_module='brocade-firmware-ext', yang_type='rpc', is_config=True)
 
   show_firmware_version = __builtin__.property(_get_show_firmware_version, _set_show_firmware_version)
 

@@ -46,7 +46,7 @@ class automatic_tag(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__tag_empty = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="tag-empty", rest_name="tag-empty", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
+    self.__tag_empty = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="tag-empty", rest_name="tag-empty", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -82,7 +82,7 @@ class automatic_tag(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'route-map', u'set', u'automatic-tag']
+      return [u'routing-system', u'route-map', u'content', u'set', u'automatic-tag']
 
   def _get_tag_empty(self):
     """
@@ -101,12 +101,12 @@ class automatic_tag(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="tag-empty", rest_name="tag-empty", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="tag-empty", rest_name="tag-empty", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """tag_empty must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="tag-empty", rest_name="tag-empty", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="tag-empty", rest_name="tag-empty", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)""",
         })
 
     self.__tag_empty = t
@@ -114,7 +114,7 @@ class automatic_tag(PybindBase):
       self._set()
 
   def _unset_tag_empty(self):
-    self.__tag_empty = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="tag-empty", rest_name="tag-empty", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
+    self.__tag_empty = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="tag-empty", rest_name="tag-empty", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
 
   tag_empty = __builtin__.property(_get_tag_empty, _set_tag_empty)
 

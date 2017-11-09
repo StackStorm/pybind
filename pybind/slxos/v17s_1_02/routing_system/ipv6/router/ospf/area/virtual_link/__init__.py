@@ -48,7 +48,7 @@ class virtual_link(PybindBase):
     else:
       self._extmethods = False
     self.__virtual_link_neighbor = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="virtual-link-neighbor", rest_name="virtual-link-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='inet:ipv4-address', is_config=True)
-    self.__link_properties = YANGDynClass(base=link_properties.link_properties, is_container='container', presence=False, yang_name="link-properties", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__link_properties = YANGDynClass(base=link_properties.link_properties, is_container='container', presence=False, yang_name="link-properties", rest_name="link-properties", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -84,7 +84,7 @@ class virtual_link(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'ipv6', u'router', u'ospf', u'area', u'virtual-link']
+      return [u'routing-system', u'ipv6', u'router', u'ospf', u'area', u'virtual-link']
 
   def _get_virtual_link_neighbor(self):
     """
@@ -145,12 +145,12 @@ class virtual_link(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=link_properties.link_properties, is_container='container', presence=False, yang_name="link-properties", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=link_properties.link_properties, is_container='container', presence=False, yang_name="link-properties", rest_name="link-properties", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """link_properties must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=link_properties.link_properties, is_container='container', presence=False, yang_name="link-properties", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=link_properties.link_properties, is_container='container', presence=False, yang_name="link-properties", rest_name="link-properties", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
         })
 
     self.__link_properties = t
@@ -158,7 +158,7 @@ class virtual_link(PybindBase):
       self._set()
 
   def _unset_link_properties(self):
-    self.__link_properties = YANGDynClass(base=link_properties.link_properties, is_container='container', presence=False, yang_name="link-properties", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__link_properties = YANGDynClass(base=link_properties.link_properties, is_container='container', presence=False, yang_name="link-properties", rest_name="link-properties", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
 
   virtual_link_neighbor = __builtin__.property(_get_virtual_link_neighbor, _set_virtual_link_neighbor)
   link_properties = __builtin__.property(_get_link_properties, _set_link_properties)

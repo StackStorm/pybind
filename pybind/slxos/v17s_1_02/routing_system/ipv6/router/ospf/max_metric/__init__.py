@@ -47,7 +47,7 @@ class max_metric(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__router_lsa = YANGDynClass(base=router_lsa.router_lsa, is_container='container', presence=True, yang_name="router-lsa", rest_name="router-lsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The maximum metric advertisement in Router LSAs'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__router_lsa = YANGDynClass(base=router_lsa.router_lsa, is_container='container', presence=True, yang_name="router-lsa", rest_name="router-lsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -83,7 +83,7 @@ class max_metric(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'ipv6', u'router', u'ospf', u'max-metric']
+      return [u'routing-system', u'ipv6', u'router', u'ospf', u'max-metric']
 
   def _get_router_lsa(self):
     """
@@ -106,12 +106,12 @@ class max_metric(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=router_lsa.router_lsa, is_container='container', presence=True, yang_name="router-lsa", rest_name="router-lsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The maximum metric advertisement in Router LSAs'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=router_lsa.router_lsa, is_container='container', presence=True, yang_name="router-lsa", rest_name="router-lsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """router_lsa must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=router_lsa.router_lsa, is_container='container', presence=True, yang_name="router-lsa", rest_name="router-lsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The maximum metric advertisement in Router LSAs'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=router_lsa.router_lsa, is_container='container', presence=True, yang_name="router-lsa", rest_name="router-lsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
         })
 
     self.__router_lsa = t
@@ -119,7 +119,7 @@ class max_metric(PybindBase):
       self._set()
 
   def _unset_router_lsa(self):
-    self.__router_lsa = YANGDynClass(base=router_lsa.router_lsa, is_container='container', presence=True, yang_name="router-lsa", rest_name="router-lsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The maximum metric advertisement in Router LSAs'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__router_lsa = YANGDynClass(base=router_lsa.router_lsa, is_container='container', presence=True, yang_name="router-lsa", rest_name="router-lsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
 
   router_lsa = __builtin__.property(_get_router_lsa, _set_router_lsa)
 

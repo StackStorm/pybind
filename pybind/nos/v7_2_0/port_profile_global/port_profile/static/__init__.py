@@ -48,7 +48,7 @@ associated to the port profile.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__mac_address = YANGDynClass(base=unicode, is_leaf=True, yang_name="mac-address", rest_name="mac-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'mac address in HHHH.HHHH.HHHH format'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='mac-access-list:mac-address-type', is_config=True)
+    self.__mac_address = YANGDynClass(base=unicode, is_leaf=True, yang_name="mac-address", rest_name="mac-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='mac-access-list:mac-address-type', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -118,12 +118,12 @@ can be mapped and applied.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="mac-address", rest_name="mac-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'mac address in HHHH.HHHH.HHHH format'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='mac-access-list:mac-address-type', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="mac-address", rest_name="mac-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='mac-access-list:mac-address-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mac_address must be of a type compatible with mac-access-list:mac-address-type""",
           'defined-type': "mac-access-list:mac-address-type",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="mac-address", rest_name="mac-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'mac address in HHHH.HHHH.HHHH format'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='mac-access-list:mac-address-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="mac-address", rest_name="mac-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='mac-access-list:mac-address-type', is_config=True)""",
         })
 
     self.__mac_address = t
@@ -131,7 +131,7 @@ can be mapped and applied.
       self._set()
 
   def _unset_mac_address(self):
-    self.__mac_address = YANGDynClass(base=unicode, is_leaf=True, yang_name="mac-address", rest_name="mac-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'mac address in HHHH.HHHH.HHHH format'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='mac-access-list:mac-address-type', is_config=True)
+    self.__mac_address = YANGDynClass(base=unicode, is_leaf=True, yang_name="mac-address", rest_name="mac-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='mac-access-list:mac-address-type', is_config=True)
 
   mac_address = __builtin__.property(_get_mac_address, _set_mac_address)
 

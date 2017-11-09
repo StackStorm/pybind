@@ -48,8 +48,8 @@ class te(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__router_id_map = YANGDynClass(base=YANGListType("ip_address",router_id_map.router_id_map, yang_name="router-id-map", rest_name="router-id-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip-address', extensions={u'tailf-common': {u'callpoint': u'mpls-te-router-id-map', u'cli-suppress-show-path': None}}), is_container='list', yang_name="router-id-map", rest_name="router-id-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-te-router-id-map', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
-    self.__database = YANGDynClass(base=database.database, is_container='container', presence=False, yang_name="database", rest_name="database", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-te-database', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__router_id_map = YANGDynClass(base=YANGListType("ip_address",router_id_map.router_id_map, yang_name="router-id-map", rest_name="router-id-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip-address', extensions=None), is_container='list', yang_name="router-id-map", rest_name="router-id-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__database = YANGDynClass(base=database.database, is_container='container', presence=False, yang_name="database", rest_name="database", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     self.__isis_level_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="isis-level-id", rest_name="isis-level-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='uint32', is_config=False)
     self.__ospf_area_id = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="ospf-area-id", rest_name="ospf-area-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='inet:ipv4-address', is_config=False)
     self.__isis_te_enabled = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="isis-te-enabled", rest_name="isis-te-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='boolean', is_config=False)
@@ -260,12 +260,12 @@ class te(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=database.database, is_container='container', presence=False, yang_name="database", rest_name="database", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-te-database', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=database.database, is_container='container', presence=False, yang_name="database", rest_name="database", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """database must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=database.database, is_container='container', presence=False, yang_name="database", rest_name="database", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-te-database', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=database.database, is_container='container', presence=False, yang_name="database", rest_name="database", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
         })
 
     self.__database = t
@@ -273,7 +273,7 @@ class te(PybindBase):
       self._set()
 
   def _unset_database(self):
-    self.__database = YANGDynClass(base=database.database, is_container='container', presence=False, yang_name="database", rest_name="database", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-te-database', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__database = YANGDynClass(base=database.database, is_container='container', presence=False, yang_name="database", rest_name="database", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
 
 
   def _get_router_id_map(self):
@@ -297,12 +297,12 @@ class te(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("ip_address",router_id_map.router_id_map, yang_name="router-id-map", rest_name="router-id-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip-address', extensions={u'tailf-common': {u'callpoint': u'mpls-te-router-id-map', u'cli-suppress-show-path': None}}), is_container='list', yang_name="router-id-map", rest_name="router-id-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-te-router-id-map', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("ip_address",router_id_map.router_id_map, yang_name="router-id-map", rest_name="router-id-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip-address', extensions=None), is_container='list', yang_name="router-id-map", rest_name="router-id-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """router_id_map must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("ip_address",router_id_map.router_id_map, yang_name="router-id-map", rest_name="router-id-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip-address', extensions={u'tailf-common': {u'callpoint': u'mpls-te-router-id-map', u'cli-suppress-show-path': None}}), is_container='list', yang_name="router-id-map", rest_name="router-id-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-te-router-id-map', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("ip_address",router_id_map.router_id_map, yang_name="router-id-map", rest_name="router-id-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip-address', extensions=None), is_container='list', yang_name="router-id-map", rest_name="router-id-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)""",
         })
 
     self.__router_id_map = t
@@ -310,7 +310,7 @@ class te(PybindBase):
       self._set()
 
   def _unset_router_id_map(self):
-    self.__router_id_map = YANGDynClass(base=YANGListType("ip_address",router_id_map.router_id_map, yang_name="router-id-map", rest_name="router-id-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip-address', extensions={u'tailf-common': {u'callpoint': u'mpls-te-router-id-map', u'cli-suppress-show-path': None}}), is_container='list', yang_name="router-id-map", rest_name="router-id-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-te-router-id-map', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
+    self.__router_id_map = YANGDynClass(base=YANGListType("ip_address",router_id_map.router_id_map, yang_name="router-id-map", rest_name="router-id-map", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='ip-address', extensions=None), is_container='list', yang_name="router-id-map", rest_name="router-id-map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='list', is_config=False)
 
   ospf_te_enabled = __builtin__.property(_get_ospf_te_enabled)
   isis_te_enabled = __builtin__.property(_get_isis_te_enabled)

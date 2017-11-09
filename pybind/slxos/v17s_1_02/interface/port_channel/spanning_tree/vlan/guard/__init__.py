@@ -44,7 +44,7 @@ class guard(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__root = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="root", rest_name="root", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Disable reception of superior BPDUs'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='empty', is_config=True)
+    self.__root = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="root", rest_name="root", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -80,7 +80,7 @@ class guard(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface', u'Port-channel', u'spanning-tree', u'vlan', u'guard']
+      return [u'interface', u'port-channel', u'spanning-tree', u'vlan', u'guard']
 
   def _get_root(self):
     """
@@ -99,12 +99,12 @@ class guard(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="root", rest_name="root", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Disable reception of superior BPDUs'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="root", rest_name="root", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """root must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="root", rest_name="root", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Disable reception of superior BPDUs'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="root", rest_name="root", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='empty', is_config=True)""",
         })
 
     self.__root = t
@@ -112,7 +112,7 @@ class guard(PybindBase):
       self._set()
 
   def _unset_root(self):
-    self.__root = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="root", rest_name="root", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Disable reception of superior BPDUs'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='empty', is_config=True)
+    self.__root = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="root", rest_name="root", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='empty', is_config=True)
 
   root = __builtin__.property(_get_root, _set_root)
 

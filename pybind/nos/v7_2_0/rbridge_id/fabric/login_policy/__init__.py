@@ -48,7 +48,7 @@ class login_policy(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__duplicateWWN = YANGDynClass(base=duplicateWWN.duplicateWWN, is_container='container', presence=False, yang_name="duplicateWWN", rest_name="duplicateWWN", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'info': u'Configure the DuplicateWWN login policy of a switch in fabric.'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)
+    self.__duplicateWWN = YANGDynClass(base=duplicateWWN.duplicateWWN, is_container='container', presence=False, yang_name="duplicateWWN", rest_name="duplicateWWN", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -113,12 +113,12 @@ in a fabric.The below mentioned policies are supported.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=duplicateWWN.duplicateWWN, is_container='container', presence=False, yang_name="duplicateWWN", rest_name="duplicateWWN", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'info': u'Configure the DuplicateWWN login policy of a switch in fabric.'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=duplicateWWN.duplicateWWN, is_container='container', presence=False, yang_name="duplicateWWN", rest_name="duplicateWWN", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """duplicateWWN must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=duplicateWWN.duplicateWWN, is_container='container', presence=False, yang_name="duplicateWWN", rest_name="duplicateWWN", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'info': u'Configure the DuplicateWWN login policy of a switch in fabric.'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=duplicateWWN.duplicateWWN, is_container='container', presence=False, yang_name="duplicateWWN", rest_name="duplicateWWN", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)""",
         })
 
     self.__duplicateWWN = t
@@ -126,7 +126,7 @@ in a fabric.The below mentioned policies are supported.
       self._set()
 
   def _unset_duplicateWWN(self):
-    self.__duplicateWWN = YANGDynClass(base=duplicateWWN.duplicateWWN, is_container='container', presence=False, yang_name="duplicateWWN", rest_name="duplicateWWN", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'info': u'Configure the DuplicateWWN login policy of a switch in fabric.'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)
+    self.__duplicateWWN = YANGDynClass(base=duplicateWWN.duplicateWWN, is_container='container', presence=False, yang_name="duplicateWWN", rest_name="duplicateWWN", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)
 
   duplicateWWN = __builtin__.property(_get_duplicateWWN, _set_duplicateWWN)
 

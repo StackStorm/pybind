@@ -19,7 +19,7 @@ class port_group(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__port','__group',)
 
   _yang_name = 'port-group'
-  _rest_name = ''
+  _rest_name = 'port-group'
 
   _pybind_generated_by = 'container'
 
@@ -46,8 +46,8 @@ class port_group(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__group = YANGDynClass(base=YANGListType("group_id",group.group, yang_name="group", rest_name="group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='group-id', extensions={u'tailf-common': {u'info': u'Configure CPU QoS group parameters', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'callpoint': u'QosCpuGroupConfig', u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'alt-name': u'group'}}), is_container='list', yang_name="group", rest_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU QoS group parameters', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'callpoint': u'QosCpuGroupConfig', u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'alt-name': u'group'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='list', is_config=True)
-    self.__port = YANGDynClass(base=port.port, is_container='container', presence=False, yang_name="port", rest_name="port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU QoS port parameters', u'alt-name': u'port', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
+    self.__group = YANGDynClass(base=YANGListType("group_id",group.group, yang_name="group", rest_name="group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='group-id', extensions=None), is_container='list', yang_name="group", rest_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='list', is_config=True)
+    self.__port = YANGDynClass(base=port.port, is_container='container', presence=False, yang_name="port", rest_name="port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -83,7 +83,7 @@ class port_group(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'qos', u'cpu', u'slot']
+      return [u'qos', u'cpu', u'slot', u'port-group']
 
   def _get_port(self):
     """
@@ -102,12 +102,12 @@ class port_group(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=port.port, is_container='container', presence=False, yang_name="port", rest_name="port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU QoS port parameters', u'alt-name': u'port', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=port.port, is_container='container', presence=False, yang_name="port", rest_name="port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """port must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=port.port, is_container='container', presence=False, yang_name="port", rest_name="port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU QoS port parameters', u'alt-name': u'port', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=port.port, is_container='container', presence=False, yang_name="port", rest_name="port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)""",
         })
 
     self.__port = t
@@ -115,7 +115,7 @@ class port_group(PybindBase):
       self._set()
 
   def _unset_port(self):
-    self.__port = YANGDynClass(base=port.port, is_container='container', presence=False, yang_name="port", rest_name="port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU QoS port parameters', u'alt-name': u'port', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
+    self.__port = YANGDynClass(base=port.port, is_container='container', presence=False, yang_name="port", rest_name="port", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
 
 
   def _get_group(self):
@@ -135,12 +135,12 @@ class port_group(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("group_id",group.group, yang_name="group", rest_name="group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='group-id', extensions={u'tailf-common': {u'info': u'Configure CPU QoS group parameters', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'callpoint': u'QosCpuGroupConfig', u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'alt-name': u'group'}}), is_container='list', yang_name="group", rest_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU QoS group parameters', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'callpoint': u'QosCpuGroupConfig', u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'alt-name': u'group'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("group_id",group.group, yang_name="group", rest_name="group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='group-id', extensions=None), is_container='list', yang_name="group", rest_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """group must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("group_id",group.group, yang_name="group", rest_name="group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='group-id', extensions={u'tailf-common': {u'info': u'Configure CPU QoS group parameters', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'callpoint': u'QosCpuGroupConfig', u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'alt-name': u'group'}}), is_container='list', yang_name="group", rest_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU QoS group parameters', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'callpoint': u'QosCpuGroupConfig', u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'alt-name': u'group'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("group_id",group.group, yang_name="group", rest_name="group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='group-id', extensions=None), is_container='list', yang_name="group", rest_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='list', is_config=True)""",
         })
 
     self.__group = t
@@ -148,7 +148,7 @@ class port_group(PybindBase):
       self._set()
 
   def _unset_group(self):
-    self.__group = YANGDynClass(base=YANGListType("group_id",group.group, yang_name="group", rest_name="group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='group-id', extensions={u'tailf-common': {u'info': u'Configure CPU QoS group parameters', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'callpoint': u'QosCpuGroupConfig', u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'alt-name': u'group'}}), is_container='list', yang_name="group", rest_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU QoS group parameters', u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'callpoint': u'QosCpuGroupConfig', u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'alt-name': u'group'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='list', is_config=True)
+    self.__group = YANGDynClass(base=YANGListType("group_id",group.group, yang_name="group", rest_name="group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='group-id', extensions=None), is_container='list', yang_name="group", rest_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='list', is_config=True)
 
   port = __builtin__.property(_get_port, _set_port)
   group = __builtin__.property(_get_group, _set_group)

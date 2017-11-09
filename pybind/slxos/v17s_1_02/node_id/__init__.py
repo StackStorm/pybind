@@ -45,8 +45,8 @@ class node_id(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__cluster = YANGDynClass(base=cluster.cluster, is_container='container', presence=False, yang_name="cluster", rest_name="cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'cluster commands', u'cli-incomplete-command': None}}, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='container', is_config=True)
-    self.__node_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="node-id", rest_name="node-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None, u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-node', defining_module='brocade-node', yang_type='uint32', is_config=True)
+    self.__cluster = YANGDynClass(base=cluster.cluster, is_container='container', presence=False, yang_name="cluster", rest_name="cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='container', is_config=True)
+    self.__node_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="node-id", rest_name="node-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-node', defining_module='brocade-node', yang_type='uint32', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -106,12 +106,12 @@ class node_id(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="node-id", rest_name="node-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None, u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-node', defining_module='brocade-node', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="node-id", rest_name="node-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-node', defining_module='brocade-node', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """node_id must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="node-id", rest_name="node-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None, u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-node', defining_module='brocade-node', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="node-id", rest_name="node-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-node', defining_module='brocade-node', yang_type='uint32', is_config=True)""",
         })
 
     self.__node_id = t
@@ -119,7 +119,7 @@ class node_id(PybindBase):
       self._set()
 
   def _unset_node_id(self):
-    self.__node_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="node-id", rest_name="node-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None, u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-node', defining_module='brocade-node', yang_type='uint32', is_config=True)
+    self.__node_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="node-id", rest_name="node-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-node', defining_module='brocade-node', yang_type='uint32', is_config=True)
 
 
   def _get_cluster(self):
@@ -139,12 +139,12 @@ class node_id(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=cluster.cluster, is_container='container', presence=False, yang_name="cluster", rest_name="cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'cluster commands', u'cli-incomplete-command': None}}, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=cluster.cluster, is_container='container', presence=False, yang_name="cluster", rest_name="cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """cluster must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=cluster.cluster, is_container='container', presence=False, yang_name="cluster", rest_name="cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'cluster commands', u'cli-incomplete-command': None}}, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=cluster.cluster, is_container='container', presence=False, yang_name="cluster", rest_name="cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='container', is_config=True)""",
         })
 
     self.__cluster = t
@@ -152,7 +152,7 @@ class node_id(PybindBase):
       self._set()
 
   def _unset_cluster(self):
-    self.__cluster = YANGDynClass(base=cluster.cluster, is_container='container', presence=False, yang_name="cluster", rest_name="cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'cluster commands', u'cli-incomplete-command': None}}, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='container', is_config=True)
+    self.__cluster = YANGDynClass(base=cluster.cluster, is_container='container', presence=False, yang_name="cluster", rest_name="cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='container', is_config=True)
 
   node_id = __builtin__.property(_get_node_id, _set_node_id)
   cluster = __builtin__.property(_get_cluster, _set_cluster)

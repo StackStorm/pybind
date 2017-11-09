@@ -45,7 +45,7 @@ class evpn(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__evpn_instance = YANGDynClass(base=YANGListType("instance_name",evpn_instance.evpn_instance, yang_name="evpn-instance", rest_name="evpn-instance", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='instance-name', extensions={u'tailf-common': {u'info': u'Evpn instance config', u'callpoint': u'EvpnInstances', u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'cli-full-no': None}}), is_container='list', yang_name="evpn-instance", rest_name="evpn-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Evpn instance config', u'callpoint': u'EvpnInstances', u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
+    self.__evpn_instance = YANGDynClass(base=YANGListType("instance_name",evpn_instance.evpn_instance, yang_name="evpn-instance", rest_name="evpn-instance", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='instance-name', extensions=None), is_container='list', yang_name="evpn-instance", rest_name="evpn-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class evpn(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'evpn']
+      return [u'routing-system', u'evpn-config', u'evpn']
 
   def _get_evpn_instance(self):
     """
@@ -104,12 +104,12 @@ class evpn(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("instance_name",evpn_instance.evpn_instance, yang_name="evpn-instance", rest_name="evpn-instance", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='instance-name', extensions={u'tailf-common': {u'info': u'Evpn instance config', u'callpoint': u'EvpnInstances', u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'cli-full-no': None}}), is_container='list', yang_name="evpn-instance", rest_name="evpn-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Evpn instance config', u'callpoint': u'EvpnInstances', u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("instance_name",evpn_instance.evpn_instance, yang_name="evpn-instance", rest_name="evpn-instance", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='instance-name', extensions=None), is_container='list', yang_name="evpn-instance", rest_name="evpn-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """evpn_instance must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("instance_name",evpn_instance.evpn_instance, yang_name="evpn-instance", rest_name="evpn-instance", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='instance-name', extensions={u'tailf-common': {u'info': u'Evpn instance config', u'callpoint': u'EvpnInstances', u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'cli-full-no': None}}), is_container='list', yang_name="evpn-instance", rest_name="evpn-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Evpn instance config', u'callpoint': u'EvpnInstances', u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("instance_name",evpn_instance.evpn_instance, yang_name="evpn-instance", rest_name="evpn-instance", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='instance-name', extensions=None), is_container='list', yang_name="evpn-instance", rest_name="evpn-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)""",
         })
 
     self.__evpn_instance = t
@@ -117,7 +117,7 @@ class evpn(PybindBase):
       self._set()
 
   def _unset_evpn_instance(self):
-    self.__evpn_instance = YANGDynClass(base=YANGListType("instance_name",evpn_instance.evpn_instance, yang_name="evpn-instance", rest_name="evpn-instance", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='instance-name', extensions={u'tailf-common': {u'info': u'Evpn instance config', u'callpoint': u'EvpnInstances', u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'cli-full-no': None}}), is_container='list', yang_name="evpn-instance", rest_name="evpn-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Evpn instance config', u'callpoint': u'EvpnInstances', u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
+    self.__evpn_instance = YANGDynClass(base=YANGListType("instance_name",evpn_instance.evpn_instance, yang_name="evpn-instance", rest_name="evpn-instance", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='instance-name', extensions=None), is_container='list', yang_name="evpn-instance", rest_name="evpn-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
 
   evpn_instance = __builtin__.property(_get_evpn_instance, _set_evpn_instance)
 

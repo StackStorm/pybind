@@ -17,7 +17,7 @@ class secondary_path(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__secpath_name','__secpath_standby','__secpath_bfd','__secpath_cspf','__secpath_ipmtu','__lsp_adaptive','__lsp_reoptimize_timer','__lsp_commit','__lsp_record','__lsp_cos','__lsp_hop_limit','__lsp_cspf_computation_mode','__lsp_traffic_engineering','__priority','__lsp_exclude_any','__lsp_include_any','__lsp_include_all','__secpath_soft_preemption','__lsp_secpath_auto_bandwidth',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__secpath_name','__secpath_standby','__secpath_cspf','__secpath_ipmtu','__lsp_adaptive','__lsp_reoptimize_timer','__lsp_commit','__lsp_record','__lsp_cos','__lsp_hop_limit','__lsp_cspf_computation_mode','__lsp_traffic_engineering','__priority','__lsp_exclude_any','__lsp_include_any','__lsp_include_all','__secpath_soft_preemption','__lsp_secpath_auto_bandwidth',)
 
   _yang_name = 'secondary-path'
   _rest_name = 'secondary-path'
@@ -47,25 +47,24 @@ class secondary_path(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__priority = YANGDynClass(base=priority.priority, is_container='container', presence=False, yang_name="priority", rest_name="priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'LSP setup and holding priority levels', u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
-    self.__secpath_standby = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="secpath-standby", rest_name="standby", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Make secondary-path hot standby', u'alt-name': u'standby'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
-    self.__lsp_secpath_auto_bandwidth = YANGDynClass(base=lsp_secpath_auto_bandwidth.lsp_secpath_auto_bandwidth, is_container='container', presence=True, yang_name="lsp-secpath-auto-bandwidth", rest_name="autobw", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable Auto-bandwidth on secondary path', u'cli-full-no': None, u'callpoint': u'MplsLspSecPathAutoBandwidth', u'cli-full-command': None, u'cli-add-mode': None, u'alt-name': u'autobw', u'cli-mode-name': u'config-router-mpls-lsp-$(../../lsp-name)-secpath-$(../secpath-name)-autobw'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
-    self.__lsp_cos = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..7']}), is_leaf=True, yang_name="lsp-cos", rest_name="cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure class of service', u'cli-full-no': None, u'alt-name': u'cos'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
-    self.__lsp_include_all = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..256']})), is_leaf=False, yang_name="lsp-include-all", rest_name="include-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Include all of the administrative groups', u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-flat-list-syntax': None, u'alt-name': u'include-all'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
-    self.__lsp_hop_limit = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'0..255']}), is_leaf=True, yang_name="lsp-hop-limit", rest_name="hop-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Limit of hops the LSP can traverse', u'cli-full-no': None, u'alt-name': u'hop-limit'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint16', is_config=True)
-    self.__lsp_cspf_computation_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'use-igp-metric': {'value': 1}, u'use-te-metric': {'value': 2}},), is_leaf=True, yang_name="lsp-cspf-computation-mode", rest_name="cspf-computation-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Specify cspf-computation-mode', u'cli-full-no': None, u'alt-name': u'cspf-computation-mode'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='cspf-computation-mode', is_config=True)
-    self.__lsp_reoptimize_timer = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'300..65535']}), is_leaf=True, yang_name="lsp-reoptimize-timer", rest_name="reoptimize-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure Reoptimization timer', u'cli-full-no': None, u'alt-name': u'reoptimize-timer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
-    self.__secpath_ipmtu = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'576..1526']}), is_leaf=True, yang_name="secpath-ipmtu", rest_name="ipmtu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'IP Packet Maximum Transmission Unit', u'cli-full-no': None, u'alt-name': u'ipmtu'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
-    self.__lsp_traffic_engineering = YANGDynClass(base=lsp_traffic_engineering.lsp_traffic_engineering, is_container='container', presence=False, yang_name="lsp-traffic-engineering", rest_name="traffic-engineering", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'LSP traffic engineering parameters', u'alt-name': u'traffic-engineering', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
-    self.__lsp_commit = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-commit", rest_name="commit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Commit the changes to adaptive LSP', u'alt-name': u'commit', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
-    self.__secpath_soft_preemption = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="secpath-soft-preemption", rest_name="soft-preemption", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set LSP soft preemption capability', u'cli-full-no': None, u'alt-name': u'soft-preemption'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
-    self.__lsp_include_any = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..256']})), is_leaf=False, yang_name="lsp-include-any", rest_name="include-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Include any of the administrative groups', u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-flat-list-syntax': None, u'alt-name': u'include-any'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
-    self.__secpath_bfd = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="secpath-bfd", rest_name="bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable bfd for secondary-path', u'hidden': u'full', u'alt-name': u'bfd'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
-    self.__secpath_cspf = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'disable': {'value': 0}},), is_leaf=True, yang_name="secpath-cspf", rest_name="cspf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable/Disable cspf', u'cli-full-no': None, u'alt-name': u'cspf'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enable-disable', is_config=True)
-    self.__lsp_exclude_any = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..256']})), is_leaf=False, yang_name="lsp-exclude-any", rest_name="exclude-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Exclude any of the administrative groups', u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-flat-list-syntax': None, u'alt-name': u'exclude-any'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
-    self.__secpath_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="secpath-name", rest_name="secpath-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set secondary explicit path'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
-    self.__lsp_record = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'disable': {'value': 0}},), is_leaf=True, yang_name="lsp-record", rest_name="record", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable/disable recording path routes', u'cli-full-no': None, u'alt-name': u'record'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enable-disable', is_config=True)
-    self.__lsp_adaptive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-adaptive", rest_name="adaptive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure LSP/secpath to be adaptive', u'cli-full-no': None, u'alt-name': u'adaptive'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__priority = YANGDynClass(base=priority.priority, is_container='container', presence=False, yang_name="priority", rest_name="priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__secpath_standby = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="secpath-standby", rest_name="secpath-standby", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__lsp_secpath_auto_bandwidth = YANGDynClass(base=lsp_secpath_auto_bandwidth.lsp_secpath_auto_bandwidth, is_container='container', presence=True, yang_name="lsp-secpath-auto-bandwidth", rest_name="lsp-secpath-auto-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__lsp_cos = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..7']}), is_leaf=True, yang_name="lsp-cos", rest_name="lsp-cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__lsp_include_all = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..256']})), is_leaf=False, yang_name="lsp-include-all", rest_name="lsp-include-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__lsp_hop_limit = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'0..255']}), is_leaf=True, yang_name="lsp-hop-limit", rest_name="lsp-hop-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint16', is_config=True)
+    self.__lsp_cspf_computation_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'use-igp-metric': {'value': 1}, u'use-te-metric': {'value': 2}},), is_leaf=True, yang_name="lsp-cspf-computation-mode", rest_name="lsp-cspf-computation-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='cspf-computation-mode', is_config=True)
+    self.__lsp_reoptimize_timer = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'300..65535']}), is_leaf=True, yang_name="lsp-reoptimize-timer", rest_name="lsp-reoptimize-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__secpath_ipmtu = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'576..1526']}), is_leaf=True, yang_name="secpath-ipmtu", rest_name="secpath-ipmtu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__lsp_traffic_engineering = YANGDynClass(base=lsp_traffic_engineering.lsp_traffic_engineering, is_container='container', presence=False, yang_name="lsp-traffic-engineering", rest_name="lsp-traffic-engineering", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__lsp_commit = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-commit", rest_name="lsp-commit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__secpath_soft_preemption = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="secpath-soft-preemption", rest_name="secpath-soft-preemption", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__lsp_include_any = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..256']})), is_leaf=False, yang_name="lsp-include-any", rest_name="lsp-include-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__secpath_cspf = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'disable': {'value': 0}},), is_leaf=True, yang_name="secpath-cspf", rest_name="secpath-cspf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enable-disable', is_config=True)
+    self.__lsp_exclude_any = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..256']})), is_leaf=False, yang_name="lsp-exclude-any", rest_name="lsp-exclude-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__secpath_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="secpath-name", rest_name="secpath-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__lsp_record = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'disable': {'value': 0}},), is_leaf=True, yang_name="lsp-record", rest_name="lsp-record", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enable-disable', is_config=True)
+    self.__lsp_adaptive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-adaptive", rest_name="lsp-adaptive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -101,7 +100,7 @@ class secondary_path(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'router', u'mpls', u'lsp', u'secondary-path']
+      return [u'mpls-config', u'router', u'mpls', u'mpls-cmds-holder', u'lsp', u'secondary-path']
 
   def _get_secpath_name(self):
     """
@@ -125,12 +124,12 @@ class secondary_path(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="secpath-name", rest_name="secpath-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set secondary explicit path'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="secpath-name", rest_name="secpath-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """secpath_name must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="secpath-name", rest_name="secpath-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set secondary explicit path'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="secpath-name", rest_name="secpath-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
         })
 
     self.__secpath_name = t
@@ -138,7 +137,7 @@ class secondary_path(PybindBase):
       self._set()
 
   def _unset_secpath_name(self):
-    self.__secpath_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="secpath-name", rest_name="secpath-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set secondary explicit path'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__secpath_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="secpath-name", rest_name="secpath-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
 
 
   def _get_secpath_standby(self):
@@ -158,12 +157,12 @@ class secondary_path(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="secpath-standby", rest_name="standby", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Make secondary-path hot standby', u'alt-name': u'standby'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="secpath-standby", rest_name="secpath-standby", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """secpath_standby must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="secpath-standby", rest_name="standby", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Make secondary-path hot standby', u'alt-name': u'standby'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="secpath-standby", rest_name="secpath-standby", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
         })
 
     self.__secpath_standby = t
@@ -171,40 +170,7 @@ class secondary_path(PybindBase):
       self._set()
 
   def _unset_secpath_standby(self):
-    self.__secpath_standby = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="secpath-standby", rest_name="standby", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Make secondary-path hot standby', u'alt-name': u'standby'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
-
-
-  def _get_secpath_bfd(self):
-    """
-    Getter method for secpath_bfd, mapped from YANG variable /mpls_config/router/mpls/mpls_cmds_holder/lsp/secondary_path/secpath_bfd (empty)
-    """
-    return self.__secpath_bfd
-      
-  def _set_secpath_bfd(self, v, load=False):
-    """
-    Setter method for secpath_bfd, mapped from YANG variable /mpls_config/router/mpls/mpls_cmds_holder/lsp/secondary_path/secpath_bfd (empty)
-    If this variable is read-only (config: false) in the
-    source YANG file, then _set_secpath_bfd is considered as a private
-    method. Backends looking to populate this variable should
-    do so via calling thisObj._set_secpath_bfd() directly.
-    """
-    if hasattr(v, "_utype"):
-      v = v._utype(v)
-    try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="secpath-bfd", rest_name="bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable bfd for secondary-path', u'hidden': u'full', u'alt-name': u'bfd'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
-    except (TypeError, ValueError):
-      raise ValueError({
-          'error-string': """secpath_bfd must be of a type compatible with empty""",
-          'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="secpath-bfd", rest_name="bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable bfd for secondary-path', u'hidden': u'full', u'alt-name': u'bfd'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
-        })
-
-    self.__secpath_bfd = t
-    if hasattr(self, '_set'):
-      self._set()
-
-  def _unset_secpath_bfd(self):
-    self.__secpath_bfd = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="secpath-bfd", rest_name="bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable bfd for secondary-path', u'hidden': u'full', u'alt-name': u'bfd'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__secpath_standby = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="secpath-standby", rest_name="secpath-standby", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
 
 
   def _get_secpath_cspf(self):
@@ -224,12 +190,12 @@ class secondary_path(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'disable': {'value': 0}},), is_leaf=True, yang_name="secpath-cspf", rest_name="cspf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable/Disable cspf', u'cli-full-no': None, u'alt-name': u'cspf'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enable-disable', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'disable': {'value': 0}},), is_leaf=True, yang_name="secpath-cspf", rest_name="secpath-cspf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enable-disable', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """secpath_cspf must be of a type compatible with enable-disable""",
           'defined-type': "brocade-mpls:enable-disable",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'disable': {'value': 0}},), is_leaf=True, yang_name="secpath-cspf", rest_name="cspf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable/Disable cspf', u'cli-full-no': None, u'alt-name': u'cspf'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enable-disable', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'disable': {'value': 0}},), is_leaf=True, yang_name="secpath-cspf", rest_name="secpath-cspf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enable-disable', is_config=True)""",
         })
 
     self.__secpath_cspf = t
@@ -237,7 +203,7 @@ class secondary_path(PybindBase):
       self._set()
 
   def _unset_secpath_cspf(self):
-    self.__secpath_cspf = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'disable': {'value': 0}},), is_leaf=True, yang_name="secpath-cspf", rest_name="cspf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable/Disable cspf', u'cli-full-no': None, u'alt-name': u'cspf'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enable-disable', is_config=True)
+    self.__secpath_cspf = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'disable': {'value': 0}},), is_leaf=True, yang_name="secpath-cspf", rest_name="secpath-cspf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enable-disable', is_config=True)
 
 
   def _get_secpath_ipmtu(self):
@@ -257,12 +223,12 @@ class secondary_path(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'576..1526']}), is_leaf=True, yang_name="secpath-ipmtu", rest_name="ipmtu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'IP Packet Maximum Transmission Unit', u'cli-full-no': None, u'alt-name': u'ipmtu'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'576..1526']}), is_leaf=True, yang_name="secpath-ipmtu", rest_name="secpath-ipmtu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """secpath_ipmtu must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'576..1526']}), is_leaf=True, yang_name="secpath-ipmtu", rest_name="ipmtu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'IP Packet Maximum Transmission Unit', u'cli-full-no': None, u'alt-name': u'ipmtu'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'576..1526']}), is_leaf=True, yang_name="secpath-ipmtu", rest_name="secpath-ipmtu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
         })
 
     self.__secpath_ipmtu = t
@@ -270,7 +236,7 @@ class secondary_path(PybindBase):
       self._set()
 
   def _unset_secpath_ipmtu(self):
-    self.__secpath_ipmtu = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'576..1526']}), is_leaf=True, yang_name="secpath-ipmtu", rest_name="ipmtu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'IP Packet Maximum Transmission Unit', u'cli-full-no': None, u'alt-name': u'ipmtu'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__secpath_ipmtu = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'576..1526']}), is_leaf=True, yang_name="secpath-ipmtu", rest_name="secpath-ipmtu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
 
 
   def _get_lsp_adaptive(self):
@@ -290,12 +256,12 @@ class secondary_path(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-adaptive", rest_name="adaptive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure LSP/secpath to be adaptive', u'cli-full-no': None, u'alt-name': u'adaptive'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-adaptive", rest_name="lsp-adaptive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_adaptive must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-adaptive", rest_name="adaptive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure LSP/secpath to be adaptive', u'cli-full-no': None, u'alt-name': u'adaptive'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-adaptive", rest_name="lsp-adaptive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
         })
 
     self.__lsp_adaptive = t
@@ -303,7 +269,7 @@ class secondary_path(PybindBase):
       self._set()
 
   def _unset_lsp_adaptive(self):
-    self.__lsp_adaptive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-adaptive", rest_name="adaptive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure LSP/secpath to be adaptive', u'cli-full-no': None, u'alt-name': u'adaptive'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__lsp_adaptive = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-adaptive", rest_name="lsp-adaptive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
 
 
   def _get_lsp_reoptimize_timer(self):
@@ -323,12 +289,12 @@ class secondary_path(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'300..65535']}), is_leaf=True, yang_name="lsp-reoptimize-timer", rest_name="reoptimize-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure Reoptimization timer', u'cli-full-no': None, u'alt-name': u'reoptimize-timer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'300..65535']}), is_leaf=True, yang_name="lsp-reoptimize-timer", rest_name="lsp-reoptimize-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_reoptimize_timer must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'300..65535']}), is_leaf=True, yang_name="lsp-reoptimize-timer", rest_name="reoptimize-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure Reoptimization timer', u'cli-full-no': None, u'alt-name': u'reoptimize-timer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'300..65535']}), is_leaf=True, yang_name="lsp-reoptimize-timer", rest_name="lsp-reoptimize-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
         })
 
     self.__lsp_reoptimize_timer = t
@@ -336,7 +302,7 @@ class secondary_path(PybindBase):
       self._set()
 
   def _unset_lsp_reoptimize_timer(self):
-    self.__lsp_reoptimize_timer = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'300..65535']}), is_leaf=True, yang_name="lsp-reoptimize-timer", rest_name="reoptimize-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure Reoptimization timer', u'cli-full-no': None, u'alt-name': u'reoptimize-timer'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__lsp_reoptimize_timer = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'300..65535']}), is_leaf=True, yang_name="lsp-reoptimize-timer", rest_name="lsp-reoptimize-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
 
 
   def _get_lsp_commit(self):
@@ -356,12 +322,12 @@ class secondary_path(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-commit", rest_name="commit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Commit the changes to adaptive LSP', u'alt-name': u'commit', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-commit", rest_name="lsp-commit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_commit must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-commit", rest_name="commit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Commit the changes to adaptive LSP', u'alt-name': u'commit', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-commit", rest_name="lsp-commit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
         })
 
     self.__lsp_commit = t
@@ -369,7 +335,7 @@ class secondary_path(PybindBase):
       self._set()
 
   def _unset_lsp_commit(self):
-    self.__lsp_commit = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-commit", rest_name="commit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Commit the changes to adaptive LSP', u'alt-name': u'commit', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__lsp_commit = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-commit", rest_name="lsp-commit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
 
 
   def _get_lsp_record(self):
@@ -389,12 +355,12 @@ class secondary_path(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'disable': {'value': 0}},), is_leaf=True, yang_name="lsp-record", rest_name="record", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable/disable recording path routes', u'cli-full-no': None, u'alt-name': u'record'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enable-disable', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'disable': {'value': 0}},), is_leaf=True, yang_name="lsp-record", rest_name="lsp-record", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enable-disable', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_record must be of a type compatible with enable-disable""",
           'defined-type': "brocade-mpls:enable-disable",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'disable': {'value': 0}},), is_leaf=True, yang_name="lsp-record", rest_name="record", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable/disable recording path routes', u'cli-full-no': None, u'alt-name': u'record'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enable-disable', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'disable': {'value': 0}},), is_leaf=True, yang_name="lsp-record", rest_name="lsp-record", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enable-disable', is_config=True)""",
         })
 
     self.__lsp_record = t
@@ -402,7 +368,7 @@ class secondary_path(PybindBase):
       self._set()
 
   def _unset_lsp_record(self):
-    self.__lsp_record = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'disable': {'value': 0}},), is_leaf=True, yang_name="lsp-record", rest_name="record", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable/disable recording path routes', u'cli-full-no': None, u'alt-name': u'record'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enable-disable', is_config=True)
+    self.__lsp_record = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'disable': {'value': 0}},), is_leaf=True, yang_name="lsp-record", rest_name="lsp-record", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enable-disable', is_config=True)
 
 
   def _get_lsp_cos(self):
@@ -422,12 +388,12 @@ class secondary_path(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..7']}), is_leaf=True, yang_name="lsp-cos", rest_name="cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure class of service', u'cli-full-no': None, u'alt-name': u'cos'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..7']}), is_leaf=True, yang_name="lsp-cos", rest_name="lsp-cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_cos must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..7']}), is_leaf=True, yang_name="lsp-cos", rest_name="cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure class of service', u'cli-full-no': None, u'alt-name': u'cos'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..7']}), is_leaf=True, yang_name="lsp-cos", rest_name="lsp-cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
         })
 
     self.__lsp_cos = t
@@ -435,7 +401,7 @@ class secondary_path(PybindBase):
       self._set()
 
   def _unset_lsp_cos(self):
-    self.__lsp_cos = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..7']}), is_leaf=True, yang_name="lsp-cos", rest_name="cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure class of service', u'cli-full-no': None, u'alt-name': u'cos'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__lsp_cos = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..7']}), is_leaf=True, yang_name="lsp-cos", rest_name="lsp-cos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
 
 
   def _get_lsp_hop_limit(self):
@@ -455,12 +421,12 @@ class secondary_path(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'0..255']}), is_leaf=True, yang_name="lsp-hop-limit", rest_name="hop-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Limit of hops the LSP can traverse', u'cli-full-no': None, u'alt-name': u'hop-limit'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint16', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'0..255']}), is_leaf=True, yang_name="lsp-hop-limit", rest_name="lsp-hop-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint16', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_hop_limit must be of a type compatible with uint16""",
           'defined-type': "uint16",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'0..255']}), is_leaf=True, yang_name="lsp-hop-limit", rest_name="hop-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Limit of hops the LSP can traverse', u'cli-full-no': None, u'alt-name': u'hop-limit'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint16', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'0..255']}), is_leaf=True, yang_name="lsp-hop-limit", rest_name="lsp-hop-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint16', is_config=True)""",
         })
 
     self.__lsp_hop_limit = t
@@ -468,7 +434,7 @@ class secondary_path(PybindBase):
       self._set()
 
   def _unset_lsp_hop_limit(self):
-    self.__lsp_hop_limit = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'0..255']}), is_leaf=True, yang_name="lsp-hop-limit", rest_name="hop-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Limit of hops the LSP can traverse', u'cli-full-no': None, u'alt-name': u'hop-limit'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint16', is_config=True)
+    self.__lsp_hop_limit = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'0..255']}), is_leaf=True, yang_name="lsp-hop-limit", rest_name="lsp-hop-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint16', is_config=True)
 
 
   def _get_lsp_cspf_computation_mode(self):
@@ -488,12 +454,12 @@ class secondary_path(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'use-igp-metric': {'value': 1}, u'use-te-metric': {'value': 2}},), is_leaf=True, yang_name="lsp-cspf-computation-mode", rest_name="cspf-computation-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Specify cspf-computation-mode', u'cli-full-no': None, u'alt-name': u'cspf-computation-mode'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='cspf-computation-mode', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'use-igp-metric': {'value': 1}, u'use-te-metric': {'value': 2}},), is_leaf=True, yang_name="lsp-cspf-computation-mode", rest_name="lsp-cspf-computation-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='cspf-computation-mode', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_cspf_computation_mode must be of a type compatible with cspf-computation-mode""",
           'defined-type': "brocade-mpls:cspf-computation-mode",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'use-igp-metric': {'value': 1}, u'use-te-metric': {'value': 2}},), is_leaf=True, yang_name="lsp-cspf-computation-mode", rest_name="cspf-computation-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Specify cspf-computation-mode', u'cli-full-no': None, u'alt-name': u'cspf-computation-mode'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='cspf-computation-mode', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'use-igp-metric': {'value': 1}, u'use-te-metric': {'value': 2}},), is_leaf=True, yang_name="lsp-cspf-computation-mode", rest_name="lsp-cspf-computation-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='cspf-computation-mode', is_config=True)""",
         })
 
     self.__lsp_cspf_computation_mode = t
@@ -501,7 +467,7 @@ class secondary_path(PybindBase):
       self._set()
 
   def _unset_lsp_cspf_computation_mode(self):
-    self.__lsp_cspf_computation_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'use-igp-metric': {'value': 1}, u'use-te-metric': {'value': 2}},), is_leaf=True, yang_name="lsp-cspf-computation-mode", rest_name="cspf-computation-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Specify cspf-computation-mode', u'cli-full-no': None, u'alt-name': u'cspf-computation-mode'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='cspf-computation-mode', is_config=True)
+    self.__lsp_cspf_computation_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'use-igp-metric': {'value': 1}, u'use-te-metric': {'value': 2}},), is_leaf=True, yang_name="lsp-cspf-computation-mode", rest_name="lsp-cspf-computation-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='cspf-computation-mode', is_config=True)
 
 
   def _get_lsp_traffic_engineering(self):
@@ -521,12 +487,12 @@ class secondary_path(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=lsp_traffic_engineering.lsp_traffic_engineering, is_container='container', presence=False, yang_name="lsp-traffic-engineering", rest_name="traffic-engineering", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'LSP traffic engineering parameters', u'alt-name': u'traffic-engineering', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=lsp_traffic_engineering.lsp_traffic_engineering, is_container='container', presence=False, yang_name="lsp-traffic-engineering", rest_name="lsp-traffic-engineering", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_traffic_engineering must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=lsp_traffic_engineering.lsp_traffic_engineering, is_container='container', presence=False, yang_name="lsp-traffic-engineering", rest_name="traffic-engineering", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'LSP traffic engineering parameters', u'alt-name': u'traffic-engineering', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=lsp_traffic_engineering.lsp_traffic_engineering, is_container='container', presence=False, yang_name="lsp-traffic-engineering", rest_name="lsp-traffic-engineering", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__lsp_traffic_engineering = t
@@ -534,7 +500,7 @@ class secondary_path(PybindBase):
       self._set()
 
   def _unset_lsp_traffic_engineering(self):
-    self.__lsp_traffic_engineering = YANGDynClass(base=lsp_traffic_engineering.lsp_traffic_engineering, is_container='container', presence=False, yang_name="lsp-traffic-engineering", rest_name="traffic-engineering", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'info': u'LSP traffic engineering parameters', u'alt-name': u'traffic-engineering', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__lsp_traffic_engineering = YANGDynClass(base=lsp_traffic_engineering.lsp_traffic_engineering, is_container='container', presence=False, yang_name="lsp-traffic-engineering", rest_name="lsp-traffic-engineering", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
 
   def _get_priority(self):
@@ -554,12 +520,12 @@ class secondary_path(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=priority.priority, is_container='container', presence=False, yang_name="priority", rest_name="priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'LSP setup and holding priority levels', u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=priority.priority, is_container='container', presence=False, yang_name="priority", rest_name="priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """priority must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=priority.priority, is_container='container', presence=False, yang_name="priority", rest_name="priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'LSP setup and holding priority levels', u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=priority.priority, is_container='container', presence=False, yang_name="priority", rest_name="priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__priority = t
@@ -567,7 +533,7 @@ class secondary_path(PybindBase):
       self._set()
 
   def _unset_priority(self):
-    self.__priority = YANGDynClass(base=priority.priority, is_container='container', presence=False, yang_name="priority", rest_name="priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'LSP setup and holding priority levels', u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__priority = YANGDynClass(base=priority.priority, is_container='container', presence=False, yang_name="priority", rest_name="priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
 
   def _get_lsp_exclude_any(self):
@@ -587,12 +553,12 @@ class secondary_path(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..256']})), is_leaf=False, yang_name="lsp-exclude-any", rest_name="exclude-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Exclude any of the administrative groups', u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-flat-list-syntax': None, u'alt-name': u'exclude-any'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..256']})), is_leaf=False, yang_name="lsp-exclude-any", rest_name="lsp-exclude-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_exclude_any must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..256']})), is_leaf=False, yang_name="lsp-exclude-any", rest_name="exclude-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Exclude any of the administrative groups', u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-flat-list-syntax': None, u'alt-name': u'exclude-any'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..256']})), is_leaf=False, yang_name="lsp-exclude-any", rest_name="lsp-exclude-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
         })
 
     self.__lsp_exclude_any = t
@@ -600,7 +566,7 @@ class secondary_path(PybindBase):
       self._set()
 
   def _unset_lsp_exclude_any(self):
-    self.__lsp_exclude_any = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..256']})), is_leaf=False, yang_name="lsp-exclude-any", rest_name="exclude-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Exclude any of the administrative groups', u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-flat-list-syntax': None, u'alt-name': u'exclude-any'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__lsp_exclude_any = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..256']})), is_leaf=False, yang_name="lsp-exclude-any", rest_name="lsp-exclude-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
 
 
   def _get_lsp_include_any(self):
@@ -620,12 +586,12 @@ class secondary_path(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..256']})), is_leaf=False, yang_name="lsp-include-any", rest_name="include-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Include any of the administrative groups', u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-flat-list-syntax': None, u'alt-name': u'include-any'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..256']})), is_leaf=False, yang_name="lsp-include-any", rest_name="lsp-include-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_include_any must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..256']})), is_leaf=False, yang_name="lsp-include-any", rest_name="include-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Include any of the administrative groups', u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-flat-list-syntax': None, u'alt-name': u'include-any'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..256']})), is_leaf=False, yang_name="lsp-include-any", rest_name="lsp-include-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
         })
 
     self.__lsp_include_any = t
@@ -633,7 +599,7 @@ class secondary_path(PybindBase):
       self._set()
 
   def _unset_lsp_include_any(self):
-    self.__lsp_include_any = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..256']})), is_leaf=False, yang_name="lsp-include-any", rest_name="include-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Include any of the administrative groups', u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-flat-list-syntax': None, u'alt-name': u'include-any'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__lsp_include_any = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..256']})), is_leaf=False, yang_name="lsp-include-any", rest_name="lsp-include-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
 
 
   def _get_lsp_include_all(self):
@@ -653,12 +619,12 @@ class secondary_path(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..256']})), is_leaf=False, yang_name="lsp-include-all", rest_name="include-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Include all of the administrative groups', u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-flat-list-syntax': None, u'alt-name': u'include-all'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..256']})), is_leaf=False, yang_name="lsp-include-all", rest_name="lsp-include-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_include_all must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..256']})), is_leaf=False, yang_name="lsp-include-all", rest_name="include-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Include all of the administrative groups', u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-flat-list-syntax': None, u'alt-name': u'include-all'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..256']})), is_leaf=False, yang_name="lsp-include-all", rest_name="lsp-include-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
         })
 
     self.__lsp_include_all = t
@@ -666,7 +632,7 @@ class secondary_path(PybindBase):
       self._set()
 
   def _unset_lsp_include_all(self):
-    self.__lsp_include_all = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..256']})), is_leaf=False, yang_name="lsp-include-all", rest_name="include-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Include all of the administrative groups', u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-full-command': None, u'cli-flat-list-syntax': None, u'alt-name': u'include-all'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__lsp_include_all = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..256']})), is_leaf=False, yang_name="lsp-include-all", rest_name="lsp-include-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
 
 
   def _get_secpath_soft_preemption(self):
@@ -686,12 +652,12 @@ class secondary_path(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="secpath-soft-preemption", rest_name="soft-preemption", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set LSP soft preemption capability', u'cli-full-no': None, u'alt-name': u'soft-preemption'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="secpath-soft-preemption", rest_name="secpath-soft-preemption", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """secpath_soft_preemption must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="secpath-soft-preemption", rest_name="soft-preemption", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set LSP soft preemption capability', u'cli-full-no': None, u'alt-name': u'soft-preemption'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="secpath-soft-preemption", rest_name="secpath-soft-preemption", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
         })
 
     self.__secpath_soft_preemption = t
@@ -699,7 +665,7 @@ class secondary_path(PybindBase):
       self._set()
 
   def _unset_secpath_soft_preemption(self):
-    self.__secpath_soft_preemption = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="secpath-soft-preemption", rest_name="soft-preemption", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set LSP soft preemption capability', u'cli-full-no': None, u'alt-name': u'soft-preemption'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__secpath_soft_preemption = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="secpath-soft-preemption", rest_name="secpath-soft-preemption", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
 
 
   def _get_lsp_secpath_auto_bandwidth(self):
@@ -719,12 +685,12 @@ class secondary_path(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=lsp_secpath_auto_bandwidth.lsp_secpath_auto_bandwidth, is_container='container', presence=True, yang_name="lsp-secpath-auto-bandwidth", rest_name="autobw", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable Auto-bandwidth on secondary path', u'cli-full-no': None, u'callpoint': u'MplsLspSecPathAutoBandwidth', u'cli-full-command': None, u'cli-add-mode': None, u'alt-name': u'autobw', u'cli-mode-name': u'config-router-mpls-lsp-$(../../lsp-name)-secpath-$(../secpath-name)-autobw'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=lsp_secpath_auto_bandwidth.lsp_secpath_auto_bandwidth, is_container='container', presence=True, yang_name="lsp-secpath-auto-bandwidth", rest_name="lsp-secpath-auto-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_secpath_auto_bandwidth must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=lsp_secpath_auto_bandwidth.lsp_secpath_auto_bandwidth, is_container='container', presence=True, yang_name="lsp-secpath-auto-bandwidth", rest_name="autobw", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable Auto-bandwidth on secondary path', u'cli-full-no': None, u'callpoint': u'MplsLspSecPathAutoBandwidth', u'cli-full-command': None, u'cli-add-mode': None, u'alt-name': u'autobw', u'cli-mode-name': u'config-router-mpls-lsp-$(../../lsp-name)-secpath-$(../secpath-name)-autobw'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=lsp_secpath_auto_bandwidth.lsp_secpath_auto_bandwidth, is_container='container', presence=True, yang_name="lsp-secpath-auto-bandwidth", rest_name="lsp-secpath-auto-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__lsp_secpath_auto_bandwidth = t
@@ -732,11 +698,10 @@ class secondary_path(PybindBase):
       self._set()
 
   def _unset_lsp_secpath_auto_bandwidth(self):
-    self.__lsp_secpath_auto_bandwidth = YANGDynClass(base=lsp_secpath_auto_bandwidth.lsp_secpath_auto_bandwidth, is_container='container', presence=True, yang_name="lsp-secpath-auto-bandwidth", rest_name="autobw", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable Auto-bandwidth on secondary path', u'cli-full-no': None, u'callpoint': u'MplsLspSecPathAutoBandwidth', u'cli-full-command': None, u'cli-add-mode': None, u'alt-name': u'autobw', u'cli-mode-name': u'config-router-mpls-lsp-$(../../lsp-name)-secpath-$(../secpath-name)-autobw'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__lsp_secpath_auto_bandwidth = YANGDynClass(base=lsp_secpath_auto_bandwidth.lsp_secpath_auto_bandwidth, is_container='container', presence=True, yang_name="lsp-secpath-auto-bandwidth", rest_name="lsp-secpath-auto-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
   secpath_name = __builtin__.property(_get_secpath_name, _set_secpath_name)
   secpath_standby = __builtin__.property(_get_secpath_standby, _set_secpath_standby)
-  secpath_bfd = __builtin__.property(_get_secpath_bfd, _set_secpath_bfd)
   secpath_cspf = __builtin__.property(_get_secpath_cspf, _set_secpath_cspf)
   secpath_ipmtu = __builtin__.property(_get_secpath_ipmtu, _set_secpath_ipmtu)
   lsp_adaptive = __builtin__.property(_get_lsp_adaptive, _set_lsp_adaptive)
@@ -755,6 +720,6 @@ class secondary_path(PybindBase):
   lsp_secpath_auto_bandwidth = __builtin__.property(_get_lsp_secpath_auto_bandwidth, _set_lsp_secpath_auto_bandwidth)
 
 
-  _pyangbind_elements = {'secpath_name': secpath_name, 'secpath_standby': secpath_standby, 'secpath_bfd': secpath_bfd, 'secpath_cspf': secpath_cspf, 'secpath_ipmtu': secpath_ipmtu, 'lsp_adaptive': lsp_adaptive, 'lsp_reoptimize_timer': lsp_reoptimize_timer, 'lsp_commit': lsp_commit, 'lsp_record': lsp_record, 'lsp_cos': lsp_cos, 'lsp_hop_limit': lsp_hop_limit, 'lsp_cspf_computation_mode': lsp_cspf_computation_mode, 'lsp_traffic_engineering': lsp_traffic_engineering, 'priority': priority, 'lsp_exclude_any': lsp_exclude_any, 'lsp_include_any': lsp_include_any, 'lsp_include_all': lsp_include_all, 'secpath_soft_preemption': secpath_soft_preemption, 'lsp_secpath_auto_bandwidth': lsp_secpath_auto_bandwidth, }
+  _pyangbind_elements = {'secpath_name': secpath_name, 'secpath_standby': secpath_standby, 'secpath_cspf': secpath_cspf, 'secpath_ipmtu': secpath_ipmtu, 'lsp_adaptive': lsp_adaptive, 'lsp_reoptimize_timer': lsp_reoptimize_timer, 'lsp_commit': lsp_commit, 'lsp_record': lsp_record, 'lsp_cos': lsp_cos, 'lsp_hop_limit': lsp_hop_limit, 'lsp_cspf_computation_mode': lsp_cspf_computation_mode, 'lsp_traffic_engineering': lsp_traffic_engineering, 'priority': priority, 'lsp_exclude_any': lsp_exclude_any, 'lsp_include_any': lsp_include_any, 'lsp_include_all': lsp_include_all, 'secpath_soft_preemption': secpath_soft_preemption, 'lsp_secpath_auto_bandwidth': lsp_secpath_auto_bandwidth, }
 
 

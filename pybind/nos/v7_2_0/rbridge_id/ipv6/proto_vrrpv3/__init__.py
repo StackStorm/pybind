@@ -44,8 +44,8 @@ class proto_vrrpv3(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__vrrp = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vrrp", rest_name="vrrp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Virtual Router Redundacy Protocol IPv6 (VRRPv3)'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)
-    self.__vrrp_extended = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vrrp-extended", rest_name="vrrp-extended", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Virtual Router Redundacy Protocol IPv6 Extended (VRRPv3-E)'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)
+    self.__vrrp = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vrrp", rest_name="vrrp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)
+    self.__vrrp_extended = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vrrp-extended", rest_name="vrrp-extended", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -104,12 +104,12 @@ class proto_vrrpv3(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="vrrp", rest_name="vrrp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Virtual Router Redundacy Protocol IPv6 (VRRPv3)'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="vrrp", rest_name="vrrp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vrrp must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vrrp", rest_name="vrrp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Virtual Router Redundacy Protocol IPv6 (VRRPv3)'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vrrp", rest_name="vrrp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)""",
         })
 
     self.__vrrp = t
@@ -117,7 +117,7 @@ class proto_vrrpv3(PybindBase):
       self._set()
 
   def _unset_vrrp(self):
-    self.__vrrp = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vrrp", rest_name="vrrp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Virtual Router Redundacy Protocol IPv6 (VRRPv3)'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)
+    self.__vrrp = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vrrp", rest_name="vrrp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)
 
 
   def _get_vrrp_extended(self):
@@ -141,12 +141,12 @@ class proto_vrrpv3(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="vrrp-extended", rest_name="vrrp-extended", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Virtual Router Redundacy Protocol IPv6 Extended (VRRPv3-E)'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="vrrp-extended", rest_name="vrrp-extended", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vrrp_extended must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vrrp-extended", rest_name="vrrp-extended", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Virtual Router Redundacy Protocol IPv6 Extended (VRRPv3-E)'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vrrp-extended", rest_name="vrrp-extended", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)""",
         })
 
     self.__vrrp_extended = t
@@ -154,7 +154,7 @@ class proto_vrrpv3(PybindBase):
       self._set()
 
   def _unset_vrrp_extended(self):
-    self.__vrrp_extended = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vrrp-extended", rest_name="vrrp-extended", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Virtual Router Redundacy Protocol IPv6 Extended (VRRPv3-E)'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)
+    self.__vrrp_extended = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vrrp-extended", rest_name="vrrp-extended", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)
 
   vrrp = __builtin__.property(_get_vrrp, _set_vrrp)
   vrrp_extended = __builtin__.property(_get_vrrp_extended, _set_vrrp_extended)

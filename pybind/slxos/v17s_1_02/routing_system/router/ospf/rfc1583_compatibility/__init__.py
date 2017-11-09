@@ -44,7 +44,7 @@ class rfc1583_compatibility(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__rfc1583_compatibility_flag = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rfc1583-compatibility-flag", rest_name="rfc1583-compatibility-flag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable RFC 1583 OSPF v2 compatibility', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
+    self.__rfc1583_compatibility_flag = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rfc1583-compatibility-flag", rest_name="rfc1583-compatibility-flag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -80,7 +80,7 @@ class rfc1583_compatibility(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'router', u'ospf', u'rfc1583-compatibility']
+      return [u'routing-system', u'router', u'ospf', u'rfc1583-compatibility']
 
   def _get_rfc1583_compatibility_flag(self):
     """
@@ -99,12 +99,12 @@ class rfc1583_compatibility(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="rfc1583-compatibility-flag", rest_name="rfc1583-compatibility-flag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable RFC 1583 OSPF v2 compatibility', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="rfc1583-compatibility-flag", rest_name="rfc1583-compatibility-flag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rfc1583_compatibility_flag must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rfc1583-compatibility-flag", rest_name="rfc1583-compatibility-flag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable RFC 1583 OSPF v2 compatibility', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rfc1583-compatibility-flag", rest_name="rfc1583-compatibility-flag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)""",
         })
 
     self.__rfc1583_compatibility_flag = t
@@ -112,7 +112,7 @@ class rfc1583_compatibility(PybindBase):
       self._set()
 
   def _unset_rfc1583_compatibility_flag(self):
-    self.__rfc1583_compatibility_flag = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rfc1583-compatibility-flag", rest_name="rfc1583-compatibility-flag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable RFC 1583 OSPF v2 compatibility', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
+    self.__rfc1583_compatibility_flag = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="rfc1583-compatibility-flag", rest_name="rfc1583-compatibility-flag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
 
   rfc1583_compatibility_flag = __builtin__.property(_get_rfc1583_compatibility_flag, _set_rfc1583_compatibility_flag)
 

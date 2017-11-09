@@ -17,7 +17,7 @@ class bd_add(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__bd_range_add','__bd_range_remove',)
 
   _yang_name = 'bd-add'
-  _rest_name = ''
+  _rest_name = 'bd-add'
 
   _pybind_generated_by = 'container'
 
@@ -44,8 +44,8 @@ class bd_add(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__bd_range_add = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9]+(-[0-9]+)?(,[0-9]+(-[0-9]+)?)*'}), is_leaf=True, yang_name="bd-range-add", rest_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Add bridge domains to the EVPN Instance.', u'alt-name': u'add', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='tunnels:bridge-domain-id-range-type', is_config=True)
-    self.__bd_range_remove = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9]+(-[0-9]+)?(,[0-9]+(-[0-9]+)?)*'}), is_leaf=True, yang_name="bd-range-remove", rest_name="remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Remove bridge domains to the EVPN Instance.', u'alt-name': u'remove', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='tunnels:bridge-domain-id-range-type', is_config=True)
+    self.__bd_range_add = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9]+(-[0-9]+)?(,[0-9]+(-[0-9]+)?)*'}), is_leaf=True, yang_name="bd-range-add", rest_name="bd-range-add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='tunnels:bridge-domain-id-range-type', is_config=True)
+    self.__bd_range_remove = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9]+(-[0-9]+)?(,[0-9]+(-[0-9]+)?)*'}), is_leaf=True, yang_name="bd-range-remove", rest_name="bd-range-remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='tunnels:bridge-domain-id-range-type', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class bd_add(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'evpn', u'evpn-instance', u'bridge-domain']
+      return [u'routing-system', u'evpn-config', u'evpn', u'evpn-instance', u'bridge-domain', u'bd-add']
 
   def _get_bd_range_add(self):
     """
@@ -104,12 +104,12 @@ class bd_add(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9]+(-[0-9]+)?(,[0-9]+(-[0-9]+)?)*'}), is_leaf=True, yang_name="bd-range-add", rest_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Add bridge domains to the EVPN Instance.', u'alt-name': u'add', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='tunnels:bridge-domain-id-range-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9]+(-[0-9]+)?(,[0-9]+(-[0-9]+)?)*'}), is_leaf=True, yang_name="bd-range-add", rest_name="bd-range-add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='tunnels:bridge-domain-id-range-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bd_range_add must be of a type compatible with tunnels:bridge-domain-id-range-type""",
           'defined-type': "tunnels:bridge-domain-id-range-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9]+(-[0-9]+)?(,[0-9]+(-[0-9]+)?)*'}), is_leaf=True, yang_name="bd-range-add", rest_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Add bridge domains to the EVPN Instance.', u'alt-name': u'add', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='tunnels:bridge-domain-id-range-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9]+(-[0-9]+)?(,[0-9]+(-[0-9]+)?)*'}), is_leaf=True, yang_name="bd-range-add", rest_name="bd-range-add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='tunnels:bridge-domain-id-range-type', is_config=True)""",
         })
 
     self.__bd_range_add = t
@@ -117,7 +117,7 @@ class bd_add(PybindBase):
       self._set()
 
   def _unset_bd_range_add(self):
-    self.__bd_range_add = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9]+(-[0-9]+)?(,[0-9]+(-[0-9]+)?)*'}), is_leaf=True, yang_name="bd-range-add", rest_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Add bridge domains to the EVPN Instance.', u'alt-name': u'add', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='tunnels:bridge-domain-id-range-type', is_config=True)
+    self.__bd_range_add = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9]+(-[0-9]+)?(,[0-9]+(-[0-9]+)?)*'}), is_leaf=True, yang_name="bd-range-add", rest_name="bd-range-add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='tunnels:bridge-domain-id-range-type', is_config=True)
 
 
   def _get_bd_range_remove(self):
@@ -141,12 +141,12 @@ class bd_add(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9]+(-[0-9]+)?(,[0-9]+(-[0-9]+)?)*'}), is_leaf=True, yang_name="bd-range-remove", rest_name="remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Remove bridge domains to the EVPN Instance.', u'alt-name': u'remove', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='tunnels:bridge-domain-id-range-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9]+(-[0-9]+)?(,[0-9]+(-[0-9]+)?)*'}), is_leaf=True, yang_name="bd-range-remove", rest_name="bd-range-remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='tunnels:bridge-domain-id-range-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bd_range_remove must be of a type compatible with tunnels:bridge-domain-id-range-type""",
           'defined-type': "tunnels:bridge-domain-id-range-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9]+(-[0-9]+)?(,[0-9]+(-[0-9]+)?)*'}), is_leaf=True, yang_name="bd-range-remove", rest_name="remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Remove bridge domains to the EVPN Instance.', u'alt-name': u'remove', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='tunnels:bridge-domain-id-range-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9]+(-[0-9]+)?(,[0-9]+(-[0-9]+)?)*'}), is_leaf=True, yang_name="bd-range-remove", rest_name="bd-range-remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='tunnels:bridge-domain-id-range-type', is_config=True)""",
         })
 
     self.__bd_range_remove = t
@@ -154,7 +154,7 @@ class bd_add(PybindBase):
       self._set()
 
   def _unset_bd_range_remove(self):
-    self.__bd_range_remove = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9]+(-[0-9]+)?(,[0-9]+(-[0-9]+)?)*'}), is_leaf=True, yang_name="bd-range-remove", rest_name="remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Remove bridge domains to the EVPN Instance.', u'alt-name': u'remove', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='tunnels:bridge-domain-id-range-type', is_config=True)
+    self.__bd_range_remove = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9]+(-[0-9]+)?(,[0-9]+(-[0-9]+)?)*'}), is_leaf=True, yang_name="bd-range-remove", rest_name="bd-range-remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='tunnels:bridge-domain-id-range-type', is_config=True)
 
   bd_range_add = __builtin__.property(_get_bd_range_add, _set_bd_range_add)
   bd_range_remove = __builtin__.property(_get_bd_range_remove, _set_bd_range_remove)

@@ -66,11 +66,11 @@ ISL   - Inter switch Link.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__get_ip_interface = YANGDynClass(base=get_ip_interface.get_ip_interface, is_leaf=True, yang_name="get-ip-interface", rest_name="get-ip-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getinterfaceall-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)
-    self.__get_media_detail = YANGDynClass(base=get_media_detail.get_media_detail, is_leaf=True, yang_name="get-media-detail", rest_name="get-media-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getmediaport-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)
-    self.__get_interface_switchport = YANGDynClass(base=get_interface_switchport.get_interface_switchport, is_leaf=True, yang_name="get-interface-switchport", rest_name="get-interface-switchport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getinterfaceall-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)
-    self.__get_vlan_brief = YANGDynClass(base=get_vlan_brief.get_vlan_brief, is_leaf=True, yang_name="get-vlan-brief", rest_name="get-vlan-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getinterfaceall-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)
-    self.__get_interface_detail = YANGDynClass(base=get_interface_detail.get_interface_detail, is_leaf=True, yang_name="get-interface-detail", rest_name="get-interface-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getinterfaceall-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)
+    self.__get_ip_interface = YANGDynClass(base=get_ip_interface.get_ip_interface, is_leaf=True, yang_name="get-ip-interface", rest_name="get-ip-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)
+    self.__get_media_detail = YANGDynClass(base=get_media_detail.get_media_detail, is_leaf=True, yang_name="get-media-detail", rest_name="get-media-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)
+    self.__get_interface_switchport = YANGDynClass(base=get_interface_switchport.get_interface_switchport, is_leaf=True, yang_name="get-interface-switchport", rest_name="get-interface-switchport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)
+    self.__get_vlan_brief = YANGDynClass(base=get_vlan_brief.get_vlan_brief, is_leaf=True, yang_name="get-vlan-brief", rest_name="get-vlan-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)
+    self.__get_interface_detail = YANGDynClass(base=get_interface_detail.get_interface_detail, is_leaf=True, yang_name="get-interface-detail", rest_name="get-interface-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -153,12 +153,12 @@ record, if exists, will be fetched.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=get_vlan_brief.get_vlan_brief, is_leaf=True, yang_name="get-vlan-brief", rest_name="get-vlan-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getinterfaceall-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_vlan_brief.get_vlan_brief, is_leaf=True, yang_name="get-vlan-brief", rest_name="get-vlan-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_vlan_brief must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_vlan_brief.get_vlan_brief, is_leaf=True, yang_name="get-vlan-brief", rest_name="get-vlan-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getinterfaceall-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_vlan_brief.get_vlan_brief, is_leaf=True, yang_name="get-vlan-brief", rest_name="get-vlan-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_vlan_brief = t
@@ -166,7 +166,7 @@ record, if exists, will be fetched.
       self._set()
 
   def _unset_get_vlan_brief(self):
-    self.__get_vlan_brief = YANGDynClass(base=get_vlan_brief.get_vlan_brief, is_leaf=True, yang_name="get-vlan-brief", rest_name="get-vlan-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getinterfaceall-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)
+    self.__get_vlan_brief = YANGDynClass(base=get_vlan_brief.get_vlan_brief, is_leaf=True, yang_name="get-vlan-brief", rest_name="get-vlan-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)
 
 
   def _get_get_interface_switchport(self):
@@ -194,12 +194,12 @@ device.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=get_interface_switchport.get_interface_switchport, is_leaf=True, yang_name="get-interface-switchport", rest_name="get-interface-switchport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getinterfaceall-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_interface_switchport.get_interface_switchport, is_leaf=True, yang_name="get-interface-switchport", rest_name="get-interface-switchport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_interface_switchport must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_interface_switchport.get_interface_switchport, is_leaf=True, yang_name="get-interface-switchport", rest_name="get-interface-switchport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getinterfaceall-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_interface_switchport.get_interface_switchport, is_leaf=True, yang_name="get-interface-switchport", rest_name="get-interface-switchport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_interface_switchport = t
@@ -207,7 +207,7 @@ device.
       self._set()
 
   def _unset_get_interface_switchport(self):
-    self.__get_interface_switchport = YANGDynClass(base=get_interface_switchport.get_interface_switchport, is_leaf=True, yang_name="get-interface-switchport", rest_name="get-interface-switchport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getinterfaceall-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)
+    self.__get_interface_switchport = YANGDynClass(base=get_interface_switchport.get_interface_switchport, is_leaf=True, yang_name="get-interface-switchport", rest_name="get-interface-switchport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)
 
 
   def _get_get_ip_interface(self):
@@ -237,12 +237,12 @@ particular managed entity cannot be given
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=get_ip_interface.get_ip_interface, is_leaf=True, yang_name="get-ip-interface", rest_name="get-ip-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getinterfaceall-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_ip_interface.get_ip_interface, is_leaf=True, yang_name="get-ip-interface", rest_name="get-ip-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_ip_interface must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_ip_interface.get_ip_interface, is_leaf=True, yang_name="get-ip-interface", rest_name="get-ip-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getinterfaceall-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_ip_interface.get_ip_interface, is_leaf=True, yang_name="get-ip-interface", rest_name="get-ip-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_ip_interface = t
@@ -250,7 +250,7 @@ particular managed entity cannot be given
       self._set()
 
   def _unset_get_ip_interface(self):
-    self.__get_ip_interface = YANGDynClass(base=get_ip_interface.get_ip_interface, is_leaf=True, yang_name="get-ip-interface", rest_name="get-ip-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getinterfaceall-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)
+    self.__get_ip_interface = YANGDynClass(base=get_ip_interface.get_ip_interface, is_leaf=True, yang_name="get-ip-interface", rest_name="get-ip-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)
 
 
   def _get_get_interface_detail(self):
@@ -282,12 +282,12 @@ a network interface is considered to be an interface.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=get_interface_detail.get_interface_detail, is_leaf=True, yang_name="get-interface-detail", rest_name="get-interface-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getinterfaceall-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_interface_detail.get_interface_detail, is_leaf=True, yang_name="get-interface-detail", rest_name="get-interface-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_interface_detail must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_interface_detail.get_interface_detail, is_leaf=True, yang_name="get-interface-detail", rest_name="get-interface-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getinterfaceall-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_interface_detail.get_interface_detail, is_leaf=True, yang_name="get-interface-detail", rest_name="get-interface-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_interface_detail = t
@@ -295,7 +295,7 @@ a network interface is considered to be an interface.
       self._set()
 
   def _unset_get_interface_detail(self):
-    self.__get_interface_detail = YANGDynClass(base=get_interface_detail.get_interface_detail, is_leaf=True, yang_name="get-interface-detail", rest_name="get-interface-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getinterfaceall-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)
+    self.__get_interface_detail = YANGDynClass(base=get_interface_detail.get_interface_detail, is_leaf=True, yang_name="get-interface-detail", rest_name="get-interface-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)
 
 
   def _get_get_media_detail(self):
@@ -321,12 +321,12 @@ properities of all the interfaces of the managed entity.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=get_media_detail.get_media_detail, is_leaf=True, yang_name="get-media-detail", rest_name="get-media-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getmediaport-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_media_detail.get_media_detail, is_leaf=True, yang_name="get-media-detail", rest_name="get-media-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_media_detail must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_media_detail.get_media_detail, is_leaf=True, yang_name="get-media-detail", rest_name="get-media-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getmediaport-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_media_detail.get_media_detail, is_leaf=True, yang_name="get-media-detail", rest_name="get-media-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_media_detail = t
@@ -334,7 +334,7 @@ properities of all the interfaces of the managed entity.
       self._set()
 
   def _unset_get_media_detail(self):
-    self.__get_media_detail = YANGDynClass(base=get_media_detail.get_media_detail, is_leaf=True, yang_name="get-media-detail", rest_name="get-media-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'getmediaport-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)
+    self.__get_media_detail = YANGDynClass(base=get_media_detail.get_media_detail, is_leaf=True, yang_name="get-media-detail", rest_name="get-media-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface-ext', defining_module='brocade-interface-ext', yang_type='rpc', is_config=True)
 
   get_vlan_brief = __builtin__.property(_get_get_vlan_brief, _set_get_vlan_brief)
   get_interface_switchport = __builtin__.property(_get_get_interface_switchport, _set_get_interface_switchport)

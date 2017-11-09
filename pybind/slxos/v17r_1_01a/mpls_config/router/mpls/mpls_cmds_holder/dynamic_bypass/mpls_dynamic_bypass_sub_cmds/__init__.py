@@ -17,7 +17,7 @@ class mpls_dynamic_bypass_sub_cmds(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__dynamic_bypass_max_bypasses','__dynamic_bypass_max_bypasses_per_mp','__dynamic_bypass_enable_all_interfaces','__dynamic_bypass_reoptimize_timer','__dynamic_bypass_disable',)
 
   _yang_name = 'mpls-dynamic-bypass-sub-cmds'
-  _rest_name = ''
+  _rest_name = 'mpls-dynamic-bypass-sub-cmds'
 
   _pybind_generated_by = 'container'
 
@@ -44,11 +44,11 @@ class mpls_dynamic_bypass_sub_cmds(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__dynamic_bypass_disable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dynamic-bypass-disable", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable or disable dynamic bypass', u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
-    self.__dynamic_bypass_max_bypasses = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..500']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(250), is_leaf=True, yang_name="dynamic-bypass-max-bypasses", rest_name="max-bypasses", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Router level maximum number of dynamic bypasses', u'alt-name': u'max-bypasses', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
-    self.__dynamic_bypass_reoptimize_timer = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'300..65535']}), is_leaf=True, yang_name="dynamic-bypass-reoptimize-timer", rest_name="reoptimize-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Router level reoptimer timer value for dynamic bypasses', u'alt-name': u'reoptimize-timer', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
-    self.__dynamic_bypass_max_bypasses_per_mp = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..500']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(250), is_leaf=True, yang_name="dynamic-bypass-max-bypasses-per-mp", rest_name="max-bypasses-per-mp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Router level maximum number of dynamic bypasses per merge point', u'alt-name': u'max-bypasses-per-mp', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
-    self.__dynamic_bypass_enable_all_interfaces = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dynamic-bypass-enable-all-interfaces", rest_name="enable-all-interfaces", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'enable dynamic bypass on all mpls interfaces', u'alt-name': u'enable-all-interfaces', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__dynamic_bypass_disable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dynamic-bypass-disable", rest_name="dynamic-bypass-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__dynamic_bypass_max_bypasses = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..500']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(250), is_leaf=True, yang_name="dynamic-bypass-max-bypasses", rest_name="dynamic-bypass-max-bypasses", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__dynamic_bypass_reoptimize_timer = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'300..65535']}), is_leaf=True, yang_name="dynamic-bypass-reoptimize-timer", rest_name="dynamic-bypass-reoptimize-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__dynamic_bypass_max_bypasses_per_mp = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..500']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(250), is_leaf=True, yang_name="dynamic-bypass-max-bypasses-per-mp", rest_name="dynamic-bypass-max-bypasses-per-mp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__dynamic_bypass_enable_all_interfaces = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dynamic-bypass-enable-all-interfaces", rest_name="dynamic-bypass-enable-all-interfaces", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -84,7 +84,7 @@ class mpls_dynamic_bypass_sub_cmds(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'router', u'mpls', u'dynamic-bypass']
+      return [u'mpls-config', u'router', u'mpls', u'mpls-cmds-holder', u'dynamic-bypass', u'mpls-dynamic-bypass-sub-cmds']
 
   def _get_dynamic_bypass_max_bypasses(self):
     """
@@ -103,12 +103,12 @@ class mpls_dynamic_bypass_sub_cmds(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..500']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(250), is_leaf=True, yang_name="dynamic-bypass-max-bypasses", rest_name="max-bypasses", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Router level maximum number of dynamic bypasses', u'alt-name': u'max-bypasses', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..500']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(250), is_leaf=True, yang_name="dynamic-bypass-max-bypasses", rest_name="dynamic-bypass-max-bypasses", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dynamic_bypass_max_bypasses must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..500']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(250), is_leaf=True, yang_name="dynamic-bypass-max-bypasses", rest_name="max-bypasses", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Router level maximum number of dynamic bypasses', u'alt-name': u'max-bypasses', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..500']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(250), is_leaf=True, yang_name="dynamic-bypass-max-bypasses", rest_name="dynamic-bypass-max-bypasses", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
         })
 
     self.__dynamic_bypass_max_bypasses = t
@@ -116,7 +116,7 @@ class mpls_dynamic_bypass_sub_cmds(PybindBase):
       self._set()
 
   def _unset_dynamic_bypass_max_bypasses(self):
-    self.__dynamic_bypass_max_bypasses = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..500']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(250), is_leaf=True, yang_name="dynamic-bypass-max-bypasses", rest_name="max-bypasses", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Router level maximum number of dynamic bypasses', u'alt-name': u'max-bypasses', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__dynamic_bypass_max_bypasses = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..500']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(250), is_leaf=True, yang_name="dynamic-bypass-max-bypasses", rest_name="dynamic-bypass-max-bypasses", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
 
 
   def _get_dynamic_bypass_max_bypasses_per_mp(self):
@@ -136,12 +136,12 @@ class mpls_dynamic_bypass_sub_cmds(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..500']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(250), is_leaf=True, yang_name="dynamic-bypass-max-bypasses-per-mp", rest_name="max-bypasses-per-mp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Router level maximum number of dynamic bypasses per merge point', u'alt-name': u'max-bypasses-per-mp', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..500']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(250), is_leaf=True, yang_name="dynamic-bypass-max-bypasses-per-mp", rest_name="dynamic-bypass-max-bypasses-per-mp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dynamic_bypass_max_bypasses_per_mp must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..500']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(250), is_leaf=True, yang_name="dynamic-bypass-max-bypasses-per-mp", rest_name="max-bypasses-per-mp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Router level maximum number of dynamic bypasses per merge point', u'alt-name': u'max-bypasses-per-mp', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..500']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(250), is_leaf=True, yang_name="dynamic-bypass-max-bypasses-per-mp", rest_name="dynamic-bypass-max-bypasses-per-mp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
         })
 
     self.__dynamic_bypass_max_bypasses_per_mp = t
@@ -149,7 +149,7 @@ class mpls_dynamic_bypass_sub_cmds(PybindBase):
       self._set()
 
   def _unset_dynamic_bypass_max_bypasses_per_mp(self):
-    self.__dynamic_bypass_max_bypasses_per_mp = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..500']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(250), is_leaf=True, yang_name="dynamic-bypass-max-bypasses-per-mp", rest_name="max-bypasses-per-mp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Router level maximum number of dynamic bypasses per merge point', u'alt-name': u'max-bypasses-per-mp', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__dynamic_bypass_max_bypasses_per_mp = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..500']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(250), is_leaf=True, yang_name="dynamic-bypass-max-bypasses-per-mp", rest_name="dynamic-bypass-max-bypasses-per-mp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
 
 
   def _get_dynamic_bypass_enable_all_interfaces(self):
@@ -169,12 +169,12 @@ class mpls_dynamic_bypass_sub_cmds(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="dynamic-bypass-enable-all-interfaces", rest_name="enable-all-interfaces", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'enable dynamic bypass on all mpls interfaces', u'alt-name': u'enable-all-interfaces', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="dynamic-bypass-enable-all-interfaces", rest_name="dynamic-bypass-enable-all-interfaces", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dynamic_bypass_enable_all_interfaces must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dynamic-bypass-enable-all-interfaces", rest_name="enable-all-interfaces", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'enable dynamic bypass on all mpls interfaces', u'alt-name': u'enable-all-interfaces', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dynamic-bypass-enable-all-interfaces", rest_name="dynamic-bypass-enable-all-interfaces", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
         })
 
     self.__dynamic_bypass_enable_all_interfaces = t
@@ -182,7 +182,7 @@ class mpls_dynamic_bypass_sub_cmds(PybindBase):
       self._set()
 
   def _unset_dynamic_bypass_enable_all_interfaces(self):
-    self.__dynamic_bypass_enable_all_interfaces = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dynamic-bypass-enable-all-interfaces", rest_name="enable-all-interfaces", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'enable dynamic bypass on all mpls interfaces', u'alt-name': u'enable-all-interfaces', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__dynamic_bypass_enable_all_interfaces = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dynamic-bypass-enable-all-interfaces", rest_name="dynamic-bypass-enable-all-interfaces", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
 
 
   def _get_dynamic_bypass_reoptimize_timer(self):
@@ -202,12 +202,12 @@ class mpls_dynamic_bypass_sub_cmds(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'300..65535']}), is_leaf=True, yang_name="dynamic-bypass-reoptimize-timer", rest_name="reoptimize-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Router level reoptimer timer value for dynamic bypasses', u'alt-name': u'reoptimize-timer', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'300..65535']}), is_leaf=True, yang_name="dynamic-bypass-reoptimize-timer", rest_name="dynamic-bypass-reoptimize-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dynamic_bypass_reoptimize_timer must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'300..65535']}), is_leaf=True, yang_name="dynamic-bypass-reoptimize-timer", rest_name="reoptimize-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Router level reoptimer timer value for dynamic bypasses', u'alt-name': u'reoptimize-timer', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'300..65535']}), is_leaf=True, yang_name="dynamic-bypass-reoptimize-timer", rest_name="dynamic-bypass-reoptimize-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
         })
 
     self.__dynamic_bypass_reoptimize_timer = t
@@ -215,7 +215,7 @@ class mpls_dynamic_bypass_sub_cmds(PybindBase):
       self._set()
 
   def _unset_dynamic_bypass_reoptimize_timer(self):
-    self.__dynamic_bypass_reoptimize_timer = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'300..65535']}), is_leaf=True, yang_name="dynamic-bypass-reoptimize-timer", rest_name="reoptimize-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Router level reoptimer timer value for dynamic bypasses', u'alt-name': u'reoptimize-timer', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__dynamic_bypass_reoptimize_timer = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'300..65535']}), is_leaf=True, yang_name="dynamic-bypass-reoptimize-timer", rest_name="dynamic-bypass-reoptimize-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
 
 
   def _get_dynamic_bypass_disable(self):
@@ -235,12 +235,12 @@ class mpls_dynamic_bypass_sub_cmds(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="dynamic-bypass-disable", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable or disable dynamic bypass', u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="dynamic-bypass-disable", rest_name="dynamic-bypass-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dynamic_bypass_disable must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dynamic-bypass-disable", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable or disable dynamic bypass', u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dynamic-bypass-disable", rest_name="dynamic-bypass-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
         })
 
     self.__dynamic_bypass_disable = t
@@ -248,7 +248,7 @@ class mpls_dynamic_bypass_sub_cmds(PybindBase):
       self._set()
 
   def _unset_dynamic_bypass_disable(self):
-    self.__dynamic_bypass_disable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dynamic-bypass-disable", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable or disable dynamic bypass', u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__dynamic_bypass_disable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dynamic-bypass-disable", rest_name="dynamic-bypass-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
 
   dynamic_bypass_max_bypasses = __builtin__.property(_get_dynamic_bypass_max_bypasses, _set_dynamic_bypass_max_bypasses)
   dynamic_bypass_max_bypasses_per_mp = __builtin__.property(_get_dynamic_bypass_max_bypasses_per_mp, _set_dynamic_bypass_max_bypasses_per_mp)

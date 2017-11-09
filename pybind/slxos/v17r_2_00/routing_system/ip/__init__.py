@@ -8,6 +8,7 @@ from decimal import Decimal
 from bitarray import bitarray
 import __builtin__
 import static_ag_ip_config
+import dhcp
 import receive
 class ip(PybindBase):
   """
@@ -18,7 +19,7 @@ class ip(PybindBase):
 
   YANG Description: Internet Protoccol (IP). 
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__static_ag_ip_config','__receive',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__static_ag_ip_config','__dhcp','__receive',)
 
   _yang_name = 'ip'
   _rest_name = 'ip'
@@ -49,6 +50,7 @@ class ip(PybindBase):
     else:
       self._extmethods = False
     self.__receive = YANGDynClass(base=receive.receive, is_container='container', presence=False, yang_name="receive", rest_name="receive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Receive ACL', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-access-list', defining_module='brocade-ip-access-list', yang_type='container', is_config=True)
+    self.__dhcp = YANGDynClass(base=dhcp.dhcp, is_container='container', presence=False, yang_name="dhcp", rest_name="dhcp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure DHCP Global Configuration', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='container', is_config=True)
     self.__static_ag_ip_config = YANGDynClass(base=static_ag_ip_config.static_ag_ip_config, is_container='container', presence=False, yang_name="static-ag-ip-config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'IpAnycastGatewayMacCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
@@ -120,6 +122,43 @@ class ip(PybindBase):
     self.__static_ag_ip_config = YANGDynClass(base=static_ag_ip_config.static_ag_ip_config, is_container='container', presence=False, yang_name="static-ag-ip-config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'IpAnycastGatewayMacCallpoint'}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
 
 
+  def _get_dhcp(self):
+    """
+    Getter method for dhcp, mapped from YANG variable /routing_system/ip/dhcp (container)
+
+    YANG Description: DHCP Global Configuration
+    """
+    return self.__dhcp
+      
+  def _set_dhcp(self, v, load=False):
+    """
+    Setter method for dhcp, mapped from YANG variable /routing_system/ip/dhcp (container)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_dhcp is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_dhcp() directly.
+
+    YANG Description: DHCP Global Configuration
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=dhcp.dhcp, is_container='container', presence=False, yang_name="dhcp", rest_name="dhcp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure DHCP Global Configuration', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='container', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """dhcp must be of a type compatible with container""",
+          'defined-type': "container",
+          'generated-type': """YANGDynClass(base=dhcp.dhcp, is_container='container', presence=False, yang_name="dhcp", rest_name="dhcp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure DHCP Global Configuration', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='container', is_config=True)""",
+        })
+
+    self.__dhcp = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_dhcp(self):
+    self.__dhcp = YANGDynClass(base=dhcp.dhcp, is_container='container', presence=False, yang_name="dhcp", rest_name="dhcp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure DHCP Global Configuration', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='container', is_config=True)
+
+
   def _get_receive(self):
     """
     Getter method for receive, mapped from YANG variable /routing_system/ip/receive (container)
@@ -153,9 +192,10 @@ class ip(PybindBase):
     self.__receive = YANGDynClass(base=receive.receive, is_container='container', presence=False, yang_name="receive", rest_name="receive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Receive ACL', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-access-list', defining_module='brocade-ip-access-list', yang_type='container', is_config=True)
 
   static_ag_ip_config = __builtin__.property(_get_static_ag_ip_config, _set_static_ag_ip_config)
+  dhcp = __builtin__.property(_get_dhcp, _set_dhcp)
   receive = __builtin__.property(_get_receive, _set_receive)
 
 
-  _pyangbind_elements = {'static_ag_ip_config': static_ag_ip_config, 'receive': receive, }
+  _pyangbind_elements = {'static_ag_ip_config': static_ag_ip_config, 'dhcp': dhcp, 'receive': receive, }
 
 

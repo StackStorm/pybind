@@ -45,11 +45,11 @@ class update_source(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ve_interface = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..8191']}), is_leaf=True, yang_name="ve-interface", rest_name="ve-interface", parent=self, choice=(u'ch-update-source', u'ca-ve'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual Interface'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='interface:ve-type', is_config=True)
+    self.__ve_interface = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..8191']}), is_leaf=True, yang_name="ve-interface", rest_name="ve-interface", parent=self, choice=(u'ch-update-source', u'ca-ve'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='interface:ve-type', is_config=True)
     self.__sip_ipv6_address = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="sip-ipv6-address", rest_name="sip-ipv6-address", parent=self, choice=(u'ch-update-source', u'ca-ipv6'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='sip-ipv6-address', is_config=True)
-    self.__loopback = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="loopback", rest_name="loopback", parent=self, choice=(u'ch-update-source', u'ca-loopback'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Loopback Interface'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='loopback-interface', is_config=True)
-    self.__port_channel = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..6144']}), is_leaf=True, yang_name="port-channel", rest_name="port-channel", parent=self, choice=(u'ch-update-source', u'ca-port-channel'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Port-channel Interface'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='interface:portchannel-type', is_config=True)
-    self.__ethernet_interface = YANGDynClass(base=ethernet_interface.ethernet_interface, is_container='container', presence=False, yang_name="ethernet-interface", rest_name="", parent=self, choice=(u'ch-update-source', u'ca-eth'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__loopback = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="loopback", rest_name="loopback", parent=self, choice=(u'ch-update-source', u'ca-loopback'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='loopback-interface', is_config=True)
+    self.__port_channel = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..6144']}), is_leaf=True, yang_name="port-channel", rest_name="port-channel", parent=self, choice=(u'ch-update-source', u'ca-port-channel'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='interface:portchannel-type', is_config=True)
+    self.__ethernet_interface = YANGDynClass(base=ethernet_interface.ethernet_interface, is_container='container', presence=False, yang_name="ethernet-interface", rest_name="", parent=self, choice=(u'ch-update-source', u'ca-eth'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -137,12 +137,12 @@ class update_source(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=ethernet_interface.ethernet_interface, is_container='container', presence=False, yang_name="ethernet-interface", rest_name="", parent=self, choice=(u'ch-update-source', u'ca-eth'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ethernet_interface.ethernet_interface, is_container='container', presence=False, yang_name="ethernet-interface", rest_name="", parent=self, choice=(u'ch-update-source', u'ca-eth'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ethernet_interface must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ethernet_interface.ethernet_interface, is_container='container', presence=False, yang_name="ethernet-interface", rest_name="", parent=self, choice=(u'ch-update-source', u'ca-eth'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ethernet_interface.ethernet_interface, is_container='container', presence=False, yang_name="ethernet-interface", rest_name="", parent=self, choice=(u'ch-update-source', u'ca-eth'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__ethernet_interface = t
@@ -150,7 +150,7 @@ class update_source(PybindBase):
       self._set()
 
   def _unset_ethernet_interface(self):
-    self.__ethernet_interface = YANGDynClass(base=ethernet_interface.ethernet_interface, is_container='container', presence=False, yang_name="ethernet-interface", rest_name="", parent=self, choice=(u'ch-update-source', u'ca-eth'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__ethernet_interface = YANGDynClass(base=ethernet_interface.ethernet_interface, is_container='container', presence=False, yang_name="ethernet-interface", rest_name="", parent=self, choice=(u'ch-update-source', u'ca-eth'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
 
   def _get_port_channel(self):
@@ -170,12 +170,12 @@ class update_source(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..6144']}), is_leaf=True, yang_name="port-channel", rest_name="port-channel", parent=self, choice=(u'ch-update-source', u'ca-port-channel'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Port-channel Interface'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='interface:portchannel-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..6144']}), is_leaf=True, yang_name="port-channel", rest_name="port-channel", parent=self, choice=(u'ch-update-source', u'ca-port-channel'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='interface:portchannel-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """port_channel must be of a type compatible with interface:portchannel-type""",
           'defined-type': "interface:portchannel-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..6144']}), is_leaf=True, yang_name="port-channel", rest_name="port-channel", parent=self, choice=(u'ch-update-source', u'ca-port-channel'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Port-channel Interface'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='interface:portchannel-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..6144']}), is_leaf=True, yang_name="port-channel", rest_name="port-channel", parent=self, choice=(u'ch-update-source', u'ca-port-channel'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='interface:portchannel-type', is_config=True)""",
         })
 
     self.__port_channel = t
@@ -183,7 +183,7 @@ class update_source(PybindBase):
       self._set()
 
   def _unset_port_channel(self):
-    self.__port_channel = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..6144']}), is_leaf=True, yang_name="port-channel", rest_name="port-channel", parent=self, choice=(u'ch-update-source', u'ca-port-channel'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Port-channel Interface'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='interface:portchannel-type', is_config=True)
+    self.__port_channel = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..6144']}), is_leaf=True, yang_name="port-channel", rest_name="port-channel", parent=self, choice=(u'ch-update-source', u'ca-port-channel'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='interface:portchannel-type', is_config=True)
 
 
   def _get_loopback(self):
@@ -203,12 +203,12 @@ class update_source(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="loopback", rest_name="loopback", parent=self, choice=(u'ch-update-source', u'ca-loopback'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Loopback Interface'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='loopback-interface', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="loopback", rest_name="loopback", parent=self, choice=(u'ch-update-source', u'ca-loopback'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='loopback-interface', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """loopback must be of a type compatible with loopback-interface""",
           'defined-type': "brocade-bgp:loopback-interface",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="loopback", rest_name="loopback", parent=self, choice=(u'ch-update-source', u'ca-loopback'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Loopback Interface'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='loopback-interface', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="loopback", rest_name="loopback", parent=self, choice=(u'ch-update-source', u'ca-loopback'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='loopback-interface', is_config=True)""",
         })
 
     self.__loopback = t
@@ -216,7 +216,7 @@ class update_source(PybindBase):
       self._set()
 
   def _unset_loopback(self):
-    self.__loopback = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="loopback", rest_name="loopback", parent=self, choice=(u'ch-update-source', u'ca-loopback'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Loopback Interface'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='loopback-interface', is_config=True)
+    self.__loopback = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="loopback", rest_name="loopback", parent=self, choice=(u'ch-update-source', u'ca-loopback'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='loopback-interface', is_config=True)
 
 
   def _get_ve_interface(self):
@@ -236,12 +236,12 @@ class update_source(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..8191']}), is_leaf=True, yang_name="ve-interface", rest_name="ve-interface", parent=self, choice=(u'ch-update-source', u'ca-ve'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual Interface'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='interface:ve-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..8191']}), is_leaf=True, yang_name="ve-interface", rest_name="ve-interface", parent=self, choice=(u'ch-update-source', u'ca-ve'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='interface:ve-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ve_interface must be of a type compatible with interface:ve-type""",
           'defined-type': "interface:ve-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..8191']}), is_leaf=True, yang_name="ve-interface", rest_name="ve-interface", parent=self, choice=(u'ch-update-source', u'ca-ve'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual Interface'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='interface:ve-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..8191']}), is_leaf=True, yang_name="ve-interface", rest_name="ve-interface", parent=self, choice=(u'ch-update-source', u'ca-ve'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='interface:ve-type', is_config=True)""",
         })
 
     self.__ve_interface = t
@@ -249,7 +249,7 @@ class update_source(PybindBase):
       self._set()
 
   def _unset_ve_interface(self):
-    self.__ve_interface = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..8191']}), is_leaf=True, yang_name="ve-interface", rest_name="ve-interface", parent=self, choice=(u'ch-update-source', u'ca-ve'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual Interface'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='interface:ve-type', is_config=True)
+    self.__ve_interface = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..8191']}), is_leaf=True, yang_name="ve-interface", rest_name="ve-interface", parent=self, choice=(u'ch-update-source', u'ca-ve'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='interface:ve-type', is_config=True)
 
   sip_ipv6_address = __builtin__.property(_get_sip_ipv6_address, _set_sip_ipv6_address)
   ethernet_interface = __builtin__.property(_get_ethernet_interface, _set_ethernet_interface)

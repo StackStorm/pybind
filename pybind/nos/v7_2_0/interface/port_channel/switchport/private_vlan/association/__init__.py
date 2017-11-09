@@ -47,7 +47,7 @@ class association(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__trunk = YANGDynClass(base=YANGListType("trunk_pri_pvlan trunk_sec_pvlan",trunk.trunk, yang_name="trunk", rest_name="trunk", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trunk-pri-pvlan trunk-sec-pvlan', extensions={u'tailf-common': {u'info': u'trunk-association', u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'callpoint': u'pvlanTrunkAssocCallPointWorker_po'}}), is_container='list', yang_name="trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'trunk-association', u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'callpoint': u'pvlanTrunkAssocCallPointWorker_po'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
+    self.__trunk = YANGDynClass(base=YANGListType("trunk_pri_pvlan trunk_sec_pvlan",trunk.trunk, yang_name="trunk", rest_name="trunk", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trunk-pri-pvlan trunk-sec-pvlan', extensions=None), is_container='list', yang_name="trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -102,12 +102,12 @@ class association(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("trunk_pri_pvlan trunk_sec_pvlan",trunk.trunk, yang_name="trunk", rest_name="trunk", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trunk-pri-pvlan trunk-sec-pvlan', extensions={u'tailf-common': {u'info': u'trunk-association', u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'callpoint': u'pvlanTrunkAssocCallPointWorker_po'}}), is_container='list', yang_name="trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'trunk-association', u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'callpoint': u'pvlanTrunkAssocCallPointWorker_po'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("trunk_pri_pvlan trunk_sec_pvlan",trunk.trunk, yang_name="trunk", rest_name="trunk", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trunk-pri-pvlan trunk-sec-pvlan', extensions=None), is_container='list', yang_name="trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """trunk must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("trunk_pri_pvlan trunk_sec_pvlan",trunk.trunk, yang_name="trunk", rest_name="trunk", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trunk-pri-pvlan trunk-sec-pvlan', extensions={u'tailf-common': {u'info': u'trunk-association', u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'callpoint': u'pvlanTrunkAssocCallPointWorker_po'}}), is_container='list', yang_name="trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'trunk-association', u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'callpoint': u'pvlanTrunkAssocCallPointWorker_po'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("trunk_pri_pvlan trunk_sec_pvlan",trunk.trunk, yang_name="trunk", rest_name="trunk", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trunk-pri-pvlan trunk-sec-pvlan', extensions=None), is_container='list', yang_name="trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)""",
         })
 
     self.__trunk = t
@@ -115,7 +115,7 @@ class association(PybindBase):
       self._set()
 
   def _unset_trunk(self):
-    self.__trunk = YANGDynClass(base=YANGListType("trunk_pri_pvlan trunk_sec_pvlan",trunk.trunk, yang_name="trunk", rest_name="trunk", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trunk-pri-pvlan trunk-sec-pvlan', extensions={u'tailf-common': {u'info': u'trunk-association', u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'callpoint': u'pvlanTrunkAssocCallPointWorker_po'}}), is_container='list', yang_name="trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'trunk-association', u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'callpoint': u'pvlanTrunkAssocCallPointWorker_po'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
+    self.__trunk = YANGDynClass(base=YANGListType("trunk_pri_pvlan trunk_sec_pvlan",trunk.trunk, yang_name="trunk", rest_name="trunk", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='trunk-pri-pvlan trunk-sec-pvlan', extensions=None), is_container='list', yang_name="trunk", rest_name="trunk", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
 
   trunk = __builtin__.property(_get_trunk, _set_trunk)
 

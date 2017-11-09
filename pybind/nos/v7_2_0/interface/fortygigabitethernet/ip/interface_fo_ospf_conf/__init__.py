@@ -45,7 +45,7 @@ class interface_fo_ospf_conf(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ospf_interface_config = YANGDynClass(base=ospf_interface_config.ospf_interface_config, is_container='container', presence=False, yang_name="ospf-interface-config", rest_name="ospf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Open Shortest Path First (OSPF).', u'cli-incomplete-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"', u'sort-priority': u'120', u'alt-name': u'ospf'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+    self.__ospf_interface_config = YANGDynClass(base=ospf_interface_config.ospf_interface_config, is_container='container', presence=False, yang_name="ospf-interface-config", rest_name="ospf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'ospf'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class interface_fo_ospf_conf(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=ospf_interface_config.ospf_interface_config, is_container='container', presence=False, yang_name="ospf-interface-config", rest_name="ospf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Open Shortest Path First (OSPF).', u'cli-incomplete-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"', u'sort-priority': u'120', u'alt-name': u'ospf'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ospf_interface_config.ospf_interface_config, is_container='container', presence=False, yang_name="ospf-interface-config", rest_name="ospf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'ospf'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ospf_interface_config must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ospf_interface_config.ospf_interface_config, is_container='container', presence=False, yang_name="ospf-interface-config", rest_name="ospf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Open Shortest Path First (OSPF).', u'cli-incomplete-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"', u'sort-priority': u'120', u'alt-name': u'ospf'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ospf_interface_config.ospf_interface_config, is_container='container', presence=False, yang_name="ospf-interface-config", rest_name="ospf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'ospf'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)""",
         })
 
     self.__ospf_interface_config = t
@@ -113,7 +113,7 @@ class interface_fo_ospf_conf(PybindBase):
       self._set()
 
   def _unset_ospf_interface_config(self):
-    self.__ospf_interface_config = YANGDynClass(base=ospf_interface_config.ospf_interface_config, is_container='container', presence=False, yang_name="ospf-interface-config", rest_name="ospf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Open Shortest Path First (OSPF).', u'cli-incomplete-no': None, u'display-when': u'/vcsmode/vcs-mode = "true"', u'sort-priority': u'120', u'alt-name': u'ospf'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+    self.__ospf_interface_config = YANGDynClass(base=ospf_interface_config.ospf_interface_config, is_container='container', presence=False, yang_name="ospf-interface-config", rest_name="ospf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'ospf'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
 
   ospf_interface_config = __builtin__.property(_get_ospf_interface_config, _set_ospf_interface_config)
 

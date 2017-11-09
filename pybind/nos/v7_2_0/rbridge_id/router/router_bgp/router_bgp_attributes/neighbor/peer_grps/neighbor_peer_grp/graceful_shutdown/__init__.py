@@ -45,9 +45,9 @@ class graceful_shutdown(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__gshut_timer_value = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'30..600']}), is_leaf=True, yang_name="gshut-timer-value", rest_name="gshut-timer-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-reset-container': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='bgp-gshut-timer', is_config=True)
-    self.__gshut_timer_attributes = YANGDynClass(base=gshut_timer_attributes.gshut_timer_attributes, is_container='container', presence=False, yang_name="gshut-timer-attributes", rest_name="", parent=self, choice=(u'ch-gshut-options', u'ca-gshut-timer-attributes'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
-    self.__gshut_route_map = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="gshut-route-map", rest_name="route-map", parent=self, choice=(u'ch-gshut-options', u'ca-gshut-timer-route-map'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route map for graceful shutdown attributes', u'alt-name': u'route-map', u'cli-reset-container': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='rmap-type', is_config=True)
+    self.__gshut_timer_value = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'30..600']}), is_leaf=True, yang_name="gshut-timer-value", rest_name="gshut-timer-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='bgp-gshut-timer', is_config=True)
+    self.__gshut_timer_attributes = YANGDynClass(base=gshut_timer_attributes.gshut_timer_attributes, is_container='container', presence=False, yang_name="gshut-timer-attributes", rest_name="", parent=self, choice=(u'ch-gshut-options', u'ca-gshut-timer-attributes'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__gshut_route_map = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="gshut-route-map", rest_name="route-map", parent=self, choice=(u'ch-gshut-options', u'ca-gshut-timer-route-map'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'route-map'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='rmap-type', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -102,12 +102,12 @@ class graceful_shutdown(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'30..600']}), is_leaf=True, yang_name="gshut-timer-value", rest_name="gshut-timer-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-reset-container': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='bgp-gshut-timer', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'30..600']}), is_leaf=True, yang_name="gshut-timer-value", rest_name="gshut-timer-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='bgp-gshut-timer', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """gshut_timer_value must be of a type compatible with bgp-gshut-timer""",
           'defined-type': "brocade-bgp:bgp-gshut-timer",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'30..600']}), is_leaf=True, yang_name="gshut-timer-value", rest_name="gshut-timer-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-reset-container': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='bgp-gshut-timer', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'30..600']}), is_leaf=True, yang_name="gshut-timer-value", rest_name="gshut-timer-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='bgp-gshut-timer', is_config=True)""",
         })
 
     self.__gshut_timer_value = t
@@ -115,7 +115,7 @@ class graceful_shutdown(PybindBase):
       self._set()
 
   def _unset_gshut_timer_value(self):
-    self.__gshut_timer_value = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'30..600']}), is_leaf=True, yang_name="gshut-timer-value", rest_name="gshut-timer-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-reset-container': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='bgp-gshut-timer', is_config=True)
+    self.__gshut_timer_value = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'30..600']}), is_leaf=True, yang_name="gshut-timer-value", rest_name="gshut-timer-value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='bgp-gshut-timer', is_config=True)
 
 
   def _get_gshut_route_map(self):
@@ -135,12 +135,12 @@ class graceful_shutdown(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="gshut-route-map", rest_name="route-map", parent=self, choice=(u'ch-gshut-options', u'ca-gshut-timer-route-map'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route map for graceful shutdown attributes', u'alt-name': u'route-map', u'cli-reset-container': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='rmap-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="gshut-route-map", rest_name="route-map", parent=self, choice=(u'ch-gshut-options', u'ca-gshut-timer-route-map'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'route-map'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='rmap-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """gshut_route_map must be of a type compatible with rmap-type""",
           'defined-type': "brocade-bgp:rmap-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="gshut-route-map", rest_name="route-map", parent=self, choice=(u'ch-gshut-options', u'ca-gshut-timer-route-map'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route map for graceful shutdown attributes', u'alt-name': u'route-map', u'cli-reset-container': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='rmap-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="gshut-route-map", rest_name="route-map", parent=self, choice=(u'ch-gshut-options', u'ca-gshut-timer-route-map'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'route-map'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='rmap-type', is_config=True)""",
         })
 
     self.__gshut_route_map = t
@@ -148,7 +148,7 @@ class graceful_shutdown(PybindBase):
       self._set()
 
   def _unset_gshut_route_map(self):
-    self.__gshut_route_map = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="gshut-route-map", rest_name="route-map", parent=self, choice=(u'ch-gshut-options', u'ca-gshut-timer-route-map'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route map for graceful shutdown attributes', u'alt-name': u'route-map', u'cli-reset-container': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='rmap-type', is_config=True)
+    self.__gshut_route_map = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="gshut-route-map", rest_name="route-map", parent=self, choice=(u'ch-gshut-options', u'ca-gshut-timer-route-map'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'route-map'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='rmap-type', is_config=True)
 
 
   def _get_gshut_timer_attributes(self):
@@ -168,12 +168,12 @@ class graceful_shutdown(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=gshut_timer_attributes.gshut_timer_attributes, is_container='container', presence=False, yang_name="gshut-timer-attributes", rest_name="", parent=self, choice=(u'ch-gshut-options', u'ca-gshut-timer-attributes'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=gshut_timer_attributes.gshut_timer_attributes, is_container='container', presence=False, yang_name="gshut-timer-attributes", rest_name="", parent=self, choice=(u'ch-gshut-options', u'ca-gshut-timer-attributes'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """gshut_timer_attributes must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=gshut_timer_attributes.gshut_timer_attributes, is_container='container', presence=False, yang_name="gshut-timer-attributes", rest_name="", parent=self, choice=(u'ch-gshut-options', u'ca-gshut-timer-attributes'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=gshut_timer_attributes.gshut_timer_attributes, is_container='container', presence=False, yang_name="gshut-timer-attributes", rest_name="", parent=self, choice=(u'ch-gshut-options', u'ca-gshut-timer-attributes'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__gshut_timer_attributes = t
@@ -181,7 +181,7 @@ class graceful_shutdown(PybindBase):
       self._set()
 
   def _unset_gshut_timer_attributes(self):
-    self.__gshut_timer_attributes = YANGDynClass(base=gshut_timer_attributes.gshut_timer_attributes, is_container='container', presence=False, yang_name="gshut-timer-attributes", rest_name="", parent=self, choice=(u'ch-gshut-options', u'ca-gshut-timer-attributes'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__gshut_timer_attributes = YANGDynClass(base=gshut_timer_attributes.gshut_timer_attributes, is_container='container', presence=False, yang_name="gshut-timer-attributes", rest_name="", parent=self, choice=(u'ch-gshut-options', u'ca-gshut-timer-attributes'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
   gshut_timer_value = __builtin__.property(_get_gshut_timer_value, _set_gshut_timer_value)
   gshut_route_map = __builtin__.property(_get_gshut_route_map, _set_gshut_route_map)

@@ -18,7 +18,7 @@ class ipv6_config(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__address',)
 
   _yang_name = 'ipv6-config'
-  _rest_name = ''
+  _rest_name = 'ipv6-config'
 
   _pybind_generated_by = 'container'
 
@@ -45,7 +45,7 @@ class ipv6_config(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__address = YANGDynClass(base=address.address, is_container='container', presence=False, yang_name="address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure/unconfigure IPv6 addresses on an Interface'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='container', is_config=True)
+    self.__address = YANGDynClass(base=address.address, is_container='container', presence=False, yang_name="address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class ipv6_config(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface', u'Loopback', u'ipv6']
+      return [u'routing-system', u'interface', u'loopback', u'ipv6', u'ipv6-config']
 
   def _get_address(self):
     """
@@ -100,12 +100,12 @@ class ipv6_config(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=address.address, is_container='container', presence=False, yang_name="address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure/unconfigure IPv6 addresses on an Interface'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=address.address, is_container='container', presence=False, yang_name="address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """address must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=address.address, is_container='container', presence=False, yang_name="address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure/unconfigure IPv6 addresses on an Interface'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=address.address, is_container='container', presence=False, yang_name="address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='container', is_config=True)""",
         })
 
     self.__address = t
@@ -113,7 +113,7 @@ class ipv6_config(PybindBase):
       self._set()
 
   def _unset_address(self):
-    self.__address = YANGDynClass(base=address.address, is_container='container', presence=False, yang_name="address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure/unconfigure IPv6 addresses on an Interface'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='container', is_config=True)
+    self.__address = YANGDynClass(base=address.address, is_container='container', presence=False, yang_name="address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='container', is_config=True)
 
   address = __builtin__.property(_get_address, _set_address)
 

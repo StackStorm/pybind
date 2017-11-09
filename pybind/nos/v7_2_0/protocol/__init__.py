@@ -7,6 +7,9 @@ from pyangbind.lib.base import PybindBase
 from decimal import Decimal
 from bitarray import bitarray
 import __builtin__
+import edge_loop_detection
+import lldp
+import udld
 import spanning_tree
 class protocol(PybindBase):
   """
@@ -15,7 +18,7 @@ class protocol(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__spanning_tree',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__edge_loop_detection','__lldp','__udld','__spanning_tree',)
 
   _yang_name = 'protocol'
   _rest_name = 'protocol'
@@ -45,7 +48,10 @@ class protocol(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__spanning_tree = YANGDynClass(base=spanning_tree.spanning_tree, is_container='container', presence=False, yang_name="spanning-tree", rest_name="spanning-tree", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Spanning tree commands', u'cli-full-no': None, u'sort-priority': u'52'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
+    self.__lldp = YANGDynClass(base=lldp.lldp, is_container='container', presence=True, yang_name="lldp", rest_name="lldp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='container', is_config=True)
+    self.__spanning_tree = YANGDynClass(base=spanning_tree.spanning_tree, is_container='container', presence=False, yang_name="spanning-tree", rest_name="spanning-tree", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
+    self.__edge_loop_detection = YANGDynClass(base=edge_loop_detection.edge_loop_detection, is_container='container', presence=False, yang_name="edge-loop-detection", rest_name="edge-loop-detection", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-eld', defining_module='brocade-eld', yang_type='container', is_config=True)
+    self.__udld = YANGDynClass(base=udld.udld, is_container='container', presence=True, yang_name="udld", rest_name="udld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-udld', defining_module='brocade-udld', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -83,6 +89,115 @@ class protocol(PybindBase):
     else:
       return [u'protocol']
 
+  def _get_edge_loop_detection(self):
+    """
+    Getter method for edge_loop_detection, mapped from YANG variable /protocol/edge_loop_detection (container)
+    """
+    return self.__edge_loop_detection
+      
+  def _set_edge_loop_detection(self, v, load=False):
+    """
+    Setter method for edge_loop_detection, mapped from YANG variable /protocol/edge_loop_detection (container)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_edge_loop_detection is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_edge_loop_detection() directly.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=edge_loop_detection.edge_loop_detection, is_container='container', presence=False, yang_name="edge-loop-detection", rest_name="edge-loop-detection", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-eld', defining_module='brocade-eld', yang_type='container', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """edge_loop_detection must be of a type compatible with container""",
+          'defined-type': "container",
+          'generated-type': """YANGDynClass(base=edge_loop_detection.edge_loop_detection, is_container='container', presence=False, yang_name="edge-loop-detection", rest_name="edge-loop-detection", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-eld', defining_module='brocade-eld', yang_type='container', is_config=True)""",
+        })
+
+    self.__edge_loop_detection = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_edge_loop_detection(self):
+    self.__edge_loop_detection = YANGDynClass(base=edge_loop_detection.edge_loop_detection, is_container='container', presence=False, yang_name="edge-loop-detection", rest_name="edge-loop-detection", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-eld', defining_module='brocade-eld', yang_type='container', is_config=True)
+
+
+  def _get_lldp(self):
+    """
+    Getter method for lldp, mapped from YANG variable /protocol/lldp (container)
+    """
+    return self.__lldp
+      
+  def _set_lldp(self, v, load=False):
+    """
+    Setter method for lldp, mapped from YANG variable /protocol/lldp (container)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_lldp is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_lldp() directly.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=lldp.lldp, is_container='container', presence=True, yang_name="lldp", rest_name="lldp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='container', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """lldp must be of a type compatible with container""",
+          'defined-type': "container",
+          'generated-type': """YANGDynClass(base=lldp.lldp, is_container='container', presence=True, yang_name="lldp", rest_name="lldp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='container', is_config=True)""",
+        })
+
+    self.__lldp = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_lldp(self):
+    self.__lldp = YANGDynClass(base=lldp.lldp, is_container='container', presence=True, yang_name="lldp", rest_name="lldp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='container', is_config=True)
+
+
+  def _get_udld(self):
+    """
+    Getter method for udld, mapped from YANG variable /protocol/udld (container)
+
+    YANG Description: UDLD protocol configuration. UDLD protocol will be
+enabled when '/protocol/udld' container is created. To
+disable delete it or set '/protocol/udld/shutdown'
+leaf
+    """
+    return self.__udld
+      
+  def _set_udld(self, v, load=False):
+    """
+    Setter method for udld, mapped from YANG variable /protocol/udld (container)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_udld is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_udld() directly.
+
+    YANG Description: UDLD protocol configuration. UDLD protocol will be
+enabled when '/protocol/udld' container is created. To
+disable delete it or set '/protocol/udld/shutdown'
+leaf
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=udld.udld, is_container='container', presence=True, yang_name="udld", rest_name="udld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-udld', defining_module='brocade-udld', yang_type='container', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """udld must be of a type compatible with container""",
+          'defined-type': "container",
+          'generated-type': """YANGDynClass(base=udld.udld, is_container='container', presence=True, yang_name="udld", rest_name="udld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-udld', defining_module='brocade-udld', yang_type='container', is_config=True)""",
+        })
+
+    self.__udld = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_udld(self):
+    self.__udld = YANGDynClass(base=udld.udld, is_container='container', presence=True, yang_name="udld", rest_name="udld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-udld', defining_module='brocade-udld', yang_type='container', is_config=True)
+
+
   def _get_spanning_tree(self):
     """
     Getter method for spanning_tree, mapped from YANG variable /protocol/spanning_tree (container)
@@ -100,12 +215,12 @@ class protocol(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=spanning_tree.spanning_tree, is_container='container', presence=False, yang_name="spanning-tree", rest_name="spanning-tree", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Spanning tree commands', u'cli-full-no': None, u'sort-priority': u'52'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=spanning_tree.spanning_tree, is_container='container', presence=False, yang_name="spanning-tree", rest_name="spanning-tree", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """spanning_tree must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=spanning_tree.spanning_tree, is_container='container', presence=False, yang_name="spanning-tree", rest_name="spanning-tree", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Spanning tree commands', u'cli-full-no': None, u'sort-priority': u'52'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=spanning_tree.spanning_tree, is_container='container', presence=False, yang_name="spanning-tree", rest_name="spanning-tree", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)""",
         })
 
     self.__spanning_tree = t
@@ -113,11 +228,14 @@ class protocol(PybindBase):
       self._set()
 
   def _unset_spanning_tree(self):
-    self.__spanning_tree = YANGDynClass(base=spanning_tree.spanning_tree, is_container='container', presence=False, yang_name="spanning-tree", rest_name="spanning-tree", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Spanning tree commands', u'cli-full-no': None, u'sort-priority': u'52'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
+    self.__spanning_tree = YANGDynClass(base=spanning_tree.spanning_tree, is_container='container', presence=False, yang_name="spanning-tree", rest_name="spanning-tree", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
 
+  edge_loop_detection = __builtin__.property(_get_edge_loop_detection, _set_edge_loop_detection)
+  lldp = __builtin__.property(_get_lldp, _set_lldp)
+  udld = __builtin__.property(_get_udld, _set_udld)
   spanning_tree = __builtin__.property(_get_spanning_tree, _set_spanning_tree)
 
 
-  _pyangbind_elements = {'spanning_tree': spanning_tree, }
+  _pyangbind_elements = {'edge_loop_detection': edge_loop_detection, 'lldp': lldp, 'udld': udld, 'spanning_tree': spanning_tree, }
 
 

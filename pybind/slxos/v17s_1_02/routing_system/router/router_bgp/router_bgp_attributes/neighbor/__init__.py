@@ -47,9 +47,9 @@ class neighbor(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__neighbor_ips = YANGDynClass(base=neighbor_ips.neighbor_ips, is_container='container', presence=False, yang_name="neighbor-ips", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
-    self.__peer_grps = YANGDynClass(base=peer_grps.peer_grps, is_container='container', presence=False, yang_name="peer-grps", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
-    self.__neighbor_ipv6s = YANGDynClass(base=neighbor_ipv6s.neighbor_ipv6s, is_container='container', presence=False, yang_name="neighbor-ipv6s", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__neighbor_ips = YANGDynClass(base=neighbor_ips.neighbor_ips, is_container='container', presence=False, yang_name="neighbor-ips", rest_name="neighbor-ips", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__peer_grps = YANGDynClass(base=peer_grps.peer_grps, is_container='container', presence=False, yang_name="peer-grps", rest_name="peer-grps", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__neighbor_ipv6s = YANGDynClass(base=neighbor_ipv6s.neighbor_ipv6s, is_container='container', presence=False, yang_name="neighbor-ipv6s", rest_name="neighbor-ipv6s", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -85,7 +85,7 @@ class neighbor(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'router', u'bgp', u'neighbor']
+      return [u'routing-system', u'router', u'router-bgp', u'router-bgp-attributes', u'neighbor']
 
   def _get_peer_grps(self):
     """
@@ -104,12 +104,12 @@ class neighbor(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=peer_grps.peer_grps, is_container='container', presence=False, yang_name="peer-grps", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=peer_grps.peer_grps, is_container='container', presence=False, yang_name="peer-grps", rest_name="peer-grps", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """peer_grps must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=peer_grps.peer_grps, is_container='container', presence=False, yang_name="peer-grps", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=peer_grps.peer_grps, is_container='container', presence=False, yang_name="peer-grps", rest_name="peer-grps", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__peer_grps = t
@@ -117,7 +117,7 @@ class neighbor(PybindBase):
       self._set()
 
   def _unset_peer_grps(self):
-    self.__peer_grps = YANGDynClass(base=peer_grps.peer_grps, is_container='container', presence=False, yang_name="peer-grps", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__peer_grps = YANGDynClass(base=peer_grps.peer_grps, is_container='container', presence=False, yang_name="peer-grps", rest_name="peer-grps", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
 
   def _get_neighbor_ipv6s(self):
@@ -137,12 +137,12 @@ class neighbor(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=neighbor_ipv6s.neighbor_ipv6s, is_container='container', presence=False, yang_name="neighbor-ipv6s", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=neighbor_ipv6s.neighbor_ipv6s, is_container='container', presence=False, yang_name="neighbor-ipv6s", rest_name="neighbor-ipv6s", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """neighbor_ipv6s must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=neighbor_ipv6s.neighbor_ipv6s, is_container='container', presence=False, yang_name="neighbor-ipv6s", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=neighbor_ipv6s.neighbor_ipv6s, is_container='container', presence=False, yang_name="neighbor-ipv6s", rest_name="neighbor-ipv6s", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__neighbor_ipv6s = t
@@ -150,7 +150,7 @@ class neighbor(PybindBase):
       self._set()
 
   def _unset_neighbor_ipv6s(self):
-    self.__neighbor_ipv6s = YANGDynClass(base=neighbor_ipv6s.neighbor_ipv6s, is_container='container', presence=False, yang_name="neighbor-ipv6s", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__neighbor_ipv6s = YANGDynClass(base=neighbor_ipv6s.neighbor_ipv6s, is_container='container', presence=False, yang_name="neighbor-ipv6s", rest_name="neighbor-ipv6s", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
 
   def _get_neighbor_ips(self):
@@ -170,12 +170,12 @@ class neighbor(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=neighbor_ips.neighbor_ips, is_container='container', presence=False, yang_name="neighbor-ips", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=neighbor_ips.neighbor_ips, is_container='container', presence=False, yang_name="neighbor-ips", rest_name="neighbor-ips", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """neighbor_ips must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=neighbor_ips.neighbor_ips, is_container='container', presence=False, yang_name="neighbor-ips", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=neighbor_ips.neighbor_ips, is_container='container', presence=False, yang_name="neighbor-ips", rest_name="neighbor-ips", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__neighbor_ips = t
@@ -183,7 +183,7 @@ class neighbor(PybindBase):
       self._set()
 
   def _unset_neighbor_ips(self):
-    self.__neighbor_ips = YANGDynClass(base=neighbor_ips.neighbor_ips, is_container='container', presence=False, yang_name="neighbor-ips", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__neighbor_ips = YANGDynClass(base=neighbor_ips.neighbor_ips, is_container='container', presence=False, yang_name="neighbor-ips", rest_name="neighbor-ips", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
   peer_grps = __builtin__.property(_get_peer_grps, _set_peer_grps)
   neighbor_ipv6s = __builtin__.property(_get_neighbor_ipv6s, _set_neighbor_ipv6s)

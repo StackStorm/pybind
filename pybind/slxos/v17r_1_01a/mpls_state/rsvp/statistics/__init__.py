@@ -48,8 +48,8 @@ class statistics(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__packet_error_counters = YANGDynClass(base=packet_error_counters.packet_error_counters, is_container='container', presence=False, yang_name="packet-error-counters", rest_name="packet-error-counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-packet-error-counters', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
-    self.__packet_counters = YANGDynClass(base=packet_counters.packet_counters, is_container='container', presence=False, yang_name="packet-counters", rest_name="packet-counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-packet-counters-packet-counters-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__packet_error_counters = YANGDynClass(base=packet_error_counters.packet_error_counters, is_container='container', presence=False, yang_name="packet-error-counters", rest_name="packet-error-counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__packet_counters = YANGDynClass(base=packet_counters.packet_counters, is_container='container', presence=False, yang_name="packet-counters", rest_name="packet-counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -108,12 +108,12 @@ class statistics(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=packet_error_counters.packet_error_counters, is_container='container', presence=False, yang_name="packet-error-counters", rest_name="packet-error-counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-packet-error-counters', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=packet_error_counters.packet_error_counters, is_container='container', presence=False, yang_name="packet-error-counters", rest_name="packet-error-counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """packet_error_counters must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=packet_error_counters.packet_error_counters, is_container='container', presence=False, yang_name="packet-error-counters", rest_name="packet-error-counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-packet-error-counters', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=packet_error_counters.packet_error_counters, is_container='container', presence=False, yang_name="packet-error-counters", rest_name="packet-error-counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
         })
 
     self.__packet_error_counters = t
@@ -121,7 +121,7 @@ class statistics(PybindBase):
       self._set()
 
   def _unset_packet_error_counters(self):
-    self.__packet_error_counters = YANGDynClass(base=packet_error_counters.packet_error_counters, is_container='container', presence=False, yang_name="packet-error-counters", rest_name="packet-error-counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-packet-error-counters', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__packet_error_counters = YANGDynClass(base=packet_error_counters.packet_error_counters, is_container='container', presence=False, yang_name="packet-error-counters", rest_name="packet-error-counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
 
 
   def _get_packet_counters(self):
@@ -141,12 +141,12 @@ class statistics(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=packet_counters.packet_counters, is_container='container', presence=False, yang_name="packet-counters", rest_name="packet-counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-packet-counters-packet-counters-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=packet_counters.packet_counters, is_container='container', presence=False, yang_name="packet-counters", rest_name="packet-counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """packet_counters must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=packet_counters.packet_counters, is_container='container', presence=False, yang_name="packet-counters", rest_name="packet-counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-packet-counters-packet-counters-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=packet_counters.packet_counters, is_container='container', presence=False, yang_name="packet-counters", rest_name="packet-counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)""",
         })
 
     self.__packet_counters = t
@@ -154,7 +154,7 @@ class statistics(PybindBase):
       self._set()
 
   def _unset_packet_counters(self):
-    self.__packet_counters = YANGDynClass(base=packet_counters.packet_counters, is_container='container', presence=False, yang_name="packet-counters", rest_name="packet-counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'mpls-rsvp-packet-counters-packet-counters-1'}}, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
+    self.__packet_counters = YANGDynClass(base=packet_counters.packet_counters, is_container='container', presence=False, yang_name="packet-counters", rest_name="packet-counters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls-operational', defining_module='brocade-mpls-operational', yang_type='container', is_config=False)
 
   packet_error_counters = __builtin__.property(_get_packet_error_counters)
   packet_counters = __builtin__.property(_get_packet_counters)

@@ -47,7 +47,7 @@ class arp(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__unicast_request = YANGDynClass(base=unicast_request.unicast_request, is_container='container', presence=False, yang_name="unicast-request", rest_name="unicast-request", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Modify Unicast ARP requests', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
+    self.__unicast_request = YANGDynClass(base=unicast_request.unicast_request, is_container='container', presence=False, yang_name="unicast-request", rest_name="unicast-request", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -83,7 +83,7 @@ class arp(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface', u'Ethernet', u'vrrp-group', u'arp']
+      return [u'interface', u'ethernet', u'vrrp', u'arp']
 
   def _get_unicast_request(self):
     """
@@ -106,12 +106,12 @@ class arp(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=unicast_request.unicast_request, is_container='container', presence=False, yang_name="unicast-request", rest_name="unicast-request", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Modify Unicast ARP requests', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=unicast_request.unicast_request, is_container='container', presence=False, yang_name="unicast-request", rest_name="unicast-request", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """unicast_request must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=unicast_request.unicast_request, is_container='container', presence=False, yang_name="unicast-request", rest_name="unicast-request", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Modify Unicast ARP requests', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicast_request.unicast_request, is_container='container', presence=False, yang_name="unicast-request", rest_name="unicast-request", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)""",
         })
 
     self.__unicast_request = t
@@ -119,7 +119,7 @@ class arp(PybindBase):
       self._set()
 
   def _unset_unicast_request(self):
-    self.__unicast_request = YANGDynClass(base=unicast_request.unicast_request, is_container='container', presence=False, yang_name="unicast-request", rest_name="unicast-request", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Modify Unicast ARP requests', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
+    self.__unicast_request = YANGDynClass(base=unicast_request.unicast_request, is_container='container', presence=False, yang_name="unicast-request", rest_name="unicast-request", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
 
   unicast_request = __builtin__.property(_get_unicast_request, _set_unicast_request)
 

@@ -15,7 +15,7 @@ class vlan(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__id','__priority','__timer_config',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__id','__priority','__timer_config','__aging_time',)
 
   _yang_name = 'vlan'
   _rest_name = 'vlan'
@@ -47,6 +47,7 @@ class vlan(PybindBase):
       self._extmethods = False
     self.__priority = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..61440']}), is_leaf=True, yang_name="priority", rest_name="priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Bridge priority in increments of 4096', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='uint32', is_config=True)
     self.__timer_config = YANGDynClass(base=timer_config.timer_config, is_container='container', presence=False, yang_name="timer-config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
+    self.__aging_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..100000']}), is_leaf=True, yang_name="aging-time", rest_name="aging-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Time a learned mac address will persist after\nlast update', u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hidden-cli', defining_module='brocade-hidden-cli', yang_type='uint32', is_config=True)
     self.__id = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4090']}), is_leaf=True, yang_name="id", rest_name="id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None, u'cli-suppress-no': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='uint32', is_config=True)
 
     load = kwargs.pop("load", None)
@@ -188,11 +189,45 @@ class vlan(PybindBase):
   def _unset_timer_config(self):
     self.__timer_config = YANGDynClass(base=timer_config.timer_config, is_container='container', presence=False, yang_name="timer-config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
 
+
+  def _get_aging_time(self):
+    """
+    Getter method for aging_time, mapped from YANG variable /protocol/spanning_tree/rpvst/vlan/aging_time (uint32)
+    """
+    return self.__aging_time
+      
+  def _set_aging_time(self, v, load=False):
+    """
+    Setter method for aging_time, mapped from YANG variable /protocol/spanning_tree/rpvst/vlan/aging_time (uint32)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_aging_time is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_aging_time() directly.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..100000']}), is_leaf=True, yang_name="aging-time", rest_name="aging-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Time a learned mac address will persist after\nlast update', u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hidden-cli', defining_module='brocade-hidden-cli', yang_type='uint32', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """aging_time must be of a type compatible with uint32""",
+          'defined-type': "uint32",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..100000']}), is_leaf=True, yang_name="aging-time", rest_name="aging-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Time a learned mac address will persist after\nlast update', u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hidden-cli', defining_module='brocade-hidden-cli', yang_type='uint32', is_config=True)""",
+        })
+
+    self.__aging_time = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_aging_time(self):
+    self.__aging_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..100000']}), is_leaf=True, yang_name="aging-time", rest_name="aging-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Time a learned mac address will persist after\nlast update', u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hidden-cli', defining_module='brocade-hidden-cli', yang_type='uint32', is_config=True)
+
   id = __builtin__.property(_get_id, _set_id)
   priority = __builtin__.property(_get_priority, _set_priority)
   timer_config = __builtin__.property(_get_timer_config, _set_timer_config)
+  aging_time = __builtin__.property(_get_aging_time, _set_aging_time)
 
 
-  _pyangbind_elements = {'id': id, 'priority': priority, 'timer_config': timer_config, }
+  _pyangbind_elements = {'id': id, 'priority': priority, 'timer_config': timer_config, 'aging_time': aging_time, }
 
 

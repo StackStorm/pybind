@@ -44,7 +44,7 @@ class vrrp_rbridge_global(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__vrrp_acceptmode_disable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vrrp-acceptmode-disable", rest_name="vrrp-acceptmode-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Disable accept mode  for the non owner vrrp vip'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)
+    self.__vrrp_acceptmode_disable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vrrp-acceptmode-disable", rest_name="vrrp-acceptmode-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -103,12 +103,12 @@ class vrrp_rbridge_global(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="vrrp-acceptmode-disable", rest_name="vrrp-acceptmode-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Disable accept mode  for the non owner vrrp vip'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="vrrp-acceptmode-disable", rest_name="vrrp-acceptmode-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vrrp_acceptmode_disable must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vrrp-acceptmode-disable", rest_name="vrrp-acceptmode-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Disable accept mode  for the non owner vrrp vip'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vrrp-acceptmode-disable", rest_name="vrrp-acceptmode-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)""",
         })
 
     self.__vrrp_acceptmode_disable = t
@@ -116,7 +116,7 @@ class vrrp_rbridge_global(PybindBase):
       self._set()
 
   def _unset_vrrp_acceptmode_disable(self):
-    self.__vrrp_acceptmode_disable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vrrp-acceptmode-disable", rest_name="vrrp-acceptmode-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Disable accept mode  for the non owner vrrp vip'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)
+    self.__vrrp_acceptmode_disable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vrrp-acceptmode-disable", rest_name="vrrp-acceptmode-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)
 
   vrrp_acceptmode_disable = __builtin__.property(_get_vrrp_acceptmode_disable, _set_vrrp_acceptmode_disable)
 

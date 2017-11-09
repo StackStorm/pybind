@@ -47,7 +47,7 @@ class brocade_cluster(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__show_cluster_management = YANGDynClass(base=show_cluster_management.show_cluster_management, is_leaf=True, yang_name="show-cluster-management", rest_name="show-cluster-management", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'management-cluster-action-point'}}, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='rpc', is_config=True)
+    self.__show_cluster_management = YANGDynClass(base=show_cluster_management.show_cluster_management, is_leaf=True, yang_name="show-cluster-management", rest_name="show-cluster-management", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='rpc', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -102,12 +102,12 @@ class brocade_cluster(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=show_cluster_management.show_cluster_management, is_leaf=True, yang_name="show-cluster-management", rest_name="show-cluster-management", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'management-cluster-action-point'}}, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_cluster_management.show_cluster_management, is_leaf=True, yang_name="show-cluster-management", rest_name="show-cluster-management", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_cluster_management must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_cluster_management.show_cluster_management, is_leaf=True, yang_name="show-cluster-management", rest_name="show-cluster-management", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'management-cluster-action-point'}}, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_cluster_management.show_cluster_management, is_leaf=True, yang_name="show-cluster-management", rest_name="show-cluster-management", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_cluster_management = t
@@ -115,7 +115,7 @@ class brocade_cluster(PybindBase):
       self._set()
 
   def _unset_show_cluster_management(self):
-    self.__show_cluster_management = YANGDynClass(base=show_cluster_management.show_cluster_management, is_leaf=True, yang_name="show-cluster-management", rest_name="show-cluster-management", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'management-cluster-action-point'}}, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='rpc', is_config=True)
+    self.__show_cluster_management = YANGDynClass(base=show_cluster_management.show_cluster_management, is_leaf=True, yang_name="show-cluster-management", rest_name="show-cluster-management", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='rpc', is_config=True)
 
   show_cluster_management = __builtin__.property(_get_show_cluster_management, _set_show_cluster_management)
 

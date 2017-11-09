@@ -18,7 +18,7 @@ class system_qos(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__qos',)
 
   _yang_name = 'system-qos'
-  _rest_name = ''
+  _rest_name = 'system-qos'
 
   _pybind_generated_by = 'container'
 
@@ -45,7 +45,7 @@ class system_qos(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__qos = YANGDynClass(base=qos.qos, is_container='container', presence=False, yang_name="qos", rest_name="qos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Quality of Service (QoS)', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='container', is_config=True)
+    self.__qos = YANGDynClass(base=qos.qos, is_container='container', presence=False, yang_name="qos", rest_name="qos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class system_qos(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return []
+      return [u'system-qos']
 
   def _get_qos(self):
     """
@@ -100,12 +100,12 @@ class system_qos(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=qos.qos, is_container='container', presence=False, yang_name="qos", rest_name="qos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Quality of Service (QoS)', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=qos.qos, is_container='container', presence=False, yang_name="qos", rest_name="qos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """qos must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=qos.qos, is_container='container', presence=False, yang_name="qos", rest_name="qos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Quality of Service (QoS)', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=qos.qos, is_container='container', presence=False, yang_name="qos", rest_name="qos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='container', is_config=True)""",
         })
 
     self.__qos = t
@@ -113,7 +113,7 @@ class system_qos(PybindBase):
       self._set()
 
   def _unset_qos(self):
-    self.__qos = YANGDynClass(base=qos.qos, is_container='container', presence=False, yang_name="qos", rest_name="qos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Quality of Service (QoS)', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='container', is_config=True)
+    self.__qos = YANGDynClass(base=qos.qos, is_container='container', presence=False, yang_name="qos", rest_name="qos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='container', is_config=True)
 
   qos = __builtin__.property(_get_qos, _set_qos)
 

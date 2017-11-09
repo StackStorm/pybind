@@ -45,8 +45,8 @@ class policy_map(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__po_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="po-name", rest_name="po-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Policy Map Name (Max Size - 64)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='map-name-type', is_config=True)
-    self.__class_ = YANGDynClass(base=YANGListType("cl_name",class_.class_, yang_name="class", rest_name="class", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cl-name', extensions={u'tailf-common': {u'info': u'Policy Map Class Configuration', u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'policer-poclass-map', u'cli-mode-name': u'config-policymap-class'}}), is_container='list', yang_name="class", rest_name="class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Policy Map Class Configuration', u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'policer-poclass-map', u'cli-mode-name': u'config-policymap-class'}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='list', is_config=True)
+    self.__po_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="po-name", rest_name="po-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='map-name-type', is_config=True)
+    self.__class_ = YANGDynClass(base=YANGListType("cl_name",class_.class_, yang_name="class", rest_name="class", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cl-name', extensions=None), is_container='list', yang_name="class", rest_name="class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -106,12 +106,12 @@ class policy_map(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="po-name", rest_name="po-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Policy Map Name (Max Size - 64)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='map-name-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="po-name", rest_name="po-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='map-name-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """po_name must be of a type compatible with map-name-type""",
           'defined-type': "brocade-policer:map-name-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="po-name", rest_name="po-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Policy Map Name (Max Size - 64)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='map-name-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="po-name", rest_name="po-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='map-name-type', is_config=True)""",
         })
 
     self.__po_name = t
@@ -119,7 +119,7 @@ class policy_map(PybindBase):
       self._set()
 
   def _unset_po_name(self):
-    self.__po_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="po-name", rest_name="po-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Policy Map Name (Max Size - 64)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='map-name-type', is_config=True)
+    self.__po_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="po-name", rest_name="po-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='map-name-type', is_config=True)
 
 
   def _get_class_(self):
@@ -139,12 +139,12 @@ class policy_map(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("cl_name",class_.class_, yang_name="class", rest_name="class", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cl-name', extensions={u'tailf-common': {u'info': u'Policy Map Class Configuration', u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'policer-poclass-map', u'cli-mode-name': u'config-policymap-class'}}), is_container='list', yang_name="class", rest_name="class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Policy Map Class Configuration', u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'policer-poclass-map', u'cli-mode-name': u'config-policymap-class'}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("cl_name",class_.class_, yang_name="class", rest_name="class", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cl-name', extensions=None), is_container='list', yang_name="class", rest_name="class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """class_ must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("cl_name",class_.class_, yang_name="class", rest_name="class", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cl-name', extensions={u'tailf-common': {u'info': u'Policy Map Class Configuration', u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'policer-poclass-map', u'cli-mode-name': u'config-policymap-class'}}), is_container='list', yang_name="class", rest_name="class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Policy Map Class Configuration', u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'policer-poclass-map', u'cli-mode-name': u'config-policymap-class'}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("cl_name",class_.class_, yang_name="class", rest_name="class", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cl-name', extensions=None), is_container='list', yang_name="class", rest_name="class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='list', is_config=True)""",
         })
 
     self.__class_ = t
@@ -152,7 +152,7 @@ class policy_map(PybindBase):
       self._set()
 
   def _unset_class_(self):
-    self.__class_ = YANGDynClass(base=YANGListType("cl_name",class_.class_, yang_name="class", rest_name="class", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cl-name', extensions={u'tailf-common': {u'info': u'Policy Map Class Configuration', u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'policer-poclass-map', u'cli-mode-name': u'config-policymap-class'}}), is_container='list', yang_name="class", rest_name="class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Policy Map Class Configuration', u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-full-command': None, u'callpoint': u'policer-poclass-map', u'cli-mode-name': u'config-policymap-class'}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='list', is_config=True)
+    self.__class_ = YANGDynClass(base=YANGListType("cl_name",class_.class_, yang_name="class", rest_name="class", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='cl-name', extensions=None), is_container='list', yang_name="class", rest_name="class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='list', is_config=True)
 
   po_name = __builtin__.property(_get_po_name, _set_po_name)
   class_ = __builtin__.property(_get_class_, _set_class_)

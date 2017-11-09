@@ -44,7 +44,7 @@ class fec(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__fec_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'disabled': {'value': 4}, u'auto': {'value': 3}, u'RS-FEC': {'value': 1}, u'FC-FEC': {'value': 2}},), is_leaf=True, yang_name="fec-mode", rest_name="mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set FEC Mode', u'cli-full-command': None, u'alt-name': u'mode'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fec-mode-type', is_config=True)
+    self.__fec_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'disabled': {'value': 4}, u'auto': {'value': 3}, u'RS-FEC': {'value': 1}, u'FC-FEC': {'value': 2}},), is_leaf=True, yang_name="fec-mode", rest_name="fec-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fec-mode-type', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -80,7 +80,7 @@ class fec(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface', u'Ethernet', u'fec']
+      return [u'interface', u'ethernet', u'fec']
 
   def _get_fec_mode(self):
     """
@@ -99,12 +99,12 @@ class fec(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'disabled': {'value': 4}, u'auto': {'value': 3}, u'RS-FEC': {'value': 1}, u'FC-FEC': {'value': 2}},), is_leaf=True, yang_name="fec-mode", rest_name="mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set FEC Mode', u'cli-full-command': None, u'alt-name': u'mode'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fec-mode-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'disabled': {'value': 4}, u'auto': {'value': 3}, u'RS-FEC': {'value': 1}, u'FC-FEC': {'value': 2}},), is_leaf=True, yang_name="fec-mode", rest_name="fec-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fec-mode-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fec_mode must be of a type compatible with fec-mode-type""",
           'defined-type': "brocade-interface:fec-mode-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'disabled': {'value': 4}, u'auto': {'value': 3}, u'RS-FEC': {'value': 1}, u'FC-FEC': {'value': 2}},), is_leaf=True, yang_name="fec-mode", rest_name="mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set FEC Mode', u'cli-full-command': None, u'alt-name': u'mode'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fec-mode-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'disabled': {'value': 4}, u'auto': {'value': 3}, u'RS-FEC': {'value': 1}, u'FC-FEC': {'value': 2}},), is_leaf=True, yang_name="fec-mode", rest_name="fec-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fec-mode-type', is_config=True)""",
         })
 
     self.__fec_mode = t
@@ -112,7 +112,7 @@ class fec(PybindBase):
       self._set()
 
   def _unset_fec_mode(self):
-    self.__fec_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'disabled': {'value': 4}, u'auto': {'value': 3}, u'RS-FEC': {'value': 1}, u'FC-FEC': {'value': 2}},), is_leaf=True, yang_name="fec-mode", rest_name="mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set FEC Mode', u'cli-full-command': None, u'alt-name': u'mode'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fec-mode-type', is_config=True)
+    self.__fec_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'disabled': {'value': 4}, u'auto': {'value': 3}, u'RS-FEC': {'value': 1}, u'FC-FEC': {'value': 2}},), is_leaf=True, yang_name="fec-mode", rest_name="fec-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='fec-mode-type', is_config=True)
 
   fec_mode = __builtin__.property(_get_fec_mode, _set_fec_mode)
 

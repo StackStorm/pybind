@@ -19,7 +19,7 @@ class router_bgp(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__router_bgp_attributes','__address_family',)
 
   _yang_name = 'router-bgp'
-  _rest_name = 'bgp'
+  _rest_name = 'router-bgp'
 
   _pybind_generated_by = 'container'
 
@@ -46,8 +46,8 @@ class router_bgp(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__router_bgp_attributes = YANGDynClass(base=router_bgp_attributes.router_bgp_attributes, is_container='container', presence=False, yang_name="router-bgp-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
-    self.__address_family = YANGDynClass(base=address_family.address_family, is_container='container', presence=False, yang_name="address-family", rest_name="address-family", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enter Address Family command mode', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__router_bgp_attributes = YANGDynClass(base=router_bgp_attributes.router_bgp_attributes, is_container='container', presence=False, yang_name="router-bgp-attributes", rest_name="router-bgp-attributes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__address_family = YANGDynClass(base=address_family.address_family, is_container='container', presence=False, yang_name="address-family", rest_name="address-family", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -83,7 +83,7 @@ class router_bgp(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'router', u'bgp']
+      return [u'routing-system', u'router', u'router-bgp']
 
   def _get_router_bgp_attributes(self):
     """
@@ -102,12 +102,12 @@ class router_bgp(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=router_bgp_attributes.router_bgp_attributes, is_container='container', presence=False, yang_name="router-bgp-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=router_bgp_attributes.router_bgp_attributes, is_container='container', presence=False, yang_name="router-bgp-attributes", rest_name="router-bgp-attributes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """router_bgp_attributes must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=router_bgp_attributes.router_bgp_attributes, is_container='container', presence=False, yang_name="router-bgp-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=router_bgp_attributes.router_bgp_attributes, is_container='container', presence=False, yang_name="router-bgp-attributes", rest_name="router-bgp-attributes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__router_bgp_attributes = t
@@ -115,7 +115,7 @@ class router_bgp(PybindBase):
       self._set()
 
   def _unset_router_bgp_attributes(self):
-    self.__router_bgp_attributes = YANGDynClass(base=router_bgp_attributes.router_bgp_attributes, is_container='container', presence=False, yang_name="router-bgp-attributes", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__router_bgp_attributes = YANGDynClass(base=router_bgp_attributes.router_bgp_attributes, is_container='container', presence=False, yang_name="router-bgp-attributes", rest_name="router-bgp-attributes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
 
   def _get_address_family(self):
@@ -135,12 +135,12 @@ class router_bgp(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=address_family.address_family, is_container='container', presence=False, yang_name="address-family", rest_name="address-family", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enter Address Family command mode', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=address_family.address_family, is_container='container', presence=False, yang_name="address-family", rest_name="address-family", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """address_family must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=address_family.address_family, is_container='container', presence=False, yang_name="address-family", rest_name="address-family", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enter Address Family command mode', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=address_family.address_family, is_container='container', presence=False, yang_name="address-family", rest_name="address-family", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__address_family = t
@@ -148,7 +148,7 @@ class router_bgp(PybindBase):
       self._set()
 
   def _unset_address_family(self):
-    self.__address_family = YANGDynClass(base=address_family.address_family, is_container='container', presence=False, yang_name="address-family", rest_name="address-family", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enter Address Family command mode', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__address_family = YANGDynClass(base=address_family.address_family, is_container='container', presence=False, yang_name="address-family", rest_name="address-family", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
   router_bgp_attributes = __builtin__.property(_get_router_bgp_attributes, _set_router_bgp_attributes)
   address_family = __builtin__.property(_get_address_family, _set_address_family)

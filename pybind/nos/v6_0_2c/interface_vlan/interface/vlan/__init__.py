@@ -8,6 +8,8 @@ from decimal import Decimal
 from bitarray import bitarray
 import __builtin__
 import private_vlan
+import ip
+import ipv6
 import mac
 import spanning_tree
 class vlan(PybindBase):
@@ -21,7 +23,7 @@ class vlan(PybindBase):
 represents a vlan. User can create/delete an entry in 
 to this list.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__name','__transport_service','__ifindex','__description','__vlan_name','__private_vlan','__mac','__remote_span','__spanning_tree',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__name','__transport_service','__ifindex','__description','__vlan_name','__private_vlan','__ip','__ipv6','__mac','__remote_span','__spanning_tree',)
 
   _yang_name = 'vlan'
   _rest_name = 'Vlan'
@@ -53,6 +55,8 @@ to this list.
       self._extmethods = False
     self.__spanning_tree = YANGDynClass(base=spanning_tree.spanning_tree, is_container='container', presence=False, yang_name="spanning-tree", rest_name="spanning-tree", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Spanning tree commands', u'sort-priority': u'98', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
     self.__name = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..8191']}), is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None, u'cli-custom-range': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='vlan-type', is_config=True)
+    self.__ip = YANGDynClass(base=ip.ip, is_container='container', presence=False, yang_name="ip", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Internet Protocol (IP).', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__ipv6 = YANGDynClass(base=ipv6.ipv6, is_container='container', presence=False, yang_name="ipv6", rest_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Internet Protocol v6 (IPv6).', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     self.__vlan_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 32']}), is_leaf=True, yang_name="vlan-name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Alternative name for the VLAN', u'cli-multi-value': None, u'alt-name': u'name'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=True)
     self.__mac = YANGDynClass(base=mac.mac, is_container='container', presence=False, yang_name="mac", rest_name="mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure MAC parameters', u'callpoint': u'MacaclAccessgroupIntVlanCP', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_MAC_ACL_CONFIG'}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='container', is_config=True)
     self.__transport_service = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), restriction_dict={'range': [u'1..1000']}), is_leaf=True, yang_name="transport-service", rest_name="transport-service", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' Set tlsid for Transparent vlan ', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_L2_TRANSPORT_CONFIG'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='uint16', is_config=True)
@@ -312,6 +316,80 @@ to this list.
     self.__private_vlan = YANGDynClass(base=private_vlan.private_vlan, is_container='container', presence=False, yang_name="private-vlan", rest_name="private-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure vlan as private vlan', u'cli-full-no': None, u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_L2_PVLAN_CONFIG'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
 
+  def _get_ip(self):
+    """
+    Getter method for ip, mapped from YANG variable /interface_vlan/interface/vlan/ip (container)
+
+    YANG Description: The IP configurations for an interface.
+    """
+    return self.__ip
+      
+  def _set_ip(self, v, load=False):
+    """
+    Setter method for ip, mapped from YANG variable /interface_vlan/interface/vlan/ip (container)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_ip is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_ip() directly.
+
+    YANG Description: The IP configurations for an interface.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=ip.ip, is_container='container', presence=False, yang_name="ip", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Internet Protocol (IP).', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """ip must be of a type compatible with container""",
+          'defined-type': "container",
+          'generated-type': """YANGDynClass(base=ip.ip, is_container='container', presence=False, yang_name="ip", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Internet Protocol (IP).', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
+        })
+
+    self.__ip = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_ip(self):
+    self.__ip = YANGDynClass(base=ip.ip, is_container='container', presence=False, yang_name="ip", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Internet Protocol (IP).', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+
+
+  def _get_ipv6(self):
+    """
+    Getter method for ipv6, mapped from YANG variable /interface_vlan/interface/vlan/ipv6 (container)
+
+    YANG Description: The IP configurations for an interface.
+    """
+    return self.__ipv6
+      
+  def _set_ipv6(self, v, load=False):
+    """
+    Setter method for ipv6, mapped from YANG variable /interface_vlan/interface/vlan/ipv6 (container)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_ipv6 is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_ipv6() directly.
+
+    YANG Description: The IP configurations for an interface.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=ipv6.ipv6, is_container='container', presence=False, yang_name="ipv6", rest_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Internet Protocol v6 (IPv6).', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """ipv6 must be of a type compatible with container""",
+          'defined-type': "container",
+          'generated-type': """YANGDynClass(base=ipv6.ipv6, is_container='container', presence=False, yang_name="ipv6", rest_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Internet Protocol v6 (IPv6).', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
+        })
+
+    self.__ipv6 = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_ipv6(self):
+    self.__ipv6 = YANGDynClass(base=ipv6.ipv6, is_container='container', presence=False, yang_name="ipv6", rest_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Internet Protocol v6 (IPv6).', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+
+
   def _get_mac(self):
     """
     Getter method for mac, mapped from YANG variable /interface_vlan/interface/vlan/mac (container)
@@ -416,11 +494,13 @@ to this list.
   description = __builtin__.property(_get_description, _set_description)
   vlan_name = __builtin__.property(_get_vlan_name, _set_vlan_name)
   private_vlan = __builtin__.property(_get_private_vlan, _set_private_vlan)
+  ip = __builtin__.property(_get_ip, _set_ip)
+  ipv6 = __builtin__.property(_get_ipv6, _set_ipv6)
   mac = __builtin__.property(_get_mac, _set_mac)
   remote_span = __builtin__.property(_get_remote_span, _set_remote_span)
   spanning_tree = __builtin__.property(_get_spanning_tree, _set_spanning_tree)
 
 
-  _pyangbind_elements = {'name': name, 'transport_service': transport_service, 'ifindex': ifindex, 'description': description, 'vlan_name': vlan_name, 'private_vlan': private_vlan, 'mac': mac, 'remote_span': remote_span, 'spanning_tree': spanning_tree, }
+  _pyangbind_elements = {'name': name, 'transport_service': transport_service, 'ifindex': ifindex, 'description': description, 'vlan_name': vlan_name, 'private_vlan': private_vlan, 'ip': ip, 'ipv6': ipv6, 'mac': mac, 'remote_span': remote_span, 'spanning_tree': spanning_tree, }
 
 

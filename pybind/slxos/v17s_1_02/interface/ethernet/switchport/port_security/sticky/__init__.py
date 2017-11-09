@@ -47,7 +47,7 @@ class sticky(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__port_secutiry_mac_address = YANGDynClass(base=YANGListType("mac_address port_sec_vlan",port_secutiry_mac_address.port_secutiry_mac_address, yang_name="port-secutiry-mac-address", rest_name="port-secutiry-mac-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mac-address port-sec-vlan', extensions={u'tailf-common': {u'info': u'Mac Address commands', u'cli-drop-node-name': None, u'cli-suppress-mode': None, u'callpoint': u'interface_portsecurity_sticky_mac', u'cli-suppress-list-no': None}}), is_container='list', yang_name="port-secutiry-mac-address", rest_name="port-secutiry-mac-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Mac Address commands', u'cli-drop-node-name': None, u'cli-suppress-mode': None, u'callpoint': u'interface_portsecurity_sticky_mac', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
+    self.__port_secutiry_mac_address = YANGDynClass(base=YANGListType("mac_address port_sec_vlan",port_secutiry_mac_address.port_secutiry_mac_address, yang_name="port-secutiry-mac-address", rest_name="port-secutiry-mac-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mac-address port-sec-vlan', extensions=None), is_container='list', yang_name="port-secutiry-mac-address", rest_name="port-secutiry-mac-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -83,7 +83,7 @@ class sticky(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface', u'Ethernet', u'switchport', u'port-security', u'sticky']
+      return [u'interface', u'ethernet', u'switchport', u'port-security', u'sticky']
 
   def _get_port_secutiry_mac_address(self):
     """
@@ -106,12 +106,12 @@ class sticky(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("mac_address port_sec_vlan",port_secutiry_mac_address.port_secutiry_mac_address, yang_name="port-secutiry-mac-address", rest_name="port-secutiry-mac-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mac-address port-sec-vlan', extensions={u'tailf-common': {u'info': u'Mac Address commands', u'cli-drop-node-name': None, u'cli-suppress-mode': None, u'callpoint': u'interface_portsecurity_sticky_mac', u'cli-suppress-list-no': None}}), is_container='list', yang_name="port-secutiry-mac-address", rest_name="port-secutiry-mac-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Mac Address commands', u'cli-drop-node-name': None, u'cli-suppress-mode': None, u'callpoint': u'interface_portsecurity_sticky_mac', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("mac_address port_sec_vlan",port_secutiry_mac_address.port_secutiry_mac_address, yang_name="port-secutiry-mac-address", rest_name="port-secutiry-mac-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mac-address port-sec-vlan', extensions=None), is_container='list', yang_name="port-secutiry-mac-address", rest_name="port-secutiry-mac-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """port_secutiry_mac_address must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("mac_address port_sec_vlan",port_secutiry_mac_address.port_secutiry_mac_address, yang_name="port-secutiry-mac-address", rest_name="port-secutiry-mac-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mac-address port-sec-vlan', extensions={u'tailf-common': {u'info': u'Mac Address commands', u'cli-drop-node-name': None, u'cli-suppress-mode': None, u'callpoint': u'interface_portsecurity_sticky_mac', u'cli-suppress-list-no': None}}), is_container='list', yang_name="port-secutiry-mac-address", rest_name="port-secutiry-mac-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Mac Address commands', u'cli-drop-node-name': None, u'cli-suppress-mode': None, u'callpoint': u'interface_portsecurity_sticky_mac', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("mac_address port_sec_vlan",port_secutiry_mac_address.port_secutiry_mac_address, yang_name="port-secutiry-mac-address", rest_name="port-secutiry-mac-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mac-address port-sec-vlan', extensions=None), is_container='list', yang_name="port-secutiry-mac-address", rest_name="port-secutiry-mac-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)""",
         })
 
     self.__port_secutiry_mac_address = t
@@ -119,7 +119,7 @@ class sticky(PybindBase):
       self._set()
 
   def _unset_port_secutiry_mac_address(self):
-    self.__port_secutiry_mac_address = YANGDynClass(base=YANGListType("mac_address port_sec_vlan",port_secutiry_mac_address.port_secutiry_mac_address, yang_name="port-secutiry-mac-address", rest_name="port-secutiry-mac-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mac-address port-sec-vlan', extensions={u'tailf-common': {u'info': u'Mac Address commands', u'cli-drop-node-name': None, u'cli-suppress-mode': None, u'callpoint': u'interface_portsecurity_sticky_mac', u'cli-suppress-list-no': None}}), is_container='list', yang_name="port-secutiry-mac-address", rest_name="port-secutiry-mac-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Mac Address commands', u'cli-drop-node-name': None, u'cli-suppress-mode': None, u'callpoint': u'interface_portsecurity_sticky_mac', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
+    self.__port_secutiry_mac_address = YANGDynClass(base=YANGListType("mac_address port_sec_vlan",port_secutiry_mac_address.port_secutiry_mac_address, yang_name="port-secutiry-mac-address", rest_name="port-secutiry-mac-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='mac-address port-sec-vlan', extensions=None), is_container='list', yang_name="port-secutiry-mac-address", rest_name="port-secutiry-mac-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='list', is_config=True)
 
   port_secutiry_mac_address = __builtin__.property(_get_port_secutiry_mac_address, _set_port_secutiry_mac_address)
 

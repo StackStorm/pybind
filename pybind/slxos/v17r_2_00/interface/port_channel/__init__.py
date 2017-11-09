@@ -19,10 +19,14 @@ import edge_loop_detection
 import mac
 import hide_vrrp_holer
 import logical_interface
+import fcoeport
 import ip_acl_interface
+import lacp_pdu_forward
+import openflowPo
 import port_profile_to_interface_associations
 import qos
 import service_policy
+import uda
 import spanning_tree
 class port_channel(PybindBase):
   """
@@ -34,7 +38,7 @@ class port_channel(PybindBase):
   YANG Description: The list of port-channels in the managed device. Each
 entry represents a port-channel.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__name','__vlag','__po_speed','__insight','__ifindex','__description','__shutdown','__minimum_links','__mtu','__route_only','__tag_type','__switchport_basic','__switchport','__ip','__ipv6','__track','__edge_loop_detection_native','__edge_loop_detection','__priority_tag_enable','__load_balance','__load_balance_type','__mac','__hide_vrrp_holer','__logical_interface','__ip_acl_interface','__port_profile_port','__port_profile_to_interface_associations','__qos','__service_policy','__spanning_tree',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__name','__vlag','__po_speed','__insight','__ifindex','__description','__shutdown','__minimum_links','__mtu','__route_only','__tag_type','__switchport_basic','__switchport','__ip','__ipv6','__track','__edge_loop_detection_native','__edge_loop_detection','__priority_tag_enable','__load_balance','__load_balance_type','__mac','__hide_vrrp_holer','__logical_interface','__fcoeport','__ip_acl_interface','__lacp_pdu_forward','__openflowPo','__port_profile_port','__port_profile_to_interface_associations','__qos','__service_policy','__uda','__offsets','__spanning_tree',)
 
   _yang_name = 'port-channel'
   _rest_name = 'Port-channel'
@@ -84,14 +88,19 @@ entry represents a port-channel.
     self.__vlag = YANGDynClass(base=vlag.vlag, is_container='container', presence=False, yang_name="vlag", rest_name="vlag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual LAG', u'display-when': u'/vcsmode/vcs-mode = "true"'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     self.__edge_loop_detection = YANGDynClass(base=edge_loop_detection.edge_loop_detection, is_container='container', presence=False, yang_name="edge-loop-detection", rest_name="loop-detection", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable edge-loop-detection on the selected interface', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_ELD', u'alt-name': u'loop-detection', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     self.__description = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1 .. 63']}), is_leaf=True, yang_name="description", rest_name="description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface specific description', u'cli-multi-value': None, u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_BASIC_CONFIG'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=True)
+    self.__offsets = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,62})', 'length': [u'1..63']}), is_leaf=True, yang_name="offsets", rest_name="uda-profile-apply", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply UDA profile', u'alt-name': u'uda-profile-apply', u'sort-priority': u'126', u'callpoint': u'interface_po'}}, namespace='urn:brocade.com:mgmt:brocade-uda-access-list', defining_module='brocade-uda-access-list', yang_type='uda-profile-name', is_config=True)
     self.__track = YANGDynClass(base=track.track, is_container='container', presence=False, yang_name="track", rest_name="track", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Track interface', u'hidden': u'full', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     self.__ipv6 = YANGDynClass(base=ipv6.ipv6, is_container='container', presence=False, yang_name="ipv6", rest_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Internet Protocol version 6(IPv6).', u'cli-incomplete-no': None, u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_IP_CONFIG', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__lacp_pdu_forward = YANGDynClass(base=lacp_pdu_forward.lacp_pdu_forward, is_container='container', presence=False, yang_name="lacp-pdu-forward", rest_name="lacp-pdu-forward", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'LACP PDU Forward related commands', u'callpoint': u'LacpPduForwardPoCP', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-lacp-pdu-forward', defining_module='brocade-lacp-pdu-forward', yang_type='container', is_config=True)
     self.__mac = YANGDynClass(base=mac.mac, is_container='container', presence=False, yang_name="mac", rest_name="mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure MAC parameters', u'callpoint': u'MacaclAccessgroupIntPoCP', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_MAC_ACL_CONFIG'}}, namespace='urn:brocade.com:mgmt:brocade-mac-access-list', defining_module='brocade-mac-access-list', yang_type='container', is_config=True)
+    self.__uda = YANGDynClass(base=uda.uda, is_container='container', presence=False, yang_name="uda", rest_name="uda", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure UDA parameters', u'callpoint': u'UdaaclAccessgroupIntPoCP', u'sort-priority': u'126'}}, namespace='urn:brocade.com:mgmt:brocade-uda-access-list', defining_module='brocade-uda-access-list', yang_type='container', is_config=True)
     self.__load_balance = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'src-dst-ip-port': {'value': 6}, u'src-mac-vid': {'value': 2}, u'src-dst-ip': {'value': 4}, u'src-dst-ip-mac-vid': {'value': 5}, u'dst-mac-vid': {'value': 1}, u'src-dst-mac-vid': {'value': 3}, u'src-dst-ip-mac-vid-port': {'value': 7}},), default=unicode("src-dst-ip-mac-vid-port"), is_leaf=True, yang_name="load-balance", rest_name="load-balance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Load balancing Commands', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='enumeration', is_config=True)
     self.__po_speed = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'25000': {'value': 6}, u'40000': {'value': 3}, u'100000': {'value': 4}, u'10000': {'value': 2}, u'100': {'value': 5}, u'1000': {'value': 1}},), default=unicode("10000"), is_leaf=True, yang_name="po-speed", rest_name="speed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set speed informational parameter', u'alt-name': u'speed'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='enumeration', is_config=True)
+    self.__fcoeport = YANGDynClass(base=fcoeport.fcoeport, is_container='container', presence=False, yang_name="fcoeport", rest_name="fcoeport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the LAG to enable FCoE', u'callpoint': u'fcoeport_attr_lag_cp', u'sort-priority': u'138', u'display-when': u'(/vcsmode/vcs-mode = "true")'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
     self.__name = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..512']}), is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-range': None, u'cli-custom-range': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='portchannel-type', is_config=True)
     self.__switchport = YANGDynClass(base=switchport.switchport, is_container='container', presence=False, yang_name="switchport", rest_name="switchport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the switching characteristics of the Layer2 \ninterface', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_MODE_SWITCHPORT_CONFIG', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     self.__mtu = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1548..9216']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1548), is_leaf=True, yang_name="mtu", rest_name="mtu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-run-template': u'mtu $(mtu)\n', u'info': u'Set mtu value to interface'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='mtu-type', is_config=True)
+    self.__openflowPo = YANGDynClass(base=openflowPo.openflowPo, is_container='container', presence=False, yang_name="openflowPo", rest_name="openflow", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'enables openflow ', u'alt-name': u'openflow', u'sort-priority': u'116', u'callpoint': u'OpenflowPo'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
     self.__ifindex = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), is_leaf=True, yang_name="ifindex", rest_name="ifindex", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='uint64', is_config=False)
     self.__tag_type = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'0x[0-9a-fA-F]{4}'}), is_leaf=True, yang_name="tag-type", rest_name="tag-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Tag Protocol Identifier'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='tpid-type', is_config=True)
 
@@ -992,6 +1001,39 @@ datagram that can be sent on the interface.
     self.__logical_interface = YANGDynClass(base=logical_interface.logical_interface, is_container='container', presence=False, yang_name="logical-interface", rest_name="logical-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a Logical Interface on port-channel', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_LIF'}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
 
 
+  def _get_fcoeport(self):
+    """
+    Getter method for fcoeport, mapped from YANG variable /interface/port_channel/fcoeport (container)
+    """
+    return self.__fcoeport
+      
+  def _set_fcoeport(self, v, load=False):
+    """
+    Setter method for fcoeport, mapped from YANG variable /interface/port_channel/fcoeport (container)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_fcoeport is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_fcoeport() directly.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=fcoeport.fcoeport, is_container='container', presence=False, yang_name="fcoeport", rest_name="fcoeport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the LAG to enable FCoE', u'callpoint': u'fcoeport_attr_lag_cp', u'sort-priority': u'138', u'display-when': u'(/vcsmode/vcs-mode = "true")'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """fcoeport must be of a type compatible with container""",
+          'defined-type': "container",
+          'generated-type': """YANGDynClass(base=fcoeport.fcoeport, is_container='container', presence=False, yang_name="fcoeport", rest_name="fcoeport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the LAG to enable FCoE', u'callpoint': u'fcoeport_attr_lag_cp', u'sort-priority': u'138', u'display-when': u'(/vcsmode/vcs-mode = "true")'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)""",
+        })
+
+    self.__fcoeport = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_fcoeport(self):
+    self.__fcoeport = YANGDynClass(base=fcoeport.fcoeport, is_container='container', presence=False, yang_name="fcoeport", rest_name="fcoeport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the LAG to enable FCoE', u'callpoint': u'fcoeport_attr_lag_cp', u'sort-priority': u'138', u'display-when': u'(/vcsmode/vcs-mode = "true")'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
+
+
   def _get_ip_acl_interface(self):
     """
     Getter method for ip_acl_interface, mapped from YANG variable /interface/port_channel/ip_acl_interface (container)
@@ -1023,6 +1065,72 @@ datagram that can be sent on the interface.
 
   def _unset_ip_acl_interface(self):
     self.__ip_acl_interface = YANGDynClass(base=ip_acl_interface.ip_acl_interface, is_container='container', presence=False, yang_name="ip-acl-interface", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'125'}}, namespace='urn:brocade.com:mgmt:brocade-ip-access-list', defining_module='brocade-ip-access-list', yang_type='container', is_config=True)
+
+
+  def _get_lacp_pdu_forward(self):
+    """
+    Getter method for lacp_pdu_forward, mapped from YANG variable /interface/port_channel/lacp_pdu_forward (container)
+    """
+    return self.__lacp_pdu_forward
+      
+  def _set_lacp_pdu_forward(self, v, load=False):
+    """
+    Setter method for lacp_pdu_forward, mapped from YANG variable /interface/port_channel/lacp_pdu_forward (container)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_lacp_pdu_forward is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_lacp_pdu_forward() directly.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=lacp_pdu_forward.lacp_pdu_forward, is_container='container', presence=False, yang_name="lacp-pdu-forward", rest_name="lacp-pdu-forward", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'LACP PDU Forward related commands', u'callpoint': u'LacpPduForwardPoCP', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-lacp-pdu-forward', defining_module='brocade-lacp-pdu-forward', yang_type='container', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """lacp_pdu_forward must be of a type compatible with container""",
+          'defined-type': "container",
+          'generated-type': """YANGDynClass(base=lacp_pdu_forward.lacp_pdu_forward, is_container='container', presence=False, yang_name="lacp-pdu-forward", rest_name="lacp-pdu-forward", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'LACP PDU Forward related commands', u'callpoint': u'LacpPduForwardPoCP', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-lacp-pdu-forward', defining_module='brocade-lacp-pdu-forward', yang_type='container', is_config=True)""",
+        })
+
+    self.__lacp_pdu_forward = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_lacp_pdu_forward(self):
+    self.__lacp_pdu_forward = YANGDynClass(base=lacp_pdu_forward.lacp_pdu_forward, is_container='container', presence=False, yang_name="lacp-pdu-forward", rest_name="lacp-pdu-forward", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'LACP PDU Forward related commands', u'callpoint': u'LacpPduForwardPoCP', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-lacp-pdu-forward', defining_module='brocade-lacp-pdu-forward', yang_type='container', is_config=True)
+
+
+  def _get_openflowPo(self):
+    """
+    Getter method for openflowPo, mapped from YANG variable /interface/port_channel/openflowPo (container)
+    """
+    return self.__openflowPo
+      
+  def _set_openflowPo(self, v, load=False):
+    """
+    Setter method for openflowPo, mapped from YANG variable /interface/port_channel/openflowPo (container)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_openflowPo is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_openflowPo() directly.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=openflowPo.openflowPo, is_container='container', presence=False, yang_name="openflowPo", rest_name="openflow", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'enables openflow ', u'alt-name': u'openflow', u'sort-priority': u'116', u'callpoint': u'OpenflowPo'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """openflowPo must be of a type compatible with container""",
+          'defined-type': "container",
+          'generated-type': """YANGDynClass(base=openflowPo.openflowPo, is_container='container', presence=False, yang_name="openflowPo", rest_name="openflow", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'enables openflow ', u'alt-name': u'openflow', u'sort-priority': u'116', u'callpoint': u'OpenflowPo'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)""",
+        })
+
+    self.__openflowPo = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_openflowPo(self):
+    self.__openflowPo = YANGDynClass(base=openflowPo.openflowPo, is_container='container', presence=False, yang_name="openflowPo", rest_name="openflow", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'enables openflow ', u'alt-name': u'openflow', u'sort-priority': u'116', u'callpoint': u'OpenflowPo'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
 
 
   def _get_port_profile_port(self):
@@ -1175,6 +1283,72 @@ following MAC learning process.
     self.__service_policy = YANGDynClass(base=service_policy.service_policy, is_container='container', presence=False, yang_name="service-policy", rest_name="service-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Attach Input/Output Policy Map', u'callpoint': u'interface_po', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='container', is_config=True)
 
 
+  def _get_uda(self):
+    """
+    Getter method for uda, mapped from YANG variable /interface/port_channel/uda (container)
+    """
+    return self.__uda
+      
+  def _set_uda(self, v, load=False):
+    """
+    Setter method for uda, mapped from YANG variable /interface/port_channel/uda (container)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_uda is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_uda() directly.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=uda.uda, is_container='container', presence=False, yang_name="uda", rest_name="uda", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure UDA parameters', u'callpoint': u'UdaaclAccessgroupIntPoCP', u'sort-priority': u'126'}}, namespace='urn:brocade.com:mgmt:brocade-uda-access-list', defining_module='brocade-uda-access-list', yang_type='container', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """uda must be of a type compatible with container""",
+          'defined-type': "container",
+          'generated-type': """YANGDynClass(base=uda.uda, is_container='container', presence=False, yang_name="uda", rest_name="uda", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure UDA parameters', u'callpoint': u'UdaaclAccessgroupIntPoCP', u'sort-priority': u'126'}}, namespace='urn:brocade.com:mgmt:brocade-uda-access-list', defining_module='brocade-uda-access-list', yang_type='container', is_config=True)""",
+        })
+
+    self.__uda = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_uda(self):
+    self.__uda = YANGDynClass(base=uda.uda, is_container='container', presence=False, yang_name="uda", rest_name="uda", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure UDA parameters', u'callpoint': u'UdaaclAccessgroupIntPoCP', u'sort-priority': u'126'}}, namespace='urn:brocade.com:mgmt:brocade-uda-access-list', defining_module='brocade-uda-access-list', yang_type='container', is_config=True)
+
+
+  def _get_offsets(self):
+    """
+    Getter method for offsets, mapped from YANG variable /interface/port_channel/offsets (uda-profile-name)
+    """
+    return self.__offsets
+      
+  def _set_offsets(self, v, load=False):
+    """
+    Setter method for offsets, mapped from YANG variable /interface/port_channel/offsets (uda-profile-name)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_offsets is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_offsets() directly.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,62})', 'length': [u'1..63']}), is_leaf=True, yang_name="offsets", rest_name="uda-profile-apply", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply UDA profile', u'alt-name': u'uda-profile-apply', u'sort-priority': u'126', u'callpoint': u'interface_po'}}, namespace='urn:brocade.com:mgmt:brocade-uda-access-list', defining_module='brocade-uda-access-list', yang_type='uda-profile-name', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """offsets must be of a type compatible with uda-profile-name""",
+          'defined-type': "brocade-uda-access-list:uda-profile-name",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,62})', 'length': [u'1..63']}), is_leaf=True, yang_name="offsets", rest_name="uda-profile-apply", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply UDA profile', u'alt-name': u'uda-profile-apply', u'sort-priority': u'126', u'callpoint': u'interface_po'}}, namespace='urn:brocade.com:mgmt:brocade-uda-access-list', defining_module='brocade-uda-access-list', yang_type='uda-profile-name', is_config=True)""",
+        })
+
+    self.__offsets = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_offsets(self):
+    self.__offsets = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,62})', 'length': [u'1..63']}), is_leaf=True, yang_name="offsets", rest_name="uda-profile-apply", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply UDA profile', u'alt-name': u'uda-profile-apply', u'sort-priority': u'126', u'callpoint': u'interface_po'}}, namespace='urn:brocade.com:mgmt:brocade-uda-access-list', defining_module='brocade-uda-access-list', yang_type='uda-profile-name', is_config=True)
+
+
   def _get_spanning_tree(self):
     """
     Getter method for spanning_tree, mapped from YANG variable /interface/port_channel/spanning_tree (container)
@@ -1231,14 +1405,19 @@ following MAC learning process.
   mac = __builtin__.property(_get_mac, _set_mac)
   hide_vrrp_holer = __builtin__.property(_get_hide_vrrp_holer, _set_hide_vrrp_holer)
   logical_interface = __builtin__.property(_get_logical_interface, _set_logical_interface)
+  fcoeport = __builtin__.property(_get_fcoeport, _set_fcoeport)
   ip_acl_interface = __builtin__.property(_get_ip_acl_interface, _set_ip_acl_interface)
+  lacp_pdu_forward = __builtin__.property(_get_lacp_pdu_forward, _set_lacp_pdu_forward)
+  openflowPo = __builtin__.property(_get_openflowPo, _set_openflowPo)
   port_profile_port = __builtin__.property(_get_port_profile_port, _set_port_profile_port)
   port_profile_to_interface_associations = __builtin__.property(_get_port_profile_to_interface_associations, _set_port_profile_to_interface_associations)
   qos = __builtin__.property(_get_qos, _set_qos)
   service_policy = __builtin__.property(_get_service_policy, _set_service_policy)
+  uda = __builtin__.property(_get_uda, _set_uda)
+  offsets = __builtin__.property(_get_offsets, _set_offsets)
   spanning_tree = __builtin__.property(_get_spanning_tree, _set_spanning_tree)
 
 
-  _pyangbind_elements = {'name': name, 'vlag': vlag, 'po_speed': po_speed, 'insight': insight, 'ifindex': ifindex, 'description': description, 'shutdown': shutdown, 'minimum_links': minimum_links, 'mtu': mtu, 'route_only': route_only, 'tag_type': tag_type, 'switchport_basic': switchport_basic, 'switchport': switchport, 'ip': ip, 'ipv6': ipv6, 'track': track, 'edge_loop_detection_native': edge_loop_detection_native, 'edge_loop_detection': edge_loop_detection, 'priority_tag_enable': priority_tag_enable, 'load_balance': load_balance, 'load_balance_type': load_balance_type, 'mac': mac, 'hide_vrrp_holer': hide_vrrp_holer, 'logical_interface': logical_interface, 'ip_acl_interface': ip_acl_interface, 'port_profile_port': port_profile_port, 'port_profile_to_interface_associations': port_profile_to_interface_associations, 'qos': qos, 'service_policy': service_policy, 'spanning_tree': spanning_tree, }
+  _pyangbind_elements = {'name': name, 'vlag': vlag, 'po_speed': po_speed, 'insight': insight, 'ifindex': ifindex, 'description': description, 'shutdown': shutdown, 'minimum_links': minimum_links, 'mtu': mtu, 'route_only': route_only, 'tag_type': tag_type, 'switchport_basic': switchport_basic, 'switchport': switchport, 'ip': ip, 'ipv6': ipv6, 'track': track, 'edge_loop_detection_native': edge_loop_detection_native, 'edge_loop_detection': edge_loop_detection, 'priority_tag_enable': priority_tag_enable, 'load_balance': load_balance, 'load_balance_type': load_balance_type, 'mac': mac, 'hide_vrrp_holer': hide_vrrp_holer, 'logical_interface': logical_interface, 'fcoeport': fcoeport, 'ip_acl_interface': ip_acl_interface, 'lacp_pdu_forward': lacp_pdu_forward, 'openflowPo': openflowPo, 'port_profile_port': port_profile_port, 'port_profile_to_interface_associations': port_profile_to_interface_associations, 'qos': qos, 'service_policy': service_policy, 'uda': uda, 'offsets': offsets, 'spanning_tree': spanning_tree, }
 
 

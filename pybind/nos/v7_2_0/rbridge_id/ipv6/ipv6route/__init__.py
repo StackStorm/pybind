@@ -45,7 +45,7 @@ class ipv6route(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__route = YANGDynClass(base=YANGListType("dest",route.route, yang_name="route", rest_name="route", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='dest', extensions={u'tailf-common': {u'info': u'Configure ipv6 static route', u'cli-suppress-list-no': None, u'hidden': u'full', u'cli-suppress-mode': None, u'cli-full-no': None}}), is_container='list', yang_name="route", rest_name="route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure ipv6 static route', u'cli-suppress-list-no': None, u'hidden': u'full', u'cli-suppress-mode': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-forward', defining_module='brocade-ip-forward', yang_type='list', is_config=True)
+    self.__route = YANGDynClass(base=YANGListType("dest",route.route, yang_name="route", rest_name="route", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='dest', extensions=None), is_container='list', yang_name="route", rest_name="route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ip-forward', defining_module='brocade-ip-forward', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class ipv6route(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("dest",route.route, yang_name="route", rest_name="route", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='dest', extensions={u'tailf-common': {u'info': u'Configure ipv6 static route', u'cli-suppress-list-no': None, u'hidden': u'full', u'cli-suppress-mode': None, u'cli-full-no': None}}), is_container='list', yang_name="route", rest_name="route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure ipv6 static route', u'cli-suppress-list-no': None, u'hidden': u'full', u'cli-suppress-mode': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-forward', defining_module='brocade-ip-forward', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("dest",route.route, yang_name="route", rest_name="route", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='dest', extensions=None), is_container='list', yang_name="route", rest_name="route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ip-forward', defining_module='brocade-ip-forward', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """route must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("dest",route.route, yang_name="route", rest_name="route", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='dest', extensions={u'tailf-common': {u'info': u'Configure ipv6 static route', u'cli-suppress-list-no': None, u'hidden': u'full', u'cli-suppress-mode': None, u'cli-full-no': None}}), is_container='list', yang_name="route", rest_name="route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure ipv6 static route', u'cli-suppress-list-no': None, u'hidden': u'full', u'cli-suppress-mode': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-forward', defining_module='brocade-ip-forward', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("dest",route.route, yang_name="route", rest_name="route", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='dest', extensions=None), is_container='list', yang_name="route", rest_name="route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ip-forward', defining_module='brocade-ip-forward', yang_type='list', is_config=True)""",
         })
 
     self.__route = t
@@ -113,7 +113,7 @@ class ipv6route(PybindBase):
       self._set()
 
   def _unset_route(self):
-    self.__route = YANGDynClass(base=YANGListType("dest",route.route, yang_name="route", rest_name="route", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='dest', extensions={u'tailf-common': {u'info': u'Configure ipv6 static route', u'cli-suppress-list-no': None, u'hidden': u'full', u'cli-suppress-mode': None, u'cli-full-no': None}}), is_container='list', yang_name="route", rest_name="route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure ipv6 static route', u'cli-suppress-list-no': None, u'hidden': u'full', u'cli-suppress-mode': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-forward', defining_module='brocade-ip-forward', yang_type='list', is_config=True)
+    self.__route = YANGDynClass(base=YANGListType("dest",route.route, yang_name="route", rest_name="route", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='dest', extensions=None), is_container='list', yang_name="route", rest_name="route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ip-forward', defining_module='brocade-ip-forward', yang_type='list', is_config=True)
 
   route = __builtin__.property(_get_route, _set_route)
 

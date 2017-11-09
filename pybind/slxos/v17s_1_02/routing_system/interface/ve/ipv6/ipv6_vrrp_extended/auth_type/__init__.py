@@ -47,7 +47,7 @@ class auth_type(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__md5_auth = YANGDynClass(base=md5_auth.md5_auth, is_container='container', presence=False, yang_name="md5-auth", rest_name="md5-auth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MD5 authentication'}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
+    self.__md5_auth = YANGDynClass(base=md5_auth.md5_auth, is_container='container', presence=False, yang_name="md5-auth", rest_name="md5-auth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -83,7 +83,7 @@ class auth_type(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface', u'Ve', u'ipv6', u'vrrp-extended', u'auth-type']
+      return [u'routing-system', u'interface', u've', u'ipv6', u'ipv6-vrrp-extended', u'auth-type']
 
   def _get_md5_auth(self):
     """
@@ -106,12 +106,12 @@ class auth_type(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=md5_auth.md5_auth, is_container='container', presence=False, yang_name="md5-auth", rest_name="md5-auth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MD5 authentication'}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=md5_auth.md5_auth, is_container='container', presence=False, yang_name="md5-auth", rest_name="md5-auth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """md5_auth must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=md5_auth.md5_auth, is_container='container', presence=False, yang_name="md5-auth", rest_name="md5-auth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MD5 authentication'}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=md5_auth.md5_auth, is_container='container', presence=False, yang_name="md5-auth", rest_name="md5-auth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)""",
         })
 
     self.__md5_auth = t
@@ -119,7 +119,7 @@ class auth_type(PybindBase):
       self._set()
 
   def _unset_md5_auth(self):
-    self.__md5_auth = YANGDynClass(base=md5_auth.md5_auth, is_container='container', presence=False, yang_name="md5-auth", rest_name="md5-auth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MD5 authentication'}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
+    self.__md5_auth = YANGDynClass(base=md5_auth.md5_auth, is_container='container', presence=False, yang_name="md5-auth", rest_name="md5-auth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
 
   md5_auth = __builtin__.property(_get_md5_auth, _set_md5_auth)
 

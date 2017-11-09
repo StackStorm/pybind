@@ -44,9 +44,9 @@ class database_filter(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__all_external = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'allow-default-out': {'value': 1}, u'allow-default-and-type4-out': {'value': 2}, u'out': {'value': 3}},), is_leaf=True, yang_name="all-external", rest_name="all-external", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Filter all external LSAs'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='database-filter-options', is_config=True)
-    self.__all_summary_external = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'allow-default-out': {'value': 1}, u'allow-default-and-type4-out': {'value': 2}, u'out': {'value': 3}},), is_leaf=True, yang_name="all-summary-external", rest_name="all-summary-external", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Filter all summary external LSAs'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='database-filter-options', is_config=True)
-    self.__all_out = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="all-out", rest_name="all-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'filter all LSAs'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
+    self.__all_external = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'allow-default-out': {'value': 1}, u'allow-default-and-type4-out': {'value': 2}, u'out': {'value': 3}},), is_leaf=True, yang_name="all-external", rest_name="all-external", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='database-filter-options', is_config=True)
+    self.__all_summary_external = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'allow-default-out': {'value': 1}, u'allow-default-and-type4-out': {'value': 2}, u'out': {'value': 3}},), is_leaf=True, yang_name="all-summary-external", rest_name="all-summary-external", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='database-filter-options', is_config=True)
+    self.__all_out = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="all-out", rest_name="all-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -101,12 +101,12 @@ class database_filter(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="all-out", rest_name="all-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'filter all LSAs'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="all-out", rest_name="all-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """all_out must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="all-out", rest_name="all-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'filter all LSAs'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="all-out", rest_name="all-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)""",
         })
 
     self.__all_out = t
@@ -114,7 +114,7 @@ class database_filter(PybindBase):
       self._set()
 
   def _unset_all_out(self):
-    self.__all_out = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="all-out", rest_name="all-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'filter all LSAs'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
+    self.__all_out = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="all-out", rest_name="all-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
 
 
   def _get_all_external(self):
@@ -134,12 +134,12 @@ class database_filter(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'allow-default-out': {'value': 1}, u'allow-default-and-type4-out': {'value': 2}, u'out': {'value': 3}},), is_leaf=True, yang_name="all-external", rest_name="all-external", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Filter all external LSAs'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='database-filter-options', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'allow-default-out': {'value': 1}, u'allow-default-and-type4-out': {'value': 2}, u'out': {'value': 3}},), is_leaf=True, yang_name="all-external", rest_name="all-external", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='database-filter-options', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """all_external must be of a type compatible with database-filter-options""",
           'defined-type': "brocade-ospf:database-filter-options",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'allow-default-out': {'value': 1}, u'allow-default-and-type4-out': {'value': 2}, u'out': {'value': 3}},), is_leaf=True, yang_name="all-external", rest_name="all-external", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Filter all external LSAs'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='database-filter-options', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'allow-default-out': {'value': 1}, u'allow-default-and-type4-out': {'value': 2}, u'out': {'value': 3}},), is_leaf=True, yang_name="all-external", rest_name="all-external", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='database-filter-options', is_config=True)""",
         })
 
     self.__all_external = t
@@ -147,7 +147,7 @@ class database_filter(PybindBase):
       self._set()
 
   def _unset_all_external(self):
-    self.__all_external = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'allow-default-out': {'value': 1}, u'allow-default-and-type4-out': {'value': 2}, u'out': {'value': 3}},), is_leaf=True, yang_name="all-external", rest_name="all-external", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Filter all external LSAs'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='database-filter-options', is_config=True)
+    self.__all_external = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'allow-default-out': {'value': 1}, u'allow-default-and-type4-out': {'value': 2}, u'out': {'value': 3}},), is_leaf=True, yang_name="all-external", rest_name="all-external", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='database-filter-options', is_config=True)
 
 
   def _get_all_summary_external(self):
@@ -167,12 +167,12 @@ class database_filter(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'allow-default-out': {'value': 1}, u'allow-default-and-type4-out': {'value': 2}, u'out': {'value': 3}},), is_leaf=True, yang_name="all-summary-external", rest_name="all-summary-external", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Filter all summary external LSAs'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='database-filter-options', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'allow-default-out': {'value': 1}, u'allow-default-and-type4-out': {'value': 2}, u'out': {'value': 3}},), is_leaf=True, yang_name="all-summary-external", rest_name="all-summary-external", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='database-filter-options', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """all_summary_external must be of a type compatible with database-filter-options""",
           'defined-type': "brocade-ospf:database-filter-options",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'allow-default-out': {'value': 1}, u'allow-default-and-type4-out': {'value': 2}, u'out': {'value': 3}},), is_leaf=True, yang_name="all-summary-external", rest_name="all-summary-external", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Filter all summary external LSAs'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='database-filter-options', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'allow-default-out': {'value': 1}, u'allow-default-and-type4-out': {'value': 2}, u'out': {'value': 3}},), is_leaf=True, yang_name="all-summary-external", rest_name="all-summary-external", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='database-filter-options', is_config=True)""",
         })
 
     self.__all_summary_external = t
@@ -180,7 +180,7 @@ class database_filter(PybindBase):
       self._set()
 
   def _unset_all_summary_external(self):
-    self.__all_summary_external = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'allow-default-out': {'value': 1}, u'allow-default-and-type4-out': {'value': 2}, u'out': {'value': 3}},), is_leaf=True, yang_name="all-summary-external", rest_name="all-summary-external", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Filter all summary external LSAs'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='database-filter-options', is_config=True)
+    self.__all_summary_external = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'allow-default-out': {'value': 1}, u'allow-default-and-type4-out': {'value': 2}, u'out': {'value': 3}},), is_leaf=True, yang_name="all-summary-external", rest_name="all-summary-external", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='database-filter-options', is_config=True)
 
   all_out = __builtin__.property(_get_all_out, _set_all_out)
   all_external = __builtin__.property(_get_all_external, _set_all_external)

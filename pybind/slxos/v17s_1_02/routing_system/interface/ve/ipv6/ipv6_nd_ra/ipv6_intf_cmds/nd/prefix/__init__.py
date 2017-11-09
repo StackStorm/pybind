@@ -45,7 +45,7 @@ class prefix(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__lifetime = YANGDynClass(base=lifetime.lifetime, is_container='container', presence=False, yang_name="lifetime", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-full-no': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
+    self.__lifetime = YANGDynClass(base=lifetime.lifetime, is_container='container', presence=False, yang_name="lifetime", rest_name="lifetime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
     self.__prefix_ipv6_address = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(/(([0-9])|([0-9]{2})|(1[0-1][0-9])|(12[0-8])))'}), is_leaf=True, yang_name="prefix-ipv6-address", rest_name="prefix-ipv6-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='inet:ipv6-prefix', is_config=True)
 
     load = kwargs.pop("load", None)
@@ -82,7 +82,7 @@ class prefix(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface', u'Ve', u'ipv6', u'nd', u'prefix']
+      return [u'routing-system', u'interface', u've', u'ipv6', u'ipv6-nd-ra', u'ipv6-intf-cmds', u'nd', u'prefix']
 
   def _get_prefix_ipv6_address(self):
     """
@@ -139,12 +139,12 @@ class prefix(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=lifetime.lifetime, is_container='container', presence=False, yang_name="lifetime", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-full-no': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=lifetime.lifetime, is_container='container', presence=False, yang_name="lifetime", rest_name="lifetime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lifetime must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=lifetime.lifetime, is_container='container', presence=False, yang_name="lifetime", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-full-no': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=lifetime.lifetime, is_container='container', presence=False, yang_name="lifetime", rest_name="lifetime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)""",
         })
 
     self.__lifetime = t
@@ -152,7 +152,7 @@ class prefix(PybindBase):
       self._set()
 
   def _unset_lifetime(self):
-    self.__lifetime = YANGDynClass(base=lifetime.lifetime, is_container='container', presence=False, yang_name="lifetime", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-full-no': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
+    self.__lifetime = YANGDynClass(base=lifetime.lifetime, is_container='container', presence=False, yang_name="lifetime", rest_name="lifetime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
 
   prefix_ipv6_address = __builtin__.property(_get_prefix_ipv6_address, _set_prefix_ipv6_address)
   lifetime = __builtin__.property(_get_lifetime, _set_lifetime)

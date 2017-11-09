@@ -48,8 +48,8 @@ class ip(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__route = YANGDynClass(base=route.route, is_container='container', presence=False, yang_name="route", rest_name="route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure static route', u'callpoint': u'rtm-config', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-rtm', defining_module='brocade-rtm', yang_type='container', is_config=True)
-    self.__import_ = YANGDynClass(base=import_.import_, is_container='container', presence=False, yang_name="import", rest_name="import", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Import IPV4 routes'}}, namespace='urn:brocade.com:mgmt:brocade-rtm', defining_module='brocade-rtm', yang_type='container', is_config=True)
+    self.__route = YANGDynClass(base=route.route, is_container='container', presence=False, yang_name="route", rest_name="route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-rtm', defining_module='brocade-rtm', yang_type='container', is_config=True)
+    self.__import_ = YANGDynClass(base=import_.import_, is_container='container', presence=False, yang_name="import", rest_name="import", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-rtm', defining_module='brocade-rtm', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -85,7 +85,7 @@ class ip(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'vrf', u'address-family', u'ipv4', u'unicast', u'ip']
+      return [u'vrf', u'address-family', u'ip', u'unicast', u'ip']
 
   def _get_route(self):
     """
@@ -104,12 +104,12 @@ class ip(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=route.route, is_container='container', presence=False, yang_name="route", rest_name="route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure static route', u'callpoint': u'rtm-config', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-rtm', defining_module='brocade-rtm', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=route.route, is_container='container', presence=False, yang_name="route", rest_name="route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-rtm', defining_module='brocade-rtm', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """route must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=route.route, is_container='container', presence=False, yang_name="route", rest_name="route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure static route', u'callpoint': u'rtm-config', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-rtm', defining_module='brocade-rtm', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=route.route, is_container='container', presence=False, yang_name="route", rest_name="route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-rtm', defining_module='brocade-rtm', yang_type='container', is_config=True)""",
         })
 
     self.__route = t
@@ -117,7 +117,7 @@ class ip(PybindBase):
       self._set()
 
   def _unset_route(self):
-    self.__route = YANGDynClass(base=route.route, is_container='container', presence=False, yang_name="route", rest_name="route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure static route', u'callpoint': u'rtm-config', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-rtm', defining_module='brocade-rtm', yang_type='container', is_config=True)
+    self.__route = YANGDynClass(base=route.route, is_container='container', presence=False, yang_name="route", rest_name="route", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-rtm', defining_module='brocade-rtm', yang_type='container', is_config=True)
 
 
   def _get_import_(self):
@@ -137,12 +137,12 @@ class ip(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=import_.import_, is_container='container', presence=False, yang_name="import", rest_name="import", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Import IPV4 routes'}}, namespace='urn:brocade.com:mgmt:brocade-rtm', defining_module='brocade-rtm', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=import_.import_, is_container='container', presence=False, yang_name="import", rest_name="import", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-rtm', defining_module='brocade-rtm', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """import_ must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=import_.import_, is_container='container', presence=False, yang_name="import", rest_name="import", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Import IPV4 routes'}}, namespace='urn:brocade.com:mgmt:brocade-rtm', defining_module='brocade-rtm', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=import_.import_, is_container='container', presence=False, yang_name="import", rest_name="import", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-rtm', defining_module='brocade-rtm', yang_type='container', is_config=True)""",
         })
 
     self.__import_ = t
@@ -150,7 +150,7 @@ class ip(PybindBase):
       self._set()
 
   def _unset_import_(self):
-    self.__import_ = YANGDynClass(base=import_.import_, is_container='container', presence=False, yang_name="import", rest_name="import", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Import IPV4 routes'}}, namespace='urn:brocade.com:mgmt:brocade-rtm', defining_module='brocade-rtm', yang_type='container', is_config=True)
+    self.__import_ = YANGDynClass(base=import_.import_, is_container='container', presence=False, yang_name="import", rest_name="import", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-rtm', defining_module='brocade-rtm', yang_type='container', is_config=True)
 
   route = __builtin__.property(_get_route, _set_route)
   import_ = __builtin__.property(_get_import_, _set_import_)

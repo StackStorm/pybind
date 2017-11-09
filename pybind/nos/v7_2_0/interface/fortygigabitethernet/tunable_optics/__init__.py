@@ -45,7 +45,7 @@ class tunable_optics(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__sfpp = YANGDynClass(base=sfpp.sfpp, is_container='container', presence=False, yang_name="sfpp", rest_name="sfpp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sfpp', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__sfpp = YANGDynClass(base=sfpp.sfpp, is_container='container', presence=False, yang_name="sfpp", rest_name="sfpp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class tunable_optics(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=sfpp.sfpp, is_container='container', presence=False, yang_name="sfpp", rest_name="sfpp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sfpp', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=sfpp.sfpp, is_container='container', presence=False, yang_name="sfpp", rest_name="sfpp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """sfpp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=sfpp.sfpp, is_container='container', presence=False, yang_name="sfpp", rest_name="sfpp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sfpp', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=sfpp.sfpp, is_container='container', presence=False, yang_name="sfpp", rest_name="sfpp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
         })
 
     self.__sfpp = t
@@ -113,7 +113,7 @@ class tunable_optics(PybindBase):
       self._set()
 
   def _unset_sfpp(self):
-    self.__sfpp = YANGDynClass(base=sfpp.sfpp, is_container='container', presence=False, yang_name="sfpp", rest_name="sfpp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sfpp', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__sfpp = YANGDynClass(base=sfpp.sfpp, is_container='container', presence=False, yang_name="sfpp", rest_name="sfpp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
   sfpp = __builtin__.property(_get_sfpp, _set_sfpp)
 

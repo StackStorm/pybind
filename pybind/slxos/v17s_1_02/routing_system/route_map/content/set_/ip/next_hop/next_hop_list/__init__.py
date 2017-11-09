@@ -80,7 +80,7 @@ class next_hop_list(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'route-map', u'set', u'ip', u'next-hop', u'next-hop-list']
+      return [u'routing-system', u'route-map', u'content', u'set', u'ip', u'next-hop', u'next-hop-list']
 
   def _get_next_hop_addr(self):
     """

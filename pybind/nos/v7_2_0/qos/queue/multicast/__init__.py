@@ -45,7 +45,7 @@ class multicast(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__scheduler = YANGDynClass(base=scheduler.scheduler, is_container='container', presence=False, yang_name="scheduler", rest_name="scheduler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast packet expansion Traffic Class Scheduler', u'callpoint': u'multicast_queue_scheduler', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+    self.__scheduler = YANGDynClass(base=scheduler.scheduler, is_container='container', presence=False, yang_name="scheduler", rest_name="scheduler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class multicast(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=scheduler.scheduler, is_container='container', presence=False, yang_name="scheduler", rest_name="scheduler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast packet expansion Traffic Class Scheduler', u'callpoint': u'multicast_queue_scheduler', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=scheduler.scheduler, is_container='container', presence=False, yang_name="scheduler", rest_name="scheduler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """scheduler must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=scheduler.scheduler, is_container='container', presence=False, yang_name="scheduler", rest_name="scheduler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast packet expansion Traffic Class Scheduler', u'callpoint': u'multicast_queue_scheduler', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=scheduler.scheduler, is_container='container', presence=False, yang_name="scheduler", rest_name="scheduler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)""",
         })
 
     self.__scheduler = t
@@ -113,7 +113,7 @@ class multicast(PybindBase):
       self._set()
 
   def _unset_scheduler(self):
-    self.__scheduler = YANGDynClass(base=scheduler.scheduler, is_container='container', presence=False, yang_name="scheduler", rest_name="scheduler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast packet expansion Traffic Class Scheduler', u'callpoint': u'multicast_queue_scheduler', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+    self.__scheduler = YANGDynClass(base=scheduler.scheduler, is_container='container', presence=False, yang_name="scheduler", rest_name="scheduler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
 
   scheduler = __builtin__.property(_get_scheduler, _set_scheduler)
 

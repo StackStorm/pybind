@@ -45,7 +45,7 @@ class relay(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__information = YANGDynClass(base=information.information, is_container='container', presence=False, yang_name="information", rest_name="information", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP DHCP relay information option', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__information = YANGDynClass(base=information.information, is_container='container', presence=False, yang_name="information", rest_name="information", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class relay(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'vlan', u'ip', u'dhcp', u'relay']
+      return [u'interface-vlan', u'vlan', u'ip', u'dhcp', u'relay']
 
   def _get_information(self):
     """
@@ -100,12 +100,12 @@ class relay(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=information.information, is_container='container', presence=False, yang_name="information", rest_name="information", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP DHCP relay information option', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=information.information, is_container='container', presence=False, yang_name="information", rest_name="information", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """information must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=information.information, is_container='container', presence=False, yang_name="information", rest_name="information", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP DHCP relay information option', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=information.information, is_container='container', presence=False, yang_name="information", rest_name="information", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
         })
 
     self.__information = t
@@ -113,7 +113,7 @@ class relay(PybindBase):
       self._set()
 
   def _unset_information(self):
-    self.__information = YANGDynClass(base=information.information, is_container='container', presence=False, yang_name="information", rest_name="information", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP DHCP relay information option', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__information = YANGDynClass(base=information.information, is_container='container', presence=False, yang_name="information", rest_name="information", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
   information = __builtin__.property(_get_information, _set_information)
 

@@ -22,7 +22,7 @@ class default_vrf(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__default_vrf_selected','__af_ipv6_uc_and_vrf_cmds_call_point_holder','__aggregate_ipv6_address','__network','__neighbor','__af_common_cmds_holder','__ipv6_ucast_next_hop_recursion',)
 
   _yang_name = 'default-vrf'
-  _rest_name = ''
+  _rest_name = 'default-vrf'
 
   _pybind_generated_by = 'container'
 
@@ -49,13 +49,13 @@ class default_vrf(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__network = YANGDynClass(base=YANGListType("network_ipv6_address",network.network, yang_name="network", rest_name="network", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='network-ipv6-address', extensions={u'tailf-common': {u'info': u'Specify a network to announce via BGP', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'AfIpv6Network'}}), is_container='list', yang_name="network", rest_name="network", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify a network to announce via BGP', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'AfIpv6Network'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
-    self.__aggregate_ipv6_address = YANGDynClass(base=YANGListType("aggregate_ip_prefix",aggregate_ipv6_address.aggregate_ipv6_address, yang_name="aggregate-ipv6-address", rest_name="aggregate-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='aggregate-ip-prefix', extensions={u'tailf-common': {u'info': u'Configure BGP aggregate entries', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'callpoint': u'AggregateIpv6Address', u'cli-suppress-key-abbreviation': None, u'alt-name': u'aggregate-address'}}), is_container='list', yang_name="aggregate-ipv6-address", rest_name="aggregate-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BGP aggregate entries', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'callpoint': u'AggregateIpv6Address', u'cli-suppress-key-abbreviation': None, u'alt-name': u'aggregate-address'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
-    self.__default_vrf_selected = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="default-vrf-selected", rest_name="default-vrf-selected", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
-    self.__af_ipv6_uc_and_vrf_cmds_call_point_holder = YANGDynClass(base=af_ipv6_uc_and_vrf_cmds_call_point_holder.af_ipv6_uc_and_vrf_cmds_call_point_holder, is_container='container', presence=False, yang_name="af-ipv6-uc-and-vrf-cmds-call-point-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'AfIpv6Ucast'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
-    self.__ipv6_ucast_next_hop_recursion = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-ucast-next-hop-recursion", rest_name="next-hop-recursion", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Perform next-hop recursive lookup for BGP route', u'callpoint': u'AfIpv6Ucast', u'alt-name': u'next-hop-recursion'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
-    self.__neighbor = YANGDynClass(base=neighbor.neighbor, is_container='container', presence=False, yang_name="neighbor", rest_name="neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
-    self.__af_common_cmds_holder = YANGDynClass(base=af_common_cmds_holder.af_common_cmds_holder, is_container='container', presence=False, yang_name="af-common-cmds-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'AfIpv6Ucast'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__network = YANGDynClass(base=YANGListType("network_ipv6_address",network.network, yang_name="network", rest_name="network", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='network-ipv6-address', extensions=None), is_container='list', yang_name="network", rest_name="network", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
+    self.__aggregate_ipv6_address = YANGDynClass(base=YANGListType("aggregate_ip_prefix",aggregate_ipv6_address.aggregate_ipv6_address, yang_name="aggregate-ipv6-address", rest_name="aggregate-ipv6-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='aggregate-ip-prefix', extensions=None), is_container='list', yang_name="aggregate-ipv6-address", rest_name="aggregate-ipv6-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
+    self.__default_vrf_selected = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="default-vrf-selected", rest_name="default-vrf-selected", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__af_ipv6_uc_and_vrf_cmds_call_point_holder = YANGDynClass(base=af_ipv6_uc_and_vrf_cmds_call_point_holder.af_ipv6_uc_and_vrf_cmds_call_point_holder, is_container='container', presence=False, yang_name="af-ipv6-uc-and-vrf-cmds-call-point-holder", rest_name="af-ipv6-uc-and-vrf-cmds-call-point-holder", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__ipv6_ucast_next_hop_recursion = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-ucast-next-hop-recursion", rest_name="ipv6-ucast-next-hop-recursion", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__neighbor = YANGDynClass(base=neighbor.neighbor, is_container='container', presence=False, yang_name="neighbor", rest_name="neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__af_common_cmds_holder = YANGDynClass(base=af_common_cmds_holder.af_common_cmds_holder, is_container='container', presence=False, yang_name="af-common-cmds-holder", rest_name="af-common-cmds-holder", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -91,7 +91,7 @@ class default_vrf(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'router', u'bgp', u'address-family', u'ipv6', u'unicast']
+      return [u'routing-system', u'router', u'router-bgp', u'address-family', u'ipv6', u'ipv6-unicast', u'default-vrf']
 
   def _get_default_vrf_selected(self):
     """
@@ -110,12 +110,12 @@ class default_vrf(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="default-vrf-selected", rest_name="default-vrf-selected", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="default-vrf-selected", rest_name="default-vrf-selected", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """default_vrf_selected must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="default-vrf-selected", rest_name="default-vrf-selected", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="default-vrf-selected", rest_name="default-vrf-selected", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
         })
 
     self.__default_vrf_selected = t
@@ -123,7 +123,7 @@ class default_vrf(PybindBase):
       self._set()
 
   def _unset_default_vrf_selected(self):
-    self.__default_vrf_selected = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="default-vrf-selected", rest_name="default-vrf-selected", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__default_vrf_selected = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="default-vrf-selected", rest_name="default-vrf-selected", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
 
 
   def _get_af_ipv6_uc_and_vrf_cmds_call_point_holder(self):
@@ -143,12 +143,12 @@ class default_vrf(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=af_ipv6_uc_and_vrf_cmds_call_point_holder.af_ipv6_uc_and_vrf_cmds_call_point_holder, is_container='container', presence=False, yang_name="af-ipv6-uc-and-vrf-cmds-call-point-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'AfIpv6Ucast'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=af_ipv6_uc_and_vrf_cmds_call_point_holder.af_ipv6_uc_and_vrf_cmds_call_point_holder, is_container='container', presence=False, yang_name="af-ipv6-uc-and-vrf-cmds-call-point-holder", rest_name="af-ipv6-uc-and-vrf-cmds-call-point-holder", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """af_ipv6_uc_and_vrf_cmds_call_point_holder must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=af_ipv6_uc_and_vrf_cmds_call_point_holder.af_ipv6_uc_and_vrf_cmds_call_point_holder, is_container='container', presence=False, yang_name="af-ipv6-uc-and-vrf-cmds-call-point-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'AfIpv6Ucast'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=af_ipv6_uc_and_vrf_cmds_call_point_holder.af_ipv6_uc_and_vrf_cmds_call_point_holder, is_container='container', presence=False, yang_name="af-ipv6-uc-and-vrf-cmds-call-point-holder", rest_name="af-ipv6-uc-and-vrf-cmds-call-point-holder", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__af_ipv6_uc_and_vrf_cmds_call_point_holder = t
@@ -156,7 +156,7 @@ class default_vrf(PybindBase):
       self._set()
 
   def _unset_af_ipv6_uc_and_vrf_cmds_call_point_holder(self):
-    self.__af_ipv6_uc_and_vrf_cmds_call_point_holder = YANGDynClass(base=af_ipv6_uc_and_vrf_cmds_call_point_holder.af_ipv6_uc_and_vrf_cmds_call_point_holder, is_container='container', presence=False, yang_name="af-ipv6-uc-and-vrf-cmds-call-point-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'AfIpv6Ucast'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__af_ipv6_uc_and_vrf_cmds_call_point_holder = YANGDynClass(base=af_ipv6_uc_and_vrf_cmds_call_point_holder.af_ipv6_uc_and_vrf_cmds_call_point_holder, is_container='container', presence=False, yang_name="af-ipv6-uc-and-vrf-cmds-call-point-holder", rest_name="af-ipv6-uc-and-vrf-cmds-call-point-holder", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
 
   def _get_aggregate_ipv6_address(self):
@@ -176,12 +176,12 @@ class default_vrf(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("aggregate_ip_prefix",aggregate_ipv6_address.aggregate_ipv6_address, yang_name="aggregate-ipv6-address", rest_name="aggregate-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='aggregate-ip-prefix', extensions={u'tailf-common': {u'info': u'Configure BGP aggregate entries', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'callpoint': u'AggregateIpv6Address', u'cli-suppress-key-abbreviation': None, u'alt-name': u'aggregate-address'}}), is_container='list', yang_name="aggregate-ipv6-address", rest_name="aggregate-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BGP aggregate entries', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'callpoint': u'AggregateIpv6Address', u'cli-suppress-key-abbreviation': None, u'alt-name': u'aggregate-address'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("aggregate_ip_prefix",aggregate_ipv6_address.aggregate_ipv6_address, yang_name="aggregate-ipv6-address", rest_name="aggregate-ipv6-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='aggregate-ip-prefix', extensions=None), is_container='list', yang_name="aggregate-ipv6-address", rest_name="aggregate-ipv6-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """aggregate_ipv6_address must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("aggregate_ip_prefix",aggregate_ipv6_address.aggregate_ipv6_address, yang_name="aggregate-ipv6-address", rest_name="aggregate-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='aggregate-ip-prefix', extensions={u'tailf-common': {u'info': u'Configure BGP aggregate entries', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'callpoint': u'AggregateIpv6Address', u'cli-suppress-key-abbreviation': None, u'alt-name': u'aggregate-address'}}), is_container='list', yang_name="aggregate-ipv6-address", rest_name="aggregate-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BGP aggregate entries', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'callpoint': u'AggregateIpv6Address', u'cli-suppress-key-abbreviation': None, u'alt-name': u'aggregate-address'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("aggregate_ip_prefix",aggregate_ipv6_address.aggregate_ipv6_address, yang_name="aggregate-ipv6-address", rest_name="aggregate-ipv6-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='aggregate-ip-prefix', extensions=None), is_container='list', yang_name="aggregate-ipv6-address", rest_name="aggregate-ipv6-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)""",
         })
 
     self.__aggregate_ipv6_address = t
@@ -189,7 +189,7 @@ class default_vrf(PybindBase):
       self._set()
 
   def _unset_aggregate_ipv6_address(self):
-    self.__aggregate_ipv6_address = YANGDynClass(base=YANGListType("aggregate_ip_prefix",aggregate_ipv6_address.aggregate_ipv6_address, yang_name="aggregate-ipv6-address", rest_name="aggregate-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='aggregate-ip-prefix', extensions={u'tailf-common': {u'info': u'Configure BGP aggregate entries', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'callpoint': u'AggregateIpv6Address', u'cli-suppress-key-abbreviation': None, u'alt-name': u'aggregate-address'}}), is_container='list', yang_name="aggregate-ipv6-address", rest_name="aggregate-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BGP aggregate entries', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'callpoint': u'AggregateIpv6Address', u'cli-suppress-key-abbreviation': None, u'alt-name': u'aggregate-address'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
+    self.__aggregate_ipv6_address = YANGDynClass(base=YANGListType("aggregate_ip_prefix",aggregate_ipv6_address.aggregate_ipv6_address, yang_name="aggregate-ipv6-address", rest_name="aggregate-ipv6-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='aggregate-ip-prefix', extensions=None), is_container='list', yang_name="aggregate-ipv6-address", rest_name="aggregate-ipv6-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
 
 
   def _get_network(self):
@@ -209,12 +209,12 @@ class default_vrf(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("network_ipv6_address",network.network, yang_name="network", rest_name="network", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='network-ipv6-address', extensions={u'tailf-common': {u'info': u'Specify a network to announce via BGP', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'AfIpv6Network'}}), is_container='list', yang_name="network", rest_name="network", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify a network to announce via BGP', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'AfIpv6Network'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("network_ipv6_address",network.network, yang_name="network", rest_name="network", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='network-ipv6-address', extensions=None), is_container='list', yang_name="network", rest_name="network", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """network must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("network_ipv6_address",network.network, yang_name="network", rest_name="network", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='network-ipv6-address', extensions={u'tailf-common': {u'info': u'Specify a network to announce via BGP', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'AfIpv6Network'}}), is_container='list', yang_name="network", rest_name="network", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify a network to announce via BGP', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'AfIpv6Network'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("network_ipv6_address",network.network, yang_name="network", rest_name="network", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='network-ipv6-address', extensions=None), is_container='list', yang_name="network", rest_name="network", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)""",
         })
 
     self.__network = t
@@ -222,7 +222,7 @@ class default_vrf(PybindBase):
       self._set()
 
   def _unset_network(self):
-    self.__network = YANGDynClass(base=YANGListType("network_ipv6_address",network.network, yang_name="network", rest_name="network", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='network-ipv6-address', extensions={u'tailf-common': {u'info': u'Specify a network to announce via BGP', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'AfIpv6Network'}}), is_container='list', yang_name="network", rest_name="network", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify a network to announce via BGP', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'AfIpv6Network'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
+    self.__network = YANGDynClass(base=YANGListType("network_ipv6_address",network.network, yang_name="network", rest_name="network", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='network-ipv6-address', extensions=None), is_container='list', yang_name="network", rest_name="network", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
 
 
   def _get_neighbor(self):
@@ -242,12 +242,12 @@ class default_vrf(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=neighbor.neighbor, is_container='container', presence=False, yang_name="neighbor", rest_name="neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=neighbor.neighbor, is_container='container', presence=False, yang_name="neighbor", rest_name="neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """neighbor must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=neighbor.neighbor, is_container='container', presence=False, yang_name="neighbor", rest_name="neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=neighbor.neighbor, is_container='container', presence=False, yang_name="neighbor", rest_name="neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__neighbor = t
@@ -255,7 +255,7 @@ class default_vrf(PybindBase):
       self._set()
 
   def _unset_neighbor(self):
-    self.__neighbor = YANGDynClass(base=neighbor.neighbor, is_container='container', presence=False, yang_name="neighbor", rest_name="neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__neighbor = YANGDynClass(base=neighbor.neighbor, is_container='container', presence=False, yang_name="neighbor", rest_name="neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
 
   def _get_af_common_cmds_holder(self):
@@ -275,12 +275,12 @@ class default_vrf(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=af_common_cmds_holder.af_common_cmds_holder, is_container='container', presence=False, yang_name="af-common-cmds-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'AfIpv6Ucast'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=af_common_cmds_holder.af_common_cmds_holder, is_container='container', presence=False, yang_name="af-common-cmds-holder", rest_name="af-common-cmds-holder", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """af_common_cmds_holder must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=af_common_cmds_holder.af_common_cmds_holder, is_container='container', presence=False, yang_name="af-common-cmds-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'AfIpv6Ucast'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=af_common_cmds_holder.af_common_cmds_holder, is_container='container', presence=False, yang_name="af-common-cmds-holder", rest_name="af-common-cmds-holder", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__af_common_cmds_holder = t
@@ -288,7 +288,7 @@ class default_vrf(PybindBase):
       self._set()
 
   def _unset_af_common_cmds_holder(self):
-    self.__af_common_cmds_holder = YANGDynClass(base=af_common_cmds_holder.af_common_cmds_holder, is_container='container', presence=False, yang_name="af-common-cmds-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'AfIpv6Ucast'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__af_common_cmds_holder = YANGDynClass(base=af_common_cmds_holder.af_common_cmds_holder, is_container='container', presence=False, yang_name="af-common-cmds-holder", rest_name="af-common-cmds-holder", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
 
   def _get_ipv6_ucast_next_hop_recursion(self):
@@ -308,12 +308,12 @@ class default_vrf(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ipv6-ucast-next-hop-recursion", rest_name="next-hop-recursion", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Perform next-hop recursive lookup for BGP route', u'callpoint': u'AfIpv6Ucast', u'alt-name': u'next-hop-recursion'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ipv6-ucast-next-hop-recursion", rest_name="ipv6-ucast-next-hop-recursion", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ipv6_ucast_next_hop_recursion must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-ucast-next-hop-recursion", rest_name="next-hop-recursion", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Perform next-hop recursive lookup for BGP route', u'callpoint': u'AfIpv6Ucast', u'alt-name': u'next-hop-recursion'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-ucast-next-hop-recursion", rest_name="ipv6-ucast-next-hop-recursion", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
         })
 
     self.__ipv6_ucast_next_hop_recursion = t
@@ -321,7 +321,7 @@ class default_vrf(PybindBase):
       self._set()
 
   def _unset_ipv6_ucast_next_hop_recursion(self):
-    self.__ipv6_ucast_next_hop_recursion = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-ucast-next-hop-recursion", rest_name="next-hop-recursion", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Perform next-hop recursive lookup for BGP route', u'callpoint': u'AfIpv6Ucast', u'alt-name': u'next-hop-recursion'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__ipv6_ucast_next_hop_recursion = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-ucast-next-hop-recursion", rest_name="ipv6-ucast-next-hop-recursion", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
 
   default_vrf_selected = __builtin__.property(_get_default_vrf_selected, _set_default_vrf_selected)
   af_ipv6_uc_and_vrf_cmds_call_point_holder = __builtin__.property(_get_af_ipv6_uc_and_vrf_cmds_call_point_holder, _set_af_ipv6_uc_and_vrf_cmds_call_point_holder)

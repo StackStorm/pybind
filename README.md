@@ -17,6 +17,9 @@ Inside a python program do this:
 
 # DO NOT FORGET
 Please look through the README.md file in pyswitchlib
+## 0.1.32:
+* Added back all yang models for each OS.  Only increased by 20MB.
+
 ## 0.1.31:
 * Added rtm yang for ip router-id config support.
 

@@ -44,9 +44,9 @@ class key(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__dsa = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dsa", rest_name="dsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'DSA Algorithm type', u'cli-full-command': None, u'callpoint': u'ssh_server_key_dsa_cp'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='empty', is_config=True)
-    self.__rsa = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'1024': {'value': 1024}, u'2048': {'value': 2048}},), is_leaf=True, yang_name="rsa", rest_name="rsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RSA Algorithm type', u'cli-full-command': None, u'callpoint': u'ssh_server_key_rsa_cp'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='rsa-bits-size', is_config=True)
-    self.__ecdsa = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'256': {'value': 256}},), is_leaf=True, yang_name="ecdsa", rest_name="ecdsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ECDSA Algorithm type', u'cli-full-command': None, u'callpoint': u'ssh_server_key_ecdsa_cp'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='ecdsa-bits-size', is_config=True)
+    self.__dsa = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dsa", rest_name="dsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='empty', is_config=True)
+    self.__rsa = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'1024': {'value': 1024}, u'2048': {'value': 2048}},), is_leaf=True, yang_name="rsa", rest_name="rsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='rsa-bits-size', is_config=True)
+    self.__ecdsa = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'256': {'value': 256}},), is_leaf=True, yang_name="ecdsa", rest_name="ecdsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='ecdsa-bits-size', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -82,7 +82,7 @@ class key(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'ssh', u'server', u'key']
+      return [u'ssh-sa', u'ssh', u'server', u'key']
 
   def _get_rsa(self):
     """
@@ -101,12 +101,12 @@ class key(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'1024': {'value': 1024}, u'2048': {'value': 2048}},), is_leaf=True, yang_name="rsa", rest_name="rsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RSA Algorithm type', u'cli-full-command': None, u'callpoint': u'ssh_server_key_rsa_cp'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='rsa-bits-size', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'1024': {'value': 1024}, u'2048': {'value': 2048}},), is_leaf=True, yang_name="rsa", rest_name="rsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='rsa-bits-size', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rsa must be of a type compatible with rsa-bits-size""",
           'defined-type': "brocade-sec-services:rsa-bits-size",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'1024': {'value': 1024}, u'2048': {'value': 2048}},), is_leaf=True, yang_name="rsa", rest_name="rsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RSA Algorithm type', u'cli-full-command': None, u'callpoint': u'ssh_server_key_rsa_cp'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='rsa-bits-size', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'1024': {'value': 1024}, u'2048': {'value': 2048}},), is_leaf=True, yang_name="rsa", rest_name="rsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='rsa-bits-size', is_config=True)""",
         })
 
     self.__rsa = t
@@ -114,7 +114,7 @@ class key(PybindBase):
       self._set()
 
   def _unset_rsa(self):
-    self.__rsa = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'1024': {'value': 1024}, u'2048': {'value': 2048}},), is_leaf=True, yang_name="rsa", rest_name="rsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RSA Algorithm type', u'cli-full-command': None, u'callpoint': u'ssh_server_key_rsa_cp'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='rsa-bits-size', is_config=True)
+    self.__rsa = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'1024': {'value': 1024}, u'2048': {'value': 2048}},), is_leaf=True, yang_name="rsa", rest_name="rsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='rsa-bits-size', is_config=True)
 
 
   def _get_ecdsa(self):
@@ -134,12 +134,12 @@ class key(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'256': {'value': 256}},), is_leaf=True, yang_name="ecdsa", rest_name="ecdsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ECDSA Algorithm type', u'cli-full-command': None, u'callpoint': u'ssh_server_key_ecdsa_cp'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='ecdsa-bits-size', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'256': {'value': 256}},), is_leaf=True, yang_name="ecdsa", rest_name="ecdsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='ecdsa-bits-size', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ecdsa must be of a type compatible with ecdsa-bits-size""",
           'defined-type': "brocade-sec-services:ecdsa-bits-size",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'256': {'value': 256}},), is_leaf=True, yang_name="ecdsa", rest_name="ecdsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ECDSA Algorithm type', u'cli-full-command': None, u'callpoint': u'ssh_server_key_ecdsa_cp'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='ecdsa-bits-size', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'256': {'value': 256}},), is_leaf=True, yang_name="ecdsa", rest_name="ecdsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='ecdsa-bits-size', is_config=True)""",
         })
 
     self.__ecdsa = t
@@ -147,7 +147,7 @@ class key(PybindBase):
       self._set()
 
   def _unset_ecdsa(self):
-    self.__ecdsa = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'256': {'value': 256}},), is_leaf=True, yang_name="ecdsa", rest_name="ecdsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ECDSA Algorithm type', u'cli-full-command': None, u'callpoint': u'ssh_server_key_ecdsa_cp'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='ecdsa-bits-size', is_config=True)
+    self.__ecdsa = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'256': {'value': 256}},), is_leaf=True, yang_name="ecdsa", rest_name="ecdsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='ecdsa-bits-size', is_config=True)
 
 
   def _get_dsa(self):
@@ -167,12 +167,12 @@ class key(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="dsa", rest_name="dsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'DSA Algorithm type', u'cli-full-command': None, u'callpoint': u'ssh_server_key_dsa_cp'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="dsa", rest_name="dsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dsa must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dsa", rest_name="dsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'DSA Algorithm type', u'cli-full-command': None, u'callpoint': u'ssh_server_key_dsa_cp'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dsa", rest_name="dsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='empty', is_config=True)""",
         })
 
     self.__dsa = t
@@ -180,7 +180,7 @@ class key(PybindBase):
       self._set()
 
   def _unset_dsa(self):
-    self.__dsa = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dsa", rest_name="dsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'DSA Algorithm type', u'cli-full-command': None, u'callpoint': u'ssh_server_key_dsa_cp'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='empty', is_config=True)
+    self.__dsa = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dsa", rest_name="dsa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='empty', is_config=True)
 
   rsa = __builtin__.property(_get_rsa, _set_rsa)
   ecdsa = __builtin__.property(_get_ecdsa, _set_ecdsa)

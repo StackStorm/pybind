@@ -18,7 +18,7 @@ class group_prio(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__group_prio_id','__group_prio_config_shaper_wfq',)
 
   _yang_name = 'group-prio'
-  _rest_name = 'prio'
+  _rest_name = 'group-prio'
 
   _pybind_generated_by = 'container'
 
@@ -45,8 +45,8 @@ class group_prio(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__group_prio_config_shaper_wfq = YANGDynClass(base=group_prio_config_shaper_wfq.group_prio_config_shaper_wfq, is_container='container', presence=False, yang_name="group-prio-config-shaper-wfq", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
-    self.__group_prio_id = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..3']}), is_leaf=True, yang_name="group-prio-id", rest_name="group-prio-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='priority', is_config=True)
+    self.__group_prio_config_shaper_wfq = YANGDynClass(base=group_prio_config_shaper_wfq.group_prio_config_shaper_wfq, is_container='container', presence=False, yang_name="group-prio-config-shaper-wfq", rest_name="group-prio-config-shaper-wfq", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
+    self.__group_prio_id = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..3']}), is_leaf=True, yang_name="group-prio-id", rest_name="group-prio-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='priority', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -82,7 +82,7 @@ class group_prio(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'qos', u'cpu', u'slot', u'group', u'prio']
+      return [u'qos', u'cpu', u'slot', u'port-group', u'group', u'group-config-shaper-wfq', u'group-prio']
 
   def _get_group_prio_id(self):
     """
@@ -106,12 +106,12 @@ class group_prio(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..3']}), is_leaf=True, yang_name="group-prio-id", rest_name="group-prio-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='priority', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..3']}), is_leaf=True, yang_name="group-prio-id", rest_name="group-prio-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='priority', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """group_prio_id must be of a type compatible with priority""",
           'defined-type': "brocade-qos-cpu:priority",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..3']}), is_leaf=True, yang_name="group-prio-id", rest_name="group-prio-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='priority', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..3']}), is_leaf=True, yang_name="group-prio-id", rest_name="group-prio-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='priority', is_config=True)""",
         })
 
     self.__group_prio_id = t
@@ -119,7 +119,7 @@ class group_prio(PybindBase):
       self._set()
 
   def _unset_group_prio_id(self):
-    self.__group_prio_id = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..3']}), is_leaf=True, yang_name="group-prio-id", rest_name="group-prio-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-command': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='priority', is_config=True)
+    self.__group_prio_id = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..3']}), is_leaf=True, yang_name="group-prio-id", rest_name="group-prio-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='priority', is_config=True)
 
 
   def _get_group_prio_config_shaper_wfq(self):
@@ -139,12 +139,12 @@ class group_prio(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=group_prio_config_shaper_wfq.group_prio_config_shaper_wfq, is_container='container', presence=False, yang_name="group-prio-config-shaper-wfq", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=group_prio_config_shaper_wfq.group_prio_config_shaper_wfq, is_container='container', presence=False, yang_name="group-prio-config-shaper-wfq", rest_name="group-prio-config-shaper-wfq", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """group_prio_config_shaper_wfq must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=group_prio_config_shaper_wfq.group_prio_config_shaper_wfq, is_container='container', presence=False, yang_name="group-prio-config-shaper-wfq", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=group_prio_config_shaper_wfq.group_prio_config_shaper_wfq, is_container='container', presence=False, yang_name="group-prio-config-shaper-wfq", rest_name="group-prio-config-shaper-wfq", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)""",
         })
 
     self.__group_prio_config_shaper_wfq = t
@@ -152,7 +152,7 @@ class group_prio(PybindBase):
       self._set()
 
   def _unset_group_prio_config_shaper_wfq(self):
-    self.__group_prio_config_shaper_wfq = YANGDynClass(base=group_prio_config_shaper_wfq.group_prio_config_shaper_wfq, is_container='container', presence=False, yang_name="group-prio-config-shaper-wfq", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
+    self.__group_prio_config_shaper_wfq = YANGDynClass(base=group_prio_config_shaper_wfq.group_prio_config_shaper_wfq, is_container='container', presence=False, yang_name="group-prio-config-shaper-wfq", rest_name="group-prio-config-shaper-wfq", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='container', is_config=True)
 
   group_prio_id = __builtin__.property(_get_group_prio_id, _set_group_prio_id)
   group_prio_config_shaper_wfq = __builtin__.property(_get_group_prio_config_shaper_wfq, _set_group_prio_config_shaper_wfq)

@@ -46,9 +46,9 @@ class server(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__standby = YANGDynClass(base=standby.standby, is_container='container', presence=False, yang_name="standby", rest_name="standby", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Standby Telnet'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
-    self.__telnet_vrf_cont = YANGDynClass(base=telnet_vrf_cont.telnet_vrf_cont, is_container='container', presence=False, yang_name="telnet-vrf-cont", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
-    self.__shutdown = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Shutdown Telnet Server', u'cli-full-command': None, u'callpoint': u'telnet_server_disable_cp'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='empty', is_config=True)
+    self.__standby = YANGDynClass(base=standby.standby, is_container='container', presence=False, yang_name="standby", rest_name="standby", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
+    self.__telnet_vrf_cont = YANGDynClass(base=telnet_vrf_cont.telnet_vrf_cont, is_container='container', presence=False, yang_name="telnet-vrf-cont", rest_name="telnet-vrf-cont", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
+    self.__shutdown = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -84,7 +84,7 @@ class server(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'telnet', u'server']
+      return [u'telnet-sa', u'telnet', u'server']
 
   def _get_shutdown(self):
     """
@@ -103,12 +103,12 @@ class server(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Shutdown Telnet Server', u'cli-full-command': None, u'callpoint': u'telnet_server_disable_cp'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """shutdown must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Shutdown Telnet Server', u'cli-full-command': None, u'callpoint': u'telnet_server_disable_cp'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='empty', is_config=True)""",
         })
 
     self.__shutdown = t
@@ -116,7 +116,7 @@ class server(PybindBase):
       self._set()
 
   def _unset_shutdown(self):
-    self.__shutdown = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Shutdown Telnet Server', u'cli-full-command': None, u'callpoint': u'telnet_server_disable_cp'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='empty', is_config=True)
+    self.__shutdown = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='empty', is_config=True)
 
 
   def _get_standby(self):
@@ -136,12 +136,12 @@ class server(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=standby.standby, is_container='container', presence=False, yang_name="standby", rest_name="standby", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Standby Telnet'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=standby.standby, is_container='container', presence=False, yang_name="standby", rest_name="standby", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """standby must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=standby.standby, is_container='container', presence=False, yang_name="standby", rest_name="standby", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Standby Telnet'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=standby.standby, is_container='container', presence=False, yang_name="standby", rest_name="standby", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)""",
         })
 
     self.__standby = t
@@ -149,7 +149,7 @@ class server(PybindBase):
       self._set()
 
   def _unset_standby(self):
-    self.__standby = YANGDynClass(base=standby.standby, is_container='container', presence=False, yang_name="standby", rest_name="standby", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Standby Telnet'}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
+    self.__standby = YANGDynClass(base=standby.standby, is_container='container', presence=False, yang_name="standby", rest_name="standby", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
 
 
   def _get_telnet_vrf_cont(self):
@@ -169,12 +169,12 @@ class server(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=telnet_vrf_cont.telnet_vrf_cont, is_container='container', presence=False, yang_name="telnet-vrf-cont", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=telnet_vrf_cont.telnet_vrf_cont, is_container='container', presence=False, yang_name="telnet-vrf-cont", rest_name="telnet-vrf-cont", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """telnet_vrf_cont must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=telnet_vrf_cont.telnet_vrf_cont, is_container='container', presence=False, yang_name="telnet-vrf-cont", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=telnet_vrf_cont.telnet_vrf_cont, is_container='container', presence=False, yang_name="telnet-vrf-cont", rest_name="telnet-vrf-cont", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)""",
         })
 
     self.__telnet_vrf_cont = t
@@ -182,7 +182,7 @@ class server(PybindBase):
       self._set()
 
   def _unset_telnet_vrf_cont(self):
-    self.__telnet_vrf_cont = YANGDynClass(base=telnet_vrf_cont.telnet_vrf_cont, is_container='container', presence=False, yang_name="telnet-vrf-cont", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
+    self.__telnet_vrf_cont = YANGDynClass(base=telnet_vrf_cont.telnet_vrf_cont, is_container='container', presence=False, yang_name="telnet-vrf-cont", rest_name="telnet-vrf-cont", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-sec-services', defining_module='brocade-sec-services', yang_type='container', is_config=True)
 
   shutdown = __builtin__.property(_get_shutdown, _set_shutdown)
   standby = __builtin__.property(_get_standby, _set_standby)

@@ -46,7 +46,7 @@ class virtual_mac(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__vmac = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vmac", rest_name="02e0.5200.00xx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual MAC address', u'alt-name': u'02e0.5200.00xx'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)
+    self.__vmac = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vmac", rest_name="02e0.5200.00xx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'02e0.5200.00xx'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -105,12 +105,12 @@ class virtual_mac(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="vmac", rest_name="02e0.5200.00xx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual MAC address', u'alt-name': u'02e0.5200.00xx'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="vmac", rest_name="02e0.5200.00xx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'02e0.5200.00xx'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vmac must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vmac", rest_name="02e0.5200.00xx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual MAC address', u'alt-name': u'02e0.5200.00xx'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vmac", rest_name="02e0.5200.00xx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'02e0.5200.00xx'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)""",
         })
 
     self.__vmac = t
@@ -118,7 +118,7 @@ class virtual_mac(PybindBase):
       self._set()
 
   def _unset_vmac(self):
-    self.__vmac = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vmac", rest_name="02e0.5200.00xx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual MAC address', u'alt-name': u'02e0.5200.00xx'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)
+    self.__vmac = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="vmac", rest_name="02e0.5200.00xx", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'02e0.5200.00xx'}}, namespace='urn:brocade.com:mgmt:brocade-vrrpv3', defining_module='brocade-vrrpv3', yang_type='empty', is_config=True)
 
   vmac = __builtin__.property(_get_vmac, _set_vmac)
 

@@ -7,6 +7,8 @@ from pyangbind.lib.base import PybindBase
 from decimal import Decimal
 from bitarray import bitarray
 import __builtin__
+import lldp
+import ptp
 import spanning_tree
 class protocol(PybindBase):
   """
@@ -15,7 +17,7 @@ class protocol(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__spanning_tree',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__lldp','__ptp','__spanning_tree',)
 
   _yang_name = 'protocol'
   _rest_name = 'protocol'
@@ -45,7 +47,9 @@ class protocol(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__spanning_tree = YANGDynClass(base=spanning_tree.spanning_tree, is_container='container', presence=False, yang_name="spanning-tree", rest_name="spanning-tree", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Spanning tree commands', u'cli-full-no': None, u'sort-priority': u'56'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
+    self.__lldp = YANGDynClass(base=lldp.lldp, is_container='container', presence=True, yang_name="lldp", rest_name="lldp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='container', is_config=True)
+    self.__spanning_tree = YANGDynClass(base=spanning_tree.spanning_tree, is_container='container', presence=False, yang_name="spanning-tree", rest_name="spanning-tree", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
+    self.__ptp = YANGDynClass(base=ptp.ptp, is_container='container', presence=True, yang_name="ptp", rest_name="ptp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -83,6 +87,78 @@ class protocol(PybindBase):
     else:
       return [u'protocol']
 
+  def _get_lldp(self):
+    """
+    Getter method for lldp, mapped from YANG variable /protocol/lldp (container)
+    """
+    return self.__lldp
+      
+  def _set_lldp(self, v, load=False):
+    """
+    Setter method for lldp, mapped from YANG variable /protocol/lldp (container)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_lldp is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_lldp() directly.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=lldp.lldp, is_container='container', presence=True, yang_name="lldp", rest_name="lldp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='container', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """lldp must be of a type compatible with container""",
+          'defined-type': "container",
+          'generated-type': """YANGDynClass(base=lldp.lldp, is_container='container', presence=True, yang_name="lldp", rest_name="lldp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='container', is_config=True)""",
+        })
+
+    self.__lldp = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_lldp(self):
+    self.__lldp = YANGDynClass(base=lldp.lldp, is_container='container', presence=True, yang_name="lldp", rest_name="lldp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='container', is_config=True)
+
+
+  def _get_ptp(self):
+    """
+    Getter method for ptp, mapped from YANG variable /protocol/ptp (container)
+
+    YANG Description: PTP configuration. PTP protocol is enabled when
+'/protocol/ptp/enable' is set.
+    """
+    return self.__ptp
+      
+  def _set_ptp(self, v, load=False):
+    """
+    Setter method for ptp, mapped from YANG variable /protocol/ptp (container)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_ptp is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_ptp() directly.
+
+    YANG Description: PTP configuration. PTP protocol is enabled when
+'/protocol/ptp/enable' is set.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=ptp.ptp, is_container='container', presence=True, yang_name="ptp", rest_name="ptp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='container', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """ptp must be of a type compatible with container""",
+          'defined-type': "container",
+          'generated-type': """YANGDynClass(base=ptp.ptp, is_container='container', presence=True, yang_name="ptp", rest_name="ptp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='container', is_config=True)""",
+        })
+
+    self.__ptp = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_ptp(self):
+    self.__ptp = YANGDynClass(base=ptp.ptp, is_container='container', presence=True, yang_name="ptp", rest_name="ptp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='container', is_config=True)
+
+
   def _get_spanning_tree(self):
     """
     Getter method for spanning_tree, mapped from YANG variable /protocol/spanning_tree (container)
@@ -100,12 +176,12 @@ class protocol(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=spanning_tree.spanning_tree, is_container='container', presence=False, yang_name="spanning-tree", rest_name="spanning-tree", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Spanning tree commands', u'cli-full-no': None, u'sort-priority': u'56'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=spanning_tree.spanning_tree, is_container='container', presence=False, yang_name="spanning-tree", rest_name="spanning-tree", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """spanning_tree must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=spanning_tree.spanning_tree, is_container='container', presence=False, yang_name="spanning-tree", rest_name="spanning-tree", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Spanning tree commands', u'cli-full-no': None, u'sort-priority': u'56'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=spanning_tree.spanning_tree, is_container='container', presence=False, yang_name="spanning-tree", rest_name="spanning-tree", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)""",
         })
 
     self.__spanning_tree = t
@@ -113,11 +189,13 @@ class protocol(PybindBase):
       self._set()
 
   def _unset_spanning_tree(self):
-    self.__spanning_tree = YANGDynClass(base=spanning_tree.spanning_tree, is_container='container', presence=False, yang_name="spanning-tree", rest_name="spanning-tree", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Spanning tree commands', u'cli-full-no': None, u'sort-priority': u'56'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
+    self.__spanning_tree = YANGDynClass(base=spanning_tree.spanning_tree, is_container='container', presence=False, yang_name="spanning-tree", rest_name="spanning-tree", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
 
+  lldp = __builtin__.property(_get_lldp, _set_lldp)
+  ptp = __builtin__.property(_get_ptp, _set_ptp)
   spanning_tree = __builtin__.property(_get_spanning_tree, _set_spanning_tree)
 
 
-  _pyangbind_elements = {'spanning_tree': spanning_tree, }
+  _pyangbind_elements = {'lldp': lldp, 'ptp': ptp, 'spanning_tree': spanning_tree, }
 
 

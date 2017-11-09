@@ -16,7 +16,7 @@ class icmpv6(PybindBase):
 
   YANG Description: The ICMPv6 control for this management interface.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__v6_unreachable','__v6_echo_reply','__v6_rate_limiting',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__v6_rate_limiting',)
 
   _yang_name = 'icmpv6'
   _rest_name = 'icmpv6'
@@ -46,9 +46,7 @@ class icmpv6(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__v6_echo_reply = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="v6_echo_reply", rest_name="echo-reply", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'To enable sending ICMPv6 Echo Reply in response Echo Request.', u'hidden': u'full', u'alt-name': u'echo-reply', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
-    self.__v6_unreachable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="v6_unreachable", rest_name="unreachable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'To enable generating ICMPv6 Destination Unreachable message.', u'hidden': u'full', u'alt-name': u'unreachable'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
-    self.__v6_rate_limiting = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..4294967295']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1000), is_leaf=True, yang_name="v6_rate_limiting", rest_name="rate-limiting", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'To enable ICMPv6 incoming rate limiting', u'alt-name': u'rate-limiting'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='uint32', is_config=True)
+    self.__v6_rate_limiting = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..4294967295']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1000), is_leaf=True, yang_name="v6_rate_limiting", rest_name="v6_rate_limiting", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='uint32', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -84,81 +82,7 @@ class icmpv6(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface', u'Management', u'ipv6', u'icmpv6']
-
-  def _get_v6_unreachable(self):
-    """
-    Getter method for v6_unreachable, mapped from YANG variable /interface/management/ipv6/icmpv6/v6_unreachable (empty)
-
-    YANG Description: To enable generating ICMPv6 Destination Unreachable message.
-    """
-    return self.__v6_unreachable
-      
-  def _set_v6_unreachable(self, v, load=False):
-    """
-    Setter method for v6_unreachable, mapped from YANG variable /interface/management/ipv6/icmpv6/v6_unreachable (empty)
-    If this variable is read-only (config: false) in the
-    source YANG file, then _set_v6_unreachable is considered as a private
-    method. Backends looking to populate this variable should
-    do so via calling thisObj._set_v6_unreachable() directly.
-
-    YANG Description: To enable generating ICMPv6 Destination Unreachable message.
-    """
-    if hasattr(v, "_utype"):
-      v = v._utype(v)
-    try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="v6_unreachable", rest_name="unreachable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'To enable generating ICMPv6 Destination Unreachable message.', u'hidden': u'full', u'alt-name': u'unreachable'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
-    except (TypeError, ValueError):
-      raise ValueError({
-          'error-string': """v6_unreachable must be of a type compatible with empty""",
-          'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="v6_unreachable", rest_name="unreachable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'To enable generating ICMPv6 Destination Unreachable message.', u'hidden': u'full', u'alt-name': u'unreachable'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)""",
-        })
-
-    self.__v6_unreachable = t
-    if hasattr(self, '_set'):
-      self._set()
-
-  def _unset_v6_unreachable(self):
-    self.__v6_unreachable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="v6_unreachable", rest_name="unreachable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'To enable generating ICMPv6 Destination Unreachable message.', u'hidden': u'full', u'alt-name': u'unreachable'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
-
-
-  def _get_v6_echo_reply(self):
-    """
-    Getter method for v6_echo_reply, mapped from YANG variable /interface/management/ipv6/icmpv6/v6_echo_reply (empty)
-
-    YANG Description: To enable sending ICMPv6 Echo Reply in response Echo Request.
-    """
-    return self.__v6_echo_reply
-      
-  def _set_v6_echo_reply(self, v, load=False):
-    """
-    Setter method for v6_echo_reply, mapped from YANG variable /interface/management/ipv6/icmpv6/v6_echo_reply (empty)
-    If this variable is read-only (config: false) in the
-    source YANG file, then _set_v6_echo_reply is considered as a private
-    method. Backends looking to populate this variable should
-    do so via calling thisObj._set_v6_echo_reply() directly.
-
-    YANG Description: To enable sending ICMPv6 Echo Reply in response Echo Request.
-    """
-    if hasattr(v, "_utype"):
-      v = v._utype(v)
-    try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="v6_echo_reply", rest_name="echo-reply", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'To enable sending ICMPv6 Echo Reply in response Echo Request.', u'hidden': u'full', u'alt-name': u'echo-reply', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
-    except (TypeError, ValueError):
-      raise ValueError({
-          'error-string': """v6_echo_reply must be of a type compatible with empty""",
-          'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="v6_echo_reply", rest_name="echo-reply", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'To enable sending ICMPv6 Echo Reply in response Echo Request.', u'hidden': u'full', u'alt-name': u'echo-reply', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)""",
-        })
-
-    self.__v6_echo_reply = t
-    if hasattr(self, '_set'):
-      self._set()
-
-  def _unset_v6_echo_reply(self):
-    self.__v6_echo_reply = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="v6_echo_reply", rest_name="echo-reply", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'To enable sending ICMPv6 Echo Reply in response Echo Request.', u'hidden': u'full', u'alt-name': u'echo-reply', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
-
+      return [u'interface', u'management', u'ipv6', u'icmpv6']
 
   def _get_v6_rate_limiting(self):
     """
@@ -181,12 +105,12 @@ class icmpv6(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..4294967295']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1000), is_leaf=True, yang_name="v6_rate_limiting", rest_name="rate-limiting", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'To enable ICMPv6 incoming rate limiting', u'alt-name': u'rate-limiting'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..4294967295']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1000), is_leaf=True, yang_name="v6_rate_limiting", rest_name="v6_rate_limiting", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """v6_rate_limiting must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..4294967295']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1000), is_leaf=True, yang_name="v6_rate_limiting", rest_name="rate-limiting", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'To enable ICMPv6 incoming rate limiting', u'alt-name': u'rate-limiting'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..4294967295']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1000), is_leaf=True, yang_name="v6_rate_limiting", rest_name="v6_rate_limiting", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='uint32', is_config=True)""",
         })
 
     self.__v6_rate_limiting = t
@@ -194,13 +118,11 @@ class icmpv6(PybindBase):
       self._set()
 
   def _unset_v6_rate_limiting(self):
-    self.__v6_rate_limiting = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..4294967295']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1000), is_leaf=True, yang_name="v6_rate_limiting", rest_name="rate-limiting", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'To enable ICMPv6 incoming rate limiting', u'alt-name': u'rate-limiting'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='uint32', is_config=True)
+    self.__v6_rate_limiting = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..4294967295']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1000), is_leaf=True, yang_name="v6_rate_limiting", rest_name="v6_rate_limiting", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='uint32', is_config=True)
 
-  v6_unreachable = __builtin__.property(_get_v6_unreachable, _set_v6_unreachable)
-  v6_echo_reply = __builtin__.property(_get_v6_echo_reply, _set_v6_echo_reply)
   v6_rate_limiting = __builtin__.property(_get_v6_rate_limiting, _set_v6_rate_limiting)
 
 
-  _pyangbind_elements = {'v6_unreachable': v6_unreachable, 'v6_echo_reply': v6_echo_reply, 'v6_rate_limiting': v6_rate_limiting, }
+  _pyangbind_elements = {'v6_rate_limiting': v6_rate_limiting, }
 
 

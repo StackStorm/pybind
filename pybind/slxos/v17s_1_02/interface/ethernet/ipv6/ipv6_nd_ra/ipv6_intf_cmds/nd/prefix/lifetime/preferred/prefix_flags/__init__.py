@@ -17,7 +17,7 @@ class prefix_flags(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__no_autoconfig','__no_onlink','__off_link',)
 
   _yang_name = 'prefix-flags'
-  _rest_name = ''
+  _rest_name = 'prefix-flags'
 
   _pybind_generated_by = 'container'
 
@@ -44,9 +44,9 @@ class prefix_flags(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__no_autoconfig = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="no-autoconfig", rest_name="no-autoconfig", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Do not use prefix for autoconfiguration', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
-    self.__off_link = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="off-link", rest_name="off-link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Prefix is offlink', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
-    self.__no_onlink = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="no-onlink", rest_name="no-onlink", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Do not use prefix for onlink determination', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
+    self.__no_autoconfig = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="no-autoconfig", rest_name="no-autoconfig", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
+    self.__off_link = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="off-link", rest_name="off-link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
+    self.__no_onlink = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="no-onlink", rest_name="no-onlink", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -82,7 +82,7 @@ class prefix_flags(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface', u'Ethernet', u'ipv6', u'nd', u'prefix']
+      return [u'interface', u'ethernet', u'ipv6', u'ipv6-nd-ra', u'ipv6-intf-cmds', u'nd', u'prefix', u'lifetime', u'preferred', u'prefix-flags']
 
   def _get_no_autoconfig(self):
     """
@@ -101,12 +101,12 @@ class prefix_flags(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="no-autoconfig", rest_name="no-autoconfig", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Do not use prefix for autoconfiguration', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="no-autoconfig", rest_name="no-autoconfig", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """no_autoconfig must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="no-autoconfig", rest_name="no-autoconfig", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Do not use prefix for autoconfiguration', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="no-autoconfig", rest_name="no-autoconfig", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)""",
         })
 
     self.__no_autoconfig = t
@@ -114,7 +114,7 @@ class prefix_flags(PybindBase):
       self._set()
 
   def _unset_no_autoconfig(self):
-    self.__no_autoconfig = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="no-autoconfig", rest_name="no-autoconfig", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Do not use prefix for autoconfiguration', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
+    self.__no_autoconfig = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="no-autoconfig", rest_name="no-autoconfig", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
 
 
   def _get_no_onlink(self):
@@ -134,12 +134,12 @@ class prefix_flags(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="no-onlink", rest_name="no-onlink", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Do not use prefix for onlink determination', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="no-onlink", rest_name="no-onlink", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """no_onlink must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="no-onlink", rest_name="no-onlink", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Do not use prefix for onlink determination', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="no-onlink", rest_name="no-onlink", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)""",
         })
 
     self.__no_onlink = t
@@ -147,7 +147,7 @@ class prefix_flags(PybindBase):
       self._set()
 
   def _unset_no_onlink(self):
-    self.__no_onlink = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="no-onlink", rest_name="no-onlink", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Do not use prefix for onlink determination', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
+    self.__no_onlink = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="no-onlink", rest_name="no-onlink", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
 
 
   def _get_off_link(self):
@@ -167,12 +167,12 @@ class prefix_flags(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="off-link", rest_name="off-link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Prefix is offlink', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="off-link", rest_name="off-link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """off_link must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="off-link", rest_name="off-link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Prefix is offlink', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="off-link", rest_name="off-link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)""",
         })
 
     self.__off_link = t
@@ -180,7 +180,7 @@ class prefix_flags(PybindBase):
       self._set()
 
   def _unset_off_link(self):
-    self.__off_link = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="off-link", rest_name="off-link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Prefix is offlink', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
+    self.__off_link = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="off-link", rest_name="off-link", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
 
   no_autoconfig = __builtin__.property(_get_no_autoconfig, _set_no_autoconfig)
   no_onlink = __builtin__.property(_get_no_onlink, _set_no_onlink)

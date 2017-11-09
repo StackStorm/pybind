@@ -44,7 +44,7 @@ class arp(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__learn_any = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="learn-any", rest_name="learn-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Learn ARP'}}, namespace='urn:brocade.com:mgmt:brocade-ip-config', defining_module='brocade-ip-config', yang_type='empty', is_config=True)
+    self.__learn_any = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="learn-any", rest_name="learn-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-config', defining_module='brocade-ip-config', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -80,7 +80,7 @@ class arp(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface', u'Ethernet', u'ip', u'arp']
+      return [u'interface', u'ethernet', u'ip', u'ip-config', u'arp']
 
   def _get_learn_any(self):
     """
@@ -103,12 +103,12 @@ class arp(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="learn-any", rest_name="learn-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Learn ARP'}}, namespace='urn:brocade.com:mgmt:brocade-ip-config', defining_module='brocade-ip-config', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="learn-any", rest_name="learn-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-config', defining_module='brocade-ip-config', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """learn_any must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="learn-any", rest_name="learn-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Learn ARP'}}, namespace='urn:brocade.com:mgmt:brocade-ip-config', defining_module='brocade-ip-config', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="learn-any", rest_name="learn-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-config', defining_module='brocade-ip-config', yang_type='empty', is_config=True)""",
         })
 
     self.__learn_any = t
@@ -116,7 +116,7 @@ class arp(PybindBase):
       self._set()
 
   def _unset_learn_any(self):
-    self.__learn_any = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="learn-any", rest_name="learn-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Learn ARP'}}, namespace='urn:brocade.com:mgmt:brocade-ip-config', defining_module='brocade-ip-config', yang_type='empty', is_config=True)
+    self.__learn_any = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="learn-any", rest_name="learn-any", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-config', defining_module='brocade-ip-config', yang_type='empty', is_config=True)
 
   learn_any = __builtin__.property(_get_learn_any, _set_learn_any)
 

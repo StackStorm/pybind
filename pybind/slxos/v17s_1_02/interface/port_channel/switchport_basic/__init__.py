@@ -17,7 +17,7 @@ class switchport_basic(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__basic',)
 
   _yang_name = 'switchport-basic'
-  _rest_name = ''
+  _rest_name = 'switchport-basic'
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +44,7 @@ class switchport_basic(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__basic = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="basic", rest_name="switchport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-run-template': u'$(.?switchport\n:)', u'alt-name': u'switchport'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+    self.__basic = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="basic", rest_name="basic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -80,7 +80,7 @@ class switchport_basic(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface', u'Port-channel']
+      return [u'interface', u'port-channel', u'switchport-basic']
 
   def _get_basic(self):
     """
@@ -99,12 +99,12 @@ class switchport_basic(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="basic", rest_name="switchport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-run-template': u'$(.?switchport\n:)', u'alt-name': u'switchport'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="basic", rest_name="basic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """basic must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="basic", rest_name="switchport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-run-template': u'$(.?switchport\n:)', u'alt-name': u'switchport'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="basic", rest_name="basic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)""",
         })
 
     self.__basic = t
@@ -112,7 +112,7 @@ class switchport_basic(PybindBase):
       self._set()
 
   def _unset_basic(self):
-    self.__basic = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="basic", rest_name="switchport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-run-template': u'$(.?switchport\n:)', u'alt-name': u'switchport'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+    self.__basic = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="basic", rest_name="basic", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
 
   basic = __builtin__.property(_get_basic, _set_basic)
 

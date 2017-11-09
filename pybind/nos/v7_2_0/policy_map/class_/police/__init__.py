@@ -44,17 +44,17 @@ class police(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__exceed_set_tc = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="exceed-set-tc", rest_name="exceed-set-tc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Traffic Class value for exceeded traffic.'}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='tc-value', is_config=True)
-    self.__eir = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'0..100000000000']}), is_leaf=True, yang_name="eir", rest_name="eir", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Exceeded Information Rate.', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)
-    self.__cbs = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'1250..12500000000']}), is_leaf=True, yang_name="cbs", rest_name="cbs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Comitted Burst Size.', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)
-    self.__ebs = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'1250..12500000000']}), is_leaf=True, yang_name="ebs", rest_name="ebs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Exceeded Burst Size.', u'cli-optional-in-sequence': None, u'display-when': u'(../eir != 0)'}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)
-    self.__conform_set_prec = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="conform-set-prec", rest_name="conform-set-prec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP Precedence value for conformant traffic.', u'cli-optional-in-sequence': None, u'display-when': u"(../conform-set-dscp = '64') or not(../conform-set-dscp)"}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='precedence-value', is_config=True)
-    self.__cir = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'40000..100000000000']}), is_leaf=True, yang_name="cir", rest_name="cir", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Committed Information Rate.', u'cli-suppress-no': None, u'cli-hide-in-submode': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)
-    self.__conform_set_dscp = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 63']}), is_leaf=True, yang_name="conform-set-dscp", rest_name="conform-set-dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'DCSP Priority for conformant traffic.', u'cli-optional-in-sequence': None, u'display-when': u"(../conform-set-prec = '64') or not(../conform-set-prec)"}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='dscp-value', is_config=True)
-    self.__exceed_set_dscp = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 63']}), is_leaf=True, yang_name="exceed-set-dscp", rest_name="exceed-set-dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'DCSP Priority for exceeded traffic.', u'cli-optional-in-sequence': None, u'display-when': u"(../exceed-set-prec = '64') or not(../exceed-set-prec)"}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='dscp-value', is_config=True)
-    self.__set_priority = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="set-priority", rest_name="set-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Police Priority Map Name', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='string', is_config=True)
-    self.__conform_set_tc = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="conform-set-tc", rest_name="conform-set-tc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Traffic Class value for conformant traffic.', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='tc-value', is_config=True)
-    self.__exceed_set_prec = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="exceed-set-prec", rest_name="exceed-set-prec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP Precedence value for exceeded traffic.', u'cli-optional-in-sequence': None, u'display-when': u"(../exceed-set-dscp = '64') or not(../exceed-set-dscp)"}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='precedence-value', is_config=True)
+    self.__exceed_set_tc = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="exceed-set-tc", rest_name="exceed-set-tc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='tc-value', is_config=True)
+    self.__eir = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'0..100000000000']}), is_leaf=True, yang_name="eir", rest_name="eir", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)
+    self.__cbs = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'1250..12500000000']}), is_leaf=True, yang_name="cbs", rest_name="cbs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)
+    self.__ebs = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'1250..12500000000']}), is_leaf=True, yang_name="ebs", rest_name="ebs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)
+    self.__conform_set_prec = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="conform-set-prec", rest_name="conform-set-prec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='precedence-value', is_config=True)
+    self.__cir = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'40000..100000000000']}), is_leaf=True, yang_name="cir", rest_name="cir", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)
+    self.__conform_set_dscp = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 63']}), is_leaf=True, yang_name="conform-set-dscp", rest_name="conform-set-dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='dscp-value', is_config=True)
+    self.__exceed_set_dscp = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 63']}), is_leaf=True, yang_name="exceed-set-dscp", rest_name="exceed-set-dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='dscp-value', is_config=True)
+    self.__set_priority = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="set-priority", rest_name="set-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='string', is_config=True)
+    self.__conform_set_tc = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="conform-set-tc", rest_name="conform-set-tc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='tc-value', is_config=True)
+    self.__exceed_set_prec = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="exceed-set-prec", rest_name="exceed-set-prec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='precedence-value', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -109,12 +109,12 @@ class police(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'40000..100000000000']}), is_leaf=True, yang_name="cir", rest_name="cir", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Committed Information Rate.', u'cli-suppress-no': None, u'cli-hide-in-submode': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'40000..100000000000']}), is_leaf=True, yang_name="cir", rest_name="cir", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """cir must be of a type compatible with uint64""",
           'defined-type': "uint64",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'40000..100000000000']}), is_leaf=True, yang_name="cir", rest_name="cir", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Committed Information Rate.', u'cli-suppress-no': None, u'cli-hide-in-submode': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'40000..100000000000']}), is_leaf=True, yang_name="cir", rest_name="cir", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)""",
         })
 
     self.__cir = t
@@ -122,7 +122,7 @@ class police(PybindBase):
       self._set()
 
   def _unset_cir(self):
-    self.__cir = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'40000..100000000000']}), is_leaf=True, yang_name="cir", rest_name="cir", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Committed Information Rate.', u'cli-suppress-no': None, u'cli-hide-in-submode': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)
+    self.__cir = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'40000..100000000000']}), is_leaf=True, yang_name="cir", rest_name="cir", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)
 
 
   def _get_cbs(self):
@@ -142,12 +142,12 @@ class police(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'1250..12500000000']}), is_leaf=True, yang_name="cbs", rest_name="cbs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Comitted Burst Size.', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'1250..12500000000']}), is_leaf=True, yang_name="cbs", rest_name="cbs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """cbs must be of a type compatible with uint64""",
           'defined-type': "uint64",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'1250..12500000000']}), is_leaf=True, yang_name="cbs", rest_name="cbs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Comitted Burst Size.', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'1250..12500000000']}), is_leaf=True, yang_name="cbs", rest_name="cbs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)""",
         })
 
     self.__cbs = t
@@ -155,7 +155,7 @@ class police(PybindBase):
       self._set()
 
   def _unset_cbs(self):
-    self.__cbs = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'1250..12500000000']}), is_leaf=True, yang_name="cbs", rest_name="cbs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Comitted Burst Size.', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)
+    self.__cbs = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'1250..12500000000']}), is_leaf=True, yang_name="cbs", rest_name="cbs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)
 
 
   def _get_eir(self):
@@ -175,12 +175,12 @@ class police(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'0..100000000000']}), is_leaf=True, yang_name="eir", rest_name="eir", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Exceeded Information Rate.', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'0..100000000000']}), is_leaf=True, yang_name="eir", rest_name="eir", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """eir must be of a type compatible with uint64""",
           'defined-type': "uint64",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'0..100000000000']}), is_leaf=True, yang_name="eir", rest_name="eir", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Exceeded Information Rate.', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'0..100000000000']}), is_leaf=True, yang_name="eir", rest_name="eir", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)""",
         })
 
     self.__eir = t
@@ -188,7 +188,7 @@ class police(PybindBase):
       self._set()
 
   def _unset_eir(self):
-    self.__eir = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'0..100000000000']}), is_leaf=True, yang_name="eir", rest_name="eir", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Exceeded Information Rate.', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)
+    self.__eir = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'0..100000000000']}), is_leaf=True, yang_name="eir", rest_name="eir", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)
 
 
   def _get_ebs(self):
@@ -208,12 +208,12 @@ class police(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'1250..12500000000']}), is_leaf=True, yang_name="ebs", rest_name="ebs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Exceeded Burst Size.', u'cli-optional-in-sequence': None, u'display-when': u'(../eir != 0)'}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'1250..12500000000']}), is_leaf=True, yang_name="ebs", rest_name="ebs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ebs must be of a type compatible with uint64""",
           'defined-type': "uint64",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'1250..12500000000']}), is_leaf=True, yang_name="ebs", rest_name="ebs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Exceeded Burst Size.', u'cli-optional-in-sequence': None, u'display-when': u'(../eir != 0)'}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'1250..12500000000']}), is_leaf=True, yang_name="ebs", rest_name="ebs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)""",
         })
 
     self.__ebs = t
@@ -221,7 +221,7 @@ class police(PybindBase):
       self._set()
 
   def _unset_ebs(self):
-    self.__ebs = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'1250..12500000000']}), is_leaf=True, yang_name="ebs", rest_name="ebs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Exceeded Burst Size.', u'cli-optional-in-sequence': None, u'display-when': u'(../eir != 0)'}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)
+    self.__ebs = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'1250..12500000000']}), is_leaf=True, yang_name="ebs", rest_name="ebs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='uint64', is_config=True)
 
 
   def _get_set_priority(self):
@@ -241,12 +241,12 @@ class police(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="set-priority", rest_name="set-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Police Priority Map Name', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="set-priority", rest_name="set-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """set_priority must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="set-priority", rest_name="set-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Police Priority Map Name', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="set-priority", rest_name="set-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='string', is_config=True)""",
         })
 
     self.__set_priority = t
@@ -254,7 +254,7 @@ class police(PybindBase):
       self._set()
 
   def _unset_set_priority(self):
-    self.__set_priority = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="set-priority", rest_name="set-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Police Priority Map Name', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='string', is_config=True)
+    self.__set_priority = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="set-priority", rest_name="set-priority", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='string', is_config=True)
 
 
   def _get_conform_set_dscp(self):
@@ -274,12 +274,12 @@ class police(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 63']}), is_leaf=True, yang_name="conform-set-dscp", rest_name="conform-set-dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'DCSP Priority for conformant traffic.', u'cli-optional-in-sequence': None, u'display-when': u"(../conform-set-prec = '64') or not(../conform-set-prec)"}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='dscp-value', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 63']}), is_leaf=True, yang_name="conform-set-dscp", rest_name="conform-set-dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='dscp-value', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """conform_set_dscp must be of a type compatible with dscp-value""",
           'defined-type': "brocade-policer:dscp-value",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 63']}), is_leaf=True, yang_name="conform-set-dscp", rest_name="conform-set-dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'DCSP Priority for conformant traffic.', u'cli-optional-in-sequence': None, u'display-when': u"(../conform-set-prec = '64') or not(../conform-set-prec)"}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='dscp-value', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 63']}), is_leaf=True, yang_name="conform-set-dscp", rest_name="conform-set-dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='dscp-value', is_config=True)""",
         })
 
     self.__conform_set_dscp = t
@@ -287,7 +287,7 @@ class police(PybindBase):
       self._set()
 
   def _unset_conform_set_dscp(self):
-    self.__conform_set_dscp = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 63']}), is_leaf=True, yang_name="conform-set-dscp", rest_name="conform-set-dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'DCSP Priority for conformant traffic.', u'cli-optional-in-sequence': None, u'display-when': u"(../conform-set-prec = '64') or not(../conform-set-prec)"}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='dscp-value', is_config=True)
+    self.__conform_set_dscp = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 63']}), is_leaf=True, yang_name="conform-set-dscp", rest_name="conform-set-dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='dscp-value', is_config=True)
 
 
   def _get_conform_set_prec(self):
@@ -307,12 +307,12 @@ class police(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="conform-set-prec", rest_name="conform-set-prec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP Precedence value for conformant traffic.', u'cli-optional-in-sequence': None, u'display-when': u"(../conform-set-dscp = '64') or not(../conform-set-dscp)"}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='precedence-value', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="conform-set-prec", rest_name="conform-set-prec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='precedence-value', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """conform_set_prec must be of a type compatible with precedence-value""",
           'defined-type': "brocade-policer:precedence-value",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="conform-set-prec", rest_name="conform-set-prec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP Precedence value for conformant traffic.', u'cli-optional-in-sequence': None, u'display-when': u"(../conform-set-dscp = '64') or not(../conform-set-dscp)"}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='precedence-value', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="conform-set-prec", rest_name="conform-set-prec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='precedence-value', is_config=True)""",
         })
 
     self.__conform_set_prec = t
@@ -320,7 +320,7 @@ class police(PybindBase):
       self._set()
 
   def _unset_conform_set_prec(self):
-    self.__conform_set_prec = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="conform-set-prec", rest_name="conform-set-prec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP Precedence value for conformant traffic.', u'cli-optional-in-sequence': None, u'display-when': u"(../conform-set-dscp = '64') or not(../conform-set-dscp)"}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='precedence-value', is_config=True)
+    self.__conform_set_prec = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="conform-set-prec", rest_name="conform-set-prec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='precedence-value', is_config=True)
 
 
   def _get_conform_set_tc(self):
@@ -340,12 +340,12 @@ class police(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="conform-set-tc", rest_name="conform-set-tc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Traffic Class value for conformant traffic.', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='tc-value', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="conform-set-tc", rest_name="conform-set-tc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='tc-value', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """conform_set_tc must be of a type compatible with tc-value""",
           'defined-type': "brocade-policer:tc-value",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="conform-set-tc", rest_name="conform-set-tc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Traffic Class value for conformant traffic.', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='tc-value', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="conform-set-tc", rest_name="conform-set-tc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='tc-value', is_config=True)""",
         })
 
     self.__conform_set_tc = t
@@ -353,7 +353,7 @@ class police(PybindBase):
       self._set()
 
   def _unset_conform_set_tc(self):
-    self.__conform_set_tc = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="conform-set-tc", rest_name="conform-set-tc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Traffic Class value for conformant traffic.', u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='tc-value', is_config=True)
+    self.__conform_set_tc = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="conform-set-tc", rest_name="conform-set-tc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='tc-value', is_config=True)
 
 
   def _get_exceed_set_dscp(self):
@@ -373,12 +373,12 @@ class police(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 63']}), is_leaf=True, yang_name="exceed-set-dscp", rest_name="exceed-set-dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'DCSP Priority for exceeded traffic.', u'cli-optional-in-sequence': None, u'display-when': u"(../exceed-set-prec = '64') or not(../exceed-set-prec)"}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='dscp-value', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 63']}), is_leaf=True, yang_name="exceed-set-dscp", rest_name="exceed-set-dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='dscp-value', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """exceed_set_dscp must be of a type compatible with dscp-value""",
           'defined-type': "brocade-policer:dscp-value",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 63']}), is_leaf=True, yang_name="exceed-set-dscp", rest_name="exceed-set-dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'DCSP Priority for exceeded traffic.', u'cli-optional-in-sequence': None, u'display-when': u"(../exceed-set-prec = '64') or not(../exceed-set-prec)"}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='dscp-value', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 63']}), is_leaf=True, yang_name="exceed-set-dscp", rest_name="exceed-set-dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='dscp-value', is_config=True)""",
         })
 
     self.__exceed_set_dscp = t
@@ -386,7 +386,7 @@ class police(PybindBase):
       self._set()
 
   def _unset_exceed_set_dscp(self):
-    self.__exceed_set_dscp = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 63']}), is_leaf=True, yang_name="exceed-set-dscp", rest_name="exceed-set-dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'DCSP Priority for exceeded traffic.', u'cli-optional-in-sequence': None, u'display-when': u"(../exceed-set-prec = '64') or not(../exceed-set-prec)"}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='dscp-value', is_config=True)
+    self.__exceed_set_dscp = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 63']}), is_leaf=True, yang_name="exceed-set-dscp", rest_name="exceed-set-dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='dscp-value', is_config=True)
 
 
   def _get_exceed_set_prec(self):
@@ -406,12 +406,12 @@ class police(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="exceed-set-prec", rest_name="exceed-set-prec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP Precedence value for exceeded traffic.', u'cli-optional-in-sequence': None, u'display-when': u"(../exceed-set-dscp = '64') or not(../exceed-set-dscp)"}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='precedence-value', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="exceed-set-prec", rest_name="exceed-set-prec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='precedence-value', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """exceed_set_prec must be of a type compatible with precedence-value""",
           'defined-type': "brocade-policer:precedence-value",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="exceed-set-prec", rest_name="exceed-set-prec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP Precedence value for exceeded traffic.', u'cli-optional-in-sequence': None, u'display-when': u"(../exceed-set-dscp = '64') or not(../exceed-set-dscp)"}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='precedence-value', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="exceed-set-prec", rest_name="exceed-set-prec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='precedence-value', is_config=True)""",
         })
 
     self.__exceed_set_prec = t
@@ -419,7 +419,7 @@ class police(PybindBase):
       self._set()
 
   def _unset_exceed_set_prec(self):
-    self.__exceed_set_prec = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="exceed-set-prec", rest_name="exceed-set-prec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP Precedence value for exceeded traffic.', u'cli-optional-in-sequence': None, u'display-when': u"(../exceed-set-dscp = '64') or not(../exceed-set-dscp)"}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='precedence-value', is_config=True)
+    self.__exceed_set_prec = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="exceed-set-prec", rest_name="exceed-set-prec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='precedence-value', is_config=True)
 
 
   def _get_exceed_set_tc(self):
@@ -439,12 +439,12 @@ class police(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="exceed-set-tc", rest_name="exceed-set-tc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Traffic Class value for exceeded traffic.'}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='tc-value', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="exceed-set-tc", rest_name="exceed-set-tc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='tc-value', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """exceed_set_tc must be of a type compatible with tc-value""",
           'defined-type': "brocade-policer:tc-value",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="exceed-set-tc", rest_name="exceed-set-tc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Traffic Class value for exceeded traffic.'}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='tc-value', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="exceed-set-tc", rest_name="exceed-set-tc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='tc-value', is_config=True)""",
         })
 
     self.__exceed_set_tc = t
@@ -452,7 +452,7 @@ class police(PybindBase):
       self._set()
 
   def _unset_exceed_set_tc(self):
-    self.__exceed_set_tc = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="exceed-set-tc", rest_name="exceed-set-tc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Traffic Class value for exceeded traffic.'}}, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='tc-value', is_config=True)
+    self.__exceed_set_tc = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 7']}), is_leaf=True, yang_name="exceed-set-tc", rest_name="exceed-set-tc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-policer', defining_module='brocade-policer', yang_type='tc-value', is_config=True)
 
   cir = __builtin__.property(_get_cir, _set_cir)
   cbs = __builtin__.property(_get_cbs, _set_cbs)

@@ -45,7 +45,7 @@ class storm_control(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ingress = YANGDynClass(base=YANGListType("protocol_type",ingress.ingress, yang_name="ingress", rest_name="ingress", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='protocol-type', extensions={u'tailf-common': {u'info': u'Ingress Direction', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'cli-full-no': None}}), is_container='list', yang_name="ingress", rest_name="ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ingress Direction', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='list', is_config=True)
+    self.__ingress = YANGDynClass(base=YANGListType("protocol_type",ingress.ingress, yang_name="ingress", rest_name="ingress", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='protocol-type', extensions=None), is_container='list', yang_name="ingress", rest_name="ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class storm_control(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface', u'Ethernet', u'storm-control']
+      return [u'interface', u'ethernet', u'storm-control']
 
   def _get_ingress(self):
     """
@@ -100,12 +100,12 @@ class storm_control(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("protocol_type",ingress.ingress, yang_name="ingress", rest_name="ingress", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='protocol-type', extensions={u'tailf-common': {u'info': u'Ingress Direction', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'cli-full-no': None}}), is_container='list', yang_name="ingress", rest_name="ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ingress Direction', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("protocol_type",ingress.ingress, yang_name="ingress", rest_name="ingress", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='protocol-type', extensions=None), is_container='list', yang_name="ingress", rest_name="ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ingress must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("protocol_type",ingress.ingress, yang_name="ingress", rest_name="ingress", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='protocol-type', extensions={u'tailf-common': {u'info': u'Ingress Direction', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'cli-full-no': None}}), is_container='list', yang_name="ingress", rest_name="ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ingress Direction', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("protocol_type",ingress.ingress, yang_name="ingress", rest_name="ingress", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='protocol-type', extensions=None), is_container='list', yang_name="ingress", rest_name="ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='list', is_config=True)""",
         })
 
     self.__ingress = t
@@ -113,7 +113,7 @@ class storm_control(PybindBase):
       self._set()
 
   def _unset_ingress(self):
-    self.__ingress = YANGDynClass(base=YANGListType("protocol_type",ingress.ingress, yang_name="ingress", rest_name="ingress", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='protocol-type', extensions={u'tailf-common': {u'info': u'Ingress Direction', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'cli-full-no': None}}), is_container='list', yang_name="ingress", rest_name="ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ingress Direction', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='list', is_config=True)
+    self.__ingress = YANGDynClass(base=YANGListType("protocol_type",ingress.ingress, yang_name="ingress", rest_name="ingress", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='protocol-type', extensions=None), is_container='list', yang_name="ingress", rest_name="ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='list', is_config=True)
 
   ingress = __builtin__.property(_get_ingress, _set_ingress)
 

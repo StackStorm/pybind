@@ -45,7 +45,7 @@ class ldp_params(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ldp_param_cmds = YANGDynClass(base=ldp_param_cmds.ldp_param_cmds, is_container='container', presence=False, yang_name="ldp-param-cmds", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__ldp_param_cmds = YANGDynClass(base=ldp_param_cmds.ldp_param_cmds, is_container='container', presence=False, yang_name="ldp-param-cmds", rest_name="ldp-param-cmds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class ldp_params(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'router', u'mpls', u'mpls-interface', u'ldp-params']
+      return [u'mpls-config', u'router', u'mpls', u'mpls-cmds-holder', u'mpls-interface', u'ldp-params']
 
   def _get_ldp_param_cmds(self):
     """
@@ -100,12 +100,12 @@ class ldp_params(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=ldp_param_cmds.ldp_param_cmds, is_container='container', presence=False, yang_name="ldp-param-cmds", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ldp_param_cmds.ldp_param_cmds, is_container='container', presence=False, yang_name="ldp-param-cmds", rest_name="ldp-param-cmds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ldp_param_cmds must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ldp_param_cmds.ldp_param_cmds, is_container='container', presence=False, yang_name="ldp-param-cmds", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ldp_param_cmds.ldp_param_cmds, is_container='container', presence=False, yang_name="ldp-param-cmds", rest_name="ldp-param-cmds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__ldp_param_cmds = t
@@ -113,7 +113,7 @@ class ldp_params(PybindBase):
       self._set()
 
   def _unset_ldp_param_cmds(self):
-    self.__ldp_param_cmds = YANGDynClass(base=ldp_param_cmds.ldp_param_cmds, is_container='container', presence=False, yang_name="ldp-param-cmds", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__ldp_param_cmds = YANGDynClass(base=ldp_param_cmds.ldp_param_cmds, is_container='container', presence=False, yang_name="ldp-param-cmds", rest_name="ldp-param-cmds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
   ldp_param_cmds = __builtin__.property(_get_ldp_param_cmds, _set_ldp_param_cmds)
 

@@ -45,7 +45,7 @@ class shutdown(PybindBase):
     else:
       self._extmethods = False
     self.__shutdown_status = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="shutdown-status", rest_name="shutdown-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
-    self.__generate_rib_out = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="generate-rib-out", rest_name="generate-rib-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Generate rib-out routes'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__generate_rib_out = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="generate-rib-out", rest_name="generate-rib-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -133,12 +133,12 @@ class shutdown(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="generate-rib-out", rest_name="generate-rib-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Generate rib-out routes'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="generate-rib-out", rest_name="generate-rib-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """generate_rib_out must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="generate-rib-out", rest_name="generate-rib-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Generate rib-out routes'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="generate-rib-out", rest_name="generate-rib-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
         })
 
     self.__generate_rib_out = t
@@ -146,7 +146,7 @@ class shutdown(PybindBase):
       self._set()
 
   def _unset_generate_rib_out(self):
-    self.__generate_rib_out = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="generate-rib-out", rest_name="generate-rib-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Generate rib-out routes'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__generate_rib_out = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="generate-rib-out", rest_name="generate-rib-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
 
   shutdown_status = __builtin__.property(_get_shutdown_status, _set_shutdown_status)
   generate_rib_out = __builtin__.property(_get_generate_rib_out, _set_generate_rib_out)

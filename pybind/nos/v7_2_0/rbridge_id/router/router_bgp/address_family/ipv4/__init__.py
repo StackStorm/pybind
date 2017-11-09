@@ -45,7 +45,7 @@ class ipv4(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ipv4_unicast = YANGDynClass(base=ipv4_unicast.ipv4_unicast, is_container='container', presence=False, yang_name="ipv4-unicast", rest_name="unicast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv4 unicast address Family', u'alt-name': u'unicast', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__ipv4_unicast = YANGDynClass(base=ipv4_unicast.ipv4_unicast, is_container='container', presence=False, yang_name="ipv4-unicast", rest_name="unicast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'unicast'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class ipv4(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=ipv4_unicast.ipv4_unicast, is_container='container', presence=False, yang_name="ipv4-unicast", rest_name="unicast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv4 unicast address Family', u'alt-name': u'unicast', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ipv4_unicast.ipv4_unicast, is_container='container', presence=False, yang_name="ipv4-unicast", rest_name="unicast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'unicast'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ipv4_unicast must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ipv4_unicast.ipv4_unicast, is_container='container', presence=False, yang_name="ipv4-unicast", rest_name="unicast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv4 unicast address Family', u'alt-name': u'unicast', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ipv4_unicast.ipv4_unicast, is_container='container', presence=False, yang_name="ipv4-unicast", rest_name="unicast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'unicast'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__ipv4_unicast = t
@@ -113,7 +113,7 @@ class ipv4(PybindBase):
       self._set()
 
   def _unset_ipv4_unicast(self):
-    self.__ipv4_unicast = YANGDynClass(base=ipv4_unicast.ipv4_unicast, is_container='container', presence=False, yang_name="ipv4-unicast", rest_name="unicast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv4 unicast address Family', u'alt-name': u'unicast', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__ipv4_unicast = YANGDynClass(base=ipv4_unicast.ipv4_unicast, is_container='container', presence=False, yang_name="ipv4-unicast", rest_name="unicast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'unicast'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
   ipv4_unicast = __builtin__.property(_get_ipv4_unicast, _set_ipv4_unicast)
 

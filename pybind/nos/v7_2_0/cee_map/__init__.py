@@ -47,11 +47,11 @@ class cee_map(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__remap = YANGDynClass(base=remap.remap, is_container='container', presence=False, yang_name="remap", rest_name="remap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' Configure Class of Service (CoS) to be \n remapped', u'callpoint': u'qos_cee_remap', u'display-when': u'/vcsmode/vcs-mode = "true"'}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='container', is_config=True)
-    self.__priority_table = YANGDynClass(base=priority_table.priority_table, is_container='container', presence=False, yang_name="priority-table", rest_name="priority-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' Configure Priority Table', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'callpoint': u'qos_priority_map', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='container', is_config=True)
+    self.__remap = YANGDynClass(base=remap.remap, is_container='container', presence=False, yang_name="remap", rest_name="remap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='container', is_config=True)
+    self.__priority_table = YANGDynClass(base=priority_table.priority_table, is_container='container', presence=False, yang_name="priority-table", rest_name="priority-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='container', is_config=True)
     self.__name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,31})'}), is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='cee-map-name-type', is_config=True)
-    self.__precedence = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'1 .. 100']}), is_leaf=True, yang_name="precedence", rest_name="precedence", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' Precedence value'}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='int32', is_config=True)
-    self.__priority_group_table = YANGDynClass(base=YANGListType("PGID",priority_group_table.priority_group_table, yang_name="priority-group-table", rest_name="priority-group-table", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='PGID', extensions={u'tailf-common': {u'info': u' Configure Priority Group Table', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'qos_priority_group'}}), is_container='list', yang_name="priority-group-table", rest_name="priority-group-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' Configure Priority Group Table', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'qos_priority_group'}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='list', is_config=True)
+    self.__precedence = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'1 .. 100']}), is_leaf=True, yang_name="precedence", rest_name="precedence", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='int32', is_config=True)
+    self.__priority_group_table = YANGDynClass(base=YANGListType("PGID",priority_group_table.priority_group_table, yang_name="priority-group-table", rest_name="priority-group-table", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='PGID', extensions=None), is_container='list', yang_name="priority-group-table", rest_name="priority-group-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -148,12 +148,12 @@ class cee_map(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'1 .. 100']}), is_leaf=True, yang_name="precedence", rest_name="precedence", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' Precedence value'}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='int32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'1 .. 100']}), is_leaf=True, yang_name="precedence", rest_name="precedence", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='int32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """precedence must be of a type compatible with int32""",
           'defined-type': "int32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'1 .. 100']}), is_leaf=True, yang_name="precedence", rest_name="precedence", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' Precedence value'}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='int32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'1 .. 100']}), is_leaf=True, yang_name="precedence", rest_name="precedence", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='int32', is_config=True)""",
         })
 
     self.__precedence = t
@@ -161,7 +161,7 @@ class cee_map(PybindBase):
       self._set()
 
   def _unset_precedence(self):
-    self.__precedence = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'1 .. 100']}), is_leaf=True, yang_name="precedence", rest_name="precedence", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' Precedence value'}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='int32', is_config=True)
+    self.__precedence = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'1 .. 100']}), is_leaf=True, yang_name="precedence", rest_name="precedence", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='int32', is_config=True)
 
 
   def _get_priority_group_table(self):
@@ -181,12 +181,12 @@ class cee_map(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("PGID",priority_group_table.priority_group_table, yang_name="priority-group-table", rest_name="priority-group-table", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='PGID', extensions={u'tailf-common': {u'info': u' Configure Priority Group Table', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'qos_priority_group'}}), is_container='list', yang_name="priority-group-table", rest_name="priority-group-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' Configure Priority Group Table', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'qos_priority_group'}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("PGID",priority_group_table.priority_group_table, yang_name="priority-group-table", rest_name="priority-group-table", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='PGID', extensions=None), is_container='list', yang_name="priority-group-table", rest_name="priority-group-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """priority_group_table must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("PGID",priority_group_table.priority_group_table, yang_name="priority-group-table", rest_name="priority-group-table", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='PGID', extensions={u'tailf-common': {u'info': u' Configure Priority Group Table', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'qos_priority_group'}}), is_container='list', yang_name="priority-group-table", rest_name="priority-group-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' Configure Priority Group Table', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'qos_priority_group'}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("PGID",priority_group_table.priority_group_table, yang_name="priority-group-table", rest_name="priority-group-table", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='PGID', extensions=None), is_container='list', yang_name="priority-group-table", rest_name="priority-group-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='list', is_config=True)""",
         })
 
     self.__priority_group_table = t
@@ -194,7 +194,7 @@ class cee_map(PybindBase):
       self._set()
 
   def _unset_priority_group_table(self):
-    self.__priority_group_table = YANGDynClass(base=YANGListType("PGID",priority_group_table.priority_group_table, yang_name="priority-group-table", rest_name="priority-group-table", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='PGID', extensions={u'tailf-common': {u'info': u' Configure Priority Group Table', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'qos_priority_group'}}), is_container='list', yang_name="priority-group-table", rest_name="priority-group-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' Configure Priority Group Table', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'qos_priority_group'}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='list', is_config=True)
+    self.__priority_group_table = YANGDynClass(base=YANGListType("PGID",priority_group_table.priority_group_table, yang_name="priority-group-table", rest_name="priority-group-table", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='PGID', extensions=None), is_container='list', yang_name="priority-group-table", rest_name="priority-group-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='list', is_config=True)
 
 
   def _get_priority_table(self):
@@ -218,12 +218,12 @@ class cee_map(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=priority_table.priority_table, is_container='container', presence=False, yang_name="priority-table", rest_name="priority-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' Configure Priority Table', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'callpoint': u'qos_priority_map', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=priority_table.priority_table, is_container='container', presence=False, yang_name="priority-table", rest_name="priority-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """priority_table must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=priority_table.priority_table, is_container='container', presence=False, yang_name="priority-table", rest_name="priority-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' Configure Priority Table', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'callpoint': u'qos_priority_map', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=priority_table.priority_table, is_container='container', presence=False, yang_name="priority-table", rest_name="priority-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='container', is_config=True)""",
         })
 
     self.__priority_table = t
@@ -231,7 +231,7 @@ class cee_map(PybindBase):
       self._set()
 
   def _unset_priority_table(self):
-    self.__priority_table = YANGDynClass(base=priority_table.priority_table, is_container='container', presence=False, yang_name="priority-table", rest_name="priority-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' Configure Priority Table', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'callpoint': u'qos_priority_map', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='container', is_config=True)
+    self.__priority_table = YANGDynClass(base=priority_table.priority_table, is_container='container', presence=False, yang_name="priority-table", rest_name="priority-table", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='container', is_config=True)
 
 
   def _get_remap(self):
@@ -251,12 +251,12 @@ class cee_map(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=remap.remap, is_container='container', presence=False, yang_name="remap", rest_name="remap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' Configure Class of Service (CoS) to be \n remapped', u'callpoint': u'qos_cee_remap', u'display-when': u'/vcsmode/vcs-mode = "true"'}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=remap.remap, is_container='container', presence=False, yang_name="remap", rest_name="remap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """remap must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=remap.remap, is_container='container', presence=False, yang_name="remap", rest_name="remap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' Configure Class of Service (CoS) to be \n remapped', u'callpoint': u'qos_cee_remap', u'display-when': u'/vcsmode/vcs-mode = "true"'}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=remap.remap, is_container='container', presence=False, yang_name="remap", rest_name="remap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='container', is_config=True)""",
         })
 
     self.__remap = t
@@ -264,7 +264,7 @@ class cee_map(PybindBase):
       self._set()
 
   def _unset_remap(self):
-    self.__remap = YANGDynClass(base=remap.remap, is_container='container', presence=False, yang_name="remap", rest_name="remap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' Configure Class of Service (CoS) to be \n remapped', u'callpoint': u'qos_cee_remap', u'display-when': u'/vcsmode/vcs-mode = "true"'}}, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='container', is_config=True)
+    self.__remap = YANGDynClass(base=remap.remap, is_container='container', presence=False, yang_name="remap", rest_name="remap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-cee-map', defining_module='brocade-cee-map', yang_type='container', is_config=True)
 
   name = __builtin__.property(_get_name, _set_name)
   precedence = __builtin__.property(_get_precedence, _set_precedence)

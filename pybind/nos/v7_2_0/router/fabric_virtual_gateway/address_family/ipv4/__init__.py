@@ -47,10 +47,10 @@ class ipv4(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__enable_global = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="enable_global", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable Fabric virtual gateway', u'cli-show-no': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='empty', is_config=True)
-    self.__gateway_mac_address = YANGDynClass(base=unicode, is_leaf=True, yang_name="gateway-mac-address", rest_name="gateway-mac-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Gateway MAC address for ARP requests'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='mac-access-list:mac-address-type', is_config=True)
-    self.__accept_unicast_arp_request = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="accept-unicast-arp-request", rest_name="accept-unicast-arp-request", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Accept Unicast Arp Request'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='empty', is_config=True)
-    self.__gratuitous_arp = YANGDynClass(base=gratuitous_arp.gratuitous_arp, is_container='container', presence=False, yang_name="gratuitous-arp", rest_name="gratuitous-arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Gratuitous ARP'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
+    self.__enable_global = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="enable_global", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='empty', is_config=True)
+    self.__gateway_mac_address = YANGDynClass(base=unicode, is_leaf=True, yang_name="gateway-mac-address", rest_name="gateway-mac-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='mac-access-list:mac-address-type', is_config=True)
+    self.__accept_unicast_arp_request = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="accept-unicast-arp-request", rest_name="accept-unicast-arp-request", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='empty', is_config=True)
+    self.__gratuitous_arp = YANGDynClass(base=gratuitous_arp.gratuitous_arp, is_container='container', presence=False, yang_name="gratuitous-arp", rest_name="gratuitous-arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -105,12 +105,12 @@ class ipv4(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="enable_global", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable Fabric virtual gateway', u'cli-show-no': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="enable_global", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """enable_global must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="enable_global", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable Fabric virtual gateway', u'cli-show-no': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="enable_global", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='empty', is_config=True)""",
         })
 
     self.__enable_global = t
@@ -118,7 +118,7 @@ class ipv4(PybindBase):
       self._set()
 
   def _unset_enable_global(self):
-    self.__enable_global = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="enable_global", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable Fabric virtual gateway', u'cli-show-no': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='empty', is_config=True)
+    self.__enable_global = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="enable_global", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='empty', is_config=True)
 
 
   def _get_gratuitous_arp(self):
@@ -138,12 +138,12 @@ class ipv4(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=gratuitous_arp.gratuitous_arp, is_container='container', presence=False, yang_name="gratuitous-arp", rest_name="gratuitous-arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Gratuitous ARP'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=gratuitous_arp.gratuitous_arp, is_container='container', presence=False, yang_name="gratuitous-arp", rest_name="gratuitous-arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """gratuitous_arp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=gratuitous_arp.gratuitous_arp, is_container='container', presence=False, yang_name="gratuitous-arp", rest_name="gratuitous-arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Gratuitous ARP'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=gratuitous_arp.gratuitous_arp, is_container='container', presence=False, yang_name="gratuitous-arp", rest_name="gratuitous-arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)""",
         })
 
     self.__gratuitous_arp = t
@@ -151,7 +151,7 @@ class ipv4(PybindBase):
       self._set()
 
   def _unset_gratuitous_arp(self):
-    self.__gratuitous_arp = YANGDynClass(base=gratuitous_arp.gratuitous_arp, is_container='container', presence=False, yang_name="gratuitous-arp", rest_name="gratuitous-arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Gratuitous ARP'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
+    self.__gratuitous_arp = YANGDynClass(base=gratuitous_arp.gratuitous_arp, is_container='container', presence=False, yang_name="gratuitous-arp", rest_name="gratuitous-arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
 
 
   def _get_gateway_mac_address(self):
@@ -171,12 +171,12 @@ class ipv4(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="gateway-mac-address", rest_name="gateway-mac-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Gateway MAC address for ARP requests'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='mac-access-list:mac-address-type', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="gateway-mac-address", rest_name="gateway-mac-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='mac-access-list:mac-address-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """gateway_mac_address must be of a type compatible with mac-access-list:mac-address-type""",
           'defined-type': "mac-access-list:mac-address-type",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="gateway-mac-address", rest_name="gateway-mac-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Gateway MAC address for ARP requests'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='mac-access-list:mac-address-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="gateway-mac-address", rest_name="gateway-mac-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='mac-access-list:mac-address-type', is_config=True)""",
         })
 
     self.__gateway_mac_address = t
@@ -184,7 +184,7 @@ class ipv4(PybindBase):
       self._set()
 
   def _unset_gateway_mac_address(self):
-    self.__gateway_mac_address = YANGDynClass(base=unicode, is_leaf=True, yang_name="gateway-mac-address", rest_name="gateway-mac-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Gateway MAC address for ARP requests'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='mac-access-list:mac-address-type', is_config=True)
+    self.__gateway_mac_address = YANGDynClass(base=unicode, is_leaf=True, yang_name="gateway-mac-address", rest_name="gateway-mac-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='mac-access-list:mac-address-type', is_config=True)
 
 
   def _get_accept_unicast_arp_request(self):
@@ -208,12 +208,12 @@ class ipv4(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="accept-unicast-arp-request", rest_name="accept-unicast-arp-request", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Accept Unicast Arp Request'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="accept-unicast-arp-request", rest_name="accept-unicast-arp-request", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """accept_unicast_arp_request must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="accept-unicast-arp-request", rest_name="accept-unicast-arp-request", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Accept Unicast Arp Request'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="accept-unicast-arp-request", rest_name="accept-unicast-arp-request", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='empty', is_config=True)""",
         })
 
     self.__accept_unicast_arp_request = t
@@ -221,7 +221,7 @@ class ipv4(PybindBase):
       self._set()
 
   def _unset_accept_unicast_arp_request(self):
-    self.__accept_unicast_arp_request = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="accept-unicast-arp-request", rest_name="accept-unicast-arp-request", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Accept Unicast Arp Request'}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='empty', is_config=True)
+    self.__accept_unicast_arp_request = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="accept-unicast-arp-request", rest_name="accept-unicast-arp-request", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='empty', is_config=True)
 
   enable_global = __builtin__.property(_get_enable_global, _set_enable_global)
   gratuitous_arp = __builtin__.property(_get_gratuitous_arp, _set_gratuitous_arp)

@@ -45,7 +45,7 @@ class deny(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__redistribute = YANGDynClass(base=YANGListType("redist_value route_option",redistribute.redistribute, yang_name="redistribute", rest_name="redistribute", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='redist-value route-option', extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-mode': None, u'callpoint': u'OSPFDenyRedistributeCallPoint'}}), is_container='list', yang_name="redistribute", rest_name="redistribute", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-mode': None, u'callpoint': u'OSPFDenyRedistributeCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='list', is_config=True)
+    self.__redistribute = YANGDynClass(base=YANGListType("redist_value route_option",redistribute.redistribute, yang_name="redistribute", rest_name="redistribute", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='redist-value route-option', extensions=None), is_container='list', yang_name="redistribute", rest_name="redistribute", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class deny(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("redist_value route_option",redistribute.redistribute, yang_name="redistribute", rest_name="redistribute", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='redist-value route-option', extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-mode': None, u'callpoint': u'OSPFDenyRedistributeCallPoint'}}), is_container='list', yang_name="redistribute", rest_name="redistribute", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-mode': None, u'callpoint': u'OSPFDenyRedistributeCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("redist_value route_option",redistribute.redistribute, yang_name="redistribute", rest_name="redistribute", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='redist-value route-option', extensions=None), is_container='list', yang_name="redistribute", rest_name="redistribute", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """redistribute must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("redist_value route_option",redistribute.redistribute, yang_name="redistribute", rest_name="redistribute", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='redist-value route-option', extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-mode': None, u'callpoint': u'OSPFDenyRedistributeCallPoint'}}), is_container='list', yang_name="redistribute", rest_name="redistribute", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-mode': None, u'callpoint': u'OSPFDenyRedistributeCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("redist_value route_option",redistribute.redistribute, yang_name="redistribute", rest_name="redistribute", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='redist-value route-option', extensions=None), is_container='list', yang_name="redistribute", rest_name="redistribute", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='list', is_config=True)""",
         })
 
     self.__redistribute = t
@@ -113,7 +113,7 @@ class deny(PybindBase):
       self._set()
 
   def _unset_redistribute(self):
-    self.__redistribute = YANGDynClass(base=YANGListType("redist_value route_option",redistribute.redistribute, yang_name="redistribute", rest_name="redistribute", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='redist-value route-option', extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-mode': None, u'callpoint': u'OSPFDenyRedistributeCallPoint'}}), is_container='list', yang_name="redistribute", rest_name="redistribute", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-mode': None, u'callpoint': u'OSPFDenyRedistributeCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='list', is_config=True)
+    self.__redistribute = YANGDynClass(base=YANGListType("redist_value route_option",redistribute.redistribute, yang_name="redistribute", rest_name="redistribute", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='redist-value route-option', extensions=None), is_container='list', yang_name="redistribute", rest_name="redistribute", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='list', is_config=True)
 
   redistribute = __builtin__.property(_get_redistribute, _set_redistribute)
 

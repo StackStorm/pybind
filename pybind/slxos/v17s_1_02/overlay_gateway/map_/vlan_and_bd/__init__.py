@@ -18,7 +18,7 @@ class vlan_and_bd(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__vni',)
 
   _yang_name = 'vlan-and-bd'
-  _rest_name = ''
+  _rest_name = 'vlan-and-bd'
 
   _pybind_generated_by = 'container'
 
@@ -45,7 +45,7 @@ class vlan_and_bd(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__vni = YANGDynClass(base=vni.vni, is_container='container', presence=False, yang_name="vni", rest_name="vni", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VXLAN Network Identifier.', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+    self.__vni = YANGDynClass(base=vni.vni, is_container='container', presence=False, yang_name="vni", rest_name="vni", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class vlan_and_bd(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'overlay-gateway', u'map']
+      return [u'overlay-gateway', u'map', u'vlan-and-bd']
 
   def _get_vni(self):
     """
@@ -100,12 +100,12 @@ class vlan_and_bd(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=vni.vni, is_container='container', presence=False, yang_name="vni", rest_name="vni", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VXLAN Network Identifier.', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=vni.vni, is_container='container', presence=False, yang_name="vni", rest_name="vni", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vni must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=vni.vni, is_container='container', presence=False, yang_name="vni", rest_name="vni", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VXLAN Network Identifier.', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=vni.vni, is_container='container', presence=False, yang_name="vni", rest_name="vni", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)""",
         })
 
     self.__vni = t
@@ -113,7 +113,7 @@ class vlan_and_bd(PybindBase):
       self._set()
 
   def _unset_vni(self):
-    self.__vni = YANGDynClass(base=vni.vni, is_container='container', presence=False, yang_name="vni", rest_name="vni", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VXLAN Network Identifier.', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+    self.__vni = YANGDynClass(base=vni.vni, is_container='container', presence=False, yang_name="vni", rest_name="vni", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
 
   vni = __builtin__.property(_get_vni, _set_vni)
 

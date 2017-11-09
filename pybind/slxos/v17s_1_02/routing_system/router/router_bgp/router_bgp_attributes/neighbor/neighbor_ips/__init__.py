@@ -18,7 +18,7 @@ class neighbor_ips(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__neighbor_addr',)
 
   _yang_name = 'neighbor-ips'
-  _rest_name = ''
+  _rest_name = 'neighbor-ips'
 
   _pybind_generated_by = 'container'
 
@@ -45,7 +45,7 @@ class neighbor_ips(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__neighbor_addr = YANGDynClass(base=YANGListType("router_bgp_neighbor_address",neighbor_addr.neighbor_addr, yang_name="neighbor-addr", rest_name="neighbor-addr", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='router-bgp-neighbor-address', extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'NeighborIpxAddress'}}), is_container='list', yang_name="neighbor-addr", rest_name="neighbor-addr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'NeighborIpxAddress'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
+    self.__neighbor_addr = YANGDynClass(base=YANGListType("router_bgp_neighbor_address",neighbor_addr.neighbor_addr, yang_name="neighbor-addr", rest_name="neighbor-addr", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='router-bgp-neighbor-address', extensions=None), is_container='list', yang_name="neighbor-addr", rest_name="neighbor-addr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class neighbor_ips(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'router', u'bgp', u'neighbor']
+      return [u'routing-system', u'router', u'router-bgp', u'router-bgp-attributes', u'neighbor', u'neighbor-ips']
 
   def _get_neighbor_addr(self):
     """
@@ -100,12 +100,12 @@ class neighbor_ips(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("router_bgp_neighbor_address",neighbor_addr.neighbor_addr, yang_name="neighbor-addr", rest_name="neighbor-addr", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='router-bgp-neighbor-address', extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'NeighborIpxAddress'}}), is_container='list', yang_name="neighbor-addr", rest_name="neighbor-addr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'NeighborIpxAddress'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("router_bgp_neighbor_address",neighbor_addr.neighbor_addr, yang_name="neighbor-addr", rest_name="neighbor-addr", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='router-bgp-neighbor-address', extensions=None), is_container='list', yang_name="neighbor-addr", rest_name="neighbor-addr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """neighbor_addr must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("router_bgp_neighbor_address",neighbor_addr.neighbor_addr, yang_name="neighbor-addr", rest_name="neighbor-addr", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='router-bgp-neighbor-address', extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'NeighborIpxAddress'}}), is_container='list', yang_name="neighbor-addr", rest_name="neighbor-addr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'NeighborIpxAddress'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("router_bgp_neighbor_address",neighbor_addr.neighbor_addr, yang_name="neighbor-addr", rest_name="neighbor-addr", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='router-bgp-neighbor-address', extensions=None), is_container='list', yang_name="neighbor-addr", rest_name="neighbor-addr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)""",
         })
 
     self.__neighbor_addr = t
@@ -113,7 +113,7 @@ class neighbor_ips(PybindBase):
       self._set()
 
   def _unset_neighbor_addr(self):
-    self.__neighbor_addr = YANGDynClass(base=YANGListType("router_bgp_neighbor_address",neighbor_addr.neighbor_addr, yang_name="neighbor-addr", rest_name="neighbor-addr", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='router-bgp-neighbor-address', extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'NeighborIpxAddress'}}), is_container='list', yang_name="neighbor-addr", rest_name="neighbor-addr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'NeighborIpxAddress'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
+    self.__neighbor_addr = YANGDynClass(base=YANGListType("router_bgp_neighbor_address",neighbor_addr.neighbor_addr, yang_name="neighbor-addr", rest_name="neighbor-addr", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='router-bgp-neighbor-address', extensions=None), is_container='list', yang_name="neighbor-addr", rest_name="neighbor-addr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
 
   neighbor_addr = __builtin__.property(_get_neighbor_addr, _set_neighbor_addr)
 

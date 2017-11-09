@@ -48,7 +48,7 @@ such as multicast priority.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__mcast = YANGDynClass(base=mcast.mcast, is_container='container', presence=False, yang_name="mcast", rest_name="mcast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast routing information', u'callpoint': u'mcastPriority_nodespecific'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)
+    self.__mcast = YANGDynClass(base=mcast.mcast, is_container='container', presence=False, yang_name="mcast", rest_name="mcast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -109,12 +109,12 @@ related information for a switch.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=mcast.mcast, is_container='container', presence=False, yang_name="mcast", rest_name="mcast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast routing information', u'callpoint': u'mcastPriority_nodespecific'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=mcast.mcast, is_container='container', presence=False, yang_name="mcast", rest_name="mcast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mcast must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=mcast.mcast, is_container='container', presence=False, yang_name="mcast", rest_name="mcast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast routing information', u'callpoint': u'mcastPriority_nodespecific'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=mcast.mcast, is_container='container', presence=False, yang_name="mcast", rest_name="mcast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)""",
         })
 
     self.__mcast = t
@@ -122,7 +122,7 @@ related information for a switch.
       self._set()
 
   def _unset_mcast(self):
-    self.__mcast = YANGDynClass(base=mcast.mcast, is_container='container', presence=False, yang_name="mcast", rest_name="mcast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast routing information', u'callpoint': u'mcastPriority_nodespecific'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)
+    self.__mcast = YANGDynClass(base=mcast.mcast, is_container='container', presence=False, yang_name="mcast", rest_name="mcast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)
 
   mcast = __builtin__.property(_get_mcast, _set_mcast)
 

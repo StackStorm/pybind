@@ -46,8 +46,8 @@ class anycast_gateway_mac(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ipv6_anycast_gateway_mac = YANGDynClass(base=unicode, is_leaf=True, yang_name="ipv6-anycast-gateway-mac", rest_name="ipv6-anycast-gateway-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='mac-access-list:mac-address-type', is_config=True)
-    self.__ipv6_anycast_default_mac = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-anycast-default-mac", rest_name="default-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Anycast gateway default MAC.', u'alt-name': u'default-mac'}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='empty', is_config=True)
+    self.__ipv6_anycast_gateway_mac = YANGDynClass(base=unicode, is_leaf=True, yang_name="ipv6-anycast-gateway-mac", rest_name="ipv6-anycast-gateway-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='mac-access-list:mac-address-type', is_config=True)
+    self.__ipv6_anycast_default_mac = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-anycast-default-mac", rest_name="ipv6-anycast-default-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -83,7 +83,7 @@ class anycast_gateway_mac(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'ipv6', u'anycast-gateway-mac']
+      return [u'routing-system', u'ipv6', u'static-ag-ipv6-config', u'anycast-gateway-mac']
 
   def _get_ipv6_anycast_gateway_mac(self):
     """
@@ -102,12 +102,12 @@ class anycast_gateway_mac(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="ipv6-anycast-gateway-mac", rest_name="ipv6-anycast-gateway-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='mac-access-list:mac-address-type', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="ipv6-anycast-gateway-mac", rest_name="ipv6-anycast-gateway-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='mac-access-list:mac-address-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ipv6_anycast_gateway_mac must be of a type compatible with mac-access-list:mac-address-type""",
           'defined-type': "mac-access-list:mac-address-type",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="ipv6-anycast-gateway-mac", rest_name="ipv6-anycast-gateway-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='mac-access-list:mac-address-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="ipv6-anycast-gateway-mac", rest_name="ipv6-anycast-gateway-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='mac-access-list:mac-address-type', is_config=True)""",
         })
 
     self.__ipv6_anycast_gateway_mac = t
@@ -115,7 +115,7 @@ class anycast_gateway_mac(PybindBase):
       self._set()
 
   def _unset_ipv6_anycast_gateway_mac(self):
-    self.__ipv6_anycast_gateway_mac = YANGDynClass(base=unicode, is_leaf=True, yang_name="ipv6-anycast-gateway-mac", rest_name="ipv6-anycast-gateway-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='mac-access-list:mac-address-type', is_config=True)
+    self.__ipv6_anycast_gateway_mac = YANGDynClass(base=unicode, is_leaf=True, yang_name="ipv6-anycast-gateway-mac", rest_name="ipv6-anycast-gateway-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='mac-access-list:mac-address-type', is_config=True)
 
 
   def _get_ipv6_anycast_default_mac(self):
@@ -139,12 +139,12 @@ class anycast_gateway_mac(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ipv6-anycast-default-mac", rest_name="default-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Anycast gateway default MAC.', u'alt-name': u'default-mac'}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ipv6-anycast-default-mac", rest_name="ipv6-anycast-default-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ipv6_anycast_default_mac must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-anycast-default-mac", rest_name="default-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Anycast gateway default MAC.', u'alt-name': u'default-mac'}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-anycast-default-mac", rest_name="ipv6-anycast-default-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='empty', is_config=True)""",
         })
 
     self.__ipv6_anycast_default_mac = t
@@ -152,7 +152,7 @@ class anycast_gateway_mac(PybindBase):
       self._set()
 
   def _unset_ipv6_anycast_default_mac(self):
-    self.__ipv6_anycast_default_mac = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-anycast-default-mac", rest_name="default-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Anycast gateway default MAC.', u'alt-name': u'default-mac'}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='empty', is_config=True)
+    self.__ipv6_anycast_default_mac = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ipv6-anycast-default-mac", rest_name="ipv6-anycast-default-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='empty', is_config=True)
 
   ipv6_anycast_gateway_mac = __builtin__.property(_get_ipv6_anycast_gateway_mac, _set_ipv6_anycast_gateway_mac)
   ipv6_anycast_default_mac = __builtin__.property(_get_ipv6_anycast_default_mac, _set_ipv6_anycast_default_mac)

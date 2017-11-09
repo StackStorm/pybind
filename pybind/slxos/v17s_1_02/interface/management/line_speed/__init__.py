@@ -17,7 +17,7 @@ class line_speed(PybindBase):
   YANG Description: The line-speed characteristics for this management 
 interface.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__actual','__configured',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__actual',)
 
   _yang_name = 'line-speed'
   _rest_name = 'line-speed'
@@ -47,8 +47,7 @@ interface.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__configured = YANGDynClass(base=unicode, is_leaf=True, yang_name="configured", rest_name="configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The configured line-speed for this management \ninterface.', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=False)
-    self.__actual = YANGDynClass(base=unicode, is_leaf=True, yang_name="actual", rest_name="actual", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The actual line-speed for this management \ninterface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=False)
+    self.__actual = YANGDynClass(base=unicode, is_leaf=True, yang_name="actual", rest_name="actual", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -84,7 +83,7 @@ interface.
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface', u'Management', u'line-speed']
+      return [u'interface', u'management', u'line-speed']
 
   def _get_actual(self):
     """
@@ -109,12 +108,12 @@ interface.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="actual", rest_name="actual", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The actual line-speed for this management \ninterface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=False)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="actual", rest_name="actual", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """actual must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="actual", rest_name="actual", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The actual line-speed for this management \ninterface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=False)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="actual", rest_name="actual", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=False)""",
         })
 
     self.__actual = t
@@ -122,51 +121,11 @@ interface.
       self._set()
 
   def _unset_actual(self):
-    self.__actual = YANGDynClass(base=unicode, is_leaf=True, yang_name="actual", rest_name="actual", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The actual line-speed for this management \ninterface.'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=False)
-
-
-  def _get_configured(self):
-    """
-    Getter method for configured, mapped from YANG variable /interface/management/line_speed/configured (string)
-
-    YANG Description: The configured line-speed for this management 
-interface.
-    """
-    return self.__configured
-      
-  def _set_configured(self, v, load=False):
-    """
-    Setter method for configured, mapped from YANG variable /interface/management/line_speed/configured (string)
-    If this variable is read-only (config: false) in the
-    source YANG file, then _set_configured is considered as a private
-    method. Backends looking to populate this variable should
-    do so via calling thisObj._set_configured() directly.
-
-    YANG Description: The configured line-speed for this management 
-interface.
-    """
-    if hasattr(v, "_utype"):
-      v = v._utype(v)
-    try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="configured", rest_name="configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The configured line-speed for this management \ninterface.', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=False)
-    except (TypeError, ValueError):
-      raise ValueError({
-          'error-string': """configured must be of a type compatible with string""",
-          'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="configured", rest_name="configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The configured line-speed for this management \ninterface.', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=False)""",
-        })
-
-    self.__configured = t
-    if hasattr(self, '_set'):
-      self._set()
-
-  def _unset_configured(self):
-    self.__configured = YANGDynClass(base=unicode, is_leaf=True, yang_name="configured", rest_name="configured", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The configured line-speed for this management \ninterface.', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=False)
+    self.__actual = YANGDynClass(base=unicode, is_leaf=True, yang_name="actual", rest_name="actual", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='string', is_config=False)
 
   actual = __builtin__.property(_get_actual)
-  configured = __builtin__.property(_get_configured)
 
 
-  _pyangbind_elements = {'actual': actual, 'configured': configured, }
+  _pyangbind_elements = {'actual': actual, }
 
 

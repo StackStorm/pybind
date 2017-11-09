@@ -44,7 +44,7 @@ class port_channel(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__pc_lif_bind_id = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-6][0-9][0-9][0-9])\\.([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9]|1[0-1][0-9][0-9][0-9]|12[0-1][0-9][0-9]|122[0-7][0-9]|1228[0-8]))'}), is_leaf=True, yang_name="pc-lif-bind-id", rest_name="pc-lif-bind-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Instance ID of the port-channel LIF to bind', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='import-lif:lif-port-channel-type', is_config=True)
+    self.__pc_lif_bind_id = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-6][0-9][0-9][0-9])\\.([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9]|1[0-1][0-9][0-9][0-9]|12[0-1][0-9][0-9]|122[0-7][0-9]|1228[0-8]))'}), is_leaf=True, yang_name="pc-lif-bind-id", rest_name="pc-lif-bind-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='import-lif:lif-port-channel-type', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -104,12 +104,12 @@ class port_channel(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-6][0-9][0-9][0-9])\\.([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9]|1[0-1][0-9][0-9][0-9]|12[0-1][0-9][0-9]|122[0-7][0-9]|1228[0-8]))'}), is_leaf=True, yang_name="pc-lif-bind-id", rest_name="pc-lif-bind-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Instance ID of the port-channel LIF to bind', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='import-lif:lif-port-channel-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-6][0-9][0-9][0-9])\\.([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9]|1[0-1][0-9][0-9][0-9]|12[0-1][0-9][0-9]|122[0-7][0-9]|1228[0-8]))'}), is_leaf=True, yang_name="pc-lif-bind-id", rest_name="pc-lif-bind-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='import-lif:lif-port-channel-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """pc_lif_bind_id must be of a type compatible with import-lif:lif-port-channel-type""",
           'defined-type': "import-lif:lif-port-channel-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-6][0-9][0-9][0-9])\\.([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9]|1[0-1][0-9][0-9][0-9]|12[0-1][0-9][0-9]|122[0-7][0-9]|1228[0-8]))'}), is_leaf=True, yang_name="pc-lif-bind-id", rest_name="pc-lif-bind-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Instance ID of the port-channel LIF to bind', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='import-lif:lif-port-channel-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-6][0-9][0-9][0-9])\\.([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9]|1[0-1][0-9][0-9][0-9]|12[0-1][0-9][0-9]|122[0-7][0-9]|1228[0-8]))'}), is_leaf=True, yang_name="pc-lif-bind-id", rest_name="pc-lif-bind-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='import-lif:lif-port-channel-type', is_config=True)""",
         })
 
     self.__pc_lif_bind_id = t
@@ -117,7 +117,7 @@ class port_channel(PybindBase):
       self._set()
 
   def _unset_pc_lif_bind_id(self):
-    self.__pc_lif_bind_id = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-6][0-9][0-9][0-9])\\.([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9]|1[0-1][0-9][0-9][0-9]|12[0-1][0-9][0-9]|122[0-7][0-9]|1228[0-8]))'}), is_leaf=True, yang_name="pc-lif-bind-id", rest_name="pc-lif-bind-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Instance ID of the port-channel LIF to bind', u'cli-drop-node-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='import-lif:lif-port-channel-type', is_config=True)
+    self.__pc_lif_bind_id = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-6][0-9][0-9][0-9])\\.([1-9]|[1-9][0-9]|[1-9][0-9][0-9]|[1-9][0-9][0-9][0-9]|1[0-1][0-9][0-9][0-9]|12[0-1][0-9][0-9]|122[0-7][0-9]|1228[0-8]))'}), is_leaf=True, yang_name="pc-lif-bind-id", rest_name="pc-lif-bind-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bridge-domain', defining_module='brocade-bridge-domain', yang_type='import-lif:lif-port-channel-type', is_config=True)
 
   pc_lif_bind_id = __builtin__.property(_get_pc_lif_bind_id, _set_pc_lif_bind_id)
 

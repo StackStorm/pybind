@@ -52,13 +52,13 @@ setup. Site is identified by a name.
     else:
       self._extmethods = False
     self.__name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[-_a-zA-Z0-9]{1,63}'}), is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='site-id-type', is_config=True)
-    self.__extend = YANGDynClass(base=extend.extend, is_container='container', presence=False, yang_name="extend", rest_name="extend", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure layer2 domains to be extended towards\nthis site.'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
-    self.__bfd = YANGDynClass(base=bfd.bfd, is_container='container', presence=False, yang_name="bfd", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
-    self.__bfd_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bfd-enable", rest_name="bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Create BFD session for the tunnels to the remote site.', u'cli-full-command': None, u'alt-name': u'bfd', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)
-    self.__mac_learning = YANGDynClass(base=mac_learning.mac_learning, is_container='container', presence=False, yang_name="mac-learning", rest_name="mac-learning", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure MAC learning mode', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
-    self.__shutdown = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Admin disable tunnels to the remote site', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)
-    self.__tunnel_dst = YANGDynClass(base=YANGListType("address",tunnel_dst.tunnel_dst, yang_name="tunnel-dst", rest_name="ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='address', extensions={u'tailf-common': {u'info': u'IP configuration for site.', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'alt-name': u'ip', u'callpoint': u'overlay-site-ip-cp'}}), is_container='list', yang_name="tunnel-dst", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP configuration for site.', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'alt-name': u'ip', u'callpoint': u'overlay-site-ip-cp'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='list', is_config=True)
-    self.__description = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..128']}), is_leaf=True, yang_name="description", rest_name="description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Site description', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='string', is_config=True)
+    self.__extend = YANGDynClass(base=extend.extend, is_container='container', presence=False, yang_name="extend", rest_name="extend", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+    self.__bfd = YANGDynClass(base=bfd.bfd, is_container='container', presence=False, yang_name="bfd", rest_name="bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+    self.__bfd_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bfd-enable", rest_name="bfd-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)
+    self.__mac_learning = YANGDynClass(base=mac_learning.mac_learning, is_container='container', presence=False, yang_name="mac-learning", rest_name="mac-learning", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+    self.__shutdown = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)
+    self.__tunnel_dst = YANGDynClass(base=YANGListType("address",tunnel_dst.tunnel_dst, yang_name="tunnel-dst", rest_name="tunnel-dst", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='address', extensions=None), is_container='list', yang_name="tunnel-dst", rest_name="tunnel-dst", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='list', is_config=True)
+    self.__description = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..128']}), is_leaf=True, yang_name="description", rest_name="description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='string', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -151,12 +151,12 @@ setup. Site is identified by a name.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..128']}), is_leaf=True, yang_name="description", rest_name="description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Site description', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..128']}), is_leaf=True, yang_name="description", rest_name="description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """description must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..128']}), is_leaf=True, yang_name="description", rest_name="description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Site description', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..128']}), is_leaf=True, yang_name="description", rest_name="description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='string', is_config=True)""",
         })
 
     self.__description = t
@@ -164,7 +164,7 @@ setup. Site is identified by a name.
       self._set()
 
   def _unset_description(self):
-    self.__description = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..128']}), is_leaf=True, yang_name="description", rest_name="description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Site description', u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='string', is_config=True)
+    self.__description = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..128']}), is_leaf=True, yang_name="description", rest_name="description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='string', is_config=True)
 
 
   def _get_tunnel_dst(self):
@@ -192,12 +192,12 @@ not be setup without the IP address configuration.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("address",tunnel_dst.tunnel_dst, yang_name="tunnel-dst", rest_name="ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='address', extensions={u'tailf-common': {u'info': u'IP configuration for site.', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'alt-name': u'ip', u'callpoint': u'overlay-site-ip-cp'}}), is_container='list', yang_name="tunnel-dst", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP configuration for site.', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'alt-name': u'ip', u'callpoint': u'overlay-site-ip-cp'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("address",tunnel_dst.tunnel_dst, yang_name="tunnel-dst", rest_name="tunnel-dst", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='address', extensions=None), is_container='list', yang_name="tunnel-dst", rest_name="tunnel-dst", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """tunnel_dst must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("address",tunnel_dst.tunnel_dst, yang_name="tunnel-dst", rest_name="ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='address', extensions={u'tailf-common': {u'info': u'IP configuration for site.', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'alt-name': u'ip', u'callpoint': u'overlay-site-ip-cp'}}), is_container='list', yang_name="tunnel-dst", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP configuration for site.', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'alt-name': u'ip', u'callpoint': u'overlay-site-ip-cp'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("address",tunnel_dst.tunnel_dst, yang_name="tunnel-dst", rest_name="tunnel-dst", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='address', extensions=None), is_container='list', yang_name="tunnel-dst", rest_name="tunnel-dst", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='list', is_config=True)""",
         })
 
     self.__tunnel_dst = t
@@ -205,7 +205,7 @@ not be setup without the IP address configuration.
       self._set()
 
   def _unset_tunnel_dst(self):
-    self.__tunnel_dst = YANGDynClass(base=YANGListType("address",tunnel_dst.tunnel_dst, yang_name="tunnel-dst", rest_name="ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='address', extensions={u'tailf-common': {u'info': u'IP configuration for site.', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'alt-name': u'ip', u'callpoint': u'overlay-site-ip-cp'}}), is_container='list', yang_name="tunnel-dst", rest_name="ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP configuration for site.', u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'alt-name': u'ip', u'callpoint': u'overlay-site-ip-cp'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='list', is_config=True)
+    self.__tunnel_dst = YANGDynClass(base=YANGListType("address",tunnel_dst.tunnel_dst, yang_name="tunnel-dst", rest_name="tunnel-dst", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='address', extensions=None), is_container='list', yang_name="tunnel-dst", rest_name="tunnel-dst", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='list', is_config=True)
 
 
   def _get_extend(self):
@@ -237,12 +237,12 @@ vlan' configuration on this overlay gateway.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=extend.extend, is_container='container', presence=False, yang_name="extend", rest_name="extend", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure layer2 domains to be extended towards\nthis site.'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=extend.extend, is_container='container', presence=False, yang_name="extend", rest_name="extend", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """extend must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=extend.extend, is_container='container', presence=False, yang_name="extend", rest_name="extend", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure layer2 domains to be extended towards\nthis site.'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=extend.extend, is_container='container', presence=False, yang_name="extend", rest_name="extend", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)""",
         })
 
     self.__extend = t
@@ -250,7 +250,7 @@ vlan' configuration on this overlay gateway.
       self._set()
 
   def _unset_extend(self):
-    self.__extend = YANGDynClass(base=extend.extend, is_container='container', presence=False, yang_name="extend", rest_name="extend", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure layer2 domains to be extended towards\nthis site.'}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+    self.__extend = YANGDynClass(base=extend.extend, is_container='container', presence=False, yang_name="extend", rest_name="extend", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
 
 
   def _get_mac_learning(self):
@@ -282,12 +282,12 @@ BGP-EVPN.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=mac_learning.mac_learning, is_container='container', presence=False, yang_name="mac-learning", rest_name="mac-learning", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure MAC learning mode', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=mac_learning.mac_learning, is_container='container', presence=False, yang_name="mac-learning", rest_name="mac-learning", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mac_learning must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=mac_learning.mac_learning, is_container='container', presence=False, yang_name="mac-learning", rest_name="mac-learning", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure MAC learning mode', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=mac_learning.mac_learning, is_container='container', presence=False, yang_name="mac-learning", rest_name="mac-learning", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)""",
         })
 
     self.__mac_learning = t
@@ -295,7 +295,7 @@ BGP-EVPN.
       self._set()
 
   def _unset_mac_learning(self):
-    self.__mac_learning = YANGDynClass(base=mac_learning.mac_learning, is_container='container', presence=False, yang_name="mac-learning", rest_name="mac-learning", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure MAC learning mode', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+    self.__mac_learning = YANGDynClass(base=mac_learning.mac_learning, is_container='container', presence=False, yang_name="mac-learning", rest_name="mac-learning", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
 
 
   def _get_bfd_enable(self):
@@ -323,12 +323,12 @@ to the remote site.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bfd-enable", rest_name="bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Create BFD session for the tunnels to the remote site.', u'cli-full-command': None, u'alt-name': u'bfd', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="bfd-enable", rest_name="bfd-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bfd_enable must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bfd-enable", rest_name="bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Create BFD session for the tunnels to the remote site.', u'cli-full-command': None, u'alt-name': u'bfd', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bfd-enable", rest_name="bfd-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)""",
         })
 
     self.__bfd_enable = t
@@ -336,7 +336,7 @@ to the remote site.
       self._set()
 
   def _unset_bfd_enable(self):
-    self.__bfd_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bfd-enable", rest_name="bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Create BFD session for the tunnels to the remote site.', u'cli-full-command': None, u'alt-name': u'bfd', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)
+    self.__bfd_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bfd-enable", rest_name="bfd-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)
 
 
   def _get_bfd(self):
@@ -356,12 +356,12 @@ to the remote site.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=bfd.bfd, is_container='container', presence=False, yang_name="bfd", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=bfd.bfd, is_container='container', presence=False, yang_name="bfd", rest_name="bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bfd must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=bfd.bfd, is_container='container', presence=False, yang_name="bfd", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=bfd.bfd, is_container='container', presence=False, yang_name="bfd", rest_name="bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)""",
         })
 
     self.__bfd = t
@@ -369,7 +369,7 @@ to the remote site.
       self._set()
 
   def _unset_bfd(self):
-    self.__bfd = YANGDynClass(base=bfd.bfd, is_container='container', presence=False, yang_name="bfd", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
+    self.__bfd = YANGDynClass(base=bfd.bfd, is_container='container', presence=False, yang_name="bfd", rest_name="bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='container', is_config=True)
 
 
   def _get_shutdown(self):
@@ -395,12 +395,12 @@ tunnels are admin enabled.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Admin disable tunnels to the remote site', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """shutdown must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Admin disable tunnels to the remote site', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)""",
         })
 
     self.__shutdown = t
@@ -408,7 +408,7 @@ tunnels are admin enabled.
       self._set()
 
   def _unset_shutdown(self):
-    self.__shutdown = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Admin disable tunnels to the remote site', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)
+    self.__shutdown = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-tunnels', defining_module='brocade-tunnels', yang_type='empty', is_config=True)
 
   name = __builtin__.property(_get_name, _set_name)
   description = __builtin__.property(_get_description, _set_description)

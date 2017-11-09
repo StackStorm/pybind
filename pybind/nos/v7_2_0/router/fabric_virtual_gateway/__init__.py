@@ -47,7 +47,7 @@ class fabric_virtual_gateway(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__address_family = YANGDynClass(base=address_family.address_family, is_container='container', presence=False, yang_name="address-family", rest_name="address-family", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Address family', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
+    self.__address_family = YANGDynClass(base=address_family.address_family, is_container='container', presence=False, yang_name="address-family", rest_name="address-family", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -106,12 +106,12 @@ class fabric_virtual_gateway(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=address_family.address_family, is_container='container', presence=False, yang_name="address-family", rest_name="address-family", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Address family', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=address_family.address_family, is_container='container', presence=False, yang_name="address-family", rest_name="address-family", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """address_family must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=address_family.address_family, is_container='container', presence=False, yang_name="address-family", rest_name="address-family", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Address family', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=address_family.address_family, is_container='container', presence=False, yang_name="address-family", rest_name="address-family", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)""",
         })
 
     self.__address_family = t
@@ -119,7 +119,7 @@ class fabric_virtual_gateway(PybindBase):
       self._set()
 
   def _unset_address_family(self):
-    self.__address_family = YANGDynClass(base=address_family.address_family, is_container='container', presence=False, yang_name="address-family", rest_name="address-family", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Address family', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
+    self.__address_family = YANGDynClass(base=address_family.address_family, is_container='container', presence=False, yang_name="address-family", rest_name="address-family", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-anycast-gateway', defining_module='brocade-anycast-gateway', yang_type='container', is_config=True)
 
   address_family = __builtin__.property(_get_address_family, _set_address_family)
 

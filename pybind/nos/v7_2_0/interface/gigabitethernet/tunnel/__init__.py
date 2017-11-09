@@ -44,7 +44,7 @@ class tunnel(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__tagged_ieee_bpdu = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="tagged-ieee-bpdu", rest_name="tagged-ieee-bpdu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable tunneling of tagged IEEE BPDUs though VCS\nfabric'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='empty', is_config=True)
+    self.__tagged_ieee_bpdu = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="tagged-ieee-bpdu", rest_name="tagged-ieee-bpdu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -99,12 +99,12 @@ class tunnel(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="tagged-ieee-bpdu", rest_name="tagged-ieee-bpdu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable tunneling of tagged IEEE BPDUs though VCS\nfabric'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="tagged-ieee-bpdu", rest_name="tagged-ieee-bpdu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """tagged_ieee_bpdu must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="tagged-ieee-bpdu", rest_name="tagged-ieee-bpdu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable tunneling of tagged IEEE BPDUs though VCS\nfabric'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="tagged-ieee-bpdu", rest_name="tagged-ieee-bpdu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='empty', is_config=True)""",
         })
 
     self.__tagged_ieee_bpdu = t
@@ -112,7 +112,7 @@ class tunnel(PybindBase):
       self._set()
 
   def _unset_tagged_ieee_bpdu(self):
-    self.__tagged_ieee_bpdu = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="tagged-ieee-bpdu", rest_name="tagged-ieee-bpdu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable tunneling of tagged IEEE BPDUs though VCS\nfabric'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='empty', is_config=True)
+    self.__tagged_ieee_bpdu = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="tagged-ieee-bpdu", rest_name="tagged-ieee-bpdu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='empty', is_config=True)
 
   tagged_ieee_bpdu = __builtin__.property(_get_tagged_ieee_bpdu, _set_tagged_ieee_bpdu)
 

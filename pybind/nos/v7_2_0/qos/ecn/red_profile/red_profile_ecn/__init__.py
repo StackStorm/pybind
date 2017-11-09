@@ -44,9 +44,9 @@ class red_profile_ecn(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__min_threshold = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'128 .. 8192']}), is_leaf=True, yang_name="min-threshold", rest_name="min-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Minimum Threshold in KBytes', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='ecn-threshold-type', is_config=True)
-    self.__drop_probability = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="drop-probability", rest_name="drop-probability", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Drop Probability in Percentage'}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='red-drop-probability-type', is_config=True)
-    self.__max_threshold = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'128 .. 8192']}), is_leaf=True, yang_name="max-threshold", rest_name="max-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum Threshold in KBytes', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='ecn-threshold-type', is_config=True)
+    self.__min_threshold = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'128 .. 8192']}), is_leaf=True, yang_name="min-threshold", rest_name="min-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='ecn-threshold-type', is_config=True)
+    self.__drop_probability = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="drop-probability", rest_name="drop-probability", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='red-drop-probability-type', is_config=True)
+    self.__max_threshold = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'128 .. 8192']}), is_leaf=True, yang_name="max-threshold", rest_name="max-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='ecn-threshold-type', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -101,12 +101,12 @@ class red_profile_ecn(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'128 .. 8192']}), is_leaf=True, yang_name="min-threshold", rest_name="min-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Minimum Threshold in KBytes', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='ecn-threshold-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'128 .. 8192']}), is_leaf=True, yang_name="min-threshold", rest_name="min-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='ecn-threshold-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """min_threshold must be of a type compatible with ecn-threshold-type""",
           'defined-type': "brocade-qos:ecn-threshold-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'128 .. 8192']}), is_leaf=True, yang_name="min-threshold", rest_name="min-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Minimum Threshold in KBytes', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='ecn-threshold-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'128 .. 8192']}), is_leaf=True, yang_name="min-threshold", rest_name="min-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='ecn-threshold-type', is_config=True)""",
         })
 
     self.__min_threshold = t
@@ -114,7 +114,7 @@ class red_profile_ecn(PybindBase):
       self._set()
 
   def _unset_min_threshold(self):
-    self.__min_threshold = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'128 .. 8192']}), is_leaf=True, yang_name="min-threshold", rest_name="min-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Minimum Threshold in KBytes', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='ecn-threshold-type', is_config=True)
+    self.__min_threshold = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'128 .. 8192']}), is_leaf=True, yang_name="min-threshold", rest_name="min-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='ecn-threshold-type', is_config=True)
 
 
   def _get_max_threshold(self):
@@ -134,12 +134,12 @@ class red_profile_ecn(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'128 .. 8192']}), is_leaf=True, yang_name="max-threshold", rest_name="max-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum Threshold in KBytes', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='ecn-threshold-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'128 .. 8192']}), is_leaf=True, yang_name="max-threshold", rest_name="max-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='ecn-threshold-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """max_threshold must be of a type compatible with ecn-threshold-type""",
           'defined-type': "brocade-qos:ecn-threshold-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'128 .. 8192']}), is_leaf=True, yang_name="max-threshold", rest_name="max-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum Threshold in KBytes', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='ecn-threshold-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'128 .. 8192']}), is_leaf=True, yang_name="max-threshold", rest_name="max-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='ecn-threshold-type', is_config=True)""",
         })
 
     self.__max_threshold = t
@@ -147,7 +147,7 @@ class red_profile_ecn(PybindBase):
       self._set()
 
   def _unset_max_threshold(self):
-    self.__max_threshold = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'128 .. 8192']}), is_leaf=True, yang_name="max-threshold", rest_name="max-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum Threshold in KBytes', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='ecn-threshold-type', is_config=True)
+    self.__max_threshold = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'128 .. 8192']}), is_leaf=True, yang_name="max-threshold", rest_name="max-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='ecn-threshold-type', is_config=True)
 
 
   def _get_drop_probability(self):
@@ -167,12 +167,12 @@ class red_profile_ecn(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="drop-probability", rest_name="drop-probability", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Drop Probability in Percentage'}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='red-drop-probability-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="drop-probability", rest_name="drop-probability", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='red-drop-probability-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """drop_probability must be of a type compatible with red-drop-probability-type""",
           'defined-type': "brocade-qos:red-drop-probability-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="drop-probability", rest_name="drop-probability", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Drop Probability in Percentage'}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='red-drop-probability-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="drop-probability", rest_name="drop-probability", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='red-drop-probability-type', is_config=True)""",
         })
 
     self.__drop_probability = t
@@ -180,7 +180,7 @@ class red_profile_ecn(PybindBase):
       self._set()
 
   def _unset_drop_probability(self):
-    self.__drop_probability = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="drop-probability", rest_name="drop-probability", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Drop Probability in Percentage'}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='red-drop-probability-type', is_config=True)
+    self.__drop_probability = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 100']}), is_leaf=True, yang_name="drop-probability", rest_name="drop-probability", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='red-drop-probability-type', is_config=True)
 
   min_threshold = __builtin__.property(_get_min_threshold, _set_min_threshold)
   max_threshold = __builtin__.property(_get_max_threshold, _set_max_threshold)

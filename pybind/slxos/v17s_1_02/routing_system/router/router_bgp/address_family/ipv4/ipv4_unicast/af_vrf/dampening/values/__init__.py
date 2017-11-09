@@ -17,7 +17,7 @@ class values(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__half_time','__reuse_value','__start_suppress_time','__max_suppress_time',)
 
   _yang_name = 'values'
-  _rest_name = ''
+  _rest_name = 'values'
 
   _pybind_generated_by = 'container'
 
@@ -44,10 +44,10 @@ class values(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__half_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..45']}), is_leaf=True, yang_name="half-time", rest_name="half-time", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='htime', is_config=True)
-    self.__start_suppress_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..20000']}), is_leaf=True, yang_name="start-suppress-time", rest_name="start-suppress-time", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='damp-start-suppress-value', is_config=True)
-    self.__reuse_value = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..20000']}), is_leaf=True, yang_name="reuse-value", rest_name="reuse-value", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='damp-reuse-value', is_config=True)
-    self.__max_suppress_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..255']}), is_leaf=True, yang_name="max-suppress-time", rest_name="max-suppress-time", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='damp-max-suppress-value', is_config=True)
+    self.__half_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..45']}), is_leaf=True, yang_name="half-time", rest_name="half-time", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='htime', is_config=True)
+    self.__start_suppress_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..20000']}), is_leaf=True, yang_name="start-suppress-time", rest_name="start-suppress-time", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='damp-start-suppress-value', is_config=True)
+    self.__reuse_value = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..20000']}), is_leaf=True, yang_name="reuse-value", rest_name="reuse-value", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='damp-reuse-value', is_config=True)
+    self.__max_suppress_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..255']}), is_leaf=True, yang_name="max-suppress-time", rest_name="max-suppress-time", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='damp-max-suppress-value', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -83,7 +83,7 @@ class values(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'router', u'bgp', u'address-family', u'ipv4', u'unicast', u'vrf', u'dampening']
+      return [u'routing-system', u'router', u'router-bgp', u'address-family', u'ipv4', u'ipv4-unicast', u'af-vrf', u'dampening', u'values']
 
   def _get_half_time(self):
     """
@@ -102,12 +102,12 @@ class values(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..45']}), is_leaf=True, yang_name="half-time", rest_name="half-time", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='htime', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..45']}), is_leaf=True, yang_name="half-time", rest_name="half-time", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='htime', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """half_time must be of a type compatible with htime""",
           'defined-type': "brocade-bgp:htime",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..45']}), is_leaf=True, yang_name="half-time", rest_name="half-time", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='htime', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..45']}), is_leaf=True, yang_name="half-time", rest_name="half-time", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='htime', is_config=True)""",
         })
 
     self.__half_time = t
@@ -115,7 +115,7 @@ class values(PybindBase):
       self._set()
 
   def _unset_half_time(self):
-    self.__half_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..45']}), is_leaf=True, yang_name="half-time", rest_name="half-time", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='htime', is_config=True)
+    self.__half_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..45']}), is_leaf=True, yang_name="half-time", rest_name="half-time", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='htime', is_config=True)
 
 
   def _get_reuse_value(self):
@@ -135,12 +135,12 @@ class values(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..20000']}), is_leaf=True, yang_name="reuse-value", rest_name="reuse-value", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='damp-reuse-value', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..20000']}), is_leaf=True, yang_name="reuse-value", rest_name="reuse-value", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='damp-reuse-value', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """reuse_value must be of a type compatible with damp-reuse-value""",
           'defined-type': "brocade-bgp:damp-reuse-value",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..20000']}), is_leaf=True, yang_name="reuse-value", rest_name="reuse-value", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='damp-reuse-value', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..20000']}), is_leaf=True, yang_name="reuse-value", rest_name="reuse-value", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='damp-reuse-value', is_config=True)""",
         })
 
     self.__reuse_value = t
@@ -148,7 +148,7 @@ class values(PybindBase):
       self._set()
 
   def _unset_reuse_value(self):
-    self.__reuse_value = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..20000']}), is_leaf=True, yang_name="reuse-value", rest_name="reuse-value", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='damp-reuse-value', is_config=True)
+    self.__reuse_value = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..20000']}), is_leaf=True, yang_name="reuse-value", rest_name="reuse-value", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='damp-reuse-value', is_config=True)
 
 
   def _get_start_suppress_time(self):
@@ -168,12 +168,12 @@ class values(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..20000']}), is_leaf=True, yang_name="start-suppress-time", rest_name="start-suppress-time", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='damp-start-suppress-value', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..20000']}), is_leaf=True, yang_name="start-suppress-time", rest_name="start-suppress-time", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='damp-start-suppress-value', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """start_suppress_time must be of a type compatible with damp-start-suppress-value""",
           'defined-type': "brocade-bgp:damp-start-suppress-value",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..20000']}), is_leaf=True, yang_name="start-suppress-time", rest_name="start-suppress-time", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='damp-start-suppress-value', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..20000']}), is_leaf=True, yang_name="start-suppress-time", rest_name="start-suppress-time", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='damp-start-suppress-value', is_config=True)""",
         })
 
     self.__start_suppress_time = t
@@ -181,7 +181,7 @@ class values(PybindBase):
       self._set()
 
   def _unset_start_suppress_time(self):
-    self.__start_suppress_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..20000']}), is_leaf=True, yang_name="start-suppress-time", rest_name="start-suppress-time", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='damp-start-suppress-value', is_config=True)
+    self.__start_suppress_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..20000']}), is_leaf=True, yang_name="start-suppress-time", rest_name="start-suppress-time", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='damp-start-suppress-value', is_config=True)
 
 
   def _get_max_suppress_time(self):
@@ -201,12 +201,12 @@ class values(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..255']}), is_leaf=True, yang_name="max-suppress-time", rest_name="max-suppress-time", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='damp-max-suppress-value', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..255']}), is_leaf=True, yang_name="max-suppress-time", rest_name="max-suppress-time", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='damp-max-suppress-value', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """max_suppress_time must be of a type compatible with damp-max-suppress-value""",
           'defined-type': "brocade-bgp:damp-max-suppress-value",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..255']}), is_leaf=True, yang_name="max-suppress-time", rest_name="max-suppress-time", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='damp-max-suppress-value', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..255']}), is_leaf=True, yang_name="max-suppress-time", rest_name="max-suppress-time", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='damp-max-suppress-value', is_config=True)""",
         })
 
     self.__max_suppress_time = t
@@ -214,7 +214,7 @@ class values(PybindBase):
       self._set()
 
   def _unset_max_suppress_time(self):
-    self.__max_suppress_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..255']}), is_leaf=True, yang_name="max-suppress-time", rest_name="max-suppress-time", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='damp-max-suppress-value', is_config=True)
+    self.__max_suppress_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..255']}), is_leaf=True, yang_name="max-suppress-time", rest_name="max-suppress-time", parent=self, choice=(u'ch-dampening-source', u'ca-dampening-specify-values'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='damp-max-suppress-value', is_config=True)
 
   half_time = __builtin__.property(_get_half_time, _set_half_time)
   reuse_value = __builtin__.property(_get_reuse_value, _set_reuse_value)

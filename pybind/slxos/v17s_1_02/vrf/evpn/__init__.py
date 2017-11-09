@@ -45,7 +45,7 @@ class evpn(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__irb = YANGDynClass(base=irb.irb, is_container='container', presence=False, yang_name="irb", rest_name="irb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure VE interface'}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)
+    self.__irb = YANGDynClass(base=irb.irb, is_container='container', presence=False, yang_name="irb", rest_name="irb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class evpn(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=irb.irb, is_container='container', presence=False, yang_name="irb", rest_name="irb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure VE interface'}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=irb.irb, is_container='container', presence=False, yang_name="irb", rest_name="irb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """irb must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=irb.irb, is_container='container', presence=False, yang_name="irb", rest_name="irb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure VE interface'}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=irb.irb, is_container='container', presence=False, yang_name="irb", rest_name="irb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)""",
         })
 
     self.__irb = t
@@ -113,7 +113,7 @@ class evpn(PybindBase):
       self._set()
 
   def _unset_irb(self):
-    self.__irb = YANGDynClass(base=irb.irb, is_container='container', presence=False, yang_name="irb", rest_name="irb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure VE interface'}}, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)
+    self.__irb = YANGDynClass(base=irb.irb, is_container='container', presence=False, yang_name="irb", rest_name="irb", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vrf', defining_module='brocade-vrf', yang_type='container', is_config=True)
 
   irb = __builtin__.property(_get_irb, _set_irb)
 

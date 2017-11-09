@@ -46,8 +46,8 @@ class vlan(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__classifier = YANGDynClass(base=classifier.classifier, is_container='container', presence=False, yang_name="classifier", rest_name="classifier", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan classification commands', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='container', is_config=True)
-    self.__dot1q = YANGDynClass(base=dot1q.dot1q, is_container='container', presence=False, yang_name="dot1q", rest_name="dot1q", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure dot1q parameters', u'callpoint': u'nsm_globalconfig'}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='container', is_config=True)
+    self.__classifier = YANGDynClass(base=classifier.classifier, is_container='container', presence=False, yang_name="classifier", rest_name="classifier", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='container', is_config=True)
+    self.__dot1q = YANGDynClass(base=dot1q.dot1q, is_container='container', presence=False, yang_name="dot1q", rest_name="dot1q", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -102,12 +102,12 @@ class vlan(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=classifier.classifier, is_container='container', presence=False, yang_name="classifier", rest_name="classifier", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan classification commands', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=classifier.classifier, is_container='container', presence=False, yang_name="classifier", rest_name="classifier", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """classifier must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=classifier.classifier, is_container='container', presence=False, yang_name="classifier", rest_name="classifier", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan classification commands', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=classifier.classifier, is_container='container', presence=False, yang_name="classifier", rest_name="classifier", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='container', is_config=True)""",
         })
 
     self.__classifier = t
@@ -115,7 +115,7 @@ class vlan(PybindBase):
       self._set()
 
   def _unset_classifier(self):
-    self.__classifier = YANGDynClass(base=classifier.classifier, is_container='container', presence=False, yang_name="classifier", rest_name="classifier", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan classification commands', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='container', is_config=True)
+    self.__classifier = YANGDynClass(base=classifier.classifier, is_container='container', presence=False, yang_name="classifier", rest_name="classifier", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='container', is_config=True)
 
 
   def _get_dot1q(self):
@@ -135,12 +135,12 @@ class vlan(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=dot1q.dot1q, is_container='container', presence=False, yang_name="dot1q", rest_name="dot1q", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure dot1q parameters', u'callpoint': u'nsm_globalconfig'}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=dot1q.dot1q, is_container='container', presence=False, yang_name="dot1q", rest_name="dot1q", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dot1q must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=dot1q.dot1q, is_container='container', presence=False, yang_name="dot1q", rest_name="dot1q", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure dot1q parameters', u'callpoint': u'nsm_globalconfig'}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=dot1q.dot1q, is_container='container', presence=False, yang_name="dot1q", rest_name="dot1q", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='container', is_config=True)""",
         })
 
     self.__dot1q = t
@@ -148,7 +148,7 @@ class vlan(PybindBase):
       self._set()
 
   def _unset_dot1q(self):
-    self.__dot1q = YANGDynClass(base=dot1q.dot1q, is_container='container', presence=False, yang_name="dot1q", rest_name="dot1q", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure dot1q parameters', u'callpoint': u'nsm_globalconfig'}}, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='container', is_config=True)
+    self.__dot1q = YANGDynClass(base=dot1q.dot1q, is_container='container', presence=False, yang_name="dot1q", rest_name="dot1q", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vlan', defining_module='brocade-vlan', yang_type='container', is_config=True)
 
   classifier = __builtin__.property(_get_classifier, _set_classifier)
   dot1q = __builtin__.property(_get_dot1q, _set_dot1q)

@@ -46,8 +46,8 @@ class set_(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__set_dscp = YANGDynClass(base=set_dscp.set_dscp, is_container='container', presence=False, yang_name="set_dscp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Differentiated Services Code Point', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='container', is_config=True)
-    self.__set_cos_tc = YANGDynClass(base=set_cos_tc.set_cos_tc, is_container='container', presence=False, yang_name="set_cos_tc", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'info': u'Class of Service'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='container', is_config=True)
+    self.__set_dscp = YANGDynClass(base=set_dscp.set_dscp, is_container='container', presence=False, yang_name="set_dscp", rest_name="set_dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='container', is_config=True)
+    self.__set_cos_tc = YANGDynClass(base=set_cos_tc.set_cos_tc, is_container='container', presence=False, yang_name="set_cos_tc", rest_name="set_cos_tc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -102,12 +102,12 @@ class set_(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=set_cos_tc.set_cos_tc, is_container='container', presence=False, yang_name="set_cos_tc", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'info': u'Class of Service'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=set_cos_tc.set_cos_tc, is_container='container', presence=False, yang_name="set_cos_tc", rest_name="set_cos_tc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """set_cos_tc must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=set_cos_tc.set_cos_tc, is_container='container', presence=False, yang_name="set_cos_tc", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'info': u'Class of Service'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=set_cos_tc.set_cos_tc, is_container='container', presence=False, yang_name="set_cos_tc", rest_name="set_cos_tc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='container', is_config=True)""",
         })
 
     self.__set_cos_tc = t
@@ -115,7 +115,7 @@ class set_(PybindBase):
       self._set()
 
   def _unset_set_cos_tc(self):
-    self.__set_cos_tc = YANGDynClass(base=set_cos_tc.set_cos_tc, is_container='container', presence=False, yang_name="set_cos_tc", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'info': u'Class of Service'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='container', is_config=True)
+    self.__set_cos_tc = YANGDynClass(base=set_cos_tc.set_cos_tc, is_container='container', presence=False, yang_name="set_cos_tc", rest_name="set_cos_tc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='container', is_config=True)
 
 
   def _get_set_dscp(self):
@@ -135,12 +135,12 @@ class set_(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=set_dscp.set_dscp, is_container='container', presence=False, yang_name="set_dscp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Differentiated Services Code Point', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=set_dscp.set_dscp, is_container='container', presence=False, yang_name="set_dscp", rest_name="set_dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """set_dscp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=set_dscp.set_dscp, is_container='container', presence=False, yang_name="set_dscp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Differentiated Services Code Point', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=set_dscp.set_dscp, is_container='container', presence=False, yang_name="set_dscp", rest_name="set_dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='container', is_config=True)""",
         })
 
     self.__set_dscp = t
@@ -148,7 +148,7 @@ class set_(PybindBase):
       self._set()
 
   def _unset_set_dscp(self):
-    self.__set_dscp = YANGDynClass(base=set_dscp.set_dscp, is_container='container', presence=False, yang_name="set_dscp", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Differentiated Services Code Point', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='container', is_config=True)
+    self.__set_dscp = YANGDynClass(base=set_dscp.set_dscp, is_container='container', presence=False, yang_name="set_dscp", rest_name="set_dscp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='container', is_config=True)
 
   set_cos_tc = __builtin__.property(_get_set_cos_tc, _set_set_cos_tc)
   set_dscp = __builtin__.property(_get_set_dscp, _set_set_dscp)

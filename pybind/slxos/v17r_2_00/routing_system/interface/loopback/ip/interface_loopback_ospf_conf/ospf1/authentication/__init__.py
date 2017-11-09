@@ -46,7 +46,7 @@ class authentication(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__key_chain = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,127})'}), is_leaf=True, yang_name="key-chain", rest_name="key-chain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Key Chain reference', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='common-def:name-string128', is_config=True)
+    self.__key_chain = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-zA-Z]{4,32}'}), is_leaf=True, yang_name="key-chain", rest_name="key-chain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Keychain Name for RFC 7474 Authentication', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='ospf-keychain-string', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -86,13 +86,13 @@ class authentication(PybindBase):
 
   def _get_key_chain(self):
     """
-    Getter method for key_chain, mapped from YANG variable /routing_system/interface/loopback/ip/interface_loopback_ospf_conf/ospf1/authentication/key_chain (common-def:name-string128)
+    Getter method for key_chain, mapped from YANG variable /routing_system/interface/loopback/ip/interface_loopback_ospf_conf/ospf1/authentication/key_chain (ospf-keychain-string)
     """
     return self.__key_chain
       
   def _set_key_chain(self, v, load=False):
     """
-    Setter method for key_chain, mapped from YANG variable /routing_system/interface/loopback/ip/interface_loopback_ospf_conf/ospf1/authentication/key_chain (common-def:name-string128)
+    Setter method for key_chain, mapped from YANG variable /routing_system/interface/loopback/ip/interface_loopback_ospf_conf/ospf1/authentication/key_chain (ospf-keychain-string)
     If this variable is read-only (config: false) in the
     source YANG file, then _set_key_chain is considered as a private
     method. Backends looking to populate this variable should
@@ -101,12 +101,12 @@ class authentication(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,127})'}), is_leaf=True, yang_name="key-chain", rest_name="key-chain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Key Chain reference', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='common-def:name-string128', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-zA-Z]{4,32}'}), is_leaf=True, yang_name="key-chain", rest_name="key-chain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Keychain Name for RFC 7474 Authentication', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='ospf-keychain-string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
-          'error-string': """key_chain must be of a type compatible with common-def:name-string128""",
-          'defined-type': "common-def:name-string128",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,127})'}), is_leaf=True, yang_name="key-chain", rest_name="key-chain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Key Chain reference', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='common-def:name-string128', is_config=True)""",
+          'error-string': """key_chain must be of a type compatible with ospf-keychain-string""",
+          'defined-type': "brocade-ospf:ospf-keychain-string",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-zA-Z]{4,32}'}), is_leaf=True, yang_name="key-chain", rest_name="key-chain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Keychain Name for RFC 7474 Authentication', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='ospf-keychain-string', is_config=True)""",
         })
 
     self.__key_chain = t
@@ -114,7 +114,7 @@ class authentication(PybindBase):
       self._set()
 
   def _unset_key_chain(self):
-    self.__key_chain = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9\\.\\\\\\\\@#\\+\\*\\(\\)=\\{~\\}%<>=$_\\[\\]\\|]{0,127})'}), is_leaf=True, yang_name="key-chain", rest_name="key-chain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Key Chain reference', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='common-def:name-string128', is_config=True)
+    self.__key_chain = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[0-9a-zA-Z]{4,32}'}), is_leaf=True, yang_name="key-chain", rest_name="key-chain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Keychain Name for RFC 7474 Authentication', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='ospf-keychain-string', is_config=True)
 
   key_chain = __builtin__.property(_get_key_chain, _set_key_chain)
 

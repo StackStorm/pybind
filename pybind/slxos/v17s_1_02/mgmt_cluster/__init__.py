@@ -21,7 +21,7 @@ elements of this managed device.
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__cluster',)
 
   _yang_name = 'mgmt-cluster'
-  _rest_name = ''
+  _rest_name = 'mgmt-cluster'
 
   _pybind_generated_by = 'container'
 
@@ -48,7 +48,7 @@ elements of this managed device.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__cluster = YANGDynClass(base=cluster.cluster, is_container='container', presence=False, yang_name="cluster", rest_name="cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Cluster Management virtual IP Configuration', u'cli-incomplete-no': None}}, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='container', is_config=True)
+    self.__cluster = YANGDynClass(base=cluster.cluster, is_container='container', presence=False, yang_name="cluster", rest_name="cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -84,7 +84,7 @@ elements of this managed device.
       else:
         return self._parent._rest_path()
     else:
-      return []
+      return [u'mgmt-cluster']
 
   def _get_cluster(self):
     """
@@ -103,12 +103,12 @@ elements of this managed device.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=cluster.cluster, is_container='container', presence=False, yang_name="cluster", rest_name="cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Cluster Management virtual IP Configuration', u'cli-incomplete-no': None}}, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=cluster.cluster, is_container='container', presence=False, yang_name="cluster", rest_name="cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """cluster must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=cluster.cluster, is_container='container', presence=False, yang_name="cluster", rest_name="cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Cluster Management virtual IP Configuration', u'cli-incomplete-no': None}}, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=cluster.cluster, is_container='container', presence=False, yang_name="cluster", rest_name="cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='container', is_config=True)""",
         })
 
     self.__cluster = t
@@ -116,7 +116,7 @@ elements of this managed device.
       self._set()
 
   def _unset_cluster(self):
-    self.__cluster = YANGDynClass(base=cluster.cluster, is_container='container', presence=False, yang_name="cluster", rest_name="cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Cluster Management virtual IP Configuration', u'cli-incomplete-no': None}}, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='container', is_config=True)
+    self.__cluster = YANGDynClass(base=cluster.cluster, is_container='container', presence=False, yang_name="cluster", rest_name="cluster", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='container', is_config=True)
 
   cluster = __builtin__.property(_get_cluster, _set_cluster)
 

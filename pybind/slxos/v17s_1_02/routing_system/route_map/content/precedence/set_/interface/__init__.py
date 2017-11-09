@@ -48,8 +48,8 @@ class interface(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ethernet_container = YANGDynClass(base=ethernet_container.ethernet_container, is_container='container', presence=False, yang_name="ethernet-container", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ethernet Interface', u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
-    self.__port_channel_container = YANGDynClass(base=port_channel_container.port_channel_container, is_container='container', presence=False, yang_name="port-channel-container", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Port Channel Interface', u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
+    self.__ethernet_container = YANGDynClass(base=ethernet_container.ethernet_container, is_container='container', presence=False, yang_name="ethernet-container", rest_name="ethernet-container", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
+    self.__port_channel_container = YANGDynClass(base=port_channel_container.port_channel_container, is_container='container', presence=False, yang_name="port-channel-container", rest_name="port-channel-container", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -85,7 +85,7 @@ class interface(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'route-map', u'precedence', u'set', u'interface']
+      return [u'routing-system', u'route-map', u'content', u'precedence', u'set', u'interface']
 
   def _get_ethernet_container(self):
     """
@@ -104,12 +104,12 @@ class interface(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=ethernet_container.ethernet_container, is_container='container', presence=False, yang_name="ethernet-container", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ethernet Interface', u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ethernet_container.ethernet_container, is_container='container', presence=False, yang_name="ethernet-container", rest_name="ethernet-container", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ethernet_container must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ethernet_container.ethernet_container, is_container='container', presence=False, yang_name="ethernet-container", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ethernet Interface', u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ethernet_container.ethernet_container, is_container='container', presence=False, yang_name="ethernet-container", rest_name="ethernet-container", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)""",
         })
 
     self.__ethernet_container = t
@@ -117,7 +117,7 @@ class interface(PybindBase):
       self._set()
 
   def _unset_ethernet_container(self):
-    self.__ethernet_container = YANGDynClass(base=ethernet_container.ethernet_container, is_container='container', presence=False, yang_name="ethernet-container", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ethernet Interface', u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
+    self.__ethernet_container = YANGDynClass(base=ethernet_container.ethernet_container, is_container='container', presence=False, yang_name="ethernet-container", rest_name="ethernet-container", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
 
 
   def _get_port_channel_container(self):
@@ -137,12 +137,12 @@ class interface(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=port_channel_container.port_channel_container, is_container='container', presence=False, yang_name="port-channel-container", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Port Channel Interface', u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=port_channel_container.port_channel_container, is_container='container', presence=False, yang_name="port-channel-container", rest_name="port-channel-container", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """port_channel_container must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=port_channel_container.port_channel_container, is_container='container', presence=False, yang_name="port-channel-container", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Port Channel Interface', u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=port_channel_container.port_channel_container, is_container='container', presence=False, yang_name="port-channel-container", rest_name="port-channel-container", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)""",
         })
 
     self.__port_channel_container = t
@@ -150,7 +150,7 @@ class interface(PybindBase):
       self._set()
 
   def _unset_port_channel_container(self):
-    self.__port_channel_container = YANGDynClass(base=port_channel_container.port_channel_container, is_container='container', presence=False, yang_name="port-channel-container", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Port Channel Interface', u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
+    self.__port_channel_container = YANGDynClass(base=port_channel_container.port_channel_container, is_container='container', presence=False, yang_name="port-channel-container", rest_name="port-channel-container", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
 
   ethernet_container = __builtin__.property(_get_ethernet_container, _set_ethernet_container)
   port_channel_container = __builtin__.property(_get_port_channel_container, _set_port_channel_container)

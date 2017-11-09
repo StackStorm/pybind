@@ -46,8 +46,8 @@ class esi(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__esi_value = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([0-9a-fA-F]{1,2}(:[0-9a-fA-F]{1,2}){2,8})(;[0-9a-fA-F]{1,2}(:[0-9a-fA-F]{1,2}){2,8})*'}), is_leaf=True, yang_name="esi-value", rest_name="esi-value", parent=self, choice=(u'esi', u'esi-ch-val'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Cluster client ESI HH:HH:HH:HH:HH:HH:HH:HH:HH', u'cli-drop-node-name': None, u'cli-full-no': None, u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='cluster-client-esi', is_config=True)
-    self.__esi_auto = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'lacp': {'value': 1}},), is_leaf=True, yang_name="esi-auto", rest_name="auto", parent=self, choice=(u'esi', u'esi-ch-auto'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Esi auto set', u'cli-full-command': None, u'alt-name': u'auto', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='enumeration', is_config=True)
+    self.__esi_value = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([0-9a-fA-F]{1,2}(:[0-9a-fA-F]{1,2}){2,8})(;[0-9a-fA-F]{1,2}(:[0-9a-fA-F]{1,2}){2,8})*'}), is_leaf=True, yang_name="esi-value", rest_name="esi-value", parent=self, choice=(u'esi', u'esi-ch-val'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='cluster-client-esi', is_config=True)
+    self.__esi_auto = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'lacp': {'value': 1}},), is_leaf=True, yang_name="esi-auto", rest_name="esi-auto", parent=self, choice=(u'esi', u'esi-ch-auto'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='enumeration', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -102,12 +102,12 @@ class esi(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([0-9a-fA-F]{1,2}(:[0-9a-fA-F]{1,2}){2,8})(;[0-9a-fA-F]{1,2}(:[0-9a-fA-F]{1,2}){2,8})*'}), is_leaf=True, yang_name="esi-value", rest_name="esi-value", parent=self, choice=(u'esi', u'esi-ch-val'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Cluster client ESI HH:HH:HH:HH:HH:HH:HH:HH:HH', u'cli-drop-node-name': None, u'cli-full-no': None, u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='cluster-client-esi', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([0-9a-fA-F]{1,2}(:[0-9a-fA-F]{1,2}){2,8})(;[0-9a-fA-F]{1,2}(:[0-9a-fA-F]{1,2}){2,8})*'}), is_leaf=True, yang_name="esi-value", rest_name="esi-value", parent=self, choice=(u'esi', u'esi-ch-val'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='cluster-client-esi', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """esi_value must be of a type compatible with cluster-client-esi""",
           'defined-type': "brocade-mct:cluster-client-esi",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([0-9a-fA-F]{1,2}(:[0-9a-fA-F]{1,2}){2,8})(;[0-9a-fA-F]{1,2}(:[0-9a-fA-F]{1,2}){2,8})*'}), is_leaf=True, yang_name="esi-value", rest_name="esi-value", parent=self, choice=(u'esi', u'esi-ch-val'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Cluster client ESI HH:HH:HH:HH:HH:HH:HH:HH:HH', u'cli-drop-node-name': None, u'cli-full-no': None, u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='cluster-client-esi', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([0-9a-fA-F]{1,2}(:[0-9a-fA-F]{1,2}){2,8})(;[0-9a-fA-F]{1,2}(:[0-9a-fA-F]{1,2}){2,8})*'}), is_leaf=True, yang_name="esi-value", rest_name="esi-value", parent=self, choice=(u'esi', u'esi-ch-val'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='cluster-client-esi', is_config=True)""",
         })
 
     self.__esi_value = t
@@ -115,7 +115,7 @@ class esi(PybindBase):
       self._set()
 
   def _unset_esi_value(self):
-    self.__esi_value = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([0-9a-fA-F]{1,2}(:[0-9a-fA-F]{1,2}){2,8})(;[0-9a-fA-F]{1,2}(:[0-9a-fA-F]{1,2}){2,8})*'}), is_leaf=True, yang_name="esi-value", rest_name="esi-value", parent=self, choice=(u'esi', u'esi-ch-val'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Cluster client ESI HH:HH:HH:HH:HH:HH:HH:HH:HH', u'cli-drop-node-name': None, u'cli-full-no': None, u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='cluster-client-esi', is_config=True)
+    self.__esi_value = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([0-9a-fA-F]{1,2}(:[0-9a-fA-F]{1,2}){2,8})(;[0-9a-fA-F]{1,2}(:[0-9a-fA-F]{1,2}){2,8})*'}), is_leaf=True, yang_name="esi-value", rest_name="esi-value", parent=self, choice=(u'esi', u'esi-ch-val'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='cluster-client-esi', is_config=True)
 
 
   def _get_esi_auto(self):
@@ -135,12 +135,12 @@ class esi(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'lacp': {'value': 1}},), is_leaf=True, yang_name="esi-auto", rest_name="auto", parent=self, choice=(u'esi', u'esi-ch-auto'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Esi auto set', u'cli-full-command': None, u'alt-name': u'auto', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='enumeration', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'lacp': {'value': 1}},), is_leaf=True, yang_name="esi-auto", rest_name="esi-auto", parent=self, choice=(u'esi', u'esi-ch-auto'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """esi_auto must be of a type compatible with enumeration""",
           'defined-type': "brocade-mct:enumeration",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'lacp': {'value': 1}},), is_leaf=True, yang_name="esi-auto", rest_name="auto", parent=self, choice=(u'esi', u'esi-ch-auto'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Esi auto set', u'cli-full-command': None, u'alt-name': u'auto', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='enumeration', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'lacp': {'value': 1}},), is_leaf=True, yang_name="esi-auto", rest_name="esi-auto", parent=self, choice=(u'esi', u'esi-ch-auto'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='enumeration', is_config=True)""",
         })
 
     self.__esi_auto = t
@@ -148,7 +148,7 @@ class esi(PybindBase):
       self._set()
 
   def _unset_esi_auto(self):
-    self.__esi_auto = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'lacp': {'value': 1}},), is_leaf=True, yang_name="esi-auto", rest_name="auto", parent=self, choice=(u'esi', u'esi-ch-auto'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Esi auto set', u'cli-full-command': None, u'alt-name': u'auto', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='enumeration', is_config=True)
+    self.__esi_auto = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'lacp': {'value': 1}},), is_leaf=True, yang_name="esi-auto", rest_name="esi-auto", parent=self, choice=(u'esi', u'esi-ch-auto'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mct', defining_module='brocade-mct', yang_type='enumeration', is_config=True)
 
   esi_value = __builtin__.property(_get_esi_value, _set_esi_value)
   esi_auto = __builtin__.property(_get_esi_auto, _set_esi_auto)

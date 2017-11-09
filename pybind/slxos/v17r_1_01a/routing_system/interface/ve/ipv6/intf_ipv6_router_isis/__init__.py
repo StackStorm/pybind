@@ -45,7 +45,7 @@ class intf_ipv6_router_isis(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__int_ipv6_router_isis = YANGDynClass(base=int_ipv6_router_isis.int_ipv6_router_isis, is_container='container', presence=False, yang_name="int-ipv6-router-isis", rest_name="router", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'routing protocol', u'cli-incomplete-no': None, u'alt-name': u'router', u'sort-priority': u'122', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__int_ipv6_router_isis = YANGDynClass(base=int_ipv6_router_isis.int_ipv6_router_isis, is_container='container', presence=False, yang_name="int-ipv6-router-isis", rest_name="router", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'routing protocol', u'cli-incomplete-no': None, u'alt-name': u'router', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_IP_CONFIG', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class intf_ipv6_router_isis(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=int_ipv6_router_isis.int_ipv6_router_isis, is_container='container', presence=False, yang_name="int-ipv6-router-isis", rest_name="router", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'routing protocol', u'cli-incomplete-no': None, u'alt-name': u'router', u'sort-priority': u'122', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=int_ipv6_router_isis.int_ipv6_router_isis, is_container='container', presence=False, yang_name="int-ipv6-router-isis", rest_name="router", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'routing protocol', u'cli-incomplete-no': None, u'alt-name': u'router', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_IP_CONFIG', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """int_ipv6_router_isis must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=int_ipv6_router_isis.int_ipv6_router_isis, is_container='container', presence=False, yang_name="int-ipv6-router-isis", rest_name="router", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'routing protocol', u'cli-incomplete-no': None, u'alt-name': u'router', u'sort-priority': u'122', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=int_ipv6_router_isis.int_ipv6_router_isis, is_container='container', presence=False, yang_name="int-ipv6-router-isis", rest_name="router", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'routing protocol', u'cli-incomplete-no': None, u'alt-name': u'router', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_IP_CONFIG', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
         })
 
     self.__int_ipv6_router_isis = t
@@ -113,7 +113,7 @@ class intf_ipv6_router_isis(PybindBase):
       self._set()
 
   def _unset_int_ipv6_router_isis(self):
-    self.__int_ipv6_router_isis = YANGDynClass(base=int_ipv6_router_isis.int_ipv6_router_isis, is_container='container', presence=False, yang_name="int-ipv6-router-isis", rest_name="router", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'routing protocol', u'cli-incomplete-no': None, u'alt-name': u'router', u'sort-priority': u'122', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__int_ipv6_router_isis = YANGDynClass(base=int_ipv6_router_isis.int_ipv6_router_isis, is_container='container', presence=False, yang_name="int-ipv6-router-isis", rest_name="router", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'routing protocol', u'cli-incomplete-no': None, u'alt-name': u'router', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_IP_CONFIG', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
   int_ipv6_router_isis = __builtin__.property(_get_int_ipv6_router_isis, _set_int_ipv6_router_isis)
 

@@ -54,8 +54,8 @@ CIST   Common and Internal Spanning Tree (IEEE 802.1Q)
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__get_stp_mst_detail = YANGDynClass(base=get_stp_mst_detail.get_stp_mst_detail, is_leaf=True, yang_name="get-stp-mst-detail", rest_name="get-stp-mst-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show-spanning-tree-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='rpc', is_config=True)
-    self.__get_stp_brief_info = YANGDynClass(base=get_stp_brief_info.get_stp_brief_info, is_leaf=True, yang_name="get-stp-brief-info", rest_name="get-stp-brief-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show-spanning-tree-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='rpc', is_config=True)
+    self.__get_stp_mst_detail = YANGDynClass(base=get_stp_mst_detail.get_stp_mst_detail, is_leaf=True, yang_name="get-stp-mst-detail", rest_name="get-stp-mst-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='rpc', is_config=True)
+    self.__get_stp_brief_info = YANGDynClass(base=get_stp_brief_info.get_stp_brief_info, is_leaf=True, yang_name="get-stp-brief-info", rest_name="get-stp-brief-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='rpc', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -116,12 +116,12 @@ CLI 'show spanning-tree'.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=get_stp_brief_info.get_stp_brief_info, is_leaf=True, yang_name="get-stp-brief-info", rest_name="get-stp-brief-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show-spanning-tree-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_stp_brief_info.get_stp_brief_info, is_leaf=True, yang_name="get-stp-brief-info", rest_name="get-stp-brief-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_stp_brief_info must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_stp_brief_info.get_stp_brief_info, is_leaf=True, yang_name="get-stp-brief-info", rest_name="get-stp-brief-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show-spanning-tree-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_stp_brief_info.get_stp_brief_info, is_leaf=True, yang_name="get-stp-brief-info", rest_name="get-stp-brief-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_stp_brief_info = t
@@ -129,7 +129,7 @@ CLI 'show spanning-tree'.
       self._set()
 
   def _unset_get_stp_brief_info(self):
-    self.__get_stp_brief_info = YANGDynClass(base=get_stp_brief_info.get_stp_brief_info, is_leaf=True, yang_name="get-stp-brief-info", rest_name="get-stp-brief-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show-spanning-tree-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='rpc', is_config=True)
+    self.__get_stp_brief_info = YANGDynClass(base=get_stp_brief_info.get_stp_brief_info, is_leaf=True, yang_name="get-stp-brief-info", rest_name="get-stp-brief-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='rpc', is_config=True)
 
 
   def _get_get_stp_mst_detail(self):
@@ -155,12 +155,12 @@ Equivalent to CLI 'show spanning-tree mst detail'.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=get_stp_mst_detail.get_stp_mst_detail, is_leaf=True, yang_name="get-stp-mst-detail", rest_name="get-stp-mst-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show-spanning-tree-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_stp_mst_detail.get_stp_mst_detail, is_leaf=True, yang_name="get-stp-mst-detail", rest_name="get-stp-mst-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_stp_mst_detail must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_stp_mst_detail.get_stp_mst_detail, is_leaf=True, yang_name="get-stp-mst-detail", rest_name="get-stp-mst-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show-spanning-tree-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_stp_mst_detail.get_stp_mst_detail, is_leaf=True, yang_name="get-stp-mst-detail", rest_name="get-stp-mst-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_stp_mst_detail = t
@@ -168,7 +168,7 @@ Equivalent to CLI 'show spanning-tree mst detail'.
       self._set()
 
   def _unset_get_stp_mst_detail(self):
-    self.__get_stp_mst_detail = YANGDynClass(base=get_stp_mst_detail.get_stp_mst_detail, is_leaf=True, yang_name="get-stp-mst-detail", rest_name="get-stp-mst-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'show-spanning-tree-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='rpc', is_config=True)
+    self.__get_stp_mst_detail = YANGDynClass(base=get_stp_mst_detail.get_stp_mst_detail, is_leaf=True, yang_name="get-stp-mst-detail", rest_name="get-stp-mst-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-xstp-ext', defining_module='brocade-xstp-ext', yang_type='rpc', is_config=True)
 
   get_stp_brief_info = __builtin__.property(_get_get_stp_brief_info, _set_get_stp_brief_info)
   get_stp_mst_detail = __builtin__.property(_get_get_stp_mst_detail, _set_get_stp_mst_detail)

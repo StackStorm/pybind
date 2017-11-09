@@ -47,7 +47,7 @@ class adj_neighbor_entries_state(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__adj_neighbor = YANGDynClass(base=YANGListType("neighbor_id",adj_neighbor.adj_neighbor, yang_name="adj-neighbor", rest_name="adj-neighbor", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='neighbor-id', extensions={u'tailf-common': {u'callpoint': u'isis-adj-neighbor-entry', u'cli-suppress-show-path': None}}), is_container='list', yang_name="adj-neighbor", rest_name="adj-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-adj-neighbor-entry', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)
+    self.__adj_neighbor = YANGDynClass(base=YANGListType("neighbor_id",adj_neighbor.adj_neighbor, yang_name="adj-neighbor", rest_name="adj-neighbor", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='neighbor-id', extensions=None), is_container='list', yang_name="adj-neighbor", rest_name="adj-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -106,12 +106,12 @@ class adj_neighbor_entries_state(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("neighbor_id",adj_neighbor.adj_neighbor, yang_name="adj-neighbor", rest_name="adj-neighbor", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='neighbor-id', extensions={u'tailf-common': {u'callpoint': u'isis-adj-neighbor-entry', u'cli-suppress-show-path': None}}), is_container='list', yang_name="adj-neighbor", rest_name="adj-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-adj-neighbor-entry', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("neighbor_id",adj_neighbor.adj_neighbor, yang_name="adj-neighbor", rest_name="adj-neighbor", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='neighbor-id', extensions=None), is_container='list', yang_name="adj-neighbor", rest_name="adj-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """adj_neighbor must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("neighbor_id",adj_neighbor.adj_neighbor, yang_name="adj-neighbor", rest_name="adj-neighbor", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='neighbor-id', extensions={u'tailf-common': {u'callpoint': u'isis-adj-neighbor-entry', u'cli-suppress-show-path': None}}), is_container='list', yang_name="adj-neighbor", rest_name="adj-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-adj-neighbor-entry', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("neighbor_id",adj_neighbor.adj_neighbor, yang_name="adj-neighbor", rest_name="adj-neighbor", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='neighbor-id', extensions=None), is_container='list', yang_name="adj-neighbor", rest_name="adj-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)""",
         })
 
     self.__adj_neighbor = t
@@ -119,7 +119,7 @@ class adj_neighbor_entries_state(PybindBase):
       self._set()
 
   def _unset_adj_neighbor(self):
-    self.__adj_neighbor = YANGDynClass(base=YANGListType("neighbor_id",adj_neighbor.adj_neighbor, yang_name="adj-neighbor", rest_name="adj-neighbor", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='neighbor-id', extensions={u'tailf-common': {u'callpoint': u'isis-adj-neighbor-entry', u'cli-suppress-show-path': None}}), is_container='list', yang_name="adj-neighbor", rest_name="adj-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-adj-neighbor-entry', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)
+    self.__adj_neighbor = YANGDynClass(base=YANGListType("neighbor_id",adj_neighbor.adj_neighbor, yang_name="adj-neighbor", rest_name="adj-neighbor", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='neighbor-id', extensions=None), is_container='list', yang_name="adj-neighbor", rest_name="adj-neighbor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='list', is_config=False)
 
   adj_neighbor = __builtin__.property(_get_adj_neighbor)
 

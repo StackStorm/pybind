@@ -19,7 +19,7 @@ class log_adjacency(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__log_adjacency_dr_only',)
 
   _yang_name = 'log-adjacency'
-  _rest_name = 'adjacency'
+  _rest_name = 'log-adjacency'
 
   _pybind_generated_by = 'container'
 
@@ -46,7 +46,7 @@ class log_adjacency(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__log_adjacency_dr_only = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="log-adjacency-dr-only", rest_name="dr-only", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u"Logging only Designated Router interfaces' adjacency changes", u'alt-name': u'dr-only'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)
+    self.__log_adjacency_dr_only = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="log-adjacency-dr-only", rest_name="log-adjacency-dr-only", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -82,7 +82,7 @@ class log_adjacency(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'ipv6', u'router', u'ospf', u'log', u'adjacency']
+      return [u'routing-system', u'ipv6', u'router', u'ospf', u'log', u'log-adjacency']
 
   def _get_log_adjacency_dr_only(self):
     """
@@ -101,12 +101,12 @@ class log_adjacency(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="log-adjacency-dr-only", rest_name="dr-only", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u"Logging only Designated Router interfaces' adjacency changes", u'alt-name': u'dr-only'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="log-adjacency-dr-only", rest_name="log-adjacency-dr-only", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """log_adjacency_dr_only must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="log-adjacency-dr-only", rest_name="dr-only", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u"Logging only Designated Router interfaces' adjacency changes", u'alt-name': u'dr-only'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="log-adjacency-dr-only", rest_name="log-adjacency-dr-only", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)""",
         })
 
     self.__log_adjacency_dr_only = t
@@ -114,7 +114,7 @@ class log_adjacency(PybindBase):
       self._set()
 
   def _unset_log_adjacency_dr_only(self):
-    self.__log_adjacency_dr_only = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="log-adjacency-dr-only", rest_name="dr-only", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u"Logging only Designated Router interfaces' adjacency changes", u'alt-name': u'dr-only'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)
+    self.__log_adjacency_dr_only = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="log-adjacency-dr-only", rest_name="log-adjacency-dr-only", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='empty', is_config=True)
 
   log_adjacency_dr_only = __builtin__.property(_get_log_adjacency_dr_only, _set_log_adjacency_dr_only)
 

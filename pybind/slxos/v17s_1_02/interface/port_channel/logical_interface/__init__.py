@@ -45,7 +45,7 @@ class logical_interface(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__port_channel = YANGDynClass(base=YANGListType("pc_instance_id",port_channel.port_channel, yang_name="port-channel", rest_name="port-channel", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pc-instance-id', extensions={u'tailf-common': {u'info': u'Configure a Logical Interface on this port-channel interface', u'cli-no-key-completion': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'interface_po_lif', u'cli-mode-name': u'conf-if-po-lif-$(pc-instance-id)'}}), is_container='list', yang_name="port-channel", rest_name="port-channel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a Logical Interface on this port-channel interface', u'cli-no-key-completion': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'interface_po_lif', u'cli-mode-name': u'conf-if-po-lif-$(pc-instance-id)'}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='list', is_config=True)
+    self.__port_channel = YANGDynClass(base=YANGListType("pc_instance_id",port_channel.port_channel, yang_name="port-channel", rest_name="port-channel", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pc-instance-id', extensions=None), is_container='list', yang_name="port-channel", rest_name="port-channel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class logical_interface(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface', u'Port-channel', u'logical-interface']
+      return [u'interface', u'port-channel', u'logical-interface']
 
   def _get_port_channel(self):
     """
@@ -100,12 +100,12 @@ class logical_interface(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("pc_instance_id",port_channel.port_channel, yang_name="port-channel", rest_name="port-channel", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pc-instance-id', extensions={u'tailf-common': {u'info': u'Configure a Logical Interface on this port-channel interface', u'cli-no-key-completion': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'interface_po_lif', u'cli-mode-name': u'conf-if-po-lif-$(pc-instance-id)'}}), is_container='list', yang_name="port-channel", rest_name="port-channel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a Logical Interface on this port-channel interface', u'cli-no-key-completion': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'interface_po_lif', u'cli-mode-name': u'conf-if-po-lif-$(pc-instance-id)'}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("pc_instance_id",port_channel.port_channel, yang_name="port-channel", rest_name="port-channel", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pc-instance-id', extensions=None), is_container='list', yang_name="port-channel", rest_name="port-channel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """port_channel must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("pc_instance_id",port_channel.port_channel, yang_name="port-channel", rest_name="port-channel", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pc-instance-id', extensions={u'tailf-common': {u'info': u'Configure a Logical Interface on this port-channel interface', u'cli-no-key-completion': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'interface_po_lif', u'cli-mode-name': u'conf-if-po-lif-$(pc-instance-id)'}}), is_container='list', yang_name="port-channel", rest_name="port-channel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a Logical Interface on this port-channel interface', u'cli-no-key-completion': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'interface_po_lif', u'cli-mode-name': u'conf-if-po-lif-$(pc-instance-id)'}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("pc_instance_id",port_channel.port_channel, yang_name="port-channel", rest_name="port-channel", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pc-instance-id', extensions=None), is_container='list', yang_name="port-channel", rest_name="port-channel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='list', is_config=True)""",
         })
 
     self.__port_channel = t
@@ -113,7 +113,7 @@ class logical_interface(PybindBase):
       self._set()
 
   def _unset_port_channel(self):
-    self.__port_channel = YANGDynClass(base=YANGListType("pc_instance_id",port_channel.port_channel, yang_name="port-channel", rest_name="port-channel", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pc-instance-id', extensions={u'tailf-common': {u'info': u'Configure a Logical Interface on this port-channel interface', u'cli-no-key-completion': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'interface_po_lif', u'cli-mode-name': u'conf-if-po-lif-$(pc-instance-id)'}}), is_container='list', yang_name="port-channel", rest_name="port-channel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a Logical Interface on this port-channel interface', u'cli-no-key-completion': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'interface_po_lif', u'cli-mode-name': u'conf-if-po-lif-$(pc-instance-id)'}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='list', is_config=True)
+    self.__port_channel = YANGDynClass(base=YANGListType("pc_instance_id",port_channel.port_channel, yang_name="port-channel", rest_name="port-channel", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pc-instance-id', extensions=None), is_container='list', yang_name="port-channel", rest_name="port-channel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='list', is_config=True)
 
   port_channel = __builtin__.property(_get_port_channel, _set_port_channel)
 

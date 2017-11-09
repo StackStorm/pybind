@@ -17,7 +17,7 @@ class lsp_frr_revertive(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__lsp_frr_revertive_holdtime','__lsp_frr_revertive_mode_global',)
 
   _yang_name = 'lsp-frr-revertive'
-  _rest_name = 'revertive'
+  _rest_name = 'lsp-frr-revertive'
 
   _pybind_generated_by = 'container'
 
@@ -44,8 +44,8 @@ class lsp_frr_revertive(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__lsp_frr_revertive_mode_global = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'disable': {'value': 0}},), is_leaf=True, yang_name="lsp-frr-revertive-mode-global", rest_name="global", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable global revertive mode', u'cli-full-no': None, u'alt-name': u'global'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enable-disable', is_config=True)
-    self.__lsp_frr_revertive_holdtime = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'1..60']}), default=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8)(5), is_leaf=True, yang_name="lsp-frr-revertive-holdtime", rest_name="holdtime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure revertive hold time for the LSP', u'cli-full-no': None, u'alt-name': u'holdtime'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint8', is_config=True)
+    self.__lsp_frr_revertive_mode_global = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'disable': {'value': 0}},), is_leaf=True, yang_name="lsp-frr-revertive-mode-global", rest_name="lsp-frr-revertive-mode-global", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enable-disable', is_config=True)
+    self.__lsp_frr_revertive_holdtime = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'1..60']}), default=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8)(5), is_leaf=True, yang_name="lsp-frr-revertive-holdtime", rest_name="lsp-frr-revertive-holdtime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint8', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class lsp_frr_revertive(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'router', u'mpls', u'lsp', u'frr', u'revertive']
+      return [u'mpls-config', u'router', u'mpls', u'mpls-cmds-holder', u'lsp', u'lsp-frr', u'lsp-frr-revertive']
 
   def _get_lsp_frr_revertive_holdtime(self):
     """
@@ -100,12 +100,12 @@ class lsp_frr_revertive(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'1..60']}), default=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8)(5), is_leaf=True, yang_name="lsp-frr-revertive-holdtime", rest_name="holdtime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure revertive hold time for the LSP', u'cli-full-no': None, u'alt-name': u'holdtime'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint8', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'1..60']}), default=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8)(5), is_leaf=True, yang_name="lsp-frr-revertive-holdtime", rest_name="lsp-frr-revertive-holdtime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint8', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_frr_revertive_holdtime must be of a type compatible with uint8""",
           'defined-type': "uint8",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'1..60']}), default=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8)(5), is_leaf=True, yang_name="lsp-frr-revertive-holdtime", rest_name="holdtime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure revertive hold time for the LSP', u'cli-full-no': None, u'alt-name': u'holdtime'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint8', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'1..60']}), default=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8)(5), is_leaf=True, yang_name="lsp-frr-revertive-holdtime", rest_name="lsp-frr-revertive-holdtime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint8', is_config=True)""",
         })
 
     self.__lsp_frr_revertive_holdtime = t
@@ -113,7 +113,7 @@ class lsp_frr_revertive(PybindBase):
       self._set()
 
   def _unset_lsp_frr_revertive_holdtime(self):
-    self.__lsp_frr_revertive_holdtime = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'1..60']}), default=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8)(5), is_leaf=True, yang_name="lsp-frr-revertive-holdtime", rest_name="holdtime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure revertive hold time for the LSP', u'cli-full-no': None, u'alt-name': u'holdtime'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint8', is_config=True)
+    self.__lsp_frr_revertive_holdtime = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), restriction_dict={'range': [u'1..60']}), default=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8)(5), is_leaf=True, yang_name="lsp-frr-revertive-holdtime", rest_name="lsp-frr-revertive-holdtime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint8', is_config=True)
 
 
   def _get_lsp_frr_revertive_mode_global(self):
@@ -133,12 +133,12 @@ class lsp_frr_revertive(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'disable': {'value': 0}},), is_leaf=True, yang_name="lsp-frr-revertive-mode-global", rest_name="global", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable global revertive mode', u'cli-full-no': None, u'alt-name': u'global'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enable-disable', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'disable': {'value': 0}},), is_leaf=True, yang_name="lsp-frr-revertive-mode-global", rest_name="lsp-frr-revertive-mode-global", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enable-disable', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_frr_revertive_mode_global must be of a type compatible with enable-disable""",
           'defined-type': "brocade-mpls:enable-disable",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'disable': {'value': 0}},), is_leaf=True, yang_name="lsp-frr-revertive-mode-global", rest_name="global", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable global revertive mode', u'cli-full-no': None, u'alt-name': u'global'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enable-disable', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'disable': {'value': 0}},), is_leaf=True, yang_name="lsp-frr-revertive-mode-global", rest_name="lsp-frr-revertive-mode-global", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enable-disable', is_config=True)""",
         })
 
     self.__lsp_frr_revertive_mode_global = t
@@ -146,7 +146,7 @@ class lsp_frr_revertive(PybindBase):
       self._set()
 
   def _unset_lsp_frr_revertive_mode_global(self):
-    self.__lsp_frr_revertive_mode_global = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'disable': {'value': 0}},), is_leaf=True, yang_name="lsp-frr-revertive-mode-global", rest_name="global", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable global revertive mode', u'cli-full-no': None, u'alt-name': u'global'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enable-disable', is_config=True)
+    self.__lsp_frr_revertive_mode_global = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'disable': {'value': 0}},), is_leaf=True, yang_name="lsp-frr-revertive-mode-global", rest_name="lsp-frr-revertive-mode-global", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enable-disable', is_config=True)
 
   lsp_frr_revertive_holdtime = __builtin__.property(_get_lsp_frr_revertive_holdtime, _set_lsp_frr_revertive_holdtime)
   lsp_frr_revertive_mode_global = __builtin__.property(_get_lsp_frr_revertive_mode_global, _set_lsp_frr_revertive_mode_global)

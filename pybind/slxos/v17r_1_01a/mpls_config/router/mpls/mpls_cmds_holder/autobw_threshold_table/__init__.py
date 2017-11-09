@@ -46,8 +46,8 @@ class autobw_threshold_table(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__autobw_threshold_table_bandwidth = YANGDynClass(base=YANGListType("bandwidth_value",autobw_threshold_table_bandwidth.autobw_threshold_table_bandwidth, yang_name="autobw-threshold-table-bandwidth", rest_name="bandwidth", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bandwidth-value', extensions={u'tailf-common': {u'info': u'Define Autobw Threshold Table Entries', u'cli-no-key-completion': None, u'callpoint': u'MplsAutobwThresholdTableEntries', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'cli-incomplete-command': None, u'alt-name': u'bandwidth'}}), is_container='list', yang_name="autobw-threshold-table-bandwidth", rest_name="bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define Autobw Threshold Table Entries', u'cli-no-key-completion': None, u'callpoint': u'MplsAutobwThresholdTableEntries', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'cli-incomplete-command': None, u'alt-name': u'bandwidth'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
-    self.__max_bw_threshold = YANGDynClass(base=max_bw_threshold.max_bw_threshold, is_container='container', presence=False, yang_name="max-bw-threshold", rest_name="max-bw-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define the default threshold for higher bandwidth'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__autobw_threshold_table_bandwidth = YANGDynClass(base=YANGListType("bandwidth_value",autobw_threshold_table_bandwidth.autobw_threshold_table_bandwidth, yang_name="autobw-threshold-table-bandwidth", rest_name="autobw-threshold-table-bandwidth", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bandwidth-value', extensions=None), is_container='list', yang_name="autobw-threshold-table-bandwidth", rest_name="autobw-threshold-table-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__max_bw_threshold = YANGDynClass(base=max_bw_threshold.max_bw_threshold, is_container='container', presence=False, yang_name="max-bw-threshold", rest_name="max-bw-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -83,7 +83,7 @@ class autobw_threshold_table(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'router', u'mpls', u'autobw-threshold-table']
+      return [u'mpls-config', u'router', u'mpls', u'mpls-cmds-holder', u'autobw-threshold-table']
 
   def _get_autobw_threshold_table_bandwidth(self):
     """
@@ -102,12 +102,12 @@ class autobw_threshold_table(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("bandwidth_value",autobw_threshold_table_bandwidth.autobw_threshold_table_bandwidth, yang_name="autobw-threshold-table-bandwidth", rest_name="bandwidth", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bandwidth-value', extensions={u'tailf-common': {u'info': u'Define Autobw Threshold Table Entries', u'cli-no-key-completion': None, u'callpoint': u'MplsAutobwThresholdTableEntries', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'cli-incomplete-command': None, u'alt-name': u'bandwidth'}}), is_container='list', yang_name="autobw-threshold-table-bandwidth", rest_name="bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define Autobw Threshold Table Entries', u'cli-no-key-completion': None, u'callpoint': u'MplsAutobwThresholdTableEntries', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'cli-incomplete-command': None, u'alt-name': u'bandwidth'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("bandwidth_value",autobw_threshold_table_bandwidth.autobw_threshold_table_bandwidth, yang_name="autobw-threshold-table-bandwidth", rest_name="autobw-threshold-table-bandwidth", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bandwidth-value', extensions=None), is_container='list', yang_name="autobw-threshold-table-bandwidth", rest_name="autobw-threshold-table-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """autobw_threshold_table_bandwidth must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("bandwidth_value",autobw_threshold_table_bandwidth.autobw_threshold_table_bandwidth, yang_name="autobw-threshold-table-bandwidth", rest_name="bandwidth", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bandwidth-value', extensions={u'tailf-common': {u'info': u'Define Autobw Threshold Table Entries', u'cli-no-key-completion': None, u'callpoint': u'MplsAutobwThresholdTableEntries', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'cli-incomplete-command': None, u'alt-name': u'bandwidth'}}), is_container='list', yang_name="autobw-threshold-table-bandwidth", rest_name="bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define Autobw Threshold Table Entries', u'cli-no-key-completion': None, u'callpoint': u'MplsAutobwThresholdTableEntries', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'cli-incomplete-command': None, u'alt-name': u'bandwidth'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("bandwidth_value",autobw_threshold_table_bandwidth.autobw_threshold_table_bandwidth, yang_name="autobw-threshold-table-bandwidth", rest_name="autobw-threshold-table-bandwidth", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bandwidth-value', extensions=None), is_container='list', yang_name="autobw-threshold-table-bandwidth", rest_name="autobw-threshold-table-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
         })
 
     self.__autobw_threshold_table_bandwidth = t
@@ -115,7 +115,7 @@ class autobw_threshold_table(PybindBase):
       self._set()
 
   def _unset_autobw_threshold_table_bandwidth(self):
-    self.__autobw_threshold_table_bandwidth = YANGDynClass(base=YANGListType("bandwidth_value",autobw_threshold_table_bandwidth.autobw_threshold_table_bandwidth, yang_name="autobw-threshold-table-bandwidth", rest_name="bandwidth", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bandwidth-value', extensions={u'tailf-common': {u'info': u'Define Autobw Threshold Table Entries', u'cli-no-key-completion': None, u'callpoint': u'MplsAutobwThresholdTableEntries', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'cli-incomplete-command': None, u'alt-name': u'bandwidth'}}), is_container='list', yang_name="autobw-threshold-table-bandwidth", rest_name="bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define Autobw Threshold Table Entries', u'cli-no-key-completion': None, u'callpoint': u'MplsAutobwThresholdTableEntries', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'cli-incomplete-command': None, u'alt-name': u'bandwidth'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__autobw_threshold_table_bandwidth = YANGDynClass(base=YANGListType("bandwidth_value",autobw_threshold_table_bandwidth.autobw_threshold_table_bandwidth, yang_name="autobw-threshold-table-bandwidth", rest_name="autobw-threshold-table-bandwidth", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bandwidth-value', extensions=None), is_container='list', yang_name="autobw-threshold-table-bandwidth", rest_name="autobw-threshold-table-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
 
 
   def _get_max_bw_threshold(self):
@@ -135,12 +135,12 @@ class autobw_threshold_table(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=max_bw_threshold.max_bw_threshold, is_container='container', presence=False, yang_name="max-bw-threshold", rest_name="max-bw-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define the default threshold for higher bandwidth'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=max_bw_threshold.max_bw_threshold, is_container='container', presence=False, yang_name="max-bw-threshold", rest_name="max-bw-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """max_bw_threshold must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=max_bw_threshold.max_bw_threshold, is_container='container', presence=False, yang_name="max-bw-threshold", rest_name="max-bw-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define the default threshold for higher bandwidth'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=max_bw_threshold.max_bw_threshold, is_container='container', presence=False, yang_name="max-bw-threshold", rest_name="max-bw-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__max_bw_threshold = t
@@ -148,7 +148,7 @@ class autobw_threshold_table(PybindBase):
       self._set()
 
   def _unset_max_bw_threshold(self):
-    self.__max_bw_threshold = YANGDynClass(base=max_bw_threshold.max_bw_threshold, is_container='container', presence=False, yang_name="max-bw-threshold", rest_name="max-bw-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Define the default threshold for higher bandwidth'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__max_bw_threshold = YANGDynClass(base=max_bw_threshold.max_bw_threshold, is_container='container', presence=False, yang_name="max-bw-threshold", rest_name="max-bw-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
   autobw_threshold_table_bandwidth = __builtin__.property(_get_autobw_threshold_table_bandwidth, _set_autobw_threshold_table_bandwidth)
   max_bw_threshold = __builtin__.property(_get_max_bw_threshold, _set_max_bw_threshold)

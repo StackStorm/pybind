@@ -46,7 +46,7 @@ class deny(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__inner_gtp_https = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="inner-gtp-https", rest_name="inner-gtp-https", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Deny HTTPS over GTP'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+    self.__inner_gtp_https = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="inner-gtp-https", rest_name="inner-gtp-https", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -82,7 +82,7 @@ class deny(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface', u'Port-channel', u'deny']
+      return [u'interface', u'port-channel', u'deny']
 
   def _get_inner_gtp_https(self):
     """
@@ -105,12 +105,12 @@ class deny(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="inner-gtp-https", rest_name="inner-gtp-https", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Deny HTTPS over GTP'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="inner-gtp-https", rest_name="inner-gtp-https", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """inner_gtp_https must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="inner-gtp-https", rest_name="inner-gtp-https", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Deny HTTPS over GTP'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="inner-gtp-https", rest_name="inner-gtp-https", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)""",
         })
 
     self.__inner_gtp_https = t
@@ -118,7 +118,7 @@ class deny(PybindBase):
       self._set()
 
   def _unset_inner_gtp_https(self):
-    self.__inner_gtp_https = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="inner-gtp-https", rest_name="inner-gtp-https", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Deny HTTPS over GTP'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+    self.__inner_gtp_https = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="inner-gtp-https", rest_name="inner-gtp-https", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
 
   inner_gtp_https = __builtin__.property(_get_inner_gtp_https, _set_inner_gtp_https)
 

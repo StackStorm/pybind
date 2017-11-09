@@ -45,7 +45,7 @@ class ldp(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ldp_holder = YANGDynClass(base=ldp_holder.ldp_holder, is_container='container', presence=False, yang_name="ldp-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__ldp_holder = YANGDynClass(base=ldp_holder.ldp_holder, is_container='container', presence=False, yang_name="ldp-holder", rest_name="ldp-holder", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class ldp(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'router', u'mpls', u'ldp']
+      return [u'mpls-config', u'router', u'mpls', u'mpls-cmds-holder', u'ldp']
 
   def _get_ldp_holder(self):
     """
@@ -100,12 +100,12 @@ class ldp(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=ldp_holder.ldp_holder, is_container='container', presence=False, yang_name="ldp-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ldp_holder.ldp_holder, is_container='container', presence=False, yang_name="ldp-holder", rest_name="ldp-holder", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ldp_holder must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ldp_holder.ldp_holder, is_container='container', presence=False, yang_name="ldp-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ldp_holder.ldp_holder, is_container='container', presence=False, yang_name="ldp-holder", rest_name="ldp-holder", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__ldp_holder = t
@@ -113,7 +113,7 @@ class ldp(PybindBase):
       self._set()
 
   def _unset_ldp_holder(self):
-    self.__ldp_holder = YANGDynClass(base=ldp_holder.ldp_holder, is_container='container', presence=False, yang_name="ldp-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__ldp_holder = YANGDynClass(base=ldp_holder.ldp_holder, is_container='container', presence=False, yang_name="ldp-holder", rest_name="ldp-holder", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
   ldp_holder = __builtin__.property(_get_ldp_holder, _set_ldp_holder)
 

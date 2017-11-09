@@ -17,7 +17,7 @@ class next_hop_tvf_domain_container(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__next_hop_tvf_domain','__strip_vlan_tvf',)
 
   _yang_name = 'next-hop-tvf-domain-container'
-  _rest_name = ''
+  _rest_name = 'next-hop-tvf-domain-container'
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +44,7 @@ class next_hop_tvf_domain_container(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__strip_vlan_tvf = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'outer': {'value': 1}},), is_leaf=True, yang_name="strip-vlan-tvf", rest_name="strip-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan Header stripping config', u'alt-name': u'strip-vlan'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='enumeration', is_config=True)
+    self.__strip_vlan_tvf = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'outer': {'value': 1}},), is_leaf=True, yang_name="strip-vlan-tvf", rest_name="strip-vlan-tvf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='enumeration', is_config=True)
     self.__next_hop_tvf_domain = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4096']}), is_leaf=True, yang_name="next-hop-tvf-domain", rest_name="next-hop-tvf-domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='tvf-domain:tvf-domain-type', is_config=True)
 
     load = kwargs.pop("load", None)
@@ -81,7 +81,7 @@ class next_hop_tvf_domain_container(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'route-map', u'precedence', u'set']
+      return [u'routing-system', u'route-map', u'content', u'precedence', u'set', u'next-hop-tvf-domain-container']
 
   def _get_next_hop_tvf_domain(self):
     """
@@ -133,12 +133,12 @@ class next_hop_tvf_domain_container(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'outer': {'value': 1}},), is_leaf=True, yang_name="strip-vlan-tvf", rest_name="strip-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan Header stripping config', u'alt-name': u'strip-vlan'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='enumeration', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'outer': {'value': 1}},), is_leaf=True, yang_name="strip-vlan-tvf", rest_name="strip-vlan-tvf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """strip_vlan_tvf must be of a type compatible with enumeration""",
           'defined-type': "brocade-ip-policy:enumeration",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'outer': {'value': 1}},), is_leaf=True, yang_name="strip-vlan-tvf", rest_name="strip-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan Header stripping config', u'alt-name': u'strip-vlan'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='enumeration', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'outer': {'value': 1}},), is_leaf=True, yang_name="strip-vlan-tvf", rest_name="strip-vlan-tvf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='enumeration', is_config=True)""",
         })
 
     self.__strip_vlan_tvf = t
@@ -146,7 +146,7 @@ class next_hop_tvf_domain_container(PybindBase):
       self._set()
 
   def _unset_strip_vlan_tvf(self):
-    self.__strip_vlan_tvf = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'outer': {'value': 1}},), is_leaf=True, yang_name="strip-vlan-tvf", rest_name="strip-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan Header stripping config', u'alt-name': u'strip-vlan'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='enumeration', is_config=True)
+    self.__strip_vlan_tvf = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'outer': {'value': 1}},), is_leaf=True, yang_name="strip-vlan-tvf", rest_name="strip-vlan-tvf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='enumeration', is_config=True)
 
   next_hop_tvf_domain = __builtin__.property(_get_next_hop_tvf_domain, _set_next_hop_tvf_domain)
   strip_vlan_tvf = __builtin__.property(_get_strip_vlan_tvf, _set_strip_vlan_tvf)

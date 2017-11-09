@@ -47,7 +47,7 @@ class authentication(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ipsec_auth_key_config = YANGDynClass(base=ipsec_auth_key_config.ipsec_auth_key_config, is_container='container', presence=False, yang_name="ipsec-auth-key-config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__ipsec_auth_key_config = YANGDynClass(base=ipsec_auth_key_config.ipsec_auth_key_config, is_container='container', presence=False, yang_name="ipsec-auth-key-config", rest_name="ipsec-auth-key-config", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -83,7 +83,7 @@ class authentication(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'ipv6', u'router', u'ospf', u'area', u'authentication']
+      return [u'routing-system', u'ipv6', u'router', u'ospf', u'area', u'authentication']
 
   def _get_ipsec_auth_key_config(self):
     """
@@ -102,12 +102,12 @@ class authentication(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=ipsec_auth_key_config.ipsec_auth_key_config, is_container='container', presence=False, yang_name="ipsec-auth-key-config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ipsec_auth_key_config.ipsec_auth_key_config, is_container='container', presence=False, yang_name="ipsec-auth-key-config", rest_name="ipsec-auth-key-config", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ipsec_auth_key_config must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ipsec_auth_key_config.ipsec_auth_key_config, is_container='container', presence=False, yang_name="ipsec-auth-key-config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ipsec_auth_key_config.ipsec_auth_key_config, is_container='container', presence=False, yang_name="ipsec-auth-key-config", rest_name="ipsec-auth-key-config", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)""",
         })
 
     self.__ipsec_auth_key_config = t
@@ -115,7 +115,7 @@ class authentication(PybindBase):
       self._set()
 
   def _unset_ipsec_auth_key_config(self):
-    self.__ipsec_auth_key_config = YANGDynClass(base=ipsec_auth_key_config.ipsec_auth_key_config, is_container='container', presence=False, yang_name="ipsec-auth-key-config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
+    self.__ipsec_auth_key_config = YANGDynClass(base=ipsec_auth_key_config.ipsec_auth_key_config, is_container='container', presence=False, yang_name="ipsec-auth-key-config", rest_name="ipsec-auth-key-config", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='container', is_config=True)
 
   ipsec_auth_key_config = __builtin__.property(_get_ipsec_auth_key_config, _set_ipsec_auth_key_config)
 

@@ -17,7 +17,7 @@ class link_onstartup(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__all_link_onstartup','__ptp_link_onstartup','__stub_link_onstartup','__transit_link_onstartup',)
 
   _yang_name = 'link-onstartup'
-  _rest_name = 'link'
+  _rest_name = 'link-onstartup'
 
   _pybind_generated_by = 'container'
 
@@ -44,10 +44,10 @@ class link_onstartup(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ptp_link_onstartup = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ptp-link-onstartup", rest_name="ptp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise maximum metric in Router LSA for ptp links', u'alt-name': u'ptp'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
-    self.__stub_link_onstartup = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="stub-link-onstartup", rest_name="stub", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise maximum metric in Router LSA for stub links', u'alt-name': u'stub'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
-    self.__all_link_onstartup = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="all-link-onstartup", rest_name="all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise maximum metric in Router LSA for ptp,stub and transit links', u'alt-name': u'all'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
-    self.__transit_link_onstartup = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="transit-link-onstartup", rest_name="transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise maximum metric in Router LSA for transit links', u'alt-name': u'transit'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
+    self.__ptp_link_onstartup = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ptp-link-onstartup", rest_name="ptp-link-onstartup", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
+    self.__stub_link_onstartup = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="stub-link-onstartup", rest_name="stub-link-onstartup", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
+    self.__all_link_onstartup = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="all-link-onstartup", rest_name="all-link-onstartup", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
+    self.__transit_link_onstartup = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="transit-link-onstartup", rest_name="transit-link-onstartup", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -83,7 +83,7 @@ class link_onstartup(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'router', u'ospf', u'max-metric', u'router-lsa', u'on-startup', u'link']
+      return [u'routing-system', u'router', u'ospf', u'max-metric', u'router-lsa', u'on-startup', u'link-onstartup']
 
   def _get_all_link_onstartup(self):
     """
@@ -102,12 +102,12 @@ class link_onstartup(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="all-link-onstartup", rest_name="all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise maximum metric in Router LSA for ptp,stub and transit links', u'alt-name': u'all'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="all-link-onstartup", rest_name="all-link-onstartup", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """all_link_onstartup must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="all-link-onstartup", rest_name="all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise maximum metric in Router LSA for ptp,stub and transit links', u'alt-name': u'all'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="all-link-onstartup", rest_name="all-link-onstartup", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)""",
         })
 
     self.__all_link_onstartup = t
@@ -115,7 +115,7 @@ class link_onstartup(PybindBase):
       self._set()
 
   def _unset_all_link_onstartup(self):
-    self.__all_link_onstartup = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="all-link-onstartup", rest_name="all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise maximum metric in Router LSA for ptp,stub and transit links', u'alt-name': u'all'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
+    self.__all_link_onstartup = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="all-link-onstartup", rest_name="all-link-onstartup", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
 
 
   def _get_ptp_link_onstartup(self):
@@ -135,12 +135,12 @@ class link_onstartup(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ptp-link-onstartup", rest_name="ptp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise maximum metric in Router LSA for ptp links', u'alt-name': u'ptp'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ptp-link-onstartup", rest_name="ptp-link-onstartup", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ptp_link_onstartup must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ptp-link-onstartup", rest_name="ptp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise maximum metric in Router LSA for ptp links', u'alt-name': u'ptp'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ptp-link-onstartup", rest_name="ptp-link-onstartup", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)""",
         })
 
     self.__ptp_link_onstartup = t
@@ -148,7 +148,7 @@ class link_onstartup(PybindBase):
       self._set()
 
   def _unset_ptp_link_onstartup(self):
-    self.__ptp_link_onstartup = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ptp-link-onstartup", rest_name="ptp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise maximum metric in Router LSA for ptp links', u'alt-name': u'ptp'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
+    self.__ptp_link_onstartup = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ptp-link-onstartup", rest_name="ptp-link-onstartup", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
 
 
   def _get_stub_link_onstartup(self):
@@ -168,12 +168,12 @@ class link_onstartup(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="stub-link-onstartup", rest_name="stub", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise maximum metric in Router LSA for stub links', u'alt-name': u'stub'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="stub-link-onstartup", rest_name="stub-link-onstartup", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """stub_link_onstartup must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="stub-link-onstartup", rest_name="stub", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise maximum metric in Router LSA for stub links', u'alt-name': u'stub'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="stub-link-onstartup", rest_name="stub-link-onstartup", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)""",
         })
 
     self.__stub_link_onstartup = t
@@ -181,7 +181,7 @@ class link_onstartup(PybindBase):
       self._set()
 
   def _unset_stub_link_onstartup(self):
-    self.__stub_link_onstartup = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="stub-link-onstartup", rest_name="stub", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise maximum metric in Router LSA for stub links', u'alt-name': u'stub'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
+    self.__stub_link_onstartup = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="stub-link-onstartup", rest_name="stub-link-onstartup", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
 
 
   def _get_transit_link_onstartup(self):
@@ -201,12 +201,12 @@ class link_onstartup(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="transit-link-onstartup", rest_name="transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise maximum metric in Router LSA for transit links', u'alt-name': u'transit'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="transit-link-onstartup", rest_name="transit-link-onstartup", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """transit_link_onstartup must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="transit-link-onstartup", rest_name="transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise maximum metric in Router LSA for transit links', u'alt-name': u'transit'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="transit-link-onstartup", rest_name="transit-link-onstartup", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)""",
         })
 
     self.__transit_link_onstartup = t
@@ -214,7 +214,7 @@ class link_onstartup(PybindBase):
       self._set()
 
   def _unset_transit_link_onstartup(self):
-    self.__transit_link_onstartup = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="transit-link-onstartup", rest_name="transit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise maximum metric in Router LSA for transit links', u'alt-name': u'transit'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
+    self.__transit_link_onstartup = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="transit-link-onstartup", rest_name="transit-link-onstartup", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
 
   all_link_onstartup = __builtin__.property(_get_all_link_onstartup, _set_all_link_onstartup)
   ptp_link_onstartup = __builtin__.property(_get_ptp_link_onstartup, _set_ptp_link_onstartup)

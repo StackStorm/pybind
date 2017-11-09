@@ -19,7 +19,7 @@ class pc_cmd_container_dummy(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__service_instance_common_commands_dummy','__service_instance_vlan_cmds_dummy_container',)
 
   _yang_name = 'pc-cmd-container-dummy'
-  _rest_name = ''
+  _rest_name = 'pc-cmd-container-dummy'
 
   _pybind_generated_by = 'container'
 
@@ -46,8 +46,8 @@ class pc_cmd_container_dummy(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__service_instance_vlan_cmds_dummy_container = YANGDynClass(base=service_instance_vlan_cmds_dummy_container.service_instance_vlan_cmds_dummy_container, is_container='container', presence=False, yang_name="service-instance-vlan-cmds-dummy-container", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
-    self.__service_instance_common_commands_dummy = YANGDynClass(base=service_instance_common_commands_dummy.service_instance_common_commands_dummy, is_container='container', presence=False, yang_name="service-instance-common-commands-dummy", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
+    self.__service_instance_vlan_cmds_dummy_container = YANGDynClass(base=service_instance_vlan_cmds_dummy_container.service_instance_vlan_cmds_dummy_container, is_container='container', presence=False, yang_name="service-instance-vlan-cmds-dummy-container", rest_name="service-instance-vlan-cmds-dummy-container", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
+    self.__service_instance_common_commands_dummy = YANGDynClass(base=service_instance_common_commands_dummy.service_instance_common_commands_dummy, is_container='container', presence=False, yang_name="service-instance-common-commands-dummy", rest_name="service-instance-common-commands-dummy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -83,7 +83,7 @@ class pc_cmd_container_dummy(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface', u'Port-channel', u'logical-interface', u'port-channel']
+      return [u'interface', u'port-channel', u'logical-interface', u'port-channel', u'pc-cmd-container-dummy']
 
   def _get_service_instance_common_commands_dummy(self):
     """
@@ -102,12 +102,12 @@ class pc_cmd_container_dummy(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=service_instance_common_commands_dummy.service_instance_common_commands_dummy, is_container='container', presence=False, yang_name="service-instance-common-commands-dummy", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=service_instance_common_commands_dummy.service_instance_common_commands_dummy, is_container='container', presence=False, yang_name="service-instance-common-commands-dummy", rest_name="service-instance-common-commands-dummy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """service_instance_common_commands_dummy must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=service_instance_common_commands_dummy.service_instance_common_commands_dummy, is_container='container', presence=False, yang_name="service-instance-common-commands-dummy", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=service_instance_common_commands_dummy.service_instance_common_commands_dummy, is_container='container', presence=False, yang_name="service-instance-common-commands-dummy", rest_name="service-instance-common-commands-dummy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)""",
         })
 
     self.__service_instance_common_commands_dummy = t
@@ -115,7 +115,7 @@ class pc_cmd_container_dummy(PybindBase):
       self._set()
 
   def _unset_service_instance_common_commands_dummy(self):
-    self.__service_instance_common_commands_dummy = YANGDynClass(base=service_instance_common_commands_dummy.service_instance_common_commands_dummy, is_container='container', presence=False, yang_name="service-instance-common-commands-dummy", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
+    self.__service_instance_common_commands_dummy = YANGDynClass(base=service_instance_common_commands_dummy.service_instance_common_commands_dummy, is_container='container', presence=False, yang_name="service-instance-common-commands-dummy", rest_name="service-instance-common-commands-dummy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
 
 
   def _get_service_instance_vlan_cmds_dummy_container(self):
@@ -135,12 +135,12 @@ class pc_cmd_container_dummy(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=service_instance_vlan_cmds_dummy_container.service_instance_vlan_cmds_dummy_container, is_container='container', presence=False, yang_name="service-instance-vlan-cmds-dummy-container", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=service_instance_vlan_cmds_dummy_container.service_instance_vlan_cmds_dummy_container, is_container='container', presence=False, yang_name="service-instance-vlan-cmds-dummy-container", rest_name="service-instance-vlan-cmds-dummy-container", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """service_instance_vlan_cmds_dummy_container must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=service_instance_vlan_cmds_dummy_container.service_instance_vlan_cmds_dummy_container, is_container='container', presence=False, yang_name="service-instance-vlan-cmds-dummy-container", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=service_instance_vlan_cmds_dummy_container.service_instance_vlan_cmds_dummy_container, is_container='container', presence=False, yang_name="service-instance-vlan-cmds-dummy-container", rest_name="service-instance-vlan-cmds-dummy-container", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)""",
         })
 
     self.__service_instance_vlan_cmds_dummy_container = t
@@ -148,7 +148,7 @@ class pc_cmd_container_dummy(PybindBase):
       self._set()
 
   def _unset_service_instance_vlan_cmds_dummy_container(self):
-    self.__service_instance_vlan_cmds_dummy_container = YANGDynClass(base=service_instance_vlan_cmds_dummy_container.service_instance_vlan_cmds_dummy_container, is_container='container', presence=False, yang_name="service-instance-vlan-cmds-dummy-container", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
+    self.__service_instance_vlan_cmds_dummy_container = YANGDynClass(base=service_instance_vlan_cmds_dummy_container.service_instance_vlan_cmds_dummy_container, is_container='container', presence=False, yang_name="service-instance-vlan-cmds-dummy-container", rest_name="service-instance-vlan-cmds-dummy-container", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
 
   service_instance_common_commands_dummy = __builtin__.property(_get_service_instance_common_commands_dummy, _set_service_instance_common_commands_dummy)
   service_instance_vlan_cmds_dummy_container = __builtin__.property(_get_service_instance_vlan_cmds_dummy_container, _set_service_instance_vlan_cmds_dummy_container)
