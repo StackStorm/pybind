@@ -44,13 +44,13 @@ class cpu(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__action_cpu = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'raslog': {'value': 1}},), is_leaf=True, yang_name="action-cpu", rest_name="action-cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='resource-monitor-actiontype', is_config=True)
-    self.__enable_cpu = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="enable-cpu", rest_name="enable-cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='empty', is_config=True)
-    self.__sample_rate_cpu = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 20']}), is_leaf=True, yang_name="sample-rate-cpu", rest_name="sample-rate-cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
-    self.__threshold_cpu = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'70 .. 100']}), is_leaf=True, yang_name="threshold-cpu", rest_name="threshold-cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
-    self.__logging_rate_cpu = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'20 .. 60']}), is_leaf=True, yang_name="logging-rate-cpu", rest_name="logging-rate-cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
-    self.__offset_cpu = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 70']}), is_leaf=True, yang_name="offset-cpu", rest_name="offset-cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
-    self.__grace_period_cpu = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 720']}), is_leaf=True, yang_name="grace-period-cpu", rest_name="grace-period-cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
+    self.__action_cpu = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'raslog': {'value': 1}},), is_leaf=True, yang_name="action-cpu", rest_name="action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Action to take when CPU usage exceeds threshold', u'alt-name': u'action', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='resource-monitor-actiontype', is_config=True)
+    self.__enable_cpu = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="enable-cpu", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable monitoring CPU usage', u'cli-show-no': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='empty', is_config=True)
+    self.__sample_rate_cpu = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 20']}), is_leaf=True, yang_name="sample-rate-cpu", rest_name="sample-rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sampling rate for CPU usage monitoring', u'hidden': u'debug', u'alt-name': u'sample-rate', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
+    self.__threshold_cpu = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'70 .. 100']}), is_leaf=True, yang_name="threshold-cpu", rest_name="threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Threshold for high CPU usage', u'alt-name': u'threshold', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
+    self.__logging_rate_cpu = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'20 .. 60']}), is_leaf=True, yang_name="logging-rate-cpu", rest_name="logging-rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging rate for CPU usage monitoring', u'hidden': u'debug', u'alt-name': u'logging-rate', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
+    self.__offset_cpu = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 70']}), is_leaf=True, yang_name="offset-cpu", rest_name="thresh-offset", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Offset to CPU threshold for testing', u'hidden': u'debug', u'alt-name': u'thresh-offset', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
+    self.__grace_period_cpu = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 720']}), is_leaf=True, yang_name="grace-period-cpu", rest_name="grace-period", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Grace period after CPU usage threshold exceeded', u'hidden': u'debug', u'alt-name': u'grace-period', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -105,12 +105,12 @@ class cpu(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="enable-cpu", rest_name="enable-cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="enable-cpu", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable monitoring CPU usage', u'cli-show-no': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """enable_cpu must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="enable-cpu", rest_name="enable-cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="enable-cpu", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable monitoring CPU usage', u'cli-show-no': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='empty', is_config=True)""",
         })
 
     self.__enable_cpu = t
@@ -118,7 +118,7 @@ class cpu(PybindBase):
       self._set()
 
   def _unset_enable_cpu(self):
-    self.__enable_cpu = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="enable-cpu", rest_name="enable-cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='empty', is_config=True)
+    self.__enable_cpu = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="enable-cpu", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable monitoring CPU usage', u'cli-show-no': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='empty', is_config=True)
 
 
   def _get_threshold_cpu(self):
@@ -138,12 +138,12 @@ class cpu(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'70 .. 100']}), is_leaf=True, yang_name="threshold-cpu", rest_name="threshold-cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'70 .. 100']}), is_leaf=True, yang_name="threshold-cpu", rest_name="threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Threshold for high CPU usage', u'alt-name': u'threshold', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """threshold_cpu must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'70 .. 100']}), is_leaf=True, yang_name="threshold-cpu", rest_name="threshold-cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'70 .. 100']}), is_leaf=True, yang_name="threshold-cpu", rest_name="threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Threshold for high CPU usage', u'alt-name': u'threshold', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)""",
         })
 
     self.__threshold_cpu = t
@@ -151,7 +151,7 @@ class cpu(PybindBase):
       self._set()
 
   def _unset_threshold_cpu(self):
-    self.__threshold_cpu = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'70 .. 100']}), is_leaf=True, yang_name="threshold-cpu", rest_name="threshold-cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
+    self.__threshold_cpu = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'70 .. 100']}), is_leaf=True, yang_name="threshold-cpu", rest_name="threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Threshold for high CPU usage', u'alt-name': u'threshold', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
 
 
   def _get_action_cpu(self):
@@ -171,12 +171,12 @@ class cpu(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'raslog': {'value': 1}},), is_leaf=True, yang_name="action-cpu", rest_name="action-cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='resource-monitor-actiontype', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'raslog': {'value': 1}},), is_leaf=True, yang_name="action-cpu", rest_name="action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Action to take when CPU usage exceeds threshold', u'alt-name': u'action', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='resource-monitor-actiontype', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """action_cpu must be of a type compatible with resource-monitor-actiontype""",
           'defined-type': "brocade-resource-monitor:resource-monitor-actiontype",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'raslog': {'value': 1}},), is_leaf=True, yang_name="action-cpu", rest_name="action-cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='resource-monitor-actiontype', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'raslog': {'value': 1}},), is_leaf=True, yang_name="action-cpu", rest_name="action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Action to take when CPU usage exceeds threshold', u'alt-name': u'action', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='resource-monitor-actiontype', is_config=True)""",
         })
 
     self.__action_cpu = t
@@ -184,7 +184,7 @@ class cpu(PybindBase):
       self._set()
 
   def _unset_action_cpu(self):
-    self.__action_cpu = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'raslog': {'value': 1}},), is_leaf=True, yang_name="action-cpu", rest_name="action-cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='resource-monitor-actiontype', is_config=True)
+    self.__action_cpu = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'raslog': {'value': 1}},), is_leaf=True, yang_name="action-cpu", rest_name="action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Action to take when CPU usage exceeds threshold', u'alt-name': u'action', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='resource-monitor-actiontype', is_config=True)
 
 
   def _get_sample_rate_cpu(self):
@@ -204,12 +204,12 @@ class cpu(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 20']}), is_leaf=True, yang_name="sample-rate-cpu", rest_name="sample-rate-cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 20']}), is_leaf=True, yang_name="sample-rate-cpu", rest_name="sample-rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sampling rate for CPU usage monitoring', u'hidden': u'debug', u'alt-name': u'sample-rate', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """sample_rate_cpu must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 20']}), is_leaf=True, yang_name="sample-rate-cpu", rest_name="sample-rate-cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 20']}), is_leaf=True, yang_name="sample-rate-cpu", rest_name="sample-rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sampling rate for CPU usage monitoring', u'hidden': u'debug', u'alt-name': u'sample-rate', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)""",
         })
 
     self.__sample_rate_cpu = t
@@ -217,7 +217,7 @@ class cpu(PybindBase):
       self._set()
 
   def _unset_sample_rate_cpu(self):
-    self.__sample_rate_cpu = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 20']}), is_leaf=True, yang_name="sample-rate-cpu", rest_name="sample-rate-cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
+    self.__sample_rate_cpu = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 20']}), is_leaf=True, yang_name="sample-rate-cpu", rest_name="sample-rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sampling rate for CPU usage monitoring', u'hidden': u'debug', u'alt-name': u'sample-rate', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
 
 
   def _get_logging_rate_cpu(self):
@@ -237,12 +237,12 @@ class cpu(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'20 .. 60']}), is_leaf=True, yang_name="logging-rate-cpu", rest_name="logging-rate-cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'20 .. 60']}), is_leaf=True, yang_name="logging-rate-cpu", rest_name="logging-rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging rate for CPU usage monitoring', u'hidden': u'debug', u'alt-name': u'logging-rate', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """logging_rate_cpu must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'20 .. 60']}), is_leaf=True, yang_name="logging-rate-cpu", rest_name="logging-rate-cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'20 .. 60']}), is_leaf=True, yang_name="logging-rate-cpu", rest_name="logging-rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging rate for CPU usage monitoring', u'hidden': u'debug', u'alt-name': u'logging-rate', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)""",
         })
 
     self.__logging_rate_cpu = t
@@ -250,7 +250,7 @@ class cpu(PybindBase):
       self._set()
 
   def _unset_logging_rate_cpu(self):
-    self.__logging_rate_cpu = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'20 .. 60']}), is_leaf=True, yang_name="logging-rate-cpu", rest_name="logging-rate-cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
+    self.__logging_rate_cpu = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'20 .. 60']}), is_leaf=True, yang_name="logging-rate-cpu", rest_name="logging-rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging rate for CPU usage monitoring', u'hidden': u'debug', u'alt-name': u'logging-rate', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
 
 
   def _get_grace_period_cpu(self):
@@ -270,12 +270,12 @@ class cpu(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 720']}), is_leaf=True, yang_name="grace-period-cpu", rest_name="grace-period-cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 720']}), is_leaf=True, yang_name="grace-period-cpu", rest_name="grace-period", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Grace period after CPU usage threshold exceeded', u'hidden': u'debug', u'alt-name': u'grace-period', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """grace_period_cpu must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 720']}), is_leaf=True, yang_name="grace-period-cpu", rest_name="grace-period-cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 720']}), is_leaf=True, yang_name="grace-period-cpu", rest_name="grace-period", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Grace period after CPU usage threshold exceeded', u'hidden': u'debug', u'alt-name': u'grace-period', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)""",
         })
 
     self.__grace_period_cpu = t
@@ -283,7 +283,7 @@ class cpu(PybindBase):
       self._set()
 
   def _unset_grace_period_cpu(self):
-    self.__grace_period_cpu = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 720']}), is_leaf=True, yang_name="grace-period-cpu", rest_name="grace-period-cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
+    self.__grace_period_cpu = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 720']}), is_leaf=True, yang_name="grace-period-cpu", rest_name="grace-period", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Grace period after CPU usage threshold exceeded', u'hidden': u'debug', u'alt-name': u'grace-period', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
 
 
   def _get_offset_cpu(self):
@@ -303,12 +303,12 @@ class cpu(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 70']}), is_leaf=True, yang_name="offset-cpu", rest_name="offset-cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 70']}), is_leaf=True, yang_name="offset-cpu", rest_name="thresh-offset", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Offset to CPU threshold for testing', u'hidden': u'debug', u'alt-name': u'thresh-offset', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """offset_cpu must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 70']}), is_leaf=True, yang_name="offset-cpu", rest_name="offset-cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 70']}), is_leaf=True, yang_name="offset-cpu", rest_name="thresh-offset", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Offset to CPU threshold for testing', u'hidden': u'debug', u'alt-name': u'thresh-offset', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)""",
         })
 
     self.__offset_cpu = t
@@ -316,7 +316,7 @@ class cpu(PybindBase):
       self._set()
 
   def _unset_offset_cpu(self):
-    self.__offset_cpu = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 70']}), is_leaf=True, yang_name="offset-cpu", rest_name="offset-cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
+    self.__offset_cpu = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 70']}), is_leaf=True, yang_name="offset-cpu", rest_name="thresh-offset", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Offset to CPU threshold for testing', u'hidden': u'debug', u'alt-name': u'thresh-offset', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='uint32', is_config=True)
 
   enable_cpu = __builtin__.property(_get_enable_cpu, _set_enable_cpu)
   threshold_cpu = __builtin__.property(_get_threshold_cpu, _set_threshold_cpu)

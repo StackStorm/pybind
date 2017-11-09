@@ -45,7 +45,7 @@ class cluster(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__management = YANGDynClass(base=management.management, is_container='container', presence=False, yang_name="management", rest_name="management", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='container', is_config=True)
+    self.__management = YANGDynClass(base=management.management, is_container='container', presence=False, yang_name="management", rest_name="management", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Cluster Management virtual IP Configuration', u'cli-incomplete-no': None}}, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class cluster(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'mgmt-cluster', u'cluster']
+      return [u'cluster']
 
   def _get_management(self):
     """
@@ -100,12 +100,12 @@ class cluster(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=management.management, is_container='container', presence=False, yang_name="management", rest_name="management", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=management.management, is_container='container', presence=False, yang_name="management", rest_name="management", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Cluster Management virtual IP Configuration', u'cli-incomplete-no': None}}, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """management must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=management.management, is_container='container', presence=False, yang_name="management", rest_name="management", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=management.management, is_container='container', presence=False, yang_name="management", rest_name="management", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Cluster Management virtual IP Configuration', u'cli-incomplete-no': None}}, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='container', is_config=True)""",
         })
 
     self.__management = t
@@ -113,7 +113,7 @@ class cluster(PybindBase):
       self._set()
 
   def _unset_management(self):
-    self.__management = YANGDynClass(base=management.management, is_container='container', presence=False, yang_name="management", rest_name="management", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='container', is_config=True)
+    self.__management = YANGDynClass(base=management.management, is_container='container', presence=False, yang_name="management", rest_name="management", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Cluster Management virtual IP Configuration', u'cli-incomplete-no': None}}, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='container', is_config=True)
 
   management = __builtin__.property(_get_management, _set_management)
 

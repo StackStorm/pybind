@@ -53,13 +53,13 @@ class ptp_state(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__clock = YANGDynClass(base=clock.clock, is_container='container', presence=False, yang_name="clock", rest_name="clock", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
-    self.__brief = YANGDynClass(base=brief.brief, is_container='container', presence=False, yang_name="brief", rest_name="brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
-    self.__time_property = YANGDynClass(base=time_property.time_property, is_container='container', presence=False, yang_name="time-property", rest_name="time-property", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
-    self.__parent_port_detail = YANGDynClass(base=parent_port_detail.parent_port_detail, is_container='container', presence=False, yang_name="parent-port-detail", rest_name="parent-port-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
-    self.__interfaces_detail = YANGDynClass(base=YANGListType("interface_key",interfaces_detail.interfaces_detail, yang_name="interfaces-detail", rest_name="interfaces-detail", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-key', extensions=None), is_container='list', yang_name="interfaces-detail", rest_name="interfaces-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='list', is_config=False)
-    self.__clock_foreign_masters = YANGDynClass(base=clock_foreign_masters.clock_foreign_masters, is_container='container', presence=False, yang_name="clock-foreign-masters", rest_name="clock-foreign-masters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
-    self.__corrections = YANGDynClass(base=corrections.corrections, is_container='container', presence=False, yang_name="corrections", rest_name="corrections", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
+    self.__clock = YANGDynClass(base=clock.clock, is_container='container', presence=False, yang_name="clock", rest_name="clock", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-clock', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
+    self.__brief = YANGDynClass(base=brief.brief, is_container='container', presence=False, yang_name="brief", rest_name="brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-brief', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
+    self.__time_property = YANGDynClass(base=time_property.time_property, is_container='container', presence=False, yang_name="time-property", rest_name="time-property", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-time-property', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
+    self.__parent_port_detail = YANGDynClass(base=parent_port_detail.parent_port_detail, is_container='container', presence=False, yang_name="parent-port-detail", rest_name="parent-port-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-parent-port-detail', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
+    self.__interfaces_detail = YANGDynClass(base=YANGListType("interface_key",interfaces_detail.interfaces_detail, yang_name="interfaces-detail", rest_name="interfaces-detail", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-key', extensions={u'tailf-common': {u'callpoint': u'ptp-interfaces-detail', u'cli-suppress-show-path': None}}), is_container='list', yang_name="interfaces-detail", rest_name="interfaces-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-interfaces-detail', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='list', is_config=False)
+    self.__clock_foreign_masters = YANGDynClass(base=clock_foreign_masters.clock_foreign_masters, is_container='container', presence=False, yang_name="clock-foreign-masters", rest_name="clock-foreign-masters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-clock-foreign-masters', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
+    self.__corrections = YANGDynClass(base=corrections.corrections, is_container='container', presence=False, yang_name="corrections", rest_name="corrections", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-corrections', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -114,12 +114,12 @@ class ptp_state(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=brief.brief, is_container='container', presence=False, yang_name="brief", rest_name="brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=brief.brief, is_container='container', presence=False, yang_name="brief", rest_name="brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-brief', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """brief must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=brief.brief, is_container='container', presence=False, yang_name="brief", rest_name="brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=brief.brief, is_container='container', presence=False, yang_name="brief", rest_name="brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-brief', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)""",
         })
 
     self.__brief = t
@@ -127,7 +127,7 @@ class ptp_state(PybindBase):
       self._set()
 
   def _unset_brief(self):
-    self.__brief = YANGDynClass(base=brief.brief, is_container='container', presence=False, yang_name="brief", rest_name="brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
+    self.__brief = YANGDynClass(base=brief.brief, is_container='container', presence=False, yang_name="brief", rest_name="brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-brief', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
 
 
   def _get_clock(self):
@@ -147,12 +147,12 @@ class ptp_state(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=clock.clock, is_container='container', presence=False, yang_name="clock", rest_name="clock", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=clock.clock, is_container='container', presence=False, yang_name="clock", rest_name="clock", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-clock', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """clock must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=clock.clock, is_container='container', presence=False, yang_name="clock", rest_name="clock", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=clock.clock, is_container='container', presence=False, yang_name="clock", rest_name="clock", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-clock', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)""",
         })
 
     self.__clock = t
@@ -160,7 +160,7 @@ class ptp_state(PybindBase):
       self._set()
 
   def _unset_clock(self):
-    self.__clock = YANGDynClass(base=clock.clock, is_container='container', presence=False, yang_name="clock", rest_name="clock", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
+    self.__clock = YANGDynClass(base=clock.clock, is_container='container', presence=False, yang_name="clock", rest_name="clock", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-clock', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
 
 
   def _get_clock_foreign_masters(self):
@@ -180,12 +180,12 @@ class ptp_state(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=clock_foreign_masters.clock_foreign_masters, is_container='container', presence=False, yang_name="clock-foreign-masters", rest_name="clock-foreign-masters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=clock_foreign_masters.clock_foreign_masters, is_container='container', presence=False, yang_name="clock-foreign-masters", rest_name="clock-foreign-masters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-clock-foreign-masters', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """clock_foreign_masters must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=clock_foreign_masters.clock_foreign_masters, is_container='container', presence=False, yang_name="clock-foreign-masters", rest_name="clock-foreign-masters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=clock_foreign_masters.clock_foreign_masters, is_container='container', presence=False, yang_name="clock-foreign-masters", rest_name="clock-foreign-masters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-clock-foreign-masters', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)""",
         })
 
     self.__clock_foreign_masters = t
@@ -193,7 +193,7 @@ class ptp_state(PybindBase):
       self._set()
 
   def _unset_clock_foreign_masters(self):
-    self.__clock_foreign_masters = YANGDynClass(base=clock_foreign_masters.clock_foreign_masters, is_container='container', presence=False, yang_name="clock-foreign-masters", rest_name="clock-foreign-masters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
+    self.__clock_foreign_masters = YANGDynClass(base=clock_foreign_masters.clock_foreign_masters, is_container='container', presence=False, yang_name="clock-foreign-masters", rest_name="clock-foreign-masters", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-clock-foreign-masters', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
 
 
   def _get_corrections(self):
@@ -213,12 +213,12 @@ class ptp_state(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=corrections.corrections, is_container='container', presence=False, yang_name="corrections", rest_name="corrections", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=corrections.corrections, is_container='container', presence=False, yang_name="corrections", rest_name="corrections", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-corrections', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """corrections must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=corrections.corrections, is_container='container', presence=False, yang_name="corrections", rest_name="corrections", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=corrections.corrections, is_container='container', presence=False, yang_name="corrections", rest_name="corrections", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-corrections', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)""",
         })
 
     self.__corrections = t
@@ -226,7 +226,7 @@ class ptp_state(PybindBase):
       self._set()
 
   def _unset_corrections(self):
-    self.__corrections = YANGDynClass(base=corrections.corrections, is_container='container', presence=False, yang_name="corrections", rest_name="corrections", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
+    self.__corrections = YANGDynClass(base=corrections.corrections, is_container='container', presence=False, yang_name="corrections", rest_name="corrections", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-corrections', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
 
 
   def _get_parent_port_detail(self):
@@ -246,12 +246,12 @@ class ptp_state(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=parent_port_detail.parent_port_detail, is_container='container', presence=False, yang_name="parent-port-detail", rest_name="parent-port-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=parent_port_detail.parent_port_detail, is_container='container', presence=False, yang_name="parent-port-detail", rest_name="parent-port-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-parent-port-detail', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """parent_port_detail must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=parent_port_detail.parent_port_detail, is_container='container', presence=False, yang_name="parent-port-detail", rest_name="parent-port-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=parent_port_detail.parent_port_detail, is_container='container', presence=False, yang_name="parent-port-detail", rest_name="parent-port-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-parent-port-detail', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)""",
         })
 
     self.__parent_port_detail = t
@@ -259,7 +259,7 @@ class ptp_state(PybindBase):
       self._set()
 
   def _unset_parent_port_detail(self):
-    self.__parent_port_detail = YANGDynClass(base=parent_port_detail.parent_port_detail, is_container='container', presence=False, yang_name="parent-port-detail", rest_name="parent-port-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
+    self.__parent_port_detail = YANGDynClass(base=parent_port_detail.parent_port_detail, is_container='container', presence=False, yang_name="parent-port-detail", rest_name="parent-port-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-parent-port-detail', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
 
 
   def _get_time_property(self):
@@ -279,12 +279,12 @@ class ptp_state(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=time_property.time_property, is_container='container', presence=False, yang_name="time-property", rest_name="time-property", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=time_property.time_property, is_container='container', presence=False, yang_name="time-property", rest_name="time-property", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-time-property', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """time_property must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=time_property.time_property, is_container='container', presence=False, yang_name="time-property", rest_name="time-property", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=time_property.time_property, is_container='container', presence=False, yang_name="time-property", rest_name="time-property", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-time-property', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)""",
         })
 
     self.__time_property = t
@@ -292,7 +292,7 @@ class ptp_state(PybindBase):
       self._set()
 
   def _unset_time_property(self):
-    self.__time_property = YANGDynClass(base=time_property.time_property, is_container='container', presence=False, yang_name="time-property", rest_name="time-property", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
+    self.__time_property = YANGDynClass(base=time_property.time_property, is_container='container', presence=False, yang_name="time-property", rest_name="time-property", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-time-property', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
 
 
   def _get_interfaces_detail(self):
@@ -312,12 +312,12 @@ class ptp_state(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("interface_key",interfaces_detail.interfaces_detail, yang_name="interfaces-detail", rest_name="interfaces-detail", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-key', extensions=None), is_container='list', yang_name="interfaces-detail", rest_name="interfaces-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("interface_key",interfaces_detail.interfaces_detail, yang_name="interfaces-detail", rest_name="interfaces-detail", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-key', extensions={u'tailf-common': {u'callpoint': u'ptp-interfaces-detail', u'cli-suppress-show-path': None}}), is_container='list', yang_name="interfaces-detail", rest_name="interfaces-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-interfaces-detail', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """interfaces_detail must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("interface_key",interfaces_detail.interfaces_detail, yang_name="interfaces-detail", rest_name="interfaces-detail", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-key', extensions=None), is_container='list', yang_name="interfaces-detail", rest_name="interfaces-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("interface_key",interfaces_detail.interfaces_detail, yang_name="interfaces-detail", rest_name="interfaces-detail", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-key', extensions={u'tailf-common': {u'callpoint': u'ptp-interfaces-detail', u'cli-suppress-show-path': None}}), is_container='list', yang_name="interfaces-detail", rest_name="interfaces-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-interfaces-detail', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='list', is_config=False)""",
         })
 
     self.__interfaces_detail = t
@@ -325,7 +325,7 @@ class ptp_state(PybindBase):
       self._set()
 
   def _unset_interfaces_detail(self):
-    self.__interfaces_detail = YANGDynClass(base=YANGListType("interface_key",interfaces_detail.interfaces_detail, yang_name="interfaces-detail", rest_name="interfaces-detail", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-key', extensions=None), is_container='list', yang_name="interfaces-detail", rest_name="interfaces-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='list', is_config=False)
+    self.__interfaces_detail = YANGDynClass(base=YANGListType("interface_key",interfaces_detail.interfaces_detail, yang_name="interfaces-detail", rest_name="interfaces-detail", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='interface-key', extensions={u'tailf-common': {u'callpoint': u'ptp-interfaces-detail', u'cli-suppress-show-path': None}}), is_container='list', yang_name="interfaces-detail", rest_name="interfaces-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-interfaces-detail', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='list', is_config=False)
 
   brief = __builtin__.property(_get_brief)
   clock = __builtin__.property(_get_clock)

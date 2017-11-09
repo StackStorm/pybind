@@ -44,11 +44,11 @@ class optional_tlv(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__adv_tlv_system_description = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="adv-tlv-system-description", rest_name="adv-tlv-system-description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
-    self.__port_description = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="port-description", rest_name="port-description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
-    self.__adv_tlv_system_name = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="adv-tlv-system-name", rest_name="adv-tlv-system-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
-    self.__management_address = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="management-address", rest_name="management-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
-    self.__system_capabilities = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="system-capabilities", rest_name="system-capabilities", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
+    self.__adv_tlv_system_description = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="adv-tlv-system-description", rest_name="system-description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'System Description', u'cli-run-template': u'$(/protocol/lldp/advertise/optional-tlv/adv-tlv-system-description?$(.?\\r:no advertise optional-tlv system-description\n):$(.?advertise optional-tlv system-description\n:\\r))', u'alt-name': u'system-description'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
+    self.__port_description = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="port-description", rest_name="port-description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Port-Description TLV', u'cli-run-template': u'$(/protocol/lldp/advertise/optional-tlv/port-description?$(.?\\r:no advertise optional-tlv port-description\n):$(.?advertise optional-tlv port-description\n:\\r))'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
+    self.__adv_tlv_system_name = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="adv-tlv-system-name", rest_name="system-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'System Name TLV', u'cli-run-template': u'$(/protocol/lldp/advertise/optional-tlv/adv-tlv-system-name?$(.?\\r:no advertise optional-tlv system-name\n):$(.?advertise optional-tlv system-name\n:\\r))', u'alt-name': u'system-name'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
+    self.__management_address = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="management-address", rest_name="management-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Management Address TLV', u'cli-run-template': u'$(/protocol/lldp/advertise/optional-tlv/management-address?$(.?\\r:no advertise optional-tlv management-address\n):$(.?advertise optional-tlv management-address\n:\\r))'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
+    self.__system_capabilities = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="system-capabilities", rest_name="system-capabilities", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'System Capabilities TLV', u'cli-run-template': u'$(/protocol/lldp/advertise/optional-tlv/system-capabilities?$(.?\\r:no advertise optional-tlv system-capabilities\n):$(.?advertise optional-tlv system-capabilities\n:\\r))'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -103,12 +103,12 @@ class optional_tlv(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="management-address", rest_name="management-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="management-address", rest_name="management-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Management Address TLV', u'cli-run-template': u'$(/protocol/lldp/advertise/optional-tlv/management-address?$(.?\\r:no advertise optional-tlv management-address\n):$(.?advertise optional-tlv management-address\n:\\r))'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """management_address must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="management-address", rest_name="management-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="management-address", rest_name="management-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Management Address TLV', u'cli-run-template': u'$(/protocol/lldp/advertise/optional-tlv/management-address?$(.?\\r:no advertise optional-tlv management-address\n):$(.?advertise optional-tlv management-address\n:\\r))'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)""",
         })
 
     self.__management_address = t
@@ -116,7 +116,7 @@ class optional_tlv(PybindBase):
       self._set()
 
   def _unset_management_address(self):
-    self.__management_address = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="management-address", rest_name="management-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
+    self.__management_address = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="management-address", rest_name="management-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Management Address TLV', u'cli-run-template': u'$(/protocol/lldp/advertise/optional-tlv/management-address?$(.?\\r:no advertise optional-tlv management-address\n):$(.?advertise optional-tlv management-address\n:\\r))'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
 
 
   def _get_port_description(self):
@@ -136,12 +136,12 @@ class optional_tlv(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="port-description", rest_name="port-description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="port-description", rest_name="port-description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Port-Description TLV', u'cli-run-template': u'$(/protocol/lldp/advertise/optional-tlv/port-description?$(.?\\r:no advertise optional-tlv port-description\n):$(.?advertise optional-tlv port-description\n:\\r))'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """port_description must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="port-description", rest_name="port-description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="port-description", rest_name="port-description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Port-Description TLV', u'cli-run-template': u'$(/protocol/lldp/advertise/optional-tlv/port-description?$(.?\\r:no advertise optional-tlv port-description\n):$(.?advertise optional-tlv port-description\n:\\r))'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)""",
         })
 
     self.__port_description = t
@@ -149,7 +149,7 @@ class optional_tlv(PybindBase):
       self._set()
 
   def _unset_port_description(self):
-    self.__port_description = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="port-description", rest_name="port-description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
+    self.__port_description = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="port-description", rest_name="port-description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Port-Description TLV', u'cli-run-template': u'$(/protocol/lldp/advertise/optional-tlv/port-description?$(.?\\r:no advertise optional-tlv port-description\n):$(.?advertise optional-tlv port-description\n:\\r))'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
 
 
   def _get_system_capabilities(self):
@@ -169,12 +169,12 @@ class optional_tlv(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="system-capabilities", rest_name="system-capabilities", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="system-capabilities", rest_name="system-capabilities", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'System Capabilities TLV', u'cli-run-template': u'$(/protocol/lldp/advertise/optional-tlv/system-capabilities?$(.?\\r:no advertise optional-tlv system-capabilities\n):$(.?advertise optional-tlv system-capabilities\n:\\r))'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """system_capabilities must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="system-capabilities", rest_name="system-capabilities", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="system-capabilities", rest_name="system-capabilities", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'System Capabilities TLV', u'cli-run-template': u'$(/protocol/lldp/advertise/optional-tlv/system-capabilities?$(.?\\r:no advertise optional-tlv system-capabilities\n):$(.?advertise optional-tlv system-capabilities\n:\\r))'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)""",
         })
 
     self.__system_capabilities = t
@@ -182,7 +182,7 @@ class optional_tlv(PybindBase):
       self._set()
 
   def _unset_system_capabilities(self):
-    self.__system_capabilities = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="system-capabilities", rest_name="system-capabilities", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
+    self.__system_capabilities = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="system-capabilities", rest_name="system-capabilities", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'System Capabilities TLV', u'cli-run-template': u'$(/protocol/lldp/advertise/optional-tlv/system-capabilities?$(.?\\r:no advertise optional-tlv system-capabilities\n):$(.?advertise optional-tlv system-capabilities\n:\\r))'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
 
 
   def _get_adv_tlv_system_description(self):
@@ -202,12 +202,12 @@ class optional_tlv(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="adv-tlv-system-description", rest_name="adv-tlv-system-description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="adv-tlv-system-description", rest_name="system-description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'System Description', u'cli-run-template': u'$(/protocol/lldp/advertise/optional-tlv/adv-tlv-system-description?$(.?\\r:no advertise optional-tlv system-description\n):$(.?advertise optional-tlv system-description\n:\\r))', u'alt-name': u'system-description'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """adv_tlv_system_description must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="adv-tlv-system-description", rest_name="adv-tlv-system-description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="adv-tlv-system-description", rest_name="system-description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'System Description', u'cli-run-template': u'$(/protocol/lldp/advertise/optional-tlv/adv-tlv-system-description?$(.?\\r:no advertise optional-tlv system-description\n):$(.?advertise optional-tlv system-description\n:\\r))', u'alt-name': u'system-description'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)""",
         })
 
     self.__adv_tlv_system_description = t
@@ -215,7 +215,7 @@ class optional_tlv(PybindBase):
       self._set()
 
   def _unset_adv_tlv_system_description(self):
-    self.__adv_tlv_system_description = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="adv-tlv-system-description", rest_name="adv-tlv-system-description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
+    self.__adv_tlv_system_description = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="adv-tlv-system-description", rest_name="system-description", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'System Description', u'cli-run-template': u'$(/protocol/lldp/advertise/optional-tlv/adv-tlv-system-description?$(.?\\r:no advertise optional-tlv system-description\n):$(.?advertise optional-tlv system-description\n:\\r))', u'alt-name': u'system-description'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
 
 
   def _get_adv_tlv_system_name(self):
@@ -235,12 +235,12 @@ class optional_tlv(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="adv-tlv-system-name", rest_name="adv-tlv-system-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="adv-tlv-system-name", rest_name="system-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'System Name TLV', u'cli-run-template': u'$(/protocol/lldp/advertise/optional-tlv/adv-tlv-system-name?$(.?\\r:no advertise optional-tlv system-name\n):$(.?advertise optional-tlv system-name\n:\\r))', u'alt-name': u'system-name'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """adv_tlv_system_name must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="adv-tlv-system-name", rest_name="adv-tlv-system-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="adv-tlv-system-name", rest_name="system-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'System Name TLV', u'cli-run-template': u'$(/protocol/lldp/advertise/optional-tlv/adv-tlv-system-name?$(.?\\r:no advertise optional-tlv system-name\n):$(.?advertise optional-tlv system-name\n:\\r))', u'alt-name': u'system-name'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)""",
         })
 
     self.__adv_tlv_system_name = t
@@ -248,7 +248,7 @@ class optional_tlv(PybindBase):
       self._set()
 
   def _unset_adv_tlv_system_name(self):
-    self.__adv_tlv_system_name = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="adv-tlv-system-name", rest_name="adv-tlv-system-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
+    self.__adv_tlv_system_name = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="adv-tlv-system-name", rest_name="system-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'System Name TLV', u'cli-run-template': u'$(/protocol/lldp/advertise/optional-tlv/adv-tlv-system-name?$(.?\\r:no advertise optional-tlv system-name\n):$(.?advertise optional-tlv system-name\n:\\r))', u'alt-name': u'system-name'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
 
   management_address = __builtin__.property(_get_management_address, _set_management_address)
   port_description = __builtin__.property(_get_port_description, _set_port_description)

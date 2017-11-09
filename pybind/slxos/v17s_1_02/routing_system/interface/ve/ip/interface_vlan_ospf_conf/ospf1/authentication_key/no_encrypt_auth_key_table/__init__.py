@@ -17,7 +17,7 @@ class no_encrypt_auth_key_table(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__no_encrypt_auth_key',)
 
   _yang_name = 'no-encrypt-auth-key-table'
-  _rest_name = 'no-encrypt-auth-key-table'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +44,7 @@ class no_encrypt_auth_key_table(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__no_encrypt_auth_key = YANGDynClass(base=unicode, is_leaf=True, yang_name="no-encrypt-auth-key", rest_name="no-encrypt-auth-key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='ospf-auth-psswd-string', is_config=True)
+    self.__no_encrypt_auth_key = YANGDynClass(base=unicode, is_leaf=True, yang_name="no-encrypt-auth-key", rest_name="no-encrypt-auth-key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'info': u'The OSPF password (key)'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='ospf-auth-psswd-string', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -80,7 +80,7 @@ class no_encrypt_auth_key_table(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'routing-system', u'interface', u've', u'ip', u'interface-vlan-ospf-conf', u'ospf1', u'authentication-key', u'no-encrypt-auth-key-table']
+      return [u'interface', u'Ve', u'ip', u'ospf', u'authentication-key']
 
   def _get_no_encrypt_auth_key(self):
     """
@@ -99,12 +99,12 @@ class no_encrypt_auth_key_table(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="no-encrypt-auth-key", rest_name="no-encrypt-auth-key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='ospf-auth-psswd-string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="no-encrypt-auth-key", rest_name="no-encrypt-auth-key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'info': u'The OSPF password (key)'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='ospf-auth-psswd-string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """no_encrypt_auth_key must be of a type compatible with ospf-auth-psswd-string""",
           'defined-type': "brocade-ospf:ospf-auth-psswd-string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="no-encrypt-auth-key", rest_name="no-encrypt-auth-key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='ospf-auth-psswd-string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="no-encrypt-auth-key", rest_name="no-encrypt-auth-key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'info': u'The OSPF password (key)'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='ospf-auth-psswd-string', is_config=True)""",
         })
 
     self.__no_encrypt_auth_key = t
@@ -112,7 +112,7 @@ class no_encrypt_auth_key_table(PybindBase):
       self._set()
 
   def _unset_no_encrypt_auth_key(self):
-    self.__no_encrypt_auth_key = YANGDynClass(base=unicode, is_leaf=True, yang_name="no-encrypt-auth-key", rest_name="no-encrypt-auth-key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='ospf-auth-psswd-string', is_config=True)
+    self.__no_encrypt_auth_key = YANGDynClass(base=unicode, is_leaf=True, yang_name="no-encrypt-auth-key", rest_name="no-encrypt-auth-key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'info': u'The OSPF password (key)'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='ospf-auth-psswd-string', is_config=True)
 
   no_encrypt_auth_key = __builtin__.property(_get_no_encrypt_auth_key, _set_no_encrypt_auth_key)
 

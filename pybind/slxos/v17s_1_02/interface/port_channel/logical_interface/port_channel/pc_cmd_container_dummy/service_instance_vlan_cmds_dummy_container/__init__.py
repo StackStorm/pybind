@@ -19,7 +19,7 @@ class service_instance_vlan_cmds_dummy_container(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__get_untagged_vlan_dummy','__tagged_outer_vlan',)
 
   _yang_name = 'service-instance-vlan-cmds-dummy-container'
-  _rest_name = 'service-instance-vlan-cmds-dummy-container'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -46,8 +46,8 @@ class service_instance_vlan_cmds_dummy_container(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__get_untagged_vlan_dummy = YANGDynClass(base=get_untagged_vlan_dummy.get_untagged_vlan_dummy, is_container='container', presence=False, yang_name="get-untagged-vlan-dummy", rest_name="get-untagged-vlan-dummy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
-    self.__tagged_outer_vlan = YANGDynClass(base=tagged_outer_vlan.tagged_outer_vlan, is_container='container', presence=False, yang_name="tagged-outer-vlan", rest_name="tagged-outer-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
+    self.__get_untagged_vlan_dummy = YANGDynClass(base=get_untagged_vlan_dummy.get_untagged_vlan_dummy, is_container='container', presence=False, yang_name="get-untagged-vlan-dummy", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
+    self.__tagged_outer_vlan = YANGDynClass(base=tagged_outer_vlan.tagged_outer_vlan, is_container='container', presence=False, yang_name="tagged-outer-vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Outer VLAN for this logical interface', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'alt-name': u'vlan'}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -83,7 +83,7 @@ class service_instance_vlan_cmds_dummy_container(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface', u'port-channel', u'logical-interface', u'port-channel', u'pc-cmd-container-dummy', u'service-instance-vlan-cmds-dummy-container']
+      return [u'interface', u'Port-channel', u'logical-interface', u'port-channel']
 
   def _get_get_untagged_vlan_dummy(self):
     """
@@ -102,12 +102,12 @@ class service_instance_vlan_cmds_dummy_container(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=get_untagged_vlan_dummy.get_untagged_vlan_dummy, is_container='container', presence=False, yang_name="get-untagged-vlan-dummy", rest_name="get-untagged-vlan-dummy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=get_untagged_vlan_dummy.get_untagged_vlan_dummy, is_container='container', presence=False, yang_name="get-untagged-vlan-dummy", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_untagged_vlan_dummy must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=get_untagged_vlan_dummy.get_untagged_vlan_dummy, is_container='container', presence=False, yang_name="get-untagged-vlan-dummy", rest_name="get-untagged-vlan-dummy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_untagged_vlan_dummy.get_untagged_vlan_dummy, is_container='container', presence=False, yang_name="get-untagged-vlan-dummy", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)""",
         })
 
     self.__get_untagged_vlan_dummy = t
@@ -115,7 +115,7 @@ class service_instance_vlan_cmds_dummy_container(PybindBase):
       self._set()
 
   def _unset_get_untagged_vlan_dummy(self):
-    self.__get_untagged_vlan_dummy = YANGDynClass(base=get_untagged_vlan_dummy.get_untagged_vlan_dummy, is_container='container', presence=False, yang_name="get-untagged-vlan-dummy", rest_name="get-untagged-vlan-dummy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
+    self.__get_untagged_vlan_dummy = YANGDynClass(base=get_untagged_vlan_dummy.get_untagged_vlan_dummy, is_container='container', presence=False, yang_name="get-untagged-vlan-dummy", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
 
 
   def _get_tagged_outer_vlan(self):
@@ -135,12 +135,12 @@ class service_instance_vlan_cmds_dummy_container(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=tagged_outer_vlan.tagged_outer_vlan, is_container='container', presence=False, yang_name="tagged-outer-vlan", rest_name="tagged-outer-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=tagged_outer_vlan.tagged_outer_vlan, is_container='container', presence=False, yang_name="tagged-outer-vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Outer VLAN for this logical interface', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'alt-name': u'vlan'}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """tagged_outer_vlan must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=tagged_outer_vlan.tagged_outer_vlan, is_container='container', presence=False, yang_name="tagged-outer-vlan", rest_name="tagged-outer-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=tagged_outer_vlan.tagged_outer_vlan, is_container='container', presence=False, yang_name="tagged-outer-vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Outer VLAN for this logical interface', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'alt-name': u'vlan'}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)""",
         })
 
     self.__tagged_outer_vlan = t
@@ -148,7 +148,7 @@ class service_instance_vlan_cmds_dummy_container(PybindBase):
       self._set()
 
   def _unset_tagged_outer_vlan(self):
-    self.__tagged_outer_vlan = YANGDynClass(base=tagged_outer_vlan.tagged_outer_vlan, is_container='container', presence=False, yang_name="tagged-outer-vlan", rest_name="tagged-outer-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
+    self.__tagged_outer_vlan = YANGDynClass(base=tagged_outer_vlan.tagged_outer_vlan, is_container='container', presence=False, yang_name="tagged-outer-vlan", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Outer VLAN for this logical interface', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'alt-name': u'vlan'}}, namespace='urn:brocade.com:mgmt:brocade-lif', defining_module='brocade-lif', yang_type='container', is_config=True)
 
   get_untagged_vlan_dummy = __builtin__.property(_get_get_untagged_vlan_dummy, _set_get_untagged_vlan_dummy)
   tagged_outer_vlan = __builtin__.property(_get_tagged_outer_vlan, _set_tagged_outer_vlan)

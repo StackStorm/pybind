@@ -47,12 +47,12 @@ class ptp(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__sync_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'-4..2']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32)(-1), is_leaf=True, yang_name="sync-interval", rest_name="sync-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='int32', is_config=True)
-    self.__enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='empty', is_config=True)
-    self.__delay_request_min_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'-4..2']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32)(-1), is_leaf=True, yang_name="delay-request-min-interval", rest_name="delay-request-min-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='int32', is_config=True)
-    self.__announce_timeout = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'3..10']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(3), is_leaf=True, yang_name="announce-timeout", rest_name="announce-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='uint32', is_config=True)
-    self.__ptp_vlan = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4090']}), is_leaf=True, yang_name="ptp-vlan", rest_name="ptp-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='intf:vlan-type', is_config=True)
-    self.__announce_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..4']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="announce-interval", rest_name="announce-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='uint32', is_config=True)
+    self.__sync_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'-4..2']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32)(-1), is_leaf=True, yang_name="sync-interval", rest_name="sync-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interval between PTP synchronization messages.'}}, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='int32', is_config=True)
+    self.__enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable PTP protocol'}}, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='empty', is_config=True)
+    self.__delay_request_min_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'-4..2']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32)(-1), is_leaf=True, yang_name="delay-request-min-interval", rest_name="delay-request-min-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Minimal interval allowed between PTP Delay-Request messages.'}}, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='int32', is_config=True)
+    self.__announce_timeout = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'3..10']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(3), is_leaf=True, yang_name="announce-timeout", rest_name="announce-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Timeout between PTP announce messages.'}}, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='uint32', is_config=True)
+    self.__ptp_vlan = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4090']}), is_leaf=True, yang_name="ptp-vlan", rest_name="ptp-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NUMBER:1-8191;;Vlan number.'}}, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='intf:vlan-type', is_config=True)
+    self.__announce_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..4']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="announce-interval", rest_name="announce-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interval between PTP announce messages.'}}, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='uint32', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -88,7 +88,7 @@ class ptp(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface', u'port-channel', u'protocol', u'ptp']
+      return [u'interface', u'Port-channel', u'protocol', u'ptp']
 
   def _get_enable(self):
     """
@@ -115,12 +115,12 @@ configurations.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable PTP protocol'}}, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """enable must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable PTP protocol'}}, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='empty', is_config=True)""",
         })
 
     self.__enable = t
@@ -128,7 +128,7 @@ configurations.
       self._set()
 
   def _unset_enable(self):
-    self.__enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='empty', is_config=True)
+    self.__enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable PTP protocol'}}, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='empty', is_config=True)
 
 
   def _get_announce_interval(self):
@@ -152,12 +152,12 @@ configurations.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..4']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="announce-interval", rest_name="announce-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..4']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="announce-interval", rest_name="announce-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interval between PTP announce messages.'}}, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """announce_interval must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..4']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="announce-interval", rest_name="announce-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..4']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="announce-interval", rest_name="announce-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interval between PTP announce messages.'}}, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='uint32', is_config=True)""",
         })
 
     self.__announce_interval = t
@@ -165,7 +165,7 @@ configurations.
       self._set()
 
   def _unset_announce_interval(self):
-    self.__announce_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..4']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="announce-interval", rest_name="announce-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='uint32', is_config=True)
+    self.__announce_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..4']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="announce-interval", rest_name="announce-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interval between PTP announce messages.'}}, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='uint32', is_config=True)
 
 
   def _get_announce_timeout(self):
@@ -189,12 +189,12 @@ configurations.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'3..10']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(3), is_leaf=True, yang_name="announce-timeout", rest_name="announce-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'3..10']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(3), is_leaf=True, yang_name="announce-timeout", rest_name="announce-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Timeout between PTP announce messages.'}}, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """announce_timeout must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'3..10']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(3), is_leaf=True, yang_name="announce-timeout", rest_name="announce-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'3..10']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(3), is_leaf=True, yang_name="announce-timeout", rest_name="announce-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Timeout between PTP announce messages.'}}, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='uint32', is_config=True)""",
         })
 
     self.__announce_timeout = t
@@ -202,7 +202,7 @@ configurations.
       self._set()
 
   def _unset_announce_timeout(self):
-    self.__announce_timeout = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'3..10']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(3), is_leaf=True, yang_name="announce-timeout", rest_name="announce-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='uint32', is_config=True)
+    self.__announce_timeout = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'3..10']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(3), is_leaf=True, yang_name="announce-timeout", rest_name="announce-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Timeout between PTP announce messages.'}}, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='uint32', is_config=True)
 
 
   def _get_sync_interval(self):
@@ -226,12 +226,12 @@ configurations.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'-4..2']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32)(-1), is_leaf=True, yang_name="sync-interval", rest_name="sync-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='int32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'-4..2']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32)(-1), is_leaf=True, yang_name="sync-interval", rest_name="sync-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interval between PTP synchronization messages.'}}, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='int32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """sync_interval must be of a type compatible with int32""",
           'defined-type': "int32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'-4..2']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32)(-1), is_leaf=True, yang_name="sync-interval", rest_name="sync-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='int32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'-4..2']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32)(-1), is_leaf=True, yang_name="sync-interval", rest_name="sync-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interval between PTP synchronization messages.'}}, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='int32', is_config=True)""",
         })
 
     self.__sync_interval = t
@@ -239,7 +239,7 @@ configurations.
       self._set()
 
   def _unset_sync_interval(self):
-    self.__sync_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'-4..2']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32)(-1), is_leaf=True, yang_name="sync-interval", rest_name="sync-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='int32', is_config=True)
+    self.__sync_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'-4..2']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32)(-1), is_leaf=True, yang_name="sync-interval", rest_name="sync-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interval between PTP synchronization messages.'}}, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='int32', is_config=True)
 
 
   def _get_delay_request_min_interval(self):
@@ -263,12 +263,12 @@ configurations.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'-4..2']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32)(-1), is_leaf=True, yang_name="delay-request-min-interval", rest_name="delay-request-min-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='int32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'-4..2']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32)(-1), is_leaf=True, yang_name="delay-request-min-interval", rest_name="delay-request-min-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Minimal interval allowed between PTP Delay-Request messages.'}}, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='int32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """delay_request_min_interval must be of a type compatible with int32""",
           'defined-type': "int32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'-4..2']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32)(-1), is_leaf=True, yang_name="delay-request-min-interval", rest_name="delay-request-min-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='int32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'-4..2']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32)(-1), is_leaf=True, yang_name="delay-request-min-interval", rest_name="delay-request-min-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Minimal interval allowed between PTP Delay-Request messages.'}}, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='int32', is_config=True)""",
         })
 
     self.__delay_request_min_interval = t
@@ -276,7 +276,7 @@ configurations.
       self._set()
 
   def _unset_delay_request_min_interval(self):
-    self.__delay_request_min_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'-4..2']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32)(-1), is_leaf=True, yang_name="delay-request-min-interval", rest_name="delay-request-min-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='int32', is_config=True)
+    self.__delay_request_min_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32), restriction_dict={'range': [u'-4..2']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['-2147483648..2147483647']}, int_size=32)(-1), is_leaf=True, yang_name="delay-request-min-interval", rest_name="delay-request-min-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Minimal interval allowed between PTP Delay-Request messages.'}}, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='int32', is_config=True)
 
 
   def _get_ptp_vlan(self):
@@ -300,12 +300,12 @@ configurations.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4090']}), is_leaf=True, yang_name="ptp-vlan", rest_name="ptp-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='intf:vlan-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4090']}), is_leaf=True, yang_name="ptp-vlan", rest_name="ptp-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NUMBER:1-8191;;Vlan number.'}}, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='intf:vlan-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ptp_vlan must be of a type compatible with intf:vlan-type""",
           'defined-type': "intf:vlan-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4090']}), is_leaf=True, yang_name="ptp-vlan", rest_name="ptp-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='intf:vlan-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4090']}), is_leaf=True, yang_name="ptp-vlan", rest_name="ptp-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NUMBER:1-8191;;Vlan number.'}}, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='intf:vlan-type', is_config=True)""",
         })
 
     self.__ptp_vlan = t
@@ -313,7 +313,7 @@ configurations.
       self._set()
 
   def _unset_ptp_vlan(self):
-    self.__ptp_vlan = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4090']}), is_leaf=True, yang_name="ptp-vlan", rest_name="ptp-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='intf:vlan-type', is_config=True)
+    self.__ptp_vlan = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4090']}), is_leaf=True, yang_name="ptp-vlan", rest_name="ptp-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NUMBER:1-8191;;Vlan number.'}}, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='intf:vlan-type', is_config=True)
 
   enable = __builtin__.property(_get_enable, _set_enable)
   announce_interval = __builtin__.property(_get_announce_interval, _set_announce_interval)

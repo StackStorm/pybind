@@ -18,7 +18,7 @@ class clear_logging(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__clear',)
 
   _yang_name = 'clear-logging'
-  _rest_name = 'clear-logging'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -81,7 +81,7 @@ class clear_logging(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'rule', u'command', u'clear-logging']
+      return [u'rule', u'command']
 
   def _get_clear(self):
     """

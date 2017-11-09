@@ -18,7 +18,7 @@ class evpn_config(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__evpn',)
 
   _yang_name = 'evpn-config'
-  _rest_name = 'evpn-config'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -45,7 +45,7 @@ class evpn_config(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__evpn = YANGDynClass(base=evpn.evpn, is_container='container', presence=False, yang_name="evpn", rest_name="evpn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__evpn = YANGDynClass(base=evpn.evpn, is_container='container', presence=False, yang_name="evpn", rest_name="evpn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'EVPN configuration.', u'sort-priority': u'80'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class evpn_config(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'routing-system', u'evpn-config']
+      return []
 
   def _get_evpn(self):
     """
@@ -100,12 +100,12 @@ class evpn_config(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=evpn.evpn, is_container='container', presence=False, yang_name="evpn", rest_name="evpn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=evpn.evpn, is_container='container', presence=False, yang_name="evpn", rest_name="evpn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'EVPN configuration.', u'sort-priority': u'80'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """evpn must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=evpn.evpn, is_container='container', presence=False, yang_name="evpn", rest_name="evpn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=evpn.evpn, is_container='container', presence=False, yang_name="evpn", rest_name="evpn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'EVPN configuration.', u'sort-priority': u'80'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__evpn = t
@@ -113,7 +113,7 @@ class evpn_config(PybindBase):
       self._set()
 
   def _unset_evpn(self):
-    self.__evpn = YANGDynClass(base=evpn.evpn, is_container='container', presence=False, yang_name="evpn", rest_name="evpn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__evpn = YANGDynClass(base=evpn.evpn, is_container='container', presence=False, yang_name="evpn", rest_name="evpn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'EVPN configuration.', u'sort-priority': u'80'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
   evpn = __builtin__.property(_get_evpn, _set_evpn)
 

@@ -45,7 +45,7 @@ class relay(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__servers = YANGDynClass(base=YANGListType("relay_ip_addr",servers.servers, yang_name="servers", rest_name="servers", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='relay-ip-addr', extensions=None), is_container='list', yang_name="servers", rest_name="servers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-dhcpv6', defining_module='brocade-dhcpv6', yang_type='list', is_config=True)
+    self.__servers = YANGDynClass(base=YANGListType("relay_ip_addr",servers.servers, yang_name="servers", rest_name="servers", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='relay-ip-addr', extensions={u'tailf-common': {u'info': u'DHCPv6 Server IP Address', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-full-no': None}}), is_container='list', yang_name="servers", rest_name="servers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'DHCPv6 Server IP Address', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcpv6', defining_module='brocade-dhcpv6', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class relay(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface', u'ethernet', u'ipv6', u'interface-phy-dhcp-conf', u'dhcp', u'relay']
+      return [u'interface', u'Ethernet', u'ipv6', u'dhcp', u'relay']
 
   def _get_servers(self):
     """
@@ -100,12 +100,12 @@ class relay(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("relay_ip_addr",servers.servers, yang_name="servers", rest_name="servers", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='relay-ip-addr', extensions=None), is_container='list', yang_name="servers", rest_name="servers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-dhcpv6', defining_module='brocade-dhcpv6', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("relay_ip_addr",servers.servers, yang_name="servers", rest_name="servers", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='relay-ip-addr', extensions={u'tailf-common': {u'info': u'DHCPv6 Server IP Address', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-full-no': None}}), is_container='list', yang_name="servers", rest_name="servers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'DHCPv6 Server IP Address', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcpv6', defining_module='brocade-dhcpv6', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """servers must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("relay_ip_addr",servers.servers, yang_name="servers", rest_name="servers", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='relay-ip-addr', extensions=None), is_container='list', yang_name="servers", rest_name="servers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-dhcpv6', defining_module='brocade-dhcpv6', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("relay_ip_addr",servers.servers, yang_name="servers", rest_name="servers", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='relay-ip-addr', extensions={u'tailf-common': {u'info': u'DHCPv6 Server IP Address', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-full-no': None}}), is_container='list', yang_name="servers", rest_name="servers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'DHCPv6 Server IP Address', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcpv6', defining_module='brocade-dhcpv6', yang_type='list', is_config=True)""",
         })
 
     self.__servers = t
@@ -113,7 +113,7 @@ class relay(PybindBase):
       self._set()
 
   def _unset_servers(self):
-    self.__servers = YANGDynClass(base=YANGListType("relay_ip_addr",servers.servers, yang_name="servers", rest_name="servers", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='relay-ip-addr', extensions=None), is_container='list', yang_name="servers", rest_name="servers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-dhcpv6', defining_module='brocade-dhcpv6', yang_type='list', is_config=True)
+    self.__servers = YANGDynClass(base=YANGListType("relay_ip_addr",servers.servers, yang_name="servers", rest_name="servers", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='relay-ip-addr', extensions={u'tailf-common': {u'info': u'DHCPv6 Server IP Address', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-full-no': None}}), is_container='list', yang_name="servers", rest_name="servers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'DHCPv6 Server IP Address', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcpv6', defining_module='brocade-dhcpv6', yang_type='list', is_config=True)
 
   servers = __builtin__.property(_get_servers, _set_servers)
 

@@ -48,8 +48,8 @@ class extcommunity(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__rt = YANGDynClass(base=rt.rt, is_container='container', presence=False, yang_name="rt", rest_name="rt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
-    self.__soo = YANGDynClass(base=soo.soo, is_container='container', presence=False, yang_name="soo", rest_name="soo", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
+    self.__rt = YANGDynClass(base=rt.rt, is_container='container', presence=False, yang_name="rt", rest_name="rt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route Target extended community'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
+    self.__soo = YANGDynClass(base=soo.soo, is_container='container', presence=False, yang_name="soo", rest_name="soo", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Site-of-Origin extended community'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -85,7 +85,7 @@ class extcommunity(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'routing-system', u'route-map', u'content', u'set', u'extcommunity']
+      return [u'route-map', u'set', u'extcommunity']
 
   def _get_rt(self):
     """
@@ -108,12 +108,12 @@ class extcommunity(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=rt.rt, is_container='container', presence=False, yang_name="rt", rest_name="rt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=rt.rt, is_container='container', presence=False, yang_name="rt", rest_name="rt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route Target extended community'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rt must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=rt.rt, is_container='container', presence=False, yang_name="rt", rest_name="rt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=rt.rt, is_container='container', presence=False, yang_name="rt", rest_name="rt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route Target extended community'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)""",
         })
 
     self.__rt = t
@@ -121,7 +121,7 @@ class extcommunity(PybindBase):
       self._set()
 
   def _unset_rt(self):
-    self.__rt = YANGDynClass(base=rt.rt, is_container='container', presence=False, yang_name="rt", rest_name="rt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
+    self.__rt = YANGDynClass(base=rt.rt, is_container='container', presence=False, yang_name="rt", rest_name="rt", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route Target extended community'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
 
 
   def _get_soo(self):
@@ -145,12 +145,12 @@ class extcommunity(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=soo.soo, is_container='container', presence=False, yang_name="soo", rest_name="soo", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=soo.soo, is_container='container', presence=False, yang_name="soo", rest_name="soo", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Site-of-Origin extended community'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """soo must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=soo.soo, is_container='container', presence=False, yang_name="soo", rest_name="soo", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=soo.soo, is_container='container', presence=False, yang_name="soo", rest_name="soo", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Site-of-Origin extended community'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)""",
         })
 
     self.__soo = t
@@ -158,7 +158,7 @@ class extcommunity(PybindBase):
       self._set()
 
   def _unset_soo(self):
-    self.__soo = YANGDynClass(base=soo.soo, is_container='container', presence=False, yang_name="soo", rest_name="soo", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
+    self.__soo = YANGDynClass(base=soo.soo, is_container='container', presence=False, yang_name="soo", rest_name="soo", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Site-of-Origin extended community'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='container', is_config=True)
 
   rt = __builtin__.property(_get_rt, _set_rt)
   soo = __builtin__.property(_get_soo, _set_soo)

@@ -18,7 +18,7 @@ class destination_console(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__logging',)
 
   _yang_name = 'destination_console'
-  _rest_name = 'destination_console'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -45,7 +45,7 @@ class destination_console(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__logging = YANGDynClass(base=logging.logging, is_container='container', presence=False, yang_name="logging", rest_name="logging", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+    self.__logging = YANGDynClass(base=logging.logging, is_container='container', presence=False, yang_name="logging", rest_name="logging", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging configuration: raslog'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class destination_console(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'destination_console']
+      return []
 
   def _get_logging(self):
     """
@@ -100,12 +100,12 @@ class destination_console(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=logging.logging, is_container='container', presence=False, yang_name="logging", rest_name="logging", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=logging.logging, is_container='container', presence=False, yang_name="logging", rest_name="logging", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging configuration: raslog'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """logging must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=logging.logging, is_container='container', presence=False, yang_name="logging", rest_name="logging", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=logging.logging, is_container='container', presence=False, yang_name="logging", rest_name="logging", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging configuration: raslog'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)""",
         })
 
     self.__logging = t
@@ -113,7 +113,7 @@ class destination_console(PybindBase):
       self._set()
 
   def _unset_logging(self):
-    self.__logging = YANGDynClass(base=logging.logging, is_container='container', presence=False, yang_name="logging", rest_name="logging", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+    self.__logging = YANGDynClass(base=logging.logging, is_container='container', presence=False, yang_name="logging", rest_name="logging", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Logging configuration: raslog'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
 
   logging = __builtin__.property(_get_logging, _set_logging)
 

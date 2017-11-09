@@ -44,9 +44,9 @@ class mpls(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__label1 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="label1", rest_name="label1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
-    self.__label2 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="label2", rest_name="label2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
-    self.__label3 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="label3", rest_name="label3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+    self.__label1 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="label1", rest_name="label1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'label1', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash mpls label1\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+    self.__label2 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="label2", rest_name="label2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'label2', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash mpls label2\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+    self.__label3 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="label3", rest_name="label3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'label3', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash mpls label3\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -101,12 +101,12 @@ class mpls(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="label1", rest_name="label1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="label1", rest_name="label1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'label1', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash mpls label1\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """label1 must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="label1", rest_name="label1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="label1", rest_name="label1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'label1', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash mpls label1\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)""",
         })
 
     self.__label1 = t
@@ -114,7 +114,7 @@ class mpls(PybindBase):
       self._set()
 
   def _unset_label1(self):
-    self.__label1 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="label1", rest_name="label1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+    self.__label1 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="label1", rest_name="label1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'label1', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash mpls label1\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
 
 
   def _get_label2(self):
@@ -134,12 +134,12 @@ class mpls(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="label2", rest_name="label2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="label2", rest_name="label2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'label2', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash mpls label2\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """label2 must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="label2", rest_name="label2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="label2", rest_name="label2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'label2', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash mpls label2\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)""",
         })
 
     self.__label2 = t
@@ -147,7 +147,7 @@ class mpls(PybindBase):
       self._set()
 
   def _unset_label2(self):
-    self.__label2 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="label2", rest_name="label2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+    self.__label2 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="label2", rest_name="label2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'label2', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash mpls label2\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
 
 
   def _get_label3(self):
@@ -167,12 +167,12 @@ class mpls(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="label3", rest_name="label3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="label3", rest_name="label3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'label3', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash mpls label3\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """label3 must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="label3", rest_name="label3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="label3", rest_name="label3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'label3', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash mpls label3\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)""",
         })
 
     self.__label3 = t
@@ -180,7 +180,7 @@ class mpls(PybindBase):
       self._set()
 
   def _unset_label3(self):
-    self.__label3 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="label3", rest_name="label3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
+    self.__label3 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="label3", rest_name="label3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'label3', u'cli-full-command': None, u'cli-run-template': u'$(.?:no load-balance hash mpls label3\n)'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='empty', is_config=True)
 
   label1 = __builtin__.property(_get_label1, _set_label1)
   label2 = __builtin__.property(_get_label2, _set_label2)

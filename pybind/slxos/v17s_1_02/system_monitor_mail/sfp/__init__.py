@@ -45,8 +45,8 @@ class sfp(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__email_list = YANGDynClass(base=YANGListType("email",email_list.email_list, yang_name="email-list", rest_name="email-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='email', extensions=None), is_container='list', yang_name="email-list", rest_name="email-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='list', is_config=True)
-    self.__enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='empty', is_config=True)
+    self.__email_list = YANGDynClass(base=YANGListType("email",email_list.email_list, yang_name="email-list", rest_name="email-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='email', extensions={u'tailf-common': {u'info': u'Configure SFP emails', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'system-monitor-sfp-email'}}), is_container='list', yang_name="email-list", rest_name="email-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure SFP emails', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'system-monitor-sfp-email'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='list', is_config=True)
+    self.__enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable sfp email alerts', u'cli-full-command': None, u'callpoint': u'system-monitor-mail-sfp-enableflag'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -101,12 +101,12 @@ class sfp(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable sfp email alerts', u'cli-full-command': None, u'callpoint': u'system-monitor-mail-sfp-enableflag'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """enable must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable sfp email alerts', u'cli-full-command': None, u'callpoint': u'system-monitor-mail-sfp-enableflag'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='empty', is_config=True)""",
         })
 
     self.__enable = t
@@ -114,7 +114,7 @@ class sfp(PybindBase):
       self._set()
 
   def _unset_enable(self):
-    self.__enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='empty', is_config=True)
+    self.__enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable sfp email alerts', u'cli-full-command': None, u'callpoint': u'system-monitor-mail-sfp-enableflag'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='empty', is_config=True)
 
 
   def _get_email_list(self):
@@ -134,12 +134,12 @@ class sfp(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("email",email_list.email_list, yang_name="email-list", rest_name="email-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='email', extensions=None), is_container='list', yang_name="email-list", rest_name="email-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("email",email_list.email_list, yang_name="email-list", rest_name="email-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='email', extensions={u'tailf-common': {u'info': u'Configure SFP emails', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'system-monitor-sfp-email'}}), is_container='list', yang_name="email-list", rest_name="email-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure SFP emails', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'system-monitor-sfp-email'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """email_list must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("email",email_list.email_list, yang_name="email-list", rest_name="email-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='email', extensions=None), is_container='list', yang_name="email-list", rest_name="email-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("email",email_list.email_list, yang_name="email-list", rest_name="email-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='email', extensions={u'tailf-common': {u'info': u'Configure SFP emails', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'system-monitor-sfp-email'}}), is_container='list', yang_name="email-list", rest_name="email-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure SFP emails', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'system-monitor-sfp-email'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='list', is_config=True)""",
         })
 
     self.__email_list = t
@@ -147,7 +147,7 @@ class sfp(PybindBase):
       self._set()
 
   def _unset_email_list(self):
-    self.__email_list = YANGDynClass(base=YANGListType("email",email_list.email_list, yang_name="email-list", rest_name="email-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='email', extensions=None), is_container='list', yang_name="email-list", rest_name="email-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='list', is_config=True)
+    self.__email_list = YANGDynClass(base=YANGListType("email",email_list.email_list, yang_name="email-list", rest_name="email-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='email', extensions={u'tailf-common': {u'info': u'Configure SFP emails', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'system-monitor-sfp-email'}}), is_container='list', yang_name="email-list", rest_name="email-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure SFP emails', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'system-monitor-sfp-email'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='list', is_config=True)
 
   enable = __builtin__.property(_get_enable, _set_enable)
   email_list = __builtin__.property(_get_email_list, _set_email_list)

@@ -18,7 +18,7 @@ class dai_config(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__arp',)
 
   _yang_name = 'dai-config'
-  _rest_name = 'dai-config'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -45,7 +45,7 @@ class dai_config(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__arp = YANGDynClass(base=arp.arp, is_container='container', presence=False, yang_name="arp", rest_name="arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)
+    self.__arp = YANGDynClass(base=arp.arp, is_container='container', presence=False, yang_name="arp", rest_name="arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ARP'}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class dai_config(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'dai-config']
+      return []
 
   def _get_arp(self):
     """
@@ -100,12 +100,12 @@ class dai_config(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=arp.arp, is_container='container', presence=False, yang_name="arp", rest_name="arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=arp.arp, is_container='container', presence=False, yang_name="arp", rest_name="arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ARP'}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """arp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=arp.arp, is_container='container', presence=False, yang_name="arp", rest_name="arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=arp.arp, is_container='container', presence=False, yang_name="arp", rest_name="arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ARP'}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)""",
         })
 
     self.__arp = t
@@ -113,7 +113,7 @@ class dai_config(PybindBase):
       self._set()
 
   def _unset_arp(self):
-    self.__arp = YANGDynClass(base=arp.arp, is_container='container', presence=False, yang_name="arp", rest_name="arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)
+    self.__arp = YANGDynClass(base=arp.arp, is_container='container', presence=False, yang_name="arp", rest_name="arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ARP'}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)
 
   arp = __builtin__.property(_get_arp, _set_arp)
 

@@ -45,8 +45,8 @@ class maximum_prefix(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__max_prefix_limit = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..2147483647']}), is_leaf=True, yang_name="max-prefix-limit", rest_name="max-prefix-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='max-prefix-limit', is_config=True)
-    self.__threshold_holder = YANGDynClass(base=threshold_holder.threshold_holder, is_container='container', presence=False, yang_name="threshold-holder", rest_name="threshold-holder", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__max_prefix_limit = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..2147483647']}), is_leaf=True, yang_name="max-prefix-limit", rest_name="max-prefix-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='max-prefix-limit', is_config=True)
+    self.__threshold_holder = YANGDynClass(base=threshold_holder.threshold_holder, is_container='container', presence=False, yang_name="threshold-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-flatten-container': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -82,7 +82,7 @@ class maximum_prefix(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'routing-system', u'router', u'router-bgp', u'address-family', u'ipv6', u'ipv6-unicast', u'default-vrf', u'neighbor', u'af-ipv6-neighbor-peergroup-holder', u'af-ipv6-neighbor-peergroup', u'maximum-prefix']
+      return [u'router', u'bgp', u'address-family', u'ipv6', u'unicast', u'neighbor', u'af-ipv6-neighbor-peergroup', u'maximum-prefix']
 
   def _get_max_prefix_limit(self):
     """
@@ -101,12 +101,12 @@ class maximum_prefix(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..2147483647']}), is_leaf=True, yang_name="max-prefix-limit", rest_name="max-prefix-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='max-prefix-limit', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..2147483647']}), is_leaf=True, yang_name="max-prefix-limit", rest_name="max-prefix-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='max-prefix-limit', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """max_prefix_limit must be of a type compatible with max-prefix-limit""",
           'defined-type': "brocade-bgp:max-prefix-limit",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..2147483647']}), is_leaf=True, yang_name="max-prefix-limit", rest_name="max-prefix-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='max-prefix-limit', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..2147483647']}), is_leaf=True, yang_name="max-prefix-limit", rest_name="max-prefix-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='max-prefix-limit', is_config=True)""",
         })
 
     self.__max_prefix_limit = t
@@ -114,7 +114,7 @@ class maximum_prefix(PybindBase):
       self._set()
 
   def _unset_max_prefix_limit(self):
-    self.__max_prefix_limit = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..2147483647']}), is_leaf=True, yang_name="max-prefix-limit", rest_name="max-prefix-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='max-prefix-limit', is_config=True)
+    self.__max_prefix_limit = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..2147483647']}), is_leaf=True, yang_name="max-prefix-limit", rest_name="max-prefix-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='max-prefix-limit', is_config=True)
 
 
   def _get_threshold_holder(self):
@@ -134,12 +134,12 @@ class maximum_prefix(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=threshold_holder.threshold_holder, is_container='container', presence=False, yang_name="threshold-holder", rest_name="threshold-holder", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=threshold_holder.threshold_holder, is_container='container', presence=False, yang_name="threshold-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-flatten-container': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """threshold_holder must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=threshold_holder.threshold_holder, is_container='container', presence=False, yang_name="threshold-holder", rest_name="threshold-holder", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=threshold_holder.threshold_holder, is_container='container', presence=False, yang_name="threshold-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-flatten-container': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__threshold_holder = t
@@ -147,7 +147,7 @@ class maximum_prefix(PybindBase):
       self._set()
 
   def _unset_threshold_holder(self):
-    self.__threshold_holder = YANGDynClass(base=threshold_holder.threshold_holder, is_container='container', presence=False, yang_name="threshold-holder", rest_name="threshold-holder", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__threshold_holder = YANGDynClass(base=threshold_holder.threshold_holder, is_container='container', presence=False, yang_name="threshold-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-flatten-container': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
   max_prefix_limit = __builtin__.property(_get_max_prefix_limit, _set_max_prefix_limit)
   threshold_holder = __builtin__.property(_get_threshold_holder, _set_threshold_holder)

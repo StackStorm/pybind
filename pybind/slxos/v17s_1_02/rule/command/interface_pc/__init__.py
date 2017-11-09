@@ -18,7 +18,7 @@ class interface_pc(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__interface',)
 
   _yang_name = 'interface-pc'
-  _rest_name = 'interface-pc'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -81,7 +81,7 @@ class interface_pc(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'rule', u'command', u'interface-pc']
+      return [u'rule', u'command']
 
   def _get_interface(self):
     """

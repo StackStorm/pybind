@@ -44,7 +44,7 @@ class shape(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__shaping_rate = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="shaping_rate", rest_name="shaping_rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
+    self.__shaping_rate = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="shaping_rate", rest_name="shaping_rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Shaping rate', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -99,12 +99,12 @@ class shape(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="shaping_rate", rest_name="shaping_rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="shaping_rate", rest_name="shaping_rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Shaping rate', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """shaping_rate must be of a type compatible with shaping-rate-limit""",
           'defined-type': "brocade-qos-mqc:shaping-rate-limit",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="shaping_rate", rest_name="shaping_rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="shaping_rate", rest_name="shaping_rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Shaping rate', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)""",
         })
 
     self.__shaping_rate = t
@@ -112,7 +112,7 @@ class shape(PybindBase):
       self._set()
 
   def _unset_shaping_rate(self):
-    self.__shaping_rate = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="shaping_rate", rest_name="shaping_rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
+    self.__shaping_rate = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'50000 .. 100000000']}), is_leaf=True, yang_name="shaping_rate", rest_name="shaping_rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Shaping rate', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mqc', defining_module='brocade-qos-mqc', yang_type='shaping-rate-limit', is_config=True)
 
   shaping_rate = __builtin__.property(_get_shaping_rate, _set_shaping_rate)
 

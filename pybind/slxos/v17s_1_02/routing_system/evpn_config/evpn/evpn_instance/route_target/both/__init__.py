@@ -44,8 +44,8 @@ class both(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ignore_as = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ignore-as", rest_name="ignore-as", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
-    self.__target_community = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'auto'}), is_leaf=True, yang_name="target-community", rest_name="target-community", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='rt-type', is_config=True)
+    self.__ignore_as = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ignore-as", rest_name="ignore-as", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ignore-as'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__target_community = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'auto'}), is_leaf=True, yang_name="target-community", rest_name="target-community", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'auto;; Target VPN Extended Community', u'cli-full-no': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='rt-type', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class both(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'routing-system', u'evpn-config', u'evpn', u'evpn-instance', u'route-target', u'both']
+      return [u'evpn', u'evpn-instance', u'route-target', u'both']
 
   def _get_target_community(self):
     """
@@ -109,12 +109,12 @@ class both(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'auto'}), is_leaf=True, yang_name="target-community", rest_name="target-community", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='rt-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'auto'}), is_leaf=True, yang_name="target-community", rest_name="target-community", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'auto;; Target VPN Extended Community', u'cli-full-no': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='rt-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """target_community must be of a type compatible with rt-type""",
           'defined-type': "brocade-bgp:rt-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'auto'}), is_leaf=True, yang_name="target-community", rest_name="target-community", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='rt-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'auto'}), is_leaf=True, yang_name="target-community", rest_name="target-community", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'auto;; Target VPN Extended Community', u'cli-full-no': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='rt-type', is_config=True)""",
         })
 
     self.__target_community = t
@@ -122,7 +122,7 @@ class both(PybindBase):
       self._set()
 
   def _unset_target_community(self):
-    self.__target_community = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'auto'}), is_leaf=True, yang_name="target-community", rest_name="target-community", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='rt-type', is_config=True)
+    self.__target_community = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'auto'}), is_leaf=True, yang_name="target-community", rest_name="target-community", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'auto;; Target VPN Extended Community', u'cli-full-no': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='rt-type', is_config=True)
 
 
   def _get_ignore_as(self):
@@ -142,12 +142,12 @@ class both(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ignore-as", rest_name="ignore-as", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ignore-as", rest_name="ignore-as", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ignore-as'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ignore_as must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ignore-as", rest_name="ignore-as", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ignore-as", rest_name="ignore-as", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ignore-as'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
         })
 
     self.__ignore_as = t
@@ -155,7 +155,7 @@ class both(PybindBase):
       self._set()
 
   def _unset_ignore_as(self):
-    self.__ignore_as = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ignore-as", rest_name="ignore-as", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__ignore_as = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ignore-as", rest_name="ignore-as", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ignore-as'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
 
   target_community = __builtin__.property(_get_target_community, _set_target_community)
   ignore_as = __builtin__.property(_get_ignore_as, _set_ignore_as)

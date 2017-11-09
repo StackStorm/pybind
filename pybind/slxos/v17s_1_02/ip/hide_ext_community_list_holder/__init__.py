@@ -18,7 +18,7 @@ class hide_ext_community_list_holder(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__extcommunity_list',)
 
   _yang_name = 'hide-ext-community-list-holder'
-  _rest_name = 'hide-ext-community-list-holder'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -81,7 +81,7 @@ class hide_ext_community_list_holder(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'ip', u'hide-ext-community-list-holder']
+      return [u'ip']
 
   def _get_extcommunity_list(self):
     """

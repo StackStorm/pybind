@@ -44,7 +44,7 @@ class information(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__relay_option = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="relay-option", rest_name="relay-option", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+    self.__relay_option = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="relay-option", rest_name="option", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Option82', u'alt-name': u'option'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -80,7 +80,7 @@ class information(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface-vlan', u'vlan', u'ip', u'dhcp', u'relay', u'information']
+      return [u'vlan', u'ip', u'dhcp', u'relay', u'information']
 
   def _get_relay_option(self):
     """
@@ -99,12 +99,12 @@ class information(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="relay-option", rest_name="relay-option", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="relay-option", rest_name="option", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Option82', u'alt-name': u'option'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """relay_option must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="relay-option", rest_name="relay-option", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="relay-option", rest_name="option", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Option82', u'alt-name': u'option'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)""",
         })
 
     self.__relay_option = t
@@ -112,7 +112,7 @@ class information(PybindBase):
       self._set()
 
   def _unset_relay_option(self):
-    self.__relay_option = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="relay-option", rest_name="relay-option", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
+    self.__relay_option = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="relay-option", rest_name="option", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Option82', u'alt-name': u'option'}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='empty', is_config=True)
 
   relay_option = __builtin__.property(_get_relay_option, _set_relay_option)
 

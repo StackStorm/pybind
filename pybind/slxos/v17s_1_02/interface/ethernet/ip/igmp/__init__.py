@@ -18,7 +18,7 @@ class igmp(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__igmp_phy_intf_cfg',)
 
   _yang_name = 'igmp'
-  _rest_name = 'igmp'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -45,7 +45,7 @@ class igmp(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__igmp_phy_intf_cfg = YANGDynClass(base=igmp_phy_intf_cfg.igmp_phy_intf_cfg, is_container='container', presence=False, yang_name="igmp-phy-intf-cfg", rest_name="igmp-phy-intf-cfg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-igmp', defining_module='brocade-igmp', yang_type='container', is_config=True)
+    self.__igmp_phy_intf_cfg = YANGDynClass(base=igmp_phy_intf_cfg.igmp_phy_intf_cfg, is_container='container', presence=False, yang_name="igmp-phy-intf-cfg", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'IgmpPhy', u'sort-priority': u'134'}}, namespace='urn:brocade.com:mgmt:brocade-igmp', defining_module='brocade-igmp', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class igmp(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface', u'ethernet', u'ip', u'igmp']
+      return [u'interface', u'Ethernet', u'ip']
 
   def _get_igmp_phy_intf_cfg(self):
     """
@@ -100,12 +100,12 @@ class igmp(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=igmp_phy_intf_cfg.igmp_phy_intf_cfg, is_container='container', presence=False, yang_name="igmp-phy-intf-cfg", rest_name="igmp-phy-intf-cfg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-igmp', defining_module='brocade-igmp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=igmp_phy_intf_cfg.igmp_phy_intf_cfg, is_container='container', presence=False, yang_name="igmp-phy-intf-cfg", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'IgmpPhy', u'sort-priority': u'134'}}, namespace='urn:brocade.com:mgmt:brocade-igmp', defining_module='brocade-igmp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """igmp_phy_intf_cfg must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=igmp_phy_intf_cfg.igmp_phy_intf_cfg, is_container='container', presence=False, yang_name="igmp-phy-intf-cfg", rest_name="igmp-phy-intf-cfg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-igmp', defining_module='brocade-igmp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=igmp_phy_intf_cfg.igmp_phy_intf_cfg, is_container='container', presence=False, yang_name="igmp-phy-intf-cfg", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'IgmpPhy', u'sort-priority': u'134'}}, namespace='urn:brocade.com:mgmt:brocade-igmp', defining_module='brocade-igmp', yang_type='container', is_config=True)""",
         })
 
     self.__igmp_phy_intf_cfg = t
@@ -113,7 +113,7 @@ class igmp(PybindBase):
       self._set()
 
   def _unset_igmp_phy_intf_cfg(self):
-    self.__igmp_phy_intf_cfg = YANGDynClass(base=igmp_phy_intf_cfg.igmp_phy_intf_cfg, is_container='container', presence=False, yang_name="igmp-phy-intf-cfg", rest_name="igmp-phy-intf-cfg", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-igmp', defining_module='brocade-igmp', yang_type='container', is_config=True)
+    self.__igmp_phy_intf_cfg = YANGDynClass(base=igmp_phy_intf_cfg.igmp_phy_intf_cfg, is_container='container', presence=False, yang_name="igmp-phy-intf-cfg", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'IgmpPhy', u'sort-priority': u'134'}}, namespace='urn:brocade.com:mgmt:brocade-igmp', defining_module='brocade-igmp', yang_type='container', is_config=True)
 
   igmp_phy_intf_cfg = __builtin__.property(_get_igmp_phy_intf_cfg, _set_igmp_phy_intf_cfg)
 

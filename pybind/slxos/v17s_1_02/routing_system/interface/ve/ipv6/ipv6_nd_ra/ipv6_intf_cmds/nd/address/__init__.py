@@ -45,8 +45,8 @@ class address(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__suppressing_address = YANGDynClass(base=YANGListType("suppress_ipv6_address",suppressing_address.suppressing_address, yang_name="suppressing-address", rest_name="suppressing-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='suppress-ipv6-address', extensions=None), is_container='list', yang_name="suppressing-address", rest_name="suppressing-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='list', is_config=True)
-    self.__address_suppress_all = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="address-suppress-all", rest_name="address-suppress-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
+    self.__suppressing_address = YANGDynClass(base=YANGListType("suppress_ipv6_address",suppressing_address.suppressing_address, yang_name="suppressing-address", rest_name="suppressing-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='suppress-ipv6-address', extensions={u'tailf-common': {u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'callpoint': u'IpV6NdRaAddressVlanIntf'}}), is_container='list', yang_name="suppressing-address", rest_name="suppressing-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'callpoint': u'IpV6NdRaAddressVlanIntf'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='list', is_config=True)
+    self.__address_suppress_all = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="address-suppress-all", rest_name="suppress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Suppress all IPv6 addresses in router advertisement', u'cli-full-command': None, u'alt-name': u'suppress', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -82,7 +82,7 @@ class address(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'routing-system', u'interface', u've', u'ipv6', u'ipv6-nd-ra', u'ipv6-intf-cmds', u'nd', u'address']
+      return [u'interface', u'Ve', u'ipv6', u'nd', u'address']
 
   def _get_suppressing_address(self):
     """
@@ -101,12 +101,12 @@ class address(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("suppress_ipv6_address",suppressing_address.suppressing_address, yang_name="suppressing-address", rest_name="suppressing-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='suppress-ipv6-address', extensions=None), is_container='list', yang_name="suppressing-address", rest_name="suppressing-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("suppress_ipv6_address",suppressing_address.suppressing_address, yang_name="suppressing-address", rest_name="suppressing-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='suppress-ipv6-address', extensions={u'tailf-common': {u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'callpoint': u'IpV6NdRaAddressVlanIntf'}}), is_container='list', yang_name="suppressing-address", rest_name="suppressing-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'callpoint': u'IpV6NdRaAddressVlanIntf'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """suppressing_address must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("suppress_ipv6_address",suppressing_address.suppressing_address, yang_name="suppressing-address", rest_name="suppressing-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='suppress-ipv6-address', extensions=None), is_container='list', yang_name="suppressing-address", rest_name="suppressing-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("suppress_ipv6_address",suppressing_address.suppressing_address, yang_name="suppressing-address", rest_name="suppressing-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='suppress-ipv6-address', extensions={u'tailf-common': {u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'callpoint': u'IpV6NdRaAddressVlanIntf'}}), is_container='list', yang_name="suppressing-address", rest_name="suppressing-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'callpoint': u'IpV6NdRaAddressVlanIntf'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='list', is_config=True)""",
         })
 
     self.__suppressing_address = t
@@ -114,7 +114,7 @@ class address(PybindBase):
       self._set()
 
   def _unset_suppressing_address(self):
-    self.__suppressing_address = YANGDynClass(base=YANGListType("suppress_ipv6_address",suppressing_address.suppressing_address, yang_name="suppressing-address", rest_name="suppressing-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='suppress-ipv6-address', extensions=None), is_container='list', yang_name="suppressing-address", rest_name="suppressing-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='list', is_config=True)
+    self.__suppressing_address = YANGDynClass(base=YANGListType("suppress_ipv6_address",suppressing_address.suppressing_address, yang_name="suppressing-address", rest_name="suppressing-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='suppress-ipv6-address', extensions={u'tailf-common': {u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'callpoint': u'IpV6NdRaAddressVlanIntf'}}), is_container='list', yang_name="suppressing-address", rest_name="suppressing-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-incomplete-command': None, u'callpoint': u'IpV6NdRaAddressVlanIntf'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='list', is_config=True)
 
 
   def _get_address_suppress_all(self):
@@ -134,12 +134,12 @@ class address(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="address-suppress-all", rest_name="address-suppress-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="address-suppress-all", rest_name="suppress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Suppress all IPv6 addresses in router advertisement', u'cli-full-command': None, u'alt-name': u'suppress', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """address_suppress_all must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="address-suppress-all", rest_name="address-suppress-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="address-suppress-all", rest_name="suppress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Suppress all IPv6 addresses in router advertisement', u'cli-full-command': None, u'alt-name': u'suppress', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)""",
         })
 
     self.__address_suppress_all = t
@@ -147,7 +147,7 @@ class address(PybindBase):
       self._set()
 
   def _unset_address_suppress_all(self):
-    self.__address_suppress_all = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="address-suppress-all", rest_name="address-suppress-all", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
+    self.__address_suppress_all = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="address-suppress-all", rest_name="suppress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Suppress all IPv6 addresses in router advertisement', u'cli-full-command': None, u'alt-name': u'suppress', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
 
   suppressing_address = __builtin__.property(_get_suppressing_address, _set_suppressing_address)
   address_suppress_all = __builtin__.property(_get_address_suppress_all, _set_address_suppress_all)

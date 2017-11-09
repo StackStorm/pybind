@@ -45,8 +45,8 @@ class relay(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__gateway = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="gateway", rest_name="gateway", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='dhcp-ipv4-address', is_config=True)
-    self.__servers = YANGDynClass(base=YANGListType("relay_ip_addr server_vrf_name",servers.servers, yang_name="servers", rest_name="servers", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='relay-ip-addr server-vrf-name', extensions=None), is_container='list', yang_name="servers", rest_name="servers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='list', is_config=True)
+    self.__gateway = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="gateway", rest_name="gateway", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Gateway address', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='dhcp-ipv4-address', is_config=True)
+    self.__servers = YANGDynClass(base=YANGListType("relay_ip_addr server_vrf_name",servers.servers, yang_name="servers", rest_name="servers", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='relay-ip-addr server-vrf-name', extensions={u'tailf-common': {u'info': u'DHCP Server IP Address', u'cli-run-template-enter': u' ip dhcp relay address$(relay-ip-addr) $($(server-vrf-name)==.?: use-vrf $(server-vrf-name))\n', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'callpoint': u'DHCPRelayPhyInterfaceCallPoint'}}), is_container='list', yang_name="servers", rest_name="servers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'DHCP Server IP Address', u'cli-run-template-enter': u' ip dhcp relay address$(relay-ip-addr) $($(server-vrf-name)==.?: use-vrf $(server-vrf-name))\n', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'callpoint': u'DHCPRelayPhyInterfaceCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -82,7 +82,7 @@ class relay(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface', u'ethernet', u'ip', u'interface-eth-dhcp-conf', u'dhcp', u'relay']
+      return [u'interface', u'Ethernet', u'ip', u'dhcp', u'relay']
 
   def _get_servers(self):
     """
@@ -101,12 +101,12 @@ class relay(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("relay_ip_addr server_vrf_name",servers.servers, yang_name="servers", rest_name="servers", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='relay-ip-addr server-vrf-name', extensions=None), is_container='list', yang_name="servers", rest_name="servers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("relay_ip_addr server_vrf_name",servers.servers, yang_name="servers", rest_name="servers", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='relay-ip-addr server-vrf-name', extensions={u'tailf-common': {u'info': u'DHCP Server IP Address', u'cli-run-template-enter': u' ip dhcp relay address$(relay-ip-addr) $($(server-vrf-name)==.?: use-vrf $(server-vrf-name))\n', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'callpoint': u'DHCPRelayPhyInterfaceCallPoint'}}), is_container='list', yang_name="servers", rest_name="servers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'DHCP Server IP Address', u'cli-run-template-enter': u' ip dhcp relay address$(relay-ip-addr) $($(server-vrf-name)==.?: use-vrf $(server-vrf-name))\n', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'callpoint': u'DHCPRelayPhyInterfaceCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """servers must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("relay_ip_addr server_vrf_name",servers.servers, yang_name="servers", rest_name="servers", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='relay-ip-addr server-vrf-name', extensions=None), is_container='list', yang_name="servers", rest_name="servers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("relay_ip_addr server_vrf_name",servers.servers, yang_name="servers", rest_name="servers", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='relay-ip-addr server-vrf-name', extensions={u'tailf-common': {u'info': u'DHCP Server IP Address', u'cli-run-template-enter': u' ip dhcp relay address$(relay-ip-addr) $($(server-vrf-name)==.?: use-vrf $(server-vrf-name))\n', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'callpoint': u'DHCPRelayPhyInterfaceCallPoint'}}), is_container='list', yang_name="servers", rest_name="servers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'DHCP Server IP Address', u'cli-run-template-enter': u' ip dhcp relay address$(relay-ip-addr) $($(server-vrf-name)==.?: use-vrf $(server-vrf-name))\n', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'callpoint': u'DHCPRelayPhyInterfaceCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='list', is_config=True)""",
         })
 
     self.__servers = t
@@ -114,7 +114,7 @@ class relay(PybindBase):
       self._set()
 
   def _unset_servers(self):
-    self.__servers = YANGDynClass(base=YANGListType("relay_ip_addr server_vrf_name",servers.servers, yang_name="servers", rest_name="servers", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='relay-ip-addr server-vrf-name', extensions=None), is_container='list', yang_name="servers", rest_name="servers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='list', is_config=True)
+    self.__servers = YANGDynClass(base=YANGListType("relay_ip_addr server_vrf_name",servers.servers, yang_name="servers", rest_name="servers", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='relay-ip-addr server-vrf-name', extensions={u'tailf-common': {u'info': u'DHCP Server IP Address', u'cli-run-template-enter': u' ip dhcp relay address$(relay-ip-addr) $($(server-vrf-name)==.?: use-vrf $(server-vrf-name))\n', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'callpoint': u'DHCPRelayPhyInterfaceCallPoint'}}), is_container='list', yang_name="servers", rest_name="servers", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'DHCP Server IP Address', u'cli-run-template-enter': u' ip dhcp relay address$(relay-ip-addr) $($(server-vrf-name)==.?: use-vrf $(server-vrf-name))\n', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'callpoint': u'DHCPRelayPhyInterfaceCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='list', is_config=True)
 
 
   def _get_gateway(self):
@@ -138,12 +138,12 @@ class relay(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="gateway", rest_name="gateway", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='dhcp-ipv4-address', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="gateway", rest_name="gateway", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Gateway address', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='dhcp-ipv4-address', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """gateway must be of a type compatible with dhcp-ipv4-address""",
           'defined-type': "brocade-dhcp:dhcp-ipv4-address",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="gateway", rest_name="gateway", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='dhcp-ipv4-address', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="gateway", rest_name="gateway", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Gateway address', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='dhcp-ipv4-address', is_config=True)""",
         })
 
     self.__gateway = t
@@ -151,7 +151,7 @@ class relay(PybindBase):
       self._set()
 
   def _unset_gateway(self):
-    self.__gateway = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="gateway", rest_name="gateway", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='dhcp-ipv4-address', is_config=True)
+    self.__gateway = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="gateway", rest_name="gateway", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Gateway address', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='dhcp-ipv4-address', is_config=True)
 
   servers = __builtin__.property(_get_servers, _set_servers)
   gateway = __builtin__.property(_get_gateway, _set_gateway)

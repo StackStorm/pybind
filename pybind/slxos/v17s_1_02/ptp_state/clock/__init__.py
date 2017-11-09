@@ -49,7 +49,7 @@ class clock(PybindBase):
       self._extmethods = False
     self.__steps_removed = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="steps-removed", rest_name="steps-removed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='uint32', is_config=False)
     self.__domain = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="domain", rest_name="domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='uint32', is_config=False)
-    self.__quality = YANGDynClass(base=quality.quality, is_container='container', presence=False, yang_name="quality", rest_name="quality", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
+    self.__quality = YANGDynClass(base=quality.quality, is_container='container', presence=False, yang_name="quality", rest_name="quality", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-clock-quality', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
     self.__mpd = YANGDynClass(base=unicode, is_leaf=True, yang_name="mpd", rest_name="mpd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='string', is_config=False)
     self.__clock_state = YANGDynClass(base=unicode, is_leaf=True, yang_name="clock-state", rest_name="clock-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='string', is_config=False)
     self.__priority1 = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="priority1", rest_name="priority1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='uint8', is_config=False)
@@ -476,12 +476,12 @@ class clock(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=quality.quality, is_container='container', presence=False, yang_name="quality", rest_name="quality", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=quality.quality, is_container='container', presence=False, yang_name="quality", rest_name="quality", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-clock-quality', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """quality must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=quality.quality, is_container='container', presence=False, yang_name="quality", rest_name="quality", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=quality.quality, is_container='container', presence=False, yang_name="quality", rest_name="quality", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-clock-quality', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)""",
         })
 
     self.__quality = t
@@ -489,7 +489,7 @@ class clock(PybindBase):
       self._set()
 
   def _unset_quality(self):
-    self.__quality = YANGDynClass(base=quality.quality, is_container='container', presence=False, yang_name="quality", rest_name="quality", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
+    self.__quality = YANGDynClass(base=quality.quality, is_container='container', presence=False, yang_name="quality", rest_name="quality", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-clock-quality', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='container', is_config=False)
 
   type = __builtin__.property(_get_type)
   identity = __builtin__.property(_get_identity)

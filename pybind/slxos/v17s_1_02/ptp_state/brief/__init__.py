@@ -47,7 +47,7 @@ class brief(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__port_detail_list = YANGDynClass(base=YANGListType("port",port_detail_list.port_detail_list, yang_name="port-detail-list", rest_name="port-detail-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='port', extensions=None), is_container='list', yang_name="port-detail-list", rest_name="port-detail-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='list', is_config=False)
+    self.__port_detail_list = YANGDynClass(base=YANGListType("port",port_detail_list.port_detail_list, yang_name="port-detail-list", rest_name="port-detail-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='port', extensions={u'tailf-common': {u'callpoint': u'ptp-port-detail', u'cli-suppress-show-path': None}}), is_container='list', yang_name="port-detail-list", rest_name="port-detail-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-port-detail', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='list', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -102,12 +102,12 @@ class brief(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("port",port_detail_list.port_detail_list, yang_name="port-detail-list", rest_name="port-detail-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='port', extensions=None), is_container='list', yang_name="port-detail-list", rest_name="port-detail-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("port",port_detail_list.port_detail_list, yang_name="port-detail-list", rest_name="port-detail-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='port', extensions={u'tailf-common': {u'callpoint': u'ptp-port-detail', u'cli-suppress-show-path': None}}), is_container='list', yang_name="port-detail-list", rest_name="port-detail-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-port-detail', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """port_detail_list must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("port",port_detail_list.port_detail_list, yang_name="port-detail-list", rest_name="port-detail-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='port', extensions=None), is_container='list', yang_name="port-detail-list", rest_name="port-detail-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("port",port_detail_list.port_detail_list, yang_name="port-detail-list", rest_name="port-detail-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='port', extensions={u'tailf-common': {u'callpoint': u'ptp-port-detail', u'cli-suppress-show-path': None}}), is_container='list', yang_name="port-detail-list", rest_name="port-detail-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-port-detail', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='list', is_config=False)""",
         })
 
     self.__port_detail_list = t
@@ -115,7 +115,7 @@ class brief(PybindBase):
       self._set()
 
   def _unset_port_detail_list(self):
-    self.__port_detail_list = YANGDynClass(base=YANGListType("port",port_detail_list.port_detail_list, yang_name="port-detail-list", rest_name="port-detail-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='port', extensions=None), is_container='list', yang_name="port-detail-list", rest_name="port-detail-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='list', is_config=False)
+    self.__port_detail_list = YANGDynClass(base=YANGListType("port",port_detail_list.port_detail_list, yang_name="port-detail-list", rest_name="port-detail-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='port', extensions={u'tailf-common': {u'callpoint': u'ptp-port-detail', u'cli-suppress-show-path': None}}), is_container='list', yang_name="port-detail-list", rest_name="port-detail-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ptp-port-detail', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ptp-operational', defining_module='brocade-ptp-operational', yang_type='list', is_config=False)
 
   port_detail_list = __builtin__.property(_get_port_detail_list)
 

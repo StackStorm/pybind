@@ -44,8 +44,8 @@ class enforce_first_as(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__nei_enforce_first_as_disable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="nei-enforce-first-as-disable", rest_name="nei-enforce-first-as-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
-    self.__nei_enforce_first_as = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="nei-enforce-first-as", rest_name="nei-enforce-first-as", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__nei_enforce_first_as_disable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="nei-enforce-first-as-disable", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Disable enforce-first-as', u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__nei_enforce_first_as = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="nei-enforce-first-as", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable enforce-first-as', u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class enforce_first_as(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'routing-system', u'router', u'router-bgp', u'address-family', u'ipv6', u'ipv6-unicast', u'af-ipv6-vrf', u'neighbor', u'af-ipv6-vrf-neighbor-address-holder', u'af-ipv6-neighbor-addr', u'enforce-first-as']
+      return [u'router', u'bgp', u'address-family', u'ipv6', u'unicast', u'vrf', u'neighbor', u'af-ipv6-neighbor-addr', u'enforce-first-as']
 
   def _get_nei_enforce_first_as(self):
     """
@@ -100,12 +100,12 @@ class enforce_first_as(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="nei-enforce-first-as", rest_name="nei-enforce-first-as", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="nei-enforce-first-as", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable enforce-first-as', u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """nei_enforce_first_as must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="nei-enforce-first-as", rest_name="nei-enforce-first-as", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="nei-enforce-first-as", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable enforce-first-as', u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
         })
 
     self.__nei_enforce_first_as = t
@@ -113,7 +113,7 @@ class enforce_first_as(PybindBase):
       self._set()
 
   def _unset_nei_enforce_first_as(self):
-    self.__nei_enforce_first_as = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="nei-enforce-first-as", rest_name="nei-enforce-first-as", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__nei_enforce_first_as = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="nei-enforce-first-as", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable enforce-first-as', u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
 
 
   def _get_nei_enforce_first_as_disable(self):
@@ -133,12 +133,12 @@ class enforce_first_as(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="nei-enforce-first-as-disable", rest_name="nei-enforce-first-as-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="nei-enforce-first-as-disable", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Disable enforce-first-as', u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """nei_enforce_first_as_disable must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="nei-enforce-first-as-disable", rest_name="nei-enforce-first-as-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="nei-enforce-first-as-disable", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Disable enforce-first-as', u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
         })
 
     self.__nei_enforce_first_as_disable = t
@@ -146,7 +146,7 @@ class enforce_first_as(PybindBase):
       self._set()
 
   def _unset_nei_enforce_first_as_disable(self):
-    self.__nei_enforce_first_as_disable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="nei-enforce-first-as-disable", rest_name="nei-enforce-first-as-disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__nei_enforce_first_as_disable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="nei-enforce-first-as-disable", rest_name="disable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Disable enforce-first-as', u'alt-name': u'disable'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
 
   nei_enforce_first_as = __builtin__.property(_get_nei_enforce_first_as, _set_nei_enforce_first_as)
   nei_enforce_first_as_disable = __builtin__.property(_get_nei_enforce_first_as_disable, _set_nei_enforce_first_as_disable)

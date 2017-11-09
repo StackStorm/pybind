@@ -18,7 +18,7 @@ class af_ipv6_neighbor_address_holder(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__af_ipv6_neighbor_address',)
 
   _yang_name = 'af-ipv6-neighbor-address-holder'
-  _rest_name = 'af-ipv6-neighbor-address-holder'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -45,7 +45,7 @@ class af_ipv6_neighbor_address_holder(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__af_ipv6_neighbor_address = YANGDynClass(base=YANGListType("af_ipv6_neighbor_address",af_ipv6_neighbor_address.af_ipv6_neighbor_address, yang_name="af-ipv6-neighbor-address", rest_name="af-ipv6-neighbor-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='af-ipv6-neighbor-address', extensions=None), is_container='list', yang_name="af-ipv6-neighbor-address", rest_name="af-ipv6-neighbor-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
+    self.__af_ipv6_neighbor_address = YANGDynClass(base=YANGListType("af_ipv6_neighbor_address",af_ipv6_neighbor_address.af_ipv6_neighbor_address, yang_name="af-ipv6-neighbor-address", rest_name="af-ipv6-neighbor-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='af-ipv6-neighbor-address', extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'AfIpv6NeighborIpxAddr'}}), is_container='list', yang_name="af-ipv6-neighbor-address", rest_name="af-ipv6-neighbor-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'AfIpv6NeighborIpxAddr'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class af_ipv6_neighbor_address_holder(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'routing-system', u'router', u'router-bgp', u'address-family', u'ipv6', u'ipv6-unicast', u'default-vrf', u'neighbor', u'af-ipv6-neighbor-address-holder']
+      return [u'router', u'bgp', u'address-family', u'ipv6', u'unicast', u'neighbor']
 
   def _get_af_ipv6_neighbor_address(self):
     """
@@ -100,12 +100,12 @@ class af_ipv6_neighbor_address_holder(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("af_ipv6_neighbor_address",af_ipv6_neighbor_address.af_ipv6_neighbor_address, yang_name="af-ipv6-neighbor-address", rest_name="af-ipv6-neighbor-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='af-ipv6-neighbor-address', extensions=None), is_container='list', yang_name="af-ipv6-neighbor-address", rest_name="af-ipv6-neighbor-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("af_ipv6_neighbor_address",af_ipv6_neighbor_address.af_ipv6_neighbor_address, yang_name="af-ipv6-neighbor-address", rest_name="af-ipv6-neighbor-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='af-ipv6-neighbor-address', extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'AfIpv6NeighborIpxAddr'}}), is_container='list', yang_name="af-ipv6-neighbor-address", rest_name="af-ipv6-neighbor-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'AfIpv6NeighborIpxAddr'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """af_ipv6_neighbor_address must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("af_ipv6_neighbor_address",af_ipv6_neighbor_address.af_ipv6_neighbor_address, yang_name="af-ipv6-neighbor-address", rest_name="af-ipv6-neighbor-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='af-ipv6-neighbor-address', extensions=None), is_container='list', yang_name="af-ipv6-neighbor-address", rest_name="af-ipv6-neighbor-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("af_ipv6_neighbor_address",af_ipv6_neighbor_address.af_ipv6_neighbor_address, yang_name="af-ipv6-neighbor-address", rest_name="af-ipv6-neighbor-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='af-ipv6-neighbor-address', extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'AfIpv6NeighborIpxAddr'}}), is_container='list', yang_name="af-ipv6-neighbor-address", rest_name="af-ipv6-neighbor-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'AfIpv6NeighborIpxAddr'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)""",
         })
 
     self.__af_ipv6_neighbor_address = t
@@ -113,7 +113,7 @@ class af_ipv6_neighbor_address_holder(PybindBase):
       self._set()
 
   def _unset_af_ipv6_neighbor_address(self):
-    self.__af_ipv6_neighbor_address = YANGDynClass(base=YANGListType("af_ipv6_neighbor_address",af_ipv6_neighbor_address.af_ipv6_neighbor_address, yang_name="af-ipv6-neighbor-address", rest_name="af-ipv6-neighbor-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='af-ipv6-neighbor-address', extensions=None), is_container='list', yang_name="af-ipv6-neighbor-address", rest_name="af-ipv6-neighbor-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
+    self.__af_ipv6_neighbor_address = YANGDynClass(base=YANGListType("af_ipv6_neighbor_address",af_ipv6_neighbor_address.af_ipv6_neighbor_address, yang_name="af-ipv6-neighbor-address", rest_name="af-ipv6-neighbor-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='af-ipv6-neighbor-address', extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'AfIpv6NeighborIpxAddr'}}), is_container='list', yang_name="af-ipv6-neighbor-address", rest_name="af-ipv6-neighbor-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Specify a neighbor router', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'AfIpv6NeighborIpxAddr'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
 
   af_ipv6_neighbor_address = __builtin__.property(_get_af_ipv6_neighbor_address, _set_af_ipv6_neighbor_address)
 

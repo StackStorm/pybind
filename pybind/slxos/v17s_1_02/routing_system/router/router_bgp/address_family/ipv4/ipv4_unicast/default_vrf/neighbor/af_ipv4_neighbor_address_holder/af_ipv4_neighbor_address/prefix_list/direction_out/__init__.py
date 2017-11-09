@@ -17,7 +17,7 @@ class direction_out(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__prefix_list_direction_out_prefix_name','__prefix_list_direction_out',)
 
   _yang_name = 'direction-out'
-  _rest_name = 'direction-out'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -44,8 +44,8 @@ class direction_out(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__prefix_list_direction_out = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="prefix-list-direction-out", rest_name="prefix-list-direction-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
-    self.__prefix_list_direction_out_prefix_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="prefix-list-direction-out-prefix-name", rest_name="prefix-list-direction-out-prefix-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='nei-prefix-list-filter', is_config=True)
+    self.__prefix_list_direction_out = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="prefix-list-direction-out", rest_name="out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Filter outgoing routes', u'alt-name': u'out'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__prefix_list_direction_out_prefix_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="prefix-list-direction-out-prefix-name", rest_name="ip-access-number", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'alt-name': u'ip-access-number', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='nei-prefix-list-filter', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class direction_out(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'routing-system', u'router', u'router-bgp', u'address-family', u'ipv4', u'ipv4-unicast', u'default-vrf', u'neighbor', u'af-ipv4-neighbor-address-holder', u'af-ipv4-neighbor-address', u'prefix-list', u'direction-out']
+      return [u'router', u'bgp', u'address-family', u'ipv4', u'unicast', u'neighbor', u'af-ipv4-neighbor-address', u'prefix-list']
 
   def _get_prefix_list_direction_out_prefix_name(self):
     """
@@ -100,12 +100,12 @@ class direction_out(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="prefix-list-direction-out-prefix-name", rest_name="prefix-list-direction-out-prefix-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='nei-prefix-list-filter', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="prefix-list-direction-out-prefix-name", rest_name="ip-access-number", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'alt-name': u'ip-access-number', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='nei-prefix-list-filter', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """prefix_list_direction_out_prefix_name must be of a type compatible with nei-prefix-list-filter""",
           'defined-type': "brocade-bgp:nei-prefix-list-filter",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="prefix-list-direction-out-prefix-name", rest_name="prefix-list-direction-out-prefix-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='nei-prefix-list-filter', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="prefix-list-direction-out-prefix-name", rest_name="ip-access-number", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'alt-name': u'ip-access-number', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='nei-prefix-list-filter', is_config=True)""",
         })
 
     self.__prefix_list_direction_out_prefix_name = t
@@ -113,7 +113,7 @@ class direction_out(PybindBase):
       self._set()
 
   def _unset_prefix_list_direction_out_prefix_name(self):
-    self.__prefix_list_direction_out_prefix_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="prefix-list-direction-out-prefix-name", rest_name="prefix-list-direction-out-prefix-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='nei-prefix-list-filter', is_config=True)
+    self.__prefix_list_direction_out_prefix_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..63']}), is_leaf=True, yang_name="prefix-list-direction-out-prefix-name", rest_name="ip-access-number", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'alt-name': u'ip-access-number', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='nei-prefix-list-filter', is_config=True)
 
 
   def _get_prefix_list_direction_out(self):
@@ -133,12 +133,12 @@ class direction_out(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="prefix-list-direction-out", rest_name="prefix-list-direction-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="prefix-list-direction-out", rest_name="out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Filter outgoing routes', u'alt-name': u'out'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """prefix_list_direction_out must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="prefix-list-direction-out", rest_name="prefix-list-direction-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="prefix-list-direction-out", rest_name="out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Filter outgoing routes', u'alt-name': u'out'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
         })
 
     self.__prefix_list_direction_out = t
@@ -146,7 +146,7 @@ class direction_out(PybindBase):
       self._set()
 
   def _unset_prefix_list_direction_out(self):
-    self.__prefix_list_direction_out = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="prefix-list-direction-out", rest_name="prefix-list-direction-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__prefix_list_direction_out = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="prefix-list-direction-out", rest_name="out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Filter outgoing routes', u'alt-name': u'out'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
 
   prefix_list_direction_out_prefix_name = __builtin__.property(_get_prefix_list_direction_out_prefix_name, _set_prefix_list_direction_out_prefix_name)
   prefix_list_direction_out = __builtin__.property(_get_prefix_list_direction_out, _set_prefix_list_direction_out)

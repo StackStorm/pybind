@@ -17,7 +17,7 @@ class tunnel_router_interface(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__router_ve',)
 
   _yang_name = 'tunnel-router-interface'
-  _rest_name = 'tunnel-router-interface'
+  _rest_name = 'router-interface'
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +44,7 @@ class tunnel_router_interface(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__router_ve = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 4095']}), is_leaf=True, yang_name="router-ve", rest_name="router-ve", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='uint32', is_config=True)
+    self.__router_ve = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 4095']}), is_leaf=True, yang_name="router-ve", rest_name="ve", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u've num range 1 to 4095', u'cli-full-command': None, u'alt-name': u've'}}, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='uint32', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -80,7 +80,7 @@ class tunnel_router_interface(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface', u'tunnel', u'tunnel-router-interface']
+      return [u'interface', u'tunnel', u'router-interface']
 
   def _get_router_ve(self):
     """
@@ -99,12 +99,12 @@ class tunnel_router_interface(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 4095']}), is_leaf=True, yang_name="router-ve", rest_name="router-ve", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 4095']}), is_leaf=True, yang_name="router-ve", rest_name="ve", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u've num range 1 to 4095', u'cli-full-command': None, u'alt-name': u've'}}, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """router_ve must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 4095']}), is_leaf=True, yang_name="router-ve", rest_name="router-ve", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 4095']}), is_leaf=True, yang_name="router-ve", rest_name="ve", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u've num range 1 to 4095', u'cli-full-command': None, u'alt-name': u've'}}, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='uint32', is_config=True)""",
         })
 
     self.__router_ve = t
@@ -112,7 +112,7 @@ class tunnel_router_interface(PybindBase):
       self._set()
 
   def _unset_router_ve(self):
-    self.__router_ve = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 4095']}), is_leaf=True, yang_name="router-ve", rest_name="router-ve", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='uint32', is_config=True)
+    self.__router_ve = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 4095']}), is_leaf=True, yang_name="router-ve", rest_name="ve", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u've num range 1 to 4095', u'cli-full-command': None, u'alt-name': u've'}}, namespace='urn:brocade.com:mgmt:brocade-gre-vxlan', defining_module='brocade-gre-vxlan', yang_type='uint32', is_config=True)
 
   router_ve = __builtin__.property(_get_router_ve, _set_router_ve)
 

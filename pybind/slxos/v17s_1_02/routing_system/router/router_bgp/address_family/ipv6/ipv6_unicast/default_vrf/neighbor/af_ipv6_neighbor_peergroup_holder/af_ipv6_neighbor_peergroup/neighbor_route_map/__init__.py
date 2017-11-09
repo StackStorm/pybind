@@ -19,7 +19,7 @@ class neighbor_route_map(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__neighbor_route_map_direction_in','__neighbor_route_map_direction_out',)
 
   _yang_name = 'neighbor-route-map'
-  _rest_name = 'neighbor-route-map'
+  _rest_name = 'route-map'
 
   _pybind_generated_by = 'container'
 
@@ -46,8 +46,8 @@ class neighbor_route_map(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__neighbor_route_map_direction_out = YANGDynClass(base=neighbor_route_map_direction_out.neighbor_route_map_direction_out, is_container='container', presence=False, yang_name="neighbor-route-map-direction-out", rest_name="neighbor-route-map-direction-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
-    self.__neighbor_route_map_direction_in = YANGDynClass(base=neighbor_route_map_direction_in.neighbor_route_map_direction_in, is_container='container', presence=False, yang_name="neighbor-route-map-direction-in", rest_name="neighbor-route-map-direction-in", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__neighbor_route_map_direction_out = YANGDynClass(base=neighbor_route_map_direction_out.neighbor_route_map_direction_out, is_container='container', presence=False, yang_name="neighbor-route-map-direction-out", rest_name="out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply map to outgoing routes', u'alt-name': u'out', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__neighbor_route_map_direction_in = YANGDynClass(base=neighbor_route_map_direction_in.neighbor_route_map_direction_in, is_container='container', presence=False, yang_name="neighbor-route-map-direction-in", rest_name="in", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply map to incoming routes', u'alt-name': u'in', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -83,7 +83,7 @@ class neighbor_route_map(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'routing-system', u'router', u'router-bgp', u'address-family', u'ipv6', u'ipv6-unicast', u'default-vrf', u'neighbor', u'af-ipv6-neighbor-peergroup-holder', u'af-ipv6-neighbor-peergroup', u'neighbor-route-map']
+      return [u'router', u'bgp', u'address-family', u'ipv6', u'unicast', u'neighbor', u'af-ipv6-neighbor-peergroup', u'route-map']
 
   def _get_neighbor_route_map_direction_in(self):
     """
@@ -102,12 +102,12 @@ class neighbor_route_map(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=neighbor_route_map_direction_in.neighbor_route_map_direction_in, is_container='container', presence=False, yang_name="neighbor-route-map-direction-in", rest_name="neighbor-route-map-direction-in", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=neighbor_route_map_direction_in.neighbor_route_map_direction_in, is_container='container', presence=False, yang_name="neighbor-route-map-direction-in", rest_name="in", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply map to incoming routes', u'alt-name': u'in', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """neighbor_route_map_direction_in must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=neighbor_route_map_direction_in.neighbor_route_map_direction_in, is_container='container', presence=False, yang_name="neighbor-route-map-direction-in", rest_name="neighbor-route-map-direction-in", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=neighbor_route_map_direction_in.neighbor_route_map_direction_in, is_container='container', presence=False, yang_name="neighbor-route-map-direction-in", rest_name="in", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply map to incoming routes', u'alt-name': u'in', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__neighbor_route_map_direction_in = t
@@ -115,7 +115,7 @@ class neighbor_route_map(PybindBase):
       self._set()
 
   def _unset_neighbor_route_map_direction_in(self):
-    self.__neighbor_route_map_direction_in = YANGDynClass(base=neighbor_route_map_direction_in.neighbor_route_map_direction_in, is_container='container', presence=False, yang_name="neighbor-route-map-direction-in", rest_name="neighbor-route-map-direction-in", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__neighbor_route_map_direction_in = YANGDynClass(base=neighbor_route_map_direction_in.neighbor_route_map_direction_in, is_container='container', presence=False, yang_name="neighbor-route-map-direction-in", rest_name="in", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply map to incoming routes', u'alt-name': u'in', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
 
   def _get_neighbor_route_map_direction_out(self):
@@ -135,12 +135,12 @@ class neighbor_route_map(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=neighbor_route_map_direction_out.neighbor_route_map_direction_out, is_container='container', presence=False, yang_name="neighbor-route-map-direction-out", rest_name="neighbor-route-map-direction-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=neighbor_route_map_direction_out.neighbor_route_map_direction_out, is_container='container', presence=False, yang_name="neighbor-route-map-direction-out", rest_name="out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply map to outgoing routes', u'alt-name': u'out', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """neighbor_route_map_direction_out must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=neighbor_route_map_direction_out.neighbor_route_map_direction_out, is_container='container', presence=False, yang_name="neighbor-route-map-direction-out", rest_name="neighbor-route-map-direction-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=neighbor_route_map_direction_out.neighbor_route_map_direction_out, is_container='container', presence=False, yang_name="neighbor-route-map-direction-out", rest_name="out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply map to outgoing routes', u'alt-name': u'out', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__neighbor_route_map_direction_out = t
@@ -148,7 +148,7 @@ class neighbor_route_map(PybindBase):
       self._set()
 
   def _unset_neighbor_route_map_direction_out(self):
-    self.__neighbor_route_map_direction_out = YANGDynClass(base=neighbor_route_map_direction_out.neighbor_route_map_direction_out, is_container='container', presence=False, yang_name="neighbor-route-map-direction-out", rest_name="neighbor-route-map-direction-out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__neighbor_route_map_direction_out = YANGDynClass(base=neighbor_route_map_direction_out.neighbor_route_map_direction_out, is_container='container', presence=False, yang_name="neighbor-route-map-direction-out", rest_name="out", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply map to outgoing routes', u'alt-name': u'out', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
   neighbor_route_map_direction_in = __builtin__.property(_get_neighbor_route_map_direction_in, _set_neighbor_route_map_direction_in)
   neighbor_route_map_direction_out = __builtin__.property(_get_neighbor_route_map_direction_out, _set_neighbor_route_map_direction_out)

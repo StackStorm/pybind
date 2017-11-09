@@ -18,7 +18,7 @@ class protocol_lldp(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__protocol',)
 
   _yang_name = 'protocol-lldp'
-  _rest_name = 'protocol-lldp'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -81,7 +81,7 @@ class protocol_lldp(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'rule', u'command', u'protocol-lldp']
+      return [u'rule', u'command']
 
   def _get_protocol(self):
     """

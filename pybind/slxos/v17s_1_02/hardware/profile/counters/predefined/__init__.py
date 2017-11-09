@@ -17,7 +17,7 @@ class predefined(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__counters_profiletype',)
 
   _yang_name = 'predefined'
-  _rest_name = 'predefined'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +44,7 @@ class predefined(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__counters_profiletype = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'default': {'value': 0}, u'counter-profile-2': {'value': 2}, u'counter-profile-1': {'value': 1}, u'counter-profile-3': {'value': 3}},), is_leaf=True, yang_name="counters_profiletype", rest_name="counters_profiletype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='counters-profile-subtype', is_config=True)
+    self.__counters_profiletype = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'default': {'value': 0}, u'counter-profile-2': {'value': 2}, u'counter-profile-1': {'value': 1}, u'counter-profile-3': {'value': 3}},), is_leaf=True, yang_name="counters_profiletype", rest_name="counters_profiletype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='counters-profile-subtype', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -80,7 +80,7 @@ class predefined(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'hardware', u'profile', u'counters', u'predefined']
+      return [u'hardware', u'profile', u'counters']
 
   def _get_counters_profiletype(self):
     """
@@ -99,12 +99,12 @@ class predefined(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'default': {'value': 0}, u'counter-profile-2': {'value': 2}, u'counter-profile-1': {'value': 1}, u'counter-profile-3': {'value': 3}},), is_leaf=True, yang_name="counters_profiletype", rest_name="counters_profiletype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='counters-profile-subtype', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'default': {'value': 0}, u'counter-profile-2': {'value': 2}, u'counter-profile-1': {'value': 1}, u'counter-profile-3': {'value': 3}},), is_leaf=True, yang_name="counters_profiletype", rest_name="counters_profiletype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='counters-profile-subtype', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """counters_profiletype must be of a type compatible with counters-profile-subtype""",
           'defined-type': "brocade-hardware:counters-profile-subtype",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'default': {'value': 0}, u'counter-profile-2': {'value': 2}, u'counter-profile-1': {'value': 1}, u'counter-profile-3': {'value': 3}},), is_leaf=True, yang_name="counters_profiletype", rest_name="counters_profiletype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='counters-profile-subtype', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'default': {'value': 0}, u'counter-profile-2': {'value': 2}, u'counter-profile-1': {'value': 1}, u'counter-profile-3': {'value': 3}},), is_leaf=True, yang_name="counters_profiletype", rest_name="counters_profiletype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='counters-profile-subtype', is_config=True)""",
         })
 
     self.__counters_profiletype = t
@@ -112,7 +112,7 @@ class predefined(PybindBase):
       self._set()
 
   def _unset_counters_profiletype(self):
-    self.__counters_profiletype = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'default': {'value': 0}, u'counter-profile-2': {'value': 2}, u'counter-profile-1': {'value': 1}, u'counter-profile-3': {'value': 3}},), is_leaf=True, yang_name="counters_profiletype", rest_name="counters_profiletype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='counters-profile-subtype', is_config=True)
+    self.__counters_profiletype = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'default': {'value': 0}, u'counter-profile-2': {'value': 2}, u'counter-profile-1': {'value': 1}, u'counter-profile-3': {'value': 3}},), is_leaf=True, yang_name="counters_profiletype", rest_name="counters_profiletype", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='counters-profile-subtype', is_config=True)
 
   counters_profiletype = __builtin__.property(_get_counters_profiletype, _set_counters_profiletype)
 

@@ -7,6 +7,7 @@ from pyangbind.lib.base import PybindBase
 from decimal import Decimal
 from bitarray import bitarray
 import __builtin__
+import mldPIM
 import mldVlan
 class ipv6(PybindBase):
   """
@@ -17,7 +18,7 @@ class ipv6(PybindBase):
 
   YANG Description: The IP configurations for an interface.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__mldVlan',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__mldPIM','__mldVlan',)
 
   _yang_name = 'ipv6'
   _rest_name = 'ipv6'
@@ -47,7 +48,8 @@ class ipv6(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__mldVlan = YANGDynClass(base=mldVlan.mldVlan, is_container='container', presence=False, yang_name="mldVlan", rest_name="mldVlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
+    self.__mldVlan = YANGDynClass(base=mldVlan.mldVlan, is_container='container', presence=False, yang_name="mldVlan", rest_name="mld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Multicast Listener Discovery (MLD) Snooping', u'callpoint': u'MldsVlan', u'cli-incomplete-no': None, u'alt-name': u'mld'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
+    self.__mldPIM = YANGDynClass(base=mldPIM.mldPIM, is_container='container', presence=False, yang_name="mldPIM", rest_name="pim", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MLD : IpV6 PIM Snooping', u'hidden': u'full', u'callpoint': u'MldsVlan', u'cli-incomplete-no': None, u'alt-name': u'pim'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -83,7 +85,40 @@ class ipv6(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface-vlan', u'vlan', u'ipv6']
+      return [u'vlan', u'ipv6']
+
+  def _get_mldPIM(self):
+    """
+    Getter method for mldPIM, mapped from YANG variable /interface_vlan/vlan/ipv6/mldPIM (container)
+    """
+    return self.__mldPIM
+      
+  def _set_mldPIM(self, v, load=False):
+    """
+    Setter method for mldPIM, mapped from YANG variable /interface_vlan/vlan/ipv6/mldPIM (container)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_mldPIM is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_mldPIM() directly.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=mldPIM.mldPIM, is_container='container', presence=False, yang_name="mldPIM", rest_name="pim", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MLD : IpV6 PIM Snooping', u'hidden': u'full', u'callpoint': u'MldsVlan', u'cli-incomplete-no': None, u'alt-name': u'pim'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """mldPIM must be of a type compatible with container""",
+          'defined-type': "container",
+          'generated-type': """YANGDynClass(base=mldPIM.mldPIM, is_container='container', presence=False, yang_name="mldPIM", rest_name="pim", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MLD : IpV6 PIM Snooping', u'hidden': u'full', u'callpoint': u'MldsVlan', u'cli-incomplete-no': None, u'alt-name': u'pim'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)""",
+        })
+
+    self.__mldPIM = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_mldPIM(self):
+    self.__mldPIM = YANGDynClass(base=mldPIM.mldPIM, is_container='container', presence=False, yang_name="mldPIM", rest_name="pim", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MLD : IpV6 PIM Snooping', u'hidden': u'full', u'callpoint': u'MldsVlan', u'cli-incomplete-no': None, u'alt-name': u'pim'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
+
 
   def _get_mldVlan(self):
     """
@@ -102,12 +137,12 @@ class ipv6(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=mldVlan.mldVlan, is_container='container', presence=False, yang_name="mldVlan", rest_name="mldVlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=mldVlan.mldVlan, is_container='container', presence=False, yang_name="mldVlan", rest_name="mld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Multicast Listener Discovery (MLD) Snooping', u'callpoint': u'MldsVlan', u'cli-incomplete-no': None, u'alt-name': u'mld'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mldVlan must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=mldVlan.mldVlan, is_container='container', presence=False, yang_name="mldVlan", rest_name="mldVlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=mldVlan.mldVlan, is_container='container', presence=False, yang_name="mldVlan", rest_name="mld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Multicast Listener Discovery (MLD) Snooping', u'callpoint': u'MldsVlan', u'cli-incomplete-no': None, u'alt-name': u'mld'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)""",
         })
 
     self.__mldVlan = t
@@ -115,11 +150,12 @@ class ipv6(PybindBase):
       self._set()
 
   def _unset_mldVlan(self):
-    self.__mldVlan = YANGDynClass(base=mldVlan.mldVlan, is_container='container', presence=False, yang_name="mldVlan", rest_name="mldVlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
+    self.__mldVlan = YANGDynClass(base=mldVlan.mldVlan, is_container='container', presence=False, yang_name="mldVlan", rest_name="mld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Multicast Listener Discovery (MLD) Snooping', u'callpoint': u'MldsVlan', u'cli-incomplete-no': None, u'alt-name': u'mld'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
 
+  mldPIM = __builtin__.property(_get_mldPIM, _set_mldPIM)
   mldVlan = __builtin__.property(_get_mldVlan, _set_mldVlan)
 
 
-  _pyangbind_elements = {'mldVlan': mldVlan, }
+  _pyangbind_elements = {'mldPIM': mldPIM, 'mldVlan': mldVlan, }
 
 

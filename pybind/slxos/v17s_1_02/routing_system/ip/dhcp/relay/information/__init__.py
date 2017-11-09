@@ -46,7 +46,7 @@ class information(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__option = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="option", rest_name="option", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='empty', is_config=True)
+    self.__option = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="option", rest_name="option", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure DHCP Relay Information Option', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -82,7 +82,7 @@ class information(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'routing-system', u'ip', u'dhcp', u'relay', u'information']
+      return [u'ip', u'dhcp', u'relay', u'information']
 
   def _get_option(self):
     """
@@ -105,12 +105,12 @@ class information(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="option", rest_name="option", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="option", rest_name="option", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure DHCP Relay Information Option', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """option must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="option", rest_name="option", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="option", rest_name="option", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure DHCP Relay Information Option', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='empty', is_config=True)""",
         })
 
     self.__option = t
@@ -118,7 +118,7 @@ class information(PybindBase):
       self._set()
 
   def _unset_option(self):
-    self.__option = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="option", rest_name="option", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='empty', is_config=True)
+    self.__option = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="option", rest_name="option", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure DHCP Relay Information Option', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-dhcp', defining_module='brocade-dhcp', yang_type='empty', is_config=True)
 
   option = __builtin__.property(_get_option, _set_option)
 

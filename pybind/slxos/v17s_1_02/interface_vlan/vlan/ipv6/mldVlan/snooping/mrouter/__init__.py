@@ -45,7 +45,7 @@ class mrouter(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__interface = YANGDynClass(base=YANGListType("if_type value",interface.interface, yang_name="interface", rest_name="interface", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='if-type value', extensions=None), is_container='list', yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='list', is_config=True)
+    self.__interface = YANGDynClass(base=YANGListType("if_type value",interface.interface, yang_name="interface", rest_name="interface", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='if-type value', extensions={u'tailf-common': {u'info': u'Interface to use', u'cli-suppress-list-no': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface to use', u'cli-suppress-list-no': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class mrouter(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface-vlan', u'vlan', u'ipv6', u'mldVlan', u'snooping', u'mrouter']
+      return [u'vlan', u'ipv6', u'mld', u'snooping', u'mrouter']
 
   def _get_interface(self):
     """
@@ -100,12 +100,12 @@ class mrouter(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("if_type value",interface.interface, yang_name="interface", rest_name="interface", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='if-type value', extensions=None), is_container='list', yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("if_type value",interface.interface, yang_name="interface", rest_name="interface", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='if-type value', extensions={u'tailf-common': {u'info': u'Interface to use', u'cli-suppress-list-no': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface to use', u'cli-suppress-list-no': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """interface must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("if_type value",interface.interface, yang_name="interface", rest_name="interface", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='if-type value', extensions=None), is_container='list', yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("if_type value",interface.interface, yang_name="interface", rest_name="interface", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='if-type value', extensions={u'tailf-common': {u'info': u'Interface to use', u'cli-suppress-list-no': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface to use', u'cli-suppress-list-no': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='list', is_config=True)""",
         })
 
     self.__interface = t
@@ -113,7 +113,7 @@ class mrouter(PybindBase):
       self._set()
 
   def _unset_interface(self):
-    self.__interface = YANGDynClass(base=YANGListType("if_type value",interface.interface, yang_name="interface", rest_name="interface", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='if-type value', extensions=None), is_container='list', yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='list', is_config=True)
+    self.__interface = YANGDynClass(base=YANGListType("if_type value",interface.interface, yang_name="interface", rest_name="interface", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='if-type value', extensions={u'tailf-common': {u'info': u'Interface to use', u'cli-suppress-list-no': None, u'cli-suppress-mode': None}}), is_container='list', yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface to use', u'cli-suppress-list-no': None, u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='list', is_config=True)
 
   interface = __builtin__.property(_get_interface, _set_interface)
 

@@ -45,7 +45,7 @@ class management(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__virtual = YANGDynClass(base=virtual.virtual, is_container='container', presence=False, yang_name="virtual", rest_name="virtual", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='container', is_config=True)
+    self.__virtual = YANGDynClass(base=virtual.virtual, is_container='container', presence=False, yang_name="virtual", rest_name="virtual", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Cluster Management virtual IP Configuration', u'cli-incomplete-no': None}}, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class management(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'mgmt-cluster', u'cluster', u'management']
+      return [u'cluster', u'management']
 
   def _get_virtual(self):
     """
@@ -100,12 +100,12 @@ class management(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=virtual.virtual, is_container='container', presence=False, yang_name="virtual", rest_name="virtual", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=virtual.virtual, is_container='container', presence=False, yang_name="virtual", rest_name="virtual", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Cluster Management virtual IP Configuration', u'cli-incomplete-no': None}}, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """virtual must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=virtual.virtual, is_container='container', presence=False, yang_name="virtual", rest_name="virtual", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=virtual.virtual, is_container='container', presence=False, yang_name="virtual", rest_name="virtual", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Cluster Management virtual IP Configuration', u'cli-incomplete-no': None}}, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='container', is_config=True)""",
         })
 
     self.__virtual = t
@@ -113,7 +113,7 @@ class management(PybindBase):
       self._set()
 
   def _unset_virtual(self):
-    self.__virtual = YANGDynClass(base=virtual.virtual, is_container='container', presence=False, yang_name="virtual", rest_name="virtual", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='container', is_config=True)
+    self.__virtual = YANGDynClass(base=virtual.virtual, is_container='container', presence=False, yang_name="virtual", rest_name="virtual", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Cluster Management virtual IP Configuration', u'cli-incomplete-no': None}}, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='container', is_config=True)
 
   virtual = __builtin__.property(_get_virtual, _set_virtual)
 

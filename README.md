@@ -17,6 +17,9 @@ Inside a python program do this:
 
 # DO NOT FORGET
 Please look through the README.md file in pyswitchlib
+## 0.1.33:
+* Regenerated slxos17s.1.02 bindings due to issue with web posted YANG models.
+
 ## 0.1.32:
 * Added back all yang models for each OS.  Only increased by 20MB.
 

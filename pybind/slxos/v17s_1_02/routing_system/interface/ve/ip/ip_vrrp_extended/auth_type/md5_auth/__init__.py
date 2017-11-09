@@ -46,7 +46,7 @@ class md5_auth(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__auth_data = YANGDynClass(base=unicode, is_leaf=True, yang_name="auth-data", rest_name="auth-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='string', is_config=True)
+    self.__auth_data = YANGDynClass(base=unicode, is_leaf=True, yang_name="auth-data", rest_name="auth-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication data', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='string', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -82,7 +82,7 @@ class md5_auth(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'routing-system', u'interface', u've', u'ip', u'ip-vrrp-extended', u'auth-type', u'md5-auth']
+      return [u'interface', u'Ve', u'ip', u'vrrp-extended', u'auth-type', u'md5-auth']
 
   def _get_auth_data(self):
     """
@@ -105,12 +105,12 @@ class md5_auth(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="auth-data", rest_name="auth-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="auth-data", rest_name="auth-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication data', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """auth_data must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="auth-data", rest_name="auth-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="auth-data", rest_name="auth-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication data', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='string', is_config=True)""",
         })
 
     self.__auth_data = t
@@ -118,7 +118,7 @@ class md5_auth(PybindBase):
       self._set()
 
   def _unset_auth_data(self):
-    self.__auth_data = YANGDynClass(base=unicode, is_leaf=True, yang_name="auth-data", rest_name="auth-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='string', is_config=True)
+    self.__auth_data = YANGDynClass(base=unicode, is_leaf=True, yang_name="auth-data", rest_name="auth-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication data', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='string', is_config=True)
 
   auth_data = __builtin__.property(_get_auth_data, _set_auth_data)
 

@@ -44,9 +44,9 @@ class match(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ospf_internal = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ospf-internal", rest_name="ospf-internal", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
-    self.__ospf_external2 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ospf-external2", rest_name="ospf-external2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
-    self.__ospf_external1 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ospf-external1", rest_name="ospf-external1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__ospf_internal = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ospf-internal", rest_name="internal", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Internal routes', u'cli-run-template': u'$(.?$(../ospf-external1?redistribute ospf match internal\n:$(../ospf-external2?redistribute ospf match internal\n:\\r)):\\r)', u'alt-name': u'internal', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__ospf_external2 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ospf-external2", rest_name="external2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'External type 2 routes', u'cli-full-command': None, u'alt-name': u'external2'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__ospf_external1 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ospf-external1", rest_name="external1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'External type 1 routes', u'cli-full-command': None, u'alt-name': u'external1'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -82,7 +82,7 @@ class match(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'routing-system', u'router', u'router-bgp', u'address-family', u'ipv4', u'ipv4-unicast', u'default-vrf', u'af-ipv4-uc-and-vrf-cmds-call-point-holder', u'redistribute', u'ospf', u'match']
+      return [u'router', u'bgp', u'address-family', u'ipv4', u'unicast', u'redistribute', u'ospf', u'match']
 
   def _get_ospf_internal(self):
     """
@@ -101,12 +101,12 @@ class match(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ospf-internal", rest_name="ospf-internal", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ospf-internal", rest_name="internal", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Internal routes', u'cli-run-template': u'$(.?$(../ospf-external1?redistribute ospf match internal\n:$(../ospf-external2?redistribute ospf match internal\n:\\r)):\\r)', u'alt-name': u'internal', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ospf_internal must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ospf-internal", rest_name="ospf-internal", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ospf-internal", rest_name="internal", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Internal routes', u'cli-run-template': u'$(.?$(../ospf-external1?redistribute ospf match internal\n:$(../ospf-external2?redistribute ospf match internal\n:\\r)):\\r)', u'alt-name': u'internal', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
         })
 
     self.__ospf_internal = t
@@ -114,7 +114,7 @@ class match(PybindBase):
       self._set()
 
   def _unset_ospf_internal(self):
-    self.__ospf_internal = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ospf-internal", rest_name="ospf-internal", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__ospf_internal = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ospf-internal", rest_name="internal", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Internal routes', u'cli-run-template': u'$(.?$(../ospf-external1?redistribute ospf match internal\n:$(../ospf-external2?redistribute ospf match internal\n:\\r)):\\r)', u'alt-name': u'internal', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
 
 
   def _get_ospf_external1(self):
@@ -134,12 +134,12 @@ class match(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ospf-external1", rest_name="ospf-external1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ospf-external1", rest_name="external1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'External type 1 routes', u'cli-full-command': None, u'alt-name': u'external1'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ospf_external1 must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ospf-external1", rest_name="ospf-external1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ospf-external1", rest_name="external1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'External type 1 routes', u'cli-full-command': None, u'alt-name': u'external1'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
         })
 
     self.__ospf_external1 = t
@@ -147,7 +147,7 @@ class match(PybindBase):
       self._set()
 
   def _unset_ospf_external1(self):
-    self.__ospf_external1 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ospf-external1", rest_name="ospf-external1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__ospf_external1 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ospf-external1", rest_name="external1", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'External type 1 routes', u'cli-full-command': None, u'alt-name': u'external1'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
 
 
   def _get_ospf_external2(self):
@@ -167,12 +167,12 @@ class match(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ospf-external2", rest_name="ospf-external2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ospf-external2", rest_name="external2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'External type 2 routes', u'cli-full-command': None, u'alt-name': u'external2'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ospf_external2 must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ospf-external2", rest_name="ospf-external2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ospf-external2", rest_name="external2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'External type 2 routes', u'cli-full-command': None, u'alt-name': u'external2'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
         })
 
     self.__ospf_external2 = t
@@ -180,7 +180,7 @@ class match(PybindBase):
       self._set()
 
   def _unset_ospf_external2(self):
-    self.__ospf_external2 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ospf-external2", rest_name="ospf-external2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__ospf_external2 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ospf-external2", rest_name="external2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'External type 2 routes', u'cli-full-command': None, u'alt-name': u'external2'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
 
   ospf_internal = __builtin__.property(_get_ospf_internal, _set_ospf_internal)
   ospf_external1 = __builtin__.property(_get_ospf_external1, _set_ospf_external1)

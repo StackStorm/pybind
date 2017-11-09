@@ -18,7 +18,7 @@ class defaultacc(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__start_stop',)
 
   _yang_name = 'defaultacc'
-  _rest_name = 'defaultacc'
+  _rest_name = 'default'
 
   _pybind_generated_by = 'container'
 
@@ -81,7 +81,7 @@ class defaultacc(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'aaa-config', u'aaa', u'accounting', u'exec', u'defaultacc']
+      return [u'aaa', u'accounting', u'exec', u'default']
 
   def _get_start_stop(self):
     """

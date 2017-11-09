@@ -46,8 +46,8 @@ class vlan(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__evpn_vlan = YANGDynClass(base=YANGListType("vlan_number",evpn_vlan.evpn_vlan, yang_name="evpn-vlan", rest_name="evpn-vlan", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-number', extensions=None), is_container='list', yang_name="evpn-vlan", rest_name="evpn-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
-    self.__vlan_add = YANGDynClass(base=vlan_add.vlan_add, is_container='container', presence=False, yang_name="vlan-add", rest_name="vlan-add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__evpn_vlan = YANGDynClass(base=YANGListType("vlan_number",evpn_vlan.evpn_vlan, yang_name="evpn-vlan", rest_name="evpn-vlan", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-number', extensions={u'tailf-common': {u'info': u'EVPN Instance VLAN configuration', u'cli-no-key-completion': None, u'callpoint': u'EvpnVniConfig', u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'evpn-vlan-$(vlan-number)'}}), is_container='list', yang_name="evpn-vlan", rest_name="evpn-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'EVPN Instance VLAN configuration', u'cli-no-key-completion': None, u'callpoint': u'EvpnVniConfig', u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'evpn-vlan-$(vlan-number)'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
+    self.__vlan_add = YANGDynClass(base=vlan_add.vlan_add, is_container='container', presence=False, yang_name="vlan-add", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Add/Remove VLANs from EVPN Instance', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -83,7 +83,7 @@ class vlan(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'routing-system', u'evpn-config', u'evpn', u'evpn-instance', u'vlan']
+      return [u'evpn', u'evpn-instance', u'vlan']
 
   def _get_vlan_add(self):
     """
@@ -102,12 +102,12 @@ class vlan(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=vlan_add.vlan_add, is_container='container', presence=False, yang_name="vlan-add", rest_name="vlan-add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=vlan_add.vlan_add, is_container='container', presence=False, yang_name="vlan-add", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Add/Remove VLANs from EVPN Instance', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vlan_add must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=vlan_add.vlan_add, is_container='container', presence=False, yang_name="vlan-add", rest_name="vlan-add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=vlan_add.vlan_add, is_container='container', presence=False, yang_name="vlan-add", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Add/Remove VLANs from EVPN Instance', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__vlan_add = t
@@ -115,7 +115,7 @@ class vlan(PybindBase):
       self._set()
 
   def _unset_vlan_add(self):
-    self.__vlan_add = YANGDynClass(base=vlan_add.vlan_add, is_container='container', presence=False, yang_name="vlan-add", rest_name="vlan-add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__vlan_add = YANGDynClass(base=vlan_add.vlan_add, is_container='container', presence=False, yang_name="vlan-add", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Add/Remove VLANs from EVPN Instance', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
 
   def _get_evpn_vlan(self):
@@ -139,12 +139,12 @@ class vlan(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("vlan_number",evpn_vlan.evpn_vlan, yang_name="evpn-vlan", rest_name="evpn-vlan", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-number', extensions=None), is_container='list', yang_name="evpn-vlan", rest_name="evpn-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("vlan_number",evpn_vlan.evpn_vlan, yang_name="evpn-vlan", rest_name="evpn-vlan", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-number', extensions={u'tailf-common': {u'info': u'EVPN Instance VLAN configuration', u'cli-no-key-completion': None, u'callpoint': u'EvpnVniConfig', u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'evpn-vlan-$(vlan-number)'}}), is_container='list', yang_name="evpn-vlan", rest_name="evpn-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'EVPN Instance VLAN configuration', u'cli-no-key-completion': None, u'callpoint': u'EvpnVniConfig', u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'evpn-vlan-$(vlan-number)'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """evpn_vlan must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("vlan_number",evpn_vlan.evpn_vlan, yang_name="evpn-vlan", rest_name="evpn-vlan", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-number', extensions=None), is_container='list', yang_name="evpn-vlan", rest_name="evpn-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("vlan_number",evpn_vlan.evpn_vlan, yang_name="evpn-vlan", rest_name="evpn-vlan", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-number', extensions={u'tailf-common': {u'info': u'EVPN Instance VLAN configuration', u'cli-no-key-completion': None, u'callpoint': u'EvpnVniConfig', u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'evpn-vlan-$(vlan-number)'}}), is_container='list', yang_name="evpn-vlan", rest_name="evpn-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'EVPN Instance VLAN configuration', u'cli-no-key-completion': None, u'callpoint': u'EvpnVniConfig', u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'evpn-vlan-$(vlan-number)'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)""",
         })
 
     self.__evpn_vlan = t
@@ -152,7 +152,7 @@ class vlan(PybindBase):
       self._set()
 
   def _unset_evpn_vlan(self):
-    self.__evpn_vlan = YANGDynClass(base=YANGListType("vlan_number",evpn_vlan.evpn_vlan, yang_name="evpn-vlan", rest_name="evpn-vlan", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-number', extensions=None), is_container='list', yang_name="evpn-vlan", rest_name="evpn-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
+    self.__evpn_vlan = YANGDynClass(base=YANGListType("vlan_number",evpn_vlan.evpn_vlan, yang_name="evpn-vlan", rest_name="evpn-vlan", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-number', extensions={u'tailf-common': {u'info': u'EVPN Instance VLAN configuration', u'cli-no-key-completion': None, u'callpoint': u'EvpnVniConfig', u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'evpn-vlan-$(vlan-number)'}}), is_container='list', yang_name="evpn-vlan", rest_name="evpn-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'EVPN Instance VLAN configuration', u'cli-no-key-completion': None, u'callpoint': u'EvpnVniConfig', u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'evpn-vlan-$(vlan-number)'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
 
   vlan_add = __builtin__.property(_get_vlan_add, _set_vlan_add)
   evpn_vlan = __builtin__.property(_get_evpn_vlan, _set_evpn_vlan)

@@ -9,6 +9,7 @@ from bitarray import bitarray
 import __builtin__
 import connector
 import port_group
+import custom_profile
 import profile
 class hardware(PybindBase):
   """
@@ -21,7 +22,7 @@ class hardware(PybindBase):
 elements to manage the hardware chracteristics of this
 managed entity.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__connector','__port_group','__profile','__system_mode',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__connector','__port_group','__custom_profile','__profile','__system_mode',)
 
   _yang_name = 'hardware'
   _rest_name = 'hardware'
@@ -51,10 +52,11 @@ managed entity.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__connector = YANGDynClass(base=YANGListType("name",connector.connector, yang_name="connector", rest_name="connector", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions=None), is_container='list', yang_name="connector", rest_name="connector", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='list', is_config=True)
-    self.__profile = YANGDynClass(base=profile.profile, is_container='container', presence=False, yang_name="profile", rest_name="profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
-    self.__system_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'default': {'value': 0}, u'npb': {'value': 1}},), is_leaf=True, yang_name="system-mode", rest_name="system-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='system-mode-type', is_config=True)
-    self.__port_group = YANGDynClass(base=YANGListType("name",port_group.port_group, yang_name="port-group", rest_name="port-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions=None), is_container='list', yang_name="port-group", rest_name="port-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='list', is_config=True)
+    self.__connector = YANGDynClass(base=YANGListType("name",connector.connector, yang_name="connector", rest_name="connector", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Configure a connector', u'sort-priority': u'33', u'cli-suppress-no': None, u'cli-custom-range-actionpoint': u'NsmRangeCliActionpoint', u'cli-custom-range-enumerator': u'NsmRangeCliActionpoint', u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'connector-config'}}), is_container='list', yang_name="connector", rest_name="connector", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a connector', u'sort-priority': u'33', u'cli-suppress-no': None, u'cli-custom-range-actionpoint': u'NsmRangeCliActionpoint', u'cli-custom-range-enumerator': u'NsmRangeCliActionpoint', u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'connector-config'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='list', is_config=True)
+    self.__profile = YANGDynClass(base=profile.profile, is_container='container', presence=False, yang_name="profile", rest_name="profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Hardware Profile on a Switch', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    self.__system_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'default': {'value': 0}, u'npb': {'value': 1}},), is_leaf=True, yang_name="system-mode", rest_name="system-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set system mode', u'callpoint': u'ha_system_mode_callpoint', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='system-mode-type', is_config=True)
+    self.__custom_profile = YANGDynClass(base=custom_profile.custom_profile, is_container='container', presence=False, yang_name="custom-profile", rest_name="custom-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure customized hardware profiles', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    self.__port_group = YANGDynClass(base=YANGListType("name",port_group.port_group, yang_name="port-group", rest_name="port-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Configure a port-group', u'sort-priority': u'32', u'cli-suppress-no': None, u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'port-group-config'}}), is_container='list', yang_name="port-group", rest_name="port-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a port-group', u'sort-priority': u'32', u'cli-suppress-no': None, u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'port-group-config'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -109,12 +111,12 @@ managed entity.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("name",connector.connector, yang_name="connector", rest_name="connector", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions=None), is_container='list', yang_name="connector", rest_name="connector", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("name",connector.connector, yang_name="connector", rest_name="connector", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Configure a connector', u'sort-priority': u'33', u'cli-suppress-no': None, u'cli-custom-range-actionpoint': u'NsmRangeCliActionpoint', u'cli-custom-range-enumerator': u'NsmRangeCliActionpoint', u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'connector-config'}}), is_container='list', yang_name="connector", rest_name="connector", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a connector', u'sort-priority': u'33', u'cli-suppress-no': None, u'cli-custom-range-actionpoint': u'NsmRangeCliActionpoint', u'cli-custom-range-enumerator': u'NsmRangeCliActionpoint', u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'connector-config'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """connector must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("name",connector.connector, yang_name="connector", rest_name="connector", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions=None), is_container='list', yang_name="connector", rest_name="connector", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("name",connector.connector, yang_name="connector", rest_name="connector", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Configure a connector', u'sort-priority': u'33', u'cli-suppress-no': None, u'cli-custom-range-actionpoint': u'NsmRangeCliActionpoint', u'cli-custom-range-enumerator': u'NsmRangeCliActionpoint', u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'connector-config'}}), is_container='list', yang_name="connector", rest_name="connector", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a connector', u'sort-priority': u'33', u'cli-suppress-no': None, u'cli-custom-range-actionpoint': u'NsmRangeCliActionpoint', u'cli-custom-range-enumerator': u'NsmRangeCliActionpoint', u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'connector-config'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='list', is_config=True)""",
         })
 
     self.__connector = t
@@ -122,7 +124,7 @@ managed entity.
       self._set()
 
   def _unset_connector(self):
-    self.__connector = YANGDynClass(base=YANGListType("name",connector.connector, yang_name="connector", rest_name="connector", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions=None), is_container='list', yang_name="connector", rest_name="connector", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='list', is_config=True)
+    self.__connector = YANGDynClass(base=YANGListType("name",connector.connector, yang_name="connector", rest_name="connector", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Configure a connector', u'sort-priority': u'33', u'cli-suppress-no': None, u'cli-custom-range-actionpoint': u'NsmRangeCliActionpoint', u'cli-custom-range-enumerator': u'NsmRangeCliActionpoint', u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'connector-config'}}), is_container='list', yang_name="connector", rest_name="connector", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a connector', u'sort-priority': u'33', u'cli-suppress-no': None, u'cli-custom-range-actionpoint': u'NsmRangeCliActionpoint', u'cli-custom-range-enumerator': u'NsmRangeCliActionpoint', u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'connector-config'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='list', is_config=True)
 
 
   def _get_port_group(self):
@@ -142,12 +144,12 @@ managed entity.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("name",port_group.port_group, yang_name="port-group", rest_name="port-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions=None), is_container='list', yang_name="port-group", rest_name="port-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("name",port_group.port_group, yang_name="port-group", rest_name="port-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Configure a port-group', u'sort-priority': u'32', u'cli-suppress-no': None, u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'port-group-config'}}), is_container='list', yang_name="port-group", rest_name="port-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a port-group', u'sort-priority': u'32', u'cli-suppress-no': None, u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'port-group-config'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """port_group must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("name",port_group.port_group, yang_name="port-group", rest_name="port-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions=None), is_container='list', yang_name="port-group", rest_name="port-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("name",port_group.port_group, yang_name="port-group", rest_name="port-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Configure a port-group', u'sort-priority': u'32', u'cli-suppress-no': None, u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'port-group-config'}}), is_container='list', yang_name="port-group", rest_name="port-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a port-group', u'sort-priority': u'32', u'cli-suppress-no': None, u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'port-group-config'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='list', is_config=True)""",
         })
 
     self.__port_group = t
@@ -155,7 +157,40 @@ managed entity.
       self._set()
 
   def _unset_port_group(self):
-    self.__port_group = YANGDynClass(base=YANGListType("name",port_group.port_group, yang_name="port-group", rest_name="port-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions=None), is_container='list', yang_name="port-group", rest_name="port-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='list', is_config=True)
+    self.__port_group = YANGDynClass(base=YANGListType("name",port_group.port_group, yang_name="port-group", rest_name="port-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Configure a port-group', u'sort-priority': u'32', u'cli-suppress-no': None, u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'port-group-config'}}), is_container='list', yang_name="port-group", rest_name="port-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a port-group', u'sort-priority': u'32', u'cli-suppress-no': None, u'cli-no-match-completion': None, u'cli-full-command': None, u'callpoint': u'port-group-config'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='list', is_config=True)
+
+
+  def _get_custom_profile(self):
+    """
+    Getter method for custom_profile, mapped from YANG variable /hardware/custom_profile (container)
+    """
+    return self.__custom_profile
+      
+  def _set_custom_profile(self, v, load=False):
+    """
+    Setter method for custom_profile, mapped from YANG variable /hardware/custom_profile (container)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_custom_profile is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_custom_profile() directly.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=custom_profile.custom_profile, is_container='container', presence=False, yang_name="custom-profile", rest_name="custom-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure customized hardware profiles', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """custom_profile must be of a type compatible with container""",
+          'defined-type': "container",
+          'generated-type': """YANGDynClass(base=custom_profile.custom_profile, is_container='container', presence=False, yang_name="custom-profile", rest_name="custom-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure customized hardware profiles', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)""",
+        })
+
+    self.__custom_profile = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_custom_profile(self):
+    self.__custom_profile = YANGDynClass(base=custom_profile.custom_profile, is_container='container', presence=False, yang_name="custom-profile", rest_name="custom-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure customized hardware profiles', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
 
 
   def _get_profile(self):
@@ -175,12 +210,12 @@ managed entity.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=profile.profile, is_container='container', presence=False, yang_name="profile", rest_name="profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=profile.profile, is_container='container', presence=False, yang_name="profile", rest_name="profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Hardware Profile on a Switch', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """profile must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=profile.profile, is_container='container', presence=False, yang_name="profile", rest_name="profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=profile.profile, is_container='container', presence=False, yang_name="profile", rest_name="profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Hardware Profile on a Switch', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)""",
         })
 
     self.__profile = t
@@ -188,7 +223,7 @@ managed entity.
       self._set()
 
   def _unset_profile(self):
-    self.__profile = YANGDynClass(base=profile.profile, is_container='container', presence=False, yang_name="profile", rest_name="profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    self.__profile = YANGDynClass(base=profile.profile, is_container='container', presence=False, yang_name="profile", rest_name="profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Hardware Profile on a Switch', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
 
 
   def _get_system_mode(self):
@@ -208,12 +243,12 @@ managed entity.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'default': {'value': 0}, u'npb': {'value': 1}},), is_leaf=True, yang_name="system-mode", rest_name="system-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='system-mode-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'default': {'value': 0}, u'npb': {'value': 1}},), is_leaf=True, yang_name="system-mode", rest_name="system-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set system mode', u'callpoint': u'ha_system_mode_callpoint', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='system-mode-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """system_mode must be of a type compatible with system-mode-type""",
           'defined-type': "brocade-hardware:system-mode-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'default': {'value': 0}, u'npb': {'value': 1}},), is_leaf=True, yang_name="system-mode", rest_name="system-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='system-mode-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'default': {'value': 0}, u'npb': {'value': 1}},), is_leaf=True, yang_name="system-mode", rest_name="system-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set system mode', u'callpoint': u'ha_system_mode_callpoint', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='system-mode-type', is_config=True)""",
         })
 
     self.__system_mode = t
@@ -221,14 +256,15 @@ managed entity.
       self._set()
 
   def _unset_system_mode(self):
-    self.__system_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'default': {'value': 0}, u'npb': {'value': 1}},), is_leaf=True, yang_name="system-mode", rest_name="system-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='system-mode-type', is_config=True)
+    self.__system_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'default': {'value': 0}, u'npb': {'value': 1}},), is_leaf=True, yang_name="system-mode", rest_name="system-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set system mode', u'callpoint': u'ha_system_mode_callpoint', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='system-mode-type', is_config=True)
 
   connector = __builtin__.property(_get_connector, _set_connector)
   port_group = __builtin__.property(_get_port_group, _set_port_group)
+  custom_profile = __builtin__.property(_get_custom_profile, _set_custom_profile)
   profile = __builtin__.property(_get_profile, _set_profile)
   system_mode = __builtin__.property(_get_system_mode, _set_system_mode)
 
 
-  _pyangbind_elements = {'connector': connector, 'port_group': port_group, 'profile': profile, 'system_mode': system_mode, }
+  _pyangbind_elements = {'connector': connector, 'port_group': port_group, 'custom_profile': custom_profile, 'profile': profile, 'system_mode': system_mode, }
 
 

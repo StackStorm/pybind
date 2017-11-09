@@ -44,7 +44,7 @@ class filter(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__acl_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,61})', 'length': [u'1..62']}), is_leaf=True, yang_name="acl-name", rest_name="acl-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='dai-acl-policy-name', is_config=True)
+    self.__acl_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,61})', 'length': [u'1..62']}), is_leaf=True, yang_name="acl-name", rest_name="acl-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='dai-acl-policy-name', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -80,7 +80,7 @@ class filter(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface-vlan', u'vlan', u'ip', u'arp', u'inspection', u'filter']
+      return [u'vlan', u'ip', u'arp', u'inspection', u'filter']
 
   def _get_acl_name(self):
     """
@@ -99,12 +99,12 @@ class filter(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,61})', 'length': [u'1..62']}), is_leaf=True, yang_name="acl-name", rest_name="acl-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='dai-acl-policy-name', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,61})', 'length': [u'1..62']}), is_leaf=True, yang_name="acl-name", rest_name="acl-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='dai-acl-policy-name', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """acl_name must be of a type compatible with dai-acl-policy-name""",
           'defined-type': "brocade-dai:dai-acl-policy-name",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,61})', 'length': [u'1..62']}), is_leaf=True, yang_name="acl-name", rest_name="acl-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='dai-acl-policy-name', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,61})', 'length': [u'1..62']}), is_leaf=True, yang_name="acl-name", rest_name="acl-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='dai-acl-policy-name', is_config=True)""",
         })
 
     self.__acl_name = t
@@ -112,7 +112,7 @@ class filter(PybindBase):
       self._set()
 
   def _unset_acl_name(self):
-    self.__acl_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,61})', 'length': [u'1..62']}), is_leaf=True, yang_name="acl-name", rest_name="acl-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='dai-acl-policy-name', is_config=True)
+    self.__acl_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z0-9]{1}([-a-zA-Z0-9_]{0,61})', 'length': [u'1..62']}), is_leaf=True, yang_name="acl-name", rest_name="acl-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='dai-acl-policy-name', is_config=True)
 
   acl_name = __builtin__.property(_get_acl_name, _set_acl_name)
 

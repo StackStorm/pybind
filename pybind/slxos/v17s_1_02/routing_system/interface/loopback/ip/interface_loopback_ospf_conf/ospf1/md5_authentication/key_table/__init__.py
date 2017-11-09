@@ -14,10 +14,10 @@ class key_table(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__key_id','__md5_authentication_key',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__key_id','__key','__md5_authentication_key',)
 
   _yang_name = 'key-table'
-  _rest_name = 'key-table'
+  _rest_name = 'key-id'
 
   _pybind_generated_by = 'container'
 
@@ -44,8 +44,9 @@ class key_table(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__key_id = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..255']}), is_leaf=True, yang_name="key-id", rest_name="key-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='uint32', is_config=True)
-    self.__md5_authentication_key = YANGDynClass(base=unicode, is_leaf=True, yang_name="md5-authentication-key", rest_name="md5-authentication-key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='ospf-auth-psswd-string', is_config=True)
+    self.__key_id = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..255']}), is_leaf=True, yang_name="key-id", rest_name="key-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The key ID of the MD5 key', u'cli-drop-node-name': None, u'alt-name': u'key-id', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='uint32', is_config=True)
+    self.__key = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0', u'2', u'255']}), is_leaf=True, yang_name="key", rest_name="key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'MD5 Authentication password (key)', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='key-type', is_config=True)
+    self.__md5_authentication_key = YANGDynClass(base=unicode, is_leaf=True, yang_name="md5-authentication-key", rest_name="key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'MD5 authentication ID', u'alt-name': u'key'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='ospf-auth-psswd-string', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +82,7 @@ class key_table(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'routing-system', u'interface', u'loopback', u'ip', u'interface-loopback-ospf-conf', u'ospf1', u'md5-authentication', u'key-table']
+      return [u'interface', u'Loopback', u'ip', u'ospf', u'md5-authentication', u'key-id']
 
   def _get_key_id(self):
     """
@@ -100,12 +101,12 @@ class key_table(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..255']}), is_leaf=True, yang_name="key-id", rest_name="key-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..255']}), is_leaf=True, yang_name="key-id", rest_name="key-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The key ID of the MD5 key', u'cli-drop-node-name': None, u'alt-name': u'key-id', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """key_id must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..255']}), is_leaf=True, yang_name="key-id", rest_name="key-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..255']}), is_leaf=True, yang_name="key-id", rest_name="key-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The key ID of the MD5 key', u'cli-drop-node-name': None, u'alt-name': u'key-id', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='uint32', is_config=True)""",
         })
 
     self.__key_id = t
@@ -113,7 +114,44 @@ class key_table(PybindBase):
       self._set()
 
   def _unset_key_id(self):
-    self.__key_id = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..255']}), is_leaf=True, yang_name="key-id", rest_name="key-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='uint32', is_config=True)
+    self.__key_id = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..255']}), is_leaf=True, yang_name="key-id", rest_name="key-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The key ID of the MD5 key', u'cli-drop-node-name': None, u'alt-name': u'key-id', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='uint32', is_config=True)
+
+
+  def _get_key(self):
+    """
+    Getter method for key, mapped from YANG variable /routing_system/interface/loopback/ip/interface_loopback_ospf_conf/ospf1/md5_authentication/key_table/key (key-type)
+
+    YANG Description: MD5 Authentication password (key)
+    """
+    return self.__key
+      
+  def _set_key(self, v, load=False):
+    """
+    Setter method for key, mapped from YANG variable /routing_system/interface/loopback/ip/interface_loopback_ospf_conf/ospf1/md5_authentication/key_table/key (key-type)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_key is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_key() directly.
+
+    YANG Description: MD5 Authentication password (key)
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0', u'2', u'255']}), is_leaf=True, yang_name="key", rest_name="key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'MD5 Authentication password (key)', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='key-type', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """key must be of a type compatible with key-type""",
+          'defined-type': "brocade-ospf:key-type",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0', u'2', u'255']}), is_leaf=True, yang_name="key", rest_name="key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'MD5 Authentication password (key)', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='key-type', is_config=True)""",
+        })
+
+    self.__key = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_key(self):
+    self.__key = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0', u'2', u'255']}), is_leaf=True, yang_name="key", rest_name="key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'MD5 Authentication password (key)', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='key-type', is_config=True)
 
 
   def _get_md5_authentication_key(self):
@@ -133,12 +171,12 @@ class key_table(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="md5-authentication-key", rest_name="md5-authentication-key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='ospf-auth-psswd-string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="md5-authentication-key", rest_name="key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'MD5 authentication ID', u'alt-name': u'key'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='ospf-auth-psswd-string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """md5_authentication_key must be of a type compatible with ospf-auth-psswd-string""",
           'defined-type': "brocade-ospf:ospf-auth-psswd-string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="md5-authentication-key", rest_name="md5-authentication-key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='ospf-auth-psswd-string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="md5-authentication-key", rest_name="key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'MD5 authentication ID', u'alt-name': u'key'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='ospf-auth-psswd-string', is_config=True)""",
         })
 
     self.__md5_authentication_key = t
@@ -146,12 +184,13 @@ class key_table(PybindBase):
       self._set()
 
   def _unset_md5_authentication_key(self):
-    self.__md5_authentication_key = YANGDynClass(base=unicode, is_leaf=True, yang_name="md5-authentication-key", rest_name="md5-authentication-key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='ospf-auth-psswd-string', is_config=True)
+    self.__md5_authentication_key = YANGDynClass(base=unicode, is_leaf=True, yang_name="md5-authentication-key", rest_name="key", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'MD5 authentication ID', u'alt-name': u'key'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='ospf-auth-psswd-string', is_config=True)
 
   key_id = __builtin__.property(_get_key_id, _set_key_id)
+  key = __builtin__.property(_get_key, _set_key)
   md5_authentication_key = __builtin__.property(_get_md5_authentication_key, _set_md5_authentication_key)
 
 
-  _pyangbind_elements = {'key_id': key_id, 'md5_authentication_key': md5_authentication_key, }
+  _pyangbind_elements = {'key_id': key_id, 'key': key, 'md5_authentication_key': md5_authentication_key, }
 
 

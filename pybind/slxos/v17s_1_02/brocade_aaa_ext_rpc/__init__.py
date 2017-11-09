@@ -45,7 +45,7 @@ class brocade_aaa_ext(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__user_session_info = YANGDynClass(base=user_session_info.user_session_info, is_leaf=True, yang_name="user-session-info", rest_name="user-session-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa-ext', defining_module='brocade-aaa-ext', yang_type='rpc', is_config=True)
+    self.__user_session_info = YANGDynClass(base=user_session_info.user_session_info, is_leaf=True, yang_name="user-session-info", rest_name="user-session-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'exec': u'/fabos/bin/userSessionInfo'}}, namespace='urn:brocade.com:mgmt:brocade-aaa-ext', defining_module='brocade-aaa-ext', yang_type='rpc', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class brocade_aaa_ext(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=user_session_info.user_session_info, is_leaf=True, yang_name="user-session-info", rest_name="user-session-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa-ext', defining_module='brocade-aaa-ext', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=user_session_info.user_session_info, is_leaf=True, yang_name="user-session-info", rest_name="user-session-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'exec': u'/fabos/bin/userSessionInfo'}}, namespace='urn:brocade.com:mgmt:brocade-aaa-ext', defining_module='brocade-aaa-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """user_session_info must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=user_session_info.user_session_info, is_leaf=True, yang_name="user-session-info", rest_name="user-session-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa-ext', defining_module='brocade-aaa-ext', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=user_session_info.user_session_info, is_leaf=True, yang_name="user-session-info", rest_name="user-session-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'exec': u'/fabos/bin/userSessionInfo'}}, namespace='urn:brocade.com:mgmt:brocade-aaa-ext', defining_module='brocade-aaa-ext', yang_type='rpc', is_config=True)""",
         })
 
     self.__user_session_info = t
@@ -113,7 +113,7 @@ class brocade_aaa_ext(PybindBase):
       self._set()
 
   def _unset_user_session_info(self):
-    self.__user_session_info = YANGDynClass(base=user_session_info.user_session_info, is_leaf=True, yang_name="user-session-info", rest_name="user-session-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa-ext', defining_module='brocade-aaa-ext', yang_type='rpc', is_config=True)
+    self.__user_session_info = YANGDynClass(base=user_session_info.user_session_info, is_leaf=True, yang_name="user-session-info", rest_name="user-session-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'exec': u'/fabos/bin/userSessionInfo'}}, namespace='urn:brocade.com:mgmt:brocade-aaa-ext', defining_module='brocade-aaa-ext', yang_type='rpc', is_config=True)
 
   user_session_info = __builtin__.property(_get_user_session_info, _set_user_session_info)
 

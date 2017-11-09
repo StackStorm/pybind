@@ -18,7 +18,7 @@ class copy_support(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__copy',)
 
   _yang_name = 'copy-support'
-  _rest_name = 'copy-support'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -81,7 +81,7 @@ class copy_support(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'rule', u'command', u'copy-support']
+      return [u'rule', u'command']
 
   def _get_copy(self):
     """

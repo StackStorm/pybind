@@ -46,8 +46,8 @@ class load_balance(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__po_load_balance = YANGDynClass(base=po_load_balance.po_load_balance, is_container='container', presence=False, yang_name="po-load-balance", rest_name="po-load-balance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
-    self.__hash = YANGDynClass(base=hash.hash, is_container='container', presence=False, yang_name="hash", rest_name="hash", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
+    self.__po_load_balance = YANGDynClass(base=po_load_balance.po_load_balance, is_container='container', presence=False, yang_name="po-load-balance", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'((/local-node/swbd-number = "163") or (/local-node/swbd-number = "3000") or (/local-node/swbd-number = "3001"))'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
+    self.__hash = YANGDynClass(base=hash.hash, is_container='container', presence=False, yang_name="hash", rest_name="hash", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'hash'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -102,12 +102,12 @@ class load_balance(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=hash.hash, is_container='container', presence=False, yang_name="hash", rest_name="hash", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=hash.hash, is_container='container', presence=False, yang_name="hash", rest_name="hash", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'hash'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """hash must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=hash.hash, is_container='container', presence=False, yang_name="hash", rest_name="hash", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=hash.hash, is_container='container', presence=False, yang_name="hash", rest_name="hash", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'hash'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)""",
         })
 
     self.__hash = t
@@ -115,7 +115,7 @@ class load_balance(PybindBase):
       self._set()
 
   def _unset_hash(self):
-    self.__hash = YANGDynClass(base=hash.hash, is_container='container', presence=False, yang_name="hash", rest_name="hash", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
+    self.__hash = YANGDynClass(base=hash.hash, is_container='container', presence=False, yang_name="hash", rest_name="hash", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'hash'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
 
 
   def _get_po_load_balance(self):
@@ -135,12 +135,12 @@ class load_balance(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=po_load_balance.po_load_balance, is_container='container', presence=False, yang_name="po-load-balance", rest_name="po-load-balance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=po_load_balance.po_load_balance, is_container='container', presence=False, yang_name="po-load-balance", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'((/local-node/swbd-number = "163") or (/local-node/swbd-number = "3000") or (/local-node/swbd-number = "3001"))'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """po_load_balance must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=po_load_balance.po_load_balance, is_container='container', presence=False, yang_name="po-load-balance", rest_name="po-load-balance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=po_load_balance.po_load_balance, is_container='container', presence=False, yang_name="po-load-balance", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'((/local-node/swbd-number = "163") or (/local-node/swbd-number = "3000") or (/local-node/swbd-number = "3001"))'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)""",
         })
 
     self.__po_load_balance = t
@@ -148,7 +148,7 @@ class load_balance(PybindBase):
       self._set()
 
   def _unset_po_load_balance(self):
-    self.__po_load_balance = YANGDynClass(base=po_load_balance.po_load_balance, is_container='container', presence=False, yang_name="po-load-balance", rest_name="po-load-balance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
+    self.__po_load_balance = YANGDynClass(base=po_load_balance.po_load_balance, is_container='container', presence=False, yang_name="po-load-balance", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'display-when': u'((/local-node/swbd-number = "163") or (/local-node/swbd-number = "3000") or (/local-node/swbd-number = "3001"))'}}, namespace='urn:brocade.com:mgmt:brocade-rbridge-lag', defining_module='brocade-rbridge-lag', yang_type='container', is_config=True)
 
   hash = __builtin__.property(_get_hash, _set_hash)
   po_load_balance = __builtin__.property(_get_po_load_balance, _set_po_load_balance)

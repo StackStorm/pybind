@@ -18,7 +18,7 @@ class interface_loopback(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__interface',)
 
   _yang_name = 'interface-loopback'
-  _rest_name = 'interface-loopback'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -81,7 +81,7 @@ class interface_loopback(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'rule', u'command', u'interface-loopback']
+      return [u'rule', u'command']
 
   def _get_interface(self):
     """

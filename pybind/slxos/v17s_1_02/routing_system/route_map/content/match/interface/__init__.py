@@ -16,7 +16,7 @@ class interface(PybindBase):
 
   YANG Description: Interface name, maxinum 3 values in '[]'
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__ethernet_rmm','__loopback','__ve',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__ethernet_rmm','__port_channel_rmm','__vlan_rmm','__loopback','__ve',)
 
   _yang_name = 'interface'
   _rest_name = 'interface'
@@ -46,9 +46,11 @@ class interface(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ethernet_rmm = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']})), is_leaf=False, yang_name="ethernet-rmm", rest_name="ethernet-rmm", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='interface:interface-type', is_config=True)
-    self.__ve = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4096']})), is_leaf=False, yang_name="ve", rest_name="ve", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='interface:ve-type', is_config=True)
-    self.__loopback = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..255']})), is_leaf=False, yang_name="loopback", rest_name="loopback", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='loopback-intf:intf-loopback-port-type', is_config=True)
+    self.__port_channel_rmm = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..1024']})), is_leaf=False, yang_name="port-channel-rmm", rest_name="port-channel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Port_channel', u'hidden': u'full', u'alt-name': u'port-channel'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='interface:channel-group-type', is_config=True)
+    self.__ethernet_rmm = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']})), is_leaf=False, yang_name="ethernet-rmm", rest_name="ethernet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ethernet', u'alt-name': u'ethernet'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='interface:interface-type', is_config=True)
+    self.__ve = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4096']})), is_leaf=False, yang_name="ve", rest_name="ve", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual port'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='interface:ve-type', is_config=True)
+    self.__vlan_rmm = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4090']})), is_leaf=False, yang_name="vlan-rmm", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan', u'hidden': u'full', u'alt-name': u'vlan'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='interface:vlan-type', is_config=True)
+    self.__loopback = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..255']})), is_leaf=False, yang_name="loopback", rest_name="loopback", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Loopback port'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='loopback-intf:intf-loopback-port-type', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -84,7 +86,7 @@ class interface(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'routing-system', u'route-map', u'content', u'match', u'interface']
+      return [u'route-map', u'match', u'interface']
 
   def _get_ethernet_rmm(self):
     """
@@ -107,12 +109,12 @@ class interface(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']})), is_leaf=False, yang_name="ethernet-rmm", rest_name="ethernet-rmm", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='interface:interface-type', is_config=True)
+      t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']})), is_leaf=False, yang_name="ethernet-rmm", rest_name="ethernet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ethernet', u'alt-name': u'ethernet'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='interface:interface-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ethernet_rmm must be of a type compatible with interface:interface-type""",
           'defined-type': "interface:interface-type",
-          'generated-type': """YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']})), is_leaf=False, yang_name="ethernet-rmm", rest_name="ethernet-rmm", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='interface:interface-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']})), is_leaf=False, yang_name="ethernet-rmm", rest_name="ethernet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ethernet', u'alt-name': u'ethernet'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='interface:interface-type', is_config=True)""",
         })
 
     self.__ethernet_rmm = t
@@ -120,7 +122,81 @@ class interface(PybindBase):
       self._set()
 
   def _unset_ethernet_rmm(self):
-    self.__ethernet_rmm = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']})), is_leaf=False, yang_name="ethernet-rmm", rest_name="ethernet-rmm", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='interface:interface-type', is_config=True)
+    self.__ethernet_rmm = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']})), is_leaf=False, yang_name="ethernet-rmm", rest_name="ethernet", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ethernet', u'alt-name': u'ethernet'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='interface:interface-type', is_config=True)
+
+
+  def _get_port_channel_rmm(self):
+    """
+    Getter method for port_channel_rmm, mapped from YANG variable /routing_system/route_map/content/match/interface/port_channel_rmm (interface:channel-group-type)
+
+    YANG Description: Port_channel
+    """
+    return self.__port_channel_rmm
+      
+  def _set_port_channel_rmm(self, v, load=False):
+    """
+    Setter method for port_channel_rmm, mapped from YANG variable /routing_system/route_map/content/match/interface/port_channel_rmm (interface:channel-group-type)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_port_channel_rmm is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_port_channel_rmm() directly.
+
+    YANG Description: Port_channel
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..1024']})), is_leaf=False, yang_name="port-channel-rmm", rest_name="port-channel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Port_channel', u'hidden': u'full', u'alt-name': u'port-channel'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='interface:channel-group-type', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """port_channel_rmm must be of a type compatible with interface:channel-group-type""",
+          'defined-type': "interface:channel-group-type",
+          'generated-type': """YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..1024']})), is_leaf=False, yang_name="port-channel-rmm", rest_name="port-channel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Port_channel', u'hidden': u'full', u'alt-name': u'port-channel'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='interface:channel-group-type', is_config=True)""",
+        })
+
+    self.__port_channel_rmm = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_port_channel_rmm(self):
+    self.__port_channel_rmm = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..1024']})), is_leaf=False, yang_name="port-channel-rmm", rest_name="port-channel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Port_channel', u'hidden': u'full', u'alt-name': u'port-channel'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='interface:channel-group-type', is_config=True)
+
+
+  def _get_vlan_rmm(self):
+    """
+    Getter method for vlan_rmm, mapped from YANG variable /routing_system/route_map/content/match/interface/vlan_rmm (interface:vlan-type)
+
+    YANG Description: Vlan
+    """
+    return self.__vlan_rmm
+      
+  def _set_vlan_rmm(self, v, load=False):
+    """
+    Setter method for vlan_rmm, mapped from YANG variable /routing_system/route_map/content/match/interface/vlan_rmm (interface:vlan-type)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_vlan_rmm is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_vlan_rmm() directly.
+
+    YANG Description: Vlan
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4090']})), is_leaf=False, yang_name="vlan-rmm", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan', u'hidden': u'full', u'alt-name': u'vlan'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='interface:vlan-type', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """vlan_rmm must be of a type compatible with interface:vlan-type""",
+          'defined-type': "interface:vlan-type",
+          'generated-type': """YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4090']})), is_leaf=False, yang_name="vlan-rmm", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan', u'hidden': u'full', u'alt-name': u'vlan'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='interface:vlan-type', is_config=True)""",
+        })
+
+    self.__vlan_rmm = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_vlan_rmm(self):
+    self.__vlan_rmm = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4090']})), is_leaf=False, yang_name="vlan-rmm", rest_name="vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Vlan', u'hidden': u'full', u'alt-name': u'vlan'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='interface:vlan-type', is_config=True)
 
 
   def _get_loopback(self):
@@ -144,12 +220,12 @@ class interface(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..255']})), is_leaf=False, yang_name="loopback", rest_name="loopback", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='loopback-intf:intf-loopback-port-type', is_config=True)
+      t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..255']})), is_leaf=False, yang_name="loopback", rest_name="loopback", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Loopback port'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='loopback-intf:intf-loopback-port-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """loopback must be of a type compatible with loopback-intf:intf-loopback-port-type""",
           'defined-type': "loopback-intf:intf-loopback-port-type",
-          'generated-type': """YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..255']})), is_leaf=False, yang_name="loopback", rest_name="loopback", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='loopback-intf:intf-loopback-port-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..255']})), is_leaf=False, yang_name="loopback", rest_name="loopback", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Loopback port'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='loopback-intf:intf-loopback-port-type', is_config=True)""",
         })
 
     self.__loopback = t
@@ -157,7 +233,7 @@ class interface(PybindBase):
       self._set()
 
   def _unset_loopback(self):
-    self.__loopback = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..255']})), is_leaf=False, yang_name="loopback", rest_name="loopback", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='loopback-intf:intf-loopback-port-type', is_config=True)
+    self.__loopback = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..255']})), is_leaf=False, yang_name="loopback", rest_name="loopback", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Loopback port'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='loopback-intf:intf-loopback-port-type', is_config=True)
 
 
   def _get_ve(self):
@@ -181,12 +257,12 @@ class interface(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4096']})), is_leaf=False, yang_name="ve", rest_name="ve", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='interface:ve-type', is_config=True)
+      t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4096']})), is_leaf=False, yang_name="ve", rest_name="ve", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual port'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='interface:ve-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ve must be of a type compatible with interface:ve-type""",
           'defined-type': "interface:ve-type",
-          'generated-type': """YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4096']})), is_leaf=False, yang_name="ve", rest_name="ve", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='interface:ve-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4096']})), is_leaf=False, yang_name="ve", rest_name="ve", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual port'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='interface:ve-type', is_config=True)""",
         })
 
     self.__ve = t
@@ -194,13 +270,15 @@ class interface(PybindBase):
       self._set()
 
   def _unset_ve(self):
-    self.__ve = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4096']})), is_leaf=False, yang_name="ve", rest_name="ve", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='interface:ve-type', is_config=True)
+    self.__ve = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4096']})), is_leaf=False, yang_name="ve", rest_name="ve", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual port'}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='interface:ve-type', is_config=True)
 
   ethernet_rmm = __builtin__.property(_get_ethernet_rmm, _set_ethernet_rmm)
+  port_channel_rmm = __builtin__.property(_get_port_channel_rmm, _set_port_channel_rmm)
+  vlan_rmm = __builtin__.property(_get_vlan_rmm, _set_vlan_rmm)
   loopback = __builtin__.property(_get_loopback, _set_loopback)
   ve = __builtin__.property(_get_ve, _set_ve)
 
 
-  _pyangbind_elements = {'ethernet_rmm': ethernet_rmm, 'loopback': loopback, 've': ve, }
+  _pyangbind_elements = {'ethernet_rmm': ethernet_rmm, 'port_channel_rmm': port_channel_rmm, 'vlan_rmm': vlan_rmm, 'loopback': loopback, 've': ve, }
 
 

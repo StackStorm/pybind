@@ -45,7 +45,7 @@ class import_(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__routes = YANGDynClass(base=YANGListType("src_vrf route_map",routes.routes, yang_name="routes", rest_name="routes", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='src-vrf route-map', extensions=None), is_container='list', yang_name="routes", rest_name="routes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-rtm', defining_module='brocade-rtm', yang_type='list', is_config=True)
+    self.__routes = YANGDynClass(base=YANGListType("src_vrf route_map",routes.routes, yang_name="routes", rest_name="routes", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='src-vrf route-map', extensions={u'tailf-common': {u'info': u'import IPV4 routes ', u'cli-suppress-mode': None, u'callpoint': u'Ipv4ImportRoutes'}}), is_container='list', yang_name="routes", rest_name="routes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'import IPV4 routes ', u'cli-suppress-mode': None, u'callpoint': u'Ipv4ImportRoutes'}}, namespace='urn:brocade.com:mgmt:brocade-rtm', defining_module='brocade-rtm', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class import_(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'ip', u'rtm-config', u'import']
+      return [u'ip', u'import']
 
   def _get_routes(self):
     """
@@ -104,12 +104,12 @@ class import_(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("src_vrf route_map",routes.routes, yang_name="routes", rest_name="routes", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='src-vrf route-map', extensions=None), is_container='list', yang_name="routes", rest_name="routes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-rtm', defining_module='brocade-rtm', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("src_vrf route_map",routes.routes, yang_name="routes", rest_name="routes", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='src-vrf route-map', extensions={u'tailf-common': {u'info': u'import IPV4 routes ', u'cli-suppress-mode': None, u'callpoint': u'Ipv4ImportRoutes'}}), is_container='list', yang_name="routes", rest_name="routes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'import IPV4 routes ', u'cli-suppress-mode': None, u'callpoint': u'Ipv4ImportRoutes'}}, namespace='urn:brocade.com:mgmt:brocade-rtm', defining_module='brocade-rtm', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """routes must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("src_vrf route_map",routes.routes, yang_name="routes", rest_name="routes", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='src-vrf route-map', extensions=None), is_container='list', yang_name="routes", rest_name="routes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-rtm', defining_module='brocade-rtm', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("src_vrf route_map",routes.routes, yang_name="routes", rest_name="routes", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='src-vrf route-map', extensions={u'tailf-common': {u'info': u'import IPV4 routes ', u'cli-suppress-mode': None, u'callpoint': u'Ipv4ImportRoutes'}}), is_container='list', yang_name="routes", rest_name="routes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'import IPV4 routes ', u'cli-suppress-mode': None, u'callpoint': u'Ipv4ImportRoutes'}}, namespace='urn:brocade.com:mgmt:brocade-rtm', defining_module='brocade-rtm', yang_type='list', is_config=True)""",
         })
 
     self.__routes = t
@@ -117,7 +117,7 @@ class import_(PybindBase):
       self._set()
 
   def _unset_routes(self):
-    self.__routes = YANGDynClass(base=YANGListType("src_vrf route_map",routes.routes, yang_name="routes", rest_name="routes", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='src-vrf route-map', extensions=None), is_container='list', yang_name="routes", rest_name="routes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-rtm', defining_module='brocade-rtm', yang_type='list', is_config=True)
+    self.__routes = YANGDynClass(base=YANGListType("src_vrf route_map",routes.routes, yang_name="routes", rest_name="routes", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='src-vrf route-map', extensions={u'tailf-common': {u'info': u'import IPV4 routes ', u'cli-suppress-mode': None, u'callpoint': u'Ipv4ImportRoutes'}}), is_container='list', yang_name="routes", rest_name="routes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'import IPV4 routes ', u'cli-suppress-mode': None, u'callpoint': u'Ipv4ImportRoutes'}}, namespace='urn:brocade.com:mgmt:brocade-rtm', defining_module='brocade-rtm', yang_type='list', is_config=True)
 
   routes = __builtin__.property(_get_routes, _set_routes)
 

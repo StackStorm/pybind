@@ -18,7 +18,7 @@ class hide_virtual_ip_holder(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__chassis',)
 
   _yang_name = 'hide-virtual-ip-holder'
-  _rest_name = 'hide-virtual-ip-holder'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -45,7 +45,7 @@ class hide_virtual_ip_holder(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__chassis = YANGDynClass(base=chassis.chassis, is_container='container', presence=False, yang_name="chassis", rest_name="chassis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)
+    self.__chassis = YANGDynClass(base=chassis.chassis, is_container='container', presence=False, yang_name="chassis", rest_name="chassis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Chassis Virtual address', u'cli-incomplete-show-path': None, u'callpoint': u'IpadmChassisIpCallpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class hide_virtual_ip_holder(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'hide-virtual-ip-holder']
+      return []
 
   def _get_chassis(self):
     """
@@ -100,12 +100,12 @@ class hide_virtual_ip_holder(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=chassis.chassis, is_container='container', presence=False, yang_name="chassis", rest_name="chassis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=chassis.chassis, is_container='container', presence=False, yang_name="chassis", rest_name="chassis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Chassis Virtual address', u'cli-incomplete-show-path': None, u'callpoint': u'IpadmChassisIpCallpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """chassis must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=chassis.chassis, is_container='container', presence=False, yang_name="chassis", rest_name="chassis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=chassis.chassis, is_container='container', presence=False, yang_name="chassis", rest_name="chassis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Chassis Virtual address', u'cli-incomplete-show-path': None, u'callpoint': u'IpadmChassisIpCallpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)""",
         })
 
     self.__chassis = t
@@ -113,7 +113,7 @@ class hide_virtual_ip_holder(PybindBase):
       self._set()
 
   def _unset_chassis(self):
-    self.__chassis = YANGDynClass(base=chassis.chassis, is_container='container', presence=False, yang_name="chassis", rest_name="chassis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)
+    self.__chassis = YANGDynClass(base=chassis.chassis, is_container='container', presence=False, yang_name="chassis", rest_name="chassis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Chassis Virtual address', u'cli-incomplete-show-path': None, u'callpoint': u'IpadmChassisIpCallpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)
 
   chassis = __builtin__.property(_get_chassis, _set_chassis)
 

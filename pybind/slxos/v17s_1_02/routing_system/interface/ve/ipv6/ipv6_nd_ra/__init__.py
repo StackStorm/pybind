@@ -18,7 +18,7 @@ class ipv6_nd_ra(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__ipv6_intf_cmds',)
 
   _yang_name = 'ipv6-nd-ra'
-  _rest_name = 'ipv6-nd-ra'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -45,7 +45,7 @@ class ipv6_nd_ra(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ipv6_intf_cmds = YANGDynClass(base=ipv6_intf_cmds.ipv6_intf_cmds, is_container='container', presence=False, yang_name="ipv6-intf-cmds", rest_name="ipv6-intf-cmds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
+    self.__ipv6_intf_cmds = YANGDynClass(base=ipv6_intf_cmds.ipv6_intf_cmds, is_container='container', presence=False, yang_name="ipv6-intf-cmds", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class ipv6_nd_ra(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'routing-system', u'interface', u've', u'ipv6', u'ipv6-nd-ra']
+      return [u'interface', u'Ve', u'ipv6']
 
   def _get_ipv6_intf_cmds(self):
     """
@@ -100,12 +100,12 @@ class ipv6_nd_ra(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=ipv6_intf_cmds.ipv6_intf_cmds, is_container='container', presence=False, yang_name="ipv6-intf-cmds", rest_name="ipv6-intf-cmds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ipv6_intf_cmds.ipv6_intf_cmds, is_container='container', presence=False, yang_name="ipv6-intf-cmds", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ipv6_intf_cmds must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ipv6_intf_cmds.ipv6_intf_cmds, is_container='container', presence=False, yang_name="ipv6-intf-cmds", rest_name="ipv6-intf-cmds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ipv6_intf_cmds.ipv6_intf_cmds, is_container='container', presence=False, yang_name="ipv6-intf-cmds", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)""",
         })
 
     self.__ipv6_intf_cmds = t
@@ -113,7 +113,7 @@ class ipv6_nd_ra(PybindBase):
       self._set()
 
   def _unset_ipv6_intf_cmds(self):
-    self.__ipv6_intf_cmds = YANGDynClass(base=ipv6_intf_cmds.ipv6_intf_cmds, is_container='container', presence=False, yang_name="ipv6-intf-cmds", rest_name="ipv6-intf-cmds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
+    self.__ipv6_intf_cmds = YANGDynClass(base=ipv6_intf_cmds.ipv6_intf_cmds, is_container='container', presence=False, yang_name="ipv6-intf-cmds", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
 
   ipv6_intf_cmds = __builtin__.property(_get_ipv6_intf_cmds, _set_ipv6_intf_cmds)
 

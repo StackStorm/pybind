@@ -44,7 +44,7 @@ class suppress_arp(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__suppress_arp_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="suppress-arp-enable", rest_name="suppress-arp-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='empty', is_config=True)
+    self.__suppress_arp_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="suppress-arp-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable ARP suppression', u'cli-drop-node-name': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -80,7 +80,7 @@ class suppress_arp(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface-vlan', u'vlan', u'suppress-arp']
+      return [u'vlan', u'suppress-arp']
 
   def _get_suppress_arp_enable(self):
     """
@@ -99,12 +99,12 @@ class suppress_arp(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="suppress-arp-enable", rest_name="suppress-arp-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="suppress-arp-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable ARP suppression', u'cli-drop-node-name': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """suppress_arp_enable must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="suppress-arp-enable", rest_name="suppress-arp-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="suppress-arp-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable ARP suppression', u'cli-drop-node-name': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='empty', is_config=True)""",
         })
 
     self.__suppress_arp_enable = t
@@ -112,7 +112,7 @@ class suppress_arp(PybindBase):
       self._set()
 
   def _unset_suppress_arp_enable(self):
-    self.__suppress_arp_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="suppress-arp-enable", rest_name="suppress-arp-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='empty', is_config=True)
+    self.__suppress_arp_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="suppress-arp-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable ARP suppression', u'cli-drop-node-name': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='empty', is_config=True)
 
   suppress_arp_enable = __builtin__.property(_get_suppress_arp_enable, _set_suppress_arp_enable)
 

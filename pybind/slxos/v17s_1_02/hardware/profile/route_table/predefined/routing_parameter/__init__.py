@@ -17,7 +17,7 @@ class routing_parameter(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__maximum_paths','__openflow_enable',)
 
   _yang_name = 'routing_parameter'
-  _rest_name = 'routing_parameter'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -44,8 +44,8 @@ class routing_parameter(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__maximum_paths = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'8': {'value': 0}, u'32': {'value': 2}, u'64': {'value': 3}, u'16': {'value': 1}},), is_leaf=True, yang_name="maximum_paths", rest_name="maximum_paths", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='ecmp-subtype', is_config=True)
-    self.__openflow_enable = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 0}},), is_leaf=True, yang_name="openflow_enable", rest_name="openflow_enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='openflow-subtype', is_config=True)
+    self.__maximum_paths = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'8': {'value': 0}, u'32': {'value': 2}, u'64': {'value': 3}, u'16': {'value': 1}},), is_leaf=True, yang_name="maximum_paths", rest_name="maximum_paths", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum number of load-sharing paths', u'display-when': u"../../routing_profiletype != 'user-defined'"}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='ecmp-subtype', is_config=True)
+    self.__openflow_enable = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 0}},), is_leaf=True, yang_name="openflow_enable", rest_name="openflow", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/disable openflow support in profile', u'hidden': u'debug', u'alt-name': u'openflow'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='openflow-subtype', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class routing_parameter(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'hardware', u'profile', u'route-table', u'predefined', u'routing_parameter']
+      return [u'hardware', u'profile', u'route-table']
 
   def _get_maximum_paths(self):
     """
@@ -100,12 +100,12 @@ class routing_parameter(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'8': {'value': 0}, u'32': {'value': 2}, u'64': {'value': 3}, u'16': {'value': 1}},), is_leaf=True, yang_name="maximum_paths", rest_name="maximum_paths", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='ecmp-subtype', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'8': {'value': 0}, u'32': {'value': 2}, u'64': {'value': 3}, u'16': {'value': 1}},), is_leaf=True, yang_name="maximum_paths", rest_name="maximum_paths", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum number of load-sharing paths', u'display-when': u"../../routing_profiletype != 'user-defined'"}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='ecmp-subtype', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """maximum_paths must be of a type compatible with ecmp-subtype""",
           'defined-type': "brocade-hardware:ecmp-subtype",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'8': {'value': 0}, u'32': {'value': 2}, u'64': {'value': 3}, u'16': {'value': 1}},), is_leaf=True, yang_name="maximum_paths", rest_name="maximum_paths", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='ecmp-subtype', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'8': {'value': 0}, u'32': {'value': 2}, u'64': {'value': 3}, u'16': {'value': 1}},), is_leaf=True, yang_name="maximum_paths", rest_name="maximum_paths", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum number of load-sharing paths', u'display-when': u"../../routing_profiletype != 'user-defined'"}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='ecmp-subtype', is_config=True)""",
         })
 
     self.__maximum_paths = t
@@ -113,7 +113,7 @@ class routing_parameter(PybindBase):
       self._set()
 
   def _unset_maximum_paths(self):
-    self.__maximum_paths = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'8': {'value': 0}, u'32': {'value': 2}, u'64': {'value': 3}, u'16': {'value': 1}},), is_leaf=True, yang_name="maximum_paths", rest_name="maximum_paths", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='ecmp-subtype', is_config=True)
+    self.__maximum_paths = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'8': {'value': 0}, u'32': {'value': 2}, u'64': {'value': 3}, u'16': {'value': 1}},), is_leaf=True, yang_name="maximum_paths", rest_name="maximum_paths", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum number of load-sharing paths', u'display-when': u"../../routing_profiletype != 'user-defined'"}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='ecmp-subtype', is_config=True)
 
 
   def _get_openflow_enable(self):
@@ -133,12 +133,12 @@ class routing_parameter(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 0}},), is_leaf=True, yang_name="openflow_enable", rest_name="openflow_enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='openflow-subtype', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 0}},), is_leaf=True, yang_name="openflow_enable", rest_name="openflow", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/disable openflow support in profile', u'hidden': u'debug', u'alt-name': u'openflow'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='openflow-subtype', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """openflow_enable must be of a type compatible with openflow-subtype""",
           'defined-type': "brocade-hardware:openflow-subtype",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 0}},), is_leaf=True, yang_name="openflow_enable", rest_name="openflow_enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='openflow-subtype', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 0}},), is_leaf=True, yang_name="openflow_enable", rest_name="openflow", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/disable openflow support in profile', u'hidden': u'debug', u'alt-name': u'openflow'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='openflow-subtype', is_config=True)""",
         })
 
     self.__openflow_enable = t
@@ -146,7 +146,7 @@ class routing_parameter(PybindBase):
       self._set()
 
   def _unset_openflow_enable(self):
-    self.__openflow_enable = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 0}},), is_leaf=True, yang_name="openflow_enable", rest_name="openflow_enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='openflow-subtype', is_config=True)
+    self.__openflow_enable = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'on': {'value': 1}, u'off': {'value': 0}},), is_leaf=True, yang_name="openflow_enable", rest_name="openflow", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/disable openflow support in profile', u'hidden': u'debug', u'alt-name': u'openflow'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='openflow-subtype', is_config=True)
 
   maximum_paths = __builtin__.property(_get_maximum_paths, _set_maximum_paths)
   openflow_enable = __builtin__.property(_get_openflow_enable, _set_openflow_enable)

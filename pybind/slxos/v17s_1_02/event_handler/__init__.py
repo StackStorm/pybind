@@ -48,8 +48,8 @@ class event_handler(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__activate = YANGDynClass(base=activate.activate, is_container='container', presence=False, yang_name="activate", rest_name="activate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='container', is_config=True)
-    self.__event_handler_list = YANGDynClass(base=YANGListType("name",event_handler_list.event_handler_list, yang_name="event-handler-list", rest_name="event-handler-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions=None), is_container='list', yang_name="event-handler-list", rest_name="event-handler-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='list', is_config=True)
+    self.__activate = YANGDynClass(base=activate.activate, is_container='container', presence=False, yang_name="activate", rest_name="activate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'event-handler-rbridge-activation-callpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='container', is_config=True)
+    self.__event_handler_list = YANGDynClass(base=YANGListType("name",event_handler_list.event_handler_list, yang_name="event-handler-list", rest_name="event-handler-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Event handler configuration', u'cli-no-key-completion': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None}}), is_container='list', yang_name="event-handler-list", rest_name="event-handler-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Event handler configuration', u'cli-no-key-completion': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -104,12 +104,12 @@ class event_handler(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("name",event_handler_list.event_handler_list, yang_name="event-handler-list", rest_name="event-handler-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions=None), is_container='list', yang_name="event-handler-list", rest_name="event-handler-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("name",event_handler_list.event_handler_list, yang_name="event-handler-list", rest_name="event-handler-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Event handler configuration', u'cli-no-key-completion': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None}}), is_container='list', yang_name="event-handler-list", rest_name="event-handler-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Event handler configuration', u'cli-no-key-completion': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """event_handler_list must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("name",event_handler_list.event_handler_list, yang_name="event-handler-list", rest_name="event-handler-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions=None), is_container='list', yang_name="event-handler-list", rest_name="event-handler-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("name",event_handler_list.event_handler_list, yang_name="event-handler-list", rest_name="event-handler-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Event handler configuration', u'cli-no-key-completion': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None}}), is_container='list', yang_name="event-handler-list", rest_name="event-handler-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Event handler configuration', u'cli-no-key-completion': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='list', is_config=True)""",
         })
 
     self.__event_handler_list = t
@@ -117,7 +117,7 @@ class event_handler(PybindBase):
       self._set()
 
   def _unset_event_handler_list(self):
-    self.__event_handler_list = YANGDynClass(base=YANGListType("name",event_handler_list.event_handler_list, yang_name="event-handler-list", rest_name="event-handler-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions=None), is_container='list', yang_name="event-handler-list", rest_name="event-handler-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='list', is_config=True)
+    self.__event_handler_list = YANGDynClass(base=YANGListType("name",event_handler_list.event_handler_list, yang_name="event-handler-list", rest_name="event-handler-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='name', extensions={u'tailf-common': {u'info': u'Event handler configuration', u'cli-no-key-completion': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None}}), is_container='list', yang_name="event-handler-list", rest_name="event-handler-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Event handler configuration', u'cli-no-key-completion': None, u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-no-match-completion': None}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='list', is_config=True)
 
 
   def _get_activate(self):
@@ -137,12 +137,12 @@ class event_handler(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=activate.activate, is_container='container', presence=False, yang_name="activate", rest_name="activate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=activate.activate, is_container='container', presence=False, yang_name="activate", rest_name="activate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'event-handler-rbridge-activation-callpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """activate must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=activate.activate, is_container='container', presence=False, yang_name="activate", rest_name="activate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=activate.activate, is_container='container', presence=False, yang_name="activate", rest_name="activate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'event-handler-rbridge-activation-callpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='container', is_config=True)""",
         })
 
     self.__activate = t
@@ -150,7 +150,7 @@ class event_handler(PybindBase):
       self._set()
 
   def _unset_activate(self):
-    self.__activate = YANGDynClass(base=activate.activate, is_container='container', presence=False, yang_name="activate", rest_name="activate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='container', is_config=True)
+    self.__activate = YANGDynClass(base=activate.activate, is_container='container', presence=False, yang_name="activate", rest_name="activate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'event-handler-rbridge-activation-callpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-event-handler', defining_module='brocade-event-handler', yang_type='container', is_config=True)
 
   event_handler_list = __builtin__.property(_get_event_handler_list, _set_event_handler_list)
   activate = __builtin__.property(_get_activate, _set_activate)

@@ -48,7 +48,7 @@ level commands
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__reload = YANGDynClass(base=reload.reload, is_leaf=True, yang_name="reload", rest_name="reload", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='rpc', is_config=True)
+    self.__reload = YANGDynClass(base=reload.reload, is_leaf=True, yang_name="reload", rest_name="reload", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'reload switch', u'hidden': u'rpccmd', u'actionpoint': u'reloadha'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='rpc', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -103,12 +103,12 @@ level commands
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=reload.reload, is_leaf=True, yang_name="reload", rest_name="reload", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=reload.reload, is_leaf=True, yang_name="reload", rest_name="reload", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'reload switch', u'hidden': u'rpccmd', u'actionpoint': u'reloadha'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """reload must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=reload.reload, is_leaf=True, yang_name="reload", rest_name="reload", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=reload.reload, is_leaf=True, yang_name="reload", rest_name="reload", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'reload switch', u'hidden': u'rpccmd', u'actionpoint': u'reloadha'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='rpc', is_config=True)""",
         })
 
     self.__reload = t
@@ -116,7 +116,7 @@ level commands
       self._set()
 
   def _unset_reload(self):
-    self.__reload = YANGDynClass(base=reload.reload, is_leaf=True, yang_name="reload", rest_name="reload", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='rpc', is_config=True)
+    self.__reload = YANGDynClass(base=reload.reload, is_leaf=True, yang_name="reload", rest_name="reload", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'reload switch', u'hidden': u'rpccmd', u'actionpoint': u'reloadha'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='rpc', is_config=True)
 
   reload = __builtin__.property(_get_reload, _set_reload)
 

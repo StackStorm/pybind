@@ -9,6 +9,7 @@ from bitarray import bitarray
 import __builtin__
 import dhcp
 import arp
+import igmpPIM
 import igmpVlan
 class ip(PybindBase):
   """
@@ -19,7 +20,7 @@ class ip(PybindBase):
 
   YANG Description: The IP configurations for an interface.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__dhcp','__arp','__igmpVlan',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__dhcp','__arp','__igmpPIM','__igmpVlan',)
 
   _yang_name = 'ip'
   _rest_name = 'ip'
@@ -49,9 +50,10 @@ class ip(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__arp = YANGDynClass(base=arp.arp, is_container='container', presence=False, yang_name="arp", rest_name="arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)
-    self.__dhcp = YANGDynClass(base=dhcp.dhcp, is_container='container', presence=False, yang_name="dhcp", rest_name="dhcp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
-    self.__igmpVlan = YANGDynClass(base=igmpVlan.igmpVlan, is_container='container', presence=False, yang_name="igmpVlan", rest_name="igmpVlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
+    self.__arp = YANGDynClass(base=arp.arp, is_container='container', presence=False, yang_name="arp", rest_name="arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Arp Inspection', u'callpoint': u'interface_vlan', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)
+    self.__dhcp = YANGDynClass(base=dhcp.dhcp, is_container='container', presence=False, yang_name="dhcp", rest_name="dhcp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP DHCP', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__igmpPIM = YANGDynClass(base=igmpPIM.igmpPIM, is_container='container', presence=False, yang_name="igmpPIM", rest_name="pim", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP PIM Snooping', u'alt-name': u'pim', u'cli-incomplete-no': None, u'sort-priority': u'128', u'hidden': u'full', u'callpoint': u'IgmpsVlan'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
+    self.__igmpVlan = YANGDynClass(base=igmpVlan.igmpVlan, is_container='container', presence=False, yang_name="igmpVlan", rest_name="igmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Internet Group Management Protocol (IGMP)', u'cli-incomplete-no': None, u'callpoint': u'IgmpsVlan', u'sort-priority': u'129', u'alt-name': u'igmp'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -87,7 +89,7 @@ class ip(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface-vlan', u'vlan', u'ip']
+      return [u'vlan', u'ip']
 
   def _get_dhcp(self):
     """
@@ -106,12 +108,12 @@ class ip(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=dhcp.dhcp, is_container='container', presence=False, yang_name="dhcp", rest_name="dhcp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=dhcp.dhcp, is_container='container', presence=False, yang_name="dhcp", rest_name="dhcp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP DHCP', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dhcp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=dhcp.dhcp, is_container='container', presence=False, yang_name="dhcp", rest_name="dhcp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=dhcp.dhcp, is_container='container', presence=False, yang_name="dhcp", rest_name="dhcp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP DHCP', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)""",
         })
 
     self.__dhcp = t
@@ -119,7 +121,7 @@ class ip(PybindBase):
       self._set()
 
   def _unset_dhcp(self):
-    self.__dhcp = YANGDynClass(base=dhcp.dhcp, is_container='container', presence=False, yang_name="dhcp", rest_name="dhcp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
+    self.__dhcp = YANGDynClass(base=dhcp.dhcp, is_container='container', presence=False, yang_name="dhcp", rest_name="dhcp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP DHCP', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-interface', defining_module='brocade-interface', yang_type='container', is_config=True)
 
 
   def _get_arp(self):
@@ -139,12 +141,12 @@ class ip(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=arp.arp, is_container='container', presence=False, yang_name="arp", rest_name="arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=arp.arp, is_container='container', presence=False, yang_name="arp", rest_name="arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Arp Inspection', u'callpoint': u'interface_vlan', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """arp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=arp.arp, is_container='container', presence=False, yang_name="arp", rest_name="arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=arp.arp, is_container='container', presence=False, yang_name="arp", rest_name="arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Arp Inspection', u'callpoint': u'interface_vlan', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)""",
         })
 
     self.__arp = t
@@ -152,7 +154,40 @@ class ip(PybindBase):
       self._set()
 
   def _unset_arp(self):
-    self.__arp = YANGDynClass(base=arp.arp, is_container='container', presence=False, yang_name="arp", rest_name="arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)
+    self.__arp = YANGDynClass(base=arp.arp, is_container='container', presence=False, yang_name="arp", rest_name="arp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Arp Inspection', u'callpoint': u'interface_vlan', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='container', is_config=True)
+
+
+  def _get_igmpPIM(self):
+    """
+    Getter method for igmpPIM, mapped from YANG variable /interface_vlan/vlan/ip/igmpPIM (container)
+    """
+    return self.__igmpPIM
+      
+  def _set_igmpPIM(self, v, load=False):
+    """
+    Setter method for igmpPIM, mapped from YANG variable /interface_vlan/vlan/ip/igmpPIM (container)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_igmpPIM is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_igmpPIM() directly.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=igmpPIM.igmpPIM, is_container='container', presence=False, yang_name="igmpPIM", rest_name="pim", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP PIM Snooping', u'alt-name': u'pim', u'cli-incomplete-no': None, u'sort-priority': u'128', u'hidden': u'full', u'callpoint': u'IgmpsVlan'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """igmpPIM must be of a type compatible with container""",
+          'defined-type': "container",
+          'generated-type': """YANGDynClass(base=igmpPIM.igmpPIM, is_container='container', presence=False, yang_name="igmpPIM", rest_name="pim", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP PIM Snooping', u'alt-name': u'pim', u'cli-incomplete-no': None, u'sort-priority': u'128', u'hidden': u'full', u'callpoint': u'IgmpsVlan'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)""",
+        })
+
+    self.__igmpPIM = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_igmpPIM(self):
+    self.__igmpPIM = YANGDynClass(base=igmpPIM.igmpPIM, is_container='container', presence=False, yang_name="igmpPIM", rest_name="pim", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IP PIM Snooping', u'alt-name': u'pim', u'cli-incomplete-no': None, u'sort-priority': u'128', u'hidden': u'full', u'callpoint': u'IgmpsVlan'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
 
 
   def _get_igmpVlan(self):
@@ -172,12 +207,12 @@ class ip(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=igmpVlan.igmpVlan, is_container='container', presence=False, yang_name="igmpVlan", rest_name="igmpVlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=igmpVlan.igmpVlan, is_container='container', presence=False, yang_name="igmpVlan", rest_name="igmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Internet Group Management Protocol (IGMP)', u'cli-incomplete-no': None, u'callpoint': u'IgmpsVlan', u'sort-priority': u'129', u'alt-name': u'igmp'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """igmpVlan must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=igmpVlan.igmpVlan, is_container='container', presence=False, yang_name="igmpVlan", rest_name="igmpVlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=igmpVlan.igmpVlan, is_container='container', presence=False, yang_name="igmpVlan", rest_name="igmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Internet Group Management Protocol (IGMP)', u'cli-incomplete-no': None, u'callpoint': u'IgmpsVlan', u'sort-priority': u'129', u'alt-name': u'igmp'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)""",
         })
 
     self.__igmpVlan = t
@@ -185,13 +220,14 @@ class ip(PybindBase):
       self._set()
 
   def _unset_igmpVlan(self):
-    self.__igmpVlan = YANGDynClass(base=igmpVlan.igmpVlan, is_container='container', presence=False, yang_name="igmpVlan", rest_name="igmpVlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
+    self.__igmpVlan = YANGDynClass(base=igmpVlan.igmpVlan, is_container='container', presence=False, yang_name="igmpVlan", rest_name="igmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Internet Group Management Protocol (IGMP)', u'cli-incomplete-no': None, u'callpoint': u'IgmpsVlan', u'sort-priority': u'129', u'alt-name': u'igmp'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
 
   dhcp = __builtin__.property(_get_dhcp, _set_dhcp)
   arp = __builtin__.property(_get_arp, _set_arp)
+  igmpPIM = __builtin__.property(_get_igmpPIM, _set_igmpPIM)
   igmpVlan = __builtin__.property(_get_igmpVlan, _set_igmpVlan)
 
 
-  _pyangbind_elements = {'dhcp': dhcp, 'arp': arp, 'igmpVlan': igmpVlan, }
+  _pyangbind_elements = {'dhcp': dhcp, 'arp': arp, 'igmpPIM': igmpPIM, 'igmpVlan': igmpVlan, }
 
 

@@ -45,7 +45,7 @@ class auto_cost(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__reference_bandwidth = YANGDynClass(base=reference_bandwidth.reference_bandwidth, is_container='container', presence=False, yang_name="reference-bandwidth", rest_name="reference-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+    self.__reference_bandwidth = YANGDynClass(base=reference_bandwidth.reference_bandwidth, is_container='container', presence=False, yang_name="reference-bandwidth", rest_name="reference-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set OSPF auto-cost reference-bandwidth in Mbits per'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class auto_cost(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'routing-system', u'router', u'ospf', u'auto-cost']
+      return [u'router', u'ospf', u'auto-cost']
 
   def _get_reference_bandwidth(self):
     """
@@ -100,12 +100,12 @@ class auto_cost(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=reference_bandwidth.reference_bandwidth, is_container='container', presence=False, yang_name="reference-bandwidth", rest_name="reference-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=reference_bandwidth.reference_bandwidth, is_container='container', presence=False, yang_name="reference-bandwidth", rest_name="reference-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set OSPF auto-cost reference-bandwidth in Mbits per'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """reference_bandwidth must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=reference_bandwidth.reference_bandwidth, is_container='container', presence=False, yang_name="reference-bandwidth", rest_name="reference-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=reference_bandwidth.reference_bandwidth, is_container='container', presence=False, yang_name="reference-bandwidth", rest_name="reference-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set OSPF auto-cost reference-bandwidth in Mbits per'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)""",
         })
 
     self.__reference_bandwidth = t
@@ -113,7 +113,7 @@ class auto_cost(PybindBase):
       self._set()
 
   def _unset_reference_bandwidth(self):
-    self.__reference_bandwidth = YANGDynClass(base=reference_bandwidth.reference_bandwidth, is_container='container', presence=False, yang_name="reference-bandwidth", rest_name="reference-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+    self.__reference_bandwidth = YANGDynClass(base=reference_bandwidth.reference_bandwidth, is_container='container', presence=False, yang_name="reference-bandwidth", rest_name="reference-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set OSPF auto-cost reference-bandwidth in Mbits per'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
 
   reference_bandwidth = __builtin__.property(_get_reference_bandwidth, _set_reference_bandwidth)
 

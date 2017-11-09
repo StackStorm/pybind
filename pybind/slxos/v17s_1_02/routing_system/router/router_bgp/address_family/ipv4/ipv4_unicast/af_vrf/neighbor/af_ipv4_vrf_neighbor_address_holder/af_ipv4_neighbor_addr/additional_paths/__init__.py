@@ -45,7 +45,7 @@ class additional_paths(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__advertise = YANGDynClass(base=advertise.advertise, is_container='container', presence=False, yang_name="advertise", rest_name="advertise", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__advertise = YANGDynClass(base=advertise.advertise, is_container='container', presence=False, yang_name="advertise", rest_name="advertise", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Additional paths', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class additional_paths(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'routing-system', u'router', u'router-bgp', u'address-family', u'ipv4', u'ipv4-unicast', u'af-vrf', u'neighbor', u'af-ipv4-vrf-neighbor-address-holder', u'af-ipv4-neighbor-addr', u'additional-paths']
+      return [u'router', u'bgp', u'address-family', u'ipv4', u'unicast', u'vrf', u'neighbor', u'af-ipv4-neighbor-addr', u'additional-paths']
 
   def _get_advertise(self):
     """
@@ -100,12 +100,12 @@ class additional_paths(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=advertise.advertise, is_container='container', presence=False, yang_name="advertise", rest_name="advertise", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=advertise.advertise, is_container='container', presence=False, yang_name="advertise", rest_name="advertise", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Additional paths', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """advertise must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=advertise.advertise, is_container='container', presence=False, yang_name="advertise", rest_name="advertise", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=advertise.advertise, is_container='container', presence=False, yang_name="advertise", rest_name="advertise", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Additional paths', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__advertise = t
@@ -113,7 +113,7 @@ class additional_paths(PybindBase):
       self._set()
 
   def _unset_advertise(self):
-    self.__advertise = YANGDynClass(base=advertise.advertise, is_container='container', presence=False, yang_name="advertise", rest_name="advertise", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__advertise = YANGDynClass(base=advertise.advertise, is_container='container', presence=False, yang_name="advertise", rest_name="advertise", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Additional paths', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
   advertise = __builtin__.property(_get_advertise, _set_advertise)
 

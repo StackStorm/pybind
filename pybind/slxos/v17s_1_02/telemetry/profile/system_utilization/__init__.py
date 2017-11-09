@@ -45,9 +45,9 @@ class system_utilization(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__add_ = YANGDynClass(base=YANGListType("object",add_.add_, yang_name="add", rest_name="add", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='object', extensions=None), is_container='list', yang_name="add", rest_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='list', is_config=True)
-    self.__interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'60..14400']}), is_leaf=True, yang_name="interval", rest_name="interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='system-profile-interval-type', is_config=True)
-    self.__name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'default_system_utilization_statistics', 'length': [u'3..64']}), is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='system-profile-name-type', is_config=True)
+    self.__add_ = YANGDynClass(base=YANGListType("object",add_.add_, yang_name="add", rest_name="add", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='object', extensions={u'tailf-common': {u'callpoint': u'SystemProfileObject', u'cli-suppress-list-no': None, u'cli-suppress-mode': None, u'info': u'Add telemetry object'}}), is_container='list', yang_name="add", rest_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'SystemProfileObject', u'cli-suppress-list-no': None, u'cli-suppress-mode': None, u'info': u'Add telemetry object'}}, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='list', is_config=True)
+    self.__interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'60..14400']}), is_leaf=True, yang_name="interval", rest_name="interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'System profile interval'}}, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='system-profile-interval-type', is_config=True)
+    self.__name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'default_system_utilization_statistics', 'length': [u'3..64']}), is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'System profile name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='system-profile-name-type', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -107,12 +107,12 @@ class system_utilization(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'default_system_utilization_statistics', 'length': [u'3..64']}), is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='system-profile-name-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'default_system_utilization_statistics', 'length': [u'3..64']}), is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'System profile name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='system-profile-name-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """name must be of a type compatible with system-profile-name-type""",
           'defined-type': "brocade-telemetry:system-profile-name-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'default_system_utilization_statistics', 'length': [u'3..64']}), is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='system-profile-name-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'default_system_utilization_statistics', 'length': [u'3..64']}), is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'System profile name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='system-profile-name-type', is_config=True)""",
         })
 
     self.__name = t
@@ -120,7 +120,7 @@ class system_utilization(PybindBase):
       self._set()
 
   def _unset_name(self):
-    self.__name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'default_system_utilization_statistics', 'length': [u'3..64']}), is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='system-profile-name-type', is_config=True)
+    self.__name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'default_system_utilization_statistics', 'length': [u'3..64']}), is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'System profile name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='system-profile-name-type', is_config=True)
 
 
   def _get_interval(self):
@@ -140,12 +140,12 @@ class system_utilization(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'60..14400']}), is_leaf=True, yang_name="interval", rest_name="interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='system-profile-interval-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'60..14400']}), is_leaf=True, yang_name="interval", rest_name="interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'System profile interval'}}, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='system-profile-interval-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """interval must be of a type compatible with system-profile-interval-type""",
           'defined-type': "brocade-telemetry:system-profile-interval-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'60..14400']}), is_leaf=True, yang_name="interval", rest_name="interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='system-profile-interval-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'60..14400']}), is_leaf=True, yang_name="interval", rest_name="interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'System profile interval'}}, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='system-profile-interval-type', is_config=True)""",
         })
 
     self.__interval = t
@@ -153,7 +153,7 @@ class system_utilization(PybindBase):
       self._set()
 
   def _unset_interval(self):
-    self.__interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'60..14400']}), is_leaf=True, yang_name="interval", rest_name="interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='system-profile-interval-type', is_config=True)
+    self.__interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'60..14400']}), is_leaf=True, yang_name="interval", rest_name="interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'System profile interval'}}, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='system-profile-interval-type', is_config=True)
 
 
   def _get_add_(self):
@@ -173,12 +173,12 @@ class system_utilization(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("object",add_.add_, yang_name="add", rest_name="add", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='object', extensions=None), is_container='list', yang_name="add", rest_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("object",add_.add_, yang_name="add", rest_name="add", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='object', extensions={u'tailf-common': {u'callpoint': u'SystemProfileObject', u'cli-suppress-list-no': None, u'cli-suppress-mode': None, u'info': u'Add telemetry object'}}), is_container='list', yang_name="add", rest_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'SystemProfileObject', u'cli-suppress-list-no': None, u'cli-suppress-mode': None, u'info': u'Add telemetry object'}}, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """add_ must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("object",add_.add_, yang_name="add", rest_name="add", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='object', extensions=None), is_container='list', yang_name="add", rest_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("object",add_.add_, yang_name="add", rest_name="add", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='object', extensions={u'tailf-common': {u'callpoint': u'SystemProfileObject', u'cli-suppress-list-no': None, u'cli-suppress-mode': None, u'info': u'Add telemetry object'}}), is_container='list', yang_name="add", rest_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'SystemProfileObject', u'cli-suppress-list-no': None, u'cli-suppress-mode': None, u'info': u'Add telemetry object'}}, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='list', is_config=True)""",
         })
 
     self.__add_ = t
@@ -186,7 +186,7 @@ class system_utilization(PybindBase):
       self._set()
 
   def _unset_add_(self):
-    self.__add_ = YANGDynClass(base=YANGListType("object",add_.add_, yang_name="add", rest_name="add", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='object', extensions=None), is_container='list', yang_name="add", rest_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='list', is_config=True)
+    self.__add_ = YANGDynClass(base=YANGListType("object",add_.add_, yang_name="add", rest_name="add", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='object', extensions={u'tailf-common': {u'callpoint': u'SystemProfileObject', u'cli-suppress-list-no': None, u'cli-suppress-mode': None, u'info': u'Add telemetry object'}}), is_container='list', yang_name="add", rest_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'SystemProfileObject', u'cli-suppress-list-no': None, u'cli-suppress-mode': None, u'info': u'Add telemetry object'}}, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='list', is_config=True)
 
   name = __builtin__.property(_get_name, _set_name)
   interval = __builtin__.property(_get_interval, _set_interval)

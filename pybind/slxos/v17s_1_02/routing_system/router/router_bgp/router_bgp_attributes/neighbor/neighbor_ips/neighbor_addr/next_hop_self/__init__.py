@@ -44,8 +44,8 @@ class next_hop_self(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__next_hop_self_always = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="next-hop-self-always", rest_name="next-hop-self-always", parent=self, choice=(u'ch-next-hop-self-type', u'ca-next-hop-self-always'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
-    self.__next_hop_self_status = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="next-hop-self-status", rest_name="next-hop-self-status", parent=self, choice=(u'ch-next-hop-self-type', u'ca-next-hop-self-status'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__next_hop_self_always = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="next-hop-self-always", rest_name="always", parent=self, choice=(u'ch-next-hop-self-type', u'ca-next-hop-self-always'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Allow nexthopself for RR routes', u'alt-name': u'always'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__next_hop_self_status = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="next-hop-self-status", rest_name="next-hop-self-status", parent=self, choice=(u'ch-next-hop-self-type', u'ca-next-hop-self-status'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class next_hop_self(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'routing-system', u'router', u'router-bgp', u'router-bgp-attributes', u'neighbor', u'neighbor-ips', u'neighbor-addr', u'next-hop-self']
+      return [u'router', u'bgp', u'neighbor', u'neighbor-addr', u'next-hop-self']
 
   def _get_next_hop_self_always(self):
     """
@@ -100,12 +100,12 @@ class next_hop_self(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="next-hop-self-always", rest_name="next-hop-self-always", parent=self, choice=(u'ch-next-hop-self-type', u'ca-next-hop-self-always'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="next-hop-self-always", rest_name="always", parent=self, choice=(u'ch-next-hop-self-type', u'ca-next-hop-self-always'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Allow nexthopself for RR routes', u'alt-name': u'always'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """next_hop_self_always must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="next-hop-self-always", rest_name="next-hop-self-always", parent=self, choice=(u'ch-next-hop-self-type', u'ca-next-hop-self-always'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="next-hop-self-always", rest_name="always", parent=self, choice=(u'ch-next-hop-self-type', u'ca-next-hop-self-always'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Allow nexthopself for RR routes', u'alt-name': u'always'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
         })
 
     self.__next_hop_self_always = t
@@ -113,7 +113,7 @@ class next_hop_self(PybindBase):
       self._set()
 
   def _unset_next_hop_self_always(self):
-    self.__next_hop_self_always = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="next-hop-self-always", rest_name="next-hop-self-always", parent=self, choice=(u'ch-next-hop-self-type', u'ca-next-hop-self-always'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__next_hop_self_always = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="next-hop-self-always", rest_name="always", parent=self, choice=(u'ch-next-hop-self-type', u'ca-next-hop-self-always'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Allow nexthopself for RR routes', u'alt-name': u'always'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
 
 
   def _get_next_hop_self_status(self):
@@ -133,12 +133,12 @@ class next_hop_self(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="next-hop-self-status", rest_name="next-hop-self-status", parent=self, choice=(u'ch-next-hop-self-type', u'ca-next-hop-self-status'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="next-hop-self-status", rest_name="next-hop-self-status", parent=self, choice=(u'ch-next-hop-self-type', u'ca-next-hop-self-status'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """next_hop_self_status must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="next-hop-self-status", rest_name="next-hop-self-status", parent=self, choice=(u'ch-next-hop-self-type', u'ca-next-hop-self-status'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="next-hop-self-status", rest_name="next-hop-self-status", parent=self, choice=(u'ch-next-hop-self-type', u'ca-next-hop-self-status'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
         })
 
     self.__next_hop_self_status = t
@@ -146,7 +146,7 @@ class next_hop_self(PybindBase):
       self._set()
 
   def _unset_next_hop_self_status(self):
-    self.__next_hop_self_status = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="next-hop-self-status", rest_name="next-hop-self-status", parent=self, choice=(u'ch-next-hop-self-type', u'ca-next-hop-self-status'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__next_hop_self_status = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="next-hop-self-status", rest_name="next-hop-self-status", parent=self, choice=(u'ch-next-hop-self-type', u'ca-next-hop-self-status'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
 
   next_hop_self_always = __builtin__.property(_get_next_hop_self_always, _set_next_hop_self_always)
   next_hop_self_status = __builtin__.property(_get_next_hop_self_status, _set_next_hop_self_status)

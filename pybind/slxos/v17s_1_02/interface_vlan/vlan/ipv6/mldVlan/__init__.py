@@ -18,7 +18,7 @@ class mldVlan(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__snooping',)
 
   _yang_name = 'mldVlan'
-  _rest_name = 'mldVlan'
+  _rest_name = 'mld'
 
   _pybind_generated_by = 'container'
 
@@ -45,7 +45,7 @@ class mldVlan(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__snooping = YANGDynClass(base=snooping.snooping, is_container='container', presence=False, yang_name="snooping", rest_name="snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
+    self.__snooping = YANGDynClass(base=snooping.snooping, is_container='container', presence=False, yang_name="snooping", rest_name="snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MLD Snooping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class mldVlan(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface-vlan', u'vlan', u'ipv6', u'mldVlan']
+      return [u'vlan', u'ipv6', u'mld']
 
   def _get_snooping(self):
     """
@@ -100,12 +100,12 @@ class mldVlan(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=snooping.snooping, is_container='container', presence=False, yang_name="snooping", rest_name="snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=snooping.snooping, is_container='container', presence=False, yang_name="snooping", rest_name="snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MLD Snooping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """snooping must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=snooping.snooping, is_container='container', presence=False, yang_name="snooping", rest_name="snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=snooping.snooping, is_container='container', presence=False, yang_name="snooping", rest_name="snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MLD Snooping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)""",
         })
 
     self.__snooping = t
@@ -113,7 +113,7 @@ class mldVlan(PybindBase):
       self._set()
 
   def _unset_snooping(self):
-    self.__snooping = YANGDynClass(base=snooping.snooping, is_container='container', presence=False, yang_name="snooping", rest_name="snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
+    self.__snooping = YANGDynClass(base=snooping.snooping, is_container='container', presence=False, yang_name="snooping", rest_name="snooping", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'MLD Snooping', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='container', is_config=True)
 
   snooping = __builtin__.property(_get_snooping, _set_snooping)
 

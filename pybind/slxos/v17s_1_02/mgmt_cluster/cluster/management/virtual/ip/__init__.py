@@ -45,7 +45,7 @@ class ip(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__address = YANGDynClass(base=YANGListType("address",address.address, yang_name="address", rest_name="address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='address', extensions=None), is_container='list', yang_name="address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='list', is_config=True)
+    self.__address = YANGDynClass(base=YANGListType("address",address.address, yang_name="address", rest_name="address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='address', extensions={u'tailf-common': {u'info': u'Virtual IP Configuration', u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'virtualipcpt'}}), is_container='list', yang_name="address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual IP Configuration', u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'virtualipcpt'}}, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class ip(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'mgmt-cluster', u'cluster', u'management', u'virtual', u'ip']
+      return [u'cluster', u'management', u'virtual', u'ip']
 
   def _get_address(self):
     """
@@ -100,12 +100,12 @@ class ip(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("address",address.address, yang_name="address", rest_name="address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='address', extensions=None), is_container='list', yang_name="address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("address",address.address, yang_name="address", rest_name="address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='address', extensions={u'tailf-common': {u'info': u'Virtual IP Configuration', u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'virtualipcpt'}}), is_container='list', yang_name="address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual IP Configuration', u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'virtualipcpt'}}, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """address must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("address",address.address, yang_name="address", rest_name="address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='address', extensions=None), is_container='list', yang_name="address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("address",address.address, yang_name="address", rest_name="address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='address', extensions={u'tailf-common': {u'info': u'Virtual IP Configuration', u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'virtualipcpt'}}), is_container='list', yang_name="address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual IP Configuration', u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'virtualipcpt'}}, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='list', is_config=True)""",
         })
 
     self.__address = t
@@ -113,7 +113,7 @@ class ip(PybindBase):
       self._set()
 
   def _unset_address(self):
-    self.__address = YANGDynClass(base=YANGListType("address",address.address, yang_name="address", rest_name="address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='address', extensions=None), is_container='list', yang_name="address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='list', is_config=True)
+    self.__address = YANGDynClass(base=YANGListType("address",address.address, yang_name="address", rest_name="address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='address', extensions={u'tailf-common': {u'info': u'Virtual IP Configuration', u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'virtualipcpt'}}), is_container='list', yang_name="address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual IP Configuration', u'cli-suppress-mode': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'virtualipcpt'}}, namespace='http://brocade.com/ns/brocade-cluster', defining_module='brocade-cluster', yang_type='list', is_config=True)
 
   address = __builtin__.property(_get_address, _set_address)
 

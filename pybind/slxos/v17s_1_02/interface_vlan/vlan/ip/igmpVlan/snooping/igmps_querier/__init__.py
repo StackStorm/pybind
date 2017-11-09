@@ -17,7 +17,7 @@ class igmps_querier(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__igmps_qenable',)
 
   _yang_name = 'igmps-querier'
-  _rest_name = 'igmps-querier'
+  _rest_name = 'querier'
 
   _pybind_generated_by = 'container'
 
@@ -44,7 +44,7 @@ class igmps_querier(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__igmps_qenable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="igmps-qenable", rest_name="igmps-qenable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='empty', is_config=True)
+    self.__igmps_qenable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="igmps-qenable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable snooping querier', u'cli-full-command': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -80,7 +80,7 @@ class igmps_querier(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface-vlan', u'vlan', u'ip', u'igmpVlan', u'snooping', u'igmps-querier']
+      return [u'vlan', u'ip', u'igmp', u'snooping', u'querier']
 
   def _get_igmps_qenable(self):
     """
@@ -99,12 +99,12 @@ class igmps_querier(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="igmps-qenable", rest_name="igmps-qenable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="igmps-qenable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable snooping querier', u'cli-full-command': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """igmps_qenable must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="igmps-qenable", rest_name="igmps-qenable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="igmps-qenable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable snooping querier', u'cli-full-command': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='empty', is_config=True)""",
         })
 
     self.__igmps_qenable = t
@@ -112,7 +112,7 @@ class igmps_querier(PybindBase):
       self._set()
 
   def _unset_igmps_qenable(self):
-    self.__igmps_qenable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="igmps-qenable", rest_name="igmps-qenable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='empty', is_config=True)
+    self.__igmps_qenable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="igmps-qenable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable snooping querier', u'cli-full-command': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='empty', is_config=True)
 
   igmps_qenable = __builtin__.property(_get_igmps_qenable, _set_igmps_qenable)
 

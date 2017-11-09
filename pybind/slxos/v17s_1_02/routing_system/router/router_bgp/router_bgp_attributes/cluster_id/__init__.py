@@ -44,8 +44,8 @@ class cluster_id(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__cluster_id_ipv4_address = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="cluster-id-ipv4-address", rest_name="cluster-id-ipv4-address", parent=self, choice=(u'ch-cluster-id', u'ca-cluster-id-ipv4-address'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='inet:ipv4-address', is_config=True)
-    self.__cluster_id_value = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..65535']}), is_leaf=True, yang_name="cluster-id-value", rest_name="cluster-id-value", parent=self, choice=(u'ch-cluster-id', u'ca-cluster-id'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='decimal-number', is_config=True)
+    self.__cluster_id_ipv4_address = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="cluster-id-ipv4-address", rest_name="ipv4-address", parent=self, choice=(u'ch-cluster-id', u'ca-cluster-id-ipv4-address'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route-Reflector Cluster-ID as IP address', u'alt-name': u'ipv4-address'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='inet:ipv4-address', is_config=True)
+    self.__cluster_id_value = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..65535']}), is_leaf=True, yang_name="cluster-id-value", rest_name="id", parent=self, choice=(u'ch-cluster-id', u'ca-cluster-id'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route-Reflector Cluster-ID as 32 bit quantity', u'cli-drop-node-name': None, u'alt-name': u'id'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='decimal-number', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class cluster_id(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'routing-system', u'router', u'router-bgp', u'router-bgp-attributes', u'cluster-id']
+      return [u'router', u'bgp', u'cluster-id']
 
   def _get_cluster_id_value(self):
     """
@@ -100,12 +100,12 @@ class cluster_id(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..65535']}), is_leaf=True, yang_name="cluster-id-value", rest_name="cluster-id-value", parent=self, choice=(u'ch-cluster-id', u'ca-cluster-id'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='decimal-number', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..65535']}), is_leaf=True, yang_name="cluster-id-value", rest_name="id", parent=self, choice=(u'ch-cluster-id', u'ca-cluster-id'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route-Reflector Cluster-ID as 32 bit quantity', u'cli-drop-node-name': None, u'alt-name': u'id'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='decimal-number', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """cluster_id_value must be of a type compatible with decimal-number""",
           'defined-type': "brocade-bgp:decimal-number",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..65535']}), is_leaf=True, yang_name="cluster-id-value", rest_name="cluster-id-value", parent=self, choice=(u'ch-cluster-id', u'ca-cluster-id'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='decimal-number', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..65535']}), is_leaf=True, yang_name="cluster-id-value", rest_name="id", parent=self, choice=(u'ch-cluster-id', u'ca-cluster-id'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route-Reflector Cluster-ID as 32 bit quantity', u'cli-drop-node-name': None, u'alt-name': u'id'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='decimal-number', is_config=True)""",
         })
 
     self.__cluster_id_value = t
@@ -113,7 +113,7 @@ class cluster_id(PybindBase):
       self._set()
 
   def _unset_cluster_id_value(self):
-    self.__cluster_id_value = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..65535']}), is_leaf=True, yang_name="cluster-id-value", rest_name="cluster-id-value", parent=self, choice=(u'ch-cluster-id', u'ca-cluster-id'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='decimal-number', is_config=True)
+    self.__cluster_id_value = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..65535']}), is_leaf=True, yang_name="cluster-id-value", rest_name="id", parent=self, choice=(u'ch-cluster-id', u'ca-cluster-id'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route-Reflector Cluster-ID as 32 bit quantity', u'cli-drop-node-name': None, u'alt-name': u'id'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='decimal-number', is_config=True)
 
 
   def _get_cluster_id_ipv4_address(self):
@@ -133,12 +133,12 @@ class cluster_id(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="cluster-id-ipv4-address", rest_name="cluster-id-ipv4-address", parent=self, choice=(u'ch-cluster-id', u'ca-cluster-id-ipv4-address'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='inet:ipv4-address', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="cluster-id-ipv4-address", rest_name="ipv4-address", parent=self, choice=(u'ch-cluster-id', u'ca-cluster-id-ipv4-address'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route-Reflector Cluster-ID as IP address', u'alt-name': u'ipv4-address'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='inet:ipv4-address', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """cluster_id_ipv4_address must be of a type compatible with inet:ipv4-address""",
           'defined-type': "inet:ipv4-address",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="cluster-id-ipv4-address", rest_name="cluster-id-ipv4-address", parent=self, choice=(u'ch-cluster-id', u'ca-cluster-id-ipv4-address'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='inet:ipv4-address', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="cluster-id-ipv4-address", rest_name="ipv4-address", parent=self, choice=(u'ch-cluster-id', u'ca-cluster-id-ipv4-address'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route-Reflector Cluster-ID as IP address', u'alt-name': u'ipv4-address'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='inet:ipv4-address', is_config=True)""",
         })
 
     self.__cluster_id_ipv4_address = t
@@ -146,7 +146,7 @@ class cluster_id(PybindBase):
       self._set()
 
   def _unset_cluster_id_ipv4_address(self):
-    self.__cluster_id_ipv4_address = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="cluster-id-ipv4-address", rest_name="cluster-id-ipv4-address", parent=self, choice=(u'ch-cluster-id', u'ca-cluster-id-ipv4-address'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='inet:ipv4-address', is_config=True)
+    self.__cluster_id_ipv4_address = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="cluster-id-ipv4-address", rest_name="ipv4-address", parent=self, choice=(u'ch-cluster-id', u'ca-cluster-id-ipv4-address'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Route-Reflector Cluster-ID as IP address', u'alt-name': u'ipv4-address'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='inet:ipv4-address', is_config=True)
 
   cluster_id_value = __builtin__.property(_get_cluster_id_value, _set_cluster_id_value)
   cluster_id_ipv4_address = __builtin__.property(_get_cluster_id_ipv4_address, _set_cluster_id_ipv4_address)

@@ -45,7 +45,7 @@ class name(PybindBase):
     else:
       self._extmethods = False
     self.__name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'4 .. 32']}), is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
-    self.__desc = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0 .. 64']}), default=unicode(""), is_leaf=True, yang_name="desc", rest_name="desc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
+    self.__desc = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0 .. 64']}), default=unicode(""), is_leaf=True, yang_name="desc", rest_name="desc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u"Description of the role (default='')", u'cli-multi-value': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -138,12 +138,12 @@ class name(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0 .. 64']}), default=unicode(""), is_leaf=True, yang_name="desc", rest_name="desc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0 .. 64']}), default=unicode(""), is_leaf=True, yang_name="desc", rest_name="desc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u"Description of the role (default='')", u'cli-multi-value': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """desc must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0 .. 64']}), default=unicode(""), is_leaf=True, yang_name="desc", rest_name="desc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0 .. 64']}), default=unicode(""), is_leaf=True, yang_name="desc", rest_name="desc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u"Description of the role (default='')", u'cli-multi-value': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)""",
         })
 
     self.__desc = t
@@ -151,7 +151,7 @@ class name(PybindBase):
       self._set()
 
   def _unset_desc(self):
-    self.__desc = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0 .. 64']}), default=unicode(""), is_leaf=True, yang_name="desc", rest_name="desc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
+    self.__desc = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0 .. 64']}), default=unicode(""), is_leaf=True, yang_name="desc", rest_name="desc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u"Description of the role (default='')", u'cli-multi-value': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='string', is_config=True)
 
   name = __builtin__.property(_get_name, _set_name)
   desc = __builtin__.property(_get_desc, _set_desc)

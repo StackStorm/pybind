@@ -8,8 +8,10 @@ from decimal import Decimal
 from bitarray import bitarray
 import __builtin__
 import sfp
+import security
 import Cpu
 import Memory
+import interface
 import Buffer
 class threshold_monitor(PybindBase):
   """
@@ -18,7 +20,7 @@ class threshold_monitor(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__sfp','__Cpu','__Memory','__Buffer',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__sfp','__security','__Cpu','__Memory','__interface','__Buffer',)
 
   _yang_name = 'threshold-monitor'
   _rest_name = 'threshold-monitor'
@@ -48,10 +50,12 @@ class threshold_monitor(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__Buffer = YANGDynClass(base=Buffer.Buffer, is_container='container', presence=False, yang_name="Buffer", rest_name="Buffer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
-    self.__Cpu = YANGDynClass(base=Cpu.Cpu, is_container='container', presence=False, yang_name="Cpu", rest_name="Cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
-    self.__sfp = YANGDynClass(base=sfp.sfp, is_container='container', presence=False, yang_name="sfp", rest_name="sfp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
-    self.__Memory = YANGDynClass(base=Memory.Memory, is_container='container', presence=False, yang_name="Memory", rest_name="Memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
+    self.__Buffer = YANGDynClass(base=Buffer.Buffer, is_container='container', presence=False, yang_name="Buffer", rest_name="Buffer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure settings for component:Buffer', u'cli-compact-syntax': None, u'callpoint': u'BufferMonitor', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
+    self.__sfp = YANGDynClass(base=sfp.sfp, is_container='container', presence=False, yang_name="sfp", rest_name="sfp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Monitor SFP class', u'callpoint': u'sfpconfiguration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
+    self.__Memory = YANGDynClass(base=Memory.Memory, is_container='container', presence=False, yang_name="Memory", rest_name="Memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure settings for component:MEMORY', u'cli-compact-syntax': None, u'callpoint': u'MemoryMonitor', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
+    self.__interface = YANGDynClass(base=interface.interface, is_container='container', presence=False, yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Monitor Interface class', u'hidden': u'full', u'callpoint': u'interfaceconfiguration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
+    self.__security = YANGDynClass(base=security.security, is_container='container', presence=False, yang_name="security", rest_name="security", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Monitor security class', u'hidden': u'full', u'callpoint': u'securityconfiguration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
+    self.__Cpu = YANGDynClass(base=Cpu.Cpu, is_container='container', presence=False, yang_name="Cpu", rest_name="Cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure settings for component:CPU', u'cli-compact-syntax': None, u'callpoint': u'CpuMonitor', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -87,7 +91,7 @@ class threshold_monitor(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'threshold-monitor-hidden', u'threshold-monitor']
+      return [u'threshold-monitor']
 
   def _get_sfp(self):
     """
@@ -106,12 +110,12 @@ class threshold_monitor(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=sfp.sfp, is_container='container', presence=False, yang_name="sfp", rest_name="sfp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=sfp.sfp, is_container='container', presence=False, yang_name="sfp", rest_name="sfp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Monitor SFP class', u'callpoint': u'sfpconfiguration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """sfp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=sfp.sfp, is_container='container', presence=False, yang_name="sfp", rest_name="sfp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=sfp.sfp, is_container='container', presence=False, yang_name="sfp", rest_name="sfp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Monitor SFP class', u'callpoint': u'sfpconfiguration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)""",
         })
 
     self.__sfp = t
@@ -119,7 +123,40 @@ class threshold_monitor(PybindBase):
       self._set()
 
   def _unset_sfp(self):
-    self.__sfp = YANGDynClass(base=sfp.sfp, is_container='container', presence=False, yang_name="sfp", rest_name="sfp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
+    self.__sfp = YANGDynClass(base=sfp.sfp, is_container='container', presence=False, yang_name="sfp", rest_name="sfp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Monitor SFP class', u'callpoint': u'sfpconfiguration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
+
+
+  def _get_security(self):
+    """
+    Getter method for security, mapped from YANG variable /threshold_monitor_hidden/threshold_monitor/security (container)
+    """
+    return self.__security
+      
+  def _set_security(self, v, load=False):
+    """
+    Setter method for security, mapped from YANG variable /threshold_monitor_hidden/threshold_monitor/security (container)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_security is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_security() directly.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=security.security, is_container='container', presence=False, yang_name="security", rest_name="security", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Monitor security class', u'hidden': u'full', u'callpoint': u'securityconfiguration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """security must be of a type compatible with container""",
+          'defined-type': "container",
+          'generated-type': """YANGDynClass(base=security.security, is_container='container', presence=False, yang_name="security", rest_name="security", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Monitor security class', u'hidden': u'full', u'callpoint': u'securityconfiguration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)""",
+        })
+
+    self.__security = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_security(self):
+    self.__security = YANGDynClass(base=security.security, is_container='container', presence=False, yang_name="security", rest_name="security", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Monitor security class', u'hidden': u'full', u'callpoint': u'securityconfiguration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
 
 
   def _get_Cpu(self):
@@ -139,12 +176,12 @@ class threshold_monitor(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=Cpu.Cpu, is_container='container', presence=False, yang_name="Cpu", rest_name="Cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=Cpu.Cpu, is_container='container', presence=False, yang_name="Cpu", rest_name="Cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure settings for component:CPU', u'cli-compact-syntax': None, u'callpoint': u'CpuMonitor', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """Cpu must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=Cpu.Cpu, is_container='container', presence=False, yang_name="Cpu", rest_name="Cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=Cpu.Cpu, is_container='container', presence=False, yang_name="Cpu", rest_name="Cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure settings for component:CPU', u'cli-compact-syntax': None, u'callpoint': u'CpuMonitor', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)""",
         })
 
     self.__Cpu = t
@@ -152,7 +189,7 @@ class threshold_monitor(PybindBase):
       self._set()
 
   def _unset_Cpu(self):
-    self.__Cpu = YANGDynClass(base=Cpu.Cpu, is_container='container', presence=False, yang_name="Cpu", rest_name="Cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
+    self.__Cpu = YANGDynClass(base=Cpu.Cpu, is_container='container', presence=False, yang_name="Cpu", rest_name="Cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure settings for component:CPU', u'cli-compact-syntax': None, u'callpoint': u'CpuMonitor', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
 
 
   def _get_Memory(self):
@@ -172,12 +209,12 @@ class threshold_monitor(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=Memory.Memory, is_container='container', presence=False, yang_name="Memory", rest_name="Memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=Memory.Memory, is_container='container', presence=False, yang_name="Memory", rest_name="Memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure settings for component:MEMORY', u'cli-compact-syntax': None, u'callpoint': u'MemoryMonitor', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """Memory must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=Memory.Memory, is_container='container', presence=False, yang_name="Memory", rest_name="Memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=Memory.Memory, is_container='container', presence=False, yang_name="Memory", rest_name="Memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure settings for component:MEMORY', u'cli-compact-syntax': None, u'callpoint': u'MemoryMonitor', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)""",
         })
 
     self.__Memory = t
@@ -185,7 +222,40 @@ class threshold_monitor(PybindBase):
       self._set()
 
   def _unset_Memory(self):
-    self.__Memory = YANGDynClass(base=Memory.Memory, is_container='container', presence=False, yang_name="Memory", rest_name="Memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
+    self.__Memory = YANGDynClass(base=Memory.Memory, is_container='container', presence=False, yang_name="Memory", rest_name="Memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure settings for component:MEMORY', u'cli-compact-syntax': None, u'callpoint': u'MemoryMonitor', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
+
+
+  def _get_interface(self):
+    """
+    Getter method for interface, mapped from YANG variable /threshold_monitor_hidden/threshold_monitor/interface (container)
+    """
+    return self.__interface
+      
+  def _set_interface(self, v, load=False):
+    """
+    Setter method for interface, mapped from YANG variable /threshold_monitor_hidden/threshold_monitor/interface (container)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_interface is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_interface() directly.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=interface.interface, is_container='container', presence=False, yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Monitor Interface class', u'hidden': u'full', u'callpoint': u'interfaceconfiguration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """interface must be of a type compatible with container""",
+          'defined-type': "container",
+          'generated-type': """YANGDynClass(base=interface.interface, is_container='container', presence=False, yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Monitor Interface class', u'hidden': u'full', u'callpoint': u'interfaceconfiguration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)""",
+        })
+
+    self.__interface = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_interface(self):
+    self.__interface = YANGDynClass(base=interface.interface, is_container='container', presence=False, yang_name="interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Monitor Interface class', u'hidden': u'full', u'callpoint': u'interfaceconfiguration', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
 
 
   def _get_Buffer(self):
@@ -205,12 +275,12 @@ class threshold_monitor(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=Buffer.Buffer, is_container='container', presence=False, yang_name="Buffer", rest_name="Buffer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=Buffer.Buffer, is_container='container', presence=False, yang_name="Buffer", rest_name="Buffer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure settings for component:Buffer', u'cli-compact-syntax': None, u'callpoint': u'BufferMonitor', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """Buffer must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=Buffer.Buffer, is_container='container', presence=False, yang_name="Buffer", rest_name="Buffer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=Buffer.Buffer, is_container='container', presence=False, yang_name="Buffer", rest_name="Buffer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure settings for component:Buffer', u'cli-compact-syntax': None, u'callpoint': u'BufferMonitor', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)""",
         })
 
     self.__Buffer = t
@@ -218,14 +288,16 @@ class threshold_monitor(PybindBase):
       self._set()
 
   def _unset_Buffer(self):
-    self.__Buffer = YANGDynClass(base=Buffer.Buffer, is_container='container', presence=False, yang_name="Buffer", rest_name="Buffer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
+    self.__Buffer = YANGDynClass(base=Buffer.Buffer, is_container='container', presence=False, yang_name="Buffer", rest_name="Buffer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure settings for component:Buffer', u'cli-compact-syntax': None, u'callpoint': u'BufferMonitor', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
 
   sfp = __builtin__.property(_get_sfp, _set_sfp)
+  security = __builtin__.property(_get_security, _set_security)
   Cpu = __builtin__.property(_get_Cpu, _set_Cpu)
   Memory = __builtin__.property(_get_Memory, _set_Memory)
+  interface = __builtin__.property(_get_interface, _set_interface)
   Buffer = __builtin__.property(_get_Buffer, _set_Buffer)
 
 
-  _pyangbind_elements = {'sfp': sfp, 'Cpu': Cpu, 'Memory': Memory, 'Buffer': Buffer, }
+  _pyangbind_elements = {'sfp': sfp, 'security': security, 'Cpu': Cpu, 'Memory': Memory, 'interface': interface, 'Buffer': Buffer, }
 
 

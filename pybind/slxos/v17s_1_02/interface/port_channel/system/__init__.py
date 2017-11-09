@@ -47,7 +47,7 @@ class system(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__packet_timestamp = YANGDynClass(base=packet_timestamp.packet_timestamp, is_container='container', presence=False, yang_name="packet-timestamp", rest_name="packet-timestamp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-packet-timestamp', defining_module='brocade-packet-timestamp', yang_type='container', is_config=True)
+    self.__packet_timestamp = YANGDynClass(base=packet_timestamp.packet_timestamp, is_container='container', presence=False, yang_name="packet-timestamp", rest_name="packet-timestamp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Packet timestamp setting', u'callpoint': u'PacketTimestampPoIntf'}}, namespace='urn:brocade.com:mgmt:brocade-packet-timestamp', defining_module='brocade-packet-timestamp', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -83,7 +83,7 @@ class system(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface', u'port-channel', u'system']
+      return [u'interface', u'Port-channel', u'system']
 
   def _get_packet_timestamp(self):
     """
@@ -106,12 +106,12 @@ class system(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=packet_timestamp.packet_timestamp, is_container='container', presence=False, yang_name="packet-timestamp", rest_name="packet-timestamp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-packet-timestamp', defining_module='brocade-packet-timestamp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=packet_timestamp.packet_timestamp, is_container='container', presence=False, yang_name="packet-timestamp", rest_name="packet-timestamp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Packet timestamp setting', u'callpoint': u'PacketTimestampPoIntf'}}, namespace='urn:brocade.com:mgmt:brocade-packet-timestamp', defining_module='brocade-packet-timestamp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """packet_timestamp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=packet_timestamp.packet_timestamp, is_container='container', presence=False, yang_name="packet-timestamp", rest_name="packet-timestamp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-packet-timestamp', defining_module='brocade-packet-timestamp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=packet_timestamp.packet_timestamp, is_container='container', presence=False, yang_name="packet-timestamp", rest_name="packet-timestamp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Packet timestamp setting', u'callpoint': u'PacketTimestampPoIntf'}}, namespace='urn:brocade.com:mgmt:brocade-packet-timestamp', defining_module='brocade-packet-timestamp', yang_type='container', is_config=True)""",
         })
 
     self.__packet_timestamp = t
@@ -119,7 +119,7 @@ class system(PybindBase):
       self._set()
 
   def _unset_packet_timestamp(self):
-    self.__packet_timestamp = YANGDynClass(base=packet_timestamp.packet_timestamp, is_container='container', presence=False, yang_name="packet-timestamp", rest_name="packet-timestamp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-packet-timestamp', defining_module='brocade-packet-timestamp', yang_type='container', is_config=True)
+    self.__packet_timestamp = YANGDynClass(base=packet_timestamp.packet_timestamp, is_container='container', presence=False, yang_name="packet-timestamp", rest_name="packet-timestamp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Packet timestamp setting', u'callpoint': u'PacketTimestampPoIntf'}}, namespace='urn:brocade.com:mgmt:brocade-packet-timestamp', defining_module='brocade-packet-timestamp', yang_type='container', is_config=True)
 
   packet_timestamp = __builtin__.property(_get_packet_timestamp, _set_packet_timestamp)
 

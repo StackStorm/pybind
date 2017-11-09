@@ -17,7 +17,7 @@ class apply_traffic_class_exp_map_name(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__map_name_cmd2','__all_zero_map_cmd2','__default_map_cmd2','__All_cmd2',)
 
   _yang_name = 'apply-traffic-class-exp-map-name'
-  _rest_name = 'apply-traffic-class-exp-map-name'
+  _rest_name = 'traffic-class-exp'
 
   _pybind_generated_by = 'container'
 
@@ -44,10 +44,10 @@ class apply_traffic_class_exp_map_name(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__default_map_cmd2 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="default-map-cmd2", rest_name="default-map-cmd2", parent=self, choice=(u'apply-traffic-class-exp', u'ca-default-map-cmd2'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='empty', is_config=True)
-    self.__map_name_cmd2 = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="map-name-cmd2", rest_name="map-name-cmd2", parent=self, choice=(u'apply-traffic-class-exp', u'ca-map-name-cmd2'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='map-name-type', is_config=True)
-    self.__All_cmd2 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="All-cmd2", rest_name="All-cmd2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='empty', is_config=True)
-    self.__all_zero_map_cmd2 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="all-zero-map-cmd2", rest_name="all-zero-map-cmd2", parent=self, choice=(u'apply-traffic-class-exp', u'ca-all-zero-map-cmd2'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='empty', is_config=True)
+    self.__default_map_cmd2 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="default-map-cmd2", rest_name="default-map", parent=self, choice=(u'apply-traffic-class-exp', u'ca-default-map-cmd2'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map traffic-class and drop prec to EXP based on default map', u'alt-name': u'default-map', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='empty', is_config=True)
+    self.__map_name_cmd2 = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="map-name-cmd2", rest_name="map-name-cmd2", parent=self, choice=(u'apply-traffic-class-exp', u'ca-map-name-cmd2'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'<MAP NAME>;;Name for the MAP(Max 64)', u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='map-name-type', is_config=True)
+    self.__All_cmd2 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="All-cmd2", rest_name="All", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply globally on all interface', u'alt-name': u'All'}}, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='empty', is_config=True)
+    self.__all_zero_map_cmd2 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="all-zero-map-cmd2", rest_name="all-zero-map", parent=self, choice=(u'apply-traffic-class-exp', u'ca-all-zero-map-cmd2'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map traffic-class and drop prec to EXP 0', u'alt-name': u'all-zero-map', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -83,7 +83,7 @@ class apply_traffic_class_exp_map_name(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'qos-mpls', u'map-apply', u'apply-traffic-class-exp-map-name']
+      return [u'qos-mpls', u'map-apply', u'traffic-class-exp']
 
   def _get_map_name_cmd2(self):
     """
@@ -102,12 +102,12 @@ class apply_traffic_class_exp_map_name(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="map-name-cmd2", rest_name="map-name-cmd2", parent=self, choice=(u'apply-traffic-class-exp', u'ca-map-name-cmd2'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='map-name-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="map-name-cmd2", rest_name="map-name-cmd2", parent=self, choice=(u'apply-traffic-class-exp', u'ca-map-name-cmd2'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'<MAP NAME>;;Name for the MAP(Max 64)', u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='map-name-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """map_name_cmd2 must be of a type compatible with map-name-type""",
           'defined-type': "brocade-apply-qos-mpls:map-name-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="map-name-cmd2", rest_name="map-name-cmd2", parent=self, choice=(u'apply-traffic-class-exp', u'ca-map-name-cmd2'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='map-name-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="map-name-cmd2", rest_name="map-name-cmd2", parent=self, choice=(u'apply-traffic-class-exp', u'ca-map-name-cmd2'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'<MAP NAME>;;Name for the MAP(Max 64)', u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='map-name-type', is_config=True)""",
         })
 
     self.__map_name_cmd2 = t
@@ -115,7 +115,7 @@ class apply_traffic_class_exp_map_name(PybindBase):
       self._set()
 
   def _unset_map_name_cmd2(self):
-    self.__map_name_cmd2 = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="map-name-cmd2", rest_name="map-name-cmd2", parent=self, choice=(u'apply-traffic-class-exp', u'ca-map-name-cmd2'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='map-name-type', is_config=True)
+    self.__map_name_cmd2 = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,63})'}), is_leaf=True, yang_name="map-name-cmd2", rest_name="map-name-cmd2", parent=self, choice=(u'apply-traffic-class-exp', u'ca-map-name-cmd2'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'<MAP NAME>;;Name for the MAP(Max 64)', u'cli-drop-node-name': None, u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='map-name-type', is_config=True)
 
 
   def _get_all_zero_map_cmd2(self):
@@ -135,12 +135,12 @@ class apply_traffic_class_exp_map_name(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="all-zero-map-cmd2", rest_name="all-zero-map-cmd2", parent=self, choice=(u'apply-traffic-class-exp', u'ca-all-zero-map-cmd2'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="all-zero-map-cmd2", rest_name="all-zero-map", parent=self, choice=(u'apply-traffic-class-exp', u'ca-all-zero-map-cmd2'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map traffic-class and drop prec to EXP 0', u'alt-name': u'all-zero-map', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """all_zero_map_cmd2 must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="all-zero-map-cmd2", rest_name="all-zero-map-cmd2", parent=self, choice=(u'apply-traffic-class-exp', u'ca-all-zero-map-cmd2'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="all-zero-map-cmd2", rest_name="all-zero-map", parent=self, choice=(u'apply-traffic-class-exp', u'ca-all-zero-map-cmd2'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map traffic-class and drop prec to EXP 0', u'alt-name': u'all-zero-map', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='empty', is_config=True)""",
         })
 
     self.__all_zero_map_cmd2 = t
@@ -148,7 +148,7 @@ class apply_traffic_class_exp_map_name(PybindBase):
       self._set()
 
   def _unset_all_zero_map_cmd2(self):
-    self.__all_zero_map_cmd2 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="all-zero-map-cmd2", rest_name="all-zero-map-cmd2", parent=self, choice=(u'apply-traffic-class-exp', u'ca-all-zero-map-cmd2'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='empty', is_config=True)
+    self.__all_zero_map_cmd2 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="all-zero-map-cmd2", rest_name="all-zero-map", parent=self, choice=(u'apply-traffic-class-exp', u'ca-all-zero-map-cmd2'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map traffic-class and drop prec to EXP 0', u'alt-name': u'all-zero-map', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='empty', is_config=True)
 
 
   def _get_default_map_cmd2(self):
@@ -168,12 +168,12 @@ class apply_traffic_class_exp_map_name(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="default-map-cmd2", rest_name="default-map-cmd2", parent=self, choice=(u'apply-traffic-class-exp', u'ca-default-map-cmd2'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="default-map-cmd2", rest_name="default-map", parent=self, choice=(u'apply-traffic-class-exp', u'ca-default-map-cmd2'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map traffic-class and drop prec to EXP based on default map', u'alt-name': u'default-map', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """default_map_cmd2 must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="default-map-cmd2", rest_name="default-map-cmd2", parent=self, choice=(u'apply-traffic-class-exp', u'ca-default-map-cmd2'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="default-map-cmd2", rest_name="default-map", parent=self, choice=(u'apply-traffic-class-exp', u'ca-default-map-cmd2'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map traffic-class and drop prec to EXP based on default map', u'alt-name': u'default-map', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='empty', is_config=True)""",
         })
 
     self.__default_map_cmd2 = t
@@ -181,7 +181,7 @@ class apply_traffic_class_exp_map_name(PybindBase):
       self._set()
 
   def _unset_default_map_cmd2(self):
-    self.__default_map_cmd2 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="default-map-cmd2", rest_name="default-map-cmd2", parent=self, choice=(u'apply-traffic-class-exp', u'ca-default-map-cmd2'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='empty', is_config=True)
+    self.__default_map_cmd2 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="default-map-cmd2", rest_name="default-map", parent=self, choice=(u'apply-traffic-class-exp', u'ca-default-map-cmd2'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Map traffic-class and drop prec to EXP based on default map', u'alt-name': u'default-map', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='empty', is_config=True)
 
 
   def _get_All_cmd2(self):
@@ -201,12 +201,12 @@ class apply_traffic_class_exp_map_name(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="All-cmd2", rest_name="All-cmd2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="All-cmd2", rest_name="All", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply globally on all interface', u'alt-name': u'All'}}, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """All_cmd2 must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="All-cmd2", rest_name="All-cmd2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="All-cmd2", rest_name="All", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply globally on all interface', u'alt-name': u'All'}}, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='empty', is_config=True)""",
         })
 
     self.__All_cmd2 = t
@@ -214,7 +214,7 @@ class apply_traffic_class_exp_map_name(PybindBase):
       self._set()
 
   def _unset_All_cmd2(self):
-    self.__All_cmd2 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="All-cmd2", rest_name="All-cmd2", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='empty', is_config=True)
+    self.__All_cmd2 = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="All-cmd2", rest_name="All", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Apply globally on all interface', u'alt-name': u'All'}}, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='empty', is_config=True)
 
   map_name_cmd2 = __builtin__.property(_get_map_name_cmd2, _set_map_name_cmd2)
   all_zero_map_cmd2 = __builtin__.property(_get_all_zero_map_cmd2, _set_all_zero_map_cmd2)

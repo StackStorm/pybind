@@ -44,7 +44,7 @@ class interface(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__management_leaf = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-3][0-9])/([0-9]|[1-9][0-9])', 'length': [u'3..16']}), is_leaf=True, yang_name="management-leaf", rest_name="management-leaf", parent=self, choice=(u'cmdlist', u'interface-m'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='interface:man-interface-type', is_config=True)
+    self.__management_leaf = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-3][0-9])/([0-9]|[1-9][0-9])', 'length': [u'3..16']}), is_leaf=True, yang_name="management-leaf", rest_name="management", parent=self, choice=(u'cmdlist', u'interface-m'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'management'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='interface:man-interface-type', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -80,7 +80,7 @@ class interface(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'rule', u'command', u'interface-management-leaf', u'interface']
+      return [u'rule', u'command', u'interface']
 
   def _get_management_leaf(self):
     """
@@ -99,12 +99,12 @@ class interface(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-3][0-9])/([0-9]|[1-9][0-9])', 'length': [u'3..16']}), is_leaf=True, yang_name="management-leaf", rest_name="management-leaf", parent=self, choice=(u'cmdlist', u'interface-m'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='interface:man-interface-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-3][0-9])/([0-9]|[1-9][0-9])', 'length': [u'3..16']}), is_leaf=True, yang_name="management-leaf", rest_name="management", parent=self, choice=(u'cmdlist', u'interface-m'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'management'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='interface:man-interface-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """management_leaf must be of a type compatible with interface:man-interface-type""",
           'defined-type': "interface:man-interface-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-3][0-9])/([0-9]|[1-9][0-9])', 'length': [u'3..16']}), is_leaf=True, yang_name="management-leaf", rest_name="management-leaf", parent=self, choice=(u'cmdlist', u'interface-m'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='interface:man-interface-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-3][0-9])/([0-9]|[1-9][0-9])', 'length': [u'3..16']}), is_leaf=True, yang_name="management-leaf", rest_name="management", parent=self, choice=(u'cmdlist', u'interface-m'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'management'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='interface:man-interface-type', is_config=True)""",
         })
 
     self.__management_leaf = t
@@ -112,7 +112,7 @@ class interface(PybindBase):
       self._set()
 
   def _unset_management_leaf(self):
-    self.__management_leaf = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-3][0-9])/([0-9]|[1-9][0-9])', 'length': [u'3..16']}), is_leaf=True, yang_name="management-leaf", rest_name="management-leaf", parent=self, choice=(u'cmdlist', u'interface-m'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='interface:man-interface-type', is_config=True)
+    self.__management_leaf = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-3][0-9])/([0-9]|[1-9][0-9])', 'length': [u'3..16']}), is_leaf=True, yang_name="management-leaf", rest_name="management", parent=self, choice=(u'cmdlist', u'interface-m'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'management'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='interface:man-interface-type', is_config=True)
 
   management_leaf = __builtin__.property(_get_management_leaf, _set_management_leaf)
 

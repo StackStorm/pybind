@@ -8,6 +8,11 @@ from decimal import Decimal
 from bitarray import bitarray
 import __builtin__
 import get_last_config_update_time
+import show_vcs
+import get_vcs_details
+import vcs_rbridge_config
+import vcs_rbridge_context
+import no_vcs_rbridge_context
 import get_last_config_update_time_for_xpaths
 class brocade_vcs(PybindBase):
   """
@@ -67,7 +72,7 @@ concerned. In this sense the whole of the cluster behaves like
 a logical switch to the external network.         
 
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__get_last_config_update_time','__get_last_config_update_time_for_xpaths',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__get_last_config_update_time','__show_vcs','__get_vcs_details','__vcs_rbridge_config','__vcs_rbridge_context','__no_vcs_rbridge_context','__get_last_config_update_time_for_xpaths',)
 
   _yang_name = 'brocade-vcs'
   _rest_name = ''
@@ -97,8 +102,13 @@ a logical switch to the external network.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__get_last_config_update_time = YANGDynClass(base=get_last_config_update_time.get_last_config_update_time, is_leaf=True, yang_name="get-last-config-update-time", rest_name="get-last-config-update-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)
-    self.__get_last_config_update_time_for_xpaths = YANGDynClass(base=get_last_config_update_time_for_xpaths.get_last_config_update_time_for_xpaths, is_leaf=True, yang_name="get-last-config-update-time-for-xpaths", rest_name="get-last-config-update-time-for-xpaths", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)
+    self.__no_vcs_rbridge_context = YANGDynClass(base=no_vcs_rbridge_context.no_vcs_rbridge_context, is_leaf=True, yang_name="no-vcs-rbridge-context", rest_name="no-vcs-rbridge-context", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'full', u'actionpoint': u'vcscontextrbridgeid-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)
+    self.__show_vcs = YANGDynClass(base=show_vcs.show_vcs, is_leaf=True, yang_name="show-vcs", rest_name="show-vcs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'full', u'actionpoint': u'getclusterinfo-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)
+    self.__get_vcs_details = YANGDynClass(base=get_vcs_details.get_vcs_details, is_leaf=True, yang_name="get-vcs-details", rest_name="get-vcs-details", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'full', u'actionpoint': u'getvcsdetails-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)
+    self.__get_last_config_update_time_for_xpaths = YANGDynClass(base=get_last_config_update_time_for_xpaths.get_last_config_update_time_for_xpaths, is_leaf=True, yang_name="get-last-config-update-time-for-xpaths", rest_name="get-last-config-update-time-for-xpaths", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'last-config-update-time-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)
+    self.__vcs_rbridge_context = YANGDynClass(base=vcs_rbridge_context.vcs_rbridge_context, is_leaf=True, yang_name="vcs-rbridge-context", rest_name="vcs-rbridge-context", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'full', u'actionpoint': u'vcscontextrbridgeid-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)
+    self.__get_last_config_update_time = YANGDynClass(base=get_last_config_update_time.get_last_config_update_time, is_leaf=True, yang_name="get-last-config-update-time", rest_name="get-last-config-update-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'last-config-update-time-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)
+    self.__vcs_rbridge_config = YANGDynClass(base=vcs_rbridge_config.vcs_rbridge_config, is_leaf=True, yang_name="vcs-rbridge-config", rest_name="vcs-rbridge-config", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'full', u'actionpoint': u'vcsenable-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -159,12 +169,12 @@ configutation change done on the managed device.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=get_last_config_update_time.get_last_config_update_time, is_leaf=True, yang_name="get-last-config-update-time", rest_name="get-last-config-update-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_last_config_update_time.get_last_config_update_time, is_leaf=True, yang_name="get-last-config-update-time", rest_name="get-last-config-update-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'last-config-update-time-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_last_config_update_time must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_last_config_update_time.get_last_config_update_time, is_leaf=True, yang_name="get-last-config-update-time", rest_name="get-last-config-update-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_last_config_update_time.get_last_config_update_time, is_leaf=True, yang_name="get-last-config-update-time", rest_name="get-last-config-update-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'last-config-update-time-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_last_config_update_time = t
@@ -172,7 +182,172 @@ configutation change done on the managed device.
       self._set()
 
   def _unset_get_last_config_update_time(self):
-    self.__get_last_config_update_time = YANGDynClass(base=get_last_config_update_time.get_last_config_update_time, is_leaf=True, yang_name="get-last-config-update-time", rest_name="get-last-config-update-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)
+    self.__get_last_config_update_time = YANGDynClass(base=get_last_config_update_time.get_last_config_update_time, is_leaf=True, yang_name="get-last-config-update-time", rest_name="get-last-config-update-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'last-config-update-time-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)
+
+
+  def _get_show_vcs(self):
+    """
+    Getter method for show_vcs, mapped from YANG variable /brocade_vcs_rpc/show_vcs (rpc)
+    """
+    return self.__show_vcs
+      
+  def _set_show_vcs(self, v, load=False):
+    """
+    Setter method for show_vcs, mapped from YANG variable /brocade_vcs_rpc/show_vcs (rpc)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_show_vcs is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_show_vcs() directly.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=show_vcs.show_vcs, is_leaf=True, yang_name="show-vcs", rest_name="show-vcs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'full', u'actionpoint': u'getclusterinfo-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """show_vcs must be of a type compatible with rpc""",
+          'defined-type': "rpc",
+          'generated-type': """YANGDynClass(base=show_vcs.show_vcs, is_leaf=True, yang_name="show-vcs", rest_name="show-vcs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'full', u'actionpoint': u'getclusterinfo-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)""",
+        })
+
+    self.__show_vcs = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_show_vcs(self):
+    self.__show_vcs = YANGDynClass(base=show_vcs.show_vcs, is_leaf=True, yang_name="show-vcs", rest_name="show-vcs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'full', u'actionpoint': u'getclusterinfo-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)
+
+
+  def _get_get_vcs_details(self):
+    """
+    Getter method for get_vcs_details, mapped from YANG variable /brocade_vcs_rpc/get_vcs_details (rpc)
+    """
+    return self.__get_vcs_details
+      
+  def _set_get_vcs_details(self, v, load=False):
+    """
+    Setter method for get_vcs_details, mapped from YANG variable /brocade_vcs_rpc/get_vcs_details (rpc)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_get_vcs_details is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_get_vcs_details() directly.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=get_vcs_details.get_vcs_details, is_leaf=True, yang_name="get-vcs-details", rest_name="get-vcs-details", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'full', u'actionpoint': u'getvcsdetails-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """get_vcs_details must be of a type compatible with rpc""",
+          'defined-type': "rpc",
+          'generated-type': """YANGDynClass(base=get_vcs_details.get_vcs_details, is_leaf=True, yang_name="get-vcs-details", rest_name="get-vcs-details", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'full', u'actionpoint': u'getvcsdetails-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)""",
+        })
+
+    self.__get_vcs_details = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_get_vcs_details(self):
+    self.__get_vcs_details = YANGDynClass(base=get_vcs_details.get_vcs_details, is_leaf=True, yang_name="get-vcs-details", rest_name="get-vcs-details", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'full', u'actionpoint': u'getvcsdetails-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)
+
+
+  def _get_vcs_rbridge_config(self):
+    """
+    Getter method for vcs_rbridge_config, mapped from YANG variable /brocade_vcs_rpc/vcs_rbridge_config (rpc)
+    """
+    return self.__vcs_rbridge_config
+      
+  def _set_vcs_rbridge_config(self, v, load=False):
+    """
+    Setter method for vcs_rbridge_config, mapped from YANG variable /brocade_vcs_rpc/vcs_rbridge_config (rpc)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_vcs_rbridge_config is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_vcs_rbridge_config() directly.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=vcs_rbridge_config.vcs_rbridge_config, is_leaf=True, yang_name="vcs-rbridge-config", rest_name="vcs-rbridge-config", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'full', u'actionpoint': u'vcsenable-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """vcs_rbridge_config must be of a type compatible with rpc""",
+          'defined-type': "rpc",
+          'generated-type': """YANGDynClass(base=vcs_rbridge_config.vcs_rbridge_config, is_leaf=True, yang_name="vcs-rbridge-config", rest_name="vcs-rbridge-config", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'full', u'actionpoint': u'vcsenable-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)""",
+        })
+
+    self.__vcs_rbridge_config = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_vcs_rbridge_config(self):
+    self.__vcs_rbridge_config = YANGDynClass(base=vcs_rbridge_config.vcs_rbridge_config, is_leaf=True, yang_name="vcs-rbridge-config", rest_name="vcs-rbridge-config", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'full', u'actionpoint': u'vcsenable-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)
+
+
+  def _get_vcs_rbridge_context(self):
+    """
+    Getter method for vcs_rbridge_context, mapped from YANG variable /brocade_vcs_rpc/vcs_rbridge_context (rpc)
+    """
+    return self.__vcs_rbridge_context
+      
+  def _set_vcs_rbridge_context(self, v, load=False):
+    """
+    Setter method for vcs_rbridge_context, mapped from YANG variable /brocade_vcs_rpc/vcs_rbridge_context (rpc)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_vcs_rbridge_context is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_vcs_rbridge_context() directly.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=vcs_rbridge_context.vcs_rbridge_context, is_leaf=True, yang_name="vcs-rbridge-context", rest_name="vcs-rbridge-context", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'full', u'actionpoint': u'vcscontextrbridgeid-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """vcs_rbridge_context must be of a type compatible with rpc""",
+          'defined-type': "rpc",
+          'generated-type': """YANGDynClass(base=vcs_rbridge_context.vcs_rbridge_context, is_leaf=True, yang_name="vcs-rbridge-context", rest_name="vcs-rbridge-context", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'full', u'actionpoint': u'vcscontextrbridgeid-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)""",
+        })
+
+    self.__vcs_rbridge_context = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_vcs_rbridge_context(self):
+    self.__vcs_rbridge_context = YANGDynClass(base=vcs_rbridge_context.vcs_rbridge_context, is_leaf=True, yang_name="vcs-rbridge-context", rest_name="vcs-rbridge-context", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'full', u'actionpoint': u'vcscontextrbridgeid-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)
+
+
+  def _get_no_vcs_rbridge_context(self):
+    """
+    Getter method for no_vcs_rbridge_context, mapped from YANG variable /brocade_vcs_rpc/no_vcs_rbridge_context (rpc)
+    """
+    return self.__no_vcs_rbridge_context
+      
+  def _set_no_vcs_rbridge_context(self, v, load=False):
+    """
+    Setter method for no_vcs_rbridge_context, mapped from YANG variable /brocade_vcs_rpc/no_vcs_rbridge_context (rpc)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_no_vcs_rbridge_context is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_no_vcs_rbridge_context() directly.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=no_vcs_rbridge_context.no_vcs_rbridge_context, is_leaf=True, yang_name="no-vcs-rbridge-context", rest_name="no-vcs-rbridge-context", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'full', u'actionpoint': u'vcscontextrbridgeid-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """no_vcs_rbridge_context must be of a type compatible with rpc""",
+          'defined-type': "rpc",
+          'generated-type': """YANGDynClass(base=no_vcs_rbridge_context.no_vcs_rbridge_context, is_leaf=True, yang_name="no-vcs-rbridge-context", rest_name="no-vcs-rbridge-context", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'full', u'actionpoint': u'vcscontextrbridgeid-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)""",
+        })
+
+    self.__no_vcs_rbridge_context = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_no_vcs_rbridge_context(self):
+    self.__no_vcs_rbridge_context = YANGDynClass(base=no_vcs_rbridge_context.no_vcs_rbridge_context, is_leaf=True, yang_name="no-vcs-rbridge-context", rest_name="no-vcs-rbridge-context", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'full', u'actionpoint': u'vcscontextrbridgeid-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)
 
 
   def _get_get_last_config_update_time_for_xpaths(self):
@@ -192,12 +367,12 @@ configutation change done on the managed device.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=get_last_config_update_time_for_xpaths.get_last_config_update_time_for_xpaths, is_leaf=True, yang_name="get-last-config-update-time-for-xpaths", rest_name="get-last-config-update-time-for-xpaths", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_last_config_update_time_for_xpaths.get_last_config_update_time_for_xpaths, is_leaf=True, yang_name="get-last-config-update-time-for-xpaths", rest_name="get-last-config-update-time-for-xpaths", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'last-config-update-time-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_last_config_update_time_for_xpaths must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_last_config_update_time_for_xpaths.get_last_config_update_time_for_xpaths, is_leaf=True, yang_name="get-last-config-update-time-for-xpaths", rest_name="get-last-config-update-time-for-xpaths", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_last_config_update_time_for_xpaths.get_last_config_update_time_for_xpaths, is_leaf=True, yang_name="get-last-config-update-time-for-xpaths", rest_name="get-last-config-update-time-for-xpaths", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'last-config-update-time-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_last_config_update_time_for_xpaths = t
@@ -205,12 +380,17 @@ configutation change done on the managed device.
       self._set()
 
   def _unset_get_last_config_update_time_for_xpaths(self):
-    self.__get_last_config_update_time_for_xpaths = YANGDynClass(base=get_last_config_update_time_for_xpaths.get_last_config_update_time_for_xpaths, is_leaf=True, yang_name="get-last-config-update-time-for-xpaths", rest_name="get-last-config-update-time-for-xpaths", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)
+    self.__get_last_config_update_time_for_xpaths = YANGDynClass(base=get_last_config_update_time_for_xpaths.get_last_config_update_time_for_xpaths, is_leaf=True, yang_name="get-last-config-update-time-for-xpaths", rest_name="get-last-config-update-time-for-xpaths", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'last-config-update-time-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-vcs', defining_module='brocade-vcs', yang_type='rpc', is_config=True)
 
   get_last_config_update_time = __builtin__.property(_get_get_last_config_update_time, _set_get_last_config_update_time)
+  show_vcs = __builtin__.property(_get_show_vcs, _set_show_vcs)
+  get_vcs_details = __builtin__.property(_get_get_vcs_details, _set_get_vcs_details)
+  vcs_rbridge_config = __builtin__.property(_get_vcs_rbridge_config, _set_vcs_rbridge_config)
+  vcs_rbridge_context = __builtin__.property(_get_vcs_rbridge_context, _set_vcs_rbridge_context)
+  no_vcs_rbridge_context = __builtin__.property(_get_no_vcs_rbridge_context, _set_no_vcs_rbridge_context)
   get_last_config_update_time_for_xpaths = __builtin__.property(_get_get_last_config_update_time_for_xpaths, _set_get_last_config_update_time_for_xpaths)
 
 
-  _pyangbind_elements = {'get_last_config_update_time': get_last_config_update_time, 'get_last_config_update_time_for_xpaths': get_last_config_update_time_for_xpaths, }
+  _pyangbind_elements = {'get_last_config_update_time': get_last_config_update_time, 'show_vcs': show_vcs, 'get_vcs_details': get_vcs_details, 'vcs_rbridge_config': vcs_rbridge_config, 'vcs_rbridge_context': vcs_rbridge_context, 'no_vcs_rbridge_context': no_vcs_rbridge_context, 'get_last_config_update_time_for_xpaths': get_last_config_update_time_for_xpaths, }
 
 

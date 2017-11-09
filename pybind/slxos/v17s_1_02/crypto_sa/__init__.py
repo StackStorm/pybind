@@ -18,7 +18,7 @@ class crypto_sa(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__crypto',)
 
   _yang_name = 'crypto-sa'
-  _rest_name = 'crypto-sa'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -45,7 +45,7 @@ class crypto_sa(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__crypto = YANGDynClass(base=crypto.crypto, is_container='container', presence=False, yang_name="crypto", rest_name="crypto", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='container', is_config=True)
+    self.__crypto = YANGDynClass(base=crypto.crypto, is_container='container', presence=False, yang_name="crypto", rest_name="crypto", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Crypto services', u'cli-compact-syntax': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class crypto_sa(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'crypto-sa']
+      return []
 
   def _get_crypto(self):
     """
@@ -100,12 +100,12 @@ class crypto_sa(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=crypto.crypto, is_container='container', presence=False, yang_name="crypto", rest_name="crypto", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=crypto.crypto, is_container='container', presence=False, yang_name="crypto", rest_name="crypto", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Crypto services', u'cli-compact-syntax': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """crypto must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=crypto.crypto, is_container='container', presence=False, yang_name="crypto", rest_name="crypto", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=crypto.crypto, is_container='container', presence=False, yang_name="crypto", rest_name="crypto", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Crypto services', u'cli-compact-syntax': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='container', is_config=True)""",
         })
 
     self.__crypto = t
@@ -113,7 +113,7 @@ class crypto_sa(PybindBase):
       self._set()
 
   def _unset_crypto(self):
-    self.__crypto = YANGDynClass(base=crypto.crypto, is_container='container', presence=False, yang_name="crypto", rest_name="crypto", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='container', is_config=True)
+    self.__crypto = YANGDynClass(base=crypto.crypto, is_container='container', presence=False, yang_name="crypto", rest_name="crypto", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Crypto services', u'cli-compact-syntax': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-crypto', defining_module='brocade-crypto', yang_type='container', is_config=True)
 
   crypto = __builtin__.property(_get_crypto, _set_crypto)
 

@@ -14,7 +14,7 @@ class input(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__system','__godiag',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__system','__godiag','__standby',)
 
   _yang_name = 'input'
   _rest_name = 'input'
@@ -44,8 +44,9 @@ class input(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__system = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="system", rest_name="system", parent=self, choice=(u'opt', u'system'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='empty', is_config=True)
-    self.__godiag = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="godiag", rest_name="godiag", parent=self, choice=(u'opt', u'godiag'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='empty', is_config=True)
+    self.__standby = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="standby", rest_name="standby", parent=self, choice=(u'opt', u'standby'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Reboots the standby MM', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='empty', is_config=True)
+    self.__system = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="system", rest_name="system", parent=self, choice=(u'opt', u'system'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Reboots the chassis'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='empty', is_config=True)
+    self.__godiag = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="godiag", rest_name="godiag", parent=self, choice=(u'opt', u'godiag'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Power-cycle the switch and go to diagnostic mode', u'display-when': u'((/local-node/swbd-number = "3000") or (/local-node/swbd-number = "3001"))'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +101,12 @@ class input(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="system", rest_name="system", parent=self, choice=(u'opt', u'system'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="system", rest_name="system", parent=self, choice=(u'opt', u'system'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Reboots the chassis'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """system must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="system", rest_name="system", parent=self, choice=(u'opt', u'system'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="system", rest_name="system", parent=self, choice=(u'opt', u'system'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Reboots the chassis'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='empty', is_config=True)""",
         })
 
     self.__system = t
@@ -113,7 +114,7 @@ class input(PybindBase):
       self._set()
 
   def _unset_system(self):
-    self.__system = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="system", rest_name="system", parent=self, choice=(u'opt', u'system'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='empty', is_config=True)
+    self.__system = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="system", rest_name="system", parent=self, choice=(u'opt', u'system'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Reboots the chassis'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='empty', is_config=True)
 
 
   def _get_godiag(self):
@@ -133,12 +134,12 @@ class input(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="godiag", rest_name="godiag", parent=self, choice=(u'opt', u'godiag'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="godiag", rest_name="godiag", parent=self, choice=(u'opt', u'godiag'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Power-cycle the switch and go to diagnostic mode', u'display-when': u'((/local-node/swbd-number = "3000") or (/local-node/swbd-number = "3001"))'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """godiag must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="godiag", rest_name="godiag", parent=self, choice=(u'opt', u'godiag'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="godiag", rest_name="godiag", parent=self, choice=(u'opt', u'godiag'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Power-cycle the switch and go to diagnostic mode', u'display-when': u'((/local-node/swbd-number = "3000") or (/local-node/swbd-number = "3001"))'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='empty', is_config=True)""",
         })
 
     self.__godiag = t
@@ -146,12 +147,46 @@ class input(PybindBase):
       self._set()
 
   def _unset_godiag(self):
-    self.__godiag = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="godiag", rest_name="godiag", parent=self, choice=(u'opt', u'godiag'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='empty', is_config=True)
+    self.__godiag = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="godiag", rest_name="godiag", parent=self, choice=(u'opt', u'godiag'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Power-cycle the switch and go to diagnostic mode', u'display-when': u'((/local-node/swbd-number = "3000") or (/local-node/swbd-number = "3001"))'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='empty', is_config=True)
+
+
+  def _get_standby(self):
+    """
+    Getter method for standby, mapped from YANG variable /brocade_ha_rpc/reload/input/standby (empty)
+    """
+    return self.__standby
+      
+  def _set_standby(self, v, load=False):
+    """
+    Setter method for standby, mapped from YANG variable /brocade_ha_rpc/reload/input/standby (empty)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_standby is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_standby() directly.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="standby", rest_name="standby", parent=self, choice=(u'opt', u'standby'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Reboots the standby MM', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='empty', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """standby must be of a type compatible with empty""",
+          'defined-type': "empty",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="standby", rest_name="standby", parent=self, choice=(u'opt', u'standby'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Reboots the standby MM', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='empty', is_config=True)""",
+        })
+
+    self.__standby = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_standby(self):
+    self.__standby = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="standby", rest_name="standby", parent=self, choice=(u'opt', u'standby'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Reboots the standby MM', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ha', defining_module='brocade-ha', yang_type='empty', is_config=True)
 
   system = __builtin__.property(_get_system, _set_system)
   godiag = __builtin__.property(_get_godiag, _set_godiag)
+  standby = __builtin__.property(_get_standby, _set_standby)
 
-  __choices__ = {u'opt': {u'system': [u'system'], u'godiag': [u'godiag']}}
-  _pyangbind_elements = {'system': system, 'godiag': godiag, }
+  __choices__ = {u'opt': {u'standby': [u'standby'], u'system': [u'system'], u'godiag': [u'godiag']}}
+  _pyangbind_elements = {'system': system, 'godiag': godiag, 'standby': standby, }
 
 

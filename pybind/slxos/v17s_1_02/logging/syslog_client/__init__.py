@@ -44,7 +44,7 @@ class syslog_client(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__localip = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'CHASSIS_IP': {'value': 1}, u'MM_IP': {'value': 0}},), is_leaf=True, yang_name="localip", rest_name="localip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='iptype-enum', is_config=True)
+    self.__localip = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'CHASSIS_IP': {'value': 1}, u'MM_IP': {'value': 0}},), is_leaf=True, yang_name="localip", rest_name="localip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure LocalIP Type <MM or CHASSIS>'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='iptype-enum', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -99,12 +99,12 @@ class syslog_client(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'CHASSIS_IP': {'value': 1}, u'MM_IP': {'value': 0}},), is_leaf=True, yang_name="localip", rest_name="localip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='iptype-enum', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'CHASSIS_IP': {'value': 1}, u'MM_IP': {'value': 0}},), is_leaf=True, yang_name="localip", rest_name="localip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure LocalIP Type <MM or CHASSIS>'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='iptype-enum', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """localip must be of a type compatible with iptype-enum""",
           'defined-type': "brocade-ras:iptype-enum",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'CHASSIS_IP': {'value': 1}, u'MM_IP': {'value': 0}},), is_leaf=True, yang_name="localip", rest_name="localip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='iptype-enum', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'CHASSIS_IP': {'value': 1}, u'MM_IP': {'value': 0}},), is_leaf=True, yang_name="localip", rest_name="localip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure LocalIP Type <MM or CHASSIS>'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='iptype-enum', is_config=True)""",
         })
 
     self.__localip = t
@@ -112,7 +112,7 @@ class syslog_client(PybindBase):
       self._set()
 
   def _unset_localip(self):
-    self.__localip = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'CHASSIS_IP': {'value': 1}, u'MM_IP': {'value': 0}},), is_leaf=True, yang_name="localip", rest_name="localip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='iptype-enum', is_config=True)
+    self.__localip = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'CHASSIS_IP': {'value': 1}, u'MM_IP': {'value': 0}},), is_leaf=True, yang_name="localip", rest_name="localip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure LocalIP Type <MM or CHASSIS>'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='iptype-enum', is_config=True)
 
   localip = __builtin__.property(_get_localip, _set_localip)
 

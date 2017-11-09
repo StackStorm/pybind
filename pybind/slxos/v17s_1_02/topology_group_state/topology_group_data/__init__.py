@@ -49,11 +49,11 @@ class topology_group_data(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__member_vlan = YANGDynClass(base=YANGListType("vlan_id",member_vlan.member_vlan, yang_name="member-vlan", rest_name="member-vlan", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions=None), is_container='list', yang_name="member-vlan", rest_name="member-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
+    self.__member_vlan = YANGDynClass(base=YANGListType("vlan_id",member_vlan.member_vlan, yang_name="member-vlan", rest_name="member-vlan", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions={u'tailf-common': {u'callpoint': u'nsm-member-vlan', u'cli-suppress-show-path': None}}), is_container='list', yang_name="member-vlan", rest_name="member-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-member-vlan', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
     self.__l2_protocol = YANGDynClass(base=unicode, is_leaf=True, yang_name="l2-protocol", rest_name="l2-protocol", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='string', is_config=False)
-    self.__member_bd = YANGDynClass(base=YANGListType("bd_id",member_bd.member_bd, yang_name="member-bd", rest_name="member-bd", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bd-id', extensions=None), is_container='list', yang_name="member-bd", rest_name="member-bd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
+    self.__member_bd = YANGDynClass(base=YANGListType("bd_id",member_bd.member_bd, yang_name="member-bd", rest_name="member-bd", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bd-id', extensions={u'tailf-common': {u'callpoint': u'nsm-member-bd', u'cli-suppress-show-path': None}}), is_container='list', yang_name="member-bd", rest_name="member-bd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-member-bd', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
     self.__topology_group_id = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="topology-group-id", rest_name="topology-group-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='uint16', is_config=False)
-    self.__master_vlan = YANGDynClass(base=master_vlan.master_vlan, is_container='container', presence=False, yang_name="master-vlan", rest_name="master-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
+    self.__master_vlan = YANGDynClass(base=master_vlan.master_vlan, is_container='container', presence=False, yang_name="master-vlan", rest_name="master-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-master-vlan', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -191,12 +191,12 @@ class topology_group_data(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=master_vlan.master_vlan, is_container='container', presence=False, yang_name="master-vlan", rest_name="master-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=master_vlan.master_vlan, is_container='container', presence=False, yang_name="master-vlan", rest_name="master-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-master-vlan', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """master_vlan must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=master_vlan.master_vlan, is_container='container', presence=False, yang_name="master-vlan", rest_name="master-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=master_vlan.master_vlan, is_container='container', presence=False, yang_name="master-vlan", rest_name="master-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-master-vlan', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)""",
         })
 
     self.__master_vlan = t
@@ -204,7 +204,7 @@ class topology_group_data(PybindBase):
       self._set()
 
   def _unset_master_vlan(self):
-    self.__master_vlan = YANGDynClass(base=master_vlan.master_vlan, is_container='container', presence=False, yang_name="master-vlan", rest_name="master-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
+    self.__master_vlan = YANGDynClass(base=master_vlan.master_vlan, is_container='container', presence=False, yang_name="master-vlan", rest_name="master-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-master-vlan', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
 
 
   def _get_member_vlan(self):
@@ -228,12 +228,12 @@ class topology_group_data(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("vlan_id",member_vlan.member_vlan, yang_name="member-vlan", rest_name="member-vlan", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions=None), is_container='list', yang_name="member-vlan", rest_name="member-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("vlan_id",member_vlan.member_vlan, yang_name="member-vlan", rest_name="member-vlan", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions={u'tailf-common': {u'callpoint': u'nsm-member-vlan', u'cli-suppress-show-path': None}}), is_container='list', yang_name="member-vlan", rest_name="member-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-member-vlan', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """member_vlan must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("vlan_id",member_vlan.member_vlan, yang_name="member-vlan", rest_name="member-vlan", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions=None), is_container='list', yang_name="member-vlan", rest_name="member-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("vlan_id",member_vlan.member_vlan, yang_name="member-vlan", rest_name="member-vlan", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions={u'tailf-common': {u'callpoint': u'nsm-member-vlan', u'cli-suppress-show-path': None}}), is_container='list', yang_name="member-vlan", rest_name="member-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-member-vlan', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)""",
         })
 
     self.__member_vlan = t
@@ -241,7 +241,7 @@ class topology_group_data(PybindBase):
       self._set()
 
   def _unset_member_vlan(self):
-    self.__member_vlan = YANGDynClass(base=YANGListType("vlan_id",member_vlan.member_vlan, yang_name="member-vlan", rest_name="member-vlan", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions=None), is_container='list', yang_name="member-vlan", rest_name="member-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
+    self.__member_vlan = YANGDynClass(base=YANGListType("vlan_id",member_vlan.member_vlan, yang_name="member-vlan", rest_name="member-vlan", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vlan-id', extensions={u'tailf-common': {u'callpoint': u'nsm-member-vlan', u'cli-suppress-show-path': None}}), is_container='list', yang_name="member-vlan", rest_name="member-vlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-member-vlan', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
 
 
   def _get_member_bd(self):
@@ -265,12 +265,12 @@ class topology_group_data(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("bd_id",member_bd.member_bd, yang_name="member-bd", rest_name="member-bd", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bd-id', extensions=None), is_container='list', yang_name="member-bd", rest_name="member-bd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("bd_id",member_bd.member_bd, yang_name="member-bd", rest_name="member-bd", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bd-id', extensions={u'tailf-common': {u'callpoint': u'nsm-member-bd', u'cli-suppress-show-path': None}}), is_container='list', yang_name="member-bd", rest_name="member-bd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-member-bd', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """member_bd must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("bd_id",member_bd.member_bd, yang_name="member-bd", rest_name="member-bd", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bd-id', extensions=None), is_container='list', yang_name="member-bd", rest_name="member-bd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("bd_id",member_bd.member_bd, yang_name="member-bd", rest_name="member-bd", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bd-id', extensions={u'tailf-common': {u'callpoint': u'nsm-member-bd', u'cli-suppress-show-path': None}}), is_container='list', yang_name="member-bd", rest_name="member-bd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-member-bd', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)""",
         })
 
     self.__member_bd = t
@@ -278,7 +278,7 @@ class topology_group_data(PybindBase):
       self._set()
 
   def _unset_member_bd(self):
-    self.__member_bd = YANGDynClass(base=YANGListType("bd_id",member_bd.member_bd, yang_name="member-bd", rest_name="member-bd", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bd-id', extensions=None), is_container='list', yang_name="member-bd", rest_name="member-bd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
+    self.__member_bd = YANGDynClass(base=YANGListType("bd_id",member_bd.member_bd, yang_name="member-bd", rest_name="member-bd", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bd-id', extensions={u'tailf-common': {u'callpoint': u'nsm-member-bd', u'cli-suppress-show-path': None}}), is_container='list', yang_name="member-bd", rest_name="member-bd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-member-bd', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
 
   topology_group_id = __builtin__.property(_get_topology_group_id)
   l2_protocol = __builtin__.property(_get_l2_protocol)

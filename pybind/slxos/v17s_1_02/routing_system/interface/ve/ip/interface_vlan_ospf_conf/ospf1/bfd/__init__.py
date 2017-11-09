@@ -46,7 +46,7 @@ class bfd(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__intf_bfd_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="intf-bfd-enable", rest_name="intf-bfd-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
+    self.__intf_bfd_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="intf-bfd-enable", rest_name="intf-bfd-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'info': u'Enable bfd on this interface'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -82,7 +82,7 @@ class bfd(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'routing-system', u'interface', u've', u'ip', u'interface-vlan-ospf-conf', u'ospf1', u'bfd']
+      return [u'interface', u'Ve', u'ip', u'ospf', u'bfd']
 
   def _get_intf_bfd_enable(self):
     """
@@ -105,12 +105,12 @@ class bfd(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="intf-bfd-enable", rest_name="intf-bfd-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="intf-bfd-enable", rest_name="intf-bfd-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'info': u'Enable bfd on this interface'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """intf_bfd_enable must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="intf-bfd-enable", rest_name="intf-bfd-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="intf-bfd-enable", rest_name="intf-bfd-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'info': u'Enable bfd on this interface'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)""",
         })
 
     self.__intf_bfd_enable = t
@@ -118,7 +118,7 @@ class bfd(PybindBase):
       self._set()
 
   def _unset_intf_bfd_enable(self):
-    self.__intf_bfd_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="intf-bfd-enable", rest_name="intf-bfd-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
+    self.__intf_bfd_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="intf-bfd-enable", rest_name="intf-bfd-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'info': u'Enable bfd on this interface'}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='empty', is_config=True)
 
   intf_bfd_enable = __builtin__.property(_get_intf_bfd_enable, _set_intf_bfd_enable)
 

@@ -18,7 +18,7 @@ class igmps_mrouter(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__igmps_interface',)
 
   _yang_name = 'igmps_mrouter'
-  _rest_name = 'igmps_mrouter'
+  _rest_name = 'mrouter'
 
   _pybind_generated_by = 'container'
 
@@ -45,7 +45,7 @@ class igmps_mrouter(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__igmps_interface = YANGDynClass(base=YANGListType("igmps_if_type igmps_value",igmps_interface.igmps_interface, yang_name="igmps-interface", rest_name="igmps-interface", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='igmps-if-type igmps-value', extensions=None), is_container='list', yang_name="igmps-interface", rest_name="igmps-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='list', is_config=True)
+    self.__igmps_interface = YANGDynClass(base=YANGListType("igmps_if_type igmps_value",igmps_interface.igmps_interface, yang_name="igmps-interface", rest_name="interface", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='igmps-if-type igmps-value', extensions={u'tailf-common': {u'info': u'Interface to use', u'cli-suppress-mode': None, u'alt-name': u'interface', u'cli-suppress-list-no': None}}), is_container='list', yang_name="igmps-interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface to use', u'cli-suppress-mode': None, u'alt-name': u'interface', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class igmps_mrouter(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface-vlan', u'vlan', u'ip', u'igmpVlan', u'snooping', u'igmps_mrouter']
+      return [u'vlan', u'ip', u'igmp', u'snooping', u'mrouter']
 
   def _get_igmps_interface(self):
     """
@@ -100,12 +100,12 @@ class igmps_mrouter(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("igmps_if_type igmps_value",igmps_interface.igmps_interface, yang_name="igmps-interface", rest_name="igmps-interface", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='igmps-if-type igmps-value', extensions=None), is_container='list', yang_name="igmps-interface", rest_name="igmps-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("igmps_if_type igmps_value",igmps_interface.igmps_interface, yang_name="igmps-interface", rest_name="interface", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='igmps-if-type igmps-value', extensions={u'tailf-common': {u'info': u'Interface to use', u'cli-suppress-mode': None, u'alt-name': u'interface', u'cli-suppress-list-no': None}}), is_container='list', yang_name="igmps-interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface to use', u'cli-suppress-mode': None, u'alt-name': u'interface', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """igmps_interface must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("igmps_if_type igmps_value",igmps_interface.igmps_interface, yang_name="igmps-interface", rest_name="igmps-interface", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='igmps-if-type igmps-value', extensions=None), is_container='list', yang_name="igmps-interface", rest_name="igmps-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("igmps_if_type igmps_value",igmps_interface.igmps_interface, yang_name="igmps-interface", rest_name="interface", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='igmps-if-type igmps-value', extensions={u'tailf-common': {u'info': u'Interface to use', u'cli-suppress-mode': None, u'alt-name': u'interface', u'cli-suppress-list-no': None}}), is_container='list', yang_name="igmps-interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface to use', u'cli-suppress-mode': None, u'alt-name': u'interface', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='list', is_config=True)""",
         })
 
     self.__igmps_interface = t
@@ -113,7 +113,7 @@ class igmps_mrouter(PybindBase):
       self._set()
 
   def _unset_igmps_interface(self):
-    self.__igmps_interface = YANGDynClass(base=YANGListType("igmps_if_type igmps_value",igmps_interface.igmps_interface, yang_name="igmps-interface", rest_name="igmps-interface", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='igmps-if-type igmps-value', extensions=None), is_container='list', yang_name="igmps-interface", rest_name="igmps-interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='list', is_config=True)
+    self.__igmps_interface = YANGDynClass(base=YANGListType("igmps_if_type igmps_value",igmps_interface.igmps_interface, yang_name="igmps-interface", rest_name="interface", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='igmps-if-type igmps-value', extensions={u'tailf-common': {u'info': u'Interface to use', u'cli-suppress-mode': None, u'alt-name': u'interface', u'cli-suppress-list-no': None}}), is_container='list', yang_name="igmps-interface", rest_name="interface", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Interface to use', u'cli-suppress-mode': None, u'alt-name': u'interface', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='list', is_config=True)
 
   igmps_interface = __builtin__.property(_get_igmps_interface, _set_igmps_interface)
 

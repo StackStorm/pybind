@@ -20,7 +20,7 @@ class ipv6_vrrp_extended(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__auth_type',)
 
   _yang_name = 'ipv6-vrrp-extended'
-  _rest_name = 'ipv6-vrrp-extended'
+  _rest_name = 'vrrp-extended'
 
   _pybind_generated_by = 'container'
 
@@ -47,7 +47,7 @@ class ipv6_vrrp_extended(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__auth_type = YANGDynClass(base=auth_type.auth_type, is_container='container', presence=False, yang_name="auth-type", rest_name="auth-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
+    self.__auth_type = YANGDynClass(base=auth_type.auth_type, is_container='container', presence=False, yang_name="auth-type", rest_name="auth-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication type'}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -83,7 +83,7 @@ class ipv6_vrrp_extended(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'routing-system', u'interface', u've', u'ipv6', u'ipv6-vrrp-extended']
+      return [u'interface', u'Ve', u'ipv6', u'vrrp-extended']
 
   def _get_auth_type(self):
     """
@@ -106,12 +106,12 @@ class ipv6_vrrp_extended(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=auth_type.auth_type, is_container='container', presence=False, yang_name="auth-type", rest_name="auth-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=auth_type.auth_type, is_container='container', presence=False, yang_name="auth-type", rest_name="auth-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication type'}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """auth_type must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=auth_type.auth_type, is_container='container', presence=False, yang_name="auth-type", rest_name="auth-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=auth_type.auth_type, is_container='container', presence=False, yang_name="auth-type", rest_name="auth-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication type'}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)""",
         })
 
     self.__auth_type = t
@@ -119,7 +119,7 @@ class ipv6_vrrp_extended(PybindBase):
       self._set()
 
   def _unset_auth_type(self):
-    self.__auth_type = YANGDynClass(base=auth_type.auth_type, is_container='container', presence=False, yang_name="auth-type", rest_name="auth-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
+    self.__auth_type = YANGDynClass(base=auth_type.auth_type, is_container='container', presence=False, yang_name="auth-type", rest_name="auth-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Authentication type'}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
 
   auth_type = __builtin__.property(_get_auth_type, _set_auth_type)
 

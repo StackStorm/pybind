@@ -44,7 +44,7 @@ class logging(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__acl_match = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {'value': 2}, u'matchlog': {'value': 1}},), is_leaf=True, yang_name="acl-match", rest_name="acl-match", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='enumeration', is_config=True)
+    self.__acl_match = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {'value': 2}, u'matchlog': {'value': 1}},), is_leaf=True, yang_name="acl-match", rest_name="acl-match", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable DAI Logging'}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='enumeration', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -80,7 +80,7 @@ class logging(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface-vlan', u'vlan', u'ip', u'arp', u'inspection', u'logging']
+      return [u'vlan', u'ip', u'arp', u'inspection', u'logging']
 
   def _get_acl_match(self):
     """
@@ -99,12 +99,12 @@ class logging(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {'value': 2}, u'matchlog': {'value': 1}},), is_leaf=True, yang_name="acl-match", rest_name="acl-match", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='enumeration', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {'value': 2}, u'matchlog': {'value': 1}},), is_leaf=True, yang_name="acl-match", rest_name="acl-match", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable DAI Logging'}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """acl_match must be of a type compatible with enumeration""",
           'defined-type': "brocade-dai:enumeration",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {'value': 2}, u'matchlog': {'value': 1}},), is_leaf=True, yang_name="acl-match", rest_name="acl-match", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='enumeration', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {'value': 2}, u'matchlog': {'value': 1}},), is_leaf=True, yang_name="acl-match", rest_name="acl-match", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable DAI Logging'}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='enumeration', is_config=True)""",
         })
 
     self.__acl_match = t
@@ -112,7 +112,7 @@ class logging(PybindBase):
       self._set()
 
   def _unset_acl_match(self):
-    self.__acl_match = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {'value': 2}, u'matchlog': {'value': 1}},), is_leaf=True, yang_name="acl-match", rest_name="acl-match", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='enumeration', is_config=True)
+    self.__acl_match = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {'value': 2}, u'matchlog': {'value': 1}},), is_leaf=True, yang_name="acl-match", rest_name="acl-match", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable DAI Logging'}}, namespace='urn:brocade.com:mgmt:brocade-dai', defining_module='brocade-dai', yang_type='enumeration', is_config=True)
 
   acl_match = __builtin__.property(_get_acl_match, _set_acl_match)
 

@@ -45,7 +45,7 @@ class ipv6(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ipv6_unicast = YANGDynClass(base=ipv6_unicast.ipv6_unicast, is_container='container', presence=False, yang_name="ipv6-unicast", rest_name="ipv6-unicast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__ipv6_unicast = YANGDynClass(base=ipv6_unicast.ipv6_unicast, is_container='container', presence=False, yang_name="ipv6-unicast", rest_name="unicast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv6 unicast address Family', u'alt-name': u'unicast', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class ipv6(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'routing-system', u'router', u'router-bgp', u'address-family', u'ipv6']
+      return [u'router', u'bgp', u'address-family', u'ipv6']
 
   def _get_ipv6_unicast(self):
     """
@@ -100,12 +100,12 @@ class ipv6(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=ipv6_unicast.ipv6_unicast, is_container='container', presence=False, yang_name="ipv6-unicast", rest_name="ipv6-unicast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ipv6_unicast.ipv6_unicast, is_container='container', presence=False, yang_name="ipv6-unicast", rest_name="unicast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv6 unicast address Family', u'alt-name': u'unicast', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ipv6_unicast must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ipv6_unicast.ipv6_unicast, is_container='container', presence=False, yang_name="ipv6-unicast", rest_name="ipv6-unicast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ipv6_unicast.ipv6_unicast, is_container='container', presence=False, yang_name="ipv6-unicast", rest_name="unicast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv6 unicast address Family', u'alt-name': u'unicast', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__ipv6_unicast = t
@@ -113,7 +113,7 @@ class ipv6(PybindBase):
       self._set()
 
   def _unset_ipv6_unicast(self):
-    self.__ipv6_unicast = YANGDynClass(base=ipv6_unicast.ipv6_unicast, is_container='container', presence=False, yang_name="ipv6-unicast", rest_name="ipv6-unicast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__ipv6_unicast = YANGDynClass(base=ipv6_unicast.ipv6_unicast, is_container='container', presence=False, yang_name="ipv6-unicast", rest_name="unicast", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv6 unicast address Family', u'alt-name': u'unicast', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
   ipv6_unicast = __builtin__.property(_get_ipv6_unicast, _set_ipv6_unicast)
 

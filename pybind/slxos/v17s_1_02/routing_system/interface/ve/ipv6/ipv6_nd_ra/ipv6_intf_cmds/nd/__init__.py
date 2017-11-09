@@ -14,6 +14,7 @@ import ra_dns_server
 import ra_domain_name
 import address
 import dad
+import nud
 import cache
 import prefix
 class nd(PybindBase):
@@ -23,7 +24,7 @@ class nd(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__managed_config_flag','__other_config_flag','__broadcast_mac_trap','__ra_lifetime','__reachable_time','__mtu','__retrans_timer','__hoplimit','__ns_interval','__suppress_ra','__ra_interval','__send_ra','__router_preference','__ra_dns_server','__ra_domain_name','__address','__dad','__cache','__prefix',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__managed_config_flag','__other_config_flag','__broadcast_mac_trap','__ra_lifetime','__reachable_time','__mtu','__retrans_timer','__hoplimit','__ns_interval','__proxy','__suppress_ra','__ra_interval','__send_ra','__router_preference','__ra_dns_server','__ra_domain_name','__address','__dad','__nud','__cache','__prefix',)
 
   _yang_name = 'nd'
   _rest_name = 'nd'
@@ -53,25 +54,27 @@ class nd(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__dad = YANGDynClass(base=dad.dad, is_container='container', presence=False, yang_name="dad", rest_name="dad", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
-    self.__ra_domain_name = YANGDynClass(base=YANGListType("domain_name_string",ra_domain_name.ra_domain_name, yang_name="ra-domain-name", rest_name="ra-domain-name", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='domain-name-string', extensions=None), is_container='list', yang_name="ra-domain-name", rest_name="ra-domain-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='list', is_config=True)
-    self.__managed_config_flag = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="managed-config-flag", rest_name="managed-config-flag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
-    self.__broadcast_mac_trap = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="broadcast-mac-trap", rest_name="broadcast-mac-trap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
-    self.__ra_lifetime = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..9000']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1800), is_leaf=True, yang_name="ra-lifetime", rest_name="ra-lifetime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='common-def:time-interval-sec', is_config=True)
-    self.__hoplimit = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..255']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(64), is_leaf=True, yang_name="hoplimit", rest_name="hoplimit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='uint32', is_config=True)
-    self.__cache = YANGDynClass(base=cache.cache, is_container='container', presence=False, yang_name="cache", rest_name="cache", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
-    self.__ra_interval = YANGDynClass(base=ra_interval.ra_interval, is_container='container', presence=False, yang_name="ra-interval", rest_name="ra-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
-    self.__mtu = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1280..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1500), is_leaf=True, yang_name="mtu", rest_name="mtu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='uint32', is_config=True)
-    self.__retrans_timer = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..4294967295']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="retrans-timer", rest_name="retrans-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='common-def:time-interval-msec', is_config=True)
-    self.__other_config_flag = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="other-config-flag", rest_name="other-config-flag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
-    self.__prefix = YANGDynClass(base=YANGListType("prefix_ipv6_address",prefix.prefix, yang_name="prefix", rest_name="prefix", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='prefix-ipv6-address', extensions=None), is_container='list', yang_name="prefix", rest_name="prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='list', is_config=True)
-    self.__ns_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..5']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1), is_leaf=True, yang_name="ns-interval", rest_name="ns-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='common-def:time-interval-sec', is_config=True)
-    self.__reachable_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..3600000']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="reachable-time", rest_name="reachable-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='common-def:time-interval-msec', is_config=True)
-    self.__address = YANGDynClass(base=address.address, is_container='container', presence=False, yang_name="address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
-    self.__suppress_ra = YANGDynClass(base=suppress_ra.suppress_ra, is_container='container', presence=False, yang_name="suppress-ra", rest_name="suppress-ra", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
-    self.__ra_dns_server = YANGDynClass(base=YANGListType("dns_server_prefix",ra_dns_server.ra_dns_server, yang_name="ra-dns-server", rest_name="ra-dns-server", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='dns-server-prefix', extensions=None), is_container='list', yang_name="ra-dns-server", rest_name="ra-dns-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='list', is_config=True)
-    self.__router_preference = YANGDynClass(base=router_preference.router_preference, is_container='container', presence=False, yang_name="router-preference", rest_name="router-preference", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
-    self.__send_ra = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="send-ra", rest_name="send-ra", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
+    self.__dad = YANGDynClass(base=dad.dad, is_container='container', presence=False, yang_name="dad", rest_name="dad", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'duplicate address detection'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
+    self.__ra_domain_name = YANGDynClass(base=YANGListType("domain_name_string",ra_domain_name.ra_domain_name, yang_name="ra-domain-name", rest_name="ra-domain-name", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='domain-name-string', extensions={u'tailf-common': {u'info': u'Set domain name option', u'cli-suppress-list-no': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'IpV6NdRaDomainNameVlanIntf'}}), is_container='list', yang_name="ra-domain-name", rest_name="ra-domain-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set domain name option', u'cli-suppress-list-no': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'IpV6NdRaDomainNameVlanIntf'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='list', is_config=True)
+    self.__managed_config_flag = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="managed-config-flag", rest_name="managed-config-flag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set managed config flag in router advertisement'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
+    self.__broadcast_mac_trap = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="broadcast-mac-trap", rest_name="broadcast-mac-trap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable the trap for all the ipv6 packets with broadcast mac'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
+    self.__ra_lifetime = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..9000']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1800), is_leaf=True, yang_name="ra-lifetime", rest_name="ra-lifetime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set router lifetime in router advertisement'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='common-def:time-interval-sec', is_config=True)
+    self.__hoplimit = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..255']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(64), is_leaf=True, yang_name="hoplimit", rest_name="hoplimit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u' Configure Hop Limit to be advertised in RA'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='uint32', is_config=True)
+    self.__cache = YANGDynClass(base=cache.cache, is_container='container', presence=False, yang_name="cache", rest_name="cache", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'time-interval after which the cache is deleted or refreshed', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
+    self.__ra_interval = YANGDynClass(base=ra_interval.ra_interval, is_container='container', presence=False, yang_name="ra-interval", rest_name="ra-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'interval between Router advertisements', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
+    self.__mtu = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1280..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1500), is_leaf=True, yang_name="mtu", rest_name="mtu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u' MTU to be advertised in RA'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='uint32', is_config=True)
+    self.__retrans_timer = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..4294967295']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="retrans-timer", rest_name="retrans-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure RA retransmission timer, Sent in RA messages'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='common-def:time-interval-msec', is_config=True)
+    self.__other_config_flag = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="other-config-flag", rest_name="other-config-flag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set other config flag in router advertisement'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
+    self.__prefix = YANGDynClass(base=YANGListType("prefix_ipv6_address",prefix.prefix, yang_name="prefix", rest_name="prefix", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='prefix-ipv6-address', extensions={u'tailf-common': {u'info': u'Configure IPv6 prefix', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'IpV6NdRaPrefixVlanIntf'}}), is_container='list', yang_name="prefix", rest_name="prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv6 prefix', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'IpV6NdRaPrefixVlanIntf'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='list', is_config=True)
+    self.__send_ra = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="send-ra", rest_name="send-ra", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set send-ra', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
+    self.__ns_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..5']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1), is_leaf=True, yang_name="ns-interval", rest_name="ns-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Interval between Neighbor solicitations'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='common-def:time-interval-sec', is_config=True)
+    self.__reachable_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..3600000']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="reachable-time", rest_name="reachable-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'the duration node is considered reachable, Sent in RA messages'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='common-def:time-interval-msec', is_config=True)
+    self.__address = YANGDynClass(base=address.address, is_container='container', presence=False, yang_name="address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set Interface IPv6 address suppress option in router advertisement'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
+    self.__suppress_ra = YANGDynClass(base=suppress_ra.suppress_ra, is_container='container', presence=False, yang_name="suppress-ra", rest_name="suppress-ra", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set suppress-ra flag', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
+    self.__ra_dns_server = YANGDynClass(base=YANGListType("dns_server_prefix",ra_dns_server.ra_dns_server, yang_name="ra-dns-server", rest_name="ra-dns-server", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='dns-server-prefix', extensions={u'tailf-common': {u'info': u'Set DNS server option', u'cli-suppress-list-no': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'IpV6NdRaDnsServerVlanIntf'}}), is_container='list', yang_name="ra-dns-server", rest_name="ra-dns-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set DNS server option', u'cli-suppress-list-no': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'IpV6NdRaDnsServerVlanIntf'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='list', is_config=True)
+    self.__router_preference = YANGDynClass(base=router_preference.router_preference, is_container='container', presence=False, yang_name="router-preference", rest_name="router-preference", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' Set router-preference value on this interface, default is medium', u'cli-compact-syntax': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
+    self.__nud = YANGDynClass(base=nud.nud, is_container='container', presence=False, yang_name="nud", rest_name="nud", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'exponential timer for Neighbor Solicitation sent as part of Neighbor unreachability detection', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
+    self.__proxy = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="proxy", rest_name="proxy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable proxy flag', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -107,7 +110,7 @@ class nd(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'routing-system', u'interface', u've', u'ipv6', u'ipv6-nd-ra', u'ipv6-intf-cmds', u'nd']
+      return [u'interface', u'Ve', u'ipv6', u'nd']
 
   def _get_managed_config_flag(self):
     """
@@ -126,12 +129,12 @@ class nd(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="managed-config-flag", rest_name="managed-config-flag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="managed-config-flag", rest_name="managed-config-flag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set managed config flag in router advertisement'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """managed_config_flag must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="managed-config-flag", rest_name="managed-config-flag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="managed-config-flag", rest_name="managed-config-flag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set managed config flag in router advertisement'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)""",
         })
 
     self.__managed_config_flag = t
@@ -139,7 +142,7 @@ class nd(PybindBase):
       self._set()
 
   def _unset_managed_config_flag(self):
-    self.__managed_config_flag = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="managed-config-flag", rest_name="managed-config-flag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
+    self.__managed_config_flag = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="managed-config-flag", rest_name="managed-config-flag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set managed config flag in router advertisement'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
 
 
   def _get_other_config_flag(self):
@@ -159,12 +162,12 @@ class nd(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="other-config-flag", rest_name="other-config-flag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="other-config-flag", rest_name="other-config-flag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set other config flag in router advertisement'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """other_config_flag must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="other-config-flag", rest_name="other-config-flag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="other-config-flag", rest_name="other-config-flag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set other config flag in router advertisement'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)""",
         })
 
     self.__other_config_flag = t
@@ -172,7 +175,7 @@ class nd(PybindBase):
       self._set()
 
   def _unset_other_config_flag(self):
-    self.__other_config_flag = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="other-config-flag", rest_name="other-config-flag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
+    self.__other_config_flag = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="other-config-flag", rest_name="other-config-flag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set other config flag in router advertisement'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
 
 
   def _get_broadcast_mac_trap(self):
@@ -192,12 +195,12 @@ class nd(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="broadcast-mac-trap", rest_name="broadcast-mac-trap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="broadcast-mac-trap", rest_name="broadcast-mac-trap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable the trap for all the ipv6 packets with broadcast mac'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """broadcast_mac_trap must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="broadcast-mac-trap", rest_name="broadcast-mac-trap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="broadcast-mac-trap", rest_name="broadcast-mac-trap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable the trap for all the ipv6 packets with broadcast mac'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)""",
         })
 
     self.__broadcast_mac_trap = t
@@ -205,7 +208,7 @@ class nd(PybindBase):
       self._set()
 
   def _unset_broadcast_mac_trap(self):
-    self.__broadcast_mac_trap = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="broadcast-mac-trap", rest_name="broadcast-mac-trap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
+    self.__broadcast_mac_trap = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="broadcast-mac-trap", rest_name="broadcast-mac-trap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable the trap for all the ipv6 packets with broadcast mac'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
 
 
   def _get_ra_lifetime(self):
@@ -225,12 +228,12 @@ class nd(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..9000']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1800), is_leaf=True, yang_name="ra-lifetime", rest_name="ra-lifetime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='common-def:time-interval-sec', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..9000']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1800), is_leaf=True, yang_name="ra-lifetime", rest_name="ra-lifetime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set router lifetime in router advertisement'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='common-def:time-interval-sec', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ra_lifetime must be of a type compatible with common-def:time-interval-sec""",
           'defined-type': "common-def:time-interval-sec",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..9000']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1800), is_leaf=True, yang_name="ra-lifetime", rest_name="ra-lifetime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='common-def:time-interval-sec', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..9000']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1800), is_leaf=True, yang_name="ra-lifetime", rest_name="ra-lifetime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set router lifetime in router advertisement'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='common-def:time-interval-sec', is_config=True)""",
         })
 
     self.__ra_lifetime = t
@@ -238,7 +241,7 @@ class nd(PybindBase):
       self._set()
 
   def _unset_ra_lifetime(self):
-    self.__ra_lifetime = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..9000']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1800), is_leaf=True, yang_name="ra-lifetime", rest_name="ra-lifetime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='common-def:time-interval-sec', is_config=True)
+    self.__ra_lifetime = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..9000']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1800), is_leaf=True, yang_name="ra-lifetime", rest_name="ra-lifetime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set router lifetime in router advertisement'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='common-def:time-interval-sec', is_config=True)
 
 
   def _get_reachable_time(self):
@@ -258,12 +261,12 @@ class nd(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..3600000']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="reachable-time", rest_name="reachable-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='common-def:time-interval-msec', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..3600000']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="reachable-time", rest_name="reachable-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'the duration node is considered reachable, Sent in RA messages'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='common-def:time-interval-msec', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """reachable_time must be of a type compatible with common-def:time-interval-msec""",
           'defined-type': "common-def:time-interval-msec",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..3600000']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="reachable-time", rest_name="reachable-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='common-def:time-interval-msec', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..3600000']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="reachable-time", rest_name="reachable-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'the duration node is considered reachable, Sent in RA messages'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='common-def:time-interval-msec', is_config=True)""",
         })
 
     self.__reachable_time = t
@@ -271,7 +274,7 @@ class nd(PybindBase):
       self._set()
 
   def _unset_reachable_time(self):
-    self.__reachable_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..3600000']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="reachable-time", rest_name="reachable-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='common-def:time-interval-msec', is_config=True)
+    self.__reachable_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..3600000']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="reachable-time", rest_name="reachable-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'the duration node is considered reachable, Sent in RA messages'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='common-def:time-interval-msec', is_config=True)
 
 
   def _get_mtu(self):
@@ -291,12 +294,12 @@ class nd(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1280..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1500), is_leaf=True, yang_name="mtu", rest_name="mtu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1280..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1500), is_leaf=True, yang_name="mtu", rest_name="mtu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u' MTU to be advertised in RA'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mtu must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1280..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1500), is_leaf=True, yang_name="mtu", rest_name="mtu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1280..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1500), is_leaf=True, yang_name="mtu", rest_name="mtu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u' MTU to be advertised in RA'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='uint32', is_config=True)""",
         })
 
     self.__mtu = t
@@ -304,7 +307,7 @@ class nd(PybindBase):
       self._set()
 
   def _unset_mtu(self):
-    self.__mtu = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1280..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1500), is_leaf=True, yang_name="mtu", rest_name="mtu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='uint32', is_config=True)
+    self.__mtu = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1280..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1500), is_leaf=True, yang_name="mtu", rest_name="mtu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u' MTU to be advertised in RA'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='uint32', is_config=True)
 
 
   def _get_retrans_timer(self):
@@ -324,12 +327,12 @@ class nd(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..4294967295']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="retrans-timer", rest_name="retrans-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='common-def:time-interval-msec', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..4294967295']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="retrans-timer", rest_name="retrans-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure RA retransmission timer, Sent in RA messages'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='common-def:time-interval-msec', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """retrans_timer must be of a type compatible with common-def:time-interval-msec""",
           'defined-type': "common-def:time-interval-msec",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..4294967295']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="retrans-timer", rest_name="retrans-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='common-def:time-interval-msec', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..4294967295']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="retrans-timer", rest_name="retrans-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure RA retransmission timer, Sent in RA messages'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='common-def:time-interval-msec', is_config=True)""",
         })
 
     self.__retrans_timer = t
@@ -337,7 +340,7 @@ class nd(PybindBase):
       self._set()
 
   def _unset_retrans_timer(self):
-    self.__retrans_timer = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..4294967295']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="retrans-timer", rest_name="retrans-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='common-def:time-interval-msec', is_config=True)
+    self.__retrans_timer = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..4294967295']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(0), is_leaf=True, yang_name="retrans-timer", rest_name="retrans-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure RA retransmission timer, Sent in RA messages'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='common-def:time-interval-msec', is_config=True)
 
 
   def _get_hoplimit(self):
@@ -357,12 +360,12 @@ class nd(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..255']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(64), is_leaf=True, yang_name="hoplimit", rest_name="hoplimit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..255']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(64), is_leaf=True, yang_name="hoplimit", rest_name="hoplimit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u' Configure Hop Limit to be advertised in RA'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """hoplimit must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..255']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(64), is_leaf=True, yang_name="hoplimit", rest_name="hoplimit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..255']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(64), is_leaf=True, yang_name="hoplimit", rest_name="hoplimit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u' Configure Hop Limit to be advertised in RA'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='uint32', is_config=True)""",
         })
 
     self.__hoplimit = t
@@ -370,7 +373,7 @@ class nd(PybindBase):
       self._set()
 
   def _unset_hoplimit(self):
-    self.__hoplimit = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..255']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(64), is_leaf=True, yang_name="hoplimit", rest_name="hoplimit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='uint32', is_config=True)
+    self.__hoplimit = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..255']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(64), is_leaf=True, yang_name="hoplimit", rest_name="hoplimit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u' Configure Hop Limit to be advertised in RA'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='uint32', is_config=True)
 
 
   def _get_ns_interval(self):
@@ -390,12 +393,12 @@ class nd(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..5']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1), is_leaf=True, yang_name="ns-interval", rest_name="ns-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='common-def:time-interval-sec', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..5']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1), is_leaf=True, yang_name="ns-interval", rest_name="ns-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Interval between Neighbor solicitations'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='common-def:time-interval-sec', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ns_interval must be of a type compatible with common-def:time-interval-sec""",
           'defined-type': "common-def:time-interval-sec",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..5']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1), is_leaf=True, yang_name="ns-interval", rest_name="ns-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='common-def:time-interval-sec', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..5']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1), is_leaf=True, yang_name="ns-interval", rest_name="ns-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Interval between Neighbor solicitations'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='common-def:time-interval-sec', is_config=True)""",
         })
 
     self.__ns_interval = t
@@ -403,7 +406,40 @@ class nd(PybindBase):
       self._set()
 
   def _unset_ns_interval(self):
-    self.__ns_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..5']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1), is_leaf=True, yang_name="ns-interval", rest_name="ns-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='common-def:time-interval-sec', is_config=True)
+    self.__ns_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..5']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(1), is_leaf=True, yang_name="ns-interval", rest_name="ns-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Interval between Neighbor solicitations'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='common-def:time-interval-sec', is_config=True)
+
+
+  def _get_proxy(self):
+    """
+    Getter method for proxy, mapped from YANG variable /routing_system/interface/ve/ipv6/ipv6_nd_ra/ipv6_intf_cmds/nd/proxy (empty)
+    """
+    return self.__proxy
+      
+  def _set_proxy(self, v, load=False):
+    """
+    Setter method for proxy, mapped from YANG variable /routing_system/interface/ve/ipv6/ipv6_nd_ra/ipv6_intf_cmds/nd/proxy (empty)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_proxy is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_proxy() directly.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="proxy", rest_name="proxy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable proxy flag', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """proxy must be of a type compatible with empty""",
+          'defined-type': "empty",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="proxy", rest_name="proxy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable proxy flag', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)""",
+        })
+
+    self.__proxy = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_proxy(self):
+    self.__proxy = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="proxy", rest_name="proxy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable proxy flag', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
 
 
   def _get_suppress_ra(self):
@@ -423,12 +459,12 @@ class nd(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=suppress_ra.suppress_ra, is_container='container', presence=False, yang_name="suppress-ra", rest_name="suppress-ra", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=suppress_ra.suppress_ra, is_container='container', presence=False, yang_name="suppress-ra", rest_name="suppress-ra", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set suppress-ra flag', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """suppress_ra must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=suppress_ra.suppress_ra, is_container='container', presence=False, yang_name="suppress-ra", rest_name="suppress-ra", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=suppress_ra.suppress_ra, is_container='container', presence=False, yang_name="suppress-ra", rest_name="suppress-ra", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set suppress-ra flag', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)""",
         })
 
     self.__suppress_ra = t
@@ -436,7 +472,7 @@ class nd(PybindBase):
       self._set()
 
   def _unset_suppress_ra(self):
-    self.__suppress_ra = YANGDynClass(base=suppress_ra.suppress_ra, is_container='container', presence=False, yang_name="suppress-ra", rest_name="suppress-ra", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
+    self.__suppress_ra = YANGDynClass(base=suppress_ra.suppress_ra, is_container='container', presence=False, yang_name="suppress-ra", rest_name="suppress-ra", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set suppress-ra flag', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
 
 
   def _get_ra_interval(self):
@@ -456,12 +492,12 @@ class nd(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=ra_interval.ra_interval, is_container='container', presence=False, yang_name="ra-interval", rest_name="ra-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ra_interval.ra_interval, is_container='container', presence=False, yang_name="ra-interval", rest_name="ra-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'interval between Router advertisements', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ra_interval must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ra_interval.ra_interval, is_container='container', presence=False, yang_name="ra-interval", rest_name="ra-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ra_interval.ra_interval, is_container='container', presence=False, yang_name="ra-interval", rest_name="ra-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'interval between Router advertisements', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)""",
         })
 
     self.__ra_interval = t
@@ -469,7 +505,7 @@ class nd(PybindBase):
       self._set()
 
   def _unset_ra_interval(self):
-    self.__ra_interval = YANGDynClass(base=ra_interval.ra_interval, is_container='container', presence=False, yang_name="ra-interval", rest_name="ra-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
+    self.__ra_interval = YANGDynClass(base=ra_interval.ra_interval, is_container='container', presence=False, yang_name="ra-interval", rest_name="ra-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'interval between Router advertisements', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
 
 
   def _get_send_ra(self):
@@ -489,12 +525,12 @@ class nd(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="send-ra", rest_name="send-ra", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="send-ra", rest_name="send-ra", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set send-ra', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """send_ra must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="send-ra", rest_name="send-ra", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="send-ra", rest_name="send-ra", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set send-ra', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)""",
         })
 
     self.__send_ra = t
@@ -502,7 +538,7 @@ class nd(PybindBase):
       self._set()
 
   def _unset_send_ra(self):
-    self.__send_ra = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="send-ra", rest_name="send-ra", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
+    self.__send_ra = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="send-ra", rest_name="send-ra", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set send-ra', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='empty', is_config=True)
 
 
   def _get_router_preference(self):
@@ -522,12 +558,12 @@ class nd(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=router_preference.router_preference, is_container='container', presence=False, yang_name="router-preference", rest_name="router-preference", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=router_preference.router_preference, is_container='container', presence=False, yang_name="router-preference", rest_name="router-preference", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' Set router-preference value on this interface, default is medium', u'cli-compact-syntax': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """router_preference must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=router_preference.router_preference, is_container='container', presence=False, yang_name="router-preference", rest_name="router-preference", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=router_preference.router_preference, is_container='container', presence=False, yang_name="router-preference", rest_name="router-preference", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' Set router-preference value on this interface, default is medium', u'cli-compact-syntax': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)""",
         })
 
     self.__router_preference = t
@@ -535,7 +571,7 @@ class nd(PybindBase):
       self._set()
 
   def _unset_router_preference(self):
-    self.__router_preference = YANGDynClass(base=router_preference.router_preference, is_container='container', presence=False, yang_name="router-preference", rest_name="router-preference", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
+    self.__router_preference = YANGDynClass(base=router_preference.router_preference, is_container='container', presence=False, yang_name="router-preference", rest_name="router-preference", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u' Set router-preference value on this interface, default is medium', u'cli-compact-syntax': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
 
 
   def _get_ra_dns_server(self):
@@ -555,12 +591,12 @@ class nd(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("dns_server_prefix",ra_dns_server.ra_dns_server, yang_name="ra-dns-server", rest_name="ra-dns-server", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='dns-server-prefix', extensions=None), is_container='list', yang_name="ra-dns-server", rest_name="ra-dns-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("dns_server_prefix",ra_dns_server.ra_dns_server, yang_name="ra-dns-server", rest_name="ra-dns-server", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='dns-server-prefix', extensions={u'tailf-common': {u'info': u'Set DNS server option', u'cli-suppress-list-no': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'IpV6NdRaDnsServerVlanIntf'}}), is_container='list', yang_name="ra-dns-server", rest_name="ra-dns-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set DNS server option', u'cli-suppress-list-no': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'IpV6NdRaDnsServerVlanIntf'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ra_dns_server must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("dns_server_prefix",ra_dns_server.ra_dns_server, yang_name="ra-dns-server", rest_name="ra-dns-server", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='dns-server-prefix', extensions=None), is_container='list', yang_name="ra-dns-server", rest_name="ra-dns-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("dns_server_prefix",ra_dns_server.ra_dns_server, yang_name="ra-dns-server", rest_name="ra-dns-server", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='dns-server-prefix', extensions={u'tailf-common': {u'info': u'Set DNS server option', u'cli-suppress-list-no': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'IpV6NdRaDnsServerVlanIntf'}}), is_container='list', yang_name="ra-dns-server", rest_name="ra-dns-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set DNS server option', u'cli-suppress-list-no': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'IpV6NdRaDnsServerVlanIntf'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='list', is_config=True)""",
         })
 
     self.__ra_dns_server = t
@@ -568,7 +604,7 @@ class nd(PybindBase):
       self._set()
 
   def _unset_ra_dns_server(self):
-    self.__ra_dns_server = YANGDynClass(base=YANGListType("dns_server_prefix",ra_dns_server.ra_dns_server, yang_name="ra-dns-server", rest_name="ra-dns-server", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='dns-server-prefix', extensions=None), is_container='list', yang_name="ra-dns-server", rest_name="ra-dns-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='list', is_config=True)
+    self.__ra_dns_server = YANGDynClass(base=YANGListType("dns_server_prefix",ra_dns_server.ra_dns_server, yang_name="ra-dns-server", rest_name="ra-dns-server", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='dns-server-prefix', extensions={u'tailf-common': {u'info': u'Set DNS server option', u'cli-suppress-list-no': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'IpV6NdRaDnsServerVlanIntf'}}), is_container='list', yang_name="ra-dns-server", rest_name="ra-dns-server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set DNS server option', u'cli-suppress-list-no': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'IpV6NdRaDnsServerVlanIntf'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='list', is_config=True)
 
 
   def _get_ra_domain_name(self):
@@ -588,12 +624,12 @@ class nd(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("domain_name_string",ra_domain_name.ra_domain_name, yang_name="ra-domain-name", rest_name="ra-domain-name", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='domain-name-string', extensions=None), is_container='list', yang_name="ra-domain-name", rest_name="ra-domain-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("domain_name_string",ra_domain_name.ra_domain_name, yang_name="ra-domain-name", rest_name="ra-domain-name", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='domain-name-string', extensions={u'tailf-common': {u'info': u'Set domain name option', u'cli-suppress-list-no': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'IpV6NdRaDomainNameVlanIntf'}}), is_container='list', yang_name="ra-domain-name", rest_name="ra-domain-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set domain name option', u'cli-suppress-list-no': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'IpV6NdRaDomainNameVlanIntf'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ra_domain_name must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("domain_name_string",ra_domain_name.ra_domain_name, yang_name="ra-domain-name", rest_name="ra-domain-name", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='domain-name-string', extensions=None), is_container='list', yang_name="ra-domain-name", rest_name="ra-domain-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("domain_name_string",ra_domain_name.ra_domain_name, yang_name="ra-domain-name", rest_name="ra-domain-name", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='domain-name-string', extensions={u'tailf-common': {u'info': u'Set domain name option', u'cli-suppress-list-no': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'IpV6NdRaDomainNameVlanIntf'}}), is_container='list', yang_name="ra-domain-name", rest_name="ra-domain-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set domain name option', u'cli-suppress-list-no': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'IpV6NdRaDomainNameVlanIntf'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='list', is_config=True)""",
         })
 
     self.__ra_domain_name = t
@@ -601,7 +637,7 @@ class nd(PybindBase):
       self._set()
 
   def _unset_ra_domain_name(self):
-    self.__ra_domain_name = YANGDynClass(base=YANGListType("domain_name_string",ra_domain_name.ra_domain_name, yang_name="ra-domain-name", rest_name="ra-domain-name", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='domain-name-string', extensions=None), is_container='list', yang_name="ra-domain-name", rest_name="ra-domain-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='list', is_config=True)
+    self.__ra_domain_name = YANGDynClass(base=YANGListType("domain_name_string",ra_domain_name.ra_domain_name, yang_name="ra-domain-name", rest_name="ra-domain-name", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='domain-name-string', extensions={u'tailf-common': {u'info': u'Set domain name option', u'cli-suppress-list-no': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'IpV6NdRaDomainNameVlanIntf'}}), is_container='list', yang_name="ra-domain-name", rest_name="ra-domain-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set domain name option', u'cli-suppress-list-no': None, u'cli-suppress-mode': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'IpV6NdRaDomainNameVlanIntf'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='list', is_config=True)
 
 
   def _get_address(self):
@@ -621,12 +657,12 @@ class nd(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=address.address, is_container='container', presence=False, yang_name="address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=address.address, is_container='container', presence=False, yang_name="address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set Interface IPv6 address suppress option in router advertisement'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """address must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=address.address, is_container='container', presence=False, yang_name="address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=address.address, is_container='container', presence=False, yang_name="address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set Interface IPv6 address suppress option in router advertisement'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)""",
         })
 
     self.__address = t
@@ -634,7 +670,7 @@ class nd(PybindBase):
       self._set()
 
   def _unset_address(self):
-    self.__address = YANGDynClass(base=address.address, is_container='container', presence=False, yang_name="address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
+    self.__address = YANGDynClass(base=address.address, is_container='container', presence=False, yang_name="address", rest_name="address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set Interface IPv6 address suppress option in router advertisement'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
 
 
   def _get_dad(self):
@@ -654,12 +690,12 @@ class nd(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=dad.dad, is_container='container', presence=False, yang_name="dad", rest_name="dad", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=dad.dad, is_container='container', presence=False, yang_name="dad", rest_name="dad", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'duplicate address detection'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dad must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=dad.dad, is_container='container', presence=False, yang_name="dad", rest_name="dad", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=dad.dad, is_container='container', presence=False, yang_name="dad", rest_name="dad", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'duplicate address detection'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)""",
         })
 
     self.__dad = t
@@ -667,7 +703,40 @@ class nd(PybindBase):
       self._set()
 
   def _unset_dad(self):
-    self.__dad = YANGDynClass(base=dad.dad, is_container='container', presence=False, yang_name="dad", rest_name="dad", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
+    self.__dad = YANGDynClass(base=dad.dad, is_container='container', presence=False, yang_name="dad", rest_name="dad", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'duplicate address detection'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
+
+
+  def _get_nud(self):
+    """
+    Getter method for nud, mapped from YANG variable /routing_system/interface/ve/ipv6/ipv6_nd_ra/ipv6_intf_cmds/nd/nud (container)
+    """
+    return self.__nud
+      
+  def _set_nud(self, v, load=False):
+    """
+    Setter method for nud, mapped from YANG variable /routing_system/interface/ve/ipv6/ipv6_nd_ra/ipv6_intf_cmds/nd/nud (container)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_nud is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_nud() directly.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=nud.nud, is_container='container', presence=False, yang_name="nud", rest_name="nud", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'exponential timer for Neighbor Solicitation sent as part of Neighbor unreachability detection', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """nud must be of a type compatible with container""",
+          'defined-type': "container",
+          'generated-type': """YANGDynClass(base=nud.nud, is_container='container', presence=False, yang_name="nud", rest_name="nud", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'exponential timer for Neighbor Solicitation sent as part of Neighbor unreachability detection', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)""",
+        })
+
+    self.__nud = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_nud(self):
+    self.__nud = YANGDynClass(base=nud.nud, is_container='container', presence=False, yang_name="nud", rest_name="nud", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'exponential timer for Neighbor Solicitation sent as part of Neighbor unreachability detection', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
 
 
   def _get_cache(self):
@@ -687,12 +756,12 @@ class nd(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=cache.cache, is_container='container', presence=False, yang_name="cache", rest_name="cache", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=cache.cache, is_container='container', presence=False, yang_name="cache", rest_name="cache", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'time-interval after which the cache is deleted or refreshed', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """cache must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=cache.cache, is_container='container', presence=False, yang_name="cache", rest_name="cache", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=cache.cache, is_container='container', presence=False, yang_name="cache", rest_name="cache", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'time-interval after which the cache is deleted or refreshed', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)""",
         })
 
     self.__cache = t
@@ -700,7 +769,7 @@ class nd(PybindBase):
       self._set()
 
   def _unset_cache(self):
-    self.__cache = YANGDynClass(base=cache.cache, is_container='container', presence=False, yang_name="cache", rest_name="cache", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
+    self.__cache = YANGDynClass(base=cache.cache, is_container='container', presence=False, yang_name="cache", rest_name="cache", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'time-interval after which the cache is deleted or refreshed', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='container', is_config=True)
 
 
   def _get_prefix(self):
@@ -720,12 +789,12 @@ class nd(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("prefix_ipv6_address",prefix.prefix, yang_name="prefix", rest_name="prefix", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='prefix-ipv6-address', extensions=None), is_container='list', yang_name="prefix", rest_name="prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("prefix_ipv6_address",prefix.prefix, yang_name="prefix", rest_name="prefix", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='prefix-ipv6-address', extensions={u'tailf-common': {u'info': u'Configure IPv6 prefix', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'IpV6NdRaPrefixVlanIntf'}}), is_container='list', yang_name="prefix", rest_name="prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv6 prefix', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'IpV6NdRaPrefixVlanIntf'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """prefix must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("prefix_ipv6_address",prefix.prefix, yang_name="prefix", rest_name="prefix", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='prefix-ipv6-address', extensions=None), is_container='list', yang_name="prefix", rest_name="prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("prefix_ipv6_address",prefix.prefix, yang_name="prefix", rest_name="prefix", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='prefix-ipv6-address', extensions={u'tailf-common': {u'info': u'Configure IPv6 prefix', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'IpV6NdRaPrefixVlanIntf'}}), is_container='list', yang_name="prefix", rest_name="prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv6 prefix', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'IpV6NdRaPrefixVlanIntf'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='list', is_config=True)""",
         })
 
     self.__prefix = t
@@ -733,7 +802,7 @@ class nd(PybindBase):
       self._set()
 
   def _unset_prefix(self):
-    self.__prefix = YANGDynClass(base=YANGListType("prefix_ipv6_address",prefix.prefix, yang_name="prefix", rest_name="prefix", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='prefix-ipv6-address', extensions=None), is_container='list', yang_name="prefix", rest_name="prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='list', is_config=True)
+    self.__prefix = YANGDynClass(base=YANGListType("prefix_ipv6_address",prefix.prefix, yang_name="prefix", rest_name="prefix", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='prefix-ipv6-address', extensions={u'tailf-common': {u'info': u'Configure IPv6 prefix', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'IpV6NdRaPrefixVlanIntf'}}), is_container='list', yang_name="prefix", rest_name="prefix", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure IPv6 prefix', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-suppress-key-abbreviation': None, u'callpoint': u'IpV6NdRaPrefixVlanIntf'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-nd-ra', defining_module='brocade-ipv6-nd-ra', yang_type='list', is_config=True)
 
   managed_config_flag = __builtin__.property(_get_managed_config_flag, _set_managed_config_flag)
   other_config_flag = __builtin__.property(_get_other_config_flag, _set_other_config_flag)
@@ -744,6 +813,7 @@ class nd(PybindBase):
   retrans_timer = __builtin__.property(_get_retrans_timer, _set_retrans_timer)
   hoplimit = __builtin__.property(_get_hoplimit, _set_hoplimit)
   ns_interval = __builtin__.property(_get_ns_interval, _set_ns_interval)
+  proxy = __builtin__.property(_get_proxy, _set_proxy)
   suppress_ra = __builtin__.property(_get_suppress_ra, _set_suppress_ra)
   ra_interval = __builtin__.property(_get_ra_interval, _set_ra_interval)
   send_ra = __builtin__.property(_get_send_ra, _set_send_ra)
@@ -752,10 +822,11 @@ class nd(PybindBase):
   ra_domain_name = __builtin__.property(_get_ra_domain_name, _set_ra_domain_name)
   address = __builtin__.property(_get_address, _set_address)
   dad = __builtin__.property(_get_dad, _set_dad)
+  nud = __builtin__.property(_get_nud, _set_nud)
   cache = __builtin__.property(_get_cache, _set_cache)
   prefix = __builtin__.property(_get_prefix, _set_prefix)
 
 
-  _pyangbind_elements = {'managed_config_flag': managed_config_flag, 'other_config_flag': other_config_flag, 'broadcast_mac_trap': broadcast_mac_trap, 'ra_lifetime': ra_lifetime, 'reachable_time': reachable_time, 'mtu': mtu, 'retrans_timer': retrans_timer, 'hoplimit': hoplimit, 'ns_interval': ns_interval, 'suppress_ra': suppress_ra, 'ra_interval': ra_interval, 'send_ra': send_ra, 'router_preference': router_preference, 'ra_dns_server': ra_dns_server, 'ra_domain_name': ra_domain_name, 'address': address, 'dad': dad, 'cache': cache, 'prefix': prefix, }
+  _pyangbind_elements = {'managed_config_flag': managed_config_flag, 'other_config_flag': other_config_flag, 'broadcast_mac_trap': broadcast_mac_trap, 'ra_lifetime': ra_lifetime, 'reachable_time': reachable_time, 'mtu': mtu, 'retrans_timer': retrans_timer, 'hoplimit': hoplimit, 'ns_interval': ns_interval, 'proxy': proxy, 'suppress_ra': suppress_ra, 'ra_interval': ra_interval, 'send_ra': send_ra, 'router_preference': router_preference, 'ra_dns_server': ra_dns_server, 'ra_domain_name': ra_domain_name, 'address': address, 'dad': dad, 'nud': nud, 'cache': cache, 'prefix': prefix, }
 
 

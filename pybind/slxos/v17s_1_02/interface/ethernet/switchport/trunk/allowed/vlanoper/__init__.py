@@ -85,7 +85,7 @@ Do not use in edit-config.
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface', u'ethernet', u'switchport', u'trunk', u'allowed', u'vlanoper']
+      return [u'interface', u'Ethernet', u'switchport', u'trunk', u'allowed', u'vlanoper']
 
   def _get_vlan(self):
     """

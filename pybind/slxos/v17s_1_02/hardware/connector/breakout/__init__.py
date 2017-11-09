@@ -44,7 +44,7 @@ class breakout(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__cage_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'disabled': {'value': 0}, u'4x25g': {'value': 8}, u'2x40g': {'value': 5}, u'2x50g': {'value': 6}, u'4x10g': {'value': 7}},), is_leaf=True, yang_name="cage-mode", rest_name="cage-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='connector-mode-type', is_config=True)
+    self.__cage_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'disabled': {'value': 0}, u'4x25g': {'value': 8}, u'2x40g': {'value': 5}, u'2x50g': {'value': 6}, u'4x10g': {'value': 7}},), is_leaf=True, yang_name="cage-mode", rest_name="mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure breakout mode', u'cli-multi-value': None, u'alt-name': u'mode', u'cli-completion-actionpoint': u'hardware_show', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='connector-mode-type', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -99,12 +99,12 @@ class breakout(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'disabled': {'value': 0}, u'4x25g': {'value': 8}, u'2x40g': {'value': 5}, u'2x50g': {'value': 6}, u'4x10g': {'value': 7}},), is_leaf=True, yang_name="cage-mode", rest_name="cage-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='connector-mode-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'disabled': {'value': 0}, u'4x25g': {'value': 8}, u'2x40g': {'value': 5}, u'2x50g': {'value': 6}, u'4x10g': {'value': 7}},), is_leaf=True, yang_name="cage-mode", rest_name="mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure breakout mode', u'cli-multi-value': None, u'alt-name': u'mode', u'cli-completion-actionpoint': u'hardware_show', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='connector-mode-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """cage_mode must be of a type compatible with connector-mode-type""",
           'defined-type': "brocade-hardware:connector-mode-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'disabled': {'value': 0}, u'4x25g': {'value': 8}, u'2x40g': {'value': 5}, u'2x50g': {'value': 6}, u'4x10g': {'value': 7}},), is_leaf=True, yang_name="cage-mode", rest_name="cage-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='connector-mode-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'disabled': {'value': 0}, u'4x25g': {'value': 8}, u'2x40g': {'value': 5}, u'2x50g': {'value': 6}, u'4x10g': {'value': 7}},), is_leaf=True, yang_name="cage-mode", rest_name="mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure breakout mode', u'cli-multi-value': None, u'alt-name': u'mode', u'cli-completion-actionpoint': u'hardware_show', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='connector-mode-type', is_config=True)""",
         })
 
     self.__cage_mode = t
@@ -112,7 +112,7 @@ class breakout(PybindBase):
       self._set()
 
   def _unset_cage_mode(self):
-    self.__cage_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'disabled': {'value': 0}, u'4x25g': {'value': 8}, u'2x40g': {'value': 5}, u'2x50g': {'value': 6}, u'4x10g': {'value': 7}},), is_leaf=True, yang_name="cage-mode", rest_name="cage-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='connector-mode-type', is_config=True)
+    self.__cage_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'disabled': {'value': 0}, u'4x25g': {'value': 8}, u'2x40g': {'value': 5}, u'2x50g': {'value': 6}, u'4x10g': {'value': 7}},), is_leaf=True, yang_name="cage-mode", rest_name="mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure breakout mode', u'cli-multi-value': None, u'alt-name': u'mode', u'cli-completion-actionpoint': u'hardware_show', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='connector-mode-type', is_config=True)
 
   cage_mode = __builtin__.property(_get_cage_mode, _set_cage_mode)
 

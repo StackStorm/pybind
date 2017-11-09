@@ -45,7 +45,7 @@ class module(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__modId = YANGDynClass(base=YANGListType("modId",modId.modId, yang_name="modId", rest_name="modId", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='modId', extensions=None), is_container='list', yang_name="modId", rest_name="modId", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)
+    self.__modId = YANGDynClass(base=YANGListType("modId",modId.modId, yang_name="modId", rest_name="modId", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='modId', extensions={u'tailf-common': {u'info': u'Configure RAS module configuration', u'cli-drop-node-name': None, u'callpoint': u'RASMODConfigureCallPoint'}}), is_container='list', yang_name="modId", rest_name="modId", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RAS module configuration', u'cli-drop-node-name': None, u'callpoint': u'RASMODConfigureCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class module(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("modId",modId.modId, yang_name="modId", rest_name="modId", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='modId', extensions=None), is_container='list', yang_name="modId", rest_name="modId", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("modId",modId.modId, yang_name="modId", rest_name="modId", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='modId', extensions={u'tailf-common': {u'info': u'Configure RAS module configuration', u'cli-drop-node-name': None, u'callpoint': u'RASMODConfigureCallPoint'}}), is_container='list', yang_name="modId", rest_name="modId", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RAS module configuration', u'cli-drop-node-name': None, u'callpoint': u'RASMODConfigureCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """modId must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("modId",modId.modId, yang_name="modId", rest_name="modId", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='modId', extensions=None), is_container='list', yang_name="modId", rest_name="modId", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("modId",modId.modId, yang_name="modId", rest_name="modId", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='modId', extensions={u'tailf-common': {u'info': u'Configure RAS module configuration', u'cli-drop-node-name': None, u'callpoint': u'RASMODConfigureCallPoint'}}), is_container='list', yang_name="modId", rest_name="modId", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RAS module configuration', u'cli-drop-node-name': None, u'callpoint': u'RASMODConfigureCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)""",
         })
 
     self.__modId = t
@@ -113,7 +113,7 @@ class module(PybindBase):
       self._set()
 
   def _unset_modId(self):
-    self.__modId = YANGDynClass(base=YANGListType("modId",modId.modId, yang_name="modId", rest_name="modId", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='modId', extensions=None), is_container='list', yang_name="modId", rest_name="modId", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)
+    self.__modId = YANGDynClass(base=YANGListType("modId",modId.modId, yang_name="modId", rest_name="modId", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='modId', extensions={u'tailf-common': {u'info': u'Configure RAS module configuration', u'cli-drop-node-name': None, u'callpoint': u'RASMODConfigureCallPoint'}}), is_container='list', yang_name="modId", rest_name="modId", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RAS module configuration', u'cli-drop-node-name': None, u'callpoint': u'RASMODConfigureCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)
 
   modId = __builtin__.property(_get_modId, _set_modId)
 

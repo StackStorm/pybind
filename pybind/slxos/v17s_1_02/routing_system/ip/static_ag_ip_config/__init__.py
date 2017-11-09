@@ -18,7 +18,7 @@ class static_ag_ip_config(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__anycast_gateway_mac',)
 
   _yang_name = 'static-ag-ip-config'
-  _rest_name = 'static-ag-ip-config'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -45,7 +45,7 @@ class static_ag_ip_config(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__anycast_gateway_mac = YANGDynClass(base=anycast_gateway_mac.anycast_gateway_mac, is_container='container', presence=False, yang_name="anycast-gateway-mac", rest_name="anycast-gateway-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
+    self.__anycast_gateway_mac = YANGDynClass(base=anycast_gateway_mac.anycast_gateway_mac, is_container='container', presence=False, yang_name="anycast-gateway-mac", rest_name="anycast-gateway-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Anycast gateway MAC address.'}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class static_ag_ip_config(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'routing-system', u'ip', u'static-ag-ip-config']
+      return [u'ip']
 
   def _get_anycast_gateway_mac(self):
     """
@@ -104,12 +104,12 @@ class static_ag_ip_config(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=anycast_gateway_mac.anycast_gateway_mac, is_container='container', presence=False, yang_name="anycast-gateway-mac", rest_name="anycast-gateway-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=anycast_gateway_mac.anycast_gateway_mac, is_container='container', presence=False, yang_name="anycast-gateway-mac", rest_name="anycast-gateway-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Anycast gateway MAC address.'}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """anycast_gateway_mac must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=anycast_gateway_mac.anycast_gateway_mac, is_container='container', presence=False, yang_name="anycast-gateway-mac", rest_name="anycast-gateway-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=anycast_gateway_mac.anycast_gateway_mac, is_container='container', presence=False, yang_name="anycast-gateway-mac", rest_name="anycast-gateway-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Anycast gateway MAC address.'}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)""",
         })
 
     self.__anycast_gateway_mac = t
@@ -117,7 +117,7 @@ class static_ag_ip_config(PybindBase):
       self._set()
 
   def _unset_anycast_gateway_mac(self):
-    self.__anycast_gateway_mac = YANGDynClass(base=anycast_gateway_mac.anycast_gateway_mac, is_container='container', presence=False, yang_name="anycast-gateway-mac", rest_name="anycast-gateway-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
+    self.__anycast_gateway_mac = YANGDynClass(base=anycast_gateway_mac.anycast_gateway_mac, is_container='container', presence=False, yang_name="anycast-gateway-mac", rest_name="anycast-gateway-mac", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Anycast gateway MAC address.'}}, namespace='urn:brocade.com:mgmt:brocade-vrrp', defining_module='brocade-vrrp', yang_type='container', is_config=True)
 
   anycast_gateway_mac = __builtin__.property(_get_anycast_gateway_mac, _set_anycast_gateway_mac)
 

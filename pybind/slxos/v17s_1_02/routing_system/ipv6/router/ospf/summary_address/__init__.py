@@ -82,7 +82,7 @@ class summary_address(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'routing-system', u'ipv6', u'router', u'ospf', u'summary-address']
+      return [u'ipv6', u'router', u'ospf', u'summary-address']
 
   def _get_summary_address_value(self):
     """

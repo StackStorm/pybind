@@ -45,7 +45,7 @@ class authentication(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__login = YANGDynClass(base=login.login, is_container='container', presence=False, yang_name="login", rest_name="login", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__login = YANGDynClass(base=login.login, is_container='container', presence=False, yang_name="login", rest_name="login", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u"Order of sources for login\n(default='local')", u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'callpoint': u'auth_login_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class authentication(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'aaa-config', u'aaa', u'authentication']
+      return [u'aaa', u'authentication']
 
   def _get_login(self):
     """
@@ -100,12 +100,12 @@ class authentication(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=login.login, is_container='container', presence=False, yang_name="login", rest_name="login", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=login.login, is_container='container', presence=False, yang_name="login", rest_name="login", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u"Order of sources for login\n(default='local')", u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'callpoint': u'auth_login_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """login must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=login.login, is_container='container', presence=False, yang_name="login", rest_name="login", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=login.login, is_container='container', presence=False, yang_name="login", rest_name="login", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u"Order of sources for login\n(default='local')", u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'callpoint': u'auth_login_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
         })
 
     self.__login = t
@@ -113,7 +113,7 @@ class authentication(PybindBase):
       self._set()
 
   def _unset_login(self):
-    self.__login = YANGDynClass(base=login.login, is_container='container', presence=False, yang_name="login", rest_name="login", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__login = YANGDynClass(base=login.login, is_container='container', presence=False, yang_name="login", rest_name="login", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u"Order of sources for login\n(default='local')", u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'callpoint': u'auth_login_cp'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
 
   login = __builtin__.property(_get_login, _set_login)
 

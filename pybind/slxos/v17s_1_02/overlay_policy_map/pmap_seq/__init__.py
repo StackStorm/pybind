@@ -21,7 +21,7 @@ class pmap_seq(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__pmap_seq_num','__overlay_class','__ip_acl','__ipv6_acl','__mac_acl','__service_policy',)
 
   _yang_name = 'pmap-seq'
-  _rest_name = 'pmap-seq'
+  _rest_name = 'seq'
 
   _pybind_generated_by = 'container'
 
@@ -48,12 +48,12 @@ class pmap_seq(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__service_policy = YANGDynClass(base=service_policy.service_policy, is_container='container', presence=False, yang_name="service-policy", rest_name="service-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)
-    self.__ipv6_acl = YANGDynClass(base=ipv6_acl.ipv6_acl, is_container='container', presence=False, yang_name="ipv6-acl", rest_name="ipv6-acl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)
-    self.__pmap_seq_num = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'0 .. 4294967290']}), is_leaf=True, yang_name="pmap-seq-num", rest_name="pmap-seq-num", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='seq-num', is_config=True)
-    self.__mac_acl = YANGDynClass(base=mac_acl.mac_acl, is_container='container', presence=False, yang_name="mac-acl", rest_name="mac-acl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)
-    self.__overlay_class = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,62})'}), is_leaf=True, yang_name="overlay-class", rest_name="overlay-class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='map-name-type', is_config=True)
-    self.__ip_acl = YANGDynClass(base=ip_acl.ip_acl, is_container='container', presence=False, yang_name="ip-acl", rest_name="ip-acl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)
+    self.__service_policy = YANGDynClass(base=service_policy.service_policy, is_container='container', presence=False, yang_name="service-policy", rest_name="service-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Service Policy Configuration'}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)
+    self.__ipv6_acl = YANGDynClass(base=ipv6_acl.ipv6_acl, is_container='container', presence=False, yang_name="ipv6-acl", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)
+    self.__pmap_seq_num = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'0 .. 4294967290']}), is_leaf=True, yang_name="pmap-seq-num", rest_name="pmap-seq-num", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sequence number'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='seq-num', is_config=True)
+    self.__mac_acl = YANGDynClass(base=mac_acl.mac_acl, is_container='container', presence=False, yang_name="mac-acl", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)
+    self.__overlay_class = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,62})'}), is_leaf=True, yang_name="overlay-class", rest_name="overlay-class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Attach overlay-class-map', u'cli-expose-key-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='map-name-type', is_config=True)
+    self.__ip_acl = YANGDynClass(base=ip_acl.ip_acl, is_container='container', presence=False, yang_name="ip-acl", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -89,7 +89,7 @@ class pmap_seq(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'overlay-policy-map', u'pmap-seq']
+      return [u'overlay-policy-map', u'seq']
 
   def _get_pmap_seq_num(self):
     """
@@ -113,12 +113,12 @@ class pmap_seq(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'0 .. 4294967290']}), is_leaf=True, yang_name="pmap-seq-num", rest_name="pmap-seq-num", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='seq-num', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'0 .. 4294967290']}), is_leaf=True, yang_name="pmap-seq-num", rest_name="pmap-seq-num", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sequence number'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='seq-num', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """pmap_seq_num must be of a type compatible with seq-num""",
           'defined-type': "brocade-overlay-policy:seq-num",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'0 .. 4294967290']}), is_leaf=True, yang_name="pmap-seq-num", rest_name="pmap-seq-num", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='seq-num', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'0 .. 4294967290']}), is_leaf=True, yang_name="pmap-seq-num", rest_name="pmap-seq-num", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sequence number'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='seq-num', is_config=True)""",
         })
 
     self.__pmap_seq_num = t
@@ -126,7 +126,7 @@ class pmap_seq(PybindBase):
       self._set()
 
   def _unset_pmap_seq_num(self):
-    self.__pmap_seq_num = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'0 .. 4294967290']}), is_leaf=True, yang_name="pmap-seq-num", rest_name="pmap-seq-num", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='seq-num', is_config=True)
+    self.__pmap_seq_num = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range':  ['0..18446744073709551615']}, int_size=64), restriction_dict={'range': [u'0 .. 4294967290']}), is_leaf=True, yang_name="pmap-seq-num", rest_name="pmap-seq-num", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Sequence number'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='seq-num', is_config=True)
 
 
   def _get_overlay_class(self):
@@ -151,12 +151,12 @@ class pmap_seq(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,62})'}), is_leaf=True, yang_name="overlay-class", rest_name="overlay-class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='map-name-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,62})'}), is_leaf=True, yang_name="overlay-class", rest_name="overlay-class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Attach overlay-class-map', u'cli-expose-key-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='map-name-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """overlay_class must be of a type compatible with map-name-type""",
           'defined-type': "brocade-overlay-policy:map-name-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,62})'}), is_leaf=True, yang_name="overlay-class", rest_name="overlay-class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='map-name-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,62})'}), is_leaf=True, yang_name="overlay-class", rest_name="overlay-class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Attach overlay-class-map', u'cli-expose-key-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='map-name-type', is_config=True)""",
         })
 
     self.__overlay_class = t
@@ -164,7 +164,7 @@ class pmap_seq(PybindBase):
       self._set()
 
   def _unset_overlay_class(self):
-    self.__overlay_class = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,62})'}), is_leaf=True, yang_name="overlay-class", rest_name="overlay-class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='map-name-type', is_config=True)
+    self.__overlay_class = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'[a-zA-Z]{1}([-a-zA-Z0-9_]{0,62})'}), is_leaf=True, yang_name="overlay-class", rest_name="overlay-class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Attach overlay-class-map', u'cli-expose-key-name': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='map-name-type', is_config=True)
 
 
   def _get_ip_acl(self):
@@ -184,12 +184,12 @@ class pmap_seq(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=ip_acl.ip_acl, is_container='container', presence=False, yang_name="ip-acl", rest_name="ip-acl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ip_acl.ip_acl, is_container='container', presence=False, yang_name="ip-acl", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ip_acl must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ip_acl.ip_acl, is_container='container', presence=False, yang_name="ip-acl", rest_name="ip-acl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ip_acl.ip_acl, is_container='container', presence=False, yang_name="ip-acl", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)""",
         })
 
     self.__ip_acl = t
@@ -197,7 +197,7 @@ class pmap_seq(PybindBase):
       self._set()
 
   def _unset_ip_acl(self):
-    self.__ip_acl = YANGDynClass(base=ip_acl.ip_acl, is_container='container', presence=False, yang_name="ip-acl", rest_name="ip-acl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)
+    self.__ip_acl = YANGDynClass(base=ip_acl.ip_acl, is_container='container', presence=False, yang_name="ip-acl", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)
 
 
   def _get_ipv6_acl(self):
@@ -217,12 +217,12 @@ class pmap_seq(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=ipv6_acl.ipv6_acl, is_container='container', presence=False, yang_name="ipv6-acl", rest_name="ipv6-acl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ipv6_acl.ipv6_acl, is_container='container', presence=False, yang_name="ipv6-acl", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ipv6_acl must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ipv6_acl.ipv6_acl, is_container='container', presence=False, yang_name="ipv6-acl", rest_name="ipv6-acl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ipv6_acl.ipv6_acl, is_container='container', presence=False, yang_name="ipv6-acl", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)""",
         })
 
     self.__ipv6_acl = t
@@ -230,7 +230,7 @@ class pmap_seq(PybindBase):
       self._set()
 
   def _unset_ipv6_acl(self):
-    self.__ipv6_acl = YANGDynClass(base=ipv6_acl.ipv6_acl, is_container='container', presence=False, yang_name="ipv6-acl", rest_name="ipv6-acl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)
+    self.__ipv6_acl = YANGDynClass(base=ipv6_acl.ipv6_acl, is_container='container', presence=False, yang_name="ipv6-acl", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)
 
 
   def _get_mac_acl(self):
@@ -250,12 +250,12 @@ class pmap_seq(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=mac_acl.mac_acl, is_container='container', presence=False, yang_name="mac-acl", rest_name="mac-acl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=mac_acl.mac_acl, is_container='container', presence=False, yang_name="mac-acl", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mac_acl must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=mac_acl.mac_acl, is_container='container', presence=False, yang_name="mac-acl", rest_name="mac-acl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=mac_acl.mac_acl, is_container='container', presence=False, yang_name="mac-acl", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)""",
         })
 
     self.__mac_acl = t
@@ -263,7 +263,7 @@ class pmap_seq(PybindBase):
       self._set()
 
   def _unset_mac_acl(self):
-    self.__mac_acl = YANGDynClass(base=mac_acl.mac_acl, is_container='container', presence=False, yang_name="mac-acl", rest_name="mac-acl", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)
+    self.__mac_acl = YANGDynClass(base=mac_acl.mac_acl, is_container='container', presence=False, yang_name="mac-acl", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)
 
 
   def _get_service_policy(self):
@@ -283,12 +283,12 @@ class pmap_seq(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=service_policy.service_policy, is_container='container', presence=False, yang_name="service-policy", rest_name="service-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=service_policy.service_policy, is_container='container', presence=False, yang_name="service-policy", rest_name="service-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Service Policy Configuration'}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """service_policy must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=service_policy.service_policy, is_container='container', presence=False, yang_name="service-policy", rest_name="service-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=service_policy.service_policy, is_container='container', presence=False, yang_name="service-policy", rest_name="service-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Service Policy Configuration'}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)""",
         })
 
     self.__service_policy = t
@@ -296,7 +296,7 @@ class pmap_seq(PybindBase):
       self._set()
 
   def _unset_service_policy(self):
-    self.__service_policy = YANGDynClass(base=service_policy.service_policy, is_container='container', presence=False, yang_name="service-policy", rest_name="service-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)
+    self.__service_policy = YANGDynClass(base=service_policy.service_policy, is_container='container', presence=False, yang_name="service-policy", rest_name="service-policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Service Policy Configuration'}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)
 
   pmap_seq_num = __builtin__.property(_get_pmap_seq_num, _set_pmap_seq_num)
   overlay_class = __builtin__.property(_get_overlay_class, _set_overlay_class)

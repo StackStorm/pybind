@@ -45,7 +45,7 @@ class cpu(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__queue = YANGDynClass(base=YANGListType("id",queue.queue, yang_name="queue", rest_name="queue", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='id', extensions=None), is_container='list', yang_name="queue", rest_name="queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='list', is_config=True)
+    self.__queue = YANGDynClass(base=YANGListType("id",queue.queue, yang_name="queue", rest_name="queue", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='id', extensions={u'tailf-common': {u'info': u'Configure CPU QoS queue parameters', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-custom-range-actionpoint': u'QosRangeCliActionpoint', u'cli-custom-range-enumerator': u'QosRangeCliActionpoint', u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'QosCpuQueueConfig', u'cli-mode-name': u'config-qos-cpu-queue-$(id)'}}), is_container='list', yang_name="queue", rest_name="queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU QoS queue parameters', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-custom-range-actionpoint': u'QosRangeCliActionpoint', u'cli-custom-range-enumerator': u'QosRangeCliActionpoint', u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'QosCpuQueueConfig', u'cli-mode-name': u'config-qos-cpu-queue-$(id)'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class cpu(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'qos', u'qos-cpu-queue', u'cpu']
+      return [u'qos', u'cpu']
 
   def _get_queue(self):
     """
@@ -100,12 +100,12 @@ class cpu(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("id",queue.queue, yang_name="queue", rest_name="queue", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='id', extensions=None), is_container='list', yang_name="queue", rest_name="queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("id",queue.queue, yang_name="queue", rest_name="queue", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='id', extensions={u'tailf-common': {u'info': u'Configure CPU QoS queue parameters', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-custom-range-actionpoint': u'QosRangeCliActionpoint', u'cli-custom-range-enumerator': u'QosRangeCliActionpoint', u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'QosCpuQueueConfig', u'cli-mode-name': u'config-qos-cpu-queue-$(id)'}}), is_container='list', yang_name="queue", rest_name="queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU QoS queue parameters', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-custom-range-actionpoint': u'QosRangeCliActionpoint', u'cli-custom-range-enumerator': u'QosRangeCliActionpoint', u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'QosCpuQueueConfig', u'cli-mode-name': u'config-qos-cpu-queue-$(id)'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """queue must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("id",queue.queue, yang_name="queue", rest_name="queue", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='id', extensions=None), is_container='list', yang_name="queue", rest_name="queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("id",queue.queue, yang_name="queue", rest_name="queue", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='id', extensions={u'tailf-common': {u'info': u'Configure CPU QoS queue parameters', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-custom-range-actionpoint': u'QosRangeCliActionpoint', u'cli-custom-range-enumerator': u'QosRangeCliActionpoint', u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'QosCpuQueueConfig', u'cli-mode-name': u'config-qos-cpu-queue-$(id)'}}), is_container='list', yang_name="queue", rest_name="queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU QoS queue parameters', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-custom-range-actionpoint': u'QosRangeCliActionpoint', u'cli-custom-range-enumerator': u'QosRangeCliActionpoint', u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'QosCpuQueueConfig', u'cli-mode-name': u'config-qos-cpu-queue-$(id)'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='list', is_config=True)""",
         })
 
     self.__queue = t
@@ -113,7 +113,7 @@ class cpu(PybindBase):
       self._set()
 
   def _unset_queue(self):
-    self.__queue = YANGDynClass(base=YANGListType("id",queue.queue, yang_name="queue", rest_name="queue", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='id', extensions=None), is_container='list', yang_name="queue", rest_name="queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='list', is_config=True)
+    self.__queue = YANGDynClass(base=YANGListType("id",queue.queue, yang_name="queue", rest_name="queue", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='id', extensions={u'tailf-common': {u'info': u'Configure CPU QoS queue parameters', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-custom-range-actionpoint': u'QosRangeCliActionpoint', u'cli-custom-range-enumerator': u'QosRangeCliActionpoint', u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'QosCpuQueueConfig', u'cli-mode-name': u'config-qos-cpu-queue-$(id)'}}), is_container='list', yang_name="queue", rest_name="queue", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure CPU QoS queue parameters', u'cli-no-key-completion': None, u'cli-full-no': None, u'cli-suppress-list-no': None, u'cli-custom-range-actionpoint': u'QosRangeCliActionpoint', u'cli-custom-range-enumerator': u'QosRangeCliActionpoint', u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'callpoint': u'QosCpuQueueConfig', u'cli-mode-name': u'config-qos-cpu-queue-$(id)'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cpu', defining_module='brocade-qos-cpu', yang_type='list', is_config=True)
 
   queue = __builtin__.property(_get_queue, _set_queue)
 

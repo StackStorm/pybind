@@ -45,7 +45,7 @@ class lag(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__predefined = YANGDynClass(base=predefined.predefined, is_container='container', presence=False, yang_name="predefined", rest_name="predefined", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    self.__predefined = YANGDynClass(base=predefined.predefined, is_container='container', presence=False, yang_name="predefined", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class lag(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=predefined.predefined, is_container='container', presence=False, yang_name="predefined", rest_name="predefined", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=predefined.predefined, is_container='container', presence=False, yang_name="predefined", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """predefined must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=predefined.predefined, is_container='container', presence=False, yang_name="predefined", rest_name="predefined", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=predefined.predefined, is_container='container', presence=False, yang_name="predefined", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)""",
         })
 
     self.__predefined = t
@@ -113,7 +113,7 @@ class lag(PybindBase):
       self._set()
 
   def _unset_predefined(self):
-    self.__predefined = YANGDynClass(base=predefined.predefined, is_container='container', presence=False, yang_name="predefined", rest_name="predefined", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    self.__predefined = YANGDynClass(base=predefined.predefined, is_container='container', presence=False, yang_name="predefined", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
 
   predefined = __builtin__.property(_get_predefined, _set_predefined)
 

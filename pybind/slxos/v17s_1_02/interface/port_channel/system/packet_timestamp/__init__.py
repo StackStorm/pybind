@@ -46,8 +46,8 @@ class packet_timestamp(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ingress = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'valid': {'value': 1}},), is_leaf=True, yang_name="ingress", rest_name="ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-packet-timestamp', defining_module='brocade-packet-timestamp', yang_type='enumeration', is_config=True)
-    self.__egress = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'add': {'value': 1}, u'remove': {'value': 2}, u'replace': {'value': 3}},), is_leaf=True, yang_name="egress", rest_name="egress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-packet-timestamp', defining_module='brocade-packet-timestamp', yang_type='enumeration', is_config=True)
+    self.__ingress = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'valid': {'value': 1}},), is_leaf=True, yang_name="ingress", rest_name="ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ingress packet-timestamp setting', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-packet-timestamp', defining_module='brocade-packet-timestamp', yang_type='enumeration', is_config=True)
+    self.__egress = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'add': {'value': 1}, u'remove': {'value': 2}, u'replace': {'value': 3}},), is_leaf=True, yang_name="egress", rest_name="egress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Egress packet-timestamp setting', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-packet-timestamp', defining_module='brocade-packet-timestamp', yang_type='enumeration', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -83,7 +83,7 @@ class packet_timestamp(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface', u'port-channel', u'system', u'packet-timestamp']
+      return [u'interface', u'Port-channel', u'system', u'packet-timestamp']
 
   def _get_ingress(self):
     """
@@ -106,12 +106,12 @@ class packet_timestamp(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'valid': {'value': 1}},), is_leaf=True, yang_name="ingress", rest_name="ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-packet-timestamp', defining_module='brocade-packet-timestamp', yang_type='enumeration', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'valid': {'value': 1}},), is_leaf=True, yang_name="ingress", rest_name="ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ingress packet-timestamp setting', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-packet-timestamp', defining_module='brocade-packet-timestamp', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ingress must be of a type compatible with enumeration""",
           'defined-type': "brocade-packet-timestamp:enumeration",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'valid': {'value': 1}},), is_leaf=True, yang_name="ingress", rest_name="ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-packet-timestamp', defining_module='brocade-packet-timestamp', yang_type='enumeration', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'valid': {'value': 1}},), is_leaf=True, yang_name="ingress", rest_name="ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ingress packet-timestamp setting', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-packet-timestamp', defining_module='brocade-packet-timestamp', yang_type='enumeration', is_config=True)""",
         })
 
     self.__ingress = t
@@ -119,7 +119,7 @@ class packet_timestamp(PybindBase):
       self._set()
 
   def _unset_ingress(self):
-    self.__ingress = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'valid': {'value': 1}},), is_leaf=True, yang_name="ingress", rest_name="ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-packet-timestamp', defining_module='brocade-packet-timestamp', yang_type='enumeration', is_config=True)
+    self.__ingress = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'valid': {'value': 1}},), is_leaf=True, yang_name="ingress", rest_name="ingress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Ingress packet-timestamp setting', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-packet-timestamp', defining_module='brocade-packet-timestamp', yang_type='enumeration', is_config=True)
 
 
   def _get_egress(self):
@@ -143,12 +143,12 @@ class packet_timestamp(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'add': {'value': 1}, u'remove': {'value': 2}, u'replace': {'value': 3}},), is_leaf=True, yang_name="egress", rest_name="egress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-packet-timestamp', defining_module='brocade-packet-timestamp', yang_type='enumeration', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'add': {'value': 1}, u'remove': {'value': 2}, u'replace': {'value': 3}},), is_leaf=True, yang_name="egress", rest_name="egress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Egress packet-timestamp setting', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-packet-timestamp', defining_module='brocade-packet-timestamp', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """egress must be of a type compatible with enumeration""",
           'defined-type': "brocade-packet-timestamp:enumeration",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'add': {'value': 1}, u'remove': {'value': 2}, u'replace': {'value': 3}},), is_leaf=True, yang_name="egress", rest_name="egress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-packet-timestamp', defining_module='brocade-packet-timestamp', yang_type='enumeration', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'add': {'value': 1}, u'remove': {'value': 2}, u'replace': {'value': 3}},), is_leaf=True, yang_name="egress", rest_name="egress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Egress packet-timestamp setting', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-packet-timestamp', defining_module='brocade-packet-timestamp', yang_type='enumeration', is_config=True)""",
         })
 
     self.__egress = t
@@ -156,7 +156,7 @@ class packet_timestamp(PybindBase):
       self._set()
 
   def _unset_egress(self):
-    self.__egress = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'add': {'value': 1}, u'remove': {'value': 2}, u'replace': {'value': 3}},), is_leaf=True, yang_name="egress", rest_name="egress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-packet-timestamp', defining_module='brocade-packet-timestamp', yang_type='enumeration', is_config=True)
+    self.__egress = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'add': {'value': 1}, u'remove': {'value': 2}, u'replace': {'value': 3}},), is_leaf=True, yang_name="egress", rest_name="egress", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Egress packet-timestamp setting', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-packet-timestamp', defining_module='brocade-packet-timestamp', yang_type='enumeration', is_config=True)
 
   ingress = __builtin__.property(_get_ingress, _set_ingress)
   egress = __builtin__.property(_get_egress, _set_egress)

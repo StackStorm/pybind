@@ -46,8 +46,8 @@ class nas(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__server_ip = YANGDynClass(base=YANGListType("server_ip",server_ip.server_ip, yang_name="server-ip", rest_name="server-ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='server-ip', extensions=None), is_container='list', yang_name="server-ip", rest_name="server-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='list', is_config=True)
-    self.__auto_qos = YANGDynClass(base=auto_qos.auto_qos, is_container='container', presence=True, yang_name="auto-qos", rest_name="auto-qos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='container', is_config=True)
+    self.__server_ip = YANGDynClass(base=YANGListType("server_ip",server_ip.server_ip, yang_name="server-ip", rest_name="server-ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='server-ip', extensions={u'tailf-common': {u'info': u'NAS server', u'cli-suppress-mode': None, u'cli-no-key-completion': None, u'callpoint': u'qos_nas_serverip', u'cli-suppress-list-no': None}}), is_container='list', yang_name="server-ip", rest_name="server-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NAS server', u'cli-suppress-mode': None, u'cli-no-key-completion': None, u'callpoint': u'qos_nas_serverip', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='list', is_config=True)
+    self.__auto_qos = YANGDynClass(base=auto_qos.auto_qos, is_container='container', presence=True, yang_name="auto-qos", rest_name="auto-qos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'cli-full-no': None, u'info': u'Automatic Quality Of Service', u'callpoint': u'qos_nas_config'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -108,12 +108,12 @@ parameters
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=auto_qos.auto_qos, is_container='container', presence=True, yang_name="auto-qos", rest_name="auto-qos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=auto_qos.auto_qos, is_container='container', presence=True, yang_name="auto-qos", rest_name="auto-qos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'cli-full-no': None, u'info': u'Automatic Quality Of Service', u'callpoint': u'qos_nas_config'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """auto_qos must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=auto_qos.auto_qos, is_container='container', presence=True, yang_name="auto-qos", rest_name="auto-qos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=auto_qos.auto_qos, is_container='container', presence=True, yang_name="auto-qos", rest_name="auto-qos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'cli-full-no': None, u'info': u'Automatic Quality Of Service', u'callpoint': u'qos_nas_config'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='container', is_config=True)""",
         })
 
     self.__auto_qos = t
@@ -121,7 +121,7 @@ parameters
       self._set()
 
   def _unset_auto_qos(self):
-    self.__auto_qos = YANGDynClass(base=auto_qos.auto_qos, is_container='container', presence=True, yang_name="auto-qos", rest_name="auto-qos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='container', is_config=True)
+    self.__auto_qos = YANGDynClass(base=auto_qos.auto_qos, is_container='container', presence=True, yang_name="auto-qos", rest_name="auto-qos", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-add-mode': None, u'cli-full-command': None, u'cli-full-no': None, u'info': u'Automatic Quality Of Service', u'callpoint': u'qos_nas_config'}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='container', is_config=True)
 
 
   def _get_server_ip(self):
@@ -141,12 +141,12 @@ parameters
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("server_ip",server_ip.server_ip, yang_name="server-ip", rest_name="server-ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='server-ip', extensions=None), is_container='list', yang_name="server-ip", rest_name="server-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("server_ip",server_ip.server_ip, yang_name="server-ip", rest_name="server-ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='server-ip', extensions={u'tailf-common': {u'info': u'NAS server', u'cli-suppress-mode': None, u'cli-no-key-completion': None, u'callpoint': u'qos_nas_serverip', u'cli-suppress-list-no': None}}), is_container='list', yang_name="server-ip", rest_name="server-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NAS server', u'cli-suppress-mode': None, u'cli-no-key-completion': None, u'callpoint': u'qos_nas_serverip', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """server_ip must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("server_ip",server_ip.server_ip, yang_name="server-ip", rest_name="server-ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='server-ip', extensions=None), is_container='list', yang_name="server-ip", rest_name="server-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("server_ip",server_ip.server_ip, yang_name="server-ip", rest_name="server-ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='server-ip', extensions={u'tailf-common': {u'info': u'NAS server', u'cli-suppress-mode': None, u'cli-no-key-completion': None, u'callpoint': u'qos_nas_serverip', u'cli-suppress-list-no': None}}), is_container='list', yang_name="server-ip", rest_name="server-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NAS server', u'cli-suppress-mode': None, u'cli-no-key-completion': None, u'callpoint': u'qos_nas_serverip', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='list', is_config=True)""",
         })
 
     self.__server_ip = t
@@ -154,7 +154,7 @@ parameters
       self._set()
 
   def _unset_server_ip(self):
-    self.__server_ip = YANGDynClass(base=YANGListType("server_ip",server_ip.server_ip, yang_name="server-ip", rest_name="server-ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='server-ip', extensions=None), is_container='list', yang_name="server-ip", rest_name="server-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='list', is_config=True)
+    self.__server_ip = YANGDynClass(base=YANGListType("server_ip",server_ip.server_ip, yang_name="server-ip", rest_name="server-ip", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='server-ip', extensions={u'tailf-common': {u'info': u'NAS server', u'cli-suppress-mode': None, u'cli-no-key-completion': None, u'callpoint': u'qos_nas_serverip', u'cli-suppress-list-no': None}}), is_container='list', yang_name="server-ip", rest_name="server-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'NAS server', u'cli-suppress-mode': None, u'cli-no-key-completion': None, u'callpoint': u'qos_nas_serverip', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-cee', defining_module='brocade-qos-cee', yang_type='list', is_config=True)
 
   auto_qos = __builtin__.property(_get_auto_qos, _set_auto_qos)
   server_ip = __builtin__.property(_get_server_ip, _set_server_ip)

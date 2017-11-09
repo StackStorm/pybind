@@ -7,6 +7,7 @@ from pyangbind.lib.base import PybindBase
 from decimal import Decimal
 from bitarray import bitarray
 import __builtin__
+import pim
 import igmp
 class ip(PybindBase):
   """
@@ -15,7 +16,7 @@ class ip(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__igmp',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__pim','__igmp',)
 
   _yang_name = 'ip'
   _rest_name = 'ip'
@@ -45,7 +46,8 @@ class ip(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__igmp = YANGDynClass(base=igmp.igmp, is_container='container', presence=False, yang_name="igmp", rest_name="igmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
+    self.__pim = YANGDynClass(base=pim.pim, is_container='container', presence=False, yang_name="pim", rest_name="pim", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ip pim snooping', u'hidden': u'full', u'callpoint': u'IgmpsGlobal', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
+    self.__igmp = YANGDynClass(base=igmp.igmp, is_container='container', presence=False, yang_name="igmp", rest_name="igmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Internet Group Management Protocol (IGMP)', u'cli-incomplete-no': None, u'callpoint': u'IgmpsGlobal', u'sort-priority': u'47'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +83,40 @@ class ip(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'igmp-snooping', u'ip']
+      return [u'ip']
+
+  def _get_pim(self):
+    """
+    Getter method for pim, mapped from YANG variable /igmp_snooping/ip/pim (container)
+    """
+    return self.__pim
+      
+  def _set_pim(self, v, load=False):
+    """
+    Setter method for pim, mapped from YANG variable /igmp_snooping/ip/pim (container)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_pim is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_pim() directly.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=pim.pim, is_container='container', presence=False, yang_name="pim", rest_name="pim", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ip pim snooping', u'hidden': u'full', u'callpoint': u'IgmpsGlobal', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """pim must be of a type compatible with container""",
+          'defined-type': "container",
+          'generated-type': """YANGDynClass(base=pim.pim, is_container='container', presence=False, yang_name="pim", rest_name="pim", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ip pim snooping', u'hidden': u'full', u'callpoint': u'IgmpsGlobal', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)""",
+        })
+
+    self.__pim = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_pim(self):
+    self.__pim = YANGDynClass(base=pim.pim, is_container='container', presence=False, yang_name="pim", rest_name="pim", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ip pim snooping', u'hidden': u'full', u'callpoint': u'IgmpsGlobal', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
+
 
   def _get_igmp(self):
     """
@@ -100,12 +135,12 @@ class ip(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=igmp.igmp, is_container='container', presence=False, yang_name="igmp", rest_name="igmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=igmp.igmp, is_container='container', presence=False, yang_name="igmp", rest_name="igmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Internet Group Management Protocol (IGMP)', u'cli-incomplete-no': None, u'callpoint': u'IgmpsGlobal', u'sort-priority': u'47'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """igmp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=igmp.igmp, is_container='container', presence=False, yang_name="igmp", rest_name="igmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=igmp.igmp, is_container='container', presence=False, yang_name="igmp", rest_name="igmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Internet Group Management Protocol (IGMP)', u'cli-incomplete-no': None, u'callpoint': u'IgmpsGlobal', u'sort-priority': u'47'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)""",
         })
 
     self.__igmp = t
@@ -113,11 +148,12 @@ class ip(PybindBase):
       self._set()
 
   def _unset_igmp(self):
-    self.__igmp = YANGDynClass(base=igmp.igmp, is_container='container', presence=False, yang_name="igmp", rest_name="igmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
+    self.__igmp = YANGDynClass(base=igmp.igmp, is_container='container', presence=False, yang_name="igmp", rest_name="igmp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Internet Group Management Protocol (IGMP)', u'cli-incomplete-no': None, u'callpoint': u'IgmpsGlobal', u'sort-priority': u'47'}}, namespace='urn:brocade.com:mgmt:brocade-igmp-snooping', defining_module='brocade-igmp-snooping', yang_type='container', is_config=True)
 
+  pim = __builtin__.property(_get_pim, _set_pim)
   igmp = __builtin__.property(_get_igmp, _set_igmp)
 
 
-  _pyangbind_elements = {'igmp': igmp, }
+  _pyangbind_elements = {'pim': pim, 'igmp': igmp, }
 
 

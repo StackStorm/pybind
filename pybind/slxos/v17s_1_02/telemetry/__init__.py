@@ -47,9 +47,9 @@ class telemetry(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__profile = YANGDynClass(base=profile.profile, is_container='container', presence=False, yang_name="profile", rest_name="profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='container', is_config=True)
-    self.__collector = YANGDynClass(base=YANGListType("collector_name",collector.collector, yang_name="collector", rest_name="collector", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='collector-name', extensions=None), is_container='list', yang_name="collector", rest_name="collector", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='list', is_config=True)
-    self.__server = YANGDynClass(base=YANGListType("use_vrf",server.server, yang_name="server", rest_name="server", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='use-vrf', extensions=None), is_container='list', yang_name="server", rest_name="server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='list', is_config=True)
+    self.__profile = YANGDynClass(base=profile.profile, is_container='container', presence=False, yang_name="profile", rest_name="profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Profile', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='container', is_config=True)
+    self.__collector = YANGDynClass(base=YANGListType("collector_name",collector.collector, yang_name="collector", rest_name="collector", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='collector-name', extensions={u'tailf-common': {u'cli-full-command': None, u'cli-suppress-list-no': None, u'callpoint': u'TelemetryCollector', u'info': u'Telemetry collector Configuration'}}), is_container='list', yang_name="collector", rest_name="collector", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-suppress-list-no': None, u'callpoint': u'TelemetryCollector', u'info': u'Telemetry collector Configuration'}}, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='list', is_config=True)
+    self.__server = YANGDynClass(base=YANGListType("use_vrf",server.server, yang_name="server", rest_name="server", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='use-vrf', extensions={u'tailf-common': {u'info': u'Server', u'cli-suppress-list-no': None, u'callpoint': u'TelemetryServer', u'cli-full-no': None, u'cli-full-command': None}}), is_container='list', yang_name="server", rest_name="server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Server', u'cli-suppress-list-no': None, u'callpoint': u'TelemetryServer', u'cli-full-no': None, u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -104,12 +104,12 @@ class telemetry(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("collector_name",collector.collector, yang_name="collector", rest_name="collector", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='collector-name', extensions=None), is_container='list', yang_name="collector", rest_name="collector", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("collector_name",collector.collector, yang_name="collector", rest_name="collector", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='collector-name', extensions={u'tailf-common': {u'cli-full-command': None, u'cli-suppress-list-no': None, u'callpoint': u'TelemetryCollector', u'info': u'Telemetry collector Configuration'}}), is_container='list', yang_name="collector", rest_name="collector", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-suppress-list-no': None, u'callpoint': u'TelemetryCollector', u'info': u'Telemetry collector Configuration'}}, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """collector must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("collector_name",collector.collector, yang_name="collector", rest_name="collector", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='collector-name', extensions=None), is_container='list', yang_name="collector", rest_name="collector", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("collector_name",collector.collector, yang_name="collector", rest_name="collector", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='collector-name', extensions={u'tailf-common': {u'cli-full-command': None, u'cli-suppress-list-no': None, u'callpoint': u'TelemetryCollector', u'info': u'Telemetry collector Configuration'}}), is_container='list', yang_name="collector", rest_name="collector", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-suppress-list-no': None, u'callpoint': u'TelemetryCollector', u'info': u'Telemetry collector Configuration'}}, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='list', is_config=True)""",
         })
 
     self.__collector = t
@@ -117,7 +117,7 @@ class telemetry(PybindBase):
       self._set()
 
   def _unset_collector(self):
-    self.__collector = YANGDynClass(base=YANGListType("collector_name",collector.collector, yang_name="collector", rest_name="collector", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='collector-name', extensions=None), is_container='list', yang_name="collector", rest_name="collector", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='list', is_config=True)
+    self.__collector = YANGDynClass(base=YANGListType("collector_name",collector.collector, yang_name="collector", rest_name="collector", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='collector-name', extensions={u'tailf-common': {u'cli-full-command': None, u'cli-suppress-list-no': None, u'callpoint': u'TelemetryCollector', u'info': u'Telemetry collector Configuration'}}), is_container='list', yang_name="collector", rest_name="collector", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-suppress-list-no': None, u'callpoint': u'TelemetryCollector', u'info': u'Telemetry collector Configuration'}}, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='list', is_config=True)
 
 
   def _get_server(self):
@@ -137,12 +137,12 @@ class telemetry(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("use_vrf",server.server, yang_name="server", rest_name="server", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='use-vrf', extensions=None), is_container='list', yang_name="server", rest_name="server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("use_vrf",server.server, yang_name="server", rest_name="server", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='use-vrf', extensions={u'tailf-common': {u'info': u'Server', u'cli-suppress-list-no': None, u'callpoint': u'TelemetryServer', u'cli-full-no': None, u'cli-full-command': None}}), is_container='list', yang_name="server", rest_name="server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Server', u'cli-suppress-list-no': None, u'callpoint': u'TelemetryServer', u'cli-full-no': None, u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """server must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("use_vrf",server.server, yang_name="server", rest_name="server", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='use-vrf', extensions=None), is_container='list', yang_name="server", rest_name="server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("use_vrf",server.server, yang_name="server", rest_name="server", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='use-vrf', extensions={u'tailf-common': {u'info': u'Server', u'cli-suppress-list-no': None, u'callpoint': u'TelemetryServer', u'cli-full-no': None, u'cli-full-command': None}}), is_container='list', yang_name="server", rest_name="server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Server', u'cli-suppress-list-no': None, u'callpoint': u'TelemetryServer', u'cli-full-no': None, u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='list', is_config=True)""",
         })
 
     self.__server = t
@@ -150,7 +150,7 @@ class telemetry(PybindBase):
       self._set()
 
   def _unset_server(self):
-    self.__server = YANGDynClass(base=YANGListType("use_vrf",server.server, yang_name="server", rest_name="server", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='use-vrf', extensions=None), is_container='list', yang_name="server", rest_name="server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='list', is_config=True)
+    self.__server = YANGDynClass(base=YANGListType("use_vrf",server.server, yang_name="server", rest_name="server", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='use-vrf', extensions={u'tailf-common': {u'info': u'Server', u'cli-suppress-list-no': None, u'callpoint': u'TelemetryServer', u'cli-full-no': None, u'cli-full-command': None}}), is_container='list', yang_name="server", rest_name="server", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Server', u'cli-suppress-list-no': None, u'callpoint': u'TelemetryServer', u'cli-full-no': None, u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='list', is_config=True)
 
 
   def _get_profile(self):
@@ -170,12 +170,12 @@ class telemetry(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=profile.profile, is_container='container', presence=False, yang_name="profile", rest_name="profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=profile.profile, is_container='container', presence=False, yang_name="profile", rest_name="profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Profile', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """profile must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=profile.profile, is_container='container', presence=False, yang_name="profile", rest_name="profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=profile.profile, is_container='container', presence=False, yang_name="profile", rest_name="profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Profile', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='container', is_config=True)""",
         })
 
     self.__profile = t
@@ -183,7 +183,7 @@ class telemetry(PybindBase):
       self._set()
 
   def _unset_profile(self):
-    self.__profile = YANGDynClass(base=profile.profile, is_container='container', presence=False, yang_name="profile", rest_name="profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='container', is_config=True)
+    self.__profile = YANGDynClass(base=profile.profile, is_container='container', presence=False, yang_name="profile", rest_name="profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Profile', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-telemetry', defining_module='brocade-telemetry', yang_type='container', is_config=True)
 
   collector = __builtin__.property(_get_collector, _set_collector)
   server = __builtin__.property(_get_server, _set_server)

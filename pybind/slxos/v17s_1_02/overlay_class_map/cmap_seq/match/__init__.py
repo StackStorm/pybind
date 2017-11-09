@@ -15,7 +15,7 @@ class match(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__any','__contn_src_dst','__endpoint','__source','__destination','__encap_type','__vni',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__any','__contn_src_dst','__endpoint','__source','__destination','__encap_type','__vni','__vni_mask',)
 
   _yang_name = 'match'
   _rest_name = 'match'
@@ -45,13 +45,14 @@ class match(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__endpoint = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="endpoint", rest_name="endpoint", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-endpoint'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='ipv4-address', is_config=True)
-    self.__destination = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="destination", rest_name="destination", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-dest'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='ipv4-address', is_config=True)
-    self.__vni = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 16777215']}), is_leaf=True, yang_name="vni", rest_name="vni", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='vni', is_config=True)
-    self.__contn_src_dst = YANGDynClass(base=contn_src_dst.contn_src_dst, is_container='container', presence=False, yang_name="contn-src-dst", rest_name="contn-src-dst", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-src-dest'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)
-    self.__source = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="source", rest_name="source", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-src'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='ipv4-address', is_config=True)
-    self.__encap_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'vxlan': {'value': 1}},), is_leaf=True, yang_name="encap-type", rest_name="encap-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='enumeration', is_config=True)
-    self.__any = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="any", rest_name="any", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-any'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='empty', is_config=True)
+    self.__endpoint = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="endpoint", rest_name="endpoint", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-endpoint'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Match source or destination IPv4 Address'}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='ipv4-address', is_config=True)
+    self.__vni_mask = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'0|[1-9a-fA-F][0-9a-fA-F]{0,5}'}), is_leaf=True, yang_name="vni-mask", rest_name="vni-mask", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VxLan VNI Mask', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='vni-mask', is_config=True)
+    self.__destination = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="destination", rest_name="destination", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-dest'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Destination IPv4 Address: A.B.C.D'}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='ipv4-address', is_config=True)
+    self.__vni = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 16777215']}), is_leaf=True, yang_name="vni", rest_name="vni", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VxLan VNI number'}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='vni', is_config=True)
+    self.__contn_src_dst = YANGDynClass(base=contn_src_dst.contn_src_dst, is_container='container', presence=False, yang_name="contn-src-dst", rest_name="", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-src-dest'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-flatten-container': None}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)
+    self.__source = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="source", rest_name="source", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-src'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Source IPv4 Address: A.B.C.D'}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='ipv4-address', is_config=True)
+    self.__encap_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'vxlan': {'value': 1}},), is_leaf=True, yang_name="encap-type", rest_name="encap-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Overlay encapsulation type'}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='enumeration', is_config=True)
+    self.__any = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="any", rest_name="any", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-any'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Any IP Address'}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -87,7 +88,7 @@ class match(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'overlay-class-map', u'cmap-seq', u'match']
+      return [u'overlay-class-map', u'seq', u'match']
 
   def _get_any(self):
     """
@@ -106,12 +107,12 @@ class match(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="any", rest_name="any", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-any'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="any", rest_name="any", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-any'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Any IP Address'}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """any must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="any", rest_name="any", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-any'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="any", rest_name="any", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-any'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Any IP Address'}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='empty', is_config=True)""",
         })
 
     self.__any = t
@@ -119,7 +120,7 @@ class match(PybindBase):
       self._set()
 
   def _unset_any(self):
-    self.__any = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="any", rest_name="any", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-any'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='empty', is_config=True)
+    self.__any = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="any", rest_name="any", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-any'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Any IP Address'}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='empty', is_config=True)
 
 
   def _get_contn_src_dst(self):
@@ -139,12 +140,12 @@ class match(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=contn_src_dst.contn_src_dst, is_container='container', presence=False, yang_name="contn-src-dst", rest_name="contn-src-dst", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-src-dest'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=contn_src_dst.contn_src_dst, is_container='container', presence=False, yang_name="contn-src-dst", rest_name="", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-src-dest'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-flatten-container': None}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """contn_src_dst must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=contn_src_dst.contn_src_dst, is_container='container', presence=False, yang_name="contn-src-dst", rest_name="contn-src-dst", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-src-dest'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=contn_src_dst.contn_src_dst, is_container='container', presence=False, yang_name="contn-src-dst", rest_name="", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-src-dest'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-flatten-container': None}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)""",
         })
 
     self.__contn_src_dst = t
@@ -152,7 +153,7 @@ class match(PybindBase):
       self._set()
 
   def _unset_contn_src_dst(self):
-    self.__contn_src_dst = YANGDynClass(base=contn_src_dst.contn_src_dst, is_container='container', presence=False, yang_name="contn-src-dst", rest_name="contn-src-dst", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-src-dest'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)
+    self.__contn_src_dst = YANGDynClass(base=contn_src_dst.contn_src_dst, is_container='container', presence=False, yang_name="contn-src-dst", rest_name="", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-src-dest'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-flatten-container': None}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='container', is_config=True)
 
 
   def _get_endpoint(self):
@@ -172,12 +173,12 @@ class match(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="endpoint", rest_name="endpoint", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-endpoint'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='ipv4-address', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="endpoint", rest_name="endpoint", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-endpoint'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Match source or destination IPv4 Address'}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='ipv4-address', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """endpoint must be of a type compatible with ipv4-address""",
           'defined-type': "brocade-overlay-policy:ipv4-address",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="endpoint", rest_name="endpoint", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-endpoint'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='ipv4-address', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="endpoint", rest_name="endpoint", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-endpoint'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Match source or destination IPv4 Address'}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='ipv4-address', is_config=True)""",
         })
 
     self.__endpoint = t
@@ -185,7 +186,7 @@ class match(PybindBase):
       self._set()
 
   def _unset_endpoint(self):
-    self.__endpoint = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="endpoint", rest_name="endpoint", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-endpoint'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='ipv4-address', is_config=True)
+    self.__endpoint = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="endpoint", rest_name="endpoint", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-endpoint'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Match source or destination IPv4 Address'}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='ipv4-address', is_config=True)
 
 
   def _get_source(self):
@@ -205,12 +206,12 @@ class match(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="source", rest_name="source", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-src'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='ipv4-address', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="source", rest_name="source", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-src'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Source IPv4 Address: A.B.C.D'}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='ipv4-address', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """source must be of a type compatible with ipv4-address""",
           'defined-type': "brocade-overlay-policy:ipv4-address",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="source", rest_name="source", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-src'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='ipv4-address', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="source", rest_name="source", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-src'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Source IPv4 Address: A.B.C.D'}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='ipv4-address', is_config=True)""",
         })
 
     self.__source = t
@@ -218,7 +219,7 @@ class match(PybindBase):
       self._set()
 
   def _unset_source(self):
-    self.__source = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="source", rest_name="source", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-src'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='ipv4-address', is_config=True)
+    self.__source = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="source", rest_name="source", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-src'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Source IPv4 Address: A.B.C.D'}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='ipv4-address', is_config=True)
 
 
   def _get_destination(self):
@@ -238,12 +239,12 @@ class match(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="destination", rest_name="destination", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-dest'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='ipv4-address', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="destination", rest_name="destination", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-dest'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Destination IPv4 Address: A.B.C.D'}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='ipv4-address', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """destination must be of a type compatible with ipv4-address""",
           'defined-type': "brocade-overlay-policy:ipv4-address",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="destination", rest_name="destination", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-dest'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='ipv4-address', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="destination", rest_name="destination", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-dest'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Destination IPv4 Address: A.B.C.D'}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='ipv4-address', is_config=True)""",
         })
 
     self.__destination = t
@@ -251,7 +252,7 @@ class match(PybindBase):
       self._set()
 
   def _unset_destination(self):
-    self.__destination = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="destination", rest_name="destination", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-dest'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='ipv4-address', is_config=True)
+    self.__destination = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}), is_leaf=True, yang_name="destination", rest_name="destination", parent=self, choice=(u'overlay-match-ip', u'case-overlay-ip-dest'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Destination IPv4 Address: A.B.C.D'}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='ipv4-address', is_config=True)
 
 
   def _get_encap_type(self):
@@ -271,12 +272,12 @@ class match(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'vxlan': {'value': 1}},), is_leaf=True, yang_name="encap-type", rest_name="encap-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='enumeration', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'vxlan': {'value': 1}},), is_leaf=True, yang_name="encap-type", rest_name="encap-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Overlay encapsulation type'}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """encap_type must be of a type compatible with enumeration""",
           'defined-type': "brocade-overlay-policy:enumeration",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'vxlan': {'value': 1}},), is_leaf=True, yang_name="encap-type", rest_name="encap-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='enumeration', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'vxlan': {'value': 1}},), is_leaf=True, yang_name="encap-type", rest_name="encap-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Overlay encapsulation type'}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='enumeration', is_config=True)""",
         })
 
     self.__encap_type = t
@@ -284,7 +285,7 @@ class match(PybindBase):
       self._set()
 
   def _unset_encap_type(self):
-    self.__encap_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'vxlan': {'value': 1}},), is_leaf=True, yang_name="encap-type", rest_name="encap-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='enumeration', is_config=True)
+    self.__encap_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'vxlan': {'value': 1}},), is_leaf=True, yang_name="encap-type", rest_name="encap-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Overlay encapsulation type'}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='enumeration', is_config=True)
 
 
   def _get_vni(self):
@@ -304,12 +305,12 @@ class match(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 16777215']}), is_leaf=True, yang_name="vni", rest_name="vni", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='vni', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 16777215']}), is_leaf=True, yang_name="vni", rest_name="vni", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VxLan VNI number'}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='vni', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vni must be of a type compatible with vni""",
           'defined-type': "brocade-overlay-policy:vni",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 16777215']}), is_leaf=True, yang_name="vni", rest_name="vni", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='vni', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 16777215']}), is_leaf=True, yang_name="vni", rest_name="vni", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VxLan VNI number'}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='vni', is_config=True)""",
         })
 
     self.__vni = t
@@ -317,7 +318,40 @@ class match(PybindBase):
       self._set()
 
   def _unset_vni(self):
-    self.__vni = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 16777215']}), is_leaf=True, yang_name="vni", rest_name="vni", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='vni', is_config=True)
+    self.__vni = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 16777215']}), is_leaf=True, yang_name="vni", rest_name="vni", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VxLan VNI number'}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='vni', is_config=True)
+
+
+  def _get_vni_mask(self):
+    """
+    Getter method for vni_mask, mapped from YANG variable /overlay_class_map/cmap_seq/match/vni_mask (vni-mask)
+    """
+    return self.__vni_mask
+      
+  def _set_vni_mask(self, v, load=False):
+    """
+    Setter method for vni_mask, mapped from YANG variable /overlay_class_map/cmap_seq/match/vni_mask (vni-mask)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_vni_mask is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_vni_mask() directly.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'0|[1-9a-fA-F][0-9a-fA-F]{0,5}'}), is_leaf=True, yang_name="vni-mask", rest_name="vni-mask", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VxLan VNI Mask', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='vni-mask', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """vni_mask must be of a type compatible with vni-mask""",
+          'defined-type': "brocade-overlay-policy:vni-mask",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'0|[1-9a-fA-F][0-9a-fA-F]{0,5}'}), is_leaf=True, yang_name="vni-mask", rest_name="vni-mask", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VxLan VNI Mask', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='vni-mask', is_config=True)""",
+        })
+
+    self.__vni_mask = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_vni_mask(self):
+    self.__vni_mask = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'0|[1-9a-fA-F][0-9a-fA-F]{0,5}'}), is_leaf=True, yang_name="vni-mask", rest_name="vni-mask", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VxLan VNI Mask', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-overlay-policy', defining_module='brocade-overlay-policy', yang_type='vni-mask', is_config=True)
 
   any = __builtin__.property(_get_any, _set_any)
   contn_src_dst = __builtin__.property(_get_contn_src_dst, _set_contn_src_dst)
@@ -326,8 +360,9 @@ class match(PybindBase):
   destination = __builtin__.property(_get_destination, _set_destination)
   encap_type = __builtin__.property(_get_encap_type, _set_encap_type)
   vni = __builtin__.property(_get_vni, _set_vni)
+  vni_mask = __builtin__.property(_get_vni_mask, _set_vni_mask)
 
   __choices__ = {u'overlay-match-ip': {u'case-overlay-ip-dest': [u'destination'], u'case-overlay-ip-src': [u'source'], u'case-overlay-ip-src-dest': [u'contn_src_dst'], u'case-overlay-ip-any': [u'any'], u'case-overlay-ip-endpoint': [u'endpoint']}}
-  _pyangbind_elements = {'any': any, 'contn_src_dst': contn_src_dst, 'endpoint': endpoint, 'source': source, 'destination': destination, 'encap_type': encap_type, 'vni': vni, }
+  _pyangbind_elements = {'any': any, 'contn_src_dst': contn_src_dst, 'endpoint': endpoint, 'source': source, 'destination': destination, 'encap_type': encap_type, 'vni': vni, 'vni_mask': vni_mask, }
 
 

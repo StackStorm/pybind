@@ -44,7 +44,7 @@ class soft_reconfiguration(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__inbound = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="inbound", rest_name="inbound", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__inbound = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="inbound", rest_name="inbound", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Allow inbound soft reconfiguration for this neighbor'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -80,7 +80,7 @@ class soft_reconfiguration(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'routing-system', u'router', u'router-bgp', u'router-bgp-attributes', u'neighbor', u'neighbor-ipv6s', u'neighbor-ipv6-addr', u'soft-reconfiguration']
+      return [u'router', u'bgp', u'neighbor', u'neighbor-ipv6-addr', u'soft-reconfiguration']
 
   def _get_inbound(self):
     """
@@ -99,12 +99,12 @@ class soft_reconfiguration(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="inbound", rest_name="inbound", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="inbound", rest_name="inbound", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Allow inbound soft reconfiguration for this neighbor'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """inbound must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="inbound", rest_name="inbound", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="inbound", rest_name="inbound", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Allow inbound soft reconfiguration for this neighbor'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
         })
 
     self.__inbound = t
@@ -112,7 +112,7 @@ class soft_reconfiguration(PybindBase):
       self._set()
 
   def _unset_inbound(self):
-    self.__inbound = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="inbound", rest_name="inbound", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__inbound = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="inbound", rest_name="inbound", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Allow inbound soft reconfiguration for this neighbor'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
 
   inbound = __builtin__.property(_get_inbound, _set_inbound)
 

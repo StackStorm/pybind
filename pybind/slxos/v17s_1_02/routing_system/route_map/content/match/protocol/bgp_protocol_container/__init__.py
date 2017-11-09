@@ -17,7 +17,7 @@ class bgp_protocol_container(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__protocol_bgp','__bgp_route_type',)
 
   _yang_name = 'bgp-protocol-container'
-  _rest_name = 'bgp-protocol-container'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -44,8 +44,8 @@ class bgp_protocol_container(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__bgp_route_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'internal': {'value': 3}, u'external': {'value': 1}, u'static-network': {'value': 2}},), is_leaf=True, yang_name="bgp-route-type", rest_name="bgp-route-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='enumeration', is_config=True)
-    self.__protocol_bgp = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="protocol-bgp", rest_name="protocol-bgp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
+    self.__bgp_route_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'internal': {'value': 3}, u'external': {'value': 1}, u'static-network': {'value': 2}},), is_leaf=True, yang_name="bgp-route-type", rest_name="bgp-route-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='enumeration', is_config=True)
+    self.__protocol_bgp = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="protocol-bgp", rest_name="bgp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'BGP protocol.', u'alt-name': u'bgp', u'cli-incomplete-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class bgp_protocol_container(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'routing-system', u'route-map', u'content', u'match', u'protocol', u'bgp-protocol-container']
+      return [u'route-map', u'match', u'protocol']
 
   def _get_protocol_bgp(self):
     """
@@ -104,12 +104,12 @@ class bgp_protocol_container(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="protocol-bgp", rest_name="protocol-bgp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="protocol-bgp", rest_name="bgp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'BGP protocol.', u'alt-name': u'bgp', u'cli-incomplete-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """protocol_bgp must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="protocol-bgp", rest_name="protocol-bgp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="protocol-bgp", rest_name="bgp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'BGP protocol.', u'alt-name': u'bgp', u'cli-incomplete-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)""",
         })
 
     self.__protocol_bgp = t
@@ -117,7 +117,7 @@ class bgp_protocol_container(PybindBase):
       self._set()
 
   def _unset_protocol_bgp(self):
-    self.__protocol_bgp = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="protocol-bgp", rest_name="protocol-bgp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
+    self.__protocol_bgp = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="protocol-bgp", rest_name="bgp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'BGP protocol.', u'alt-name': u'bgp', u'cli-incomplete-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
 
 
   def _get_bgp_route_type(self):
@@ -137,12 +137,12 @@ class bgp_protocol_container(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'internal': {'value': 3}, u'external': {'value': 1}, u'static-network': {'value': 2}},), is_leaf=True, yang_name="bgp-route-type", rest_name="bgp-route-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='enumeration', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'internal': {'value': 3}, u'external': {'value': 1}, u'static-network': {'value': 2}},), is_leaf=True, yang_name="bgp-route-type", rest_name="bgp-route-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bgp_route_type must be of a type compatible with enumeration""",
           'defined-type': "brocade-ip-policy:enumeration",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'internal': {'value': 3}, u'external': {'value': 1}, u'static-network': {'value': 2}},), is_leaf=True, yang_name="bgp-route-type", rest_name="bgp-route-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='enumeration', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'internal': {'value': 3}, u'external': {'value': 1}, u'static-network': {'value': 2}},), is_leaf=True, yang_name="bgp-route-type", rest_name="bgp-route-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='enumeration', is_config=True)""",
         })
 
     self.__bgp_route_type = t
@@ -150,7 +150,7 @@ class bgp_protocol_container(PybindBase):
       self._set()
 
   def _unset_bgp_route_type(self):
-    self.__bgp_route_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'internal': {'value': 3}, u'external': {'value': 1}, u'static-network': {'value': 2}},), is_leaf=True, yang_name="bgp-route-type", rest_name="bgp-route-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='enumeration', is_config=True)
+    self.__bgp_route_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'internal': {'value': 3}, u'external': {'value': 1}, u'static-network': {'value': 2}},), is_leaf=True, yang_name="bgp-route-type", rest_name="bgp-route-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='enumeration', is_config=True)
 
   protocol_bgp = __builtin__.property(_get_protocol_bgp, _set_protocol_bgp)
   bgp_route_type = __builtin__.property(_get_bgp_route_type, _set_bgp_route_type)

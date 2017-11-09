@@ -44,8 +44,8 @@ class next_hop_mpls(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__follow_igp = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="follow-igp", rest_name="follow-igp", parent=self, choice=(u'ch-compare-lsp-follow-igp', u'ca-follow-igp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
-    self.__compare_lsp_metric = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="compare-lsp-metric", rest_name="compare-lsp-metric", parent=self, choice=(u'ch-compare-lsp-follow-igp', u'ca-compare-lsp-metric'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__follow_igp = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="follow-igp", rest_name="follow-igp", parent=self, choice=(u'ch-compare-lsp-follow-igp', u'ca-follow-igp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Use IGP metric and ignore LSP metric'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__compare_lsp_metric = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="compare-lsp-metric", rest_name="compare-lsp-metric", parent=self, choice=(u'ch-compare-lsp-follow-igp', u'ca-compare-lsp-metric'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Compare metric value among LSP ECMP paths'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class next_hop_mpls(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'routing-system', u'router', u'router-bgp', u'address-family', u'ipv4', u'ipv4-unicast', u'default-vrf', u'next-hop-mpls']
+      return [u'router', u'bgp', u'address-family', u'ipv4', u'unicast', u'next-hop-mpls']
 
   def _get_compare_lsp_metric(self):
     """
@@ -100,12 +100,12 @@ class next_hop_mpls(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="compare-lsp-metric", rest_name="compare-lsp-metric", parent=self, choice=(u'ch-compare-lsp-follow-igp', u'ca-compare-lsp-metric'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="compare-lsp-metric", rest_name="compare-lsp-metric", parent=self, choice=(u'ch-compare-lsp-follow-igp', u'ca-compare-lsp-metric'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Compare metric value among LSP ECMP paths'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """compare_lsp_metric must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="compare-lsp-metric", rest_name="compare-lsp-metric", parent=self, choice=(u'ch-compare-lsp-follow-igp', u'ca-compare-lsp-metric'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="compare-lsp-metric", rest_name="compare-lsp-metric", parent=self, choice=(u'ch-compare-lsp-follow-igp', u'ca-compare-lsp-metric'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Compare metric value among LSP ECMP paths'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
         })
 
     self.__compare_lsp_metric = t
@@ -113,7 +113,7 @@ class next_hop_mpls(PybindBase):
       self._set()
 
   def _unset_compare_lsp_metric(self):
-    self.__compare_lsp_metric = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="compare-lsp-metric", rest_name="compare-lsp-metric", parent=self, choice=(u'ch-compare-lsp-follow-igp', u'ca-compare-lsp-metric'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__compare_lsp_metric = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="compare-lsp-metric", rest_name="compare-lsp-metric", parent=self, choice=(u'ch-compare-lsp-follow-igp', u'ca-compare-lsp-metric'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Compare metric value among LSP ECMP paths'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
 
 
   def _get_follow_igp(self):
@@ -133,12 +133,12 @@ class next_hop_mpls(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="follow-igp", rest_name="follow-igp", parent=self, choice=(u'ch-compare-lsp-follow-igp', u'ca-follow-igp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="follow-igp", rest_name="follow-igp", parent=self, choice=(u'ch-compare-lsp-follow-igp', u'ca-follow-igp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Use IGP metric and ignore LSP metric'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """follow_igp must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="follow-igp", rest_name="follow-igp", parent=self, choice=(u'ch-compare-lsp-follow-igp', u'ca-follow-igp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="follow-igp", rest_name="follow-igp", parent=self, choice=(u'ch-compare-lsp-follow-igp', u'ca-follow-igp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Use IGP metric and ignore LSP metric'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
         })
 
     self.__follow_igp = t
@@ -146,7 +146,7 @@ class next_hop_mpls(PybindBase):
       self._set()
 
   def _unset_follow_igp(self):
-    self.__follow_igp = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="follow-igp", rest_name="follow-igp", parent=self, choice=(u'ch-compare-lsp-follow-igp', u'ca-follow-igp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__follow_igp = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="follow-igp", rest_name="follow-igp", parent=self, choice=(u'ch-compare-lsp-follow-igp', u'ca-follow-igp'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Use IGP metric and ignore LSP metric'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
 
   compare_lsp_metric = __builtin__.property(_get_compare_lsp_metric, _set_compare_lsp_metric)
   follow_igp = __builtin__.property(_get_follow_igp, _set_follow_igp)

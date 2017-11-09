@@ -47,8 +47,8 @@ class next_hop(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__peer_address = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="peer-address", rest_name="peer-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
-    self.__next_hop_list = YANGDynClass(base=YANGListType("next_hop_addr",next_hop_list.next_hop_list, yang_name="next-hop-list", rest_name="next-hop-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='next-hop-addr', extensions=None), is_container='list', yang_name="next-hop-list", rest_name="next-hop-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)
+    self.__peer_address = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="peer-address", rest_name="peer-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'BGP peer IP address', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
+    self.__next_hop_list = YANGDynClass(base=YANGListType("next_hop_addr",next_hop_list.next_hop_list, yang_name="next-hop-list", rest_name="next-hop-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='next-hop-addr', extensions={u'tailf-common': {u'callpoint': u'pbrnexthop-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="next-hop-list", rest_name="next-hop-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pbrnexthop-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -84,7 +84,7 @@ class next_hop(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'routing-system', u'route-map', u'content', u'set', u'ip', u'next-hop']
+      return [u'route-map', u'set', u'ip', u'next-hop']
 
   def _get_peer_address(self):
     """
@@ -107,12 +107,12 @@ class next_hop(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="peer-address", rest_name="peer-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="peer-address", rest_name="peer-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'BGP peer IP address', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """peer_address must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="peer-address", rest_name="peer-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="peer-address", rest_name="peer-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'BGP peer IP address', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)""",
         })
 
     self.__peer_address = t
@@ -120,7 +120,7 @@ class next_hop(PybindBase):
       self._set()
 
   def _unset_peer_address(self):
-    self.__peer_address = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="peer-address", rest_name="peer-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
+    self.__peer_address = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="peer-address", rest_name="peer-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'BGP peer IP address', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='empty', is_config=True)
 
 
   def _get_next_hop_list(self):
@@ -140,12 +140,12 @@ class next_hop(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("next_hop_addr",next_hop_list.next_hop_list, yang_name="next-hop-list", rest_name="next-hop-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='next-hop-addr', extensions=None), is_container='list', yang_name="next-hop-list", rest_name="next-hop-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("next_hop_addr",next_hop_list.next_hop_list, yang_name="next-hop-list", rest_name="next-hop-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='next-hop-addr', extensions={u'tailf-common': {u'callpoint': u'pbrnexthop-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="next-hop-list", rest_name="next-hop-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pbrnexthop-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """next_hop_list must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("next_hop_addr",next_hop_list.next_hop_list, yang_name="next-hop-list", rest_name="next-hop-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='next-hop-addr', extensions=None), is_container='list', yang_name="next-hop-list", rest_name="next-hop-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("next_hop_addr",next_hop_list.next_hop_list, yang_name="next-hop-list", rest_name="next-hop-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='next-hop-addr', extensions={u'tailf-common': {u'callpoint': u'pbrnexthop-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="next-hop-list", rest_name="next-hop-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pbrnexthop-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)""",
         })
 
     self.__next_hop_list = t
@@ -153,7 +153,7 @@ class next_hop(PybindBase):
       self._set()
 
   def _unset_next_hop_list(self):
-    self.__next_hop_list = YANGDynClass(base=YANGListType("next_hop_addr",next_hop_list.next_hop_list, yang_name="next-hop-list", rest_name="next-hop-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='next-hop-addr', extensions=None), is_container='list', yang_name="next-hop-list", rest_name="next-hop-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)
+    self.__next_hop_list = YANGDynClass(base=YANGListType("next_hop_addr",next_hop_list.next_hop_list, yang_name="next-hop-list", rest_name="next-hop-list", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='next-hop-addr', extensions={u'tailf-common': {u'callpoint': u'pbrnexthop-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="next-hop-list", rest_name="next-hop-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'pbrnexthop-cp', u'cli-drop-node-name': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='list', is_config=True)
 
   peer_address = __builtin__.property(_get_peer_address, _set_peer_address)
   next_hop_list = __builtin__.property(_get_next_hop_list, _set_next_hop_list)

@@ -45,13 +45,13 @@ class advertise(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__dcbx_fcoe_logical_link_tlv = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dcbx-fcoe-logical-link-tlv", rest_name="dcbx-fcoe-logical-link-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
-    self.__dot1_tlv = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dot1-tlv", rest_name="dot1-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
-    self.__optional_tlv = YANGDynClass(base=optional_tlv.optional_tlv, is_container='container', presence=False, yang_name="optional-tlv", rest_name="optional-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='container', is_config=True)
-    self.__dcbx_tlv = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dcbx-tlv", rest_name="dcbx-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
-    self.__dcbx_fcoe_app_tlv = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dcbx-fcoe-app-tlv", rest_name="dcbx-fcoe-app-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
-    self.__dcbx_iscsi_app_tlv = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dcbx-iscsi-app-tlv", rest_name="dcbx-iscsi-app-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
-    self.__dot3_tlv = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dot3-tlv", rest_name="dot3-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
+    self.__dcbx_fcoe_logical_link_tlv = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dcbx-fcoe-logical-link-tlv", rest_name="dcbx-fcoe-logical-link-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'IEEE Data Center Bridging eXchange FCoE Logical \nLink TLV', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
+    self.__dot1_tlv = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dot1-tlv", rest_name="dot1-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'IEEE 802.1 Organizationally Specific TLV'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
+    self.__optional_tlv = YANGDynClass(base=optional_tlv.optional_tlv, is_container='container', presence=False, yang_name="optional-tlv", rest_name="optional-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Optional TLVs.', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='container', is_config=True)
+    self.__dcbx_tlv = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dcbx-tlv", rest_name="dcbx-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-run-template': u'$(.?\\r:no advertise dcbx-tlv\n)', u'cli-show-no': None, u'info': u'IEEE Data Center Bridging eXchange TLV.'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
+    self.__dcbx_fcoe_app_tlv = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dcbx-fcoe-app-tlv", rest_name="dcbx-fcoe-app-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'IEEE Data Center Bridging eXchange FCoE Application\nTLV.', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
+    self.__dcbx_iscsi_app_tlv = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dcbx-iscsi-app-tlv", rest_name="dcbx-iscsi-app-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'IEEE Data Center Bridging eXchange iSCSI Application\nTLV.'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
+    self.__dot3_tlv = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dot3-tlv", rest_name="dot3-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'IEEE 802.3 Organizationally Specific TLV'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -106,12 +106,12 @@ class advertise(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="dcbx-fcoe-app-tlv", rest_name="dcbx-fcoe-app-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="dcbx-fcoe-app-tlv", rest_name="dcbx-fcoe-app-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'IEEE Data Center Bridging eXchange FCoE Application\nTLV.', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dcbx_fcoe_app_tlv must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dcbx-fcoe-app-tlv", rest_name="dcbx-fcoe-app-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dcbx-fcoe-app-tlv", rest_name="dcbx-fcoe-app-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'IEEE Data Center Bridging eXchange FCoE Application\nTLV.', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)""",
         })
 
     self.__dcbx_fcoe_app_tlv = t
@@ -119,7 +119,7 @@ class advertise(PybindBase):
       self._set()
 
   def _unset_dcbx_fcoe_app_tlv(self):
-    self.__dcbx_fcoe_app_tlv = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dcbx-fcoe-app-tlv", rest_name="dcbx-fcoe-app-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
+    self.__dcbx_fcoe_app_tlv = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dcbx-fcoe-app-tlv", rest_name="dcbx-fcoe-app-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'IEEE Data Center Bridging eXchange FCoE Application\nTLV.', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
 
 
   def _get_dcbx_fcoe_logical_link_tlv(self):
@@ -139,12 +139,12 @@ class advertise(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="dcbx-fcoe-logical-link-tlv", rest_name="dcbx-fcoe-logical-link-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="dcbx-fcoe-logical-link-tlv", rest_name="dcbx-fcoe-logical-link-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'IEEE Data Center Bridging eXchange FCoE Logical \nLink TLV', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dcbx_fcoe_logical_link_tlv must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dcbx-fcoe-logical-link-tlv", rest_name="dcbx-fcoe-logical-link-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dcbx-fcoe-logical-link-tlv", rest_name="dcbx-fcoe-logical-link-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'IEEE Data Center Bridging eXchange FCoE Logical \nLink TLV', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)""",
         })
 
     self.__dcbx_fcoe_logical_link_tlv = t
@@ -152,7 +152,7 @@ class advertise(PybindBase):
       self._set()
 
   def _unset_dcbx_fcoe_logical_link_tlv(self):
-    self.__dcbx_fcoe_logical_link_tlv = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dcbx-fcoe-logical-link-tlv", rest_name="dcbx-fcoe-logical-link-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
+    self.__dcbx_fcoe_logical_link_tlv = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dcbx-fcoe-logical-link-tlv", rest_name="dcbx-fcoe-logical-link-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'IEEE Data Center Bridging eXchange FCoE Logical \nLink TLV', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
 
 
   def _get_dcbx_iscsi_app_tlv(self):
@@ -172,12 +172,12 @@ class advertise(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="dcbx-iscsi-app-tlv", rest_name="dcbx-iscsi-app-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="dcbx-iscsi-app-tlv", rest_name="dcbx-iscsi-app-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'IEEE Data Center Bridging eXchange iSCSI Application\nTLV.'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dcbx_iscsi_app_tlv must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dcbx-iscsi-app-tlv", rest_name="dcbx-iscsi-app-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dcbx-iscsi-app-tlv", rest_name="dcbx-iscsi-app-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'IEEE Data Center Bridging eXchange iSCSI Application\nTLV.'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)""",
         })
 
     self.__dcbx_iscsi_app_tlv = t
@@ -185,7 +185,7 @@ class advertise(PybindBase):
       self._set()
 
   def _unset_dcbx_iscsi_app_tlv(self):
-    self.__dcbx_iscsi_app_tlv = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dcbx-iscsi-app-tlv", rest_name="dcbx-iscsi-app-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
+    self.__dcbx_iscsi_app_tlv = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dcbx-iscsi-app-tlv", rest_name="dcbx-iscsi-app-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'IEEE Data Center Bridging eXchange iSCSI Application\nTLV.'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
 
 
   def _get_dcbx_tlv(self):
@@ -205,12 +205,12 @@ class advertise(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="dcbx-tlv", rest_name="dcbx-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="dcbx-tlv", rest_name="dcbx-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-run-template': u'$(.?\\r:no advertise dcbx-tlv\n)', u'cli-show-no': None, u'info': u'IEEE Data Center Bridging eXchange TLV.'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dcbx_tlv must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dcbx-tlv", rest_name="dcbx-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dcbx-tlv", rest_name="dcbx-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-run-template': u'$(.?\\r:no advertise dcbx-tlv\n)', u'cli-show-no': None, u'info': u'IEEE Data Center Bridging eXchange TLV.'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)""",
         })
 
     self.__dcbx_tlv = t
@@ -218,7 +218,7 @@ class advertise(PybindBase):
       self._set()
 
   def _unset_dcbx_tlv(self):
-    self.__dcbx_tlv = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dcbx-tlv", rest_name="dcbx-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
+    self.__dcbx_tlv = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dcbx-tlv", rest_name="dcbx-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-run-template': u'$(.?\\r:no advertise dcbx-tlv\n)', u'cli-show-no': None, u'info': u'IEEE Data Center Bridging eXchange TLV.'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
 
 
   def _get_dot1_tlv(self):
@@ -238,12 +238,12 @@ class advertise(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="dot1-tlv", rest_name="dot1-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="dot1-tlv", rest_name="dot1-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'IEEE 802.1 Organizationally Specific TLV'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dot1_tlv must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dot1-tlv", rest_name="dot1-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dot1-tlv", rest_name="dot1-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'IEEE 802.1 Organizationally Specific TLV'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)""",
         })
 
     self.__dot1_tlv = t
@@ -251,7 +251,7 @@ class advertise(PybindBase):
       self._set()
 
   def _unset_dot1_tlv(self):
-    self.__dot1_tlv = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dot1-tlv", rest_name="dot1-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
+    self.__dot1_tlv = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dot1-tlv", rest_name="dot1-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'IEEE 802.1 Organizationally Specific TLV'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
 
 
   def _get_dot3_tlv(self):
@@ -271,12 +271,12 @@ class advertise(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="dot3-tlv", rest_name="dot3-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="dot3-tlv", rest_name="dot3-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'IEEE 802.3 Organizationally Specific TLV'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dot3_tlv must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dot3-tlv", rest_name="dot3-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dot3-tlv", rest_name="dot3-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'IEEE 802.3 Organizationally Specific TLV'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)""",
         })
 
     self.__dot3_tlv = t
@@ -284,7 +284,7 @@ class advertise(PybindBase):
       self._set()
 
   def _unset_dot3_tlv(self):
-    self.__dot3_tlv = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dot3-tlv", rest_name="dot3-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
+    self.__dot3_tlv = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="dot3-tlv", rest_name="dot3-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'IEEE 802.3 Organizationally Specific TLV'}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='empty', is_config=True)
 
 
   def _get_optional_tlv(self):
@@ -304,12 +304,12 @@ class advertise(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=optional_tlv.optional_tlv, is_container='container', presence=False, yang_name="optional-tlv", rest_name="optional-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=optional_tlv.optional_tlv, is_container='container', presence=False, yang_name="optional-tlv", rest_name="optional-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Optional TLVs.', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """optional_tlv must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=optional_tlv.optional_tlv, is_container='container', presence=False, yang_name="optional-tlv", rest_name="optional-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=optional_tlv.optional_tlv, is_container='container', presence=False, yang_name="optional-tlv", rest_name="optional-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Optional TLVs.', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='container', is_config=True)""",
         })
 
     self.__optional_tlv = t
@@ -317,7 +317,7 @@ class advertise(PybindBase):
       self._set()
 
   def _unset_optional_tlv(self):
-    self.__optional_tlv = YANGDynClass(base=optional_tlv.optional_tlv, is_container='container', presence=False, yang_name="optional-tlv", rest_name="optional-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='container', is_config=True)
+    self.__optional_tlv = YANGDynClass(base=optional_tlv.optional_tlv, is_container='container', presence=False, yang_name="optional-tlv", rest_name="optional-tlv", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'The Optional TLVs.', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-lldp', defining_module='brocade-lldp', yang_type='container', is_config=True)
 
   dcbx_fcoe_app_tlv = __builtin__.property(_get_dcbx_fcoe_app_tlv, _set_dcbx_fcoe_app_tlv)
   dcbx_fcoe_logical_link_tlv = __builtin__.property(_get_dcbx_fcoe_logical_link_tlv, _set_dcbx_fcoe_logical_link_tlv)

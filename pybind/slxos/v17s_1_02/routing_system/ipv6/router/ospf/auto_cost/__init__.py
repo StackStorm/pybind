@@ -46,7 +46,7 @@ class auto_cost(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__reference_bandwidth = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4294967']}), is_leaf=True, yang_name="reference-bandwidth", rest_name="reference-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='ospf:band-width', is_config=True)
+    self.__reference_bandwidth = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4294967']}), is_leaf=True, yang_name="reference-bandwidth", rest_name="reference-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set OSPFv3  Auto-cost Reference-bandwidth in Mbits per second'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='ospf:band-width', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -82,7 +82,7 @@ class auto_cost(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'routing-system', u'ipv6', u'router', u'ospf', u'auto-cost']
+      return [u'ipv6', u'router', u'ospf', u'auto-cost']
 
   def _get_reference_bandwidth(self):
     """
@@ -105,12 +105,12 @@ class auto_cost(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4294967']}), is_leaf=True, yang_name="reference-bandwidth", rest_name="reference-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='ospf:band-width', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4294967']}), is_leaf=True, yang_name="reference-bandwidth", rest_name="reference-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set OSPFv3  Auto-cost Reference-bandwidth in Mbits per second'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='ospf:band-width', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """reference_bandwidth must be of a type compatible with ospf:band-width""",
           'defined-type': "ospf:band-width",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4294967']}), is_leaf=True, yang_name="reference-bandwidth", rest_name="reference-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='ospf:band-width', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4294967']}), is_leaf=True, yang_name="reference-bandwidth", rest_name="reference-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set OSPFv3  Auto-cost Reference-bandwidth in Mbits per second'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='ospf:band-width', is_config=True)""",
         })
 
     self.__reference_bandwidth = t
@@ -118,7 +118,7 @@ class auto_cost(PybindBase):
       self._set()
 
   def _unset_reference_bandwidth(self):
-    self.__reference_bandwidth = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4294967']}), is_leaf=True, yang_name="reference-bandwidth", rest_name="reference-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='ospf:band-width', is_config=True)
+    self.__reference_bandwidth = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4294967']}), is_leaf=True, yang_name="reference-bandwidth", rest_name="reference-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set OSPFv3  Auto-cost Reference-bandwidth in Mbits per second'}}, namespace='urn:brocade.com:mgmt:brocade-ospfv3', defining_module='brocade-ospfv3', yang_type='ospf:band-width', is_config=True)
 
   reference_bandwidth = __builtin__.property(_get_reference_bandwidth, _set_reference_bandwidth)
 

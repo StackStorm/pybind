@@ -46,8 +46,8 @@ class bridge_domain(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__bd_add = YANGDynClass(base=bd_add.bd_add, is_container='container', presence=False, yang_name="bd-add", rest_name="bd-add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
-    self.__evpn_bd = YANGDynClass(base=YANGListType("bd_number",evpn_bd.evpn_bd, yang_name="evpn-bd", rest_name="evpn-bd", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bd-number', extensions=None), is_container='list', yang_name="evpn-bd", rest_name="evpn-bd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
+    self.__bd_add = YANGDynClass(base=bd_add.bd_add, is_container='container', presence=False, yang_name="bd-add", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Add/Remove bridge domains from EVPN Instance', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__evpn_bd = YANGDynClass(base=YANGListType("bd_number",evpn_bd.evpn_bd, yang_name="evpn-bd", rest_name="evpn-bd", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bd-number', extensions={u'tailf-common': {u'info': u'Bridge Domain configuration', u'cli-no-key-completion': None, u'callpoint': u'EvpnBDConfig', u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'evpn-bridge-domain-$(bd-number)'}}), is_container='list', yang_name="evpn-bd", rest_name="evpn-bd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bridge Domain configuration', u'cli-no-key-completion': None, u'callpoint': u'EvpnBDConfig', u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'evpn-bridge-domain-$(bd-number)'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -83,7 +83,7 @@ class bridge_domain(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'routing-system', u'evpn-config', u'evpn', u'evpn-instance', u'bridge-domain']
+      return [u'evpn', u'evpn-instance', u'bridge-domain']
 
   def _get_bd_add(self):
     """
@@ -102,12 +102,12 @@ class bridge_domain(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=bd_add.bd_add, is_container='container', presence=False, yang_name="bd-add", rest_name="bd-add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=bd_add.bd_add, is_container='container', presence=False, yang_name="bd-add", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Add/Remove bridge domains from EVPN Instance', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bd_add must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=bd_add.bd_add, is_container='container', presence=False, yang_name="bd-add", rest_name="bd-add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=bd_add.bd_add, is_container='container', presence=False, yang_name="bd-add", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Add/Remove bridge domains from EVPN Instance', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__bd_add = t
@@ -115,7 +115,7 @@ class bridge_domain(PybindBase):
       self._set()
 
   def _unset_bd_add(self):
-    self.__bd_add = YANGDynClass(base=bd_add.bd_add, is_container='container', presence=False, yang_name="bd-add", rest_name="bd-add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__bd_add = YANGDynClass(base=bd_add.bd_add, is_container='container', presence=False, yang_name="bd-add", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Add/Remove bridge domains from EVPN Instance', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
 
   def _get_evpn_bd(self):
@@ -139,12 +139,12 @@ class bridge_domain(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("bd_number",evpn_bd.evpn_bd, yang_name="evpn-bd", rest_name="evpn-bd", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bd-number', extensions=None), is_container='list', yang_name="evpn-bd", rest_name="evpn-bd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("bd_number",evpn_bd.evpn_bd, yang_name="evpn-bd", rest_name="evpn-bd", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bd-number', extensions={u'tailf-common': {u'info': u'Bridge Domain configuration', u'cli-no-key-completion': None, u'callpoint': u'EvpnBDConfig', u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'evpn-bridge-domain-$(bd-number)'}}), is_container='list', yang_name="evpn-bd", rest_name="evpn-bd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bridge Domain configuration', u'cli-no-key-completion': None, u'callpoint': u'EvpnBDConfig', u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'evpn-bridge-domain-$(bd-number)'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """evpn_bd must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("bd_number",evpn_bd.evpn_bd, yang_name="evpn-bd", rest_name="evpn-bd", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bd-number', extensions=None), is_container='list', yang_name="evpn-bd", rest_name="evpn-bd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("bd_number",evpn_bd.evpn_bd, yang_name="evpn-bd", rest_name="evpn-bd", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bd-number', extensions={u'tailf-common': {u'info': u'Bridge Domain configuration', u'cli-no-key-completion': None, u'callpoint': u'EvpnBDConfig', u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'evpn-bridge-domain-$(bd-number)'}}), is_container='list', yang_name="evpn-bd", rest_name="evpn-bd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bridge Domain configuration', u'cli-no-key-completion': None, u'callpoint': u'EvpnBDConfig', u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'evpn-bridge-domain-$(bd-number)'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)""",
         })
 
     self.__evpn_bd = t
@@ -152,7 +152,7 @@ class bridge_domain(PybindBase):
       self._set()
 
   def _unset_evpn_bd(self):
-    self.__evpn_bd = YANGDynClass(base=YANGListType("bd_number",evpn_bd.evpn_bd, yang_name="evpn-bd", rest_name="evpn-bd", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bd-number', extensions=None), is_container='list', yang_name="evpn-bd", rest_name="evpn-bd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
+    self.__evpn_bd = YANGDynClass(base=YANGListType("bd_number",evpn_bd.evpn_bd, yang_name="evpn-bd", rest_name="evpn-bd", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='bd-number', extensions={u'tailf-common': {u'info': u'Bridge Domain configuration', u'cli-no-key-completion': None, u'callpoint': u'EvpnBDConfig', u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'evpn-bridge-domain-$(bd-number)'}}), is_container='list', yang_name="evpn-bd", rest_name="evpn-bd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bridge Domain configuration', u'cli-no-key-completion': None, u'callpoint': u'EvpnBDConfig', u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'evpn-bridge-domain-$(bd-number)'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
 
   bd_add = __builtin__.property(_get_bd_add, _set_bd_add)
   evpn_bd = __builtin__.property(_get_evpn_bd, _set_evpn_bd)

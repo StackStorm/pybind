@@ -17,7 +17,7 @@ class timeout(PybindBase):
   YANG Description: This provides the grouping of all the timeout
 configuration elements.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__re_authperiod','__supp_timeout','__tx_period',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__re_authperiod','__server_timeout','__supp_timeout','__tx_period',)
 
   _yang_name = 'timeout'
   _rest_name = 'timeout'
@@ -47,9 +47,10 @@ configuration elements.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__supp_timeout = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="supp-timeout", rest_name="supp-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='dot1x-supp-timeout-interval', is_config=True)
-    self.__tx_period = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="tx-period", rest_name="tx-period", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='dot1x-tx-timeout-interval', is_config=True)
-    self.__re_authperiod = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 4294967295']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(3600), is_leaf=True, yang_name="re-authperiod", rest_name="re-authperiod", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='dot1x-reauth-timeout-interval', is_config=True)
+    self.__supp_timeout = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="supp-timeout", rest_name="supp-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Supplicant response timeout (default = 30)'}}, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='dot1x-supp-timeout-interval', is_config=True)
+    self.__tx_period = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="tx-period", rest_name="tx-period", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Transmission period in seconds (default = 30)'}}, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='dot1x-tx-timeout-interval', is_config=True)
+    self.__server_timeout = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="server-timeout", rest_name="server-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Server timeout in seconds (default = 30)', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='dot1x-server-timeout-interval', is_config=True)
+    self.__re_authperiod = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 4294967295']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(3600), is_leaf=True, yang_name="re-authperiod", rest_name="re-authperiod", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Reauthentication interval in seconds \n(default = 3600)'}}, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='dot1x-reauth-timeout-interval', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -85,7 +86,7 @@ configuration elements.
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface', u'ethernet', u'dot1x', u'timeout']
+      return [u'interface', u'Ethernet', u'dot1x', u'timeout']
 
   def _get_re_authperiod(self):
     """
@@ -110,12 +111,12 @@ between re-authentication attempts.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 4294967295']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(3600), is_leaf=True, yang_name="re-authperiod", rest_name="re-authperiod", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='dot1x-reauth-timeout-interval', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 4294967295']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(3600), is_leaf=True, yang_name="re-authperiod", rest_name="re-authperiod", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Reauthentication interval in seconds \n(default = 3600)'}}, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='dot1x-reauth-timeout-interval', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """re_authperiod must be of a type compatible with dot1x-reauth-timeout-interval""",
           'defined-type': "brocade-dot1x:dot1x-reauth-timeout-interval",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 4294967295']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(3600), is_leaf=True, yang_name="re-authperiod", rest_name="re-authperiod", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='dot1x-reauth-timeout-interval', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 4294967295']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(3600), is_leaf=True, yang_name="re-authperiod", rest_name="re-authperiod", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Reauthentication interval in seconds \n(default = 3600)'}}, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='dot1x-reauth-timeout-interval', is_config=True)""",
         })
 
     self.__re_authperiod = t
@@ -123,7 +124,54 @@ between re-authentication attempts.
       self._set()
 
   def _unset_re_authperiod(self):
-    self.__re_authperiod = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 4294967295']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(3600), is_leaf=True, yang_name="re-authperiod", rest_name="re-authperiod", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='dot1x-reauth-timeout-interval', is_config=True)
+    self.__re_authperiod = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 4294967295']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(3600), is_leaf=True, yang_name="re-authperiod", rest_name="re-authperiod", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Reauthentication interval in seconds \n(default = 3600)'}}, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='dot1x-reauth-timeout-interval', is_config=True)
+
+
+  def _get_server_timeout(self):
+    """
+    Getter method for server_timeout, mapped from YANG variable /interface/ethernet/dot1x/timeout/server_timeout (dot1x-server-timeout-interval)
+
+    YANG Description: This specifies the dot1x server timeout
+interval. This is the amount of time the switch
+waits for a reply before retransmitting the 
+response to the server, when relaying the 
+response from the client to the authentication
+server.
+    """
+    return self.__server_timeout
+      
+  def _set_server_timeout(self, v, load=False):
+    """
+    Setter method for server_timeout, mapped from YANG variable /interface/ethernet/dot1x/timeout/server_timeout (dot1x-server-timeout-interval)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_server_timeout is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_server_timeout() directly.
+
+    YANG Description: This specifies the dot1x server timeout
+interval. This is the amount of time the switch
+waits for a reply before retransmitting the 
+response to the server, when relaying the 
+response from the client to the authentication
+server.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="server-timeout", rest_name="server-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Server timeout in seconds (default = 30)', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='dot1x-server-timeout-interval', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """server_timeout must be of a type compatible with dot1x-server-timeout-interval""",
+          'defined-type': "brocade-dot1x:dot1x-server-timeout-interval",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="server-timeout", rest_name="server-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Server timeout in seconds (default = 30)', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='dot1x-server-timeout-interval', is_config=True)""",
+        })
+
+    self.__server_timeout = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_server_timeout(self):
+    self.__server_timeout = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="server-timeout", rest_name="server-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Server timeout in seconds (default = 30)', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='dot1x-server-timeout-interval', is_config=True)
 
 
   def _get_supp_timeout(self):
@@ -157,12 +205,12 @@ to client.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="supp-timeout", rest_name="supp-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='dot1x-supp-timeout-interval', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="supp-timeout", rest_name="supp-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Supplicant response timeout (default = 30)'}}, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='dot1x-supp-timeout-interval', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """supp_timeout must be of a type compatible with dot1x-supp-timeout-interval""",
           'defined-type': "brocade-dot1x:dot1x-supp-timeout-interval",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="supp-timeout", rest_name="supp-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='dot1x-supp-timeout-interval', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="supp-timeout", rest_name="supp-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Supplicant response timeout (default = 30)'}}, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='dot1x-supp-timeout-interval', is_config=True)""",
         })
 
     self.__supp_timeout = t
@@ -170,7 +218,7 @@ to client.
       self._set()
 
   def _unset_supp_timeout(self):
-    self.__supp_timeout = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="supp-timeout", rest_name="supp-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='dot1x-supp-timeout-interval', is_config=True)
+    self.__supp_timeout = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="supp-timeout", rest_name="supp-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Supplicant response timeout (default = 30)'}}, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='dot1x-supp-timeout-interval', is_config=True)
 
 
   def _get_tx_period(self):
@@ -200,12 +248,12 @@ retransmitting the request.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="tx-period", rest_name="tx-period", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='dot1x-tx-timeout-interval', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="tx-period", rest_name="tx-period", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Transmission period in seconds (default = 30)'}}, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='dot1x-tx-timeout-interval', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """tx_period must be of a type compatible with dot1x-tx-timeout-interval""",
           'defined-type': "brocade-dot1x:dot1x-tx-timeout-interval",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="tx-period", rest_name="tx-period", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='dot1x-tx-timeout-interval', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="tx-period", rest_name="tx-period", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Transmission period in seconds (default = 30)'}}, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='dot1x-tx-timeout-interval', is_config=True)""",
         })
 
     self.__tx_period = t
@@ -213,13 +261,14 @@ retransmitting the request.
       self._set()
 
   def _unset_tx_period(self):
-    self.__tx_period = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="tx-period", rest_name="tx-period", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='dot1x-tx-timeout-interval', is_config=True)
+    self.__tx_period = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1 .. 65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="tx-period", rest_name="tx-period", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Transmission period in seconds (default = 30)'}}, namespace='urn:brocade.com:mgmt:brocade-dot1x', defining_module='brocade-dot1x', yang_type='dot1x-tx-timeout-interval', is_config=True)
 
   re_authperiod = __builtin__.property(_get_re_authperiod, _set_re_authperiod)
+  server_timeout = __builtin__.property(_get_server_timeout, _set_server_timeout)
   supp_timeout = __builtin__.property(_get_supp_timeout, _set_supp_timeout)
   tx_period = __builtin__.property(_get_tx_period, _set_tx_period)
 
 
-  _pyangbind_elements = {'re_authperiod': re_authperiod, 'supp_timeout': supp_timeout, 'tx_period': tx_period, }
+  _pyangbind_elements = {'re_authperiod': re_authperiod, 'server_timeout': server_timeout, 'supp_timeout': supp_timeout, 'tx_period': tx_period, }
 
 

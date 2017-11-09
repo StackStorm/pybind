@@ -47,7 +47,7 @@ class protocol(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__ptp = YANGDynClass(base=ptp.ptp, is_container='container', presence=True, yang_name="ptp", rest_name="ptp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='container', is_config=True)
+    self.__ptp = YANGDynClass(base=ptp.ptp, is_container='container', presence=True, yang_name="ptp", rest_name="ptp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Precision Time Protocol', u'callpoint': u'PtpPhy', u'cli-full-command': None, u'cli-add-mode': None, u'cli-full-no': None, u'cli-mode-name': u'config-if-eth-$(name)-ptp'}}, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -83,7 +83,7 @@ class protocol(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface', u'ethernet', u'protocol']
+      return [u'interface', u'Ethernet', u'protocol']
 
   def _get_ptp(self):
     """
@@ -108,12 +108,12 @@ class protocol(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=ptp.ptp, is_container='container', presence=True, yang_name="ptp", rest_name="ptp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=ptp.ptp, is_container='container', presence=True, yang_name="ptp", rest_name="ptp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Precision Time Protocol', u'callpoint': u'PtpPhy', u'cli-full-command': None, u'cli-add-mode': None, u'cli-full-no': None, u'cli-mode-name': u'config-if-eth-$(name)-ptp'}}, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ptp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=ptp.ptp, is_container='container', presence=True, yang_name="ptp", rest_name="ptp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=ptp.ptp, is_container='container', presence=True, yang_name="ptp", rest_name="ptp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Precision Time Protocol', u'callpoint': u'PtpPhy', u'cli-full-command': None, u'cli-add-mode': None, u'cli-full-no': None, u'cli-mode-name': u'config-if-eth-$(name)-ptp'}}, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='container', is_config=True)""",
         })
 
     self.__ptp = t
@@ -121,7 +121,7 @@ class protocol(PybindBase):
       self._set()
 
   def _unset_ptp(self):
-    self.__ptp = YANGDynClass(base=ptp.ptp, is_container='container', presence=True, yang_name="ptp", rest_name="ptp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='container', is_config=True)
+    self.__ptp = YANGDynClass(base=ptp.ptp, is_container='container', presence=True, yang_name="ptp", rest_name="ptp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Precision Time Protocol', u'callpoint': u'PtpPhy', u'cli-full-command': None, u'cli-add-mode': None, u'cli-full-no': None, u'cli-mode-name': u'config-if-eth-$(name)-ptp'}}, namespace='urn:brocade.com:mgmt:brocade-ptp', defining_module='brocade-ptp', yang_type='container', is_config=True)
 
   ptp = __builtin__.property(_get_ptp, _set_ptp)
 

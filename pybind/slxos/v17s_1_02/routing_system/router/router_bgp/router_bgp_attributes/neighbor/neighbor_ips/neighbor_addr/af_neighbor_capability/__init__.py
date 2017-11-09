@@ -18,7 +18,7 @@ class af_neighbor_capability(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__as4',)
 
   _yang_name = 'af-neighbor-capability'
-  _rest_name = 'af-neighbor-capability'
+  _rest_name = 'capability'
 
   _pybind_generated_by = 'container'
 
@@ -45,7 +45,7 @@ class af_neighbor_capability(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__as4 = YANGDynClass(base=as4.as4, is_container='container', presence=False, yang_name="as4", rest_name="as4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__as4 = YANGDynClass(base=as4.as4, is_container='container', presence=False, yang_name="as4", rest_name="as4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set AS4 capability', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class af_neighbor_capability(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'routing-system', u'router', u'router-bgp', u'router-bgp-attributes', u'neighbor', u'neighbor-ips', u'neighbor-addr', u'af-neighbor-capability']
+      return [u'router', u'bgp', u'neighbor', u'neighbor-addr', u'capability']
 
   def _get_as4(self):
     """
@@ -100,12 +100,12 @@ class af_neighbor_capability(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=as4.as4, is_container='container', presence=False, yang_name="as4", rest_name="as4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=as4.as4, is_container='container', presence=False, yang_name="as4", rest_name="as4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set AS4 capability', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """as4 must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=as4.as4, is_container='container', presence=False, yang_name="as4", rest_name="as4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=as4.as4, is_container='container', presence=False, yang_name="as4", rest_name="as4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set AS4 capability', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__as4 = t
@@ -113,7 +113,7 @@ class af_neighbor_capability(PybindBase):
       self._set()
 
   def _unset_as4(self):
-    self.__as4 = YANGDynClass(base=as4.as4, is_container='container', presence=False, yang_name="as4", rest_name="as4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__as4 = YANGDynClass(base=as4.as4, is_container='container', presence=False, yang_name="as4", rest_name="as4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set AS4 capability', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
   as4 = __builtin__.property(_get_as4, _set_as4)
 

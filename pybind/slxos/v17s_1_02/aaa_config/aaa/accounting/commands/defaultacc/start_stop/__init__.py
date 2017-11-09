@@ -44,7 +44,7 @@ class start_stop(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__server_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'tacacs+': {'value': 2}, u'none': {'value': 1}},), is_leaf=True, yang_name="server-type", rest_name="server-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='acc_srv_type', is_config=True)
+    self.__server_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'tacacs+': {'value': 2}, u'none': {'value': 1}},), is_leaf=True, yang_name="server-type", rest_name="server-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='acc_srv_type', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -80,7 +80,7 @@ class start_stop(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'aaa-config', u'aaa', u'accounting', u'commands', u'defaultacc', u'start-stop']
+      return [u'aaa', u'accounting', u'commands', u'default', u'start-stop']
 
   def _get_server_type(self):
     """
@@ -99,12 +99,12 @@ class start_stop(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'tacacs+': {'value': 2}, u'none': {'value': 1}},), is_leaf=True, yang_name="server-type", rest_name="server-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='acc_srv_type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'tacacs+': {'value': 2}, u'none': {'value': 1}},), is_leaf=True, yang_name="server-type", rest_name="server-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='acc_srv_type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """server_type must be of a type compatible with acc_srv_type""",
           'defined-type': "brocade-aaa:acc_srv_type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'tacacs+': {'value': 2}, u'none': {'value': 1}},), is_leaf=True, yang_name="server-type", rest_name="server-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='acc_srv_type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'tacacs+': {'value': 2}, u'none': {'value': 1}},), is_leaf=True, yang_name="server-type", rest_name="server-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='acc_srv_type', is_config=True)""",
         })
 
     self.__server_type = t
@@ -112,7 +112,7 @@ class start_stop(PybindBase):
       self._set()
 
   def _unset_server_type(self):
-    self.__server_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'tacacs+': {'value': 2}, u'none': {'value': 1}},), is_leaf=True, yang_name="server-type", rest_name="server-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='acc_srv_type', is_config=True)
+    self.__server_type = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'tacacs+': {'value': 2}, u'none': {'value': 1}},), is_leaf=True, yang_name="server-type", rest_name="server-type", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='acc_srv_type', is_config=True)
 
   server_type = __builtin__.property(_get_server_type, _set_server_type)
 

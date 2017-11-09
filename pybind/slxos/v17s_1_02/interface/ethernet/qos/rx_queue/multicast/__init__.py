@@ -45,9 +45,9 @@ class multicast(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__guarantee_rate = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 600000000']}), is_leaf=True, yang_name="guarantee-rate", rest_name="guarantee-rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='guarantee-rate-type', is_config=True)
-    self.__best_effort_rate = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 600000000']}), is_leaf=True, yang_name="best-effort-rate", rest_name="best-effort-rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='best-effort-rate-type', is_config=True)
-    self.__queue_size = YANGDynClass(base=YANGListType("traffic_class",queue_size.queue_size, yang_name="queue-size", rest_name="queue-size", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='traffic-class', extensions=None), is_container='list', yang_name="queue-size", rest_name="queue-size", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='list', is_config=True)
+    self.__guarantee_rate = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 600000000']}), is_leaf=True, yang_name="guarantee-rate", rest_name="guarantee-rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast data guarantee rate', u'cli-full-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='guarantee-rate-type', is_config=True)
+    self.__best_effort_rate = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 600000000']}), is_leaf=True, yang_name="best-effort-rate", rest_name="best-effort-rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast data best effort rate', u'cli-full-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='best-effort-rate-type', is_config=True)
+    self.__queue_size = YANGDynClass(base=YANGListType("traffic_class",queue_size.queue_size, yang_name="queue-size", rest_name="queue-size", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='traffic-class', extensions={u'tailf-common': {u'info': u'Configure multicast queue size', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'intrfc_rx_queue_multicast_qsize'}}), is_container='list', yang_name="queue-size", rest_name="queue-size", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast queue size', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'intrfc_rx_queue_multicast_qsize'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -83,7 +83,7 @@ class multicast(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'interface', u'ethernet', u'qos', u'rx-queue', u'multicast']
+      return [u'interface', u'Ethernet', u'qos', u'rx-queue', u'multicast']
 
   def _get_guarantee_rate(self):
     """
@@ -102,12 +102,12 @@ class multicast(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 600000000']}), is_leaf=True, yang_name="guarantee-rate", rest_name="guarantee-rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='guarantee-rate-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 600000000']}), is_leaf=True, yang_name="guarantee-rate", rest_name="guarantee-rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast data guarantee rate', u'cli-full-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='guarantee-rate-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """guarantee_rate must be of a type compatible with guarantee-rate-type""",
           'defined-type': "brocade-qos-mls:guarantee-rate-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 600000000']}), is_leaf=True, yang_name="guarantee-rate", rest_name="guarantee-rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='guarantee-rate-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 600000000']}), is_leaf=True, yang_name="guarantee-rate", rest_name="guarantee-rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast data guarantee rate', u'cli-full-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='guarantee-rate-type', is_config=True)""",
         })
 
     self.__guarantee_rate = t
@@ -115,7 +115,7 @@ class multicast(PybindBase):
       self._set()
 
   def _unset_guarantee_rate(self):
-    self.__guarantee_rate = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 600000000']}), is_leaf=True, yang_name="guarantee-rate", rest_name="guarantee-rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='guarantee-rate-type', is_config=True)
+    self.__guarantee_rate = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 600000000']}), is_leaf=True, yang_name="guarantee-rate", rest_name="guarantee-rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast data guarantee rate', u'cli-full-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='guarantee-rate-type', is_config=True)
 
 
   def _get_best_effort_rate(self):
@@ -135,12 +135,12 @@ class multicast(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 600000000']}), is_leaf=True, yang_name="best-effort-rate", rest_name="best-effort-rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='best-effort-rate-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 600000000']}), is_leaf=True, yang_name="best-effort-rate", rest_name="best-effort-rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast data best effort rate', u'cli-full-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='best-effort-rate-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """best_effort_rate must be of a type compatible with best-effort-rate-type""",
           'defined-type': "brocade-qos-mls:best-effort-rate-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 600000000']}), is_leaf=True, yang_name="best-effort-rate", rest_name="best-effort-rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='best-effort-rate-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 600000000']}), is_leaf=True, yang_name="best-effort-rate", rest_name="best-effort-rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast data best effort rate', u'cli-full-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='best-effort-rate-type', is_config=True)""",
         })
 
     self.__best_effort_rate = t
@@ -148,7 +148,7 @@ class multicast(PybindBase):
       self._set()
 
   def _unset_best_effort_rate(self):
-    self.__best_effort_rate = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 600000000']}), is_leaf=True, yang_name="best-effort-rate", rest_name="best-effort-rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='best-effort-rate-type', is_config=True)
+    self.__best_effort_rate = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0 .. 600000000']}), is_leaf=True, yang_name="best-effort-rate", rest_name="best-effort-rate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast data best effort rate', u'cli-full-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='best-effort-rate-type', is_config=True)
 
 
   def _get_queue_size(self):
@@ -168,12 +168,12 @@ class multicast(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("traffic_class",queue_size.queue_size, yang_name="queue-size", rest_name="queue-size", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='traffic-class', extensions=None), is_container='list', yang_name="queue-size", rest_name="queue-size", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("traffic_class",queue_size.queue_size, yang_name="queue-size", rest_name="queue-size", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='traffic-class', extensions={u'tailf-common': {u'info': u'Configure multicast queue size', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'intrfc_rx_queue_multicast_qsize'}}), is_container='list', yang_name="queue-size", rest_name="queue-size", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast queue size', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'intrfc_rx_queue_multicast_qsize'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """queue_size must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("traffic_class",queue_size.queue_size, yang_name="queue-size", rest_name="queue-size", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='traffic-class', extensions=None), is_container='list', yang_name="queue-size", rest_name="queue-size", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("traffic_class",queue_size.queue_size, yang_name="queue-size", rest_name="queue-size", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='traffic-class', extensions={u'tailf-common': {u'info': u'Configure multicast queue size', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'intrfc_rx_queue_multicast_qsize'}}), is_container='list', yang_name="queue-size", rest_name="queue-size", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast queue size', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'intrfc_rx_queue_multicast_qsize'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='list', is_config=True)""",
         })
 
     self.__queue_size = t
@@ -181,7 +181,7 @@ class multicast(PybindBase):
       self._set()
 
   def _unset_queue_size(self):
-    self.__queue_size = YANGDynClass(base=YANGListType("traffic_class",queue_size.queue_size, yang_name="queue-size", rest_name="queue-size", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='traffic-class', extensions=None), is_container='list', yang_name="queue-size", rest_name="queue-size", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='list', is_config=True)
+    self.__queue_size = YANGDynClass(base=YANGListType("traffic_class",queue_size.queue_size, yang_name="queue-size", rest_name="queue-size", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='traffic-class', extensions={u'tailf-common': {u'info': u'Configure multicast queue size', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'intrfc_rx_queue_multicast_qsize'}}), is_container='list', yang_name="queue-size", rest_name="queue-size", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure multicast queue size', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'intrfc_rx_queue_multicast_qsize'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mls', defining_module='brocade-qos-mls', yang_type='list', is_config=True)
 
   guarantee_rate = __builtin__.property(_get_guarantee_rate, _set_guarantee_rate)
   best_effort_rate = __builtin__.property(_get_best_effort_rate, _set_best_effort_rate)

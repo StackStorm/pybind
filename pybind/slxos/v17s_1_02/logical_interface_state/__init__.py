@@ -49,9 +49,9 @@ class logical_interface_state(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__main_interface_physical = YANGDynClass(base=YANGListType("intf_name",main_interface_physical.main_interface_physical, yang_name="main-interface-physical", rest_name="main-interface-physical", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='intf-name', extensions=None), is_container='list', yang_name="main-interface-physical", rest_name="main-interface-physical", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
-    self.__main_interface_tunnel = YANGDynClass(base=main_interface_tunnel.main_interface_tunnel, is_container='container', presence=False, yang_name="main-interface-tunnel", rest_name="main-interface-tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
-    self.__main_interface_pseudo_wire = YANGDynClass(base=main_interface_pseudo_wire.main_interface_pseudo_wire, is_container='container', presence=False, yang_name="main-interface-pseudo-wire", rest_name="main-interface-pseudo-wire", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
+    self.__main_interface_physical = YANGDynClass(base=YANGListType("intf_name",main_interface_physical.main_interface_physical, yang_name="main-interface-physical", rest_name="main-interface-physical", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='intf-name', extensions={u'tailf-common': {u'callpoint': u'nsm-main-interface-physical', u'cli-suppress-show-path': None}}), is_container='list', yang_name="main-interface-physical", rest_name="main-interface-physical", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-main-interface-physical', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
+    self.__main_interface_tunnel = YANGDynClass(base=main_interface_tunnel.main_interface_tunnel, is_container='container', presence=False, yang_name="main-interface-tunnel", rest_name="main-interface-tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-main-interface-tunnel', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
+    self.__main_interface_pseudo_wire = YANGDynClass(base=main_interface_pseudo_wire.main_interface_pseudo_wire, is_container='container', presence=False, yang_name="main-interface-pseudo-wire", rest_name="main-interface-pseudo-wire", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-main-interface-pseudo-wire', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -110,12 +110,12 @@ class logical_interface_state(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=main_interface_pseudo_wire.main_interface_pseudo_wire, is_container='container', presence=False, yang_name="main-interface-pseudo-wire", rest_name="main-interface-pseudo-wire", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=main_interface_pseudo_wire.main_interface_pseudo_wire, is_container='container', presence=False, yang_name="main-interface-pseudo-wire", rest_name="main-interface-pseudo-wire", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-main-interface-pseudo-wire', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """main_interface_pseudo_wire must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=main_interface_pseudo_wire.main_interface_pseudo_wire, is_container='container', presence=False, yang_name="main-interface-pseudo-wire", rest_name="main-interface-pseudo-wire", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=main_interface_pseudo_wire.main_interface_pseudo_wire, is_container='container', presence=False, yang_name="main-interface-pseudo-wire", rest_name="main-interface-pseudo-wire", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-main-interface-pseudo-wire', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)""",
         })
 
     self.__main_interface_pseudo_wire = t
@@ -123,7 +123,7 @@ class logical_interface_state(PybindBase):
       self._set()
 
   def _unset_main_interface_pseudo_wire(self):
-    self.__main_interface_pseudo_wire = YANGDynClass(base=main_interface_pseudo_wire.main_interface_pseudo_wire, is_container='container', presence=False, yang_name="main-interface-pseudo-wire", rest_name="main-interface-pseudo-wire", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
+    self.__main_interface_pseudo_wire = YANGDynClass(base=main_interface_pseudo_wire.main_interface_pseudo_wire, is_container='container', presence=False, yang_name="main-interface-pseudo-wire", rest_name="main-interface-pseudo-wire", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-main-interface-pseudo-wire', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
 
 
   def _get_main_interface_tunnel(self):
@@ -147,12 +147,12 @@ class logical_interface_state(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=main_interface_tunnel.main_interface_tunnel, is_container='container', presence=False, yang_name="main-interface-tunnel", rest_name="main-interface-tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=main_interface_tunnel.main_interface_tunnel, is_container='container', presence=False, yang_name="main-interface-tunnel", rest_name="main-interface-tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-main-interface-tunnel', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """main_interface_tunnel must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=main_interface_tunnel.main_interface_tunnel, is_container='container', presence=False, yang_name="main-interface-tunnel", rest_name="main-interface-tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=main_interface_tunnel.main_interface_tunnel, is_container='container', presence=False, yang_name="main-interface-tunnel", rest_name="main-interface-tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-main-interface-tunnel', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)""",
         })
 
     self.__main_interface_tunnel = t
@@ -160,7 +160,7 @@ class logical_interface_state(PybindBase):
       self._set()
 
   def _unset_main_interface_tunnel(self):
-    self.__main_interface_tunnel = YANGDynClass(base=main_interface_tunnel.main_interface_tunnel, is_container='container', presence=False, yang_name="main-interface-tunnel", rest_name="main-interface-tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
+    self.__main_interface_tunnel = YANGDynClass(base=main_interface_tunnel.main_interface_tunnel, is_container='container', presence=False, yang_name="main-interface-tunnel", rest_name="main-interface-tunnel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-main-interface-tunnel', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='container', is_config=False)
 
 
   def _get_main_interface_physical(self):
@@ -184,12 +184,12 @@ class logical_interface_state(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("intf_name",main_interface_physical.main_interface_physical, yang_name="main-interface-physical", rest_name="main-interface-physical", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='intf-name', extensions=None), is_container='list', yang_name="main-interface-physical", rest_name="main-interface-physical", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("intf_name",main_interface_physical.main_interface_physical, yang_name="main-interface-physical", rest_name="main-interface-physical", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='intf-name', extensions={u'tailf-common': {u'callpoint': u'nsm-main-interface-physical', u'cli-suppress-show-path': None}}), is_container='list', yang_name="main-interface-physical", rest_name="main-interface-physical", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-main-interface-physical', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """main_interface_physical must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("intf_name",main_interface_physical.main_interface_physical, yang_name="main-interface-physical", rest_name="main-interface-physical", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='intf-name', extensions=None), is_container='list', yang_name="main-interface-physical", rest_name="main-interface-physical", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("intf_name",main_interface_physical.main_interface_physical, yang_name="main-interface-physical", rest_name="main-interface-physical", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='intf-name', extensions={u'tailf-common': {u'callpoint': u'nsm-main-interface-physical', u'cli-suppress-show-path': None}}), is_container='list', yang_name="main-interface-physical", rest_name="main-interface-physical", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-main-interface-physical', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)""",
         })
 
     self.__main_interface_physical = t
@@ -197,7 +197,7 @@ class logical_interface_state(PybindBase):
       self._set()
 
   def _unset_main_interface_physical(self):
-    self.__main_interface_physical = YANGDynClass(base=YANGListType("intf_name",main_interface_physical.main_interface_physical, yang_name="main-interface-physical", rest_name="main-interface-physical", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='intf-name', extensions=None), is_container='list', yang_name="main-interface-physical", rest_name="main-interface-physical", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
+    self.__main_interface_physical = YANGDynClass(base=YANGListType("intf_name",main_interface_physical.main_interface_physical, yang_name="main-interface-physical", rest_name="main-interface-physical", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='intf-name', extensions={u'tailf-common': {u'callpoint': u'nsm-main-interface-physical', u'cli-suppress-show-path': None}}), is_container='list', yang_name="main-interface-physical", rest_name="main-interface-physical", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-main-interface-physical', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
 
   main_interface_pseudo_wire = __builtin__.property(_get_main_interface_pseudo_wire)
   main_interface_tunnel = __builtin__.property(_get_main_interface_tunnel)

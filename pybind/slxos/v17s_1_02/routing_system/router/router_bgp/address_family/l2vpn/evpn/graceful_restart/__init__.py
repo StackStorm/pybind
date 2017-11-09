@@ -14,7 +14,7 @@ class graceful_restart(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__graceful_restart_status',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__graceful_restart_status','__restart_time','__purge_time','__stale_routes_time',)
 
   _yang_name = 'graceful-restart'
   _rest_name = 'graceful-restart'
@@ -44,7 +44,10 @@ class graceful_restart(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__graceful_restart_status = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="graceful-restart-status", rest_name="graceful-restart-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__graceful_restart_status = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="graceful-restart-status", rest_name="graceful-restart-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__restart_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..3600']}), is_leaf=True, yang_name="restart-time", rest_name="restart-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum restart wait time advertised to neighbors (1-3600s), default 120', u'cli-full-command': None, u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='rtime-type', is_config=True)
+    self.__stale_routes_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..3600']}), is_leaf=True, yang_name="stale-routes-time", rest_name="stale-routes-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum time before helper router clean up stale routes (1-3600s), default 360', u'cli-full-command': None, u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='st-time-type', is_config=True)
+    self.__purge_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..3600']}), is_leaf=True, yang_name="purge-time", rest_name="purge-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum time before restarting router clean up stale (1-3600s), default 600', u'cli-full-command': None, u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='ptime-type', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -80,7 +83,7 @@ class graceful_restart(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'routing-system', u'router', u'router-bgp', u'address-family', u'l2vpn', u'evpn', u'graceful-restart']
+      return [u'router', u'bgp', u'address-family', u'l2vpn', u'evpn', u'graceful-restart']
 
   def _get_graceful_restart_status(self):
     """
@@ -99,12 +102,12 @@ class graceful_restart(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="graceful-restart-status", rest_name="graceful-restart-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="graceful-restart-status", rest_name="graceful-restart-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """graceful_restart_status must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="graceful-restart-status", rest_name="graceful-restart-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="graceful-restart-status", rest_name="graceful-restart-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
         })
 
     self.__graceful_restart_status = t
@@ -112,11 +115,113 @@ class graceful_restart(PybindBase):
       self._set()
 
   def _unset_graceful_restart_status(self):
-    self.__graceful_restart_status = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="graceful-restart-status", rest_name="graceful-restart-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__graceful_restart_status = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="graceful-restart-status", rest_name="graceful-restart-status", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'cli-drop-node-name': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+
+
+  def _get_restart_time(self):
+    """
+    Getter method for restart_time, mapped from YANG variable /routing_system/router/router_bgp/address_family/l2vpn/evpn/graceful_restart/restart_time (rtime-type)
+    """
+    return self.__restart_time
+      
+  def _set_restart_time(self, v, load=False):
+    """
+    Setter method for restart_time, mapped from YANG variable /routing_system/router/router_bgp/address_family/l2vpn/evpn/graceful_restart/restart_time (rtime-type)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_restart_time is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_restart_time() directly.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..3600']}), is_leaf=True, yang_name="restart-time", rest_name="restart-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum restart wait time advertised to neighbors (1-3600s), default 120', u'cli-full-command': None, u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='rtime-type', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """restart_time must be of a type compatible with rtime-type""",
+          'defined-type': "brocade-bgp:rtime-type",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..3600']}), is_leaf=True, yang_name="restart-time", rest_name="restart-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum restart wait time advertised to neighbors (1-3600s), default 120', u'cli-full-command': None, u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='rtime-type', is_config=True)""",
+        })
+
+    self.__restart_time = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_restart_time(self):
+    self.__restart_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..3600']}), is_leaf=True, yang_name="restart-time", rest_name="restart-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum restart wait time advertised to neighbors (1-3600s), default 120', u'cli-full-command': None, u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='rtime-type', is_config=True)
+
+
+  def _get_purge_time(self):
+    """
+    Getter method for purge_time, mapped from YANG variable /routing_system/router/router_bgp/address_family/l2vpn/evpn/graceful_restart/purge_time (ptime-type)
+    """
+    return self.__purge_time
+      
+  def _set_purge_time(self, v, load=False):
+    """
+    Setter method for purge_time, mapped from YANG variable /routing_system/router/router_bgp/address_family/l2vpn/evpn/graceful_restart/purge_time (ptime-type)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_purge_time is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_purge_time() directly.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..3600']}), is_leaf=True, yang_name="purge-time", rest_name="purge-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum time before restarting router clean up stale (1-3600s), default 600', u'cli-full-command': None, u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='ptime-type', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """purge_time must be of a type compatible with ptime-type""",
+          'defined-type': "brocade-bgp:ptime-type",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..3600']}), is_leaf=True, yang_name="purge-time", rest_name="purge-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum time before restarting router clean up stale (1-3600s), default 600', u'cli-full-command': None, u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='ptime-type', is_config=True)""",
+        })
+
+    self.__purge_time = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_purge_time(self):
+    self.__purge_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..3600']}), is_leaf=True, yang_name="purge-time", rest_name="purge-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum time before restarting router clean up stale (1-3600s), default 600', u'cli-full-command': None, u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='ptime-type', is_config=True)
+
+
+  def _get_stale_routes_time(self):
+    """
+    Getter method for stale_routes_time, mapped from YANG variable /routing_system/router/router_bgp/address_family/l2vpn/evpn/graceful_restart/stale_routes_time (st-time-type)
+    """
+    return self.__stale_routes_time
+      
+  def _set_stale_routes_time(self, v, load=False):
+    """
+    Setter method for stale_routes_time, mapped from YANG variable /routing_system/router/router_bgp/address_family/l2vpn/evpn/graceful_restart/stale_routes_time (st-time-type)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_stale_routes_time is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_stale_routes_time() directly.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..3600']}), is_leaf=True, yang_name="stale-routes-time", rest_name="stale-routes-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum time before helper router clean up stale routes (1-3600s), default 360', u'cli-full-command': None, u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='st-time-type', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """stale_routes_time must be of a type compatible with st-time-type""",
+          'defined-type': "brocade-bgp:st-time-type",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..3600']}), is_leaf=True, yang_name="stale-routes-time", rest_name="stale-routes-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum time before helper router clean up stale routes (1-3600s), default 360', u'cli-full-command': None, u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='st-time-type', is_config=True)""",
+        })
+
+    self.__stale_routes_time = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_stale_routes_time(self):
+    self.__stale_routes_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..3600']}), is_leaf=True, yang_name="stale-routes-time", rest_name="stale-routes-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maximum time before helper router clean up stale routes (1-3600s), default 360', u'cli-full-command': None, u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='st-time-type', is_config=True)
 
   graceful_restart_status = __builtin__.property(_get_graceful_restart_status, _set_graceful_restart_status)
+  restart_time = __builtin__.property(_get_restart_time, _set_restart_time)
+  purge_time = __builtin__.property(_get_purge_time, _set_purge_time)
+  stale_routes_time = __builtin__.property(_get_stale_routes_time, _set_stale_routes_time)
 
 
-  _pyangbind_elements = {'graceful_restart_status': graceful_restart_status, }
+  _pyangbind_elements = {'graceful_restart_status': graceful_restart_status, 'restart_time': restart_time, 'purge_time': purge_time, 'stale_routes_time': stale_routes_time, }
 
 
