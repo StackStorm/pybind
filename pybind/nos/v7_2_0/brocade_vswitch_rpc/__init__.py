@@ -54,13 +54,13 @@ manage Virtual switch features.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__get_vnetwork_hosts = YANGDynClass(base=get_vnetwork_hosts.get_vnetwork_hosts, is_leaf=True, yang_name="get-vnetwork-hosts", rest_name="get-vnetwork-hosts", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
-    self.__get_vnetwork_portgroups = YANGDynClass(base=get_vnetwork_portgroups.get_vnetwork_portgroups, is_leaf=True, yang_name="get-vnetwork-portgroups", rest_name="get-vnetwork-portgroups", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
-    self.__get_vmpolicy_macaddr = YANGDynClass(base=get_vmpolicy_macaddr.get_vmpolicy_macaddr, is_leaf=True, yang_name="get-vmpolicy-macaddr", rest_name="get-vmpolicy-macaddr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
-    self.__get_vnetwork_dvs = YANGDynClass(base=get_vnetwork_dvs.get_vnetwork_dvs, is_leaf=True, yang_name="get-vnetwork-dvs", rest_name="get-vnetwork-dvs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
-    self.__get_vnetwork_dvpgs = YANGDynClass(base=get_vnetwork_dvpgs.get_vnetwork_dvpgs, is_leaf=True, yang_name="get-vnetwork-dvpgs", rest_name="get-vnetwork-dvpgs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
-    self.__get_vnetwork_vms = YANGDynClass(base=get_vnetwork_vms.get_vnetwork_vms, is_leaf=True, yang_name="get-vnetwork-vms", rest_name="get-vnetwork-vms", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
-    self.__get_vnetwork_vswitches = YANGDynClass(base=get_vnetwork_vswitches.get_vnetwork_vswitches, is_leaf=True, yang_name="get-vnetwork-vswitches", rest_name="get-vnetwork-vswitches", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
+    self.__get_vnetwork_hosts = YANGDynClass(base=get_vnetwork_hosts.get_vnetwork_hosts, is_leaf=True, yang_name="get-vnetwork-hosts", rest_name="get-vnetwork-hosts", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'host-name'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
+    self.__get_vnetwork_portgroups = YANGDynClass(base=get_vnetwork_portgroups.get_vnetwork_portgroups, is_leaf=True, yang_name="get-vnetwork-portgroups", rest_name="get-vnetwork-portgroups", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'pg-name'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
+    self.__get_vmpolicy_macaddr = YANGDynClass(base=get_vmpolicy_macaddr.get_vmpolicy_macaddr, is_leaf=True, yang_name="get-vmpolicy-macaddr", rest_name="get-vmpolicy-macaddr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mac-addr-policy'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
+    self.__get_vnetwork_dvs = YANGDynClass(base=get_vnetwork_dvs.get_vnetwork_dvs, is_leaf=True, yang_name="get-vnetwork-dvs", rest_name="get-vnetwork-dvs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'dvs-name'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
+    self.__get_vnetwork_dvpgs = YANGDynClass(base=get_vnetwork_dvpgs.get_vnetwork_dvpgs, is_leaf=True, yang_name="get-vnetwork-dvpgs", rest_name="get-vnetwork-dvpgs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'dvpg-name'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
+    self.__get_vnetwork_vms = YANGDynClass(base=get_vnetwork_vms.get_vnetwork_vms, is_leaf=True, yang_name="get-vnetwork-vms", rest_name="get-vnetwork-vms", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'vm-name'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
+    self.__get_vnetwork_vswitches = YANGDynClass(base=get_vnetwork_vswitches.get_vnetwork_vswitches, is_leaf=True, yang_name="get-vnetwork-vswitches", rest_name="get-vnetwork-vswitches", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'vs-name'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -119,12 +119,12 @@ manage Virtual switch features.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=get_vnetwork_hosts.get_vnetwork_hosts, is_leaf=True, yang_name="get-vnetwork-hosts", rest_name="get-vnetwork-hosts", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_vnetwork_hosts.get_vnetwork_hosts, is_leaf=True, yang_name="get-vnetwork-hosts", rest_name="get-vnetwork-hosts", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'host-name'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_vnetwork_hosts must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_vnetwork_hosts.get_vnetwork_hosts, is_leaf=True, yang_name="get-vnetwork-hosts", rest_name="get-vnetwork-hosts", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_vnetwork_hosts.get_vnetwork_hosts, is_leaf=True, yang_name="get-vnetwork-hosts", rest_name="get-vnetwork-hosts", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'host-name'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_vnetwork_hosts = t
@@ -132,7 +132,7 @@ manage Virtual switch features.
       self._set()
 
   def _unset_get_vnetwork_hosts(self):
-    self.__get_vnetwork_hosts = YANGDynClass(base=get_vnetwork_hosts.get_vnetwork_hosts, is_leaf=True, yang_name="get-vnetwork-hosts", rest_name="get-vnetwork-hosts", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
+    self.__get_vnetwork_hosts = YANGDynClass(base=get_vnetwork_hosts.get_vnetwork_hosts, is_leaf=True, yang_name="get-vnetwork-hosts", rest_name="get-vnetwork-hosts", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'host-name'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
 
 
   def _get_get_vnetwork_vms(self):
@@ -156,12 +156,12 @@ manage Virtual switch features.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=get_vnetwork_vms.get_vnetwork_vms, is_leaf=True, yang_name="get-vnetwork-vms", rest_name="get-vnetwork-vms", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_vnetwork_vms.get_vnetwork_vms, is_leaf=True, yang_name="get-vnetwork-vms", rest_name="get-vnetwork-vms", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'vm-name'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_vnetwork_vms must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_vnetwork_vms.get_vnetwork_vms, is_leaf=True, yang_name="get-vnetwork-vms", rest_name="get-vnetwork-vms", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_vnetwork_vms.get_vnetwork_vms, is_leaf=True, yang_name="get-vnetwork-vms", rest_name="get-vnetwork-vms", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'vm-name'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_vnetwork_vms = t
@@ -169,7 +169,7 @@ manage Virtual switch features.
       self._set()
 
   def _unset_get_vnetwork_vms(self):
-    self.__get_vnetwork_vms = YANGDynClass(base=get_vnetwork_vms.get_vnetwork_vms, is_leaf=True, yang_name="get-vnetwork-vms", rest_name="get-vnetwork-vms", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
+    self.__get_vnetwork_vms = YANGDynClass(base=get_vnetwork_vms.get_vnetwork_vms, is_leaf=True, yang_name="get-vnetwork-vms", rest_name="get-vnetwork-vms", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'vm-name'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
 
 
   def _get_get_vnetwork_dvpgs(self):
@@ -193,12 +193,12 @@ manage Virtual switch features.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=get_vnetwork_dvpgs.get_vnetwork_dvpgs, is_leaf=True, yang_name="get-vnetwork-dvpgs", rest_name="get-vnetwork-dvpgs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_vnetwork_dvpgs.get_vnetwork_dvpgs, is_leaf=True, yang_name="get-vnetwork-dvpgs", rest_name="get-vnetwork-dvpgs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'dvpg-name'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_vnetwork_dvpgs must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_vnetwork_dvpgs.get_vnetwork_dvpgs, is_leaf=True, yang_name="get-vnetwork-dvpgs", rest_name="get-vnetwork-dvpgs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_vnetwork_dvpgs.get_vnetwork_dvpgs, is_leaf=True, yang_name="get-vnetwork-dvpgs", rest_name="get-vnetwork-dvpgs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'dvpg-name'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_vnetwork_dvpgs = t
@@ -206,7 +206,7 @@ manage Virtual switch features.
       self._set()
 
   def _unset_get_vnetwork_dvpgs(self):
-    self.__get_vnetwork_dvpgs = YANGDynClass(base=get_vnetwork_dvpgs.get_vnetwork_dvpgs, is_leaf=True, yang_name="get-vnetwork-dvpgs", rest_name="get-vnetwork-dvpgs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
+    self.__get_vnetwork_dvpgs = YANGDynClass(base=get_vnetwork_dvpgs.get_vnetwork_dvpgs, is_leaf=True, yang_name="get-vnetwork-dvpgs", rest_name="get-vnetwork-dvpgs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'dvpg-name'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
 
 
   def _get_get_vnetwork_dvs(self):
@@ -230,12 +230,12 @@ manage Virtual switch features.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=get_vnetwork_dvs.get_vnetwork_dvs, is_leaf=True, yang_name="get-vnetwork-dvs", rest_name="get-vnetwork-dvs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_vnetwork_dvs.get_vnetwork_dvs, is_leaf=True, yang_name="get-vnetwork-dvs", rest_name="get-vnetwork-dvs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'dvs-name'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_vnetwork_dvs must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_vnetwork_dvs.get_vnetwork_dvs, is_leaf=True, yang_name="get-vnetwork-dvs", rest_name="get-vnetwork-dvs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_vnetwork_dvs.get_vnetwork_dvs, is_leaf=True, yang_name="get-vnetwork-dvs", rest_name="get-vnetwork-dvs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'dvs-name'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_vnetwork_dvs = t
@@ -243,7 +243,7 @@ manage Virtual switch features.
       self._set()
 
   def _unset_get_vnetwork_dvs(self):
-    self.__get_vnetwork_dvs = YANGDynClass(base=get_vnetwork_dvs.get_vnetwork_dvs, is_leaf=True, yang_name="get-vnetwork-dvs", rest_name="get-vnetwork-dvs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
+    self.__get_vnetwork_dvs = YANGDynClass(base=get_vnetwork_dvs.get_vnetwork_dvs, is_leaf=True, yang_name="get-vnetwork-dvs", rest_name="get-vnetwork-dvs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'dvs-name'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
 
 
   def _get_get_vnetwork_vswitches(self):
@@ -267,12 +267,12 @@ manage Virtual switch features.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=get_vnetwork_vswitches.get_vnetwork_vswitches, is_leaf=True, yang_name="get-vnetwork-vswitches", rest_name="get-vnetwork-vswitches", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_vnetwork_vswitches.get_vnetwork_vswitches, is_leaf=True, yang_name="get-vnetwork-vswitches", rest_name="get-vnetwork-vswitches", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'vs-name'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_vnetwork_vswitches must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_vnetwork_vswitches.get_vnetwork_vswitches, is_leaf=True, yang_name="get-vnetwork-vswitches", rest_name="get-vnetwork-vswitches", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_vnetwork_vswitches.get_vnetwork_vswitches, is_leaf=True, yang_name="get-vnetwork-vswitches", rest_name="get-vnetwork-vswitches", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'vs-name'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_vnetwork_vswitches = t
@@ -280,7 +280,7 @@ manage Virtual switch features.
       self._set()
 
   def _unset_get_vnetwork_vswitches(self):
-    self.__get_vnetwork_vswitches = YANGDynClass(base=get_vnetwork_vswitches.get_vnetwork_vswitches, is_leaf=True, yang_name="get-vnetwork-vswitches", rest_name="get-vnetwork-vswitches", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
+    self.__get_vnetwork_vswitches = YANGDynClass(base=get_vnetwork_vswitches.get_vnetwork_vswitches, is_leaf=True, yang_name="get-vnetwork-vswitches", rest_name="get-vnetwork-vswitches", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'vs-name'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
 
 
   def _get_get_vnetwork_portgroups(self):
@@ -304,12 +304,12 @@ manage Virtual switch features.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=get_vnetwork_portgroups.get_vnetwork_portgroups, is_leaf=True, yang_name="get-vnetwork-portgroups", rest_name="get-vnetwork-portgroups", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_vnetwork_portgroups.get_vnetwork_portgroups, is_leaf=True, yang_name="get-vnetwork-portgroups", rest_name="get-vnetwork-portgroups", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'pg-name'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_vnetwork_portgroups must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_vnetwork_portgroups.get_vnetwork_portgroups, is_leaf=True, yang_name="get-vnetwork-portgroups", rest_name="get-vnetwork-portgroups", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_vnetwork_portgroups.get_vnetwork_portgroups, is_leaf=True, yang_name="get-vnetwork-portgroups", rest_name="get-vnetwork-portgroups", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'pg-name'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_vnetwork_portgroups = t
@@ -317,7 +317,7 @@ manage Virtual switch features.
       self._set()
 
   def _unset_get_vnetwork_portgroups(self):
-    self.__get_vnetwork_portgroups = YANGDynClass(base=get_vnetwork_portgroups.get_vnetwork_portgroups, is_leaf=True, yang_name="get-vnetwork-portgroups", rest_name="get-vnetwork-portgroups", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
+    self.__get_vnetwork_portgroups = YANGDynClass(base=get_vnetwork_portgroups.get_vnetwork_portgroups, is_leaf=True, yang_name="get-vnetwork-portgroups", rest_name="get-vnetwork-portgroups", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'pg-name'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
 
 
   def _get_get_vmpolicy_macaddr(self):
@@ -341,12 +341,12 @@ manage Virtual switch features.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=get_vmpolicy_macaddr.get_vmpolicy_macaddr, is_leaf=True, yang_name="get-vmpolicy-macaddr", rest_name="get-vmpolicy-macaddr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_vmpolicy_macaddr.get_vmpolicy_macaddr, is_leaf=True, yang_name="get-vmpolicy-macaddr", rest_name="get-vmpolicy-macaddr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mac-addr-policy'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_vmpolicy_macaddr must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_vmpolicy_macaddr.get_vmpolicy_macaddr, is_leaf=True, yang_name="get-vmpolicy-macaddr", rest_name="get-vmpolicy-macaddr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_vmpolicy_macaddr.get_vmpolicy_macaddr, is_leaf=True, yang_name="get-vmpolicy-macaddr", rest_name="get-vmpolicy-macaddr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mac-addr-policy'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_vmpolicy_macaddr = t
@@ -354,7 +354,7 @@ manage Virtual switch features.
       self._set()
 
   def _unset_get_vmpolicy_macaddr(self):
-    self.__get_vmpolicy_macaddr = YANGDynClass(base=get_vmpolicy_macaddr.get_vmpolicy_macaddr, is_leaf=True, yang_name="get-vmpolicy-macaddr", rest_name="get-vmpolicy-macaddr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
+    self.__get_vmpolicy_macaddr = YANGDynClass(base=get_vmpolicy_macaddr.get_vmpolicy_macaddr, is_leaf=True, yang_name="get-vmpolicy-macaddr", rest_name="get-vmpolicy-macaddr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'mac-addr-policy'}}, namespace='urn:brocade.com:mgmt:brocade-vswitch', defining_module='brocade-vswitch', yang_type='rpc', is_config=True)
 
   get_vnetwork_hosts = __builtin__.property(_get_get_vnetwork_hosts, _set_get_vnetwork_hosts)
   get_vnetwork_vms = __builtin__.property(_get_get_vnetwork_vms, _set_get_vnetwork_vms)

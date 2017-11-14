@@ -45,7 +45,7 @@ class http_vrf_cont(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__use_vrf = YANGDynClass(base=YANGListType("use_vrf_name",use_vrf.use_vrf, yang_name="use-vrf", rest_name="use-vrf", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='use-vrf-name', extensions=None), is_container='list', yang_name="use-vrf", rest_name="use-vrf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='list', is_config=True)
+    self.__use_vrf = YANGDynClass(base=YANGListType("use_vrf_name",use_vrf.use_vrf, yang_name="use-vrf", rest_name="use-vrf", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='use-vrf-name', extensions={u'tailf-common': {u'info': u'Configure HTTP/HTTPS on specific VRF', u'cli-compact-syntax': None, u'callpoint': u'http_server_vrf_disable', u'cli-suppress-mode': None}}), is_container='list', yang_name="use-vrf", rest_name="use-vrf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure HTTP/HTTPS on specific VRF', u'cli-compact-syntax': None, u'callpoint': u'http_server_vrf_disable', u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class http_vrf_cont(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("use_vrf_name",use_vrf.use_vrf, yang_name="use-vrf", rest_name="use-vrf", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='use-vrf-name', extensions=None), is_container='list', yang_name="use-vrf", rest_name="use-vrf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("use_vrf_name",use_vrf.use_vrf, yang_name="use-vrf", rest_name="use-vrf", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='use-vrf-name', extensions={u'tailf-common': {u'info': u'Configure HTTP/HTTPS on specific VRF', u'cli-compact-syntax': None, u'callpoint': u'http_server_vrf_disable', u'cli-suppress-mode': None}}), is_container='list', yang_name="use-vrf", rest_name="use-vrf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure HTTP/HTTPS on specific VRF', u'cli-compact-syntax': None, u'callpoint': u'http_server_vrf_disable', u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """use_vrf must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("use_vrf_name",use_vrf.use_vrf, yang_name="use-vrf", rest_name="use-vrf", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='use-vrf-name', extensions=None), is_container='list', yang_name="use-vrf", rest_name="use-vrf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("use_vrf_name",use_vrf.use_vrf, yang_name="use-vrf", rest_name="use-vrf", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='use-vrf-name', extensions={u'tailf-common': {u'info': u'Configure HTTP/HTTPS on specific VRF', u'cli-compact-syntax': None, u'callpoint': u'http_server_vrf_disable', u'cli-suppress-mode': None}}), is_container='list', yang_name="use-vrf", rest_name="use-vrf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure HTTP/HTTPS on specific VRF', u'cli-compact-syntax': None, u'callpoint': u'http_server_vrf_disable', u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='list', is_config=True)""",
         })
 
     self.__use_vrf = t
@@ -113,7 +113,7 @@ class http_vrf_cont(PybindBase):
       self._set()
 
   def _unset_use_vrf(self):
-    self.__use_vrf = YANGDynClass(base=YANGListType("use_vrf_name",use_vrf.use_vrf, yang_name="use-vrf", rest_name="use-vrf", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='use-vrf-name', extensions=None), is_container='list', yang_name="use-vrf", rest_name="use-vrf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='list', is_config=True)
+    self.__use_vrf = YANGDynClass(base=YANGListType("use_vrf_name",use_vrf.use_vrf, yang_name="use-vrf", rest_name="use-vrf", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='use-vrf-name', extensions={u'tailf-common': {u'info': u'Configure HTTP/HTTPS on specific VRF', u'cli-compact-syntax': None, u'callpoint': u'http_server_vrf_disable', u'cli-suppress-mode': None}}), is_container='list', yang_name="use-vrf", rest_name="use-vrf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure HTTP/HTTPS on specific VRF', u'cli-compact-syntax': None, u'callpoint': u'http_server_vrf_disable', u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='list', is_config=True)
 
   use_vrf = __builtin__.property(_get_use_vrf, _set_use_vrf)
 

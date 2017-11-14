@@ -47,9 +47,9 @@ class resource_monitor(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__process = YANGDynClass(base=process.process, is_container='container', presence=False, yang_name="process", rest_name="process", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='container', is_config=True)
-    self.__cpu = YANGDynClass(base=cpu.cpu, is_container='container', presence=False, yang_name="cpu", rest_name="cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='container', is_config=True)
-    self.__memory = YANGDynClass(base=memory.memory, is_container='container', presence=False, yang_name="memory", rest_name="memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='container', is_config=True)
+    self.__process = YANGDynClass(base=process.process, is_container='container', presence=False, yang_name="process", rest_name="process", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Process based resource monitor', u'callpoint': u'rmconfig', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='container', is_config=True)
+    self.__cpu = YANGDynClass(base=cpu.cpu, is_container='container', presence=False, yang_name="cpu", rest_name="cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CPU usage', u'cli-compact-syntax': None, u'callpoint': u'rmconfig', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='container', is_config=True)
+    self.__memory = YANGDynClass(base=memory.memory, is_container='container', presence=False, yang_name="memory", rest_name="memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Memory usage', u'cli-compact-syntax': None, u'callpoint': u'rmconfig', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -104,12 +104,12 @@ class resource_monitor(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=cpu.cpu, is_container='container', presence=False, yang_name="cpu", rest_name="cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=cpu.cpu, is_container='container', presence=False, yang_name="cpu", rest_name="cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CPU usage', u'cli-compact-syntax': None, u'callpoint': u'rmconfig', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """cpu must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=cpu.cpu, is_container='container', presence=False, yang_name="cpu", rest_name="cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=cpu.cpu, is_container='container', presence=False, yang_name="cpu", rest_name="cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CPU usage', u'cli-compact-syntax': None, u'callpoint': u'rmconfig', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='container', is_config=True)""",
         })
 
     self.__cpu = t
@@ -117,7 +117,7 @@ class resource_monitor(PybindBase):
       self._set()
 
   def _unset_cpu(self):
-    self.__cpu = YANGDynClass(base=cpu.cpu, is_container='container', presence=False, yang_name="cpu", rest_name="cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='container', is_config=True)
+    self.__cpu = YANGDynClass(base=cpu.cpu, is_container='container', presence=False, yang_name="cpu", rest_name="cpu", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CPU usage', u'cli-compact-syntax': None, u'callpoint': u'rmconfig', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='container', is_config=True)
 
 
   def _get_memory(self):
@@ -137,12 +137,12 @@ class resource_monitor(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=memory.memory, is_container='container', presence=False, yang_name="memory", rest_name="memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=memory.memory, is_container='container', presence=False, yang_name="memory", rest_name="memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Memory usage', u'cli-compact-syntax': None, u'callpoint': u'rmconfig', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """memory must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=memory.memory, is_container='container', presence=False, yang_name="memory", rest_name="memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=memory.memory, is_container='container', presence=False, yang_name="memory", rest_name="memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Memory usage', u'cli-compact-syntax': None, u'callpoint': u'rmconfig', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='container', is_config=True)""",
         })
 
     self.__memory = t
@@ -150,7 +150,7 @@ class resource_monitor(PybindBase):
       self._set()
 
   def _unset_memory(self):
-    self.__memory = YANGDynClass(base=memory.memory, is_container='container', presence=False, yang_name="memory", rest_name="memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='container', is_config=True)
+    self.__memory = YANGDynClass(base=memory.memory, is_container='container', presence=False, yang_name="memory", rest_name="memory", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Memory usage', u'cli-compact-syntax': None, u'callpoint': u'rmconfig', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='container', is_config=True)
 
 
   def _get_process(self):
@@ -170,12 +170,12 @@ class resource_monitor(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=process.process, is_container='container', presence=False, yang_name="process", rest_name="process", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=process.process, is_container='container', presence=False, yang_name="process", rest_name="process", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Process based resource monitor', u'callpoint': u'rmconfig', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """process must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=process.process, is_container='container', presence=False, yang_name="process", rest_name="process", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=process.process, is_container='container', presence=False, yang_name="process", rest_name="process", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Process based resource monitor', u'callpoint': u'rmconfig', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='container', is_config=True)""",
         })
 
     self.__process = t
@@ -183,7 +183,7 @@ class resource_monitor(PybindBase):
       self._set()
 
   def _unset_process(self):
-    self.__process = YANGDynClass(base=process.process, is_container='container', presence=False, yang_name="process", rest_name="process", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='container', is_config=True)
+    self.__process = YANGDynClass(base=process.process, is_container='container', presence=False, yang_name="process", rest_name="process", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Process based resource monitor', u'callpoint': u'rmconfig', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-resource-monitor', defining_module='brocade-resource-monitor', yang_type='container', is_config=True)
 
   cpu = __builtin__.property(_get_cpu, _set_cpu)
   memory = __builtin__.property(_get_memory, _set_memory)

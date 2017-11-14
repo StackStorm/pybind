@@ -44,7 +44,7 @@ class member_zone(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__zone_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([0-9a-zA-Z_]{1,64})(;([0-9a-zA-Z_]{1,64}))*'}), is_leaf=True, yang_name="zone-name", rest_name="zone-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
+    self.__zone_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([0-9a-zA-Z_]{1,64})(;([0-9a-zA-Z_]{1,64}))*'}), is_leaf=True, yang_name="zone-name", rest_name="zone-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'<WORD>;;Zone-Name - add one or more zone\nmembers to a cfg, the [no] option removes\nonly one member at a time.'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -120,12 +120,12 @@ can be removed at a time.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([0-9a-zA-Z_]{1,64})(;([0-9a-zA-Z_]{1,64}))*'}), is_leaf=True, yang_name="zone-name", rest_name="zone-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([0-9a-zA-Z_]{1,64})(;([0-9a-zA-Z_]{1,64}))*'}), is_leaf=True, yang_name="zone-name", rest_name="zone-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'<WORD>;;Zone-Name - add one or more zone\nmembers to a cfg, the [no] option removes\nonly one member at a time.'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """zone_name must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([0-9a-zA-Z_]{1,64})(;([0-9a-zA-Z_]{1,64}))*'}), is_leaf=True, yang_name="zone-name", rest_name="zone-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([0-9a-zA-Z_]{1,64})(;([0-9a-zA-Z_]{1,64}))*'}), is_leaf=True, yang_name="zone-name", rest_name="zone-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'<WORD>;;Zone-Name - add one or more zone\nmembers to a cfg, the [no] option removes\nonly one member at a time.'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)""",
         })
 
     self.__zone_name = t
@@ -133,7 +133,7 @@ can be removed at a time.
       self._set()
 
   def _unset_zone_name(self):
-    self.__zone_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([0-9a-zA-Z_]{1,64})(;([0-9a-zA-Z_]{1,64}))*'}), is_leaf=True, yang_name="zone-name", rest_name="zone-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
+    self.__zone_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([0-9a-zA-Z_]{1,64})(;([0-9a-zA-Z_]{1,64}))*'}), is_leaf=True, yang_name="zone-name", rest_name="zone-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'<WORD>;;Zone-Name - add one or more zone\nmembers to a cfg, the [no] option removes\nonly one member at a time.'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
 
   zone_name = __builtin__.property(_get_zone_name, _set_zone_name)
 

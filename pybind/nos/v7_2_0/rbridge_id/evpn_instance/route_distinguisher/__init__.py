@@ -44,7 +44,7 @@ class route_distinguisher(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__auto = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="auto", rest_name="auto", parent=self, choice=(u'ch-rd-type', u'ca-rd-auto'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__auto = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="auto", rest_name="auto", parent=self, choice=(u'ch-rd-type', u'ca-rd-auto'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Auto generation of RD'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -99,12 +99,12 @@ class route_distinguisher(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="auto", rest_name="auto", parent=self, choice=(u'ch-rd-type', u'ca-rd-auto'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="auto", rest_name="auto", parent=self, choice=(u'ch-rd-type', u'ca-rd-auto'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Auto generation of RD'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """auto must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="auto", rest_name="auto", parent=self, choice=(u'ch-rd-type', u'ca-rd-auto'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="auto", rest_name="auto", parent=self, choice=(u'ch-rd-type', u'ca-rd-auto'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Auto generation of RD'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)""",
         })
 
     self.__auto = t
@@ -112,7 +112,7 @@ class route_distinguisher(PybindBase):
       self._set()
 
   def _unset_auto(self):
-    self.__auto = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="auto", rest_name="auto", parent=self, choice=(u'ch-rd-type', u'ca-rd-auto'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
+    self.__auto = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="auto", rest_name="auto", parent=self, choice=(u'ch-rd-type', u'ca-rd-auto'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Auto generation of RD'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='empty', is_config=True)
 
   auto = __builtin__.property(_get_auto, _set_auto)
 

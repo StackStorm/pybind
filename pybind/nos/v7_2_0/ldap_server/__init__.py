@@ -46,8 +46,8 @@ class ldap_server(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__host = YANGDynClass(base=YANGListType("hostname use_vrf",host.host, yang_name="host", rest_name="host", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='hostname use-vrf', extensions=None), is_container='list', yang_name="host", rest_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
-    self.__maprole = YANGDynClass(base=maprole.maprole, is_container='container', presence=False, yang_name="maprole", rest_name="maprole", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__host = YANGDynClass(base=YANGListType("hostname use_vrf",host.host, yang_name="host", rest_name="host", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='hostname use-vrf', extensions={u'tailf-common': {u'info': u'Configure a LDAP Server for AAA', u'cli-suppress-key-sort': None, u'callpoint': u'ldap_host_cp', u'cli-suppress-key-abbreviation': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="host", rest_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a LDAP Server for AAA', u'cli-suppress-key-sort': None, u'callpoint': u'ldap_host_cp', u'cli-suppress-key-abbreviation': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
+    self.__maprole = YANGDynClass(base=maprole.maprole, is_container='container', presence=False, yang_name="maprole", rest_name="maprole", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maps a role to a group', u'cli-incomplete-no': None, u'sort-priority': u'17'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -102,12 +102,12 @@ class ldap_server(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("hostname use_vrf",host.host, yang_name="host", rest_name="host", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='hostname use-vrf', extensions=None), is_container='list', yang_name="host", rest_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("hostname use_vrf",host.host, yang_name="host", rest_name="host", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='hostname use-vrf', extensions={u'tailf-common': {u'info': u'Configure a LDAP Server for AAA', u'cli-suppress-key-sort': None, u'callpoint': u'ldap_host_cp', u'cli-suppress-key-abbreviation': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="host", rest_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a LDAP Server for AAA', u'cli-suppress-key-sort': None, u'callpoint': u'ldap_host_cp', u'cli-suppress-key-abbreviation': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """host must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("hostname use_vrf",host.host, yang_name="host", rest_name="host", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='hostname use-vrf', extensions=None), is_container='list', yang_name="host", rest_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("hostname use_vrf",host.host, yang_name="host", rest_name="host", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='hostname use-vrf', extensions={u'tailf-common': {u'info': u'Configure a LDAP Server for AAA', u'cli-suppress-key-sort': None, u'callpoint': u'ldap_host_cp', u'cli-suppress-key-abbreviation': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="host", rest_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a LDAP Server for AAA', u'cli-suppress-key-sort': None, u'callpoint': u'ldap_host_cp', u'cli-suppress-key-abbreviation': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)""",
         })
 
     self.__host = t
@@ -115,7 +115,7 @@ class ldap_server(PybindBase):
       self._set()
 
   def _unset_host(self):
-    self.__host = YANGDynClass(base=YANGListType("hostname use_vrf",host.host, yang_name="host", rest_name="host", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='hostname use-vrf', extensions=None), is_container='list', yang_name="host", rest_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
+    self.__host = YANGDynClass(base=YANGListType("hostname use_vrf",host.host, yang_name="host", rest_name="host", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='hostname use-vrf', extensions={u'tailf-common': {u'info': u'Configure a LDAP Server for AAA', u'cli-suppress-key-sort': None, u'callpoint': u'ldap_host_cp', u'cli-suppress-key-abbreviation': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="host", rest_name="host", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure a LDAP Server for AAA', u'cli-suppress-key-sort': None, u'callpoint': u'ldap_host_cp', u'cli-suppress-key-abbreviation': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='list', is_config=True)
 
 
   def _get_maprole(self):
@@ -135,12 +135,12 @@ class ldap_server(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=maprole.maprole, is_container='container', presence=False, yang_name="maprole", rest_name="maprole", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=maprole.maprole, is_container='container', presence=False, yang_name="maprole", rest_name="maprole", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maps a role to a group', u'cli-incomplete-no': None, u'sort-priority': u'17'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """maprole must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=maprole.maprole, is_container='container', presence=False, yang_name="maprole", rest_name="maprole", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=maprole.maprole, is_container='container', presence=False, yang_name="maprole", rest_name="maprole", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maps a role to a group', u'cli-incomplete-no': None, u'sort-priority': u'17'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
         })
 
     self.__maprole = t
@@ -148,7 +148,7 @@ class ldap_server(PybindBase):
       self._set()
 
   def _unset_maprole(self):
-    self.__maprole = YANGDynClass(base=maprole.maprole, is_container='container', presence=False, yang_name="maprole", rest_name="maprole", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__maprole = YANGDynClass(base=maprole.maprole, is_container='container', presence=False, yang_name="maprole", rest_name="maprole", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Maps a role to a group', u'cli-incomplete-no': None, u'sort-priority': u'17'}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
 
   host = __builtin__.property(_get_host, _set_host)
   maprole = __builtin__.property(_get_maprole, _set_maprole)

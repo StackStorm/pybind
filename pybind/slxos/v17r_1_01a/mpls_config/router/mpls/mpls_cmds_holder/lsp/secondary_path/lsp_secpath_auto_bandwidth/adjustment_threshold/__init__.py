@@ -44,8 +44,8 @@ class adjustment_threshold(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__threshold_percentage = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..100']}), is_leaf=True, yang_name="threshold-percentage", rest_name="threshold-percentage", parent=self, choice=(u'threshold-options', u'threshold-case-percentage'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
-    self.__use_threshold_table = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="use-threshold-table", rest_name="use-threshold-table", parent=self, choice=(u'threshold-options', u'threshold-case-table'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__threshold_percentage = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..100']}), is_leaf=True, yang_name="threshold-percentage", rest_name="threshold-percentage", parent=self, choice=(u'threshold-options', u'threshold-case-percentage'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure Adjustment threshold', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__use_threshold_table = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="use-threshold-table", rest_name="use-threshold-table", parent=self, choice=(u'threshold-options', u'threshold-case-table'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Use absolute thresholds from threshold table'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class adjustment_threshold(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'mpls-config', u'router', u'mpls', u'mpls-cmds-holder', u'lsp', u'secondary-path', u'lsp-secpath-auto-bandwidth', u'adjustment-threshold']
+      return [u'router', u'mpls', u'lsp', u'secondary-path', u'autobw', u'adjustment-threshold']
 
   def _get_threshold_percentage(self):
     """
@@ -100,12 +100,12 @@ class adjustment_threshold(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..100']}), is_leaf=True, yang_name="threshold-percentage", rest_name="threshold-percentage", parent=self, choice=(u'threshold-options', u'threshold-case-percentage'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..100']}), is_leaf=True, yang_name="threshold-percentage", rest_name="threshold-percentage", parent=self, choice=(u'threshold-options', u'threshold-case-percentage'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure Adjustment threshold', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """threshold_percentage must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..100']}), is_leaf=True, yang_name="threshold-percentage", rest_name="threshold-percentage", parent=self, choice=(u'threshold-options', u'threshold-case-percentage'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..100']}), is_leaf=True, yang_name="threshold-percentage", rest_name="threshold-percentage", parent=self, choice=(u'threshold-options', u'threshold-case-percentage'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure Adjustment threshold', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
         })
 
     self.__threshold_percentage = t
@@ -113,7 +113,7 @@ class adjustment_threshold(PybindBase):
       self._set()
 
   def _unset_threshold_percentage(self):
-    self.__threshold_percentage = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..100']}), is_leaf=True, yang_name="threshold-percentage", rest_name="threshold-percentage", parent=self, choice=(u'threshold-options', u'threshold-case-percentage'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__threshold_percentage = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..100']}), is_leaf=True, yang_name="threshold-percentage", rest_name="threshold-percentage", parent=self, choice=(u'threshold-options', u'threshold-case-percentage'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure Adjustment threshold', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
 
 
   def _get_use_threshold_table(self):
@@ -133,12 +133,12 @@ class adjustment_threshold(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="use-threshold-table", rest_name="use-threshold-table", parent=self, choice=(u'threshold-options', u'threshold-case-table'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="use-threshold-table", rest_name="use-threshold-table", parent=self, choice=(u'threshold-options', u'threshold-case-table'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Use absolute thresholds from threshold table'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """use_threshold_table must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="use-threshold-table", rest_name="use-threshold-table", parent=self, choice=(u'threshold-options', u'threshold-case-table'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="use-threshold-table", rest_name="use-threshold-table", parent=self, choice=(u'threshold-options', u'threshold-case-table'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Use absolute thresholds from threshold table'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
         })
 
     self.__use_threshold_table = t
@@ -146,7 +146,7 @@ class adjustment_threshold(PybindBase):
       self._set()
 
   def _unset_use_threshold_table(self):
-    self.__use_threshold_table = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="use-threshold-table", rest_name="use-threshold-table", parent=self, choice=(u'threshold-options', u'threshold-case-table'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__use_threshold_table = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="use-threshold-table", rest_name="use-threshold-table", parent=self, choice=(u'threshold-options', u'threshold-case-table'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Use absolute thresholds from threshold table'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
 
   threshold_percentage = __builtin__.property(_get_threshold_percentage, _set_threshold_percentage)
   use_threshold_table = __builtin__.property(_get_use_threshold_table, _set_use_threshold_table)

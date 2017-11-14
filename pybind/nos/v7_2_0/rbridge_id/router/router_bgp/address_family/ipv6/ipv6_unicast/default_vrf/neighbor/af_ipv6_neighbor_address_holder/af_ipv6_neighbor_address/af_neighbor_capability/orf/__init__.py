@@ -45,7 +45,7 @@ class orf(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__prefixlist = YANGDynClass(base=prefixlist.prefixlist, is_container='container', presence=False, yang_name="prefixlist", rest_name="prefixlist", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__prefixlist = YANGDynClass(base=prefixlist.prefixlist, is_container='container', presence=False, yang_name="prefixlist", rest_name="prefixlist", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise prefixlist ORF capability to this neighbor', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class orf(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=prefixlist.prefixlist, is_container='container', presence=False, yang_name="prefixlist", rest_name="prefixlist", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=prefixlist.prefixlist, is_container='container', presence=False, yang_name="prefixlist", rest_name="prefixlist", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise prefixlist ORF capability to this neighbor', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """prefixlist must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=prefixlist.prefixlist, is_container='container', presence=False, yang_name="prefixlist", rest_name="prefixlist", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=prefixlist.prefixlist, is_container='container', presence=False, yang_name="prefixlist", rest_name="prefixlist", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise prefixlist ORF capability to this neighbor', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__prefixlist = t
@@ -113,7 +113,7 @@ class orf(PybindBase):
       self._set()
 
   def _unset_prefixlist(self):
-    self.__prefixlist = YANGDynClass(base=prefixlist.prefixlist, is_container='container', presence=False, yang_name="prefixlist", rest_name="prefixlist", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__prefixlist = YANGDynClass(base=prefixlist.prefixlist, is_container='container', presence=False, yang_name="prefixlist", rest_name="prefixlist", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Advertise prefixlist ORF capability to this neighbor', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
   prefixlist = __builtin__.property(_get_prefixlist, _set_prefixlist)
 

@@ -17,6 +17,9 @@ Inside a python program do this:
 
 # DO NOT FORGET
 Please look through the README.md file in pyswitchlib
+## 0.1.34:
+* Regenerated full bindings.
+
 ## 0.1.33:
 * Regenerated slxos17s.1.02 bindings due to issue with web posted YANG models.
 

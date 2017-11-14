@@ -45,9 +45,9 @@ class sfp(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__policy = YANGDynClass(base=YANGListType("policy_name",policy.policy, yang_name="policy", rest_name="policy", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='policy_name', extensions=None), is_container='list', yang_name="policy", rest_name="policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='list', is_config=True)
-    self.__apply = YANGDynClass(base=unicode, is_leaf=True, yang_name="apply", rest_name="apply", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='supported-config', is_config=True)
-    self.__pause = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="pause", rest_name="pause", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='empty', is_config=True)
+    self.__policy = YANGDynClass(base=YANGListType("policy_name",policy.policy, yang_name="policy", rest_name="policy", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='policy_name', extensions={u'tailf-common': {u'info': u'Policy name - custom', u'cli-incomplete-show-path': None, u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'sfpmonitoring'}}), is_container='list', yang_name="policy", rest_name="policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Policy name - custom', u'cli-incomplete-show-path': None, u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'sfpmonitoring'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='list', is_config=True)
+    self.__apply = YANGDynClass(base=unicode, is_leaf=True, yang_name="apply", rest_name="apply", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Apply configuration'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='supported-config', is_config=True)
+    self.__pause = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="pause", rest_name="pause", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Pause monitoring'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -102,12 +102,12 @@ class sfp(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="apply", rest_name="apply", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='supported-config', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="apply", rest_name="apply", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Apply configuration'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='supported-config', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """apply must be of a type compatible with supported-config""",
           'defined-type': "brocade-threshold-monitor:supported-config",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="apply", rest_name="apply", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='supported-config', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="apply", rest_name="apply", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Apply configuration'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='supported-config', is_config=True)""",
         })
 
     self.__apply = t
@@ -115,7 +115,7 @@ class sfp(PybindBase):
       self._set()
 
   def _unset_apply(self):
-    self.__apply = YANGDynClass(base=unicode, is_leaf=True, yang_name="apply", rest_name="apply", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='supported-config', is_config=True)
+    self.__apply = YANGDynClass(base=unicode, is_leaf=True, yang_name="apply", rest_name="apply", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Apply configuration'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='supported-config', is_config=True)
 
 
   def _get_pause(self):
@@ -135,12 +135,12 @@ class sfp(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="pause", rest_name="pause", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="pause", rest_name="pause", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Pause monitoring'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """pause must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="pause", rest_name="pause", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="pause", rest_name="pause", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Pause monitoring'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='empty', is_config=True)""",
         })
 
     self.__pause = t
@@ -148,7 +148,7 @@ class sfp(PybindBase):
       self._set()
 
   def _unset_pause(self):
-    self.__pause = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="pause", rest_name="pause", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='empty', is_config=True)
+    self.__pause = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="pause", rest_name="pause", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Pause monitoring'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='empty', is_config=True)
 
 
   def _get_policy(self):
@@ -168,12 +168,12 @@ class sfp(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("policy_name",policy.policy, yang_name="policy", rest_name="policy", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='policy_name', extensions=None), is_container='list', yang_name="policy", rest_name="policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("policy_name",policy.policy, yang_name="policy", rest_name="policy", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='policy_name', extensions={u'tailf-common': {u'info': u'Policy name - custom', u'cli-incomplete-show-path': None, u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'sfpmonitoring'}}), is_container='list', yang_name="policy", rest_name="policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Policy name - custom', u'cli-incomplete-show-path': None, u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'sfpmonitoring'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """policy must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("policy_name",policy.policy, yang_name="policy", rest_name="policy", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='policy_name', extensions=None), is_container='list', yang_name="policy", rest_name="policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("policy_name",policy.policy, yang_name="policy", rest_name="policy", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='policy_name', extensions={u'tailf-common': {u'info': u'Policy name - custom', u'cli-incomplete-show-path': None, u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'sfpmonitoring'}}), is_container='list', yang_name="policy", rest_name="policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Policy name - custom', u'cli-incomplete-show-path': None, u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'sfpmonitoring'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='list', is_config=True)""",
         })
 
     self.__policy = t
@@ -181,7 +181,7 @@ class sfp(PybindBase):
       self._set()
 
   def _unset_policy(self):
-    self.__policy = YANGDynClass(base=YANGListType("policy_name",policy.policy, yang_name="policy", rest_name="policy", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='policy_name', extensions=None), is_container='list', yang_name="policy", rest_name="policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='list', is_config=True)
+    self.__policy = YANGDynClass(base=YANGListType("policy_name",policy.policy, yang_name="policy", rest_name="policy", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='policy_name', extensions={u'tailf-common': {u'info': u'Policy name - custom', u'cli-incomplete-show-path': None, u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'sfpmonitoring'}}), is_container='list', yang_name="policy", rest_name="policy", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Policy name - custom', u'cli-incomplete-show-path': None, u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-incomplete-no': None, u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'callpoint': u'sfpmonitoring'}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='list', is_config=True)
 
   apply = __builtin__.property(_get_apply, _set_apply)
   pause = __builtin__.property(_get_pause, _set_pause)

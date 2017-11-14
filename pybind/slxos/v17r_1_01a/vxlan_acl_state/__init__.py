@@ -47,7 +47,7 @@ class vxlan_acl_state(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__extended_data = YANGDynClass(base=YANGListType("acl_name",extended_data.extended_data, yang_name="extended-data", rest_name="extended-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='acl-name', extensions=None), is_container='list', yang_name="extended-data", rest_name="extended-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='list', is_config=False)
+    self.__extended_data = YANGDynClass(base=YANGListType("acl_name",extended_data.extended_data, yang_name="extended-data", rest_name="extended-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='acl-name', extensions={u'tailf-common': {u'callpoint': u'ssm-extended-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="extended-data", rest_name="extended-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-extended-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='list', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -106,12 +106,12 @@ class vxlan_acl_state(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("acl_name",extended_data.extended_data, yang_name="extended-data", rest_name="extended-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='acl-name', extensions=None), is_container='list', yang_name="extended-data", rest_name="extended-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("acl_name",extended_data.extended_data, yang_name="extended-data", rest_name="extended-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='acl-name', extensions={u'tailf-common': {u'callpoint': u'ssm-extended-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="extended-data", rest_name="extended-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-extended-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """extended_data must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("acl_name",extended_data.extended_data, yang_name="extended-data", rest_name="extended-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='acl-name', extensions=None), is_container='list', yang_name="extended-data", rest_name="extended-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("acl_name",extended_data.extended_data, yang_name="extended-data", rest_name="extended-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='acl-name', extensions={u'tailf-common': {u'callpoint': u'ssm-extended-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="extended-data", rest_name="extended-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-extended-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='list', is_config=False)""",
         })
 
     self.__extended_data = t
@@ -119,7 +119,7 @@ class vxlan_acl_state(PybindBase):
       self._set()
 
   def _unset_extended_data(self):
-    self.__extended_data = YANGDynClass(base=YANGListType("acl_name",extended_data.extended_data, yang_name="extended-data", rest_name="extended-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='acl-name', extensions=None), is_container='list', yang_name="extended-data", rest_name="extended-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='list', is_config=False)
+    self.__extended_data = YANGDynClass(base=YANGListType("acl_name",extended_data.extended_data, yang_name="extended-data", rest_name="extended-data", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='acl-name', extensions={u'tailf-common': {u'callpoint': u'ssm-extended-data', u'cli-suppress-show-path': None}}), is_container='list', yang_name="extended-data", rest_name="extended-data", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'ssm-extended-data', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-ssm-operational', defining_module='brocade-ssm-operational', yang_type='list', is_config=False)
 
   extended_data = __builtin__.property(_get_extended_data)
 

@@ -44,8 +44,8 @@ class ruleaction(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__policyaction = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'NONE': {'value': 0}, u'SNMP': {'value': 1}, u'RASLOG': {'value': 7}, u'SW_CRITICAL': {'value': 4}, u'SFP_MARGINAL': {'value': 6}, u'EMAIL': {'value': 2}, u'SW_MARGINAL': {'value': 5}},), is_leaf=True, yang_name="policyaction", rest_name="actions", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'actions'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='rule-maps-action-type', is_config=True)
-    self.__policyrule = YANGDynClass(base=unicode, is_leaf=True, yang_name="policyrule", rest_name="policyrule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)
+    self.__policyaction = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'NONE': {'value': 0}, u'SNMP': {'value': 1}, u'RASLOG': {'value': 7}, u'SW_CRITICAL': {'value': 4}, u'SFP_MARGINAL': {'value': 6}, u'EMAIL': {'value': 2}, u'SW_MARGINAL': {'value': 5}},), is_leaf=True, yang_name="policyaction", rest_name="actions", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'rule actions', u'alt-name': u'actions'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='rule-maps-action-type', is_config=True)
+    self.__policyrule = YANGDynClass(base=unicode, is_leaf=True, yang_name="policyrule", rest_name="policyrule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'rule name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -105,12 +105,12 @@ class ruleaction(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="policyrule", rest_name="policyrule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="policyrule", rest_name="policyrule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'rule name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """policyrule must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="policyrule", rest_name="policyrule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="policyrule", rest_name="policyrule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'rule name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)""",
         })
 
     self.__policyrule = t
@@ -118,7 +118,7 @@ class ruleaction(PybindBase):
       self._set()
 
   def _unset_policyrule(self):
-    self.__policyrule = YANGDynClass(base=unicode, is_leaf=True, yang_name="policyrule", rest_name="policyrule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)
+    self.__policyrule = YANGDynClass(base=unicode, is_leaf=True, yang_name="policyrule", rest_name="policyrule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'rule name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)
 
 
   def _get_policyaction(self):
@@ -138,12 +138,12 @@ class ruleaction(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'NONE': {'value': 0}, u'SNMP': {'value': 1}, u'RASLOG': {'value': 7}, u'SW_CRITICAL': {'value': 4}, u'SFP_MARGINAL': {'value': 6}, u'EMAIL': {'value': 2}, u'SW_MARGINAL': {'value': 5}},), is_leaf=True, yang_name="policyaction", rest_name="actions", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'actions'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='rule-maps-action-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'NONE': {'value': 0}, u'SNMP': {'value': 1}, u'RASLOG': {'value': 7}, u'SW_CRITICAL': {'value': 4}, u'SFP_MARGINAL': {'value': 6}, u'EMAIL': {'value': 2}, u'SW_MARGINAL': {'value': 5}},), is_leaf=True, yang_name="policyaction", rest_name="actions", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'rule actions', u'alt-name': u'actions'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='rule-maps-action-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """policyaction must be of a type compatible with rule-maps-action-type""",
           'defined-type': "brocade-maps:rule-maps-action-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'NONE': {'value': 0}, u'SNMP': {'value': 1}, u'RASLOG': {'value': 7}, u'SW_CRITICAL': {'value': 4}, u'SFP_MARGINAL': {'value': 6}, u'EMAIL': {'value': 2}, u'SW_MARGINAL': {'value': 5}},), is_leaf=True, yang_name="policyaction", rest_name="actions", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'actions'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='rule-maps-action-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'NONE': {'value': 0}, u'SNMP': {'value': 1}, u'RASLOG': {'value': 7}, u'SW_CRITICAL': {'value': 4}, u'SFP_MARGINAL': {'value': 6}, u'EMAIL': {'value': 2}, u'SW_MARGINAL': {'value': 5}},), is_leaf=True, yang_name="policyaction", rest_name="actions", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'rule actions', u'alt-name': u'actions'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='rule-maps-action-type', is_config=True)""",
         })
 
     self.__policyaction = t
@@ -151,7 +151,7 @@ class ruleaction(PybindBase):
       self._set()
 
   def _unset_policyaction(self):
-    self.__policyaction = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'NONE': {'value': 0}, u'SNMP': {'value': 1}, u'RASLOG': {'value': 7}, u'SW_CRITICAL': {'value': 4}, u'SFP_MARGINAL': {'value': 6}, u'EMAIL': {'value': 2}, u'SW_MARGINAL': {'value': 5}},), is_leaf=True, yang_name="policyaction", rest_name="actions", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'actions'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='rule-maps-action-type', is_config=True)
+    self.__policyaction = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'NONE': {'value': 0}, u'SNMP': {'value': 1}, u'RASLOG': {'value': 7}, u'SW_CRITICAL': {'value': 4}, u'SFP_MARGINAL': {'value': 6}, u'EMAIL': {'value': 2}, u'SW_MARGINAL': {'value': 5}},), is_leaf=True, yang_name="policyaction", rest_name="actions", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'rule actions', u'alt-name': u'actions'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='rule-maps-action-type', is_config=True)
 
   policyrule = __builtin__.property(_get_policyrule, _set_policyrule)
   policyaction = __builtin__.property(_get_policyaction, _set_policyaction)

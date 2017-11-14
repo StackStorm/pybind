@@ -62,41 +62,41 @@ class router_isis_config(PybindBase):
       self._extmethods = False
     self.__ispf_enabled = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'is-enabled': {'value': 1}, u'is-disabled': {'value': 0}},), is_leaf=True, yang_name="ispf-enabled", rest_name="ispf-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-status', is_config=False)
     self.__overload_bgp_wait_time = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="overload-bgp-wait-time", rest_name="overload-bgp-wait-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
-    self.__l1_auth_profile = YANGDynClass(base=l1_auth_profile.l1_auth_profile, is_container='container', presence=False, yang_name="l1-auth-profile", rest_name="l1-auth-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+    self.__l1_auth_profile = YANGDynClass(base=l1_auth_profile.l1_auth_profile, is_container='container', presence=False, yang_name="l1-auth-profile", rest_name="l1-auth-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-l1-authentication-profile', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
     self.__fast_flood_wait_count = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="fast-flood-wait-count", rest_name="fast-flood-wait-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint16', is_config=False)
-    self.__l1_spf6_timer = YANGDynClass(base=l1_spf6_timer.l1_spf6_timer, is_container='container', presence=False, yang_name="l1-spf6-timer", rest_name="l1-spf6-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+    self.__l1_spf6_timer = YANGDynClass(base=l1_spf6_timer.l1_spf6_timer, is_container='container', presence=False, yang_name="l1-spf6-timer", rest_name="l1-spf6-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-spf6-timer-l1', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
     self.__lsp_interval = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="lsp-interval", rest_name="lsp-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
-    self.__debug_handler = YANGDynClass(base=debug_handler.debug_handler, is_container='container', presence=False, yang_name="debug-handler", rest_name="debug-handler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
-    self.__reverse_metric = YANGDynClass(base=reverse_metric.reverse_metric, is_container='container', presence=False, yang_name="reverse-metric", rest_name="reverse-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+    self.__debug_handler = YANGDynClass(base=debug_handler.debug_handler, is_container='container', presence=False, yang_name="debug-handler", rest_name="debug-handler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-debugger', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+    self.__reverse_metric = YANGDynClass(base=reverse_metric.reverse_metric, is_container='container', presence=False, yang_name="reverse-metric", rest_name="reverse-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-reverse-metric-global', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
     self.__overload_state = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'is-enabled': {'value': 1}, u'is-disabled': {'value': 0}},), is_leaf=True, yang_name="overload-state", rest_name="overload-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-status', is_config=False)
-    self.__is_address_family_v6 = YANGDynClass(base=is_address_family_v6.is_address_family_v6, is_container='container', presence=False, yang_name="is-address-family-v6", rest_name="is-address-family-v6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+    self.__is_address_family_v6 = YANGDynClass(base=is_address_family_v6.is_address_family_v6, is_container='container', presence=False, yang_name="is-address-family-v6", rest_name="is-address-family-v6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-address-family-v6', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
     self.__retransmit_interval = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="retransmit-interval", rest_name="retransmit-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint16', is_config=False)
-    self.__l2_spf6_timer = YANGDynClass(base=l2_spf6_timer.l2_spf6_timer, is_container='container', presence=False, yang_name="l2-spf6-timer", rest_name="l2-spf6-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+    self.__l2_spf6_timer = YANGDynClass(base=l2_spf6_timer.l2_spf6_timer, is_container='container', presence=False, yang_name="l2-spf6-timer", rest_name="l2-spf6-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-spf6-timer-l2', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
     self.__lsp_fast_flood_count = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="lsp-fast-flood-count", rest_name="lsp-fast-flood-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint16', is_config=False)
     self.__overload_startup_time = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="overload-startup-time", rest_name="overload-startup-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint32', is_config=False)
     self.__csnp_interval = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="csnp-interval", rest_name="csnp-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint16', is_config=False)
     self.__istct_spf_enabled = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'is-enabled': {'value': 1}, u'is-disabled': {'value': 0}},), is_leaf=True, yang_name="istct-spf-enabled", rest_name="istct-spf-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-status', is_config=False)
     self.__lsp_flood_count = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="lsp-flood-count", rest_name="lsp-flood-count", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint16', is_config=False)
     self.__nsr_state = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'is-enabled': {'value': 1}, u'is-disabled': {'value': 0}},), is_leaf=True, yang_name="nsr-state", rest_name="nsr-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-status', is_config=False)
-    self.__l2_auth_profile = YANGDynClass(base=l2_auth_profile.l2_auth_profile, is_container='container', presence=False, yang_name="l2-auth-profile", rest_name="l2-auth-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+    self.__l2_auth_profile = YANGDynClass(base=l2_auth_profile.l2_auth_profile, is_container='container', presence=False, yang_name="l2-auth-profile", rest_name="l2-auth-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-l2-authentication-profile', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
     self.__overload_wait_on_bgp = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'is-enabled': {'value': 1}, u'is-disabled': {'value': 0}},), is_leaf=True, yang_name="overload-wait-on-bgp", rest_name="overload-wait-on-bgp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-status', is_config=False)
     self.__lsp_gen_interval = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="lsp-gen-interval", rest_name="lsp-gen-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint16', is_config=False)
     self.__lsp_refresh_interval = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="lsp-refresh-interval", rest_name="lsp-refresh-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint16', is_config=False)
     self.__lsp_lifetime = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..65535']},int_size=16), is_leaf=True, yang_name="lsp-lifetime", rest_name="lsp-lifetime", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint16', is_config=False)
     self.__isis_hostname_enabled = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'is-enabled': {'value': 1}, u'is-disabled': {'value': 0}},), is_leaf=True, yang_name="isis-hostname-enabled", rest_name="isis-hostname-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-status', is_config=False)
     self.__hello_padding = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'is-enabled': {'value': 1}, u'is-disabled': {'value': 0}},), is_leaf=True, yang_name="hello-padding", rest_name="hello-padding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-status', is_config=False)
-    self.__isis_system_info = YANGDynClass(base=isis_system_info.isis_system_info, is_container='container', presence=False, yang_name="isis-system-info", rest_name="isis-system-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+    self.__isis_system_info = YANGDynClass(base=isis_system_info.isis_system_info, is_container='container', presence=False, yang_name="isis-system-info", rest_name="isis-system-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-system-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
     self.__graceful_restart_helper = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'is-enabled': {'value': 1}, u'is-disabled': {'value': 0}},), is_leaf=True, yang_name="graceful-restart-helper", rest_name="graceful-restart-helper", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-status', is_config=False)
-    self.__pspf_timer = YANGDynClass(base=pspf_timer.pspf_timer, is_container='container', presence=False, yang_name="pspf-timer", rest_name="pspf-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+    self.__pspf_timer = YANGDynClass(base=pspf_timer.pspf_timer, is_container='container', presence=False, yang_name="pspf-timer", rest_name="pspf-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-pspf-timer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
     self.__bfd_holdover_interval = YANGDynClass(base=RestrictedClassType(base_type=int, restriction_dict={'range': ['0..255']}, int_size=8), is_leaf=True, yang_name="bfd-holdover-interval", rest_name="bfd-holdover-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='uint8', is_config=False)
-    self.__is_address_family_v4 = YANGDynClass(base=is_address_family_v4.is_address_family_v4, is_container='container', presence=False, yang_name="is-address-family-v4", rest_name="is-address-family-v4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+    self.__is_address_family_v4 = YANGDynClass(base=is_address_family_v4.is_address_family_v4, is_container='container', presence=False, yang_name="is-address-family-v4", rest_name="is-address-family-v4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-address-family-v4', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
     self.__enable_code_assertions = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'is-enabled': {'value': 1}, u'is-disabled': {'value': 0}},), is_leaf=True, yang_name="enable-code-assertions", rest_name="enable-code-assertions", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-status', is_config=False)
     self.__bfd = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="bfd", rest_name="bfd", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='boolean', is_config=False)
-    self.__l2_spf_timer = YANGDynClass(base=l2_spf_timer.l2_spf_timer, is_container='container', presence=False, yang_name="l2-spf-timer", rest_name="l2-spf-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+    self.__l2_spf_timer = YANGDynClass(base=l2_spf_timer.l2_spf_timer, is_container='container', presence=False, yang_name="l2-spf-timer", rest_name="l2-spf-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-spf-timer-l2', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
     self.__hello_padding_ptp = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'is-enabled': {'value': 1}, u'is-disabled': {'value': 0}},), is_leaf=True, yang_name="hello-padding-ptp", rest_name="hello-padding-ptp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-status', is_config=False)
-    self.__l1_spf_timer = YANGDynClass(base=l1_spf_timer.l1_spf_timer, is_container='container', presence=False, yang_name="l1-spf-timer", rest_name="l1-spf-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
-    self.__log_handler = YANGDynClass(base=log_handler.log_handler, is_container='container', presence=False, yang_name="log-handler", rest_name="log-handler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
-    self.__pspf6_timer = YANGDynClass(base=pspf6_timer.pspf6_timer, is_container='container', presence=False, yang_name="pspf6-timer", rest_name="pspf6-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+    self.__l1_spf_timer = YANGDynClass(base=l1_spf_timer.l1_spf_timer, is_container='container', presence=False, yang_name="l1-spf-timer", rest_name="l1-spf-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-spf-timer-l1', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+    self.__log_handler = YANGDynClass(base=log_handler.log_handler, is_container='container', presence=False, yang_name="log-handler", rest_name="log-handler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-logger', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+    self.__pspf6_timer = YANGDynClass(base=pspf6_timer.pspf6_timer, is_container='container', presence=False, yang_name="pspf6-timer", rest_name="pspf6-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-pspf6-timer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
     self.__pspf_enabled = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'is-enabled': {'value': 1}, u'is-disabled': {'value': 0}},), is_leaf=True, yang_name="pspf-enabled", rest_name="pspf-enabled", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='isis-status', is_config=False)
 
     load = kwargs.pop("load", None)
@@ -1044,12 +1044,12 @@ class router_isis_config(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=isis_system_info.isis_system_info, is_container='container', presence=False, yang_name="isis-system-info", rest_name="isis-system-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=isis_system_info.isis_system_info, is_container='container', presence=False, yang_name="isis-system-info", rest_name="isis-system-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-system-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """isis_system_info must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=isis_system_info.isis_system_info, is_container='container', presence=False, yang_name="isis-system-info", rest_name="isis-system-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=isis_system_info.isis_system_info, is_container='container', presence=False, yang_name="isis-system-info", rest_name="isis-system-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-system-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)""",
         })
 
     self.__isis_system_info = t
@@ -1057,7 +1057,7 @@ class router_isis_config(PybindBase):
       self._set()
 
   def _unset_isis_system_info(self):
-    self.__isis_system_info = YANGDynClass(base=isis_system_info.isis_system_info, is_container='container', presence=False, yang_name="isis-system-info", rest_name="isis-system-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+    self.__isis_system_info = YANGDynClass(base=isis_system_info.isis_system_info, is_container='container', presence=False, yang_name="isis-system-info", rest_name="isis-system-info", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-system-info', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
 
 
   def _get_l1_auth_profile(self):
@@ -1081,12 +1081,12 @@ class router_isis_config(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=l1_auth_profile.l1_auth_profile, is_container='container', presence=False, yang_name="l1-auth-profile", rest_name="l1-auth-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=l1_auth_profile.l1_auth_profile, is_container='container', presence=False, yang_name="l1-auth-profile", rest_name="l1-auth-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-l1-authentication-profile', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """l1_auth_profile must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=l1_auth_profile.l1_auth_profile, is_container='container', presence=False, yang_name="l1-auth-profile", rest_name="l1-auth-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=l1_auth_profile.l1_auth_profile, is_container='container', presence=False, yang_name="l1-auth-profile", rest_name="l1-auth-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-l1-authentication-profile', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)""",
         })
 
     self.__l1_auth_profile = t
@@ -1094,7 +1094,7 @@ class router_isis_config(PybindBase):
       self._set()
 
   def _unset_l1_auth_profile(self):
-    self.__l1_auth_profile = YANGDynClass(base=l1_auth_profile.l1_auth_profile, is_container='container', presence=False, yang_name="l1-auth-profile", rest_name="l1-auth-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+    self.__l1_auth_profile = YANGDynClass(base=l1_auth_profile.l1_auth_profile, is_container='container', presence=False, yang_name="l1-auth-profile", rest_name="l1-auth-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-l1-authentication-profile', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
 
 
   def _get_l2_auth_profile(self):
@@ -1118,12 +1118,12 @@ class router_isis_config(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=l2_auth_profile.l2_auth_profile, is_container='container', presence=False, yang_name="l2-auth-profile", rest_name="l2-auth-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=l2_auth_profile.l2_auth_profile, is_container='container', presence=False, yang_name="l2-auth-profile", rest_name="l2-auth-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-l2-authentication-profile', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """l2_auth_profile must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=l2_auth_profile.l2_auth_profile, is_container='container', presence=False, yang_name="l2-auth-profile", rest_name="l2-auth-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=l2_auth_profile.l2_auth_profile, is_container='container', presence=False, yang_name="l2-auth-profile", rest_name="l2-auth-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-l2-authentication-profile', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)""",
         })
 
     self.__l2_auth_profile = t
@@ -1131,7 +1131,7 @@ class router_isis_config(PybindBase):
       self._set()
 
   def _unset_l2_auth_profile(self):
-    self.__l2_auth_profile = YANGDynClass(base=l2_auth_profile.l2_auth_profile, is_container='container', presence=False, yang_name="l2-auth-profile", rest_name="l2-auth-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+    self.__l2_auth_profile = YANGDynClass(base=l2_auth_profile.l2_auth_profile, is_container='container', presence=False, yang_name="l2-auth-profile", rest_name="l2-auth-profile", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-l2-authentication-profile', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
 
 
   def _get_log_handler(self):
@@ -1155,12 +1155,12 @@ class router_isis_config(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=log_handler.log_handler, is_container='container', presence=False, yang_name="log-handler", rest_name="log-handler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=log_handler.log_handler, is_container='container', presence=False, yang_name="log-handler", rest_name="log-handler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-logger', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """log_handler must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=log_handler.log_handler, is_container='container', presence=False, yang_name="log-handler", rest_name="log-handler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=log_handler.log_handler, is_container='container', presence=False, yang_name="log-handler", rest_name="log-handler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-logger', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)""",
         })
 
     self.__log_handler = t
@@ -1168,7 +1168,7 @@ class router_isis_config(PybindBase):
       self._set()
 
   def _unset_log_handler(self):
-    self.__log_handler = YANGDynClass(base=log_handler.log_handler, is_container='container', presence=False, yang_name="log-handler", rest_name="log-handler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+    self.__log_handler = YANGDynClass(base=log_handler.log_handler, is_container='container', presence=False, yang_name="log-handler", rest_name="log-handler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-logger', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
 
 
   def _get_l1_spf_timer(self):
@@ -1192,12 +1192,12 @@ class router_isis_config(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=l1_spf_timer.l1_spf_timer, is_container='container', presence=False, yang_name="l1-spf-timer", rest_name="l1-spf-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=l1_spf_timer.l1_spf_timer, is_container='container', presence=False, yang_name="l1-spf-timer", rest_name="l1-spf-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-spf-timer-l1', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """l1_spf_timer must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=l1_spf_timer.l1_spf_timer, is_container='container', presence=False, yang_name="l1-spf-timer", rest_name="l1-spf-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=l1_spf_timer.l1_spf_timer, is_container='container', presence=False, yang_name="l1-spf-timer", rest_name="l1-spf-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-spf-timer-l1', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)""",
         })
 
     self.__l1_spf_timer = t
@@ -1205,7 +1205,7 @@ class router_isis_config(PybindBase):
       self._set()
 
   def _unset_l1_spf_timer(self):
-    self.__l1_spf_timer = YANGDynClass(base=l1_spf_timer.l1_spf_timer, is_container='container', presence=False, yang_name="l1-spf-timer", rest_name="l1-spf-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+    self.__l1_spf_timer = YANGDynClass(base=l1_spf_timer.l1_spf_timer, is_container='container', presence=False, yang_name="l1-spf-timer", rest_name="l1-spf-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-spf-timer-l1', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
 
 
   def _get_l2_spf_timer(self):
@@ -1229,12 +1229,12 @@ class router_isis_config(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=l2_spf_timer.l2_spf_timer, is_container='container', presence=False, yang_name="l2-spf-timer", rest_name="l2-spf-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=l2_spf_timer.l2_spf_timer, is_container='container', presence=False, yang_name="l2-spf-timer", rest_name="l2-spf-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-spf-timer-l2', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """l2_spf_timer must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=l2_spf_timer.l2_spf_timer, is_container='container', presence=False, yang_name="l2-spf-timer", rest_name="l2-spf-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=l2_spf_timer.l2_spf_timer, is_container='container', presence=False, yang_name="l2-spf-timer", rest_name="l2-spf-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-spf-timer-l2', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)""",
         })
 
     self.__l2_spf_timer = t
@@ -1242,7 +1242,7 @@ class router_isis_config(PybindBase):
       self._set()
 
   def _unset_l2_spf_timer(self):
-    self.__l2_spf_timer = YANGDynClass(base=l2_spf_timer.l2_spf_timer, is_container='container', presence=False, yang_name="l2-spf-timer", rest_name="l2-spf-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+    self.__l2_spf_timer = YANGDynClass(base=l2_spf_timer.l2_spf_timer, is_container='container', presence=False, yang_name="l2-spf-timer", rest_name="l2-spf-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-spf-timer-l2', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
 
 
   def _get_l1_spf6_timer(self):
@@ -1266,12 +1266,12 @@ class router_isis_config(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=l1_spf6_timer.l1_spf6_timer, is_container='container', presence=False, yang_name="l1-spf6-timer", rest_name="l1-spf6-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=l1_spf6_timer.l1_spf6_timer, is_container='container', presence=False, yang_name="l1-spf6-timer", rest_name="l1-spf6-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-spf6-timer-l1', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """l1_spf6_timer must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=l1_spf6_timer.l1_spf6_timer, is_container='container', presence=False, yang_name="l1-spf6-timer", rest_name="l1-spf6-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=l1_spf6_timer.l1_spf6_timer, is_container='container', presence=False, yang_name="l1-spf6-timer", rest_name="l1-spf6-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-spf6-timer-l1', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)""",
         })
 
     self.__l1_spf6_timer = t
@@ -1279,7 +1279,7 @@ class router_isis_config(PybindBase):
       self._set()
 
   def _unset_l1_spf6_timer(self):
-    self.__l1_spf6_timer = YANGDynClass(base=l1_spf6_timer.l1_spf6_timer, is_container='container', presence=False, yang_name="l1-spf6-timer", rest_name="l1-spf6-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+    self.__l1_spf6_timer = YANGDynClass(base=l1_spf6_timer.l1_spf6_timer, is_container='container', presence=False, yang_name="l1-spf6-timer", rest_name="l1-spf6-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-spf6-timer-l1', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
 
 
   def _get_l2_spf6_timer(self):
@@ -1303,12 +1303,12 @@ class router_isis_config(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=l2_spf6_timer.l2_spf6_timer, is_container='container', presence=False, yang_name="l2-spf6-timer", rest_name="l2-spf6-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=l2_spf6_timer.l2_spf6_timer, is_container='container', presence=False, yang_name="l2-spf6-timer", rest_name="l2-spf6-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-spf6-timer-l2', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """l2_spf6_timer must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=l2_spf6_timer.l2_spf6_timer, is_container='container', presence=False, yang_name="l2-spf6-timer", rest_name="l2-spf6-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=l2_spf6_timer.l2_spf6_timer, is_container='container', presence=False, yang_name="l2-spf6-timer", rest_name="l2-spf6-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-spf6-timer-l2', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)""",
         })
 
     self.__l2_spf6_timer = t
@@ -1316,7 +1316,7 @@ class router_isis_config(PybindBase):
       self._set()
 
   def _unset_l2_spf6_timer(self):
-    self.__l2_spf6_timer = YANGDynClass(base=l2_spf6_timer.l2_spf6_timer, is_container='container', presence=False, yang_name="l2-spf6-timer", rest_name="l2-spf6-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+    self.__l2_spf6_timer = YANGDynClass(base=l2_spf6_timer.l2_spf6_timer, is_container='container', presence=False, yang_name="l2-spf6-timer", rest_name="l2-spf6-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-spf6-timer-l2', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
 
 
   def _get_pspf_timer(self):
@@ -1340,12 +1340,12 @@ class router_isis_config(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=pspf_timer.pspf_timer, is_container='container', presence=False, yang_name="pspf-timer", rest_name="pspf-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=pspf_timer.pspf_timer, is_container='container', presence=False, yang_name="pspf-timer", rest_name="pspf-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-pspf-timer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """pspf_timer must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=pspf_timer.pspf_timer, is_container='container', presence=False, yang_name="pspf-timer", rest_name="pspf-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=pspf_timer.pspf_timer, is_container='container', presence=False, yang_name="pspf-timer", rest_name="pspf-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-pspf-timer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)""",
         })
 
     self.__pspf_timer = t
@@ -1353,7 +1353,7 @@ class router_isis_config(PybindBase):
       self._set()
 
   def _unset_pspf_timer(self):
-    self.__pspf_timer = YANGDynClass(base=pspf_timer.pspf_timer, is_container='container', presence=False, yang_name="pspf-timer", rest_name="pspf-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+    self.__pspf_timer = YANGDynClass(base=pspf_timer.pspf_timer, is_container='container', presence=False, yang_name="pspf-timer", rest_name="pspf-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-pspf-timer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
 
 
   def _get_pspf6_timer(self):
@@ -1377,12 +1377,12 @@ class router_isis_config(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=pspf6_timer.pspf6_timer, is_container='container', presence=False, yang_name="pspf6-timer", rest_name="pspf6-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=pspf6_timer.pspf6_timer, is_container='container', presence=False, yang_name="pspf6-timer", rest_name="pspf6-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-pspf6-timer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """pspf6_timer must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=pspf6_timer.pspf6_timer, is_container='container', presence=False, yang_name="pspf6-timer", rest_name="pspf6-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=pspf6_timer.pspf6_timer, is_container='container', presence=False, yang_name="pspf6-timer", rest_name="pspf6-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-pspf6-timer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)""",
         })
 
     self.__pspf6_timer = t
@@ -1390,7 +1390,7 @@ class router_isis_config(PybindBase):
       self._set()
 
   def _unset_pspf6_timer(self):
-    self.__pspf6_timer = YANGDynClass(base=pspf6_timer.pspf6_timer, is_container='container', presence=False, yang_name="pspf6-timer", rest_name="pspf6-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+    self.__pspf6_timer = YANGDynClass(base=pspf6_timer.pspf6_timer, is_container='container', presence=False, yang_name="pspf6-timer", rest_name="pspf6-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-pspf6-timer', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
 
 
   def _get_is_address_family_v4(self):
@@ -1414,12 +1414,12 @@ class router_isis_config(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=is_address_family_v4.is_address_family_v4, is_container='container', presence=False, yang_name="is-address-family-v4", rest_name="is-address-family-v4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=is_address_family_v4.is_address_family_v4, is_container='container', presence=False, yang_name="is-address-family-v4", rest_name="is-address-family-v4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-address-family-v4', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """is_address_family_v4 must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=is_address_family_v4.is_address_family_v4, is_container='container', presence=False, yang_name="is-address-family-v4", rest_name="is-address-family-v4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=is_address_family_v4.is_address_family_v4, is_container='container', presence=False, yang_name="is-address-family-v4", rest_name="is-address-family-v4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-address-family-v4', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)""",
         })
 
     self.__is_address_family_v4 = t
@@ -1427,7 +1427,7 @@ class router_isis_config(PybindBase):
       self._set()
 
   def _unset_is_address_family_v4(self):
-    self.__is_address_family_v4 = YANGDynClass(base=is_address_family_v4.is_address_family_v4, is_container='container', presence=False, yang_name="is-address-family-v4", rest_name="is-address-family-v4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+    self.__is_address_family_v4 = YANGDynClass(base=is_address_family_v4.is_address_family_v4, is_container='container', presence=False, yang_name="is-address-family-v4", rest_name="is-address-family-v4", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-address-family-v4', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
 
 
   def _get_is_address_family_v6(self):
@@ -1451,12 +1451,12 @@ class router_isis_config(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=is_address_family_v6.is_address_family_v6, is_container='container', presence=False, yang_name="is-address-family-v6", rest_name="is-address-family-v6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=is_address_family_v6.is_address_family_v6, is_container='container', presence=False, yang_name="is-address-family-v6", rest_name="is-address-family-v6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-address-family-v6', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """is_address_family_v6 must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=is_address_family_v6.is_address_family_v6, is_container='container', presence=False, yang_name="is-address-family-v6", rest_name="is-address-family-v6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=is_address_family_v6.is_address_family_v6, is_container='container', presence=False, yang_name="is-address-family-v6", rest_name="is-address-family-v6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-address-family-v6', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)""",
         })
 
     self.__is_address_family_v6 = t
@@ -1464,7 +1464,7 @@ class router_isis_config(PybindBase):
       self._set()
 
   def _unset_is_address_family_v6(self):
-    self.__is_address_family_v6 = YANGDynClass(base=is_address_family_v6.is_address_family_v6, is_container='container', presence=False, yang_name="is-address-family-v6", rest_name="is-address-family-v6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+    self.__is_address_family_v6 = YANGDynClass(base=is_address_family_v6.is_address_family_v6, is_container='container', presence=False, yang_name="is-address-family-v6", rest_name="is-address-family-v6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-address-family-v6', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
 
 
   def _get_reverse_metric(self):
@@ -1488,12 +1488,12 @@ class router_isis_config(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=reverse_metric.reverse_metric, is_container='container', presence=False, yang_name="reverse-metric", rest_name="reverse-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=reverse_metric.reverse_metric, is_container='container', presence=False, yang_name="reverse-metric", rest_name="reverse-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-reverse-metric-global', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """reverse_metric must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=reverse_metric.reverse_metric, is_container='container', presence=False, yang_name="reverse-metric", rest_name="reverse-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=reverse_metric.reverse_metric, is_container='container', presence=False, yang_name="reverse-metric", rest_name="reverse-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-reverse-metric-global', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)""",
         })
 
     self.__reverse_metric = t
@@ -1501,7 +1501,7 @@ class router_isis_config(PybindBase):
       self._set()
 
   def _unset_reverse_metric(self):
-    self.__reverse_metric = YANGDynClass(base=reverse_metric.reverse_metric, is_container='container', presence=False, yang_name="reverse-metric", rest_name="reverse-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+    self.__reverse_metric = YANGDynClass(base=reverse_metric.reverse_metric, is_container='container', presence=False, yang_name="reverse-metric", rest_name="reverse-metric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-reverse-metric-global', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
 
 
   def _get_debug_handler(self):
@@ -1525,12 +1525,12 @@ class router_isis_config(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=debug_handler.debug_handler, is_container='container', presence=False, yang_name="debug-handler", rest_name="debug-handler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=debug_handler.debug_handler, is_container='container', presence=False, yang_name="debug-handler", rest_name="debug-handler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-debugger', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """debug_handler must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=debug_handler.debug_handler, is_container='container', presence=False, yang_name="debug-handler", rest_name="debug-handler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=debug_handler.debug_handler, is_container='container', presence=False, yang_name="debug-handler", rest_name="debug-handler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-debugger', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)""",
         })
 
     self.__debug_handler = t
@@ -1538,7 +1538,7 @@ class router_isis_config(PybindBase):
       self._set()
 
   def _unset_debug_handler(self):
-    self.__debug_handler = YANGDynClass(base=debug_handler.debug_handler, is_container='container', presence=False, yang_name="debug-handler", rest_name="debug-handler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
+    self.__debug_handler = YANGDynClass(base=debug_handler.debug_handler, is_container='container', presence=False, yang_name="debug-handler", rest_name="debug-handler", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'isis-debugger', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-isis-operational', defining_module='brocade-isis-operational', yang_type='container', is_config=False)
 
   nsr_state = __builtin__.property(_get_nsr_state)
   lsp_flood_count = __builtin__.property(_get_lsp_flood_count)

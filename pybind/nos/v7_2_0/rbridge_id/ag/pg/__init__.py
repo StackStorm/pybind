@@ -45,10 +45,10 @@ class pg(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__rename = YANGDynClass(base=unicode, is_leaf=True, yang_name="rename", rest_name="rename", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='string', is_config=True)
-    self.__nport = YANGDynClass(base=nport.nport, is_container='container', presence=False, yang_name="nport", rest_name="nport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
+    self.__rename = YANGDynClass(base=unicode, is_leaf=True, yang_name="rename", rest_name="rename", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Renames the PG'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='string', is_config=True)
+    self.__nport = YANGDynClass(base=nport.nport, is_container='container', presence=False, yang_name="nport", rest_name="nport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Adds N port(s) to the PG'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
     self.__pgid = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..1000']}), is_leaf=True, yang_name="pgid", rest_name="pgid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='pgid-type', is_config=True)
-    self.__modes = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..10']})), is_leaf=False, yang_name="modes", rest_name="modes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='pg-policy-types', is_config=True)
+    self.__modes = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..10']})), is_leaf=False, yang_name="modes", rest_name="modes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Adds mode(s) to the PG', u'cli-flat-list-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='pg-policy-types', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -141,12 +141,12 @@ class pg(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=nport.nport, is_container='container', presence=False, yang_name="nport", rest_name="nport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=nport.nport, is_container='container', presence=False, yang_name="nport", rest_name="nport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Adds N port(s) to the PG'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """nport must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=nport.nport, is_container='container', presence=False, yang_name="nport", rest_name="nport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=nport.nport, is_container='container', presence=False, yang_name="nport", rest_name="nport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Adds N port(s) to the PG'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)""",
         })
 
     self.__nport = t
@@ -154,7 +154,7 @@ class pg(PybindBase):
       self._set()
 
   def _unset_nport(self):
-    self.__nport = YANGDynClass(base=nport.nport, is_container='container', presence=False, yang_name="nport", rest_name="nport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
+    self.__nport = YANGDynClass(base=nport.nport, is_container='container', presence=False, yang_name="nport", rest_name="nport", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Adds N port(s) to the PG'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='container', is_config=True)
 
 
   def _get_modes(self):
@@ -174,12 +174,12 @@ class pg(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..10']})), is_leaf=False, yang_name="modes", rest_name="modes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='pg-policy-types', is_config=True)
+      t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..10']})), is_leaf=False, yang_name="modes", rest_name="modes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Adds mode(s) to the PG', u'cli-flat-list-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='pg-policy-types', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """modes must be of a type compatible with pg-policy-types""",
           'defined-type': "brocade-ag:pg-policy-types",
-          'generated-type': """YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..10']})), is_leaf=False, yang_name="modes", rest_name="modes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='pg-policy-types', is_config=True)""",
+          'generated-type': """YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..10']})), is_leaf=False, yang_name="modes", rest_name="modes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Adds mode(s) to the PG', u'cli-flat-list-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='pg-policy-types', is_config=True)""",
         })
 
     self.__modes = t
@@ -187,7 +187,7 @@ class pg(PybindBase):
       self._set()
 
   def _unset_modes(self):
-    self.__modes = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..10']})), is_leaf=False, yang_name="modes", rest_name="modes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='pg-policy-types', is_config=True)
+    self.__modes = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..10']})), is_leaf=False, yang_name="modes", rest_name="modes", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Adds mode(s) to the PG', u'cli-flat-list-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='pg-policy-types', is_config=True)
 
 
   def _get_rename(self):
@@ -207,12 +207,12 @@ class pg(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="rename", rest_name="rename", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="rename", rest_name="rename", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Renames the PG'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rename must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="rename", rest_name="rename", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="rename", rest_name="rename", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Renames the PG'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='string', is_config=True)""",
         })
 
     self.__rename = t
@@ -220,7 +220,7 @@ class pg(PybindBase):
       self._set()
 
   def _unset_rename(self):
-    self.__rename = YANGDynClass(base=unicode, is_leaf=True, yang_name="rename", rest_name="rename", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='string', is_config=True)
+    self.__rename = YANGDynClass(base=unicode, is_leaf=True, yang_name="rename", rest_name="rename", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Renames the PG'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='string', is_config=True)
 
   pgid = __builtin__.property(_get_pgid, _set_pgid)
   nport = __builtin__.property(_get_nport, _set_nport)

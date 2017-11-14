@@ -139,7 +139,7 @@ Access Gateway (AG) -   The Access Gateway feature, a software
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__get_nameserver_detail = YANGDynClass(base=get_nameserver_detail.get_nameserver_detail, is_leaf=True, yang_name="get-nameserver-detail", rest_name="get-nameserver-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='rpc', is_config=True)
+    self.__get_nameserver_detail = YANGDynClass(base=get_nameserver_detail.get_nameserver_detail, is_leaf=True, yang_name="get-nameserver-detail", rest_name="get-nameserver-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'display detail device information.', u'hidden': u'rpccmd', u'actionpoint': u'show_ns_detail'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='rpc', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -200,12 +200,12 @@ the devices stored in the Name Server database.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=get_nameserver_detail.get_nameserver_detail, is_leaf=True, yang_name="get-nameserver-detail", rest_name="get-nameserver-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_nameserver_detail.get_nameserver_detail, is_leaf=True, yang_name="get-nameserver-detail", rest_name="get-nameserver-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'display detail device information.', u'hidden': u'rpccmd', u'actionpoint': u'show_ns_detail'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_nameserver_detail must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_nameserver_detail.get_nameserver_detail, is_leaf=True, yang_name="get-nameserver-detail", rest_name="get-nameserver-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_nameserver_detail.get_nameserver_detail, is_leaf=True, yang_name="get-nameserver-detail", rest_name="get-nameserver-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'display detail device information.', u'hidden': u'rpccmd', u'actionpoint': u'show_ns_detail'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_nameserver_detail = t
@@ -213,7 +213,7 @@ the devices stored in the Name Server database.
       self._set()
 
   def _unset_get_nameserver_detail(self):
-    self.__get_nameserver_detail = YANGDynClass(base=get_nameserver_detail.get_nameserver_detail, is_leaf=True, yang_name="get-nameserver-detail", rest_name="get-nameserver-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='rpc', is_config=True)
+    self.__get_nameserver_detail = YANGDynClass(base=get_nameserver_detail.get_nameserver_detail, is_leaf=True, yang_name="get-nameserver-detail", rest_name="get-nameserver-detail", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'display detail device information.', u'hidden': u'rpccmd', u'actionpoint': u'show_ns_detail'}}, namespace='urn:brocade.com:mgmt:brocade-nameserver', defining_module='brocade-nameserver', yang_type='rpc', is_config=True)
 
   get_nameserver_detail = __builtin__.property(_get_get_nameserver_detail, _set_get_nameserver_detail)
 

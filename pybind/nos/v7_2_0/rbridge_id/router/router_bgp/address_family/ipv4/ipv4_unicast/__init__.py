@@ -46,8 +46,8 @@ class ipv4_unicast(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__af_vrf = YANGDynClass(base=YANGListType("af_vrf_name",af_vrf.af_vrf, yang_name="af-vrf", rest_name="vrf", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='af-vrf-name', extensions={u'tailf-common': {u'alt-name': u'vrf'}}), is_container='list', yang_name="af-vrf", rest_name="vrf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'vrf'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
-    self.__default_vrf = YANGDynClass(base=default_vrf.default_vrf, is_container='container', presence=False, yang_name="default-vrf", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__af_vrf = YANGDynClass(base=YANGListType("af_vrf_name",af_vrf.af_vrf, yang_name="af-vrf", rest_name="vrf", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='af-vrf-name', extensions={u'tailf-common': {u'info': u'VRF unicast', u'alt-name': u'vrf', u'cli-suppress-list-no': None, u'callpoint': u'AfIpv4UcastVrf', u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-bgp-ipv4u-vrf'}}), is_container='list', yang_name="af-vrf", rest_name="vrf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VRF unicast', u'alt-name': u'vrf', u'cli-suppress-list-no': None, u'callpoint': u'AfIpv4UcastVrf', u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-bgp-ipv4u-vrf'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
+    self.__default_vrf = YANGDynClass(base=default_vrf.default_vrf, is_container='container', presence=False, yang_name="default-vrf", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv4 unicast address Family', u'cli-suppress-no': None, u'cli-add-mode': None, u'cli-drop-node-name': None, u'cli-full-command': None, u'callpoint': u'AfIpv4Ucast', u'cli-mode-name': u'config-bgp-ipv4u'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -102,12 +102,12 @@ class ipv4_unicast(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=default_vrf.default_vrf, is_container='container', presence=False, yang_name="default-vrf", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=default_vrf.default_vrf, is_container='container', presence=False, yang_name="default-vrf", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv4 unicast address Family', u'cli-suppress-no': None, u'cli-add-mode': None, u'cli-drop-node-name': None, u'cli-full-command': None, u'callpoint': u'AfIpv4Ucast', u'cli-mode-name': u'config-bgp-ipv4u'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """default_vrf must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=default_vrf.default_vrf, is_container='container', presence=False, yang_name="default-vrf", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=default_vrf.default_vrf, is_container='container', presence=False, yang_name="default-vrf", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv4 unicast address Family', u'cli-suppress-no': None, u'cli-add-mode': None, u'cli-drop-node-name': None, u'cli-full-command': None, u'callpoint': u'AfIpv4Ucast', u'cli-mode-name': u'config-bgp-ipv4u'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__default_vrf = t
@@ -115,7 +115,7 @@ class ipv4_unicast(PybindBase):
       self._set()
 
   def _unset_default_vrf(self):
-    self.__default_vrf = YANGDynClass(base=default_vrf.default_vrf, is_container='container', presence=False, yang_name="default-vrf", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__default_vrf = YANGDynClass(base=default_vrf.default_vrf, is_container='container', presence=False, yang_name="default-vrf", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'IPv4 unicast address Family', u'cli-suppress-no': None, u'cli-add-mode': None, u'cli-drop-node-name': None, u'cli-full-command': None, u'callpoint': u'AfIpv4Ucast', u'cli-mode-name': u'config-bgp-ipv4u'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
 
   def _get_af_vrf(self):
@@ -135,12 +135,12 @@ class ipv4_unicast(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("af_vrf_name",af_vrf.af_vrf, yang_name="af-vrf", rest_name="vrf", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='af-vrf-name', extensions={u'tailf-common': {u'alt-name': u'vrf'}}), is_container='list', yang_name="af-vrf", rest_name="vrf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'vrf'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("af_vrf_name",af_vrf.af_vrf, yang_name="af-vrf", rest_name="vrf", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='af-vrf-name', extensions={u'tailf-common': {u'info': u'VRF unicast', u'alt-name': u'vrf', u'cli-suppress-list-no': None, u'callpoint': u'AfIpv4UcastVrf', u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-bgp-ipv4u-vrf'}}), is_container='list', yang_name="af-vrf", rest_name="vrf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VRF unicast', u'alt-name': u'vrf', u'cli-suppress-list-no': None, u'callpoint': u'AfIpv4UcastVrf', u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-bgp-ipv4u-vrf'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """af_vrf must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("af_vrf_name",af_vrf.af_vrf, yang_name="af-vrf", rest_name="vrf", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='af-vrf-name', extensions={u'tailf-common': {u'alt-name': u'vrf'}}), is_container='list', yang_name="af-vrf", rest_name="vrf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'vrf'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("af_vrf_name",af_vrf.af_vrf, yang_name="af-vrf", rest_name="vrf", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='af-vrf-name', extensions={u'tailf-common': {u'info': u'VRF unicast', u'alt-name': u'vrf', u'cli-suppress-list-no': None, u'callpoint': u'AfIpv4UcastVrf', u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-bgp-ipv4u-vrf'}}), is_container='list', yang_name="af-vrf", rest_name="vrf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VRF unicast', u'alt-name': u'vrf', u'cli-suppress-list-no': None, u'callpoint': u'AfIpv4UcastVrf', u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-bgp-ipv4u-vrf'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)""",
         })
 
     self.__af_vrf = t
@@ -148,7 +148,7 @@ class ipv4_unicast(PybindBase):
       self._set()
 
   def _unset_af_vrf(self):
-    self.__af_vrf = YANGDynClass(base=YANGListType("af_vrf_name",af_vrf.af_vrf, yang_name="af-vrf", rest_name="vrf", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='af-vrf-name', extensions={u'tailf-common': {u'alt-name': u'vrf'}}), is_container='list', yang_name="af-vrf", rest_name="vrf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'vrf'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
+    self.__af_vrf = YANGDynClass(base=YANGListType("af_vrf_name",af_vrf.af_vrf, yang_name="af-vrf", rest_name="vrf", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='af-vrf-name', extensions={u'tailf-common': {u'info': u'VRF unicast', u'alt-name': u'vrf', u'cli-suppress-list-no': None, u'callpoint': u'AfIpv4UcastVrf', u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-bgp-ipv4u-vrf'}}), is_container='list', yang_name="af-vrf", rest_name="vrf", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VRF unicast', u'alt-name': u'vrf', u'cli-suppress-list-no': None, u'callpoint': u'AfIpv4UcastVrf', u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'config-bgp-ipv4u-vrf'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
 
   default_vrf = __builtin__.property(_get_default_vrf, _set_default_vrf)
   af_vrf = __builtin__.property(_get_af_vrf, _set_af_vrf)

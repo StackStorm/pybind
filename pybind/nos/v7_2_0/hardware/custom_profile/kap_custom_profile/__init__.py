@@ -52,13 +52,13 @@ class kap_custom_profile(PybindBase):
     else:
       self._extmethods = False
     self.__name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="name", rest_name="name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='string', is_config=True)
-    self.__bfd_l3 = YANGDynClass(base=bfd_l3.bfd_l3, is_container='container', presence=False, yang_name="bfd-l3", rest_name="bfd-l3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
-    self.__rpvst = YANGDynClass(base=rpvst.rpvst, is_container='container', presence=False, yang_name="rpvst", rest_name="rpvst", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
-    self.__bfd_vxlan = YANGDynClass(base=bfd_vxlan.bfd_vxlan, is_container='container', presence=False, yang_name="bfd-vxlan", rest_name="bfd-vxlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
-    self.__lacp = YANGDynClass(base=lacp.lacp, is_container='container', presence=False, yang_name="lacp", rest_name="lacp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
-    self.__fcoe = YANGDynClass(base=fcoe.fcoe, is_container='container', presence=False, yang_name="fcoe", rest_name="fcoe", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
-    self.__udld = YANGDynClass(base=udld.udld, is_container='container', presence=False, yang_name="udld", rest_name="udld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
-    self.__xstp = YANGDynClass(base=xstp.xstp, is_container='container', presence=False, yang_name="xstp", rest_name="xstp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    self.__bfd_l3 = YANGDynClass(base=bfd_l3.bfd_l3, is_container='container', presence=False, yang_name="bfd-l3", rest_name="bfd-l3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BFD-L3 protocol KAP parameters', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    self.__rpvst = YANGDynClass(base=rpvst.rpvst, is_container='container', presence=False, yang_name="rpvst", rest_name="rpvst", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RPVST protocol KAP parameters', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    self.__bfd_vxlan = YANGDynClass(base=bfd_vxlan.bfd_vxlan, is_container='container', presence=False, yang_name="bfd-vxlan", rest_name="bfd-vxlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BFD-VXLAN protocol KAP parameters', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    self.__lacp = YANGDynClass(base=lacp.lacp, is_container='container', presence=False, yang_name="lacp", rest_name="lacp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure LACP protocol KAP parameters', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    self.__fcoe = YANGDynClass(base=fcoe.fcoe, is_container='container', presence=False, yang_name="fcoe", rest_name="fcoe", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure FCOE protocol KAP parameters', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    self.__udld = YANGDynClass(base=udld.udld, is_container='container', presence=False, yang_name="udld", rest_name="udld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure UDLD protocol KAP parameters', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    self.__xstp = YANGDynClass(base=xstp.xstp, is_container='container', presence=False, yang_name="xstp", rest_name="xstp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure xSTP protocol KAP parameters', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -151,12 +151,12 @@ class kap_custom_profile(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=lacp.lacp, is_container='container', presence=False, yang_name="lacp", rest_name="lacp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=lacp.lacp, is_container='container', presence=False, yang_name="lacp", rest_name="lacp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure LACP protocol KAP parameters', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lacp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=lacp.lacp, is_container='container', presence=False, yang_name="lacp", rest_name="lacp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=lacp.lacp, is_container='container', presence=False, yang_name="lacp", rest_name="lacp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure LACP protocol KAP parameters', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)""",
         })
 
     self.__lacp = t
@@ -164,7 +164,7 @@ class kap_custom_profile(PybindBase):
       self._set()
 
   def _unset_lacp(self):
-    self.__lacp = YANGDynClass(base=lacp.lacp, is_container='container', presence=False, yang_name="lacp", rest_name="lacp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    self.__lacp = YANGDynClass(base=lacp.lacp, is_container='container', presence=False, yang_name="lacp", rest_name="lacp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure LACP protocol KAP parameters', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
 
 
   def _get_xstp(self):
@@ -184,12 +184,12 @@ class kap_custom_profile(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=xstp.xstp, is_container='container', presence=False, yang_name="xstp", rest_name="xstp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=xstp.xstp, is_container='container', presence=False, yang_name="xstp", rest_name="xstp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure xSTP protocol KAP parameters', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """xstp must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=xstp.xstp, is_container='container', presence=False, yang_name="xstp", rest_name="xstp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=xstp.xstp, is_container='container', presence=False, yang_name="xstp", rest_name="xstp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure xSTP protocol KAP parameters', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)""",
         })
 
     self.__xstp = t
@@ -197,7 +197,7 @@ class kap_custom_profile(PybindBase):
       self._set()
 
   def _unset_xstp(self):
-    self.__xstp = YANGDynClass(base=xstp.xstp, is_container='container', presence=False, yang_name="xstp", rest_name="xstp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    self.__xstp = YANGDynClass(base=xstp.xstp, is_container='container', presence=False, yang_name="xstp", rest_name="xstp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure xSTP protocol KAP parameters', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
 
 
   def _get_rpvst(self):
@@ -217,12 +217,12 @@ class kap_custom_profile(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=rpvst.rpvst, is_container='container', presence=False, yang_name="rpvst", rest_name="rpvst", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=rpvst.rpvst, is_container='container', presence=False, yang_name="rpvst", rest_name="rpvst", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RPVST protocol KAP parameters', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rpvst must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=rpvst.rpvst, is_container='container', presence=False, yang_name="rpvst", rest_name="rpvst", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=rpvst.rpvst, is_container='container', presence=False, yang_name="rpvst", rest_name="rpvst", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RPVST protocol KAP parameters', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)""",
         })
 
     self.__rpvst = t
@@ -230,7 +230,7 @@ class kap_custom_profile(PybindBase):
       self._set()
 
   def _unset_rpvst(self):
-    self.__rpvst = YANGDynClass(base=rpvst.rpvst, is_container='container', presence=False, yang_name="rpvst", rest_name="rpvst", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    self.__rpvst = YANGDynClass(base=rpvst.rpvst, is_container='container', presence=False, yang_name="rpvst", rest_name="rpvst", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RPVST protocol KAP parameters', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
 
 
   def _get_udld(self):
@@ -250,12 +250,12 @@ class kap_custom_profile(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=udld.udld, is_container='container', presence=False, yang_name="udld", rest_name="udld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=udld.udld, is_container='container', presence=False, yang_name="udld", rest_name="udld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure UDLD protocol KAP parameters', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """udld must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=udld.udld, is_container='container', presence=False, yang_name="udld", rest_name="udld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=udld.udld, is_container='container', presence=False, yang_name="udld", rest_name="udld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure UDLD protocol KAP parameters', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)""",
         })
 
     self.__udld = t
@@ -263,7 +263,7 @@ class kap_custom_profile(PybindBase):
       self._set()
 
   def _unset_udld(self):
-    self.__udld = YANGDynClass(base=udld.udld, is_container='container', presence=False, yang_name="udld", rest_name="udld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    self.__udld = YANGDynClass(base=udld.udld, is_container='container', presence=False, yang_name="udld", rest_name="udld", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure UDLD protocol KAP parameters', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
 
 
   def _get_bfd_vxlan(self):
@@ -283,12 +283,12 @@ class kap_custom_profile(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=bfd_vxlan.bfd_vxlan, is_container='container', presence=False, yang_name="bfd-vxlan", rest_name="bfd-vxlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=bfd_vxlan.bfd_vxlan, is_container='container', presence=False, yang_name="bfd-vxlan", rest_name="bfd-vxlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BFD-VXLAN protocol KAP parameters', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bfd_vxlan must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=bfd_vxlan.bfd_vxlan, is_container='container', presence=False, yang_name="bfd-vxlan", rest_name="bfd-vxlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=bfd_vxlan.bfd_vxlan, is_container='container', presence=False, yang_name="bfd-vxlan", rest_name="bfd-vxlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BFD-VXLAN protocol KAP parameters', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)""",
         })
 
     self.__bfd_vxlan = t
@@ -296,7 +296,7 @@ class kap_custom_profile(PybindBase):
       self._set()
 
   def _unset_bfd_vxlan(self):
-    self.__bfd_vxlan = YANGDynClass(base=bfd_vxlan.bfd_vxlan, is_container='container', presence=False, yang_name="bfd-vxlan", rest_name="bfd-vxlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    self.__bfd_vxlan = YANGDynClass(base=bfd_vxlan.bfd_vxlan, is_container='container', presence=False, yang_name="bfd-vxlan", rest_name="bfd-vxlan", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BFD-VXLAN protocol KAP parameters', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
 
 
   def _get_bfd_l3(self):
@@ -316,12 +316,12 @@ class kap_custom_profile(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=bfd_l3.bfd_l3, is_container='container', presence=False, yang_name="bfd-l3", rest_name="bfd-l3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=bfd_l3.bfd_l3, is_container='container', presence=False, yang_name="bfd-l3", rest_name="bfd-l3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BFD-L3 protocol KAP parameters', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bfd_l3 must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=bfd_l3.bfd_l3, is_container='container', presence=False, yang_name="bfd-l3", rest_name="bfd-l3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=bfd_l3.bfd_l3, is_container='container', presence=False, yang_name="bfd-l3", rest_name="bfd-l3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BFD-L3 protocol KAP parameters', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)""",
         })
 
     self.__bfd_l3 = t
@@ -329,7 +329,7 @@ class kap_custom_profile(PybindBase):
       self._set()
 
   def _unset_bfd_l3(self):
-    self.__bfd_l3 = YANGDynClass(base=bfd_l3.bfd_l3, is_container='container', presence=False, yang_name="bfd-l3", rest_name="bfd-l3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    self.__bfd_l3 = YANGDynClass(base=bfd_l3.bfd_l3, is_container='container', presence=False, yang_name="bfd-l3", rest_name="bfd-l3", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure BFD-L3 protocol KAP parameters', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
 
 
   def _get_fcoe(self):
@@ -349,12 +349,12 @@ class kap_custom_profile(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=fcoe.fcoe, is_container='container', presence=False, yang_name="fcoe", rest_name="fcoe", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=fcoe.fcoe, is_container='container', presence=False, yang_name="fcoe", rest_name="fcoe", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure FCOE protocol KAP parameters', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fcoe must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=fcoe.fcoe, is_container='container', presence=False, yang_name="fcoe", rest_name="fcoe", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=fcoe.fcoe, is_container='container', presence=False, yang_name="fcoe", rest_name="fcoe", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure FCOE protocol KAP parameters', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)""",
         })
 
     self.__fcoe = t
@@ -362,7 +362,7 @@ class kap_custom_profile(PybindBase):
       self._set()
 
   def _unset_fcoe(self):
-    self.__fcoe = YANGDynClass(base=fcoe.fcoe, is_container='container', presence=False, yang_name="fcoe", rest_name="fcoe", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
+    self.__fcoe = YANGDynClass(base=fcoe.fcoe, is_container='container', presence=False, yang_name="fcoe", rest_name="fcoe", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure FCOE protocol KAP parameters', u'cli-compact-syntax': None}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='container', is_config=True)
 
   name = __builtin__.property(_get_name, _set_name)
   lacp = __builtin__.property(_get_lacp, _set_lacp)

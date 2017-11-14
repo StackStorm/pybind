@@ -45,7 +45,7 @@ class output(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__dad_last_state = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dad-in-progress': {'value': 0}, u'dad-failed': {'value': 1}, u'dad-completed': {'value': 2}},), is_leaf=True, yang_name="dad-last-state", rest_name="dad-last-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='enumeration', is_config=True)
+    self.__dad_last_state = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dad-in-progress': {'value': 0}, u'dad-failed': {'value': 1}, u'dad-completed': {'value': 2}},), is_leaf=True, yang_name="dad-last-state", rest_name="dad-last-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'DHCP auto-deployment state'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='enumeration', is_config=True)
     self.__dad_status_entries = YANGDynClass(base=YANGListType(False,dad_status_entries.dad_status_entries, yang_name="dad-status-entries", rest_name="dad-status-entries", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='False', extensions=None), is_container='list', yang_name="dad-status-entries", rest_name="dad-status-entries", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
@@ -101,12 +101,12 @@ class output(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dad-in-progress': {'value': 0}, u'dad-failed': {'value': 1}, u'dad-completed': {'value': 2}},), is_leaf=True, yang_name="dad-last-state", rest_name="dad-last-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='enumeration', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dad-in-progress': {'value': 0}, u'dad-failed': {'value': 1}, u'dad-completed': {'value': 2}},), is_leaf=True, yang_name="dad-last-state", rest_name="dad-last-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'DHCP auto-deployment state'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dad_last_state must be of a type compatible with enumeration""",
           'defined-type': "brocade-firmware:enumeration",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dad-in-progress': {'value': 0}, u'dad-failed': {'value': 1}, u'dad-completed': {'value': 2}},), is_leaf=True, yang_name="dad-last-state", rest_name="dad-last-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='enumeration', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dad-in-progress': {'value': 0}, u'dad-failed': {'value': 1}, u'dad-completed': {'value': 2}},), is_leaf=True, yang_name="dad-last-state", rest_name="dad-last-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'DHCP auto-deployment state'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='enumeration', is_config=True)""",
         })
 
     self.__dad_last_state = t
@@ -114,7 +114,7 @@ class output(PybindBase):
       self._set()
 
   def _unset_dad_last_state(self):
-    self.__dad_last_state = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dad-in-progress': {'value': 0}, u'dad-failed': {'value': 1}, u'dad-completed': {'value': 2}},), is_leaf=True, yang_name="dad-last-state", rest_name="dad-last-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='enumeration', is_config=True)
+    self.__dad_last_state = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dad-in-progress': {'value': 0}, u'dad-failed': {'value': 1}, u'dad-completed': {'value': 2}},), is_leaf=True, yang_name="dad-last-state", rest_name="dad-last-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'DHCP auto-deployment state'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='enumeration', is_config=True)
 
 
   def _get_dad_status_entries(self):

@@ -47,7 +47,7 @@ class brocade_http_redirect(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__set_http_application_url = YANGDynClass(base=set_http_application_url.set_http_application_url, is_leaf=True, yang_name="set-http-application-url", rest_name="set-http-application-url", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='rpc', is_config=True)
+    self.__set_http_application_url = YANGDynClass(base=set_http_application_url.set_http_application_url, is_leaf=True, yang_name="set-http-application-url", rest_name="set-http-application-url", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'set-http-app-url'}}, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='rpc', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -106,12 +106,12 @@ class brocade_http_redirect(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=set_http_application_url.set_http_application_url, is_leaf=True, yang_name="set-http-application-url", rest_name="set-http-application-url", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=set_http_application_url.set_http_application_url, is_leaf=True, yang_name="set-http-application-url", rest_name="set-http-application-url", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'set-http-app-url'}}, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """set_http_application_url must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=set_http_application_url.set_http_application_url, is_leaf=True, yang_name="set-http-application-url", rest_name="set-http-application-url", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=set_http_application_url.set_http_application_url, is_leaf=True, yang_name="set-http-application-url", rest_name="set-http-application-url", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'set-http-app-url'}}, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='rpc', is_config=True)""",
         })
 
     self.__set_http_application_url = t
@@ -119,7 +119,7 @@ class brocade_http_redirect(PybindBase):
       self._set()
 
   def _unset_set_http_application_url(self):
-    self.__set_http_application_url = YANGDynClass(base=set_http_application_url.set_http_application_url, is_leaf=True, yang_name="set-http-application-url", rest_name="set-http-application-url", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='rpc', is_config=True)
+    self.__set_http_application_url = YANGDynClass(base=set_http_application_url.set_http_application_url, is_leaf=True, yang_name="set-http-application-url", rest_name="set-http-application-url", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'set-http-app-url'}}, namespace='urn:brocade.com:mgmt:brocade-http-redirect', defining_module='brocade-http-redirect', yang_type='rpc', is_config=True)
 
   set_http_application_url = __builtin__.property(_get_set_http_application_url, _set_set_http_application_url)
 

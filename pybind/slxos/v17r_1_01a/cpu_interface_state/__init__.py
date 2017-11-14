@@ -48,7 +48,7 @@ class cpu_interface_state(PybindBase):
     else:
       self._extmethods = False
     self.__ifname = YANGDynClass(base=unicode, is_leaf=True, yang_name="ifname", rest_name="ifname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='string', is_config=False)
-    self.__stats = YANGDynClass(base=stats.stats, is_container='container', presence=False, yang_name="stats", rest_name="stats", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='container', is_config=False)
+    self.__stats = YANGDynClass(base=stats.stats, is_container='container', presence=False, yang_name="stats", rest_name="stats", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysdiag-stats', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='container', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -149,12 +149,12 @@ class cpu_interface_state(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=stats.stats, is_container='container', presence=False, yang_name="stats", rest_name="stats", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=stats.stats, is_container='container', presence=False, yang_name="stats", rest_name="stats", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysdiag-stats', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """stats must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=stats.stats, is_container='container', presence=False, yang_name="stats", rest_name="stats", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=stats.stats, is_container='container', presence=False, yang_name="stats", rest_name="stats", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysdiag-stats', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='container', is_config=False)""",
         })
 
     self.__stats = t
@@ -162,7 +162,7 @@ class cpu_interface_state(PybindBase):
       self._set()
 
   def _unset_stats(self):
-    self.__stats = YANGDynClass(base=stats.stats, is_container='container', presence=False, yang_name="stats", rest_name="stats", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='container', is_config=False)
+    self.__stats = YANGDynClass(base=stats.stats, is_container='container', presence=False, yang_name="stats", rest_name="stats", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'sysdiag-stats', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-sysdiag-operational', defining_module='brocade-sysdiag-operational', yang_type='container', is_config=False)
 
   ifname = __builtin__.property(_get_ifname)
   stats = __builtin__.property(_get_stats)

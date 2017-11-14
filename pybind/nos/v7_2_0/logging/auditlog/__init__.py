@@ -45,7 +45,7 @@ class auditlog(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__class_ = YANGDynClass(base=YANGListType("class_",class_.class_, yang_name="class", rest_name="class", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='class', extensions=None), is_container='list', yang_name="class", rest_name="class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)
+    self.__class_ = YANGDynClass(base=YANGListType("class_",class_.class_, yang_name="class", rest_name="class", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='class', extensions={u'tailf-common': {u'info': u'Configure auditlog classes', u'cli-suppress-mode': None, u'callpoint': u'RASAuditCallPoint'}}), is_container='list', yang_name="class", rest_name="class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure auditlog classes', u'cli-suppress-mode': None, u'callpoint': u'RASAuditCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class auditlog(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("class_",class_.class_, yang_name="class", rest_name="class", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='class', extensions=None), is_container='list', yang_name="class", rest_name="class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("class_",class_.class_, yang_name="class", rest_name="class", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='class', extensions={u'tailf-common': {u'info': u'Configure auditlog classes', u'cli-suppress-mode': None, u'callpoint': u'RASAuditCallPoint'}}), is_container='list', yang_name="class", rest_name="class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure auditlog classes', u'cli-suppress-mode': None, u'callpoint': u'RASAuditCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """class_ must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("class_",class_.class_, yang_name="class", rest_name="class", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='class', extensions=None), is_container='list', yang_name="class", rest_name="class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("class_",class_.class_, yang_name="class", rest_name="class", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='class', extensions={u'tailf-common': {u'info': u'Configure auditlog classes', u'cli-suppress-mode': None, u'callpoint': u'RASAuditCallPoint'}}), is_container='list', yang_name="class", rest_name="class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure auditlog classes', u'cli-suppress-mode': None, u'callpoint': u'RASAuditCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)""",
         })
 
     self.__class_ = t
@@ -113,7 +113,7 @@ class auditlog(PybindBase):
       self._set()
 
   def _unset_class_(self):
-    self.__class_ = YANGDynClass(base=YANGListType("class_",class_.class_, yang_name="class", rest_name="class", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='class', extensions=None), is_container='list', yang_name="class", rest_name="class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)
+    self.__class_ = YANGDynClass(base=YANGListType("class_",class_.class_, yang_name="class", rest_name="class", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='class', extensions={u'tailf-common': {u'info': u'Configure auditlog classes', u'cli-suppress-mode': None, u'callpoint': u'RASAuditCallPoint'}}), is_container='list', yang_name="class", rest_name="class", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure auditlog classes', u'cli-suppress-mode': None, u'callpoint': u'RASAuditCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='list', is_config=True)
 
   class_ = __builtin__.property(_get_class_, _set_class_)
 

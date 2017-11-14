@@ -44,7 +44,7 @@ class auto_shut(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__lag = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lag", rest_name="lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='http://brocade.com/ns/brocade-auto-shut-edge-port', defining_module='brocade-auto-shut-edge-port', yang_type='empty', is_config=True)
+    self.__lag = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lag", rest_name="lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable auto-shut of lag in case of fabric segmentation', u'cli-full-command': None, u'callpoint': u'AutoShutEdgePortCallpoint'}}, namespace='http://brocade.com/ns/brocade-auto-shut-edge-port', defining_module='brocade-auto-shut-edge-port', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -99,12 +99,12 @@ class auto_shut(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lag", rest_name="lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='http://brocade.com/ns/brocade-auto-shut-edge-port', defining_module='brocade-auto-shut-edge-port', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lag", rest_name="lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable auto-shut of lag in case of fabric segmentation', u'cli-full-command': None, u'callpoint': u'AutoShutEdgePortCallpoint'}}, namespace='http://brocade.com/ns/brocade-auto-shut-edge-port', defining_module='brocade-auto-shut-edge-port', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lag must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lag", rest_name="lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='http://brocade.com/ns/brocade-auto-shut-edge-port', defining_module='brocade-auto-shut-edge-port', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lag", rest_name="lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable auto-shut of lag in case of fabric segmentation', u'cli-full-command': None, u'callpoint': u'AutoShutEdgePortCallpoint'}}, namespace='http://brocade.com/ns/brocade-auto-shut-edge-port', defining_module='brocade-auto-shut-edge-port', yang_type='empty', is_config=True)""",
         })
 
     self.__lag = t
@@ -112,7 +112,7 @@ class auto_shut(PybindBase):
       self._set()
 
   def _unset_lag(self):
-    self.__lag = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lag", rest_name="lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='http://brocade.com/ns/brocade-auto-shut-edge-port', defining_module='brocade-auto-shut-edge-port', yang_type='empty', is_config=True)
+    self.__lag = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lag", rest_name="lag", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable auto-shut of lag in case of fabric segmentation', u'cli-full-command': None, u'callpoint': u'AutoShutEdgePortCallpoint'}}, namespace='http://brocade.com/ns/brocade-auto-shut-edge-port', defining_module='brocade-auto-shut-edge-port', yang_type='empty', is_config=True)
 
   lag = __builtin__.property(_get_lag, _set_lag)
 

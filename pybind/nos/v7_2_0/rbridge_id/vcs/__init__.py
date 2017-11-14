@@ -45,7 +45,7 @@ class vcs(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__auto_shut = YANGDynClass(base=auto_shut.auto_shut, is_container='container', presence=False, yang_name="auto-shut", rest_name="auto-shut", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='http://brocade.com/ns/brocade-auto-shut-edge-port', defining_module='brocade-auto-shut-edge-port', yang_type='container', is_config=True)
+    self.__auto_shut = YANGDynClass(base=auto_shut.auto_shut, is_container='container', presence=False, yang_name="auto-shut", rest_name="auto-shut", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure auto-shut', u'cli-incomplete-no': None}}, namespace='http://brocade.com/ns/brocade-auto-shut-edge-port', defining_module='brocade-auto-shut-edge-port', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class vcs(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=auto_shut.auto_shut, is_container='container', presence=False, yang_name="auto-shut", rest_name="auto-shut", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='http://brocade.com/ns/brocade-auto-shut-edge-port', defining_module='brocade-auto-shut-edge-port', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=auto_shut.auto_shut, is_container='container', presence=False, yang_name="auto-shut", rest_name="auto-shut", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure auto-shut', u'cli-incomplete-no': None}}, namespace='http://brocade.com/ns/brocade-auto-shut-edge-port', defining_module='brocade-auto-shut-edge-port', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """auto_shut must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=auto_shut.auto_shut, is_container='container', presence=False, yang_name="auto-shut", rest_name="auto-shut", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='http://brocade.com/ns/brocade-auto-shut-edge-port', defining_module='brocade-auto-shut-edge-port', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=auto_shut.auto_shut, is_container='container', presence=False, yang_name="auto-shut", rest_name="auto-shut", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure auto-shut', u'cli-incomplete-no': None}}, namespace='http://brocade.com/ns/brocade-auto-shut-edge-port', defining_module='brocade-auto-shut-edge-port', yang_type='container', is_config=True)""",
         })
 
     self.__auto_shut = t
@@ -113,7 +113,7 @@ class vcs(PybindBase):
       self._set()
 
   def _unset_auto_shut(self):
-    self.__auto_shut = YANGDynClass(base=auto_shut.auto_shut, is_container='container', presence=False, yang_name="auto-shut", rest_name="auto-shut", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='http://brocade.com/ns/brocade-auto-shut-edge-port', defining_module='brocade-auto-shut-edge-port', yang_type='container', is_config=True)
+    self.__auto_shut = YANGDynClass(base=auto_shut.auto_shut, is_container='container', presence=False, yang_name="auto-shut", rest_name="auto-shut", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure auto-shut', u'cli-incomplete-no': None}}, namespace='http://brocade.com/ns/brocade-auto-shut-edge-port', defining_module='brocade-auto-shut-edge-port', yang_type='container', is_config=True)
 
   auto_shut = __builtin__.property(_get_auto_shut, _set_auto_shut)
 

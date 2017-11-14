@@ -47,7 +47,7 @@ class snmp(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__trap = YANGDynClass(base=trap.trap, is_container='container', presence=False, yang_name="trap", rest_name="trap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-intf-loopback', defining_module='brocade-intf-loopback', yang_type='container', is_config=True)
+    self.__trap = YANGDynClass(base=trap.trap, is_container='container', presence=False, yang_name="trap", rest_name="trap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Trap related configurations', u'cli-incomplete-no': None, u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_BASIC_CONFIG', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-intf-loopback', defining_module='brocade-intf-loopback', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -106,12 +106,12 @@ class snmp(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=trap.trap, is_container='container', presence=False, yang_name="trap", rest_name="trap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-intf-loopback', defining_module='brocade-intf-loopback', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=trap.trap, is_container='container', presence=False, yang_name="trap", rest_name="trap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Trap related configurations', u'cli-incomplete-no': None, u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_BASIC_CONFIG', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-intf-loopback', defining_module='brocade-intf-loopback', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """trap must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=trap.trap, is_container='container', presence=False, yang_name="trap", rest_name="trap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-intf-loopback', defining_module='brocade-intf-loopback', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=trap.trap, is_container='container', presence=False, yang_name="trap", rest_name="trap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Trap related configurations', u'cli-incomplete-no': None, u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_BASIC_CONFIG', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-intf-loopback', defining_module='brocade-intf-loopback', yang_type='container', is_config=True)""",
         })
 
     self.__trap = t
@@ -119,7 +119,7 @@ class snmp(PybindBase):
       self._set()
 
   def _unset_trap(self):
-    self.__trap = YANGDynClass(base=trap.trap, is_container='container', presence=False, yang_name="trap", rest_name="trap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-intf-loopback', defining_module='brocade-intf-loopback', yang_type='container', is_config=True)
+    self.__trap = YANGDynClass(base=trap.trap, is_container='container', presence=False, yang_name="trap", rest_name="trap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Trap related configurations', u'cli-incomplete-no': None, u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_BASIC_CONFIG', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-intf-loopback', defining_module='brocade-intf-loopback', yang_type='container', is_config=True)
 
   trap = __builtin__.property(_get_trap, _set_trap)
 

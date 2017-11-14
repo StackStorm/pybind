@@ -46,8 +46,8 @@ class firmware(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__download = YANGDynClass(base=download.download, is_container='container', presence=False, yang_name="download", rest_name="download", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'action': u'sanity-check'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
-    self.__peripheral_update = YANGDynClass(base=peripheral_update.peripheral_update, is_container='container', presence=False, yang_name="peripheral-update", rest_name="peripheral-update", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
+    self.__download = YANGDynClass(base=download.download, is_container='container', presence=False, yang_name="download", rest_name="download", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'firmware download', u'action': u'sanity-check'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
+    self.__peripheral_update = YANGDynClass(base=peripheral_update.peripheral_update, is_container='container', presence=False, yang_name="peripheral-update", rest_name="peripheral-update", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Update firmware of peripheral'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -102,12 +102,12 @@ class firmware(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=download.download, is_container='container', presence=False, yang_name="download", rest_name="download", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'action': u'sanity-check'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=download.download, is_container='container', presence=False, yang_name="download", rest_name="download", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'firmware download', u'action': u'sanity-check'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """download must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=download.download, is_container='container', presence=False, yang_name="download", rest_name="download", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'action': u'sanity-check'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=download.download, is_container='container', presence=False, yang_name="download", rest_name="download", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'firmware download', u'action': u'sanity-check'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)""",
         })
 
     self.__download = t
@@ -115,7 +115,7 @@ class firmware(PybindBase):
       self._set()
 
   def _unset_download(self):
-    self.__download = YANGDynClass(base=download.download, is_container='container', presence=False, yang_name="download", rest_name="download", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'action': u'sanity-check'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
+    self.__download = YANGDynClass(base=download.download, is_container='container', presence=False, yang_name="download", rest_name="download", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'firmware download', u'action': u'sanity-check'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
 
 
   def _get_peripheral_update(self):
@@ -135,12 +135,12 @@ class firmware(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=peripheral_update.peripheral_update, is_container='container', presence=False, yang_name="peripheral-update", rest_name="peripheral-update", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=peripheral_update.peripheral_update, is_container='container', presence=False, yang_name="peripheral-update", rest_name="peripheral-update", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Update firmware of peripheral'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """peripheral_update must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=peripheral_update.peripheral_update, is_container='container', presence=False, yang_name="peripheral-update", rest_name="peripheral-update", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=peripheral_update.peripheral_update, is_container='container', presence=False, yang_name="peripheral-update", rest_name="peripheral-update", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Update firmware of peripheral'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)""",
         })
 
     self.__peripheral_update = t
@@ -148,7 +148,7 @@ class firmware(PybindBase):
       self._set()
 
   def _unset_peripheral_update(self):
-    self.__peripheral_update = YANGDynClass(base=peripheral_update.peripheral_update, is_container='container', presence=False, yang_name="peripheral-update", rest_name="peripheral-update", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
+    self.__peripheral_update = YANGDynClass(base=peripheral_update.peripheral_update, is_container='container', presence=False, yang_name="peripheral-update", rest_name="peripheral-update", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Update firmware of peripheral'}}, namespace='urn:brocade.com:mgmt:brocade-firmware', defining_module='brocade-firmware', yang_type='container', is_config=True)
 
   download = __builtin__.property(_get_download, _set_download)
   peripheral_update = __builtin__.property(_get_peripheral_update, _set_peripheral_update)

@@ -49,7 +49,7 @@ in a fabric.The below mentioned policies are supported.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__precedence = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'new-login': {'value': 1}, u'old-login': {'value': 0}},), default=unicode("old-login"), is_leaf=True, yang_name="precedence", rest_name="precedence", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='enumeration', is_config=True)
+    self.__precedence = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'new-login': {'value': 1}, u'old-login': {'value': 0}},), default=unicode("old-login"), is_leaf=True, yang_name="precedence", rest_name="precedence", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure device login precedence.'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='enumeration', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -104,12 +104,12 @@ in a fabric.The below mentioned policies are supported.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'new-login': {'value': 1}, u'old-login': {'value': 0}},), default=unicode("old-login"), is_leaf=True, yang_name="precedence", rest_name="precedence", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='enumeration', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'new-login': {'value': 1}, u'old-login': {'value': 0}},), default=unicode("old-login"), is_leaf=True, yang_name="precedence", rest_name="precedence", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure device login precedence.'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """precedence must be of a type compatible with enumeration""",
           'defined-type': "brocade-fabric-service:enumeration",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'new-login': {'value': 1}, u'old-login': {'value': 0}},), default=unicode("old-login"), is_leaf=True, yang_name="precedence", rest_name="precedence", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='enumeration', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'new-login': {'value': 1}, u'old-login': {'value': 0}},), default=unicode("old-login"), is_leaf=True, yang_name="precedence", rest_name="precedence", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure device login precedence.'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='enumeration', is_config=True)""",
         })
 
     self.__precedence = t
@@ -117,7 +117,7 @@ in a fabric.The below mentioned policies are supported.
       self._set()
 
   def _unset_precedence(self):
-    self.__precedence = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'new-login': {'value': 1}, u'old-login': {'value': 0}},), default=unicode("old-login"), is_leaf=True, yang_name="precedence", rest_name="precedence", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='enumeration', is_config=True)
+    self.__precedence = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'new-login': {'value': 1}, u'old-login': {'value': 0}},), default=unicode("old-login"), is_leaf=True, yang_name="precedence", rest_name="precedence", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure device login precedence.'}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='enumeration', is_config=True)
 
   precedence = __builtin__.property(_get_precedence, _set_precedence)
 

@@ -45,7 +45,7 @@ class root_sa(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__root = YANGDynClass(base=root.root, is_container='container', presence=False, yang_name="root", rest_name="root", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__root = YANGDynClass(base=root.root, is_container='container', presence=False, yang_name="root", rest_name="root", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure root account/access', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class root_sa(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=root.root, is_container='container', presence=False, yang_name="root", rest_name="root", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=root.root, is_container='container', presence=False, yang_name="root", rest_name="root", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure root account/access', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """root must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=root.root, is_container='container', presence=False, yang_name="root", rest_name="root", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=root.root, is_container='container', presence=False, yang_name="root", rest_name="root", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure root account/access', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
         })
 
     self.__root = t
@@ -113,7 +113,7 @@ class root_sa(PybindBase):
       self._set()
 
   def _unset_root(self):
-    self.__root = YANGDynClass(base=root.root, is_container='container', presence=False, yang_name="root", rest_name="root", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__root = YANGDynClass(base=root.root, is_container='container', presence=False, yang_name="root", rest_name="root", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure root account/access', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
 
   root = __builtin__.property(_get_root, _set_root)
 

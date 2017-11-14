@@ -48,8 +48,8 @@ class mem_state(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__mem_list = YANGDynClass(base=mem_list.mem_list, is_container='container', presence=False, yang_name="mem-list", rest_name="mem-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
-    self.__summary = YANGDynClass(base=summary.summary, is_container='container', presence=False, yang_name="summary", rest_name="summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
+    self.__mem_list = YANGDynClass(base=mem_list.mem_list, is_container='container', presence=False, yang_name="mem-list", rest_name="mem-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'RAS-process-memory', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
+    self.__summary = YANGDynClass(base=summary.summary, is_container='container', presence=False, yang_name="summary", rest_name="summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'RAS-process-mem-summary', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -108,12 +108,12 @@ class mem_state(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=summary.summary, is_container='container', presence=False, yang_name="summary", rest_name="summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=summary.summary, is_container='container', presence=False, yang_name="summary", rest_name="summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'RAS-process-mem-summary', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """summary must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=summary.summary, is_container='container', presence=False, yang_name="summary", rest_name="summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=summary.summary, is_container='container', presence=False, yang_name="summary", rest_name="summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'RAS-process-mem-summary', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)""",
         })
 
     self.__summary = t
@@ -121,7 +121,7 @@ class mem_state(PybindBase):
       self._set()
 
   def _unset_summary(self):
-    self.__summary = YANGDynClass(base=summary.summary, is_container='container', presence=False, yang_name="summary", rest_name="summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
+    self.__summary = YANGDynClass(base=summary.summary, is_container='container', presence=False, yang_name="summary", rest_name="summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'RAS-process-mem-summary', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
 
 
   def _get_mem_list(self):
@@ -145,12 +145,12 @@ class mem_state(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=mem_list.mem_list, is_container='container', presence=False, yang_name="mem-list", rest_name="mem-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=mem_list.mem_list, is_container='container', presence=False, yang_name="mem-list", rest_name="mem-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'RAS-process-memory', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mem_list must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=mem_list.mem_list, is_container='container', presence=False, yang_name="mem-list", rest_name="mem-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=mem_list.mem_list, is_container='container', presence=False, yang_name="mem-list", rest_name="mem-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'RAS-process-memory', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)""",
         })
 
     self.__mem_list = t
@@ -158,7 +158,7 @@ class mem_state(PybindBase):
       self._set()
 
   def _unset_mem_list(self):
-    self.__mem_list = YANGDynClass(base=mem_list.mem_list, is_container='container', presence=False, yang_name="mem-list", rest_name="mem-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
+    self.__mem_list = YANGDynClass(base=mem_list.mem_list, is_container='container', presence=False, yang_name="mem-list", rest_name="mem-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'RAS-process-memory', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
 
   summary = __builtin__.property(_get_summary)
   mem_list = __builtin__.property(_get_mem_list)

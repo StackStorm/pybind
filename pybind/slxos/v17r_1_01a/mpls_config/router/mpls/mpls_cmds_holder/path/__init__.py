@@ -46,9 +46,9 @@ class path(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__path_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="path-name", rest_name="path-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
-    self.__path_insert = YANGDynClass(base=YANGListType("path_insert_ip",path_insert.path_insert, yang_name="path-insert", rest_name="path-insert", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='path-insert-ip', extensions=None), is_container='list', yang_name="path-insert", rest_name="path-insert", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
-    self.__path_hop = YANGDynClass(base=YANGListType("path_hop_ip",path_hop.path_hop, yang_name="path-hop", rest_name="path-hop", parent=self, is_container='list', user_ordered=True, path_helper=self._path_helper, yang_keys='path-hop-ip', extensions=None), is_container='list', yang_name="path-hop", rest_name="path-hop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__path_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="path-name", rest_name="path-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ASCII string;;Name (up to 64 characters)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__path_insert = YANGDynClass(base=YANGListType("path_insert_ip",path_insert.path_insert, yang_name="path-insert", rest_name="insert", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='path-insert-ip', extensions={u'tailf-common': {u'info': u'Insert path strict or loose hops', u'cli-suppress-mode': None, u'cli-suppress-no': None, u'alt-name': u'insert', u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'MplsPathInsert'}}), is_container='list', yang_name="path-insert", rest_name="insert", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Insert path strict or loose hops', u'cli-suppress-mode': None, u'cli-suppress-no': None, u'alt-name': u'insert', u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'MplsPathInsert'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__path_hop = YANGDynClass(base=YANGListType("path_hop_ip",path_hop.path_hop, yang_name="path-hop", rest_name="hop", parent=self, is_container='list', user_ordered=True, path_helper=self._path_helper, yang_keys='path-hop-ip', extensions={u'tailf-common': {u'info': u'Configure path strict or loose hops', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-full-no': None, u'alt-name': u'hop', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'MplsPathHop'}}), is_container='list', yang_name="path-hop", rest_name="hop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure path strict or loose hops', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-full-no': None, u'alt-name': u'hop', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'MplsPathHop'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -84,7 +84,7 @@ class path(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'mpls-config', u'router', u'mpls', u'mpls-cmds-holder', u'path']
+      return [u'router', u'mpls', u'path']
 
   def _get_path_name(self):
     """
@@ -108,12 +108,12 @@ class path(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="path-name", rest_name="path-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="path-name", rest_name="path-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ASCII string;;Name (up to 64 characters)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """path_name must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="path-name", rest_name="path-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="path-name", rest_name="path-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ASCII string;;Name (up to 64 characters)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)""",
         })
 
     self.__path_name = t
@@ -121,7 +121,7 @@ class path(PybindBase):
       self._set()
 
   def _unset_path_name(self):
-    self.__path_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="path-name", rest_name="path-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
+    self.__path_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..64']}), is_leaf=True, yang_name="path-name", rest_name="path-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'ASCII string;;Name (up to 64 characters)'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='string', is_config=True)
 
 
   def _get_path_hop(self):
@@ -141,12 +141,12 @@ class path(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("path_hop_ip",path_hop.path_hop, yang_name="path-hop", rest_name="path-hop", parent=self, is_container='list', user_ordered=True, path_helper=self._path_helper, yang_keys='path-hop-ip', extensions=None), is_container='list', yang_name="path-hop", rest_name="path-hop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("path_hop_ip",path_hop.path_hop, yang_name="path-hop", rest_name="hop", parent=self, is_container='list', user_ordered=True, path_helper=self._path_helper, yang_keys='path-hop-ip', extensions={u'tailf-common': {u'info': u'Configure path strict or loose hops', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-full-no': None, u'alt-name': u'hop', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'MplsPathHop'}}), is_container='list', yang_name="path-hop", rest_name="hop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure path strict or loose hops', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-full-no': None, u'alt-name': u'hop', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'MplsPathHop'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """path_hop must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("path_hop_ip",path_hop.path_hop, yang_name="path-hop", rest_name="path-hop", parent=self, is_container='list', user_ordered=True, path_helper=self._path_helper, yang_keys='path-hop-ip', extensions=None), is_container='list', yang_name="path-hop", rest_name="path-hop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("path_hop_ip",path_hop.path_hop, yang_name="path-hop", rest_name="hop", parent=self, is_container='list', user_ordered=True, path_helper=self._path_helper, yang_keys='path-hop-ip', extensions={u'tailf-common': {u'info': u'Configure path strict or loose hops', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-full-no': None, u'alt-name': u'hop', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'MplsPathHop'}}), is_container='list', yang_name="path-hop", rest_name="hop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure path strict or loose hops', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-full-no': None, u'alt-name': u'hop', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'MplsPathHop'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
         })
 
     self.__path_hop = t
@@ -154,7 +154,7 @@ class path(PybindBase):
       self._set()
 
   def _unset_path_hop(self):
-    self.__path_hop = YANGDynClass(base=YANGListType("path_hop_ip",path_hop.path_hop, yang_name="path-hop", rest_name="path-hop", parent=self, is_container='list', user_ordered=True, path_helper=self._path_helper, yang_keys='path-hop-ip', extensions=None), is_container='list', yang_name="path-hop", rest_name="path-hop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__path_hop = YANGDynClass(base=YANGListType("path_hop_ip",path_hop.path_hop, yang_name="path-hop", rest_name="hop", parent=self, is_container='list', user_ordered=True, path_helper=self._path_helper, yang_keys='path-hop-ip', extensions={u'tailf-common': {u'info': u'Configure path strict or loose hops', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-full-no': None, u'alt-name': u'hop', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'MplsPathHop'}}), is_container='list', yang_name="path-hop", rest_name="hop", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure path strict or loose hops', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-full-no': None, u'alt-name': u'hop', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'MplsPathHop'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
 
 
   def _get_path_insert(self):
@@ -174,12 +174,12 @@ class path(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("path_insert_ip",path_insert.path_insert, yang_name="path-insert", rest_name="path-insert", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='path-insert-ip', extensions=None), is_container='list', yang_name="path-insert", rest_name="path-insert", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("path_insert_ip",path_insert.path_insert, yang_name="path-insert", rest_name="insert", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='path-insert-ip', extensions={u'tailf-common': {u'info': u'Insert path strict or loose hops', u'cli-suppress-mode': None, u'cli-suppress-no': None, u'alt-name': u'insert', u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'MplsPathInsert'}}), is_container='list', yang_name="path-insert", rest_name="insert", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Insert path strict or loose hops', u'cli-suppress-mode': None, u'cli-suppress-no': None, u'alt-name': u'insert', u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'MplsPathInsert'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """path_insert must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("path_insert_ip",path_insert.path_insert, yang_name="path-insert", rest_name="path-insert", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='path-insert-ip', extensions=None), is_container='list', yang_name="path-insert", rest_name="path-insert", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("path_insert_ip",path_insert.path_insert, yang_name="path-insert", rest_name="insert", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='path-insert-ip', extensions={u'tailf-common': {u'info': u'Insert path strict or loose hops', u'cli-suppress-mode': None, u'cli-suppress-no': None, u'alt-name': u'insert', u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'MplsPathInsert'}}), is_container='list', yang_name="path-insert", rest_name="insert", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Insert path strict or loose hops', u'cli-suppress-mode': None, u'cli-suppress-no': None, u'alt-name': u'insert', u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'MplsPathInsert'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
         })
 
     self.__path_insert = t
@@ -187,7 +187,7 @@ class path(PybindBase):
       self._set()
 
   def _unset_path_insert(self):
-    self.__path_insert = YANGDynClass(base=YANGListType("path_insert_ip",path_insert.path_insert, yang_name="path-insert", rest_name="path-insert", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='path-insert-ip', extensions=None), is_container='list', yang_name="path-insert", rest_name="path-insert", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__path_insert = YANGDynClass(base=YANGListType("path_insert_ip",path_insert.path_insert, yang_name="path-insert", rest_name="insert", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='path-insert-ip', extensions={u'tailf-common': {u'info': u'Insert path strict or loose hops', u'cli-suppress-mode': None, u'cli-suppress-no': None, u'alt-name': u'insert', u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'MplsPathInsert'}}), is_container='list', yang_name="path-insert", rest_name="insert", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Insert path strict or loose hops', u'cli-suppress-mode': None, u'cli-suppress-no': None, u'alt-name': u'insert', u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'MplsPathInsert'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
 
   path_name = __builtin__.property(_get_path_name, _set_path_name)
   path_hop = __builtin__.property(_get_path_hop, _set_path_hop)

@@ -44,7 +44,7 @@ class connector_group(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__speed = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'HighMixed': {'value': 1}, u'FibreChannel': {'value': 2}, u'LowMixed': {'value': 0}},), is_leaf=True, yang_name="speed", rest_name="speed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='connector-speed-type', is_config=True)
+    self.__speed = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'HighMixed': {'value': 1}, u'FibreChannel': {'value': 2}, u'LowMixed': {'value': 0}},), is_leaf=True, yang_name="speed", rest_name="speed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the speed of the connector group'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='connector-speed-type', is_config=True)
     self.__id = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-3][0-9])/)?(([0-9]|[1][0-6]))/([1-9]|[1-9][0-9]|[1-9][0-9][0-9])(:[1-4])?)', 'length': [u'3..16']}), is_leaf=True, yang_name="id", rest_name="id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='connector-group-type', is_config=True)
 
     load = kwargs.pop("load", None)
@@ -138,12 +138,12 @@ class connector_group(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'HighMixed': {'value': 1}, u'FibreChannel': {'value': 2}, u'LowMixed': {'value': 0}},), is_leaf=True, yang_name="speed", rest_name="speed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='connector-speed-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'HighMixed': {'value': 1}, u'FibreChannel': {'value': 2}, u'LowMixed': {'value': 0}},), is_leaf=True, yang_name="speed", rest_name="speed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the speed of the connector group'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='connector-speed-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """speed must be of a type compatible with connector-speed-type""",
           'defined-type': "brocade-hardware:connector-speed-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'HighMixed': {'value': 1}, u'FibreChannel': {'value': 2}, u'LowMixed': {'value': 0}},), is_leaf=True, yang_name="speed", rest_name="speed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='connector-speed-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'HighMixed': {'value': 1}, u'FibreChannel': {'value': 2}, u'LowMixed': {'value': 0}},), is_leaf=True, yang_name="speed", rest_name="speed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the speed of the connector group'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='connector-speed-type', is_config=True)""",
         })
 
     self.__speed = t
@@ -151,7 +151,7 @@ class connector_group(PybindBase):
       self._set()
 
   def _unset_speed(self):
-    self.__speed = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'HighMixed': {'value': 1}, u'FibreChannel': {'value': 2}, u'LowMixed': {'value': 0}},), is_leaf=True, yang_name="speed", rest_name="speed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='connector-speed-type', is_config=True)
+    self.__speed = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'HighMixed': {'value': 1}, u'FibreChannel': {'value': 2}, u'LowMixed': {'value': 0}},), is_leaf=True, yang_name="speed", rest_name="speed", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure the speed of the connector group'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='connector-speed-type', is_config=True)
 
   id = __builtin__.property(_get_id, _set_id)
   speed = __builtin__.property(_get_speed, _set_speed)

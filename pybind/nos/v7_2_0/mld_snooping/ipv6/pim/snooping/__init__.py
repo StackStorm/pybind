@@ -44,7 +44,7 @@ class snooping(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__pimv6_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="pimv6-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='empty', is_config=True)
+    self.__pimv6_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="pimv6-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'PIM Snooping Enable', u'cli-full-command': None, u'cli-suppress-show-conf-path': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -99,12 +99,12 @@ class snooping(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="pimv6-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="pimv6-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'PIM Snooping Enable', u'cli-full-command': None, u'cli-suppress-show-conf-path': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """pimv6_enable must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="pimv6-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="pimv6-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'PIM Snooping Enable', u'cli-full-command': None, u'cli-suppress-show-conf-path': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='empty', is_config=True)""",
         })
 
     self.__pimv6_enable = t
@@ -112,7 +112,7 @@ class snooping(PybindBase):
       self._set()
 
   def _unset_pimv6_enable(self):
-    self.__pimv6_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="pimv6-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='empty', is_config=True)
+    self.__pimv6_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="pimv6-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'PIM Snooping Enable', u'cli-full-command': None, u'cli-suppress-show-conf-path': None, u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='empty', is_config=True)
 
   pimv6_enable = __builtin__.property(_get_pimv6_enable, _set_pimv6_enable)
 

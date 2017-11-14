@@ -45,8 +45,8 @@ class enabled_configuration(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__cfg_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="cfg-name", rest_name="cfg-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
-    self.__enabled_zone = YANGDynClass(base=YANGListType("zone_name",enabled_zone.enabled_zone, yang_name="enabled-zone", rest_name="enabled-zone", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='zone-name', extensions=None), is_container='list', yang_name="enabled-zone", rest_name="enabled-zone", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='list', is_config=True)
+    self.__cfg_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="cfg-name", rest_name="cfg-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'<WORD>;;Enabled-CFG-Name'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
+    self.__enabled_zone = YANGDynClass(base=YANGListType("zone_name",enabled_zone.enabled_zone, yang_name="enabled-zone", rest_name="enabled-zone", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='zone-name', extensions={u'tailf-common': {u'info': u'List of enabled Zones'}}), is_container='list', yang_name="enabled-zone", rest_name="enabled-zone", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'List of enabled Zones'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='list', is_config=True)
     self.__has_more = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="has-more", rest_name="has-more", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='boolean', is_config=True)
 
     load = kwargs.pop("load", None)
@@ -102,12 +102,12 @@ class enabled_configuration(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="cfg-name", rest_name="cfg-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="cfg-name", rest_name="cfg-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'<WORD>;;Enabled-CFG-Name'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """cfg_name must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="cfg-name", rest_name="cfg-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="cfg-name", rest_name="cfg-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'<WORD>;;Enabled-CFG-Name'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)""",
         })
 
     self.__cfg_name = t
@@ -115,7 +115,7 @@ class enabled_configuration(PybindBase):
       self._set()
 
   def _unset_cfg_name(self):
-    self.__cfg_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="cfg-name", rest_name="cfg-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
+    self.__cfg_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="cfg-name", rest_name="cfg-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'<WORD>;;Enabled-CFG-Name'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
 
 
   def _get_enabled_zone(self):
@@ -135,12 +135,12 @@ class enabled_configuration(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("zone_name",enabled_zone.enabled_zone, yang_name="enabled-zone", rest_name="enabled-zone", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='zone-name', extensions=None), is_container='list', yang_name="enabled-zone", rest_name="enabled-zone", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("zone_name",enabled_zone.enabled_zone, yang_name="enabled-zone", rest_name="enabled-zone", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='zone-name', extensions={u'tailf-common': {u'info': u'List of enabled Zones'}}), is_container='list', yang_name="enabled-zone", rest_name="enabled-zone", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'List of enabled Zones'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """enabled_zone must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("zone_name",enabled_zone.enabled_zone, yang_name="enabled-zone", rest_name="enabled-zone", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='zone-name', extensions=None), is_container='list', yang_name="enabled-zone", rest_name="enabled-zone", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("zone_name",enabled_zone.enabled_zone, yang_name="enabled-zone", rest_name="enabled-zone", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='zone-name', extensions={u'tailf-common': {u'info': u'List of enabled Zones'}}), is_container='list', yang_name="enabled-zone", rest_name="enabled-zone", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'List of enabled Zones'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='list', is_config=True)""",
         })
 
     self.__enabled_zone = t
@@ -148,7 +148,7 @@ class enabled_configuration(PybindBase):
       self._set()
 
   def _unset_enabled_zone(self):
-    self.__enabled_zone = YANGDynClass(base=YANGListType("zone_name",enabled_zone.enabled_zone, yang_name="enabled-zone", rest_name="enabled-zone", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='zone-name', extensions=None), is_container='list', yang_name="enabled-zone", rest_name="enabled-zone", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='list', is_config=True)
+    self.__enabled_zone = YANGDynClass(base=YANGListType("zone_name",enabled_zone.enabled_zone, yang_name="enabled-zone", rest_name="enabled-zone", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='zone-name', extensions={u'tailf-common': {u'info': u'List of enabled Zones'}}), is_container='list', yang_name="enabled-zone", rest_name="enabled-zone", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'List of enabled Zones'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='list', is_config=True)
 
 
   def _get_has_more(self):

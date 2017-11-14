@@ -46,9 +46,9 @@ class address(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__use_link_local_only = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="use-link-local-only", rest_name="use-link-local-only", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='empty', is_config=True)
-    self.__link_local_config = YANGDynClass(base=link_local_config.link_local_config, is_container='container', presence=False, yang_name="link-local-config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='container', is_config=True)
-    self.__ipv6_address = YANGDynClass(base=YANGListType("address",ipv6_address.ipv6_address, yang_name="ipv6-address", rest_name="ipv6-address", parent=self, is_container='list', user_ordered=True, path_helper=self._path_helper, yang_keys='address', extensions={u'tailf-common': {u'cli-drop-node-name': None}}), is_container='list', yang_name="ipv6-address", rest_name="ipv6-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='list', is_config=True)
+    self.__use_link_local_only = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="use-link-local-only", rest_name="use-link-local-only", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure automatically computed link-local address', u'callpoint': u'phy-intf-ipv6-cfg-cp'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='empty', is_config=True)
+    self.__link_local_config = YANGDynClass(base=link_local_config.link_local_config, is_container='container', presence=False, yang_name="link-local-config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'callpoint': u'phy-intf-ipv6-cfg-cp'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='container', is_config=True)
+    self.__ipv6_address = YANGDynClass(base=YANGListType("address",ipv6_address.ipv6_address, yang_name="ipv6-address", rest_name="ipv6-address", parent=self, is_container='list', user_ordered=True, path_helper=self._path_helper, yang_keys='address', extensions={u'tailf-common': {u'info': u'Set the IP address of an interface', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-no-match-completion': None, u'callpoint': u'phy-intf-ipv6-addr-cp'}}), is_container='list', yang_name="ipv6-address", rest_name="ipv6-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the IP address of an interface', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-no-match-completion': None, u'callpoint': u'phy-intf-ipv6-addr-cp'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -103,12 +103,12 @@ class address(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="use-link-local-only", rest_name="use-link-local-only", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="use-link-local-only", rest_name="use-link-local-only", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure automatically computed link-local address', u'callpoint': u'phy-intf-ipv6-cfg-cp'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """use_link_local_only must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="use-link-local-only", rest_name="use-link-local-only", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="use-link-local-only", rest_name="use-link-local-only", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure automatically computed link-local address', u'callpoint': u'phy-intf-ipv6-cfg-cp'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='empty', is_config=True)""",
         })
 
     self.__use_link_local_only = t
@@ -116,7 +116,7 @@ class address(PybindBase):
       self._set()
 
   def _unset_use_link_local_only(self):
-    self.__use_link_local_only = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="use-link-local-only", rest_name="use-link-local-only", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='empty', is_config=True)
+    self.__use_link_local_only = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="use-link-local-only", rest_name="use-link-local-only", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure automatically computed link-local address', u'callpoint': u'phy-intf-ipv6-cfg-cp'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='empty', is_config=True)
 
 
   def _get_link_local_config(self):
@@ -136,12 +136,12 @@ class address(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=link_local_config.link_local_config, is_container='container', presence=False, yang_name="link-local-config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=link_local_config.link_local_config, is_container='container', presence=False, yang_name="link-local-config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'callpoint': u'phy-intf-ipv6-cfg-cp'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """link_local_config must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=link_local_config.link_local_config, is_container='container', presence=False, yang_name="link-local-config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=link_local_config.link_local_config, is_container='container', presence=False, yang_name="link-local-config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'callpoint': u'phy-intf-ipv6-cfg-cp'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='container', is_config=True)""",
         })
 
     self.__link_local_config = t
@@ -149,7 +149,7 @@ class address(PybindBase):
       self._set()
 
   def _unset_link_local_config(self):
-    self.__link_local_config = YANGDynClass(base=link_local_config.link_local_config, is_container='container', presence=False, yang_name="link-local-config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='container', is_config=True)
+    self.__link_local_config = YANGDynClass(base=link_local_config.link_local_config, is_container='container', presence=False, yang_name="link-local-config", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None, u'callpoint': u'phy-intf-ipv6-cfg-cp'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='container', is_config=True)
 
 
   def _get_ipv6_address(self):
@@ -169,12 +169,12 @@ class address(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("address",ipv6_address.ipv6_address, yang_name="ipv6-address", rest_name="ipv6-address", parent=self, is_container='list', user_ordered=True, path_helper=self._path_helper, yang_keys='address', extensions={u'tailf-common': {u'cli-drop-node-name': None}}), is_container='list', yang_name="ipv6-address", rest_name="ipv6-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("address",ipv6_address.ipv6_address, yang_name="ipv6-address", rest_name="ipv6-address", parent=self, is_container='list', user_ordered=True, path_helper=self._path_helper, yang_keys='address', extensions={u'tailf-common': {u'info': u'Set the IP address of an interface', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-no-match-completion': None, u'callpoint': u'phy-intf-ipv6-addr-cp'}}), is_container='list', yang_name="ipv6-address", rest_name="ipv6-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the IP address of an interface', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-no-match-completion': None, u'callpoint': u'phy-intf-ipv6-addr-cp'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ipv6_address must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("address",ipv6_address.ipv6_address, yang_name="ipv6-address", rest_name="ipv6-address", parent=self, is_container='list', user_ordered=True, path_helper=self._path_helper, yang_keys='address', extensions={u'tailf-common': {u'cli-drop-node-name': None}}), is_container='list', yang_name="ipv6-address", rest_name="ipv6-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("address",ipv6_address.ipv6_address, yang_name="ipv6-address", rest_name="ipv6-address", parent=self, is_container='list', user_ordered=True, path_helper=self._path_helper, yang_keys='address', extensions={u'tailf-common': {u'info': u'Set the IP address of an interface', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-no-match-completion': None, u'callpoint': u'phy-intf-ipv6-addr-cp'}}), is_container='list', yang_name="ipv6-address", rest_name="ipv6-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the IP address of an interface', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-no-match-completion': None, u'callpoint': u'phy-intf-ipv6-addr-cp'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='list', is_config=True)""",
         })
 
     self.__ipv6_address = t
@@ -182,7 +182,7 @@ class address(PybindBase):
       self._set()
 
   def _unset_ipv6_address(self):
-    self.__ipv6_address = YANGDynClass(base=YANGListType("address",ipv6_address.ipv6_address, yang_name="ipv6-address", rest_name="ipv6-address", parent=self, is_container='list', user_ordered=True, path_helper=self._path_helper, yang_keys='address', extensions={u'tailf-common': {u'cli-drop-node-name': None}}), is_container='list', yang_name="ipv6-address", rest_name="ipv6-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='list', is_config=True)
+    self.__ipv6_address = YANGDynClass(base=YANGListType("address",ipv6_address.ipv6_address, yang_name="ipv6-address", rest_name="ipv6-address", parent=self, is_container='list', user_ordered=True, path_helper=self._path_helper, yang_keys='address', extensions={u'tailf-common': {u'info': u'Set the IP address of an interface', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-no-match-completion': None, u'callpoint': u'phy-intf-ipv6-addr-cp'}}), is_container='list', yang_name="ipv6-address", rest_name="ipv6-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set the IP address of an interface', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-no-match-completion': None, u'callpoint': u'phy-intf-ipv6-addr-cp'}}, namespace='urn:brocade.com:mgmt:brocade-ipv6-config', defining_module='brocade-ipv6-config', yang_type='list', is_config=True)
 
   use_link_local_only = __builtin__.property(_get_use_link_local_only, _set_use_link_local_only)
   link_local_config = __builtin__.property(_get_link_local_config, _set_link_local_config)

@@ -18,7 +18,7 @@ class rpvst(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__timer_config','__description','__bridge_priority','__error_disable_timeout','__port_channel','__shutdown','__vlan','__transmit_holdcount','__mac_address_reduction',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__timer_config','__description','__bridge_priority','__error_disable_timeout','__port_channel','__shutdown','__vlan','__transmit_holdcount',)
 
   _yang_name = 'rpvst'
   _rest_name = 'rpvst'
@@ -56,7 +56,6 @@ class rpvst(PybindBase):
     self.__shutdown = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="shutdown", rest_name="shutdown", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Turn off the spanning-tree protocol'}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='empty', is_config=True)
     self.__transmit_holdcount = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..10']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(6), is_leaf=True, yang_name="transmit-holdcount", rest_name="transmit-holdcount", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set Transmit hold count of the bridge', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='uint32', is_config=True)
     self.__port_channel = YANGDynClass(base=port_channel.port_channel, is_container='container', presence=False, yang_name="port-channel", rest_name="port-channel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Controls behaviour of port-channel for spanning-tree', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='container', is_config=True)
-    self.__mac_address_reduction = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {}, u'standard': {}},), default=unicode("enable"), is_leaf=True, yang_name="mac-address-reduction", rest_name="mac-address-reduction", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Use extended system id', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-hidden-cli', defining_module='brocade-hidden-cli', yang_type='enumeration', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -357,39 +356,6 @@ class rpvst(PybindBase):
   def _unset_transmit_holdcount(self):
     self.__transmit_holdcount = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..10']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(6), is_leaf=True, yang_name="transmit-holdcount", rest_name="transmit-holdcount", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set Transmit hold count of the bridge', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-xstp', defining_module='brocade-xstp', yang_type='uint32', is_config=True)
 
-
-  def _get_mac_address_reduction(self):
-    """
-    Getter method for mac_address_reduction, mapped from YANG variable /protocol/spanning_tree/rpvst/mac_address_reduction (enumeration)
-    """
-    return self.__mac_address_reduction
-      
-  def _set_mac_address_reduction(self, v, load=False):
-    """
-    Setter method for mac_address_reduction, mapped from YANG variable /protocol/spanning_tree/rpvst/mac_address_reduction (enumeration)
-    If this variable is read-only (config: false) in the
-    source YANG file, then _set_mac_address_reduction is considered as a private
-    method. Backends looking to populate this variable should
-    do so via calling thisObj._set_mac_address_reduction() directly.
-    """
-    if hasattr(v, "_utype"):
-      v = v._utype(v)
-    try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {}, u'standard': {}},), default=unicode("enable"), is_leaf=True, yang_name="mac-address-reduction", rest_name="mac-address-reduction", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Use extended system id', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-hidden-cli', defining_module='brocade-hidden-cli', yang_type='enumeration', is_config=True)
-    except (TypeError, ValueError):
-      raise ValueError({
-          'error-string': """mac_address_reduction must be of a type compatible with enumeration""",
-          'defined-type': "brocade-hidden-cli:enumeration",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {}, u'standard': {}},), default=unicode("enable"), is_leaf=True, yang_name="mac-address-reduction", rest_name="mac-address-reduction", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Use extended system id', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-hidden-cli', defining_module='brocade-hidden-cli', yang_type='enumeration', is_config=True)""",
-        })
-
-    self.__mac_address_reduction = t
-    if hasattr(self, '_set'):
-      self._set()
-
-  def _unset_mac_address_reduction(self):
-    self.__mac_address_reduction = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {}, u'standard': {}},), default=unicode("enable"), is_leaf=True, yang_name="mac-address-reduction", rest_name="mac-address-reduction", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Use extended system id', u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-hidden-cli', defining_module='brocade-hidden-cli', yang_type='enumeration', is_config=True)
-
   timer_config = __builtin__.property(_get_timer_config, _set_timer_config)
   description = __builtin__.property(_get_description, _set_description)
   bridge_priority = __builtin__.property(_get_bridge_priority, _set_bridge_priority)
@@ -398,9 +364,8 @@ class rpvst(PybindBase):
   shutdown = __builtin__.property(_get_shutdown, _set_shutdown)
   vlan = __builtin__.property(_get_vlan, _set_vlan)
   transmit_holdcount = __builtin__.property(_get_transmit_holdcount, _set_transmit_holdcount)
-  mac_address_reduction = __builtin__.property(_get_mac_address_reduction, _set_mac_address_reduction)
 
 
-  _pyangbind_elements = {'timer_config': timer_config, 'description': description, 'bridge_priority': bridge_priority, 'error_disable_timeout': error_disable_timeout, 'port_channel': port_channel, 'shutdown': shutdown, 'vlan': vlan, 'transmit_holdcount': transmit_holdcount, 'mac_address_reduction': mac_address_reduction, }
+  _pyangbind_elements = {'timer_config': timer_config, 'description': description, 'bridge_priority': bridge_priority, 'error_disable_timeout': error_disable_timeout, 'port_channel': port_channel, 'shutdown': shutdown, 'vlan': vlan, 'transmit_holdcount': transmit_holdcount, }
 
 

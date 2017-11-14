@@ -44,7 +44,7 @@ class policy(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__switch = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'active': {}, u'on': {}, u'off': {}, u'passive': {}},), default=unicode("passive"), is_leaf=True, yang_name="switch", rest_name="switch", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='fcsp-switch-policy-state', is_config=True)
+    self.__switch = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'active': {}, u'on': {}, u'off': {}, u'passive': {}},), default=unicode("passive"), is_leaf=True, yang_name="switch", rest_name="switch", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable switch policy'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='fcsp-switch-policy-state', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -99,12 +99,12 @@ class policy(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'active': {}, u'on': {}, u'off': {}, u'passive': {}},), default=unicode("passive"), is_leaf=True, yang_name="switch", rest_name="switch", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='fcsp-switch-policy-state', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'active': {}, u'on': {}, u'off': {}, u'passive': {}},), default=unicode("passive"), is_leaf=True, yang_name="switch", rest_name="switch", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable switch policy'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='fcsp-switch-policy-state', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """switch must be of a type compatible with fcsp-switch-policy-state""",
           'defined-type': "brocade-fc-auth:fcsp-switch-policy-state",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'active': {}, u'on': {}, u'off': {}, u'passive': {}},), default=unicode("passive"), is_leaf=True, yang_name="switch", rest_name="switch", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='fcsp-switch-policy-state', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'active': {}, u'on': {}, u'off': {}, u'passive': {}},), default=unicode("passive"), is_leaf=True, yang_name="switch", rest_name="switch", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable switch policy'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='fcsp-switch-policy-state', is_config=True)""",
         })
 
     self.__switch = t
@@ -112,7 +112,7 @@ class policy(PybindBase):
       self._set()
 
   def _unset_switch(self):
-    self.__switch = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'active': {}, u'on': {}, u'off': {}, u'passive': {}},), default=unicode("passive"), is_leaf=True, yang_name="switch", rest_name="switch", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='fcsp-switch-policy-state', is_config=True)
+    self.__switch = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'active': {}, u'on': {}, u'off': {}, u'passive': {}},), default=unicode("passive"), is_leaf=True, yang_name="switch", rest_name="switch", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable switch policy'}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='fcsp-switch-policy-state', is_config=True)
 
   switch = __builtin__.property(_get_switch, _set_switch)
 

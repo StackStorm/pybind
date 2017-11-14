@@ -44,7 +44,7 @@ class pg_nport_interface(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__nports = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..250']})), is_leaf=False, yang_name="nports", rest_name="FibreChannel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'FibreChannel'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='nport-interfaces-type', is_config=True)
+    self.__nports = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..250']})), is_leaf=False, yang_name="nports", rest_name="FibreChannel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-flat-list-syntax': None, u'alt-name': u'FibreChannel'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='nport-interfaces-type', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -99,12 +99,12 @@ class pg_nport_interface(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..250']})), is_leaf=False, yang_name="nports", rest_name="FibreChannel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'FibreChannel'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='nport-interfaces-type', is_config=True)
+      t = YANGDynClass(v,base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..250']})), is_leaf=False, yang_name="nports", rest_name="FibreChannel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-flat-list-syntax': None, u'alt-name': u'FibreChannel'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='nport-interfaces-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """nports must be of a type compatible with nport-interfaces-type""",
           'defined-type': "brocade-ag:nport-interfaces-type",
-          'generated-type': """YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..250']})), is_leaf=False, yang_name="nports", rest_name="FibreChannel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'FibreChannel'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='nport-interfaces-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..250']})), is_leaf=False, yang_name="nports", rest_name="FibreChannel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-flat-list-syntax': None, u'alt-name': u'FibreChannel'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='nport-interfaces-type', is_config=True)""",
         })
 
     self.__nports = t
@@ -112,7 +112,7 @@ class pg_nport_interface(PybindBase):
       self._set()
 
   def _unset_nports(self):
-    self.__nports = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..250']})), is_leaf=False, yang_name="nports", rest_name="FibreChannel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'FibreChannel'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='nport-interfaces-type', is_config=True)
+    self.__nports = YANGDynClass(base=TypedListType(allowed_type=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..250']})), is_leaf=False, yang_name="nports", rest_name="FibreChannel", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-flat-list-syntax': None, u'alt-name': u'FibreChannel'}}, namespace='urn:brocade.com:mgmt:brocade-ag', defining_module='brocade-ag', yang_type='nport-interfaces-type', is_config=True)
 
   nports = __builtin__.property(_get_nports, _set_nports)
 

@@ -48,7 +48,7 @@ all physical and logical entities in the managed device.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__get_contained_in_ID = YANGDynClass(base=get_contained_in_ID.get_contained_in_ID, is_leaf=True, yang_name="get-contained-in-ID", rest_name="get-contained-in-ID", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-entity', defining_module='brocade-entity', yang_type='rpc', is_config=True)
+    self.__get_contained_in_ID = YANGDynClass(base=get_contained_in_ID.get_contained_in_ID, is_leaf=True, yang_name="get-contained-in-ID", rest_name="get-contained-in-ID", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'get_container_id_action_point'}}, namespace='urn:brocade.com:mgmt:brocade-entity', defining_module='brocade-entity', yang_type='rpc', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -113,12 +113,12 @@ device.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=get_contained_in_ID.get_contained_in_ID, is_leaf=True, yang_name="get-contained-in-ID", rest_name="get-contained-in-ID", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-entity', defining_module='brocade-entity', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_contained_in_ID.get_contained_in_ID, is_leaf=True, yang_name="get-contained-in-ID", rest_name="get-contained-in-ID", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'get_container_id_action_point'}}, namespace='urn:brocade.com:mgmt:brocade-entity', defining_module='brocade-entity', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_contained_in_ID must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_contained_in_ID.get_contained_in_ID, is_leaf=True, yang_name="get-contained-in-ID", rest_name="get-contained-in-ID", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-entity', defining_module='brocade-entity', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_contained_in_ID.get_contained_in_ID, is_leaf=True, yang_name="get-contained-in-ID", rest_name="get-contained-in-ID", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'get_container_id_action_point'}}, namespace='urn:brocade.com:mgmt:brocade-entity', defining_module='brocade-entity', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_contained_in_ID = t
@@ -126,7 +126,7 @@ device.
       self._set()
 
   def _unset_get_contained_in_ID(self):
-    self.__get_contained_in_ID = YANGDynClass(base=get_contained_in_ID.get_contained_in_ID, is_leaf=True, yang_name="get-contained-in-ID", rest_name="get-contained-in-ID", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-entity', defining_module='brocade-entity', yang_type='rpc', is_config=True)
+    self.__get_contained_in_ID = YANGDynClass(base=get_contained_in_ID.get_contained_in_ID, is_leaf=True, yang_name="get-contained-in-ID", rest_name="get-contained-in-ID", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'get_container_id_action_point'}}, namespace='urn:brocade.com:mgmt:brocade-entity', defining_module='brocade-entity', yang_type='rpc', is_config=True)
 
   get_contained_in_ID = __builtin__.property(_get_get_contained_in_ID, _set_get_contained_in_ID)
 

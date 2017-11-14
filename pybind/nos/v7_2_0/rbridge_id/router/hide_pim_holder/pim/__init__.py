@@ -47,19 +47,19 @@ class pim(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__nbr_timeout = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16), restriction_dict={'range': [u'35..12600']}), default=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16)(105), is_leaf=True, yang_name="nbr-timeout", rest_name="nbr-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='int16', is_config=True)
-    self.__max_mcache = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..2048']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(2048), is_leaf=True, yang_name="max-mcache", rest_name="max-mcache", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)
-    self.__rp_candidate = YANGDynClass(base=rp_candidate.rp_candidate, is_container='container', presence=False, yang_name="rp-candidate", rest_name="rp-candidate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
-    self.__spt_threshold = YANGDynClass(base=[RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4294967295']}),RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'infinity': {'value': 0}},),], default=unicode("1"), is_leaf=True, yang_name="spt-threshold", rest_name="spt-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='spt-thr-type', is_config=True)
-    self.__message_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(60), is_leaf=True, yang_name="message-interval", rest_name="message-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)
-    self.__rp_address = YANGDynClass(base=YANGListType("rp_ip_addr",rp_address.rp_address, yang_name="rp-address", rest_name="rp-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='rp-ip-addr', extensions=None), is_container='list', yang_name="rp-address", rest_name="rp-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='list', is_config=True)
-    self.__always_use_register = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="always-use-register", rest_name="always-use-register", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='empty', is_config=True)
-    self.__rp_adv_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(60), is_leaf=True, yang_name="rp-adv-interval", rest_name="rp-adv-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)
-    self.__reset_tracking_bit = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="reset-tracking-bit", rest_name="reset-tracking-bit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='empty', is_config=True)
-    self.__hello_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16), restriction_dict={'range': [u'10..3600']}), default=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16)(30), is_leaf=True, yang_name="hello-interval", rest_name="hello-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='int16', is_config=True)
-    self.__inactivity_timer = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16), restriction_dict={'range': [u'60..3600']}), default=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16)(180), is_leaf=True, yang_name="inactivity-timer", rest_name="inactivity-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='int16', is_config=True)
-    self.__bsr_candidate = YANGDynClass(base=bsr_candidate.bsr_candidate, is_container='container', presence=False, yang_name="bsr-candidate", rest_name="bsr-candidate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
-    self.__bsr_msg_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(60), is_leaf=True, yang_name="bsr-msg-interval", rest_name="bsr-msg-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)
+    self.__nbr_timeout = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16), restriction_dict={'range': [u'35..12600']}), default=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16)(105), is_leaf=True, yang_name="nbr-timeout", rest_name="nbr-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set neighbor timeout'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='int16', is_config=True)
+    self.__max_mcache = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..2048']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(2048), is_leaf=True, yang_name="max-mcache", rest_name="max-mcache", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set maximum PIM mcache'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)
+    self.__rp_candidate = YANGDynClass(base=rp_candidate.rp_candidate, is_container='container', presence=False, yang_name="rp-candidate", rest_name="rp-candidate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure candidate rendezvous point (RP)', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
+    self.__spt_threshold = YANGDynClass(base=[RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4294967295']}),RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'infinity': {'value': 0}},),], default=unicode("1"), is_leaf=True, yang_name="spt-threshold", rest_name="spt-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set threshold for switching to shortest-path-tree'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='spt-thr-type', is_config=True)
+    self.__message_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(60), is_leaf=True, yang_name="message-interval", rest_name="message-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set periodic join/prune message interval'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)
+    self.__rp_address = YANGDynClass(base=YANGListType("rp_ip_addr",rp_address.rp_address, yang_name="rp-address", rest_name="rp-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='rp-ip-addr', extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-mode': None, u'callpoint': u'PimStaticRpCfgCallpoint', u'info': u'Static RP', u'cli-suppress-list-no': None}}), is_container='list', yang_name="rp-address", rest_name="rp-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-mode': None, u'callpoint': u'PimStaticRpCfgCallpoint', u'info': u'Static RP', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='list', is_config=True)
+    self.__always_use_register = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="always-use-register", rest_name="always-use-register", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Force PIM data encapsulation, RP will not establish native to Mutlicast Source', u'cli-full-command': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='empty', is_config=True)
+    self.__rp_adv_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(60), is_leaf=True, yang_name="rp-adv-interval", rest_name="rp-adv-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set RP candidate advertisement message interval'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)
+    self.__reset_tracking_bit = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="reset-tracking-bit", rest_name="reset-tracking-bit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set tracking bit', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='empty', is_config=True)
+    self.__hello_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16), restriction_dict={'range': [u'10..3600']}), default=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16)(30), is_leaf=True, yang_name="hello-interval", rest_name="hello-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set hello message interval'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='int16', is_config=True)
+    self.__inactivity_timer = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16), restriction_dict={'range': [u'60..3600']}), default=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16)(180), is_leaf=True, yang_name="inactivity-timer", rest_name="inactivity-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set inactivity interval'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='int16', is_config=True)
+    self.__bsr_candidate = YANGDynClass(base=bsr_candidate.bsr_candidate, is_container='container', presence=False, yang_name="bsr-candidate", rest_name="bsr-candidate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set candidate bootstrap router', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
+    self.__bsr_msg_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(60), is_leaf=True, yang_name="bsr-msg-interval", rest_name="bsr-msg-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set Bootstrap message interval'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -114,12 +114,12 @@ class pim(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="always-use-register", rest_name="always-use-register", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="always-use-register", rest_name="always-use-register", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Force PIM data encapsulation, RP will not establish native to Mutlicast Source', u'cli-full-command': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """always_use_register must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="always-use-register", rest_name="always-use-register", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="always-use-register", rest_name="always-use-register", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Force PIM data encapsulation, RP will not establish native to Mutlicast Source', u'cli-full-command': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='empty', is_config=True)""",
         })
 
     self.__always_use_register = t
@@ -127,7 +127,7 @@ class pim(PybindBase):
       self._set()
 
   def _unset_always_use_register(self):
-    self.__always_use_register = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="always-use-register", rest_name="always-use-register", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='empty', is_config=True)
+    self.__always_use_register = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="always-use-register", rest_name="always-use-register", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Force PIM data encapsulation, RP will not establish native to Mutlicast Source', u'cli-full-command': None, u'hidden': u'full'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='empty', is_config=True)
 
 
   def _get_reset_tracking_bit(self):
@@ -147,12 +147,12 @@ class pim(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="reset-tracking-bit", rest_name="reset-tracking-bit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="reset-tracking-bit", rest_name="reset-tracking-bit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set tracking bit', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """reset_tracking_bit must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="reset-tracking-bit", rest_name="reset-tracking-bit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="reset-tracking-bit", rest_name="reset-tracking-bit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set tracking bit', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='empty', is_config=True)""",
         })
 
     self.__reset_tracking_bit = t
@@ -160,7 +160,7 @@ class pim(PybindBase):
       self._set()
 
   def _unset_reset_tracking_bit(self):
-    self.__reset_tracking_bit = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="reset-tracking-bit", rest_name="reset-tracking-bit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='empty', is_config=True)
+    self.__reset_tracking_bit = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="reset-tracking-bit", rest_name="reset-tracking-bit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set tracking bit', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='empty', is_config=True)
 
 
   def _get_max_mcache(self):
@@ -180,12 +180,12 @@ class pim(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..2048']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(2048), is_leaf=True, yang_name="max-mcache", rest_name="max-mcache", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..2048']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(2048), is_leaf=True, yang_name="max-mcache", rest_name="max-mcache", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set maximum PIM mcache'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """max_mcache must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..2048']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(2048), is_leaf=True, yang_name="max-mcache", rest_name="max-mcache", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..2048']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(2048), is_leaf=True, yang_name="max-mcache", rest_name="max-mcache", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set maximum PIM mcache'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)""",
         })
 
     self.__max_mcache = t
@@ -193,7 +193,7 @@ class pim(PybindBase):
       self._set()
 
   def _unset_max_mcache(self):
-    self.__max_mcache = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..2048']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(2048), is_leaf=True, yang_name="max-mcache", rest_name="max-mcache", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)
+    self.__max_mcache = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..2048']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(2048), is_leaf=True, yang_name="max-mcache", rest_name="max-mcache", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set maximum PIM mcache'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)
 
 
   def _get_hello_interval(self):
@@ -213,12 +213,12 @@ class pim(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16), restriction_dict={'range': [u'10..3600']}), default=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16)(30), is_leaf=True, yang_name="hello-interval", rest_name="hello-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='int16', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16), restriction_dict={'range': [u'10..3600']}), default=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16)(30), is_leaf=True, yang_name="hello-interval", rest_name="hello-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set hello message interval'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='int16', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """hello_interval must be of a type compatible with int16""",
           'defined-type': "int16",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16), restriction_dict={'range': [u'10..3600']}), default=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16)(30), is_leaf=True, yang_name="hello-interval", rest_name="hello-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='int16', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16), restriction_dict={'range': [u'10..3600']}), default=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16)(30), is_leaf=True, yang_name="hello-interval", rest_name="hello-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set hello message interval'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='int16', is_config=True)""",
         })
 
     self.__hello_interval = t
@@ -226,7 +226,7 @@ class pim(PybindBase):
       self._set()
 
   def _unset_hello_interval(self):
-    self.__hello_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16), restriction_dict={'range': [u'10..3600']}), default=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16)(30), is_leaf=True, yang_name="hello-interval", rest_name="hello-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='int16', is_config=True)
+    self.__hello_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16), restriction_dict={'range': [u'10..3600']}), default=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16)(30), is_leaf=True, yang_name="hello-interval", rest_name="hello-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set hello message interval'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='int16', is_config=True)
 
 
   def _get_nbr_timeout(self):
@@ -246,12 +246,12 @@ class pim(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16), restriction_dict={'range': [u'35..12600']}), default=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16)(105), is_leaf=True, yang_name="nbr-timeout", rest_name="nbr-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='int16', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16), restriction_dict={'range': [u'35..12600']}), default=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16)(105), is_leaf=True, yang_name="nbr-timeout", rest_name="nbr-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set neighbor timeout'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='int16', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """nbr_timeout must be of a type compatible with int16""",
           'defined-type': "int16",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16), restriction_dict={'range': [u'35..12600']}), default=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16)(105), is_leaf=True, yang_name="nbr-timeout", rest_name="nbr-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='int16', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16), restriction_dict={'range': [u'35..12600']}), default=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16)(105), is_leaf=True, yang_name="nbr-timeout", rest_name="nbr-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set neighbor timeout'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='int16', is_config=True)""",
         })
 
     self.__nbr_timeout = t
@@ -259,7 +259,7 @@ class pim(PybindBase):
       self._set()
 
   def _unset_nbr_timeout(self):
-    self.__nbr_timeout = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16), restriction_dict={'range': [u'35..12600']}), default=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16)(105), is_leaf=True, yang_name="nbr-timeout", rest_name="nbr-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='int16', is_config=True)
+    self.__nbr_timeout = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16), restriction_dict={'range': [u'35..12600']}), default=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16)(105), is_leaf=True, yang_name="nbr-timeout", rest_name="nbr-timeout", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set neighbor timeout'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='int16', is_config=True)
 
 
   def _get_inactivity_timer(self):
@@ -279,12 +279,12 @@ class pim(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16), restriction_dict={'range': [u'60..3600']}), default=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16)(180), is_leaf=True, yang_name="inactivity-timer", rest_name="inactivity-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='int16', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16), restriction_dict={'range': [u'60..3600']}), default=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16)(180), is_leaf=True, yang_name="inactivity-timer", rest_name="inactivity-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set inactivity interval'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='int16', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """inactivity_timer must be of a type compatible with int16""",
           'defined-type': "int16",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16), restriction_dict={'range': [u'60..3600']}), default=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16)(180), is_leaf=True, yang_name="inactivity-timer", rest_name="inactivity-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='int16', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16), restriction_dict={'range': [u'60..3600']}), default=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16)(180), is_leaf=True, yang_name="inactivity-timer", rest_name="inactivity-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set inactivity interval'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='int16', is_config=True)""",
         })
 
     self.__inactivity_timer = t
@@ -292,7 +292,7 @@ class pim(PybindBase):
       self._set()
 
   def _unset_inactivity_timer(self):
-    self.__inactivity_timer = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16), restriction_dict={'range': [u'60..3600']}), default=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16)(180), is_leaf=True, yang_name="inactivity-timer", rest_name="inactivity-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='int16', is_config=True)
+    self.__inactivity_timer = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16), restriction_dict={'range': [u'60..3600']}), default=RestrictedClassType(base_type=int,restriction_dict={'range': ['-32768..32767']}, int_size=16)(180), is_leaf=True, yang_name="inactivity-timer", rest_name="inactivity-timer", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set inactivity interval'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='int16', is_config=True)
 
 
   def _get_message_interval(self):
@@ -312,12 +312,12 @@ class pim(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(60), is_leaf=True, yang_name="message-interval", rest_name="message-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(60), is_leaf=True, yang_name="message-interval", rest_name="message-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set periodic join/prune message interval'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """message_interval must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(60), is_leaf=True, yang_name="message-interval", rest_name="message-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(60), is_leaf=True, yang_name="message-interval", rest_name="message-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set periodic join/prune message interval'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)""",
         })
 
     self.__message_interval = t
@@ -325,7 +325,7 @@ class pim(PybindBase):
       self._set()
 
   def _unset_message_interval(self):
-    self.__message_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(60), is_leaf=True, yang_name="message-interval", rest_name="message-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)
+    self.__message_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(60), is_leaf=True, yang_name="message-interval", rest_name="message-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set periodic join/prune message interval'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)
 
 
   def _get_bsr_msg_interval(self):
@@ -345,12 +345,12 @@ class pim(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(60), is_leaf=True, yang_name="bsr-msg-interval", rest_name="bsr-msg-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(60), is_leaf=True, yang_name="bsr-msg-interval", rest_name="bsr-msg-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set Bootstrap message interval'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bsr_msg_interval must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(60), is_leaf=True, yang_name="bsr-msg-interval", rest_name="bsr-msg-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(60), is_leaf=True, yang_name="bsr-msg-interval", rest_name="bsr-msg-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set Bootstrap message interval'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)""",
         })
 
     self.__bsr_msg_interval = t
@@ -358,7 +358,7 @@ class pim(PybindBase):
       self._set()
 
   def _unset_bsr_msg_interval(self):
-    self.__bsr_msg_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(60), is_leaf=True, yang_name="bsr-msg-interval", rest_name="bsr-msg-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)
+    self.__bsr_msg_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(60), is_leaf=True, yang_name="bsr-msg-interval", rest_name="bsr-msg-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set Bootstrap message interval'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)
 
 
   def _get_rp_adv_interval(self):
@@ -378,12 +378,12 @@ class pim(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(60), is_leaf=True, yang_name="rp-adv-interval", rest_name="rp-adv-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(60), is_leaf=True, yang_name="rp-adv-interval", rest_name="rp-adv-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set RP candidate advertisement message interval'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rp_adv_interval must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(60), is_leaf=True, yang_name="rp-adv-interval", rest_name="rp-adv-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(60), is_leaf=True, yang_name="rp-adv-interval", rest_name="rp-adv-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set RP candidate advertisement message interval'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)""",
         })
 
     self.__rp_adv_interval = t
@@ -391,7 +391,7 @@ class pim(PybindBase):
       self._set()
 
   def _unset_rp_adv_interval(self):
-    self.__rp_adv_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(60), is_leaf=True, yang_name="rp-adv-interval", rest_name="rp-adv-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)
+    self.__rp_adv_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(60), is_leaf=True, yang_name="rp-adv-interval", rest_name="rp-adv-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set RP candidate advertisement message interval'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='uint32', is_config=True)
 
 
   def _get_spt_threshold(self):
@@ -411,12 +411,12 @@ class pim(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=[RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4294967295']}),RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'infinity': {'value': 0}},),], default=unicode("1"), is_leaf=True, yang_name="spt-threshold", rest_name="spt-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='spt-thr-type', is_config=True)
+      t = YANGDynClass(v,base=[RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4294967295']}),RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'infinity': {'value': 0}},),], default=unicode("1"), is_leaf=True, yang_name="spt-threshold", rest_name="spt-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set threshold for switching to shortest-path-tree'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='spt-thr-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """spt_threshold must be of a type compatible with spt-thr-type""",
           'defined-type': "brocade-pim:spt-thr-type",
-          'generated-type': """YANGDynClass(base=[RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4294967295']}),RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'infinity': {'value': 0}},),], default=unicode("1"), is_leaf=True, yang_name="spt-threshold", rest_name="spt-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='spt-thr-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=[RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4294967295']}),RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'infinity': {'value': 0}},),], default=unicode("1"), is_leaf=True, yang_name="spt-threshold", rest_name="spt-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set threshold for switching to shortest-path-tree'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='spt-thr-type', is_config=True)""",
         })
 
     self.__spt_threshold = t
@@ -424,7 +424,7 @@ class pim(PybindBase):
       self._set()
 
   def _unset_spt_threshold(self):
-    self.__spt_threshold = YANGDynClass(base=[RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4294967295']}),RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'infinity': {'value': 0}},),], default=unicode("1"), is_leaf=True, yang_name="spt-threshold", rest_name="spt-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='spt-thr-type', is_config=True)
+    self.__spt_threshold = YANGDynClass(base=[RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..4294967295']}),RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'infinity': {'value': 0}},),], default=unicode("1"), is_leaf=True, yang_name="spt-threshold", rest_name="spt-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set threshold for switching to shortest-path-tree'}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='spt-thr-type', is_config=True)
 
 
   def _get_bsr_candidate(self):
@@ -444,12 +444,12 @@ class pim(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=bsr_candidate.bsr_candidate, is_container='container', presence=False, yang_name="bsr-candidate", rest_name="bsr-candidate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=bsr_candidate.bsr_candidate, is_container='container', presence=False, yang_name="bsr-candidate", rest_name="bsr-candidate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set candidate bootstrap router', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """bsr_candidate must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=bsr_candidate.bsr_candidate, is_container='container', presence=False, yang_name="bsr-candidate", rest_name="bsr-candidate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=bsr_candidate.bsr_candidate, is_container='container', presence=False, yang_name="bsr-candidate", rest_name="bsr-candidate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set candidate bootstrap router', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)""",
         })
 
     self.__bsr_candidate = t
@@ -457,7 +457,7 @@ class pim(PybindBase):
       self._set()
 
   def _unset_bsr_candidate(self):
-    self.__bsr_candidate = YANGDynClass(base=bsr_candidate.bsr_candidate, is_container='container', presence=False, yang_name="bsr-candidate", rest_name="bsr-candidate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
+    self.__bsr_candidate = YANGDynClass(base=bsr_candidate.bsr_candidate, is_container='container', presence=False, yang_name="bsr-candidate", rest_name="bsr-candidate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set candidate bootstrap router', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
 
 
   def _get_rp_candidate(self):
@@ -477,12 +477,12 @@ class pim(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=rp_candidate.rp_candidate, is_container='container', presence=False, yang_name="rp-candidate", rest_name="rp-candidate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=rp_candidate.rp_candidate, is_container='container', presence=False, yang_name="rp-candidate", rest_name="rp-candidate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure candidate rendezvous point (RP)', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rp_candidate must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=rp_candidate.rp_candidate, is_container='container', presence=False, yang_name="rp-candidate", rest_name="rp-candidate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=rp_candidate.rp_candidate, is_container='container', presence=False, yang_name="rp-candidate", rest_name="rp-candidate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure candidate rendezvous point (RP)', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)""",
         })
 
     self.__rp_candidate = t
@@ -490,7 +490,7 @@ class pim(PybindBase):
       self._set()
 
   def _unset_rp_candidate(self):
-    self.__rp_candidate = YANGDynClass(base=rp_candidate.rp_candidate, is_container='container', presence=False, yang_name="rp-candidate", rest_name="rp-candidate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
+    self.__rp_candidate = YANGDynClass(base=rp_candidate.rp_candidate, is_container='container', presence=False, yang_name="rp-candidate", rest_name="rp-candidate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure candidate rendezvous point (RP)', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='container', is_config=True)
 
 
   def _get_rp_address(self):
@@ -510,12 +510,12 @@ class pim(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("rp_ip_addr",rp_address.rp_address, yang_name="rp-address", rest_name="rp-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='rp-ip-addr', extensions=None), is_container='list', yang_name="rp-address", rest_name="rp-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("rp_ip_addr",rp_address.rp_address, yang_name="rp-address", rest_name="rp-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='rp-ip-addr', extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-mode': None, u'callpoint': u'PimStaticRpCfgCallpoint', u'info': u'Static RP', u'cli-suppress-list-no': None}}), is_container='list', yang_name="rp-address", rest_name="rp-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-mode': None, u'callpoint': u'PimStaticRpCfgCallpoint', u'info': u'Static RP', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rp_address must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("rp_ip_addr",rp_address.rp_address, yang_name="rp-address", rest_name="rp-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='rp-ip-addr', extensions=None), is_container='list', yang_name="rp-address", rest_name="rp-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("rp_ip_addr",rp_address.rp_address, yang_name="rp-address", rest_name="rp-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='rp-ip-addr', extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-mode': None, u'callpoint': u'PimStaticRpCfgCallpoint', u'info': u'Static RP', u'cli-suppress-list-no': None}}), is_container='list', yang_name="rp-address", rest_name="rp-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-mode': None, u'callpoint': u'PimStaticRpCfgCallpoint', u'info': u'Static RP', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='list', is_config=True)""",
         })
 
     self.__rp_address = t
@@ -523,7 +523,7 @@ class pim(PybindBase):
       self._set()
 
   def _unset_rp_address(self):
-    self.__rp_address = YANGDynClass(base=YANGListType("rp_ip_addr",rp_address.rp_address, yang_name="rp-address", rest_name="rp-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='rp-ip-addr', extensions=None), is_container='list', yang_name="rp-address", rest_name="rp-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='list', is_config=True)
+    self.__rp_address = YANGDynClass(base=YANGListType("rp_ip_addr",rp_address.rp_address, yang_name="rp-address", rest_name="rp-address", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='rp-ip-addr', extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-mode': None, u'callpoint': u'PimStaticRpCfgCallpoint', u'info': u'Static RP', u'cli-suppress-list-no': None}}), is_container='list', yang_name="rp-address", rest_name="rp-address", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-suppress-mode': None, u'callpoint': u'PimStaticRpCfgCallpoint', u'info': u'Static RP', u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-pim', defining_module='brocade-pim', yang_type='list', is_config=True)
 
   always_use_register = __builtin__.property(_get_always_use_register, _set_always_use_register)
   reset_tracking_bit = __builtin__.property(_get_reset_tracking_bit, _set_reset_tracking_bit)

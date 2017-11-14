@@ -45,7 +45,7 @@ class aaa_config(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__aaa = YANGDynClass(base=aaa.aaa, is_container='container', presence=False, yang_name="aaa", rest_name="aaa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__aaa = YANGDynClass(base=aaa.aaa, is_container='container', presence=False, yang_name="aaa", rest_name="aaa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure preferred order of types of AAA server', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class aaa_config(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=aaa.aaa, is_container='container', presence=False, yang_name="aaa", rest_name="aaa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=aaa.aaa, is_container='container', presence=False, yang_name="aaa", rest_name="aaa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure preferred order of types of AAA server', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """aaa must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=aaa.aaa, is_container='container', presence=False, yang_name="aaa", rest_name="aaa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=aaa.aaa, is_container='container', presence=False, yang_name="aaa", rest_name="aaa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure preferred order of types of AAA server', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
         })
 
     self.__aaa = t
@@ -113,7 +113,7 @@ class aaa_config(PybindBase):
       self._set()
 
   def _unset_aaa(self):
-    self.__aaa = YANGDynClass(base=aaa.aaa, is_container='container', presence=False, yang_name="aaa", rest_name="aaa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__aaa = YANGDynClass(base=aaa.aaa, is_container='container', presence=False, yang_name="aaa", rest_name="aaa", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure preferred order of types of AAA server', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
 
   aaa = __builtin__.property(_get_aaa, _set_aaa)
 

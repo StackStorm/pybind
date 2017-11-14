@@ -63,12 +63,12 @@ to the iSCSI and FC devices.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__isns_get_device_brief = YANGDynClass(base=isns_get_device_brief.isns_get_device_brief, is_leaf=True, yang_name="isns-get-device-brief", rest_name="isns-get-device-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
-    self.__isns_get_discovery_domain = YANGDynClass(base=isns_get_discovery_domain.isns_get_discovery_domain, is_leaf=True, yang_name="isns-get-discovery-domain", rest_name="isns-get-discovery-domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
-    self.__isns_get_vrf_forwarding = YANGDynClass(base=isns_get_vrf_forwarding.isns_get_vrf_forwarding, is_leaf=True, yang_name="isns-get-vrf-forwarding", rest_name="isns-get-vrf-forwarding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
-    self.__isns_get_server_role = YANGDynClass(base=isns_get_server_role.isns_get_server_role, is_leaf=True, yang_name="isns-get-server-role", rest_name="isns-get-server-role", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
-    self.__isns_get_last_device_timestamp = YANGDynClass(base=isns_get_last_device_timestamp.isns_get_last_device_timestamp, is_leaf=True, yang_name="isns-get-last-device-timestamp", rest_name="isns-get-last-device-timestamp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
-    self.__isns_get_discovery_domain_set = YANGDynClass(base=isns_get_discovery_domain_set.isns_get_discovery_domain_set, is_leaf=True, yang_name="isns-get-discovery-domain-set", rest_name="isns-get-discovery-domain-set", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
+    self.__isns_get_device_brief = YANGDynClass(base=isns_get_device_brief.isns_get_device_brief, is_leaf=True, yang_name="isns-get-device-brief", rest_name="isns-get-device-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'isns-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
+    self.__isns_get_discovery_domain = YANGDynClass(base=isns_get_discovery_domain.isns_get_discovery_domain, is_leaf=True, yang_name="isns-get-discovery-domain", rest_name="isns-get-discovery-domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'isns-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
+    self.__isns_get_vrf_forwarding = YANGDynClass(base=isns_get_vrf_forwarding.isns_get_vrf_forwarding, is_leaf=True, yang_name="isns-get-vrf-forwarding", rest_name="isns-get-vrf-forwarding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'isns-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
+    self.__isns_get_server_role = YANGDynClass(base=isns_get_server_role.isns_get_server_role, is_leaf=True, yang_name="isns-get-server-role", rest_name="isns-get-server-role", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'isns-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
+    self.__isns_get_last_device_timestamp = YANGDynClass(base=isns_get_last_device_timestamp.isns_get_last_device_timestamp, is_leaf=True, yang_name="isns-get-last-device-timestamp", rest_name="isns-get-last-device-timestamp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'isns-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
+    self.__isns_get_discovery_domain_set = YANGDynClass(base=isns_get_discovery_domain_set.isns_get_discovery_domain_set, is_leaf=True, yang_name="isns-get-discovery-domain-set", rest_name="isns-get-discovery-domain-set", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'isns-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -129,12 +129,12 @@ that have been logged in.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=isns_get_device_brief.isns_get_device_brief, is_leaf=True, yang_name="isns-get-device-brief", rest_name="isns-get-device-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=isns_get_device_brief.isns_get_device_brief, is_leaf=True, yang_name="isns-get-device-brief", rest_name="isns-get-device-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'isns-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """isns_get_device_brief must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=isns_get_device_brief.isns_get_device_brief, is_leaf=True, yang_name="isns-get-device-brief", rest_name="isns-get-device-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=isns_get_device_brief.isns_get_device_brief, is_leaf=True, yang_name="isns-get-device-brief", rest_name="isns-get-device-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'isns-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)""",
         })
 
     self.__isns_get_device_brief = t
@@ -142,7 +142,7 @@ that have been logged in.
       self._set()
 
   def _unset_isns_get_device_brief(self):
-    self.__isns_get_device_brief = YANGDynClass(base=isns_get_device_brief.isns_get_device_brief, is_leaf=True, yang_name="isns-get-device-brief", rest_name="isns-get-device-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
+    self.__isns_get_device_brief = YANGDynClass(base=isns_get_device_brief.isns_get_device_brief, is_leaf=True, yang_name="isns-get-device-brief", rest_name="isns-get-device-brief", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'isns-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
 
 
   def _get_isns_get_discovery_domain(self):
@@ -168,12 +168,12 @@ that have been logged in.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=isns_get_discovery_domain.isns_get_discovery_domain, is_leaf=True, yang_name="isns-get-discovery-domain", rest_name="isns-get-discovery-domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=isns_get_discovery_domain.isns_get_discovery_domain, is_leaf=True, yang_name="isns-get-discovery-domain", rest_name="isns-get-discovery-domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'isns-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """isns_get_discovery_domain must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=isns_get_discovery_domain.isns_get_discovery_domain, is_leaf=True, yang_name="isns-get-discovery-domain", rest_name="isns-get-discovery-domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=isns_get_discovery_domain.isns_get_discovery_domain, is_leaf=True, yang_name="isns-get-discovery-domain", rest_name="isns-get-discovery-domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'isns-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)""",
         })
 
     self.__isns_get_discovery_domain = t
@@ -181,7 +181,7 @@ that have been logged in.
       self._set()
 
   def _unset_isns_get_discovery_domain(self):
-    self.__isns_get_discovery_domain = YANGDynClass(base=isns_get_discovery_domain.isns_get_discovery_domain, is_leaf=True, yang_name="isns-get-discovery-domain", rest_name="isns-get-discovery-domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
+    self.__isns_get_discovery_domain = YANGDynClass(base=isns_get_discovery_domain.isns_get_discovery_domain, is_leaf=True, yang_name="isns-get-discovery-domain", rest_name="isns-get-discovery-domain", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'isns-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
 
 
   def _get_isns_get_discovery_domain_set(self):
@@ -207,12 +207,12 @@ that have been created in.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=isns_get_discovery_domain_set.isns_get_discovery_domain_set, is_leaf=True, yang_name="isns-get-discovery-domain-set", rest_name="isns-get-discovery-domain-set", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=isns_get_discovery_domain_set.isns_get_discovery_domain_set, is_leaf=True, yang_name="isns-get-discovery-domain-set", rest_name="isns-get-discovery-domain-set", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'isns-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """isns_get_discovery_domain_set must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=isns_get_discovery_domain_set.isns_get_discovery_domain_set, is_leaf=True, yang_name="isns-get-discovery-domain-set", rest_name="isns-get-discovery-domain-set", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=isns_get_discovery_domain_set.isns_get_discovery_domain_set, is_leaf=True, yang_name="isns-get-discovery-domain-set", rest_name="isns-get-discovery-domain-set", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'isns-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)""",
         })
 
     self.__isns_get_discovery_domain_set = t
@@ -220,7 +220,7 @@ that have been created in.
       self._set()
 
   def _unset_isns_get_discovery_domain_set(self):
-    self.__isns_get_discovery_domain_set = YANGDynClass(base=isns_get_discovery_domain_set.isns_get_discovery_domain_set, is_leaf=True, yang_name="isns-get-discovery-domain-set", rest_name="isns-get-discovery-domain-set", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
+    self.__isns_get_discovery_domain_set = YANGDynClass(base=isns_get_discovery_domain_set.isns_get_discovery_domain_set, is_leaf=True, yang_name="isns-get-discovery-domain-set", rest_name="isns-get-discovery-domain-set", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'isns-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
 
 
   def _get_isns_get_vrf_forwarding(self):
@@ -246,12 +246,12 @@ loopback ip address.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=isns_get_vrf_forwarding.isns_get_vrf_forwarding, is_leaf=True, yang_name="isns-get-vrf-forwarding", rest_name="isns-get-vrf-forwarding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=isns_get_vrf_forwarding.isns_get_vrf_forwarding, is_leaf=True, yang_name="isns-get-vrf-forwarding", rest_name="isns-get-vrf-forwarding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'isns-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """isns_get_vrf_forwarding must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=isns_get_vrf_forwarding.isns_get_vrf_forwarding, is_leaf=True, yang_name="isns-get-vrf-forwarding", rest_name="isns-get-vrf-forwarding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=isns_get_vrf_forwarding.isns_get_vrf_forwarding, is_leaf=True, yang_name="isns-get-vrf-forwarding", rest_name="isns-get-vrf-forwarding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'isns-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)""",
         })
 
     self.__isns_get_vrf_forwarding = t
@@ -259,7 +259,7 @@ loopback ip address.
       self._set()
 
   def _unset_isns_get_vrf_forwarding(self):
-    self.__isns_get_vrf_forwarding = YANGDynClass(base=isns_get_vrf_forwarding.isns_get_vrf_forwarding, is_leaf=True, yang_name="isns-get-vrf-forwarding", rest_name="isns-get-vrf-forwarding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
+    self.__isns_get_vrf_forwarding = YANGDynClass(base=isns_get_vrf_forwarding.isns_get_vrf_forwarding, is_leaf=True, yang_name="isns-get-vrf-forwarding", rest_name="isns-get-vrf-forwarding", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'isns-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
 
 
   def _get_isns_get_last_device_timestamp(self):
@@ -283,12 +283,12 @@ loopback ip address.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=isns_get_last_device_timestamp.isns_get_last_device_timestamp, is_leaf=True, yang_name="isns-get-last-device-timestamp", rest_name="isns-get-last-device-timestamp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=isns_get_last_device_timestamp.isns_get_last_device_timestamp, is_leaf=True, yang_name="isns-get-last-device-timestamp", rest_name="isns-get-last-device-timestamp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'isns-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """isns_get_last_device_timestamp must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=isns_get_last_device_timestamp.isns_get_last_device_timestamp, is_leaf=True, yang_name="isns-get-last-device-timestamp", rest_name="isns-get-last-device-timestamp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=isns_get_last_device_timestamp.isns_get_last_device_timestamp, is_leaf=True, yang_name="isns-get-last-device-timestamp", rest_name="isns-get-last-device-timestamp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'isns-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)""",
         })
 
     self.__isns_get_last_device_timestamp = t
@@ -296,7 +296,7 @@ loopback ip address.
       self._set()
 
   def _unset_isns_get_last_device_timestamp(self):
-    self.__isns_get_last_device_timestamp = YANGDynClass(base=isns_get_last_device_timestamp.isns_get_last_device_timestamp, is_leaf=True, yang_name="isns-get-last-device-timestamp", rest_name="isns-get-last-device-timestamp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
+    self.__isns_get_last_device_timestamp = YANGDynClass(base=isns_get_last_device_timestamp.isns_get_last_device_timestamp, is_leaf=True, yang_name="isns-get-last-device-timestamp", rest_name="isns-get-last-device-timestamp", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'isns-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
 
 
   def _get_isns_get_server_role(self):
@@ -320,12 +320,12 @@ loopback ip address.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=isns_get_server_role.isns_get_server_role, is_leaf=True, yang_name="isns-get-server-role", rest_name="isns-get-server-role", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=isns_get_server_role.isns_get_server_role, is_leaf=True, yang_name="isns-get-server-role", rest_name="isns-get-server-role", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'isns-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """isns_get_server_role must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=isns_get_server_role.isns_get_server_role, is_leaf=True, yang_name="isns-get-server-role", rest_name="isns-get-server-role", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=isns_get_server_role.isns_get_server_role, is_leaf=True, yang_name="isns-get-server-role", rest_name="isns-get-server-role", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'isns-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)""",
         })
 
     self.__isns_get_server_role = t
@@ -333,7 +333,7 @@ loopback ip address.
       self._set()
 
   def _unset_isns_get_server_role(self):
-    self.__isns_get_server_role = YANGDynClass(base=isns_get_server_role.isns_get_server_role, is_leaf=True, yang_name="isns-get-server-role", rest_name="isns-get-server-role", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
+    self.__isns_get_server_role = YANGDynClass(base=isns_get_server_role.isns_get_server_role, is_leaf=True, yang_name="isns-get-server-role", rest_name="isns-get-server-role", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'isns-show-action-point'}}, namespace='urn:brocade.com:mgmt:brocade-isns-ext', defining_module='brocade-isns-ext', yang_type='rpc', is_config=True)
 
   isns_get_device_brief = __builtin__.property(_get_isns_get_device_brief, _set_isns_get_device_brief)
   isns_get_discovery_domain = __builtin__.property(_get_isns_get_discovery_domain, _set_isns_get_discovery_domain)

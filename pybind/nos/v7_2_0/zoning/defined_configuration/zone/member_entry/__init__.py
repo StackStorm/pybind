@@ -44,7 +44,7 @@ class member_entry(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__entry_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9a-zA-Z_]{1,64})|([0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){7}))(;(([0-9a-zA-Z_]{1,64})|([0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){7})))*'}), is_leaf=True, yang_name="entry-name", rest_name="entry-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
+    self.__entry_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9a-zA-Z_]{1,64})|([0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){7}))(;(([0-9a-zA-Z_]{1,64})|([0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){7})))*'}), is_leaf=True, yang_name="entry-name", rest_name="entry-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'<WWN> and/or <Alias-Name>;;Member-Name - \nadd one or more WWN and/or Alias-Name\nmembers to a zone, the [no] option removes\nonly one member at a time.'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -124,12 +124,12 @@ entry can be removed at a time.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9a-zA-Z_]{1,64})|([0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){7}))(;(([0-9a-zA-Z_]{1,64})|([0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){7})))*'}), is_leaf=True, yang_name="entry-name", rest_name="entry-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9a-zA-Z_]{1,64})|([0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){7}))(;(([0-9a-zA-Z_]{1,64})|([0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){7})))*'}), is_leaf=True, yang_name="entry-name", rest_name="entry-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'<WWN> and/or <Alias-Name>;;Member-Name - \nadd one or more WWN and/or Alias-Name\nmembers to a zone, the [no] option removes\nonly one member at a time.'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """entry_name must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9a-zA-Z_]{1,64})|([0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){7}))(;(([0-9a-zA-Z_]{1,64})|([0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){7})))*'}), is_leaf=True, yang_name="entry-name", rest_name="entry-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9a-zA-Z_]{1,64})|([0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){7}))(;(([0-9a-zA-Z_]{1,64})|([0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){7})))*'}), is_leaf=True, yang_name="entry-name", rest_name="entry-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'<WWN> and/or <Alias-Name>;;Member-Name - \nadd one or more WWN and/or Alias-Name\nmembers to a zone, the [no] option removes\nonly one member at a time.'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)""",
         })
 
     self.__entry_name = t
@@ -137,7 +137,7 @@ entry can be removed at a time.
       self._set()
 
   def _unset_entry_name(self):
-    self.__entry_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9a-zA-Z_]{1,64})|([0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){7}))(;(([0-9a-zA-Z_]{1,64})|([0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){7})))*'}), is_leaf=True, yang_name="entry-name", rest_name="entry-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
+    self.__entry_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9a-zA-Z_]{1,64})|([0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){7}))(;(([0-9a-zA-Z_]{1,64})|([0-9a-fA-F]{2}(:[0-9a-fA-F]{2}){7})))*'}), is_leaf=True, yang_name="entry-name", rest_name="entry-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'<WWN> and/or <Alias-Name>;;Member-Name - \nadd one or more WWN and/or Alias-Name\nmembers to a zone, the [no] option removes\nonly one member at a time.'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
 
   entry_name = __builtin__.property(_get_entry_name, _set_entry_name)
 

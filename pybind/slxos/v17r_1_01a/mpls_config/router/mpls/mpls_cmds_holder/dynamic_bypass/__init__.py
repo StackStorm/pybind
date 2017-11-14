@@ -45,7 +45,7 @@ class dynamic_bypass(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__mpls_dynamic_bypass_sub_cmds = YANGDynClass(base=mpls_dynamic_bypass_sub_cmds.mpls_dynamic_bypass_sub_cmds, is_container='container', presence=False, yang_name="mpls-dynamic-bypass-sub-cmds", rest_name="mpls-dynamic-bypass-sub-cmds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__mpls_dynamic_bypass_sub_cmds = YANGDynClass(base=mpls_dynamic_bypass_sub_cmds.mpls_dynamic_bypass_sub_cmds, is_container='container', presence=False, yang_name="mpls-dynamic-bypass-sub-cmds", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -81,7 +81,7 @@ class dynamic_bypass(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'mpls-config', u'router', u'mpls', u'mpls-cmds-holder', u'dynamic-bypass']
+      return [u'router', u'mpls', u'dynamic-bypass']
 
   def _get_mpls_dynamic_bypass_sub_cmds(self):
     """
@@ -100,12 +100,12 @@ class dynamic_bypass(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=mpls_dynamic_bypass_sub_cmds.mpls_dynamic_bypass_sub_cmds, is_container='container', presence=False, yang_name="mpls-dynamic-bypass-sub-cmds", rest_name="mpls-dynamic-bypass-sub-cmds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=mpls_dynamic_bypass_sub_cmds.mpls_dynamic_bypass_sub_cmds, is_container='container', presence=False, yang_name="mpls-dynamic-bypass-sub-cmds", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """mpls_dynamic_bypass_sub_cmds must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=mpls_dynamic_bypass_sub_cmds.mpls_dynamic_bypass_sub_cmds, is_container='container', presence=False, yang_name="mpls-dynamic-bypass-sub-cmds", rest_name="mpls-dynamic-bypass-sub-cmds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=mpls_dynamic_bypass_sub_cmds.mpls_dynamic_bypass_sub_cmds, is_container='container', presence=False, yang_name="mpls-dynamic-bypass-sub-cmds", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__mpls_dynamic_bypass_sub_cmds = t
@@ -113,7 +113,7 @@ class dynamic_bypass(PybindBase):
       self._set()
 
   def _unset_mpls_dynamic_bypass_sub_cmds(self):
-    self.__mpls_dynamic_bypass_sub_cmds = YANGDynClass(base=mpls_dynamic_bypass_sub_cmds.mpls_dynamic_bypass_sub_cmds, is_container='container', presence=False, yang_name="mpls-dynamic-bypass-sub-cmds", rest_name="mpls-dynamic-bypass-sub-cmds", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__mpls_dynamic_bypass_sub_cmds = YANGDynClass(base=mpls_dynamic_bypass_sub_cmds.mpls_dynamic_bypass_sub_cmds, is_container='container', presence=False, yang_name="mpls-dynamic-bypass-sub-cmds", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
   mpls_dynamic_bypass_sub_cmds = __builtin__.property(_get_mpls_dynamic_bypass_sub_cmds, _set_mpls_dynamic_bypass_sub_cmds)
 

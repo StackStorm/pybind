@@ -47,11 +47,11 @@ class fcoe_interface_bind(PybindBase):
     else:
       self._extmethods = False
     self.__fcoe_interface_bind_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0..32']}), default=unicode(""), is_leaf=True, yang_name="fcoe-interface-bind-name", rest_name="fcoe-interface-bind-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='string', is_config=True)
-    self.__fcoe_interface_bind_hu = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-hu", rest_name="HundredGigabitEthernet", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-hu'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'HundredGigabitEthernet'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
-    self.__fcoe_interface_bind_mac = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-mac", rest_name="mac-address", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-mac'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'mac-address'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
-    self.__fcoe_interface_bind_po = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-po", rest_name="Port-channel", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-po'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'Port-channel'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
-    self.__fcoe_interface_bind_fo = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-fo", rest_name="FortyGigabitEthernet", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-fo'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'FortyGigabitEthernet'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
-    self.__fcoe_interface_bind_te = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-te", rest_name="TenGigabitEthernet", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-te'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'TenGigabitEthernet'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
+    self.__fcoe_interface_bind_hu = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-hu", rest_name="HundredGigabitEthernet", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-hu'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bind to HundredGigabitEthernet port', u'alt-name': u'HundredGigabitEthernet', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_BASIC_CONFIG', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
+    self.__fcoe_interface_bind_mac = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-mac", rest_name="mac-address", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-mac'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bind to an Enode Mac-address', u'alt-name': u'mac-address', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_BASIC_CONFIG', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
+    self.__fcoe_interface_bind_po = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-po", rest_name="Port-channel", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-po'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bind to Port-channel', u'alt-name': u'Port-channel', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_BASIC_CONFIG', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
+    self.__fcoe_interface_bind_fo = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-fo", rest_name="FortyGigabitEthernet", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-fo'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bind to FortyGigabitEthernet port', u'alt-name': u'FortyGigabitEthernet', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_BASIC_CONFIG', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
+    self.__fcoe_interface_bind_te = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-te", rest_name="TenGigabitEthernet", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-te'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bind to TenGigabitEthernet port', u'alt-name': u'TenGigabitEthernet', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_BASIC_CONFIG', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -110,12 +110,12 @@ class fcoe_interface_bind(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-te", rest_name="TenGigabitEthernet", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-te'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'TenGigabitEthernet'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-te", rest_name="TenGigabitEthernet", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-te'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bind to TenGigabitEthernet port', u'alt-name': u'TenGigabitEthernet', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_BASIC_CONFIG', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fcoe_interface_bind_te must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-te", rest_name="TenGigabitEthernet", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-te'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'TenGigabitEthernet'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-te", rest_name="TenGigabitEthernet", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-te'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bind to TenGigabitEthernet port', u'alt-name': u'TenGigabitEthernet', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_BASIC_CONFIG', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)""",
         })
 
     self.__fcoe_interface_bind_te = t
@@ -123,7 +123,7 @@ class fcoe_interface_bind(PybindBase):
       self._set()
 
   def _unset_fcoe_interface_bind_te(self):
-    self.__fcoe_interface_bind_te = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-te", rest_name="TenGigabitEthernet", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-te'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'TenGigabitEthernet'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
+    self.__fcoe_interface_bind_te = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-te", rest_name="TenGigabitEthernet", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-te'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bind to TenGigabitEthernet port', u'alt-name': u'TenGigabitEthernet', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_BASIC_CONFIG', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
 
 
   def _get_fcoe_interface_bind_fo(self):
@@ -147,12 +147,12 @@ class fcoe_interface_bind(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-fo", rest_name="FortyGigabitEthernet", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-fo'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'FortyGigabitEthernet'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-fo", rest_name="FortyGigabitEthernet", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-fo'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bind to FortyGigabitEthernet port', u'alt-name': u'FortyGigabitEthernet', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_BASIC_CONFIG', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fcoe_interface_bind_fo must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-fo", rest_name="FortyGigabitEthernet", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-fo'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'FortyGigabitEthernet'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-fo", rest_name="FortyGigabitEthernet", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-fo'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bind to FortyGigabitEthernet port', u'alt-name': u'FortyGigabitEthernet', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_BASIC_CONFIG', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)""",
         })
 
     self.__fcoe_interface_bind_fo = t
@@ -160,7 +160,7 @@ class fcoe_interface_bind(PybindBase):
       self._set()
 
   def _unset_fcoe_interface_bind_fo(self):
-    self.__fcoe_interface_bind_fo = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-fo", rest_name="FortyGigabitEthernet", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-fo'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'FortyGigabitEthernet'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
+    self.__fcoe_interface_bind_fo = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-fo", rest_name="FortyGigabitEthernet", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-fo'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bind to FortyGigabitEthernet port', u'alt-name': u'FortyGigabitEthernet', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_BASIC_CONFIG', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
 
 
   def _get_fcoe_interface_bind_po(self):
@@ -184,12 +184,12 @@ class fcoe_interface_bind(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-po", rest_name="Port-channel", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-po'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'Port-channel'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-po", rest_name="Port-channel", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-po'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bind to Port-channel', u'alt-name': u'Port-channel', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_BASIC_CONFIG', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fcoe_interface_bind_po must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-po", rest_name="Port-channel", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-po'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'Port-channel'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-po", rest_name="Port-channel", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-po'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bind to Port-channel', u'alt-name': u'Port-channel', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_BASIC_CONFIG', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)""",
         })
 
     self.__fcoe_interface_bind_po = t
@@ -197,7 +197,7 @@ class fcoe_interface_bind(PybindBase):
       self._set()
 
   def _unset_fcoe_interface_bind_po(self):
-    self.__fcoe_interface_bind_po = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-po", rest_name="Port-channel", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-po'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'Port-channel'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
+    self.__fcoe_interface_bind_po = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-po", rest_name="Port-channel", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-po'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bind to Port-channel', u'alt-name': u'Port-channel', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_BASIC_CONFIG', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
 
 
   def _get_fcoe_interface_bind_mac(self):
@@ -221,12 +221,12 @@ class fcoe_interface_bind(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-mac", rest_name="mac-address", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-mac'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'mac-address'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-mac", rest_name="mac-address", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-mac'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bind to an Enode Mac-address', u'alt-name': u'mac-address', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_BASIC_CONFIG', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fcoe_interface_bind_mac must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-mac", rest_name="mac-address", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-mac'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'mac-address'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-mac", rest_name="mac-address", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-mac'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bind to an Enode Mac-address', u'alt-name': u'mac-address', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_BASIC_CONFIG', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)""",
         })
 
     self.__fcoe_interface_bind_mac = t
@@ -234,7 +234,7 @@ class fcoe_interface_bind(PybindBase):
       self._set()
 
   def _unset_fcoe_interface_bind_mac(self):
-    self.__fcoe_interface_bind_mac = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-mac", rest_name="mac-address", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-mac'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'mac-address'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
+    self.__fcoe_interface_bind_mac = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-mac", rest_name="mac-address", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-mac'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bind to an Enode Mac-address', u'alt-name': u'mac-address', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_BASIC_CONFIG', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
 
 
   def _get_fcoe_interface_bind_hu(self):
@@ -258,12 +258,12 @@ class fcoe_interface_bind(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-hu", rest_name="HundredGigabitEthernet", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-hu'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'HundredGigabitEthernet'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-hu", rest_name="HundredGigabitEthernet", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-hu'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bind to HundredGigabitEthernet port', u'alt-name': u'HundredGigabitEthernet', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_BASIC_CONFIG', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fcoe_interface_bind_hu must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-hu", rest_name="HundredGigabitEthernet", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-hu'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'HundredGigabitEthernet'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-hu", rest_name="HundredGigabitEthernet", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-hu'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bind to HundredGigabitEthernet port', u'alt-name': u'HundredGigabitEthernet', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_BASIC_CONFIG', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)""",
         })
 
     self.__fcoe_interface_bind_hu = t
@@ -271,7 +271,7 @@ class fcoe_interface_bind(PybindBase):
       self._set()
 
   def _unset_fcoe_interface_bind_hu(self):
-    self.__fcoe_interface_bind_hu = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-hu", rest_name="HundredGigabitEthernet", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-hu'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'HundredGigabitEthernet'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
+    self.__fcoe_interface_bind_hu = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="fcoe-interface-bind-hu", rest_name="HundredGigabitEthernet", parent=self, choice=(u'fcoe-interface-bind-type', u'fcoe-interface-bind-hu'), path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Bind to HundredGigabitEthernet port', u'alt-name': u'HundredGigabitEthernet', u'sort-priority': u'RUNNCFG_INTERFACE_LEVEL_BASIC_CONFIG', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
 
 
   def _get_fcoe_interface_bind_name(self):

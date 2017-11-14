@@ -47,10 +47,10 @@ class support(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__autoupload = YANGDynClass(base=autoupload.autoupload, is_container='container', presence=False, yang_name="autoupload", rest_name="autoupload", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
-    self.__autoupload_param = YANGDynClass(base=autoupload_param.autoupload_param, is_container='container', presence=False, yang_name="autoupload-param", rest_name="autoupload-param", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
-    self.__support_param = YANGDynClass(base=support_param.support_param, is_container='container', presence=False, yang_name="support-param", rest_name="support-param", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
-    self.__ffdc = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ffdc", rest_name="ffdc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='empty', is_config=True)
+    self.__autoupload = YANGDynClass(base=autoupload.autoupload, is_container='container', presence=False, yang_name="autoupload", rest_name="autoupload", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Autoupload Operation', u'callpoint': u'RASAutoUploadCallPoint', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+    self.__autoupload_param = YANGDynClass(base=autoupload_param.autoupload_param, is_container='container', presence=False, yang_name="autoupload-param", rest_name="autoupload-param", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure autoupload parameters', u'callpoint': u'RASAutoUploadCallPoint', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+    self.__support_param = YANGDynClass(base=support_param.support_param, is_container='container', presence=False, yang_name="support-param", rest_name="support-param", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure copy support parameters', u'callpoint': u'RASCopySupportCallPoint', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+    self.__ffdc = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ffdc", rest_name="ffdc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable FFDC file generation', u'cli-full-command': None, u'hidden': u'debug', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -105,12 +105,12 @@ class support(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=autoupload_param.autoupload_param, is_container='container', presence=False, yang_name="autoupload-param", rest_name="autoupload-param", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=autoupload_param.autoupload_param, is_container='container', presence=False, yang_name="autoupload-param", rest_name="autoupload-param", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure autoupload parameters', u'callpoint': u'RASAutoUploadCallPoint', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """autoupload_param must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=autoupload_param.autoupload_param, is_container='container', presence=False, yang_name="autoupload-param", rest_name="autoupload-param", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=autoupload_param.autoupload_param, is_container='container', presence=False, yang_name="autoupload-param", rest_name="autoupload-param", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure autoupload parameters', u'callpoint': u'RASAutoUploadCallPoint', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)""",
         })
 
     self.__autoupload_param = t
@@ -118,7 +118,7 @@ class support(PybindBase):
       self._set()
 
   def _unset_autoupload_param(self):
-    self.__autoupload_param = YANGDynClass(base=autoupload_param.autoupload_param, is_container='container', presence=False, yang_name="autoupload-param", rest_name="autoupload-param", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+    self.__autoupload_param = YANGDynClass(base=autoupload_param.autoupload_param, is_container='container', presence=False, yang_name="autoupload-param", rest_name="autoupload-param", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure autoupload parameters', u'callpoint': u'RASAutoUploadCallPoint', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
 
 
   def _get_support_param(self):
@@ -138,12 +138,12 @@ class support(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=support_param.support_param, is_container='container', presence=False, yang_name="support-param", rest_name="support-param", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=support_param.support_param, is_container='container', presence=False, yang_name="support-param", rest_name="support-param", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure copy support parameters', u'callpoint': u'RASCopySupportCallPoint', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """support_param must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=support_param.support_param, is_container='container', presence=False, yang_name="support-param", rest_name="support-param", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=support_param.support_param, is_container='container', presence=False, yang_name="support-param", rest_name="support-param", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure copy support parameters', u'callpoint': u'RASCopySupportCallPoint', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)""",
         })
 
     self.__support_param = t
@@ -151,7 +151,7 @@ class support(PybindBase):
       self._set()
 
   def _unset_support_param(self):
-    self.__support_param = YANGDynClass(base=support_param.support_param, is_container='container', presence=False, yang_name="support-param", rest_name="support-param", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+    self.__support_param = YANGDynClass(base=support_param.support_param, is_container='container', presence=False, yang_name="support-param", rest_name="support-param", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure copy support parameters', u'callpoint': u'RASCopySupportCallPoint', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
 
 
   def _get_autoupload(self):
@@ -171,12 +171,12 @@ class support(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=autoupload.autoupload, is_container='container', presence=False, yang_name="autoupload", rest_name="autoupload", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=autoupload.autoupload, is_container='container', presence=False, yang_name="autoupload", rest_name="autoupload", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Autoupload Operation', u'callpoint': u'RASAutoUploadCallPoint', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """autoupload must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=autoupload.autoupload, is_container='container', presence=False, yang_name="autoupload", rest_name="autoupload", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=autoupload.autoupload, is_container='container', presence=False, yang_name="autoupload", rest_name="autoupload", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Autoupload Operation', u'callpoint': u'RASAutoUploadCallPoint', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)""",
         })
 
     self.__autoupload = t
@@ -184,7 +184,7 @@ class support(PybindBase):
       self._set()
 
   def _unset_autoupload(self):
-    self.__autoupload = YANGDynClass(base=autoupload.autoupload, is_container='container', presence=False, yang_name="autoupload", rest_name="autoupload", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
+    self.__autoupload = YANGDynClass(base=autoupload.autoupload, is_container='container', presence=False, yang_name="autoupload", rest_name="autoupload", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Autoupload Operation', u'callpoint': u'RASAutoUploadCallPoint', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='container', is_config=True)
 
 
   def _get_ffdc(self):
@@ -208,12 +208,12 @@ class support(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ffdc", rest_name="ffdc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ffdc", rest_name="ffdc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable FFDC file generation', u'cli-full-command': None, u'hidden': u'debug', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ffdc must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ffdc", rest_name="ffdc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ffdc", rest_name="ffdc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable FFDC file generation', u'cli-full-command': None, u'hidden': u'debug', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='empty', is_config=True)""",
         })
 
     self.__ffdc = t
@@ -221,7 +221,7 @@ class support(PybindBase):
       self._set()
 
   def _unset_ffdc(self):
-    self.__ffdc = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ffdc", rest_name="ffdc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='empty', is_config=True)
+    self.__ffdc = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ffdc", rest_name="ffdc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable FFDC file generation', u'cli-full-command': None, u'hidden': u'debug', u'cli-show-no': None}}, namespace='urn:brocade.com:mgmt:brocade-ras', defining_module='brocade-ras', yang_type='empty', is_config=True)
 
   autoupload_param = __builtin__.property(_get_autoupload_param, _set_autoupload_param)
   support_param = __builtin__.property(_get_support_param, _set_support_param)

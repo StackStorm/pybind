@@ -49,7 +49,7 @@ of the connectors.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__get_flexports = YANGDynClass(base=get_flexports.get_flexports, is_leaf=True, yang_name="get-flexports", rest_name="get-flexports", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='rpc', is_config=True)
+    self.__get_flexports = YANGDynClass(base=get_flexports.get_flexports, is_leaf=True, yang_name="get-flexports", rest_name="get-flexports", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'connector_group_show'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='rpc', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -104,12 +104,12 @@ of the connectors.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=get_flexports.get_flexports, is_leaf=True, yang_name="get-flexports", rest_name="get-flexports", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=get_flexports.get_flexports, is_leaf=True, yang_name="get-flexports", rest_name="get-flexports", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'connector_group_show'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """get_flexports must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=get_flexports.get_flexports, is_leaf=True, yang_name="get-flexports", rest_name="get-flexports", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=get_flexports.get_flexports, is_leaf=True, yang_name="get-flexports", rest_name="get-flexports", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'connector_group_show'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='rpc', is_config=True)""",
         })
 
     self.__get_flexports = t
@@ -117,7 +117,7 @@ of the connectors.
       self._set()
 
   def _unset_get_flexports(self):
-    self.__get_flexports = YANGDynClass(base=get_flexports.get_flexports, is_leaf=True, yang_name="get-flexports", rest_name="get-flexports", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='rpc', is_config=True)
+    self.__get_flexports = YANGDynClass(base=get_flexports.get_flexports, is_leaf=True, yang_name="get-flexports", rest_name="get-flexports", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'hidden': u'rpccmd', u'actionpoint': u'connector_group_show'}}, namespace='urn:brocade.com:mgmt:brocade-hardware', defining_module='brocade-hardware', yang_type='rpc', is_config=True)
 
   get_flexports = __builtin__.property(_get_get_flexports, _set_get_flexports)
 

@@ -47,7 +47,7 @@ class authentication_key(PybindBase):
     else:
       self._extmethods = False
     self.__no_encrypt_auth_key_table = YANGDynClass(base=no_encrypt_auth_key_table.no_encrypt_auth_key_table, is_container='container', presence=False, yang_name="no-encrypt-auth-key-table", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
-    self.__auth_key_table = YANGDynClass(base=auth_key_table.auth_key_table, is_container='container', presence=False, yang_name="auth-key-table", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+    self.__auth_key_table = YANGDynClass(base=auth_key_table.auth_key_table, is_container='container', presence=False, yang_name="auth-key-table", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -135,12 +135,12 @@ class authentication_key(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=auth_key_table.auth_key_table, is_container='container', presence=False, yang_name="auth-key-table", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=auth_key_table.auth_key_table, is_container='container', presence=False, yang_name="auth-key-table", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """auth_key_table must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=auth_key_table.auth_key_table, is_container='container', presence=False, yang_name="auth-key-table", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=auth_key_table.auth_key_table, is_container='container', presence=False, yang_name="auth-key-table", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)""",
         })
 
     self.__auth_key_table = t
@@ -148,7 +148,7 @@ class authentication_key(PybindBase):
       self._set()
 
   def _unset_auth_key_table(self):
-    self.__auth_key_table = YANGDynClass(base=auth_key_table.auth_key_table, is_container='container', presence=False, yang_name="auth-key-table", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
+    self.__auth_key_table = YANGDynClass(base=auth_key_table.auth_key_table, is_container='container', presence=False, yang_name="auth-key-table", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-compact-syntax': None, u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-ospf', defining_module='brocade-ospf', yang_type='container', is_config=True)
 
   no_encrypt_auth_key_table = __builtin__.property(_get_no_encrypt_auth_key_table, _set_no_encrypt_auth_key_table)
   auth_key_table = __builtin__.property(_get_auth_key_table, _set_auth_key_table)

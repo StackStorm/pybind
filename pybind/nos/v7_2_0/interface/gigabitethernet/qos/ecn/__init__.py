@@ -45,7 +45,7 @@ class ecn(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__random_detect = YANGDynClass(base=random_detect.random_detect, is_container='container', presence=False, yang_name="random-detect", rest_name="random-detect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+    self.__random_detect = YANGDynClass(base=random_detect.random_detect, is_container='container', presence=False, yang_name="random-detect", rest_name="random-detect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Random Early Detect (RED) Profile', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class ecn(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=random_detect.random_detect, is_container='container', presence=False, yang_name="random-detect", rest_name="random-detect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=random_detect.random_detect, is_container='container', presence=False, yang_name="random-detect", rest_name="random-detect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Random Early Detect (RED) Profile', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """random_detect must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=random_detect.random_detect, is_container='container', presence=False, yang_name="random-detect", rest_name="random-detect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=random_detect.random_detect, is_container='container', presence=False, yang_name="random-detect", rest_name="random-detect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Random Early Detect (RED) Profile', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)""",
         })
 
     self.__random_detect = t
@@ -113,7 +113,7 @@ class ecn(PybindBase):
       self._set()
 
   def _unset_random_detect(self):
-    self.__random_detect = YANGDynClass(base=random_detect.random_detect, is_container='container', presence=False, yang_name="random-detect", rest_name="random-detect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+    self.__random_detect = YANGDynClass(base=random_detect.random_detect, is_container='container', presence=False, yang_name="random-detect", rest_name="random-detect", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Random Early Detect (RED) Profile', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
 
   random_detect = __builtin__.property(_get_random_detect, _set_random_detect)
 

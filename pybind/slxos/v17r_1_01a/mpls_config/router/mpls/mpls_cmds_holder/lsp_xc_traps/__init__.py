@@ -44,7 +44,7 @@ class lsp_xc_traps(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__lsp_xc_traps_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-xc-traps-enable", rest_name="lsp-xc-traps-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__lsp_xc_traps_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-xc-traps-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable the LSP XC up/down logging/traps', u'cli-full-command': None, u'alt-name': u'enable', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -80,7 +80,7 @@ class lsp_xc_traps(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'mpls-config', u'router', u'mpls', u'mpls-cmds-holder', u'lsp-xc-traps']
+      return [u'router', u'mpls', u'lsp-xc-traps']
 
   def _get_lsp_xc_traps_enable(self):
     """
@@ -99,12 +99,12 @@ class lsp_xc_traps(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-xc-traps-enable", rest_name="lsp-xc-traps-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="lsp-xc-traps-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable the LSP XC up/down logging/traps', u'cli-full-command': None, u'alt-name': u'enable', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """lsp_xc_traps_enable must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-xc-traps-enable", rest_name="lsp-xc-traps-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-xc-traps-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable the LSP XC up/down logging/traps', u'cli-full-command': None, u'alt-name': u'enable', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
         })
 
     self.__lsp_xc_traps_enable = t
@@ -112,7 +112,7 @@ class lsp_xc_traps(PybindBase):
       self._set()
 
   def _unset_lsp_xc_traps_enable(self):
-    self.__lsp_xc_traps_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-xc-traps-enable", rest_name="lsp-xc-traps-enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__lsp_xc_traps_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="lsp-xc-traps-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable the LSP XC up/down logging/traps', u'cli-full-command': None, u'alt-name': u'enable', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
 
   lsp_xc_traps_enable = __builtin__.property(_get_lsp_xc_traps_enable, _set_lsp_xc_traps_enable)
 

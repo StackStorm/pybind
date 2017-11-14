@@ -46,8 +46,8 @@ class accounting(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__commands = YANGDynClass(base=commands.commands, is_container='container', presence=False, yang_name="commands", rest_name="commands", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
-    self.__exec_ = YANGDynClass(base=exec_.exec_, is_container='container', presence=False, yang_name="exec", rest_name="exec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__commands = YANGDynClass(base=commands.commands, is_container='container', presence=False, yang_name="commands", rest_name="commands", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable Command accounting', u'callpoint': u'acc_cmd_cp', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__exec_ = YANGDynClass(base=exec_.exec_, is_container='container', presence=False, yang_name="exec", rest_name="exec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable Login accounting', u'callpoint': u'acc_exec_cp', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -102,12 +102,12 @@ class accounting(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=exec_.exec_, is_container='container', presence=False, yang_name="exec", rest_name="exec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=exec_.exec_, is_container='container', presence=False, yang_name="exec", rest_name="exec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable Login accounting', u'callpoint': u'acc_exec_cp', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """exec_ must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=exec_.exec_, is_container='container', presence=False, yang_name="exec", rest_name="exec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=exec_.exec_, is_container='container', presence=False, yang_name="exec", rest_name="exec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable Login accounting', u'callpoint': u'acc_exec_cp', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
         })
 
     self.__exec_ = t
@@ -115,7 +115,7 @@ class accounting(PybindBase):
       self._set()
 
   def _unset_exec_(self):
-    self.__exec_ = YANGDynClass(base=exec_.exec_, is_container='container', presence=False, yang_name="exec", rest_name="exec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__exec_ = YANGDynClass(base=exec_.exec_, is_container='container', presence=False, yang_name="exec", rest_name="exec", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable Login accounting', u'callpoint': u'acc_exec_cp', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
 
 
   def _get_commands(self):
@@ -135,12 +135,12 @@ class accounting(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=commands.commands, is_container='container', presence=False, yang_name="commands", rest_name="commands", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=commands.commands, is_container='container', presence=False, yang_name="commands", rest_name="commands", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable Command accounting', u'callpoint': u'acc_cmd_cp', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """commands must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=commands.commands, is_container='container', presence=False, yang_name="commands", rest_name="commands", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=commands.commands, is_container='container', presence=False, yang_name="commands", rest_name="commands", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable Command accounting', u'callpoint': u'acc_cmd_cp', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)""",
         })
 
     self.__commands = t
@@ -148,7 +148,7 @@ class accounting(PybindBase):
       self._set()
 
   def _unset_commands(self):
-    self.__commands = YANGDynClass(base=commands.commands, is_container='container', presence=False, yang_name="commands", rest_name="commands", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
+    self.__commands = YANGDynClass(base=commands.commands, is_container='container', presence=False, yang_name="commands", rest_name="commands", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable/Disable Command accounting', u'callpoint': u'acc_cmd_cp', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-aaa', defining_module='brocade-aaa', yang_type='container', is_config=True)
 
   exec_ = __builtin__.property(_get_exec_, _set_exec_)
   commands = __builtin__.property(_get_commands, _set_commands)

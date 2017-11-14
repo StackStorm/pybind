@@ -16,7 +16,6 @@ import chassis
 import default_config
 import fabric
 import fcoe_config
-import https
 import logical_chassis
 import system_monitor
 import threshold_monitor
@@ -27,7 +26,7 @@ class rbridge_id(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__rbridge_id','__swbd_number','__interface_nodespecific','__ip','__ipv6','__ag','__vcs','__chassis','__default_config','__fabric','__fcoe_config','__https','__logical_chassis','__system_monitor','__threshold_monitor',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__rbridge_id','__swbd_number','__interface_nodespecific','__ip','__ipv6','__ag','__vcs','__chassis','__default_config','__fabric','__fcoe_config','__logical_chassis','__system_monitor','__threshold_monitor',)
 
   _yang_name = 'rbridge-id'
   _rest_name = 'rbridge-id'
@@ -65,7 +64,6 @@ class rbridge_id(PybindBase):
     self.__threshold_monitor = YANGDynClass(base=threshold_monitor.threshold_monitor, is_container='container', presence=False, yang_name="threshold-monitor", rest_name="threshold-monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Class monitoring threshold and alert setting', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-threshold-monitor', defining_module='brocade-threshold-monitor', yang_type='container', is_config=True)
     self.__vcs = YANGDynClass(base=vcs.vcs, is_container='container', presence=False, yang_name="vcs", rest_name="vcs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Virtual Cluster Switching Configuration', u'cli-incomplete-no': None}}, namespace='http://brocade.com/ns/brocade-auto-shut-edge-port', defining_module='brocade-auto-shut-edge-port', yang_type='container', is_config=True)
     self.__fabric = YANGDynClass(base=fabric.fabric, is_container='container', presence=False, yang_name="fabric", rest_name="fabric", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Allows to configure fabric related parameters', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fabric-service', defining_module='brocade-fabric-service', yang_type='container', is_config=True)
-    self.__https = YANGDynClass(base=https.https, is_container='container', presence=False, yang_name="https", rest_name="https", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure HTTP Secure Server', u'hidden': u'full', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hidden-cli', defining_module='brocade-hidden-cli', yang_type='container', is_config=True)
     self.__ipv6 = YANGDynClass(base=ipv6.ipv6, is_container='container', presence=False, yang_name="ipv6", rest_name="ipv6", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Internet Protocol (IPv6)', u'sort-priority': u'RUNNCFG_LEVEL_IPV6_RBRIDGE_CONFIG', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-rbridge', defining_module='brocade-rbridge', yang_type='container', is_config=True)
     self.__logical_chassis = YANGDynClass(base=logical_chassis.logical_chassis, is_container='container', presence=False, yang_name="logical-chassis", rest_name="logical-chassis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'logical chassis commands', u'display-when': u'((/vcsmode/vcs-mode = "true") and (/vcsmode/vcs-cluster-mode = "true"))', u'callpoint': u'LogicalChassisPrincipalPriorityCallpoint', u'cli-incomplete-command': None}}, namespace='http://brocade.com/ns/brocade-logical-chassis', defining_module='brocade-logical-chassis', yang_type='container', is_config=True)
     self.__chassis = YANGDynClass(base=chassis.chassis, is_container='container', presence=False, yang_name="chassis", rest_name="chassis", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Chassis Virtual address', u'cli-incomplete-show-path': None, u'callpoint': u'IpadmChassisIpCallpoint', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-chassis', defining_module='brocade-chassis', yang_type='container', is_config=True)
@@ -499,39 +497,6 @@ elements.
     self.__fcoe_config = YANGDynClass(base=fcoe_config.fcoe_config, is_container='container', presence=False, yang_name="fcoe-config", rest_name="fcoe", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'FCoE configuration commands', u'display-when': u'(/vcsmode/vcs-mode = "true")', u'sort-priority': u'RUNNCFG_LEVEL_RBRIDGE', u'cli-suppress-no': None, u'cli-full-command': None, u'cli-add-mode': None, u'alt-name': u'fcoe', u'cli-mode-name': u'config-rbridge-fcoe'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
 
 
-  def _get_https(self):
-    """
-    Getter method for https, mapped from YANG variable /rbridge_id/https (container)
-    """
-    return self.__https
-      
-  def _set_https(self, v, load=False):
-    """
-    Setter method for https, mapped from YANG variable /rbridge_id/https (container)
-    If this variable is read-only (config: false) in the
-    source YANG file, then _set_https is considered as a private
-    method. Backends looking to populate this variable should
-    do so via calling thisObj._set_https() directly.
-    """
-    if hasattr(v, "_utype"):
-      v = v._utype(v)
-    try:
-      t = YANGDynClass(v,base=https.https, is_container='container', presence=False, yang_name="https", rest_name="https", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure HTTP Secure Server', u'hidden': u'full', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hidden-cli', defining_module='brocade-hidden-cli', yang_type='container', is_config=True)
-    except (TypeError, ValueError):
-      raise ValueError({
-          'error-string': """https must be of a type compatible with container""",
-          'defined-type': "container",
-          'generated-type': """YANGDynClass(base=https.https, is_container='container', presence=False, yang_name="https", rest_name="https", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure HTTP Secure Server', u'hidden': u'full', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hidden-cli', defining_module='brocade-hidden-cli', yang_type='container', is_config=True)""",
-        })
-
-    self.__https = t
-    if hasattr(self, '_set'):
-      self._set()
-
-  def _unset_https(self):
-    self.__https = YANGDynClass(base=https.https, is_container='container', presence=False, yang_name="https", rest_name="https", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure HTTP Secure Server', u'hidden': u'full', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-hidden-cli', defining_module='brocade-hidden-cli', yang_type='container', is_config=True)
-
-
   def _get_logical_chassis(self):
     """
     Getter method for logical_chassis, mapped from YANG variable /rbridge_id/logical_chassis (container)
@@ -641,12 +606,11 @@ elements.
   default_config = __builtin__.property(_get_default_config, _set_default_config)
   fabric = __builtin__.property(_get_fabric, _set_fabric)
   fcoe_config = __builtin__.property(_get_fcoe_config, _set_fcoe_config)
-  https = __builtin__.property(_get_https, _set_https)
   logical_chassis = __builtin__.property(_get_logical_chassis, _set_logical_chassis)
   system_monitor = __builtin__.property(_get_system_monitor, _set_system_monitor)
   threshold_monitor = __builtin__.property(_get_threshold_monitor, _set_threshold_monitor)
 
 
-  _pyangbind_elements = {'rbridge_id': rbridge_id, 'swbd_number': swbd_number, 'interface_nodespecific': interface_nodespecific, 'ip': ip, 'ipv6': ipv6, 'ag': ag, 'vcs': vcs, 'chassis': chassis, 'default_config': default_config, 'fabric': fabric, 'fcoe_config': fcoe_config, 'https': https, 'logical_chassis': logical_chassis, 'system_monitor': system_monitor, 'threshold_monitor': threshold_monitor, }
+  _pyangbind_elements = {'rbridge_id': rbridge_id, 'swbd_number': swbd_number, 'interface_nodespecific': interface_nodespecific, 'ip': ip, 'ipv6': ipv6, 'ag': ag, 'vcs': vcs, 'chassis': chassis, 'default_config': default_config, 'fabric': fabric, 'fcoe_config': fcoe_config, 'logical_chassis': logical_chassis, 'system_monitor': system_monitor, 'threshold_monitor': threshold_monitor, }
 
 

@@ -45,7 +45,7 @@ class relay(PybindBase):
     else:
       self._extmethods = False
     self.__host_ip = YANGDynClass(base=[RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'(([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(%[\\p{N}\\p{L}]+)?'}),RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((:|[0-9a-fA-F]{0,4}):)([0-9a-fA-F]{0,4}:){0,5}((([0-9a-fA-F]{0,4}:)?(:|[0-9a-fA-F]{0,4}))|(((25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])\\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9]?[0-9])))(%[\\p{N}\\p{L}]+)?'}),RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((([a-zA-Z0-9_]([a-zA-Z0-9\\-_]){0,61})?[a-zA-Z0-9]\\.)*([a-zA-Z0-9_]([a-zA-Z0-9\\-_]){0,61})?[a-zA-Z0-9]\\.?)|\\.', 'length': [u'1..253']}),], is_leaf=True, yang_name="host-ip", rest_name="host-ip", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='inet:host', is_config=True)
-    self.__domain_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0 .. 64']}), default=unicode(""), is_leaf=True, yang_name="domain-name", rest_name="domain-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='string', is_config=True)
+    self.__domain_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0 .. 64']}), default=unicode(""), is_leaf=True, yang_name="domain-name", rest_name="domain-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Domain name server'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='string', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -138,12 +138,12 @@ class relay(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0 .. 64']}), default=unicode(""), is_leaf=True, yang_name="domain-name", rest_name="domain-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0 .. 64']}), default=unicode(""), is_leaf=True, yang_name="domain-name", rest_name="domain-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Domain name server'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """domain_name must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0 .. 64']}), default=unicode(""), is_leaf=True, yang_name="domain-name", rest_name="domain-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0 .. 64']}), default=unicode(""), is_leaf=True, yang_name="domain-name", rest_name="domain-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Domain name server'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='string', is_config=True)""",
         })
 
     self.__domain_name = t
@@ -151,7 +151,7 @@ class relay(PybindBase):
       self._set()
 
   def _unset_domain_name(self):
-    self.__domain_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0 .. 64']}), default=unicode(""), is_leaf=True, yang_name="domain-name", rest_name="domain-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='string', is_config=True)
+    self.__domain_name = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'0 .. 64']}), default=unicode(""), is_leaf=True, yang_name="domain-name", rest_name="domain-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Domain name server'}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='string', is_config=True)
 
   host_ip = __builtin__.property(_get_host_ip, _set_host_ip)
   domain_name = __builtin__.property(_get_domain_name, _set_domain_name)

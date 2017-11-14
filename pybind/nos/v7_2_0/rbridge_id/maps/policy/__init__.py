@@ -45,8 +45,8 @@ class policy(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__policyname = YANGDynClass(base=unicode, is_leaf=True, yang_name="policyname", rest_name="policyname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)
-    self.__ruleaction = YANGDynClass(base=YANGListType("policyrule",ruleaction.ruleaction, yang_name="ruleaction", rest_name="rule", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='policyrule', extensions={u'tailf-common': {u'alt-name': u'rule'}}), is_container='list', yang_name="ruleaction", rest_name="rule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'rule'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='list', is_config=True)
+    self.__policyname = YANGDynClass(base=unicode, is_leaf=True, yang_name="policyname", rest_name="policyname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure policy name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)
+    self.__ruleaction = YANGDynClass(base=YANGListType("policyrule",ruleaction.ruleaction, yang_name="ruleaction", rest_name="rule", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='policyrule', extensions={u'tailf-common': {u'cli-suppress-mode': None, u'alt-name': u'rule', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'MapsRuleaction'}}), is_container='list', yang_name="ruleaction", rest_name="rule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-mode': None, u'alt-name': u'rule', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'MapsRuleaction'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -106,12 +106,12 @@ class policy(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="policyname", rest_name="policyname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="policyname", rest_name="policyname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure policy name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """policyname must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="policyname", rest_name="policyname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="policyname", rest_name="policyname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure policy name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)""",
         })
 
     self.__policyname = t
@@ -119,7 +119,7 @@ class policy(PybindBase):
       self._set()
 
   def _unset_policyname(self):
-    self.__policyname = YANGDynClass(base=unicode, is_leaf=True, yang_name="policyname", rest_name="policyname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)
+    self.__policyname = YANGDynClass(base=unicode, is_leaf=True, yang_name="policyname", rest_name="policyname", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure policy name'}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)
 
 
   def _get_ruleaction(self):
@@ -139,12 +139,12 @@ class policy(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("policyrule",ruleaction.ruleaction, yang_name="ruleaction", rest_name="rule", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='policyrule', extensions={u'tailf-common': {u'alt-name': u'rule'}}), is_container='list', yang_name="ruleaction", rest_name="rule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'rule'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("policyrule",ruleaction.ruleaction, yang_name="ruleaction", rest_name="rule", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='policyrule', extensions={u'tailf-common': {u'cli-suppress-mode': None, u'alt-name': u'rule', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'MapsRuleaction'}}), is_container='list', yang_name="ruleaction", rest_name="rule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-mode': None, u'alt-name': u'rule', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'MapsRuleaction'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ruleaction must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("policyrule",ruleaction.ruleaction, yang_name="ruleaction", rest_name="rule", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='policyrule', extensions={u'tailf-common': {u'alt-name': u'rule'}}), is_container='list', yang_name="ruleaction", rest_name="rule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'rule'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("policyrule",ruleaction.ruleaction, yang_name="ruleaction", rest_name="rule", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='policyrule', extensions={u'tailf-common': {u'cli-suppress-mode': None, u'alt-name': u'rule', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'MapsRuleaction'}}), is_container='list', yang_name="ruleaction", rest_name="rule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-mode': None, u'alt-name': u'rule', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'MapsRuleaction'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='list', is_config=True)""",
         })
 
     self.__ruleaction = t
@@ -152,7 +152,7 @@ class policy(PybindBase):
       self._set()
 
   def _unset_ruleaction(self):
-    self.__ruleaction = YANGDynClass(base=YANGListType("policyrule",ruleaction.ruleaction, yang_name="ruleaction", rest_name="rule", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='policyrule', extensions={u'tailf-common': {u'alt-name': u'rule'}}), is_container='list', yang_name="ruleaction", rest_name="rule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'rule'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='list', is_config=True)
+    self.__ruleaction = YANGDynClass(base=YANGListType("policyrule",ruleaction.ruleaction, yang_name="ruleaction", rest_name="rule", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='policyrule', extensions={u'tailf-common': {u'cli-suppress-mode': None, u'alt-name': u'rule', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'MapsRuleaction'}}), is_container='list', yang_name="ruleaction", rest_name="rule", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-suppress-mode': None, u'alt-name': u'rule', u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-incomplete-command': None, u'callpoint': u'MapsRuleaction'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='list', is_config=True)
 
   policyname = __builtin__.property(_get_policyname, _set_policyname)
   ruleaction = __builtin__.property(_get_ruleaction, _set_ruleaction)

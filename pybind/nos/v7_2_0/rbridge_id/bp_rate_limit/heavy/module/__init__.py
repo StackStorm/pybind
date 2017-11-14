@@ -44,8 +44,8 @@ class module(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__add_ = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([0-9]|1[0-6])(-([1-9]|1[0-6]))?((,([1-9]|1[0-6])(-([1-9]|1[0-6]))?)?)*'}), is_leaf=True, yang_name="add", rest_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='ui32-slot-range', is_config=True)
-    self.__remove_ = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([0-9]|1[0-6])(-([1-9]|1[0-6]))?((,([1-9]|1[0-6])(-([1-9]|1[0-6]))?)?)*'}), is_leaf=True, yang_name="remove", rest_name="remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='ui32-slot-range', is_config=True)
+    self.__add_ = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([0-9]|1[0-6])(-([1-9]|1[0-6]))?((,([1-9]|1[0-6])(-([1-9]|1[0-6]))?)?)*'}), is_leaf=True, yang_name="add", rest_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'slot/module range', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='ui32-slot-range', is_config=True)
+    self.__remove_ = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([0-9]|1[0-6])(-([1-9]|1[0-6]))?((,([1-9]|1[0-6])(-([1-9]|1[0-6]))?)?)*'}), is_leaf=True, yang_name="remove", rest_name="remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'slot/module range', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='ui32-slot-range', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class module(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([0-9]|1[0-6])(-([1-9]|1[0-6]))?((,([1-9]|1[0-6])(-([1-9]|1[0-6]))?)?)*'}), is_leaf=True, yang_name="add", rest_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='ui32-slot-range', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([0-9]|1[0-6])(-([1-9]|1[0-6]))?((,([1-9]|1[0-6])(-([1-9]|1[0-6]))?)?)*'}), is_leaf=True, yang_name="add", rest_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'slot/module range', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='ui32-slot-range', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """add_ must be of a type compatible with ui32-slot-range""",
           'defined-type': "brocade-bprate-limit:ui32-slot-range",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([0-9]|1[0-6])(-([1-9]|1[0-6]))?((,([1-9]|1[0-6])(-([1-9]|1[0-6]))?)?)*'}), is_leaf=True, yang_name="add", rest_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='ui32-slot-range', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([0-9]|1[0-6])(-([1-9]|1[0-6]))?((,([1-9]|1[0-6])(-([1-9]|1[0-6]))?)?)*'}), is_leaf=True, yang_name="add", rest_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'slot/module range', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='ui32-slot-range', is_config=True)""",
         })
 
     self.__add_ = t
@@ -113,7 +113,7 @@ class module(PybindBase):
       self._set()
 
   def _unset_add_(self):
-    self.__add_ = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([0-9]|1[0-6])(-([1-9]|1[0-6]))?((,([1-9]|1[0-6])(-([1-9]|1[0-6]))?)?)*'}), is_leaf=True, yang_name="add", rest_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='ui32-slot-range', is_config=True)
+    self.__add_ = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([0-9]|1[0-6])(-([1-9]|1[0-6]))?((,([1-9]|1[0-6])(-([1-9]|1[0-6]))?)?)*'}), is_leaf=True, yang_name="add", rest_name="add", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'slot/module range', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='ui32-slot-range', is_config=True)
 
 
   def _get_remove_(self):
@@ -133,12 +133,12 @@ class module(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([0-9]|1[0-6])(-([1-9]|1[0-6]))?((,([1-9]|1[0-6])(-([1-9]|1[0-6]))?)?)*'}), is_leaf=True, yang_name="remove", rest_name="remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='ui32-slot-range', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([0-9]|1[0-6])(-([1-9]|1[0-6]))?((,([1-9]|1[0-6])(-([1-9]|1[0-6]))?)?)*'}), is_leaf=True, yang_name="remove", rest_name="remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'slot/module range', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='ui32-slot-range', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """remove_ must be of a type compatible with ui32-slot-range""",
           'defined-type': "brocade-bprate-limit:ui32-slot-range",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([0-9]|1[0-6])(-([1-9]|1[0-6]))?((,([1-9]|1[0-6])(-([1-9]|1[0-6]))?)?)*'}), is_leaf=True, yang_name="remove", rest_name="remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='ui32-slot-range', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([0-9]|1[0-6])(-([1-9]|1[0-6]))?((,([1-9]|1[0-6])(-([1-9]|1[0-6]))?)?)*'}), is_leaf=True, yang_name="remove", rest_name="remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'slot/module range', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='ui32-slot-range', is_config=True)""",
         })
 
     self.__remove_ = t
@@ -146,7 +146,7 @@ class module(PybindBase):
       self._set()
 
   def _unset_remove_(self):
-    self.__remove_ = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([0-9]|1[0-6])(-([1-9]|1[0-6]))?((,([1-9]|1[0-6])(-([1-9]|1[0-6]))?)?)*'}), is_leaf=True, yang_name="remove", rest_name="remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='ui32-slot-range', is_config=True)
+    self.__remove_ = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'([0-9]|1[0-6])(-([1-9]|1[0-6]))?((,([1-9]|1[0-6])(-([1-9]|1[0-6]))?)?)*'}), is_leaf=True, yang_name="remove", rest_name="remove", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'slot/module range', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-bprate-limit', defining_module='brocade-bprate-limit', yang_type='ui32-slot-range', is_config=True)
 
   add_ = __builtin__.property(_get_add_, _set_add_)
   remove_ = __builtin__.property(_get_remove_, _set_remove_)

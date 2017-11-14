@@ -47,7 +47,7 @@ class qos_mpls(PybindBase):
     else:
       self._extmethods = False
     self.__map_ = YANGDynClass(base=map_.map_, is_container='container', presence=False, yang_name="map", rest_name="map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure MPLS QoS map'}}, namespace='urn:brocade.com:mgmt:brocade-qos-mpls', defining_module='brocade-qos-mpls', yang_type='container', is_config=True)
-    self.__map_apply = YANGDynClass(base=map_apply.map_apply, is_container='container', presence=False, yang_name="map-apply", rest_name="map-apply", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure apply map', u'callpoint': u'ApplyQosMplsCallpoint', u'sort-priority': u'RUNNCFG_LEVEL_SYSTEM_MPLS_QOS'}}, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='container', is_config=True)
+    self.__map_apply = YANGDynClass(base=map_apply.map_apply, is_container='container', presence=False, yang_name="map-apply", rest_name="map-apply", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure apply map', u'callpoint': u'ApplyQosMplsCallpoint', u'sort-priority': u'50'}}, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -135,12 +135,12 @@ class qos_mpls(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=map_apply.map_apply, is_container='container', presence=False, yang_name="map-apply", rest_name="map-apply", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure apply map', u'callpoint': u'ApplyQosMplsCallpoint', u'sort-priority': u'RUNNCFG_LEVEL_SYSTEM_MPLS_QOS'}}, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=map_apply.map_apply, is_container='container', presence=False, yang_name="map-apply", rest_name="map-apply", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure apply map', u'callpoint': u'ApplyQosMplsCallpoint', u'sort-priority': u'50'}}, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """map_apply must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=map_apply.map_apply, is_container='container', presence=False, yang_name="map-apply", rest_name="map-apply", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure apply map', u'callpoint': u'ApplyQosMplsCallpoint', u'sort-priority': u'RUNNCFG_LEVEL_SYSTEM_MPLS_QOS'}}, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=map_apply.map_apply, is_container='container', presence=False, yang_name="map-apply", rest_name="map-apply", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure apply map', u'callpoint': u'ApplyQosMplsCallpoint', u'sort-priority': u'50'}}, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__map_apply = t
@@ -148,7 +148,7 @@ class qos_mpls(PybindBase):
       self._set()
 
   def _unset_map_apply(self):
-    self.__map_apply = YANGDynClass(base=map_apply.map_apply, is_container='container', presence=False, yang_name="map-apply", rest_name="map-apply", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure apply map', u'callpoint': u'ApplyQosMplsCallpoint', u'sort-priority': u'RUNNCFG_LEVEL_SYSTEM_MPLS_QOS'}}, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='container', is_config=True)
+    self.__map_apply = YANGDynClass(base=map_apply.map_apply, is_container='container', presence=False, yang_name="map-apply", rest_name="map-apply", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure apply map', u'callpoint': u'ApplyQosMplsCallpoint', u'sort-priority': u'50'}}, namespace='urn:brocade.com:mgmt:brocade-apply-qos-mpls', defining_module='brocade-apply-qos-mpls', yang_type='container', is_config=True)
 
   map_ = __builtin__.property(_get_map_, _set_map_)
   map_apply = __builtin__.property(_get_map_apply, _set_map_apply)

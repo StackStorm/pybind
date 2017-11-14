@@ -49,8 +49,8 @@ configuration elements.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__pfc = YANGDynClass(base=YANGListType("pfc_cos",pfc.pfc, yang_name="pfc", rest_name="pfc", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pfc-cos', extensions=None), is_container='list', yang_name="pfc", rest_name="pfc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)
-    self.__flowcontrolglobal = YANGDynClass(base=flowcontrolglobal.flowcontrolglobal, is_container='container', presence=False, yang_name="flowcontrolglobal", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
+    self.__pfc = YANGDynClass(base=YANGListType("pfc_cos",pfc.pfc, yang_name="pfc", rest_name="pfc", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pfc-cos', extensions={u'tailf-common': {u'info': u'Priority-based Flow Control (PFC)', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'callpoint': u'qos-profile-flowcontrol-config'}}), is_container='list', yang_name="pfc", rest_name="pfc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Priority-based Flow Control (PFC)', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'callpoint': u'qos-profile-flowcontrol-config'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)
+    self.__flowcontrolglobal = YANGDynClass(base=flowcontrolglobal.flowcontrolglobal, is_container='container', presence=False, yang_name="flowcontrolglobal", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -105,12 +105,12 @@ configuration elements.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=flowcontrolglobal.flowcontrolglobal, is_container='container', presence=False, yang_name="flowcontrolglobal", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=flowcontrolglobal.flowcontrolglobal, is_container='container', presence=False, yang_name="flowcontrolglobal", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """flowcontrolglobal must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=flowcontrolglobal.flowcontrolglobal, is_container='container', presence=False, yang_name="flowcontrolglobal", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=flowcontrolglobal.flowcontrolglobal, is_container='container', presence=False, yang_name="flowcontrolglobal", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)""",
         })
 
     self.__flowcontrolglobal = t
@@ -118,7 +118,7 @@ configuration elements.
       self._set()
 
   def _unset_flowcontrolglobal(self):
-    self.__flowcontrolglobal = YANGDynClass(base=flowcontrolglobal.flowcontrolglobal, is_container='container', presence=False, yang_name="flowcontrolglobal", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
+    self.__flowcontrolglobal = YANGDynClass(base=flowcontrolglobal.flowcontrolglobal, is_container='container', presence=False, yang_name="flowcontrolglobal", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='container', is_config=True)
 
 
   def _get_pfc(self):
@@ -146,12 +146,12 @@ Pause generation and reception values
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("pfc_cos",pfc.pfc, yang_name="pfc", rest_name="pfc", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pfc-cos', extensions=None), is_container='list', yang_name="pfc", rest_name="pfc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("pfc_cos",pfc.pfc, yang_name="pfc", rest_name="pfc", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pfc-cos', extensions={u'tailf-common': {u'info': u'Priority-based Flow Control (PFC)', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'callpoint': u'qos-profile-flowcontrol-config'}}), is_container='list', yang_name="pfc", rest_name="pfc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Priority-based Flow Control (PFC)', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'callpoint': u'qos-profile-flowcontrol-config'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """pfc must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("pfc_cos",pfc.pfc, yang_name="pfc", rest_name="pfc", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pfc-cos', extensions=None), is_container='list', yang_name="pfc", rest_name="pfc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("pfc_cos",pfc.pfc, yang_name="pfc", rest_name="pfc", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pfc-cos', extensions={u'tailf-common': {u'info': u'Priority-based Flow Control (PFC)', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'callpoint': u'qos-profile-flowcontrol-config'}}), is_container='list', yang_name="pfc", rest_name="pfc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Priority-based Flow Control (PFC)', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'callpoint': u'qos-profile-flowcontrol-config'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)""",
         })
 
     self.__pfc = t
@@ -159,7 +159,7 @@ Pause generation and reception values
       self._set()
 
   def _unset_pfc(self):
-    self.__pfc = YANGDynClass(base=YANGListType("pfc_cos",pfc.pfc, yang_name="pfc", rest_name="pfc", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pfc-cos', extensions=None), is_container='list', yang_name="pfc", rest_name="pfc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)
+    self.__pfc = YANGDynClass(base=YANGListType("pfc_cos",pfc.pfc, yang_name="pfc", rest_name="pfc", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pfc-cos', extensions={u'tailf-common': {u'info': u'Priority-based Flow Control (PFC)', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'callpoint': u'qos-profile-flowcontrol-config'}}), is_container='list', yang_name="pfc", rest_name="pfc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Priority-based Flow Control (PFC)', u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'cli-full-no': None, u'cli-sequence-commands': None, u'callpoint': u'qos-profile-flowcontrol-config'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='list', is_config=True)
 
   flowcontrolglobal = __builtin__.property(_get_flowcontrolglobal, _set_flowcontrolglobal)
   pfc = __builtin__.property(_get_pfc, _set_pfc)

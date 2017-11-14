@@ -22,7 +22,7 @@ class policy(PybindBase):
   the container is represented as a class variable - with a specific
   YANG type.
   """
-  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__policy_admin_group','__backup_retry_time','__cspf_computation_mode','__cspf_group_computation','__cspf_interface_constraint','__handle_isis_neighbor_down','__handle_ospf_neighbor_down','__retry_time','__retry_limit','__rapid_retry','__rsvp_periodic_flooding_time','__rsvp_flooding_threshold','__soft_preemption','__global_auto_bandwidth','__implicit_commit','__traffic_engineering','__qos_ttl_mode','__ingress_tunnel_accounting','__transit_session_accounting',)
+  __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__policy_admin_group','__backup_retry_time','__cspf_computation_mode','__cspf_group_computation','__cspf_interface_constraint','__handle_isis_neighbor_down','__handle_ospf_neighbor_down','__load_interval','__retry_time','__retry_limit','__rapid_retry','__rsvp_periodic_flooding_time','__rsvp_flooding_threshold','__soft_preemption','__global_auto_bandwidth','__implicit_commit','__traffic_engineering','__qos_ttl_mode','__ingress_tunnel_accounting','__transit_session_accounting',)
 
   _yang_name = 'policy'
   _rest_name = 'policy'
@@ -52,25 +52,26 @@ class policy(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__qos_ttl_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'pipe': {'value': 2}, u'uniform': {'value': 1}},), is_leaf=True, yang_name="qos-ttl-mode", rest_name="qos-ttl-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enumeration', is_config=True)
-    self.__traffic_engineering = YANGDynClass(base=traffic_engineering.traffic_engineering, is_container='container', presence=False, yang_name="traffic-engineering", rest_name="traffic-engineering", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
-    self.__ingress_tunnel_accounting = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ingress-tunnel-accounting", rest_name="ingress-tunnel-accounting", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
-    self.__rapid_retry = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'disable': {'value': 0}},), is_leaf=True, yang_name="rapid-retry", rest_name="rapid-retry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enable-disable', is_config=True)
-    self.__cspf_group_computation = YANGDynClass(base=cspf_group_computation.cspf_group_computation, is_container='container', presence=False, yang_name="cspf-group-computation", rest_name="cspf-group-computation", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
-    self.__cspf_computation_mode = YANGDynClass(base=cspf_computation_mode.cspf_computation_mode, is_container='container', presence=False, yang_name="cspf-computation-mode", rest_name="cspf-computation-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
-    self.__handle_ospf_neighbor_down = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="handle-ospf-neighbor-down", rest_name="handle-ospf-neighbor-down", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
-    self.__rsvp_periodic_flooding_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0', u'30..3600']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(300), is_leaf=True, yang_name="rsvp-periodic-flooding-time", rest_name="rsvp-periodic-flooding-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
-    self.__policy_admin_group = YANGDynClass(base=YANGListType("admin_group_name admin_group_number",policy_admin_group.policy_admin_group, yang_name="policy-admin-group", rest_name="policy-admin-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='admin-group-name admin-group-number', extensions=None), is_container='list', yang_name="policy-admin-group", rest_name="policy-admin-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
-    self.__backup_retry_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..600']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="backup-retry-time", rest_name="backup-retry-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
-    self.__soft_preemption = YANGDynClass(base=soft_preemption.soft_preemption, is_container='container', presence=False, yang_name="soft-preemption", rest_name="soft-preemption", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
-    self.__implicit_commit = YANGDynClass(base=implicit_commit.implicit_commit, is_container='container', presence=False, yang_name="implicit-commit", rest_name="implicit-commit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
-    self.__rsvp_flooding_threshold = YANGDynClass(base=rsvp_flooding_threshold.rsvp_flooding_threshold, is_container='container', presence=False, yang_name="rsvp-flooding-threshold", rest_name="rsvp-flooding-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
-    self.__transit_session_accounting = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="transit-session-accounting", rest_name="transit-session-accounting", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
-    self.__global_auto_bandwidth = YANGDynClass(base=global_auto_bandwidth.global_auto_bandwidth, is_container='container', presence=True, yang_name="global-auto-bandwidth", rest_name="global-auto-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
-    self.__retry_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..600']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="retry-time", rest_name="retry-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
-    self.__cspf_interface_constraint = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="cspf-interface-constraint", rest_name="cspf-interface-constraint", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
-    self.__handle_isis_neighbor_down = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="handle-isis-neighbor-down", rest_name="handle-isis-neighbor-down", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
-    self.__retry_limit = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..8192', u'65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(65535), is_leaf=True, yang_name="retry-limit", rest_name="retry-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__qos_ttl_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'pipe': {'value': 2}, u'uniform': {'value': 1}},), is_leaf=True, yang_name="qos-ttl-mode", rest_name="qos-ttl-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'MPLS ttl and qos propagation model', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enumeration', is_config=True)
+    self.__load_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'30..300']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(300), is_leaf=True, yang_name="load-interval", rest_name="load-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Polling interval for MPLS LSP traffic statistics', u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__ingress_tunnel_accounting = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ingress-tunnel-accounting", rest_name="ingress-tunnel-accounting", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable Traffic Statistics for Tunnels', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__rapid_retry = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'disable': {'value': 0}},), is_leaf=True, yang_name="rapid-retry", rest_name="rapid-retry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure Rapid retry', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enable-disable', is_config=True)
+    self.__cspf_group_computation = YANGDynClass(base=cspf_group_computation.cspf_group_computation, is_container='container', presence=False, yang_name="cspf-group-computation", rest_name="cspf-group-computation", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Cspf-group info for cspf computation', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__cspf_computation_mode = YANGDynClass(base=cspf_computation_mode.cspf_computation_mode, is_container='container', presence=False, yang_name="cspf-computation-mode", rest_name="cspf-computation-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set cspf computation mode', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__handle_ospf_neighbor_down = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="handle-ospf-neighbor-down", rest_name="handle-ospf-neighbor-down", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure MPLS to handle OSPF neighbor down event', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__rsvp_periodic_flooding_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0', u'30..3600']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(300), is_leaf=True, yang_name="rsvp-periodic-flooding-time", rest_name="rsvp-periodic-flooding-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set the interval for RSVP TE periodic flooding', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__policy_admin_group = YANGDynClass(base=YANGListType("admin_group_name admin_group_number",policy_admin_group.policy_admin_group, yang_name="policy-admin-group", rest_name="admin-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='admin-group-name admin-group-number', extensions={u'tailf-common': {u'info': u'Set administrative group names', u'callpoint': u'MplsPolicyAdminGroup', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'alt-name': u'admin-group'}}), is_container='list', yang_name="policy-admin-group", rest_name="admin-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set administrative group names', u'callpoint': u'MplsPolicyAdminGroup', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'alt-name': u'admin-group'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__backup_retry_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..600']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="backup-retry-time", rest_name="backup-retry-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure Backup retry time', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__soft_preemption = YANGDynClass(base=soft_preemption.soft_preemption, is_container='container', presence=False, yang_name="soft-preemption", rest_name="soft-preemption", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Global MPLS policies for soft preemption.', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__implicit_commit = YANGDynClass(base=implicit_commit.implicit_commit, is_container='container', presence=False, yang_name="implicit-commit", rest_name="implicit-commit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set implicit commit behavior for LSPs'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__rsvp_flooding_threshold = YANGDynClass(base=rsvp_flooding_threshold.rsvp_flooding_threshold, is_container='container', presence=False, yang_name="rsvp-flooding-threshold", rest_name="rsvp-flooding-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RSVP triggered TE-LSA flooding reduction', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__transit_session_accounting = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="transit-session-accounting", rest_name="transit-session-accounting", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable Traffic Statistics for transit sessions', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__traffic_engineering = YANGDynClass(base=traffic_engineering.traffic_engineering, is_container='container', presence=False, yang_name="traffic-engineering", rest_name="traffic-engineering", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select IGP for advertising traffic engineering parameters', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__global_auto_bandwidth = YANGDynClass(base=global_auto_bandwidth.global_auto_bandwidth, is_container='container', presence=True, yang_name="global-auto-bandwidth", rest_name="auto-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable Auto-bandwdith feature globally', u'alt-name': u'auto-bandwidth'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__retry_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..600']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="retry-time", rest_name="retry-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure LSP retry time', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__cspf_interface_constraint = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="cspf-interface-constraint", rest_name="cspf-interface-constraint", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Use interface ip-addr for cspf computation', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__handle_isis_neighbor_down = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="handle-isis-neighbor-down", rest_name="handle-isis-neighbor-down", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure MPLS to handle ISIS neighbor down event', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__retry_limit = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..8192', u'65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(65535), is_leaf=True, yang_name="retry-limit", rest_name="retry-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure LSP retry limit', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -106,7 +107,7 @@ class policy(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'mpls-config', u'router', u'mpls', u'mpls-cmds-holder', u'policy']
+      return [u'router', u'mpls', u'policy']
 
   def _get_policy_admin_group(self):
     """
@@ -125,12 +126,12 @@ class policy(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("admin_group_name admin_group_number",policy_admin_group.policy_admin_group, yang_name="policy-admin-group", rest_name="policy-admin-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='admin-group-name admin-group-number', extensions=None), is_container='list', yang_name="policy-admin-group", rest_name="policy-admin-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("admin_group_name admin_group_number",policy_admin_group.policy_admin_group, yang_name="policy-admin-group", rest_name="admin-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='admin-group-name admin-group-number', extensions={u'tailf-common': {u'info': u'Set administrative group names', u'callpoint': u'MplsPolicyAdminGroup', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'alt-name': u'admin-group'}}), is_container='list', yang_name="policy-admin-group", rest_name="admin-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set administrative group names', u'callpoint': u'MplsPolicyAdminGroup', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'alt-name': u'admin-group'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """policy_admin_group must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("admin_group_name admin_group_number",policy_admin_group.policy_admin_group, yang_name="policy-admin-group", rest_name="policy-admin-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='admin-group-name admin-group-number', extensions=None), is_container='list', yang_name="policy-admin-group", rest_name="policy-admin-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("admin_group_name admin_group_number",policy_admin_group.policy_admin_group, yang_name="policy-admin-group", rest_name="admin-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='admin-group-name admin-group-number', extensions={u'tailf-common': {u'info': u'Set administrative group names', u'callpoint': u'MplsPolicyAdminGroup', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'alt-name': u'admin-group'}}), is_container='list', yang_name="policy-admin-group", rest_name="admin-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set administrative group names', u'callpoint': u'MplsPolicyAdminGroup', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'alt-name': u'admin-group'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)""",
         })
 
     self.__policy_admin_group = t
@@ -138,7 +139,7 @@ class policy(PybindBase):
       self._set()
 
   def _unset_policy_admin_group(self):
-    self.__policy_admin_group = YANGDynClass(base=YANGListType("admin_group_name admin_group_number",policy_admin_group.policy_admin_group, yang_name="policy-admin-group", rest_name="policy-admin-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='admin-group-name admin-group-number', extensions=None), is_container='list', yang_name="policy-admin-group", rest_name="policy-admin-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
+    self.__policy_admin_group = YANGDynClass(base=YANGListType("admin_group_name admin_group_number",policy_admin_group.policy_admin_group, yang_name="policy-admin-group", rest_name="admin-group", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='admin-group-name admin-group-number', extensions={u'tailf-common': {u'info': u'Set administrative group names', u'callpoint': u'MplsPolicyAdminGroup', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'alt-name': u'admin-group'}}), is_container='list', yang_name="policy-admin-group", rest_name="admin-group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set administrative group names', u'callpoint': u'MplsPolicyAdminGroup', u'cli-suppress-list-no': None, u'cli-compact-syntax': None, u'cli-sequence-commands': None, u'cli-suppress-mode': None, u'alt-name': u'admin-group'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='list', is_config=True)
 
 
   def _get_backup_retry_time(self):
@@ -158,12 +159,12 @@ class policy(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..600']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="backup-retry-time", rest_name="backup-retry-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..600']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="backup-retry-time", rest_name="backup-retry-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure Backup retry time', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """backup_retry_time must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..600']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="backup-retry-time", rest_name="backup-retry-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..600']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="backup-retry-time", rest_name="backup-retry-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure Backup retry time', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
         })
 
     self.__backup_retry_time = t
@@ -171,7 +172,7 @@ class policy(PybindBase):
       self._set()
 
   def _unset_backup_retry_time(self):
-    self.__backup_retry_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..600']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="backup-retry-time", rest_name="backup-retry-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__backup_retry_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'10..600']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="backup-retry-time", rest_name="backup-retry-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure Backup retry time', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
 
 
   def _get_cspf_computation_mode(self):
@@ -191,12 +192,12 @@ class policy(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=cspf_computation_mode.cspf_computation_mode, is_container='container', presence=False, yang_name="cspf-computation-mode", rest_name="cspf-computation-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=cspf_computation_mode.cspf_computation_mode, is_container='container', presence=False, yang_name="cspf-computation-mode", rest_name="cspf-computation-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set cspf computation mode', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """cspf_computation_mode must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=cspf_computation_mode.cspf_computation_mode, is_container='container', presence=False, yang_name="cspf-computation-mode", rest_name="cspf-computation-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=cspf_computation_mode.cspf_computation_mode, is_container='container', presence=False, yang_name="cspf-computation-mode", rest_name="cspf-computation-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set cspf computation mode', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__cspf_computation_mode = t
@@ -204,7 +205,7 @@ class policy(PybindBase):
       self._set()
 
   def _unset_cspf_computation_mode(self):
-    self.__cspf_computation_mode = YANGDynClass(base=cspf_computation_mode.cspf_computation_mode, is_container='container', presence=False, yang_name="cspf-computation-mode", rest_name="cspf-computation-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__cspf_computation_mode = YANGDynClass(base=cspf_computation_mode.cspf_computation_mode, is_container='container', presence=False, yang_name="cspf-computation-mode", rest_name="cspf-computation-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set cspf computation mode', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
 
   def _get_cspf_group_computation(self):
@@ -224,12 +225,12 @@ class policy(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=cspf_group_computation.cspf_group_computation, is_container='container', presence=False, yang_name="cspf-group-computation", rest_name="cspf-group-computation", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=cspf_group_computation.cspf_group_computation, is_container='container', presence=False, yang_name="cspf-group-computation", rest_name="cspf-group-computation", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Cspf-group info for cspf computation', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """cspf_group_computation must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=cspf_group_computation.cspf_group_computation, is_container='container', presence=False, yang_name="cspf-group-computation", rest_name="cspf-group-computation", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=cspf_group_computation.cspf_group_computation, is_container='container', presence=False, yang_name="cspf-group-computation", rest_name="cspf-group-computation", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Cspf-group info for cspf computation', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__cspf_group_computation = t
@@ -237,7 +238,7 @@ class policy(PybindBase):
       self._set()
 
   def _unset_cspf_group_computation(self):
-    self.__cspf_group_computation = YANGDynClass(base=cspf_group_computation.cspf_group_computation, is_container='container', presence=False, yang_name="cspf-group-computation", rest_name="cspf-group-computation", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__cspf_group_computation = YANGDynClass(base=cspf_group_computation.cspf_group_computation, is_container='container', presence=False, yang_name="cspf-group-computation", rest_name="cspf-group-computation", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Cspf-group info for cspf computation', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
 
   def _get_cspf_interface_constraint(self):
@@ -257,12 +258,12 @@ class policy(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="cspf-interface-constraint", rest_name="cspf-interface-constraint", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="cspf-interface-constraint", rest_name="cspf-interface-constraint", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Use interface ip-addr for cspf computation', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """cspf_interface_constraint must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="cspf-interface-constraint", rest_name="cspf-interface-constraint", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="cspf-interface-constraint", rest_name="cspf-interface-constraint", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Use interface ip-addr for cspf computation', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
         })
 
     self.__cspf_interface_constraint = t
@@ -270,7 +271,7 @@ class policy(PybindBase):
       self._set()
 
   def _unset_cspf_interface_constraint(self):
-    self.__cspf_interface_constraint = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="cspf-interface-constraint", rest_name="cspf-interface-constraint", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__cspf_interface_constraint = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="cspf-interface-constraint", rest_name="cspf-interface-constraint", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Use interface ip-addr for cspf computation', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
 
 
   def _get_handle_isis_neighbor_down(self):
@@ -290,12 +291,12 @@ class policy(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="handle-isis-neighbor-down", rest_name="handle-isis-neighbor-down", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="handle-isis-neighbor-down", rest_name="handle-isis-neighbor-down", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure MPLS to handle ISIS neighbor down event', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """handle_isis_neighbor_down must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="handle-isis-neighbor-down", rest_name="handle-isis-neighbor-down", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="handle-isis-neighbor-down", rest_name="handle-isis-neighbor-down", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure MPLS to handle ISIS neighbor down event', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
         })
 
     self.__handle_isis_neighbor_down = t
@@ -303,7 +304,7 @@ class policy(PybindBase):
       self._set()
 
   def _unset_handle_isis_neighbor_down(self):
-    self.__handle_isis_neighbor_down = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="handle-isis-neighbor-down", rest_name="handle-isis-neighbor-down", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__handle_isis_neighbor_down = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="handle-isis-neighbor-down", rest_name="handle-isis-neighbor-down", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure MPLS to handle ISIS neighbor down event', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
 
 
   def _get_handle_ospf_neighbor_down(self):
@@ -323,12 +324,12 @@ class policy(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="handle-ospf-neighbor-down", rest_name="handle-ospf-neighbor-down", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="handle-ospf-neighbor-down", rest_name="handle-ospf-neighbor-down", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure MPLS to handle OSPF neighbor down event', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """handle_ospf_neighbor_down must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="handle-ospf-neighbor-down", rest_name="handle-ospf-neighbor-down", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="handle-ospf-neighbor-down", rest_name="handle-ospf-neighbor-down", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure MPLS to handle OSPF neighbor down event', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
         })
 
     self.__handle_ospf_neighbor_down = t
@@ -336,7 +337,40 @@ class policy(PybindBase):
       self._set()
 
   def _unset_handle_ospf_neighbor_down(self):
-    self.__handle_ospf_neighbor_down = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="handle-ospf-neighbor-down", rest_name="handle-ospf-neighbor-down", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__handle_ospf_neighbor_down = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="handle-ospf-neighbor-down", rest_name="handle-ospf-neighbor-down", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure MPLS to handle OSPF neighbor down event', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+
+
+  def _get_load_interval(self):
+    """
+    Getter method for load_interval, mapped from YANG variable /mpls_config/router/mpls/mpls_cmds_holder/policy/load_interval (uint32)
+    """
+    return self.__load_interval
+      
+  def _set_load_interval(self, v, load=False):
+    """
+    Setter method for load_interval, mapped from YANG variable /mpls_config/router/mpls/mpls_cmds_holder/policy/load_interval (uint32)
+    If this variable is read-only (config: false) in the
+    source YANG file, then _set_load_interval is considered as a private
+    method. Backends looking to populate this variable should
+    do so via calling thisObj._set_load_interval() directly.
+    """
+    if hasattr(v, "_utype"):
+      v = v._utype(v)
+    try:
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'30..300']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(300), is_leaf=True, yang_name="load-interval", rest_name="load-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Polling interval for MPLS LSP traffic statistics', u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    except (TypeError, ValueError):
+      raise ValueError({
+          'error-string': """load_interval must be of a type compatible with uint32""",
+          'defined-type': "uint32",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'30..300']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(300), is_leaf=True, yang_name="load-interval", rest_name="load-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Polling interval for MPLS LSP traffic statistics', u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
+        })
+
+    self.__load_interval = t
+    if hasattr(self, '_set'):
+      self._set()
+
+  def _unset_load_interval(self):
+    self.__load_interval = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'30..300']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(300), is_leaf=True, yang_name="load-interval", rest_name="load-interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Polling interval for MPLS LSP traffic statistics', u'hidden': u'full', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
 
 
   def _get_retry_time(self):
@@ -356,12 +390,12 @@ class policy(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..600']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="retry-time", rest_name="retry-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..600']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="retry-time", rest_name="retry-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure LSP retry time', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """retry_time must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..600']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="retry-time", rest_name="retry-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..600']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="retry-time", rest_name="retry-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure LSP retry time', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
         })
 
     self.__retry_time = t
@@ -369,7 +403,7 @@ class policy(PybindBase):
       self._set()
 
   def _unset_retry_time(self):
-    self.__retry_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..600']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="retry-time", rest_name="retry-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__retry_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'1..600']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(30), is_leaf=True, yang_name="retry-time", rest_name="retry-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure LSP retry time', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
 
 
   def _get_retry_limit(self):
@@ -389,12 +423,12 @@ class policy(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..8192', u'65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(65535), is_leaf=True, yang_name="retry-limit", rest_name="retry-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..8192', u'65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(65535), is_leaf=True, yang_name="retry-limit", rest_name="retry-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure LSP retry limit', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """retry_limit must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..8192', u'65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(65535), is_leaf=True, yang_name="retry-limit", rest_name="retry-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..8192', u'65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(65535), is_leaf=True, yang_name="retry-limit", rest_name="retry-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure LSP retry limit', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
         })
 
     self.__retry_limit = t
@@ -402,7 +436,7 @@ class policy(PybindBase):
       self._set()
 
   def _unset_retry_limit(self):
-    self.__retry_limit = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..8192', u'65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(65535), is_leaf=True, yang_name="retry-limit", rest_name="retry-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__retry_limit = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0..8192', u'65535']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(65535), is_leaf=True, yang_name="retry-limit", rest_name="retry-limit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure LSP retry limit', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
 
 
   def _get_rapid_retry(self):
@@ -422,12 +456,12 @@ class policy(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'disable': {'value': 0}},), is_leaf=True, yang_name="rapid-retry", rest_name="rapid-retry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enable-disable', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'disable': {'value': 0}},), is_leaf=True, yang_name="rapid-retry", rest_name="rapid-retry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure Rapid retry', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enable-disable', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rapid_retry must be of a type compatible with enable-disable""",
           'defined-type': "brocade-mpls:enable-disable",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'disable': {'value': 0}},), is_leaf=True, yang_name="rapid-retry", rest_name="rapid-retry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enable-disable', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'disable': {'value': 0}},), is_leaf=True, yang_name="rapid-retry", rest_name="rapid-retry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure Rapid retry', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enable-disable', is_config=True)""",
         })
 
     self.__rapid_retry = t
@@ -435,7 +469,7 @@ class policy(PybindBase):
       self._set()
 
   def _unset_rapid_retry(self):
-    self.__rapid_retry = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'disable': {'value': 0}},), is_leaf=True, yang_name="rapid-retry", rest_name="rapid-retry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enable-disable', is_config=True)
+    self.__rapid_retry = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'enable': {'value': 1}, u'disable': {'value': 0}},), is_leaf=True, yang_name="rapid-retry", rest_name="rapid-retry", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Configure Rapid retry', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enable-disable', is_config=True)
 
 
   def _get_rsvp_periodic_flooding_time(self):
@@ -455,12 +489,12 @@ class policy(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0', u'30..3600']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(300), is_leaf=True, yang_name="rsvp-periodic-flooding-time", rest_name="rsvp-periodic-flooding-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0', u'30..3600']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(300), is_leaf=True, yang_name="rsvp-periodic-flooding-time", rest_name="rsvp-periodic-flooding-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set the interval for RSVP TE periodic flooding', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rsvp_periodic_flooding_time must be of a type compatible with uint32""",
           'defined-type': "uint32",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0', u'30..3600']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(300), is_leaf=True, yang_name="rsvp-periodic-flooding-time", rest_name="rsvp-periodic-flooding-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0', u'30..3600']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(300), is_leaf=True, yang_name="rsvp-periodic-flooding-time", rest_name="rsvp-periodic-flooding-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set the interval for RSVP TE periodic flooding', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)""",
         })
 
     self.__rsvp_periodic_flooding_time = t
@@ -468,7 +502,7 @@ class policy(PybindBase):
       self._set()
 
   def _unset_rsvp_periodic_flooding_time(self):
-    self.__rsvp_periodic_flooding_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0', u'30..3600']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(300), is_leaf=True, yang_name="rsvp-periodic-flooding-time", rest_name="rsvp-periodic-flooding-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
+    self.__rsvp_periodic_flooding_time = YANGDynClass(base=RestrictedClassType(base_type=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), restriction_dict={'range': [u'0', u'30..3600']}), default=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32)(300), is_leaf=True, yang_name="rsvp-periodic-flooding-time", rest_name="rsvp-periodic-flooding-time", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Set the interval for RSVP TE periodic flooding', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='uint32', is_config=True)
 
 
   def _get_rsvp_flooding_threshold(self):
@@ -488,12 +522,12 @@ class policy(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=rsvp_flooding_threshold.rsvp_flooding_threshold, is_container='container', presence=False, yang_name="rsvp-flooding-threshold", rest_name="rsvp-flooding-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=rsvp_flooding_threshold.rsvp_flooding_threshold, is_container='container', presence=False, yang_name="rsvp-flooding-threshold", rest_name="rsvp-flooding-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RSVP triggered TE-LSA flooding reduction', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rsvp_flooding_threshold must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=rsvp_flooding_threshold.rsvp_flooding_threshold, is_container='container', presence=False, yang_name="rsvp-flooding-threshold", rest_name="rsvp-flooding-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=rsvp_flooding_threshold.rsvp_flooding_threshold, is_container='container', presence=False, yang_name="rsvp-flooding-threshold", rest_name="rsvp-flooding-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RSVP triggered TE-LSA flooding reduction', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__rsvp_flooding_threshold = t
@@ -501,7 +535,7 @@ class policy(PybindBase):
       self._set()
 
   def _unset_rsvp_flooding_threshold(self):
-    self.__rsvp_flooding_threshold = YANGDynClass(base=rsvp_flooding_threshold.rsvp_flooding_threshold, is_container='container', presence=False, yang_name="rsvp-flooding-threshold", rest_name="rsvp-flooding-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__rsvp_flooding_threshold = YANGDynClass(base=rsvp_flooding_threshold.rsvp_flooding_threshold, is_container='container', presence=False, yang_name="rsvp-flooding-threshold", rest_name="rsvp-flooding-threshold", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RSVP triggered TE-LSA flooding reduction', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
 
   def _get_soft_preemption(self):
@@ -521,12 +555,12 @@ class policy(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=soft_preemption.soft_preemption, is_container='container', presence=False, yang_name="soft-preemption", rest_name="soft-preemption", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=soft_preemption.soft_preemption, is_container='container', presence=False, yang_name="soft-preemption", rest_name="soft-preemption", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Global MPLS policies for soft preemption.', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """soft_preemption must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=soft_preemption.soft_preemption, is_container='container', presence=False, yang_name="soft-preemption", rest_name="soft-preemption", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=soft_preemption.soft_preemption, is_container='container', presence=False, yang_name="soft-preemption", rest_name="soft-preemption", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Global MPLS policies for soft preemption.', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__soft_preemption = t
@@ -534,7 +568,7 @@ class policy(PybindBase):
       self._set()
 
   def _unset_soft_preemption(self):
-    self.__soft_preemption = YANGDynClass(base=soft_preemption.soft_preemption, is_container='container', presence=False, yang_name="soft-preemption", rest_name="soft-preemption", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__soft_preemption = YANGDynClass(base=soft_preemption.soft_preemption, is_container='container', presence=False, yang_name="soft-preemption", rest_name="soft-preemption", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Global MPLS policies for soft preemption.', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
 
   def _get_global_auto_bandwidth(self):
@@ -554,12 +588,12 @@ class policy(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=global_auto_bandwidth.global_auto_bandwidth, is_container='container', presence=True, yang_name="global-auto-bandwidth", rest_name="global-auto-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=global_auto_bandwidth.global_auto_bandwidth, is_container='container', presence=True, yang_name="global-auto-bandwidth", rest_name="auto-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable Auto-bandwdith feature globally', u'alt-name': u'auto-bandwidth'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """global_auto_bandwidth must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=global_auto_bandwidth.global_auto_bandwidth, is_container='container', presence=True, yang_name="global-auto-bandwidth", rest_name="global-auto-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=global_auto_bandwidth.global_auto_bandwidth, is_container='container', presence=True, yang_name="global-auto-bandwidth", rest_name="auto-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable Auto-bandwdith feature globally', u'alt-name': u'auto-bandwidth'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__global_auto_bandwidth = t
@@ -567,7 +601,7 @@ class policy(PybindBase):
       self._set()
 
   def _unset_global_auto_bandwidth(self):
-    self.__global_auto_bandwidth = YANGDynClass(base=global_auto_bandwidth.global_auto_bandwidth, is_container='container', presence=True, yang_name="global-auto-bandwidth", rest_name="global-auto-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__global_auto_bandwidth = YANGDynClass(base=global_auto_bandwidth.global_auto_bandwidth, is_container='container', presence=True, yang_name="global-auto-bandwidth", rest_name="auto-bandwidth", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable Auto-bandwdith feature globally', u'alt-name': u'auto-bandwidth'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
 
   def _get_implicit_commit(self):
@@ -587,12 +621,12 @@ class policy(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=implicit_commit.implicit_commit, is_container='container', presence=False, yang_name="implicit-commit", rest_name="implicit-commit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=implicit_commit.implicit_commit, is_container='container', presence=False, yang_name="implicit-commit", rest_name="implicit-commit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set implicit commit behavior for LSPs'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """implicit_commit must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=implicit_commit.implicit_commit, is_container='container', presence=False, yang_name="implicit-commit", rest_name="implicit-commit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=implicit_commit.implicit_commit, is_container='container', presence=False, yang_name="implicit-commit", rest_name="implicit-commit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set implicit commit behavior for LSPs'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__implicit_commit = t
@@ -600,7 +634,7 @@ class policy(PybindBase):
       self._set()
 
   def _unset_implicit_commit(self):
-    self.__implicit_commit = YANGDynClass(base=implicit_commit.implicit_commit, is_container='container', presence=False, yang_name="implicit-commit", rest_name="implicit-commit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__implicit_commit = YANGDynClass(base=implicit_commit.implicit_commit, is_container='container', presence=False, yang_name="implicit-commit", rest_name="implicit-commit", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Set implicit commit behavior for LSPs'}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
 
   def _get_traffic_engineering(self):
@@ -620,12 +654,12 @@ class policy(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=traffic_engineering.traffic_engineering, is_container='container', presence=False, yang_name="traffic-engineering", rest_name="traffic-engineering", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=traffic_engineering.traffic_engineering, is_container='container', presence=False, yang_name="traffic-engineering", rest_name="traffic-engineering", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select IGP for advertising traffic engineering parameters', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """traffic_engineering must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=traffic_engineering.traffic_engineering, is_container='container', presence=False, yang_name="traffic-engineering", rest_name="traffic-engineering", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=traffic_engineering.traffic_engineering, is_container='container', presence=False, yang_name="traffic-engineering", rest_name="traffic-engineering", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select IGP for advertising traffic engineering parameters', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)""",
         })
 
     self.__traffic_engineering = t
@@ -633,7 +667,7 @@ class policy(PybindBase):
       self._set()
 
   def _unset_traffic_engineering(self):
-    self.__traffic_engineering = YANGDynClass(base=traffic_engineering.traffic_engineering, is_container='container', presence=False, yang_name="traffic-engineering", rest_name="traffic-engineering", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
+    self.__traffic_engineering = YANGDynClass(base=traffic_engineering.traffic_engineering, is_container='container', presence=False, yang_name="traffic-engineering", rest_name="traffic-engineering", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Select IGP for advertising traffic engineering parameters', u'cli-incomplete-no': None, u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='container', is_config=True)
 
 
   def _get_qos_ttl_mode(self):
@@ -653,12 +687,12 @@ class policy(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'pipe': {'value': 2}, u'uniform': {'value': 1}},), is_leaf=True, yang_name="qos-ttl-mode", rest_name="qos-ttl-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enumeration', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'pipe': {'value': 2}, u'uniform': {'value': 1}},), is_leaf=True, yang_name="qos-ttl-mode", rest_name="qos-ttl-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'MPLS ttl and qos propagation model', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """qos_ttl_mode must be of a type compatible with enumeration""",
           'defined-type': "brocade-mpls:enumeration",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'pipe': {'value': 2}, u'uniform': {'value': 1}},), is_leaf=True, yang_name="qos-ttl-mode", rest_name="qos-ttl-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enumeration', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'pipe': {'value': 2}, u'uniform': {'value': 1}},), is_leaf=True, yang_name="qos-ttl-mode", rest_name="qos-ttl-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'MPLS ttl and qos propagation model', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enumeration', is_config=True)""",
         })
 
     self.__qos_ttl_mode = t
@@ -666,7 +700,7 @@ class policy(PybindBase):
       self._set()
 
   def _unset_qos_ttl_mode(self):
-    self.__qos_ttl_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'pipe': {'value': 2}, u'uniform': {'value': 1}},), is_leaf=True, yang_name="qos-ttl-mode", rest_name="qos-ttl-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enumeration', is_config=True)
+    self.__qos_ttl_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'pipe': {'value': 2}, u'uniform': {'value': 1}},), is_leaf=True, yang_name="qos-ttl-mode", rest_name="qos-ttl-mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'MPLS ttl and qos propagation model', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='enumeration', is_config=True)
 
 
   def _get_ingress_tunnel_accounting(self):
@@ -686,12 +720,12 @@ class policy(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ingress-tunnel-accounting", rest_name="ingress-tunnel-accounting", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ingress-tunnel-accounting", rest_name="ingress-tunnel-accounting", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable Traffic Statistics for Tunnels', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ingress_tunnel_accounting must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ingress-tunnel-accounting", rest_name="ingress-tunnel-accounting", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ingress-tunnel-accounting", rest_name="ingress-tunnel-accounting", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable Traffic Statistics for Tunnels', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
         })
 
     self.__ingress_tunnel_accounting = t
@@ -699,7 +733,7 @@ class policy(PybindBase):
       self._set()
 
   def _unset_ingress_tunnel_accounting(self):
-    self.__ingress_tunnel_accounting = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ingress-tunnel-accounting", rest_name="ingress-tunnel-accounting", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__ingress_tunnel_accounting = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ingress-tunnel-accounting", rest_name="ingress-tunnel-accounting", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable Traffic Statistics for Tunnels', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
 
 
   def _get_transit_session_accounting(self):
@@ -719,12 +753,12 @@ class policy(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="transit-session-accounting", rest_name="transit-session-accounting", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="transit-session-accounting", rest_name="transit-session-accounting", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable Traffic Statistics for transit sessions', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """transit_session_accounting must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="transit-session-accounting", rest_name="transit-session-accounting", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="transit-session-accounting", rest_name="transit-session-accounting", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable Traffic Statistics for transit sessions', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)""",
         })
 
     self.__transit_session_accounting = t
@@ -732,7 +766,7 @@ class policy(PybindBase):
       self._set()
 
   def _unset_transit_session_accounting(self):
-    self.__transit_session_accounting = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="transit-session-accounting", rest_name="transit-session-accounting", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
+    self.__transit_session_accounting = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="transit-session-accounting", rest_name="transit-session-accounting", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable Traffic Statistics for transit sessions', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-mpls', defining_module='brocade-mpls', yang_type='empty', is_config=True)
 
   policy_admin_group = __builtin__.property(_get_policy_admin_group, _set_policy_admin_group)
   backup_retry_time = __builtin__.property(_get_backup_retry_time, _set_backup_retry_time)
@@ -741,6 +775,7 @@ class policy(PybindBase):
   cspf_interface_constraint = __builtin__.property(_get_cspf_interface_constraint, _set_cspf_interface_constraint)
   handle_isis_neighbor_down = __builtin__.property(_get_handle_isis_neighbor_down, _set_handle_isis_neighbor_down)
   handle_ospf_neighbor_down = __builtin__.property(_get_handle_ospf_neighbor_down, _set_handle_ospf_neighbor_down)
+  load_interval = __builtin__.property(_get_load_interval, _set_load_interval)
   retry_time = __builtin__.property(_get_retry_time, _set_retry_time)
   retry_limit = __builtin__.property(_get_retry_limit, _set_retry_limit)
   rapid_retry = __builtin__.property(_get_rapid_retry, _set_rapid_retry)
@@ -755,6 +790,6 @@ class policy(PybindBase):
   transit_session_accounting = __builtin__.property(_get_transit_session_accounting, _set_transit_session_accounting)
 
 
-  _pyangbind_elements = {'policy_admin_group': policy_admin_group, 'backup_retry_time': backup_retry_time, 'cspf_computation_mode': cspf_computation_mode, 'cspf_group_computation': cspf_group_computation, 'cspf_interface_constraint': cspf_interface_constraint, 'handle_isis_neighbor_down': handle_isis_neighbor_down, 'handle_ospf_neighbor_down': handle_ospf_neighbor_down, 'retry_time': retry_time, 'retry_limit': retry_limit, 'rapid_retry': rapid_retry, 'rsvp_periodic_flooding_time': rsvp_periodic_flooding_time, 'rsvp_flooding_threshold': rsvp_flooding_threshold, 'soft_preemption': soft_preemption, 'global_auto_bandwidth': global_auto_bandwidth, 'implicit_commit': implicit_commit, 'traffic_engineering': traffic_engineering, 'qos_ttl_mode': qos_ttl_mode, 'ingress_tunnel_accounting': ingress_tunnel_accounting, 'transit_session_accounting': transit_session_accounting, }
+  _pyangbind_elements = {'policy_admin_group': policy_admin_group, 'backup_retry_time': backup_retry_time, 'cspf_computation_mode': cspf_computation_mode, 'cspf_group_computation': cspf_group_computation, 'cspf_interface_constraint': cspf_interface_constraint, 'handle_isis_neighbor_down': handle_isis_neighbor_down, 'handle_ospf_neighbor_down': handle_ospf_neighbor_down, 'load_interval': load_interval, 'retry_time': retry_time, 'retry_limit': retry_limit, 'rapid_retry': rapid_retry, 'rsvp_periodic_flooding_time': rsvp_periodic_flooding_time, 'rsvp_flooding_threshold': rsvp_flooding_threshold, 'soft_preemption': soft_preemption, 'global_auto_bandwidth': global_auto_bandwidth, 'implicit_commit': implicit_commit, 'traffic_engineering': traffic_engineering, 'qos_ttl_mode': qos_ttl_mode, 'ingress_tunnel_accounting': ingress_tunnel_accounting, 'transit_session_accounting': transit_session_accounting, }
 
 

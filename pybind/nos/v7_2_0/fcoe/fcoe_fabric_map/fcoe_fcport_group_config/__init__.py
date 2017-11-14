@@ -47,7 +47,7 @@ class fcoe_fcport_group_config(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__fcport_group_rbid = YANGDynClass(base=fcport_group_rbid.fcport_group_rbid, is_container='container', presence=False, yang_name="fcport-group-rbid", rest_name="fcport-group-rbid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'fcport-group-rbid'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
+    self.__fcport_group_rbid = YANGDynClass(base=fcport_group_rbid.fcport_group_rbid, is_container='container', presence=False, yang_name="fcport-group-rbid", rest_name="fcport-group-rbid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure fcport-group rbridge-id/s.', u'alt-name': u'fcport-group-rbid', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -108,12 +108,12 @@ FCF Group
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=fcport_group_rbid.fcport_group_rbid, is_container='container', presence=False, yang_name="fcport-group-rbid", rest_name="fcport-group-rbid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'fcport-group-rbid'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=fcport_group_rbid.fcport_group_rbid, is_container='container', presence=False, yang_name="fcport-group-rbid", rest_name="fcport-group-rbid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure fcport-group rbridge-id/s.', u'alt-name': u'fcport-group-rbid', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fcport_group_rbid must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=fcport_group_rbid.fcport_group_rbid, is_container='container', presence=False, yang_name="fcport-group-rbid", rest_name="fcport-group-rbid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'fcport-group-rbid'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=fcport_group_rbid.fcport_group_rbid, is_container='container', presence=False, yang_name="fcport-group-rbid", rest_name="fcport-group-rbid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure fcport-group rbridge-id/s.', u'alt-name': u'fcport-group-rbid', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)""",
         })
 
     self.__fcport_group_rbid = t
@@ -121,7 +121,7 @@ FCF Group
       self._set()
 
   def _unset_fcport_group_rbid(self):
-    self.__fcport_group_rbid = YANGDynClass(base=fcport_group_rbid.fcport_group_rbid, is_container='container', presence=False, yang_name="fcport-group-rbid", rest_name="fcport-group-rbid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'fcport-group-rbid'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
+    self.__fcport_group_rbid = YANGDynClass(base=fcport_group_rbid.fcport_group_rbid, is_container='container', presence=False, yang_name="fcport-group-rbid", rest_name="fcport-group-rbid", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure fcport-group rbridge-id/s.', u'alt-name': u'fcport-group-rbid', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='container', is_config=True)
 
   fcport_group_rbid = __builtin__.property(_get_fcport_group_rbid, _set_fcport_group_rbid)
 

@@ -44,7 +44,7 @@ class ipv6_ve_intf_cmds(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__hop_by_hop_trap = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="hop-by-hop-trap", rest_name="hop-by-hop-trap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='empty', is_config=True)
+    self.__hop_by_hop_trap = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="hop-by-hop-trap", rest_name="hop-by-hop-trap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable hop-by-hop trap on an Interface'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -99,12 +99,12 @@ class ipv6_ve_intf_cmds(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="hop-by-hop-trap", rest_name="hop-by-hop-trap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="hop-by-hop-trap", rest_name="hop-by-hop-trap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable hop-by-hop trap on an Interface'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """hop_by_hop_trap must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="hop-by-hop-trap", rest_name="hop-by-hop-trap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="hop-by-hop-trap", rest_name="hop-by-hop-trap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable hop-by-hop trap on an Interface'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='empty', is_config=True)""",
         })
 
     self.__hop_by_hop_trap = t
@@ -112,7 +112,7 @@ class ipv6_ve_intf_cmds(PybindBase):
       self._set()
 
   def _unset_hop_by_hop_trap(self):
-    self.__hop_by_hop_trap = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="hop-by-hop-trap", rest_name="hop-by-hop-trap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='empty', is_config=True)
+    self.__hop_by_hop_trap = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="hop-by-hop-trap", rest_name="hop-by-hop-trap", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Enable hop-by-hop trap on an Interface'}}, namespace='urn:brocade.com:mgmt:brocade-mld-snooping', defining_module='brocade-mld-snooping', yang_type='empty', is_config=True)
 
   hop_by_hop_trap = __builtin__.property(_get_hop_by_hop_trap, _set_hop_by_hop_trap)
 

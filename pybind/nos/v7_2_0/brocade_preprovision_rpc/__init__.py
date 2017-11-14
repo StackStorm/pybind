@@ -48,7 +48,7 @@ feature.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__show_bare_metal_state = YANGDynClass(base=show_bare_metal_state.show_bare_metal_state, is_leaf=True, yang_name="show-bare-metal-state", rest_name="show-bare-metal-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-preprovision', defining_module='brocade-preprovision', yang_type='rpc', is_config=True)
+    self.__show_bare_metal_state = YANGDynClass(base=show_bare_metal_state.show_bare_metal_state, is_leaf=True, yang_name="show-bare-metal-state", rest_name="show-bare-metal-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Retrieve bare-metal state.', u'hidden': u'rpccmd', u'actionpoint': u'get-bare-metal-state'}}, namespace='urn:brocade.com:mgmt:brocade-preprovision', defining_module='brocade-preprovision', yang_type='rpc', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -103,12 +103,12 @@ feature.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=show_bare_metal_state.show_bare_metal_state, is_leaf=True, yang_name="show-bare-metal-state", rest_name="show-bare-metal-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-preprovision', defining_module='brocade-preprovision', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_bare_metal_state.show_bare_metal_state, is_leaf=True, yang_name="show-bare-metal-state", rest_name="show-bare-metal-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Retrieve bare-metal state.', u'hidden': u'rpccmd', u'actionpoint': u'get-bare-metal-state'}}, namespace='urn:brocade.com:mgmt:brocade-preprovision', defining_module='brocade-preprovision', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_bare_metal_state must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_bare_metal_state.show_bare_metal_state, is_leaf=True, yang_name="show-bare-metal-state", rest_name="show-bare-metal-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-preprovision', defining_module='brocade-preprovision', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_bare_metal_state.show_bare_metal_state, is_leaf=True, yang_name="show-bare-metal-state", rest_name="show-bare-metal-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Retrieve bare-metal state.', u'hidden': u'rpccmd', u'actionpoint': u'get-bare-metal-state'}}, namespace='urn:brocade.com:mgmt:brocade-preprovision', defining_module='brocade-preprovision', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_bare_metal_state = t
@@ -116,7 +116,7 @@ feature.
       self._set()
 
   def _unset_show_bare_metal_state(self):
-    self.__show_bare_metal_state = YANGDynClass(base=show_bare_metal_state.show_bare_metal_state, is_leaf=True, yang_name="show-bare-metal-state", rest_name="show-bare-metal-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-preprovision', defining_module='brocade-preprovision', yang_type='rpc', is_config=True)
+    self.__show_bare_metal_state = YANGDynClass(base=show_bare_metal_state.show_bare_metal_state, is_leaf=True, yang_name="show-bare-metal-state", rest_name="show-bare-metal-state", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Retrieve bare-metal state.', u'hidden': u'rpccmd', u'actionpoint': u'get-bare-metal-state'}}, namespace='urn:brocade.com:mgmt:brocade-preprovision', defining_module='brocade-preprovision', yang_type='rpc', is_config=True)
 
   show_bare_metal_state = __builtin__.property(_get_show_bare_metal_state, _set_show_bare_metal_state)
 

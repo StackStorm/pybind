@@ -47,7 +47,7 @@ class vpn_statistics_state(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__vpn_vrf_statistics = YANGDynClass(base=YANGListType("vrf_name",vpn_vrf_statistics.vpn_vrf_statistics, yang_name="vpn-vrf-statistics", rest_name="vpn-vrf-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vrf-name', extensions=None), is_container='list', yang_name="vpn-vrf-statistics", rest_name="vpn-vrf-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
+    self.__vpn_vrf_statistics = YANGDynClass(base=YANGListType("vrf_name",vpn_vrf_statistics.vpn_vrf_statistics, yang_name="vpn-vrf-statistics", rest_name="vpn-vrf-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vrf-name', extensions={u'tailf-common': {u'callpoint': u'nsm-vpn-vrf-statistics', u'cli-suppress-show-path': None}}), is_container='list', yang_name="vpn-vrf-statistics", rest_name="vpn-vrf-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-vpn-vrf-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -102,12 +102,12 @@ class vpn_statistics_state(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("vrf_name",vpn_vrf_statistics.vpn_vrf_statistics, yang_name="vpn-vrf-statistics", rest_name="vpn-vrf-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vrf-name', extensions=None), is_container='list', yang_name="vpn-vrf-statistics", rest_name="vpn-vrf-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
+      t = YANGDynClass(v,base=YANGListType("vrf_name",vpn_vrf_statistics.vpn_vrf_statistics, yang_name="vpn-vrf-statistics", rest_name="vpn-vrf-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vrf-name', extensions={u'tailf-common': {u'callpoint': u'nsm-vpn-vrf-statistics', u'cli-suppress-show-path': None}}), is_container='list', yang_name="vpn-vrf-statistics", rest_name="vpn-vrf-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-vpn-vrf-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vpn_vrf_statistics must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("vrf_name",vpn_vrf_statistics.vpn_vrf_statistics, yang_name="vpn-vrf-statistics", rest_name="vpn-vrf-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vrf-name', extensions=None), is_container='list', yang_name="vpn-vrf-statistics", rest_name="vpn-vrf-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)""",
+          'generated-type': """YANGDynClass(base=YANGListType("vrf_name",vpn_vrf_statistics.vpn_vrf_statistics, yang_name="vpn-vrf-statistics", rest_name="vpn-vrf-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vrf-name', extensions={u'tailf-common': {u'callpoint': u'nsm-vpn-vrf-statistics', u'cli-suppress-show-path': None}}), is_container='list', yang_name="vpn-vrf-statistics", rest_name="vpn-vrf-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-vpn-vrf-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)""",
         })
 
     self.__vpn_vrf_statistics = t
@@ -115,7 +115,7 @@ class vpn_statistics_state(PybindBase):
       self._set()
 
   def _unset_vpn_vrf_statistics(self):
-    self.__vpn_vrf_statistics = YANGDynClass(base=YANGListType("vrf_name",vpn_vrf_statistics.vpn_vrf_statistics, yang_name="vpn-vrf-statistics", rest_name="vpn-vrf-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vrf-name', extensions=None), is_container='list', yang_name="vpn-vrf-statistics", rest_name="vpn-vrf-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
+    self.__vpn_vrf_statistics = YANGDynClass(base=YANGListType("vrf_name",vpn_vrf_statistics.vpn_vrf_statistics, yang_name="vpn-vrf-statistics", rest_name="vpn-vrf-statistics", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vrf-name', extensions={u'tailf-common': {u'callpoint': u'nsm-vpn-vrf-statistics', u'cli-suppress-show-path': None}}), is_container='list', yang_name="vpn-vrf-statistics", rest_name="vpn-vrf-statistics", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'nsm-vpn-vrf-statistics', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-nsm-operational', defining_module='brocade-nsm-operational', yang_type='list', is_config=False)
 
   vpn_vrf_statistics = __builtin__.property(_get_vpn_vrf_statistics)
 

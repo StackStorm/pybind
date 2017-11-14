@@ -46,8 +46,8 @@ class vni(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__evpn_vni = YANGDynClass(base=YANGListType("vni_number",evpn_vni.evpn_vni, yang_name="evpn-vni", rest_name="evpn-vni", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vni-number', extensions={u'tailf-common': {u'cli-drop-node-name': None}}), is_container='list', yang_name="evpn-vni", rest_name="evpn-vni", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
-    self.__vni_add = YANGDynClass(base=vni_add.vni_add, is_container='container', presence=False, yang_name="vni-add", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__evpn_vni = YANGDynClass(base=YANGListType("vni_number",evpn_vni.evpn_vni, yang_name="evpn-vni", rest_name="evpn-vni", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vni-number', extensions={u'tailf-common': {u'info': u'VNI configuration', u'cli-no-key-completion': None, u'callpoint': u'EvpnVniConfig', u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'evpn-vni-$(vni-number)'}}), is_container='list', yang_name="evpn-vni", rest_name="evpn-vni", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VNI configuration', u'cli-no-key-completion': None, u'callpoint': u'EvpnVniConfig', u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'evpn-vni-$(vni-number)'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
+    self.__vni_add = YANGDynClass(base=vni_add.vni_add, is_container='container', presence=False, yang_name="vni-add", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Add/Remove VNIs from EVPN Instance', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -102,12 +102,12 @@ class vni(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=vni_add.vni_add, is_container='container', presence=False, yang_name="vni-add", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=vni_add.vni_add, is_container='container', presence=False, yang_name="vni-add", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Add/Remove VNIs from EVPN Instance', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """vni_add must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=vni_add.vni_add, is_container='container', presence=False, yang_name="vni-add", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=vni_add.vni_add, is_container='container', presence=False, yang_name="vni-add", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Add/Remove VNIs from EVPN Instance', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)""",
         })
 
     self.__vni_add = t
@@ -115,7 +115,7 @@ class vni(PybindBase):
       self._set()
 
   def _unset_vni_add(self):
-    self.__vni_add = YANGDynClass(base=vni_add.vni_add, is_container='container', presence=False, yang_name="vni-add", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
+    self.__vni_add = YANGDynClass(base=vni_add.vni_add, is_container='container', presence=False, yang_name="vni-add", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Add/Remove VNIs from EVPN Instance', u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='container', is_config=True)
 
 
   def _get_evpn_vni(self):
@@ -139,12 +139,12 @@ class vni(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("vni_number",evpn_vni.evpn_vni, yang_name="evpn-vni", rest_name="evpn-vni", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vni-number', extensions={u'tailf-common': {u'cli-drop-node-name': None}}), is_container='list', yang_name="evpn-vni", rest_name="evpn-vni", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("vni_number",evpn_vni.evpn_vni, yang_name="evpn-vni", rest_name="evpn-vni", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vni-number', extensions={u'tailf-common': {u'info': u'VNI configuration', u'cli-no-key-completion': None, u'callpoint': u'EvpnVniConfig', u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'evpn-vni-$(vni-number)'}}), is_container='list', yang_name="evpn-vni", rest_name="evpn-vni", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VNI configuration', u'cli-no-key-completion': None, u'callpoint': u'EvpnVniConfig', u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'evpn-vni-$(vni-number)'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """evpn_vni must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("vni_number",evpn_vni.evpn_vni, yang_name="evpn-vni", rest_name="evpn-vni", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vni-number', extensions={u'tailf-common': {u'cli-drop-node-name': None}}), is_container='list', yang_name="evpn-vni", rest_name="evpn-vni", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("vni_number",evpn_vni.evpn_vni, yang_name="evpn-vni", rest_name="evpn-vni", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vni-number', extensions={u'tailf-common': {u'info': u'VNI configuration', u'cli-no-key-completion': None, u'callpoint': u'EvpnVniConfig', u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'evpn-vni-$(vni-number)'}}), is_container='list', yang_name="evpn-vni", rest_name="evpn-vni", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VNI configuration', u'cli-no-key-completion': None, u'callpoint': u'EvpnVniConfig', u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'evpn-vni-$(vni-number)'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)""",
         })
 
     self.__evpn_vni = t
@@ -152,7 +152,7 @@ class vni(PybindBase):
       self._set()
 
   def _unset_evpn_vni(self):
-    self.__evpn_vni = YANGDynClass(base=YANGListType("vni_number",evpn_vni.evpn_vni, yang_name="evpn-vni", rest_name="evpn-vni", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vni-number', extensions={u'tailf-common': {u'cli-drop-node-name': None}}), is_container='list', yang_name="evpn-vni", rest_name="evpn-vni", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
+    self.__evpn_vni = YANGDynClass(base=YANGListType("vni_number",evpn_vni.evpn_vni, yang_name="evpn-vni", rest_name="evpn-vni", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='vni-number', extensions={u'tailf-common': {u'info': u'VNI configuration', u'cli-no-key-completion': None, u'callpoint': u'EvpnVniConfig', u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'evpn-vni-$(vni-number)'}}), is_container='list', yang_name="evpn-vni", rest_name="evpn-vni", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'VNI configuration', u'cli-no-key-completion': None, u'callpoint': u'EvpnVniConfig', u'cli-suppress-list-no': None, u'cli-drop-node-name': None, u'cli-suppress-key-abbreviation': None, u'cli-full-command': None, u'cli-full-no': None, u'cli-mode-name': u'evpn-vni-$(vni-number)'}}, namespace='urn:brocade.com:mgmt:brocade-bgp', defining_module='brocade-bgp', yang_type='list', is_config=True)
 
   vni_add = __builtin__.property(_get_vni_add, _set_vni_add)
   evpn_vni = __builtin__.property(_get_evpn_vni, _set_evpn_vni)

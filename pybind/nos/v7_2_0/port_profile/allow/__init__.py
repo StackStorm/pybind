@@ -46,7 +46,7 @@ class allow(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__nonprofiledmacs = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="nonprofiledmacs", rest_name="non-profiled-macs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'non-profiled-macs'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='empty', is_config=True)
+    self.__nonprofiledmacs = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="nonprofiledmacs", rest_name="non-profiled-macs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'non-profiled macs', u'alt-name': u'non-profiled-macs'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -105,12 +105,12 @@ class allow(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="nonprofiledmacs", rest_name="non-profiled-macs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'non-profiled-macs'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="nonprofiledmacs", rest_name="non-profiled-macs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'non-profiled macs', u'alt-name': u'non-profiled-macs'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """nonprofiledmacs must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="nonprofiledmacs", rest_name="non-profiled-macs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'non-profiled-macs'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="nonprofiledmacs", rest_name="non-profiled-macs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'non-profiled macs', u'alt-name': u'non-profiled-macs'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='empty', is_config=True)""",
         })
 
     self.__nonprofiledmacs = t
@@ -118,7 +118,7 @@ class allow(PybindBase):
       self._set()
 
   def _unset_nonprofiledmacs(self):
-    self.__nonprofiledmacs = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="nonprofiledmacs", rest_name="non-profiled-macs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'non-profiled-macs'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='empty', is_config=True)
+    self.__nonprofiledmacs = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="nonprofiledmacs", rest_name="non-profiled-macs", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'non-profiled macs', u'alt-name': u'non-profiled-macs'}}, namespace='urn:brocade.com:mgmt:brocade-port-profile', defining_module='brocade-port-profile', yang_type='empty', is_config=True)
 
   nonprofiledmacs = __builtin__.property(_get_nonprofiledmacs, _set_nonprofiledmacs)
 

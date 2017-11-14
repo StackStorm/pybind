@@ -46,8 +46,8 @@ class flowcontrol(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__pfc = YANGDynClass(base=YANGListType("pfc_cos",pfc.pfc, yang_name="pfc", rest_name="pfc", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pfc-cos', extensions=None), is_container='list', yang_name="pfc", rest_name="pfc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='list', is_config=True)
-    self.__link_level_flowcontrol = YANGDynClass(base=link_level_flowcontrol.link_level_flowcontrol, is_container='container', presence=False, yang_name="link-level-flowcontrol", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+    self.__pfc = YANGDynClass(base=YANGListType("pfc_cos",pfc.pfc, yang_name="pfc", rest_name="pfc", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pfc-cos', extensions={u'tailf-common': {u'info': u'Priority-based Flow Control (PFC)', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'callpoint': u'pfc_flowcontrol_te', u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'cli-full-no': None}}), is_container='list', yang_name="pfc", rest_name="pfc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Priority-based Flow Control (PFC)', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'callpoint': u'pfc_flowcontrol_te', u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='list', is_config=True)
+    self.__link_level_flowcontrol = YANGDynClass(base=link_level_flowcontrol.link_level_flowcontrol, is_container='container', presence=False, yang_name="link-level-flowcontrol", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -102,12 +102,12 @@ class flowcontrol(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=link_level_flowcontrol.link_level_flowcontrol, is_container='container', presence=False, yang_name="link-level-flowcontrol", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=link_level_flowcontrol.link_level_flowcontrol, is_container='container', presence=False, yang_name="link-level-flowcontrol", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """link_level_flowcontrol must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=link_level_flowcontrol.link_level_flowcontrol, is_container='container', presence=False, yang_name="link-level-flowcontrol", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=link_level_flowcontrol.link_level_flowcontrol, is_container='container', presence=False, yang_name="link-level-flowcontrol", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)""",
         })
 
     self.__link_level_flowcontrol = t
@@ -115,7 +115,7 @@ class flowcontrol(PybindBase):
       self._set()
 
   def _unset_link_level_flowcontrol(self):
-    self.__link_level_flowcontrol = YANGDynClass(base=link_level_flowcontrol.link_level_flowcontrol, is_container='container', presence=False, yang_name="link-level-flowcontrol", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+    self.__link_level_flowcontrol = YANGDynClass(base=link_level_flowcontrol.link_level_flowcontrol, is_container='container', presence=False, yang_name="link-level-flowcontrol", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
 
 
   def _get_pfc(self):
@@ -135,12 +135,12 @@ class flowcontrol(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("pfc_cos",pfc.pfc, yang_name="pfc", rest_name="pfc", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pfc-cos', extensions=None), is_container='list', yang_name="pfc", rest_name="pfc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("pfc_cos",pfc.pfc, yang_name="pfc", rest_name="pfc", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pfc-cos', extensions={u'tailf-common': {u'info': u'Priority-based Flow Control (PFC)', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'callpoint': u'pfc_flowcontrol_te', u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'cli-full-no': None}}), is_container='list', yang_name="pfc", rest_name="pfc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Priority-based Flow Control (PFC)', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'callpoint': u'pfc_flowcontrol_te', u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """pfc must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("pfc_cos",pfc.pfc, yang_name="pfc", rest_name="pfc", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pfc-cos', extensions=None), is_container='list', yang_name="pfc", rest_name="pfc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("pfc_cos",pfc.pfc, yang_name="pfc", rest_name="pfc", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pfc-cos', extensions={u'tailf-common': {u'info': u'Priority-based Flow Control (PFC)', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'callpoint': u'pfc_flowcontrol_te', u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'cli-full-no': None}}), is_container='list', yang_name="pfc", rest_name="pfc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Priority-based Flow Control (PFC)', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'callpoint': u'pfc_flowcontrol_te', u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='list', is_config=True)""",
         })
 
     self.__pfc = t
@@ -148,7 +148,7 @@ class flowcontrol(PybindBase):
       self._set()
 
   def _unset_pfc(self):
-    self.__pfc = YANGDynClass(base=YANGListType("pfc_cos",pfc.pfc, yang_name="pfc", rest_name="pfc", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pfc-cos', extensions=None), is_container='list', yang_name="pfc", rest_name="pfc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='list', is_config=True)
+    self.__pfc = YANGDynClass(base=YANGListType("pfc_cos",pfc.pfc, yang_name="pfc", rest_name="pfc", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='pfc-cos', extensions={u'tailf-common': {u'info': u'Priority-based Flow Control (PFC)', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'callpoint': u'pfc_flowcontrol_te', u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'cli-full-no': None}}), is_container='list', yang_name="pfc", rest_name="pfc", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Priority-based Flow Control (PFC)', u'cli-no-key-completion': None, u'cli-suppress-mode': None, u'cli-suppress-list-no': None, u'callpoint': u'pfc_flowcontrol_te', u'cli-sequence-commands': None, u'cli-suppress-key-abbreviation': None, u'cli-incomplete-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='list', is_config=True)
 
   link_level_flowcontrol = __builtin__.property(_get_link_level_flowcontrol, _set_link_level_flowcontrol)
   pfc = __builtin__.property(_get_pfc, _set_pfc)

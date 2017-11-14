@@ -45,7 +45,7 @@ class http_sa(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__http = YANGDynClass(base=http.http, is_container='container', presence=False, yang_name="http", rest_name="http", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure HTTP/HTTPS Server', u'cli-incomplete-no': None, u'sort-priority': u'RUNNCFG_LEVEL_SYSTEM_HTTP_SERVER'}}, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='container', is_config=True)
+    self.__http = YANGDynClass(base=http.http, is_container='container', presence=False, yang_name="http", rest_name="http", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure HTTP/HTTPS Server', u'cli-incomplete-no': None, u'sort-priority': u'6'}}, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class http_sa(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=http.http, is_container='container', presence=False, yang_name="http", rest_name="http", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure HTTP/HTTPS Server', u'cli-incomplete-no': None, u'sort-priority': u'RUNNCFG_LEVEL_SYSTEM_HTTP_SERVER'}}, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=http.http, is_container='container', presence=False, yang_name="http", rest_name="http", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure HTTP/HTTPS Server', u'cli-incomplete-no': None, u'sort-priority': u'6'}}, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """http must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=http.http, is_container='container', presence=False, yang_name="http", rest_name="http", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure HTTP/HTTPS Server', u'cli-incomplete-no': None, u'sort-priority': u'RUNNCFG_LEVEL_SYSTEM_HTTP_SERVER'}}, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=http.http, is_container='container', presence=False, yang_name="http", rest_name="http", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure HTTP/HTTPS Server', u'cli-incomplete-no': None, u'sort-priority': u'6'}}, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='container', is_config=True)""",
         })
 
     self.__http = t
@@ -113,7 +113,7 @@ class http_sa(PybindBase):
       self._set()
 
   def _unset_http(self):
-    self.__http = YANGDynClass(base=http.http, is_container='container', presence=False, yang_name="http", rest_name="http", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure HTTP/HTTPS Server', u'cli-incomplete-no': None, u'sort-priority': u'RUNNCFG_LEVEL_SYSTEM_HTTP_SERVER'}}, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='container', is_config=True)
+    self.__http = YANGDynClass(base=http.http, is_container='container', presence=False, yang_name="http", rest_name="http", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure HTTP/HTTPS Server', u'cli-incomplete-no': None, u'sort-priority': u'6'}}, namespace='urn:brocade.com:mgmt:brocade-http', defining_module='brocade-http-config', yang_type='container', is_config=True)
 
   http = __builtin__.property(_get_http, _set_http)
 

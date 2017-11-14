@@ -51,11 +51,11 @@ class cpu_state(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__all_partition = YANGDynClass(base=all_partition.all_partition, is_container='container', presence=False, yang_name="all-partition", rest_name="all-partition", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
-    self.__top = YANGDynClass(base=top.top, is_container='container', presence=False, yang_name="top", rest_name="top", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
-    self.__history = YANGDynClass(base=history.history, is_container='container', presence=False, yang_name="history", rest_name="history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
-    self.__process_list = YANGDynClass(base=process_list.process_list, is_container='container', presence=False, yang_name="process-list", rest_name="process-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
-    self.__summary = YANGDynClass(base=summary.summary, is_container='container', presence=False, yang_name="summary", rest_name="summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
+    self.__all_partition = YANGDynClass(base=all_partition.all_partition, is_container='container', presence=False, yang_name="all-partition", rest_name="all-partition", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'RAS-process-cpu-all-partition', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
+    self.__top = YANGDynClass(base=top.top, is_container='container', presence=False, yang_name="top", rest_name="top", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'RAS-process-cpu-top', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
+    self.__history = YANGDynClass(base=history.history, is_container='container', presence=False, yang_name="history", rest_name="history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'RAS-process-cpu-history', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
+    self.__process_list = YANGDynClass(base=process_list.process_list, is_container='container', presence=False, yang_name="process-list", rest_name="process-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'RAS-process-cpu', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
+    self.__summary = YANGDynClass(base=summary.summary, is_container='container', presence=False, yang_name="summary", rest_name="summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'RAS-process-cpu-summary', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
 
     load = kwargs.pop("load", None)
     if args:
@@ -114,12 +114,12 @@ class cpu_state(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=summary.summary, is_container='container', presence=False, yang_name="summary", rest_name="summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=summary.summary, is_container='container', presence=False, yang_name="summary", rest_name="summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'RAS-process-cpu-summary', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """summary must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=summary.summary, is_container='container', presence=False, yang_name="summary", rest_name="summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=summary.summary, is_container='container', presence=False, yang_name="summary", rest_name="summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'RAS-process-cpu-summary', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)""",
         })
 
     self.__summary = t
@@ -127,7 +127,7 @@ class cpu_state(PybindBase):
       self._set()
 
   def _unset_summary(self):
-    self.__summary = YANGDynClass(base=summary.summary, is_container='container', presence=False, yang_name="summary", rest_name="summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
+    self.__summary = YANGDynClass(base=summary.summary, is_container='container', presence=False, yang_name="summary", rest_name="summary", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'RAS-process-cpu-summary', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
 
 
   def _get_history(self):
@@ -151,12 +151,12 @@ class cpu_state(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=history.history, is_container='container', presence=False, yang_name="history", rest_name="history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=history.history, is_container='container', presence=False, yang_name="history", rest_name="history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'RAS-process-cpu-history', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """history must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=history.history, is_container='container', presence=False, yang_name="history", rest_name="history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=history.history, is_container='container', presence=False, yang_name="history", rest_name="history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'RAS-process-cpu-history', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)""",
         })
 
     self.__history = t
@@ -164,7 +164,7 @@ class cpu_state(PybindBase):
       self._set()
 
   def _unset_history(self):
-    self.__history = YANGDynClass(base=history.history, is_container='container', presence=False, yang_name="history", rest_name="history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
+    self.__history = YANGDynClass(base=history.history, is_container='container', presence=False, yang_name="history", rest_name="history", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'RAS-process-cpu-history', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
 
 
   def _get_top(self):
@@ -188,12 +188,12 @@ class cpu_state(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=top.top, is_container='container', presence=False, yang_name="top", rest_name="top", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=top.top, is_container='container', presence=False, yang_name="top", rest_name="top", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'RAS-process-cpu-top', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """top must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=top.top, is_container='container', presence=False, yang_name="top", rest_name="top", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=top.top, is_container='container', presence=False, yang_name="top", rest_name="top", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'RAS-process-cpu-top', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)""",
         })
 
     self.__top = t
@@ -201,7 +201,7 @@ class cpu_state(PybindBase):
       self._set()
 
   def _unset_top(self):
-    self.__top = YANGDynClass(base=top.top, is_container='container', presence=False, yang_name="top", rest_name="top", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
+    self.__top = YANGDynClass(base=top.top, is_container='container', presence=False, yang_name="top", rest_name="top", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'RAS-process-cpu-top', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
 
 
   def _get_all_partition(self):
@@ -225,12 +225,12 @@ class cpu_state(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=all_partition.all_partition, is_container='container', presence=False, yang_name="all-partition", rest_name="all-partition", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=all_partition.all_partition, is_container='container', presence=False, yang_name="all-partition", rest_name="all-partition", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'RAS-process-cpu-all-partition', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """all_partition must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=all_partition.all_partition, is_container='container', presence=False, yang_name="all-partition", rest_name="all-partition", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=all_partition.all_partition, is_container='container', presence=False, yang_name="all-partition", rest_name="all-partition", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'RAS-process-cpu-all-partition', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)""",
         })
 
     self.__all_partition = t
@@ -238,7 +238,7 @@ class cpu_state(PybindBase):
       self._set()
 
   def _unset_all_partition(self):
-    self.__all_partition = YANGDynClass(base=all_partition.all_partition, is_container='container', presence=False, yang_name="all-partition", rest_name="all-partition", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
+    self.__all_partition = YANGDynClass(base=all_partition.all_partition, is_container='container', presence=False, yang_name="all-partition", rest_name="all-partition", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'RAS-process-cpu-all-partition', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
 
 
   def _get_process_list(self):
@@ -262,12 +262,12 @@ class cpu_state(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=process_list.process_list, is_container='container', presence=False, yang_name="process-list", rest_name="process-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
+      t = YANGDynClass(v,base=process_list.process_list, is_container='container', presence=False, yang_name="process-list", rest_name="process-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'RAS-process-cpu', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """process_list must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=process_list.process_list, is_container='container', presence=False, yang_name="process-list", rest_name="process-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)""",
+          'generated-type': """YANGDynClass(base=process_list.process_list, is_container='container', presence=False, yang_name="process-list", rest_name="process-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'RAS-process-cpu', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)""",
         })
 
     self.__process_list = t
@@ -275,7 +275,7 @@ class cpu_state(PybindBase):
       self._set()
 
   def _unset_process_list(self):
-    self.__process_list = YANGDynClass(base=process_list.process_list, is_container='container', presence=False, yang_name="process-list", rest_name="process-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
+    self.__process_list = YANGDynClass(base=process_list.process_list, is_container='container', presence=False, yang_name="process-list", rest_name="process-list", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'RAS-process-cpu', u'cli-suppress-show-path': None}}, namespace='urn:brocade.com:mgmt:brocade-RAS-operational', defining_module='brocade-RAS-operational', yang_type='container', is_config=False)
 
   summary = __builtin__.property(_get_summary)
   history = __builtin__.property(_get_history)

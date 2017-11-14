@@ -45,7 +45,7 @@ class rmon(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__collection = YANGDynClass(base=collection.collection, is_container='container', presence=False, yang_name="collection", rest_name="collection", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-rmon', defining_module='brocade-rmon', yang_type='container', is_config=True)
+    self.__collection = YANGDynClass(base=collection.collection, is_container='container', presence=False, yang_name="collection", rest_name="collection", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RMON ether collection', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-rmon', defining_module='brocade-rmon', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class rmon(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=collection.collection, is_container='container', presence=False, yang_name="collection", rest_name="collection", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-rmon', defining_module='brocade-rmon', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=collection.collection, is_container='container', presence=False, yang_name="collection", rest_name="collection", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RMON ether collection', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-rmon', defining_module='brocade-rmon', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """collection must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=collection.collection, is_container='container', presence=False, yang_name="collection", rest_name="collection", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-rmon', defining_module='brocade-rmon', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=collection.collection, is_container='container', presence=False, yang_name="collection", rest_name="collection", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RMON ether collection', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-rmon', defining_module='brocade-rmon', yang_type='container', is_config=True)""",
         })
 
     self.__collection = t
@@ -113,7 +113,7 @@ class rmon(PybindBase):
       self._set()
 
   def _unset_collection(self):
-    self.__collection = YANGDynClass(base=collection.collection, is_container='container', presence=False, yang_name="collection", rest_name="collection", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-rmon', defining_module='brocade-rmon', yang_type='container', is_config=True)
+    self.__collection = YANGDynClass(base=collection.collection, is_container='container', presence=False, yang_name="collection", rest_name="collection", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'RMON ether collection', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-rmon', defining_module='brocade-rmon', yang_type='container', is_config=True)
 
   collection = __builtin__.property(_get_collection, _set_collection)
 

@@ -45,7 +45,7 @@ class red_profile(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__red_profile_ecn = YANGDynClass(base=red_profile_ecn.red_profile_ecn, is_container='container', presence=False, yang_name="red-profile-ecn", rest_name="ecn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'ecn'}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+    self.__red_profile_ecn = YANGDynClass(base=red_profile_ecn.red_profile_ecn, is_container='container', presence=False, yang_name="red-profile-ecn", rest_name="ecn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RED Profile ECN', u'cli-sequence-commands': None, u'alt-name': u'ecn', u'cli-incomplete-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class red_profile(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=red_profile_ecn.red_profile_ecn, is_container='container', presence=False, yang_name="red-profile-ecn", rest_name="ecn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'ecn'}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=red_profile_ecn.red_profile_ecn, is_container='container', presence=False, yang_name="red-profile-ecn", rest_name="ecn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RED Profile ECN', u'cli-sequence-commands': None, u'alt-name': u'ecn', u'cli-incomplete-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """red_profile_ecn must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=red_profile_ecn.red_profile_ecn, is_container='container', presence=False, yang_name="red-profile-ecn", rest_name="ecn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'ecn'}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=red_profile_ecn.red_profile_ecn, is_container='container', presence=False, yang_name="red-profile-ecn", rest_name="ecn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RED Profile ECN', u'cli-sequence-commands': None, u'alt-name': u'ecn', u'cli-incomplete-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)""",
         })
 
     self.__red_profile_ecn = t
@@ -113,7 +113,7 @@ class red_profile(PybindBase):
       self._set()
 
   def _unset_red_profile_ecn(self):
-    self.__red_profile_ecn = YANGDynClass(base=red_profile_ecn.red_profile_ecn, is_container='container', presence=False, yang_name="red-profile-ecn", rest_name="ecn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'ecn'}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+    self.__red_profile_ecn = YANGDynClass(base=red_profile_ecn.red_profile_ecn, is_container='container', presence=False, yang_name="red-profile-ecn", rest_name="ecn", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure RED Profile ECN', u'cli-sequence-commands': None, u'alt-name': u'ecn', u'cli-incomplete-command': None, u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
 
   red_profile_ecn = __builtin__.property(_get_red_profile_ecn, _set_red_profile_ecn)
 

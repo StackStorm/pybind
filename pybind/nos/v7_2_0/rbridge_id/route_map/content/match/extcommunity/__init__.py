@@ -46,7 +46,7 @@ class extcommunity(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__extcommunity_num = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((0|500|[0-9]|[5-9][0-9]|[1-4][0-9][0-9]{0,1})(\\s+(0|500|[0-9]|[5-9][0-9]|[1-4][0-9][0-9]{0,1}))*)'}), is_leaf=True, yang_name="extcommunity-num", rest_name="extcommunity-num", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='extcommunitylist-expr', is_config=True)
+    self.__extcommunity_num = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((0|500|[0-9]|[5-9][0-9]|[1-4][0-9][0-9]{0,1})(\\s+(0|500|[0-9]|[5-9][0-9]|[1-4][0-9][0-9]{0,1}))*)'}), is_leaf=True, yang_name="extcommunity-num", rest_name="extcommunity-num", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Extcommunity numbers', u'cli-drop-node-name': None, u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='extcommunitylist-expr', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -101,12 +101,12 @@ class extcommunity(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((0|500|[0-9]|[5-9][0-9]|[1-4][0-9][0-9]{0,1})(\\s+(0|500|[0-9]|[5-9][0-9]|[1-4][0-9][0-9]{0,1}))*)'}), is_leaf=True, yang_name="extcommunity-num", rest_name="extcommunity-num", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='extcommunitylist-expr', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((0|500|[0-9]|[5-9][0-9]|[1-4][0-9][0-9]{0,1})(\\s+(0|500|[0-9]|[5-9][0-9]|[1-4][0-9][0-9]{0,1}))*)'}), is_leaf=True, yang_name="extcommunity-num", rest_name="extcommunity-num", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Extcommunity numbers', u'cli-drop-node-name': None, u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='extcommunitylist-expr', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """extcommunity_num must be of a type compatible with extcommunitylist-expr""",
           'defined-type': "brocade-ip-policy:extcommunitylist-expr",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((0|500|[0-9]|[5-9][0-9]|[1-4][0-9][0-9]{0,1})(\\s+(0|500|[0-9]|[5-9][0-9]|[1-4][0-9][0-9]{0,1}))*)'}), is_leaf=True, yang_name="extcommunity-num", rest_name="extcommunity-num", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='extcommunitylist-expr', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((0|500|[0-9]|[5-9][0-9]|[1-4][0-9][0-9]{0,1})(\\s+(0|500|[0-9]|[5-9][0-9]|[1-4][0-9][0-9]{0,1}))*)'}), is_leaf=True, yang_name="extcommunity-num", rest_name="extcommunity-num", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Extcommunity numbers', u'cli-drop-node-name': None, u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='extcommunitylist-expr', is_config=True)""",
         })
 
     self.__extcommunity_num = t
@@ -114,7 +114,7 @@ class extcommunity(PybindBase):
       self._set()
 
   def _unset_extcommunity_num(self):
-    self.__extcommunity_num = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((0|500|[0-9]|[5-9][0-9]|[1-4][0-9][0-9]{0,1})(\\s+(0|500|[0-9]|[5-9][0-9]|[1-4][0-9][0-9]{0,1}))*)'}), is_leaf=True, yang_name="extcommunity-num", rest_name="extcommunity-num", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='extcommunitylist-expr', is_config=True)
+    self.__extcommunity_num = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'pattern': u'((0|500|[0-9]|[5-9][0-9]|[1-4][0-9][0-9]{0,1})(\\s+(0|500|[0-9]|[5-9][0-9]|[1-4][0-9][0-9]{0,1}))*)'}), is_leaf=True, yang_name="extcommunity-num", rest_name="extcommunity-num", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Extcommunity numbers', u'cli-drop-node-name': None, u'cli-multi-value': None}}, namespace='urn:brocade.com:mgmt:brocade-ip-policy', defining_module='brocade-ip-policy', yang_type='extcommunitylist-expr', is_config=True)
 
   extcommunity_num = __builtin__.property(_get_extcommunity_num, _set_extcommunity_num)
 

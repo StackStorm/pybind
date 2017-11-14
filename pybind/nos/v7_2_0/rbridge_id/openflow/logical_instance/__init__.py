@@ -50,12 +50,12 @@ logical instances under a physical switch.
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__passive = YANGDynClass(base=passive.passive, is_container='container', presence=False, yang_name="passive", rest_name="passive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
-    self.__activate = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="activate", rest_name="activate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='empty', is_config=True)
+    self.__passive = YANGDynClass(base=passive.passive, is_container='container', presence=False, yang_name="passive", rest_name="passive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Passive controller connection', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
+    self.__activate = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="activate", rest_name="activate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Activate this logical instance', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='empty', is_config=True)
     self.__instance_id = YANGDynClass(base=RestrictedClassType(base_type=long, restriction_dict={'range': ['0..4294967295']}, int_size=32), is_leaf=True, yang_name="instance-id", rest_name="instance-id", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='uint32', is_config=True)
-    self.__controller = YANGDynClass(base=YANGListType("controller_name",controller.controller, yang_name="controller", rest_name="controller", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='controller-name', extensions=None), is_container='list', yang_name="controller", rest_name="controller", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='list', is_config=True)
-    self.__version = YANGDynClass(base=YANGListType("version_name",version.version, yang_name="version", rest_name="version", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='version-name', extensions=None), is_container='list', yang_name="version", rest_name="version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='list', is_config=True)
-    self.__default_forwarding_action = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'drop': {'value': 2}, u'send-to-controller': {'value': 1}},), default=unicode("drop"), is_leaf=True, yang_name="default-forwarding-action", rest_name="default-behavior", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'default-behavior'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='enumeration', is_config=True)
+    self.__controller = YANGDynClass(base=YANGListType("controller_name",controller.controller, yang_name="controller", rest_name="controller", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='controller-name', extensions={u'tailf-common': {u'callpoint': u'OpenFlowAttachedControllers', u'info': u'OpenFlow controller name', u'cli-suppress-mode': None}}), is_container='list', yang_name="controller", rest_name="controller", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'OpenFlowAttachedControllers', u'info': u'OpenFlow controller name', u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='list', is_config=True)
+    self.__version = YANGDynClass(base=YANGListType("version_name",version.version, yang_name="version", rest_name="version", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='version-name', extensions={u'tailf-common': {u'callpoint': u'OpenFlowSupportedVersions', u'info': u'OpenFlow version', u'cli-suppress-mode': None}}), is_container='list', yang_name="version", rest_name="version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'OpenFlowSupportedVersions', u'info': u'OpenFlow version', u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='list', is_config=True)
+    self.__default_forwarding_action = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'drop': {'value': 2}, u'send-to-controller': {'value': 1}},), default=unicode("drop"), is_leaf=True, yang_name="default-forwarding-action", rest_name="default-behavior", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Default MISS behavior for this logical instance', u'cli-full-command': None, u'alt-name': u'default-behavior'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='enumeration', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -156,12 +156,12 @@ logical instances under a physical switch.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("version_name",version.version, yang_name="version", rest_name="version", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='version-name', extensions=None), is_container='list', yang_name="version", rest_name="version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("version_name",version.version, yang_name="version", rest_name="version", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='version-name', extensions={u'tailf-common': {u'callpoint': u'OpenFlowSupportedVersions', u'info': u'OpenFlow version', u'cli-suppress-mode': None}}), is_container='list', yang_name="version", rest_name="version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'OpenFlowSupportedVersions', u'info': u'OpenFlow version', u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """version must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("version_name",version.version, yang_name="version", rest_name="version", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='version-name', extensions=None), is_container='list', yang_name="version", rest_name="version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("version_name",version.version, yang_name="version", rest_name="version", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='version-name', extensions={u'tailf-common': {u'callpoint': u'OpenFlowSupportedVersions', u'info': u'OpenFlow version', u'cli-suppress-mode': None}}), is_container='list', yang_name="version", rest_name="version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'OpenFlowSupportedVersions', u'info': u'OpenFlow version', u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='list', is_config=True)""",
         })
 
     self.__version = t
@@ -169,7 +169,7 @@ logical instances under a physical switch.
       self._set()
 
   def _unset_version(self):
-    self.__version = YANGDynClass(base=YANGListType("version_name",version.version, yang_name="version", rest_name="version", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='version-name', extensions=None), is_container='list', yang_name="version", rest_name="version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='list', is_config=True)
+    self.__version = YANGDynClass(base=YANGListType("version_name",version.version, yang_name="version", rest_name="version", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='version-name', extensions={u'tailf-common': {u'callpoint': u'OpenFlowSupportedVersions', u'info': u'OpenFlow version', u'cli-suppress-mode': None}}), is_container='list', yang_name="version", rest_name="version", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'OpenFlowSupportedVersions', u'info': u'OpenFlow version', u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='list', is_config=True)
 
 
   def _get_controller(self):
@@ -193,12 +193,12 @@ logical instances under a physical switch.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("controller_name",controller.controller, yang_name="controller", rest_name="controller", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='controller-name', extensions=None), is_container='list', yang_name="controller", rest_name="controller", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("controller_name",controller.controller, yang_name="controller", rest_name="controller", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='controller-name', extensions={u'tailf-common': {u'callpoint': u'OpenFlowAttachedControllers', u'info': u'OpenFlow controller name', u'cli-suppress-mode': None}}), is_container='list', yang_name="controller", rest_name="controller", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'OpenFlowAttachedControllers', u'info': u'OpenFlow controller name', u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """controller must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("controller_name",controller.controller, yang_name="controller", rest_name="controller", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='controller-name', extensions=None), is_container='list', yang_name="controller", rest_name="controller", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("controller_name",controller.controller, yang_name="controller", rest_name="controller", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='controller-name', extensions={u'tailf-common': {u'callpoint': u'OpenFlowAttachedControllers', u'info': u'OpenFlow controller name', u'cli-suppress-mode': None}}), is_container='list', yang_name="controller", rest_name="controller", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'OpenFlowAttachedControllers', u'info': u'OpenFlow controller name', u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='list', is_config=True)""",
         })
 
     self.__controller = t
@@ -206,7 +206,7 @@ logical instances under a physical switch.
       self._set()
 
   def _unset_controller(self):
-    self.__controller = YANGDynClass(base=YANGListType("controller_name",controller.controller, yang_name="controller", rest_name="controller", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='controller-name', extensions=None), is_container='list', yang_name="controller", rest_name="controller", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='list', is_config=True)
+    self.__controller = YANGDynClass(base=YANGListType("controller_name",controller.controller, yang_name="controller", rest_name="controller", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='controller-name', extensions={u'tailf-common': {u'callpoint': u'OpenFlowAttachedControllers', u'info': u'OpenFlow controller name', u'cli-suppress-mode': None}}), is_container='list', yang_name="controller", rest_name="controller", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'callpoint': u'OpenFlowAttachedControllers', u'info': u'OpenFlow controller name', u'cli-suppress-mode': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='list', is_config=True)
 
 
   def _get_passive(self):
@@ -230,12 +230,12 @@ logical instances under a physical switch.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=passive.passive, is_container='container', presence=False, yang_name="passive", rest_name="passive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=passive.passive, is_container='container', presence=False, yang_name="passive", rest_name="passive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Passive controller connection', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """passive must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=passive.passive, is_container='container', presence=False, yang_name="passive", rest_name="passive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=passive.passive, is_container='container', presence=False, yang_name="passive", rest_name="passive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Passive controller connection', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)""",
         })
 
     self.__passive = t
@@ -243,7 +243,7 @@ logical instances under a physical switch.
       self._set()
 
   def _unset_passive(self):
-    self.__passive = YANGDynClass(base=passive.passive, is_container='container', presence=False, yang_name="passive", rest_name="passive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
+    self.__passive = YANGDynClass(base=passive.passive, is_container='container', presence=False, yang_name="passive", rest_name="passive", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Passive controller connection', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='container', is_config=True)
 
 
   def _get_default_forwarding_action(self):
@@ -267,12 +267,12 @@ logical instances under a physical switch.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'drop': {'value': 2}, u'send-to-controller': {'value': 1}},), default=unicode("drop"), is_leaf=True, yang_name="default-forwarding-action", rest_name="default-behavior", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'default-behavior'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='enumeration', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'drop': {'value': 2}, u'send-to-controller': {'value': 1}},), default=unicode("drop"), is_leaf=True, yang_name="default-forwarding-action", rest_name="default-behavior", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Default MISS behavior for this logical instance', u'cli-full-command': None, u'alt-name': u'default-behavior'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """default_forwarding_action must be of a type compatible with enumeration""",
           'defined-type': "brocade-openflow:enumeration",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'drop': {'value': 2}, u'send-to-controller': {'value': 1}},), default=unicode("drop"), is_leaf=True, yang_name="default-forwarding-action", rest_name="default-behavior", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'default-behavior'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='enumeration', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'drop': {'value': 2}, u'send-to-controller': {'value': 1}},), default=unicode("drop"), is_leaf=True, yang_name="default-forwarding-action", rest_name="default-behavior", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Default MISS behavior for this logical instance', u'cli-full-command': None, u'alt-name': u'default-behavior'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='enumeration', is_config=True)""",
         })
 
     self.__default_forwarding_action = t
@@ -280,7 +280,7 @@ logical instances under a physical switch.
       self._set()
 
   def _unset_default_forwarding_action(self):
-    self.__default_forwarding_action = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'drop': {'value': 2}, u'send-to-controller': {'value': 1}},), default=unicode("drop"), is_leaf=True, yang_name="default-forwarding-action", rest_name="default-behavior", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'default-behavior'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='enumeration', is_config=True)
+    self.__default_forwarding_action = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'drop': {'value': 2}, u'send-to-controller': {'value': 1}},), default=unicode("drop"), is_leaf=True, yang_name="default-forwarding-action", rest_name="default-behavior", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Default MISS behavior for this logical instance', u'cli-full-command': None, u'alt-name': u'default-behavior'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='enumeration', is_config=True)
 
 
   def _get_activate(self):
@@ -304,12 +304,12 @@ logical instances under a physical switch.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="activate", rest_name="activate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="activate", rest_name="activate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Activate this logical instance', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """activate must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="activate", rest_name="activate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="activate", rest_name="activate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Activate this logical instance', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='empty', is_config=True)""",
         })
 
     self.__activate = t
@@ -317,7 +317,7 @@ logical instances under a physical switch.
       self._set()
 
   def _unset_activate(self):
-    self.__activate = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="activate", rest_name="activate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='empty', is_config=True)
+    self.__activate = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="activate", rest_name="activate", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Activate this logical instance', u'cli-full-command': None}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='empty', is_config=True)
 
   instance_id = __builtin__.property(_get_instance_id, _set_instance_id)
   version = __builtin__.property(_get_version, _set_version)

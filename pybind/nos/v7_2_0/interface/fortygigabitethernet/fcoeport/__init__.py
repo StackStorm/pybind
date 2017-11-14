@@ -48,7 +48,7 @@ elements on a port.
     else:
       self._extmethods = False
     self.__fcoeport_map = YANGDynClass(base=RestrictedClassType(base_type=unicode, restriction_dict={'length': [u'1..32']}), is_leaf=True, yang_name="fcoeport-map", rest_name="map", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'alt-name': u'map'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='fcoe-map-name-type', is_config=True)
-    self.__ns_ip_registration = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ns-ip-registration", rest_name="ns-ip-registration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
+    self.__ns_ip_registration = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ns-ip-registration", rest_name="ns-ip-registration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -144,12 +144,12 @@ elements on a port.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ns-ip-registration", rest_name="ns-ip-registration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="ns-ip-registration", rest_name="ns-ip-registration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """ns_ip_registration must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ns-ip-registration", rest_name="ns-ip-registration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ns-ip-registration", rest_name="ns-ip-registration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)""",
         })
 
     self.__ns_ip_registration = t
@@ -157,7 +157,7 @@ elements on a port.
       self._set()
 
   def _unset_ns_ip_registration(self):
-    self.__ns_ip_registration = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ns-ip-registration", rest_name="ns-ip-registration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
+    self.__ns_ip_registration = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="ns-ip-registration", rest_name="ns-ip-registration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-optional-in-sequence': None}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='empty', is_config=True)
 
   fcoeport_map = __builtin__.property(_get_fcoeport_map, _set_fcoeport_map)
   ns_ip_registration = __builtin__.property(_get_ns_ip_registration, _set_ns_ip_registration)

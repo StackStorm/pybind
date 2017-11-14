@@ -44,7 +44,7 @@ class drop_monitor(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__drop_monitor_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="drop-monitor-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='empty', is_config=True)
+    self.__drop_monitor_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="drop-monitor-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable polling on RX/Tail drops and RED drops (in VDX67**) on this interface.', u'cli-full-command': None, u'alt-name': u'enable', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -99,12 +99,12 @@ class drop_monitor(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="drop-monitor-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="drop-monitor-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable polling on RX/Tail drops and RED drops (in VDX67**) on this interface.', u'cli-full-command': None, u'alt-name': u'enable', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """drop_monitor_enable must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="drop-monitor-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="drop-monitor-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable polling on RX/Tail drops and RED drops (in VDX67**) on this interface.', u'cli-full-command': None, u'alt-name': u'enable', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='empty', is_config=True)""",
         })
 
     self.__drop_monitor_enable = t
@@ -112,7 +112,7 @@ class drop_monitor(PybindBase):
       self._set()
 
   def _unset_drop_monitor_enable(self):
-    self.__drop_monitor_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="drop-monitor-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'enable'}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='empty', is_config=True)
+    self.__drop_monitor_enable = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="drop-monitor-enable", rest_name="enable", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Enable polling on RX/Tail drops and RED drops (in VDX67**) on this interface.', u'cli-full-command': None, u'alt-name': u'enable', u'cli-full-no': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='empty', is_config=True)
 
   drop_monitor_enable = __builtin__.property(_get_drop_monitor_enable, _set_drop_monitor_enable)
 

@@ -45,7 +45,7 @@ class terminal_cfg(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__line = YANGDynClass(base=YANGListType("sessionid",line.line, yang_name="line", rest_name="line", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='sessionid', extensions=None), is_container='list', yang_name="line", rest_name="line", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-terminal', defining_module='brocade-terminal', yang_type='list', is_config=True)
+    self.__line = YANGDynClass(base=YANGListType("sessionid",line.line, yang_name="line", rest_name="line", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='sessionid', extensions={u'tailf-common': {u'info': u'CLI session configuration', u'callpoint': u'TerminalCallPoint'}}), is_container='list', yang_name="line", rest_name="line", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CLI session configuration', u'callpoint': u'TerminalCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-terminal', defining_module='brocade-terminal', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class terminal_cfg(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("sessionid",line.line, yang_name="line", rest_name="line", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='sessionid', extensions=None), is_container='list', yang_name="line", rest_name="line", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-terminal', defining_module='brocade-terminal', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("sessionid",line.line, yang_name="line", rest_name="line", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='sessionid', extensions={u'tailf-common': {u'info': u'CLI session configuration', u'callpoint': u'TerminalCallPoint'}}), is_container='list', yang_name="line", rest_name="line", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CLI session configuration', u'callpoint': u'TerminalCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-terminal', defining_module='brocade-terminal', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """line must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("sessionid",line.line, yang_name="line", rest_name="line", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='sessionid', extensions=None), is_container='list', yang_name="line", rest_name="line", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-terminal', defining_module='brocade-terminal', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("sessionid",line.line, yang_name="line", rest_name="line", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='sessionid', extensions={u'tailf-common': {u'info': u'CLI session configuration', u'callpoint': u'TerminalCallPoint'}}), is_container='list', yang_name="line", rest_name="line", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CLI session configuration', u'callpoint': u'TerminalCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-terminal', defining_module='brocade-terminal', yang_type='list', is_config=True)""",
         })
 
     self.__line = t
@@ -113,7 +113,7 @@ class terminal_cfg(PybindBase):
       self._set()
 
   def _unset_line(self):
-    self.__line = YANGDynClass(base=YANGListType("sessionid",line.line, yang_name="line", rest_name="line", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='sessionid', extensions=None), is_container='list', yang_name="line", rest_name="line", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-terminal', defining_module='brocade-terminal', yang_type='list', is_config=True)
+    self.__line = YANGDynClass(base=YANGListType("sessionid",line.line, yang_name="line", rest_name="line", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='sessionid', extensions={u'tailf-common': {u'info': u'CLI session configuration', u'callpoint': u'TerminalCallPoint'}}), is_container='list', yang_name="line", rest_name="line", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'CLI session configuration', u'callpoint': u'TerminalCallPoint'}}, namespace='urn:brocade.com:mgmt:brocade-terminal', defining_module='brocade-terminal', yang_type='list', is_config=True)
 
   line = __builtin__.property(_get_line, _set_line)
 

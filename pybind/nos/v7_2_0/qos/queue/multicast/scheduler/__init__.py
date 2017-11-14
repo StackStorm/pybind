@@ -45,7 +45,7 @@ class scheduler(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__dwrr = YANGDynClass(base=dwrr.dwrr, is_container='container', presence=False, yang_name="dwrr", rest_name="dwrr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+    self.__dwrr = YANGDynClass(base=dwrr.dwrr, is_container='container', presence=False, yang_name="dwrr", rest_name="dwrr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Deficit Weighted Round Robin queues', u'cli-compact-syntax': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class scheduler(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=dwrr.dwrr, is_container='container', presence=False, yang_name="dwrr", rest_name="dwrr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=dwrr.dwrr, is_container='container', presence=False, yang_name="dwrr", rest_name="dwrr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Deficit Weighted Round Robin queues', u'cli-compact-syntax': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """dwrr must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=dwrr.dwrr, is_container='container', presence=False, yang_name="dwrr", rest_name="dwrr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=dwrr.dwrr, is_container='container', presence=False, yang_name="dwrr", rest_name="dwrr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Deficit Weighted Round Robin queues', u'cli-compact-syntax': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)""",
         })
 
     self.__dwrr = t
@@ -113,7 +113,7 @@ class scheduler(PybindBase):
       self._set()
 
   def _unset_dwrr(self):
-    self.__dwrr = YANGDynClass(base=dwrr.dwrr, is_container='container', presence=False, yang_name="dwrr", rest_name="dwrr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
+    self.__dwrr = YANGDynClass(base=dwrr.dwrr, is_container='container', presence=False, yang_name="dwrr", rest_name="dwrr", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure Deficit Weighted Round Robin queues', u'cli-compact-syntax': None, u'cli-sequence-commands': None}}, namespace='urn:brocade.com:mgmt:brocade-qos', defining_module='brocade-qos', yang_type='container', is_config=True)
 
   dwrr = __builtin__.property(_get_dwrr, _set_dwrr)
 

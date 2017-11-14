@@ -47,7 +47,7 @@ class openflow(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__logical_instance = YANGDynClass(base=YANGListType("instance_id",logical_instance.logical_instance, yang_name="logical-instance", rest_name="logical-instance", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='instance-id', extensions=None), is_container='list', yang_name="logical-instance", rest_name="logical-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='list', is_config=True)
+    self.__logical_instance = YANGDynClass(base=YANGListType("instance_id",logical_instance.logical_instance, yang_name="logical-instance", rest_name="logical-instance", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='instance-id', extensions={u'tailf-common': {u'info': u'OpenFlow logical instance configuration', u'callpoint': u'OpenFlowLogicalInstance'}}), is_container='list', yang_name="logical-instance", rest_name="logical-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OpenFlow logical instance configuration', u'callpoint': u'OpenFlowLogicalInstance'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -108,12 +108,12 @@ logical instances under a physical switch.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("instance_id",logical_instance.logical_instance, yang_name="logical-instance", rest_name="logical-instance", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='instance-id', extensions=None), is_container='list', yang_name="logical-instance", rest_name="logical-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("instance_id",logical_instance.logical_instance, yang_name="logical-instance", rest_name="logical-instance", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='instance-id', extensions={u'tailf-common': {u'info': u'OpenFlow logical instance configuration', u'callpoint': u'OpenFlowLogicalInstance'}}), is_container='list', yang_name="logical-instance", rest_name="logical-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OpenFlow logical instance configuration', u'callpoint': u'OpenFlowLogicalInstance'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """logical_instance must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("instance_id",logical_instance.logical_instance, yang_name="logical-instance", rest_name="logical-instance", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='instance-id', extensions=None), is_container='list', yang_name="logical-instance", rest_name="logical-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("instance_id",logical_instance.logical_instance, yang_name="logical-instance", rest_name="logical-instance", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='instance-id', extensions={u'tailf-common': {u'info': u'OpenFlow logical instance configuration', u'callpoint': u'OpenFlowLogicalInstance'}}), is_container='list', yang_name="logical-instance", rest_name="logical-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OpenFlow logical instance configuration', u'callpoint': u'OpenFlowLogicalInstance'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='list', is_config=True)""",
         })
 
     self.__logical_instance = t
@@ -121,7 +121,7 @@ logical instances under a physical switch.
       self._set()
 
   def _unset_logical_instance(self):
-    self.__logical_instance = YANGDynClass(base=YANGListType("instance_id",logical_instance.logical_instance, yang_name="logical-instance", rest_name="logical-instance", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='instance-id', extensions=None), is_container='list', yang_name="logical-instance", rest_name="logical-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='list', is_config=True)
+    self.__logical_instance = YANGDynClass(base=YANGListType("instance_id",logical_instance.logical_instance, yang_name="logical-instance", rest_name="logical-instance", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='instance-id', extensions={u'tailf-common': {u'info': u'OpenFlow logical instance configuration', u'callpoint': u'OpenFlowLogicalInstance'}}), is_container='list', yang_name="logical-instance", rest_name="logical-instance", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'OpenFlow logical instance configuration', u'callpoint': u'OpenFlowLogicalInstance'}}, namespace='urn:brocade.com:mgmt:brocade-openflow', defining_module='brocade-openflow', yang_type='list', is_config=True)
 
   logical_instance = __builtin__.property(_get_logical_instance, _set_logical_instance)
 

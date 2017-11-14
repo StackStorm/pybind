@@ -45,7 +45,7 @@ class brocade_zone(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__show_zoning_enabled_configuration = YANGDynClass(base=show_zoning_enabled_configuration.show_zoning_enabled_configuration, is_leaf=True, yang_name="show-zoning-enabled-configuration", rest_name="show-zoning-enabled-configuration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='rpc', is_config=True)
+    self.__show_zoning_enabled_configuration = YANGDynClass(base=show_zoning_enabled_configuration.show_zoning_enabled_configuration, is_leaf=True, yang_name="show-zoning-enabled-configuration", rest_name="show-zoning-enabled-configuration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Display the Zoning Enabled-Configuration', u'hidden': u'rpccmd', u'actionpoint': u'show_zoning_configuration_db'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='rpc', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -106,12 +106,12 @@ database.
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=show_zoning_enabled_configuration.show_zoning_enabled_configuration, is_leaf=True, yang_name="show-zoning-enabled-configuration", rest_name="show-zoning-enabled-configuration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='rpc', is_config=True)
+      t = YANGDynClass(v,base=show_zoning_enabled_configuration.show_zoning_enabled_configuration, is_leaf=True, yang_name="show-zoning-enabled-configuration", rest_name="show-zoning-enabled-configuration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Display the Zoning Enabled-Configuration', u'hidden': u'rpccmd', u'actionpoint': u'show_zoning_configuration_db'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='rpc', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """show_zoning_enabled_configuration must be of a type compatible with rpc""",
           'defined-type': "rpc",
-          'generated-type': """YANGDynClass(base=show_zoning_enabled_configuration.show_zoning_enabled_configuration, is_leaf=True, yang_name="show-zoning-enabled-configuration", rest_name="show-zoning-enabled-configuration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='rpc', is_config=True)""",
+          'generated-type': """YANGDynClass(base=show_zoning_enabled_configuration.show_zoning_enabled_configuration, is_leaf=True, yang_name="show-zoning-enabled-configuration", rest_name="show-zoning-enabled-configuration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Display the Zoning Enabled-Configuration', u'hidden': u'rpccmd', u'actionpoint': u'show_zoning_configuration_db'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='rpc', is_config=True)""",
         })
 
     self.__show_zoning_enabled_configuration = t
@@ -119,7 +119,7 @@ database.
       self._set()
 
   def _unset_show_zoning_enabled_configuration(self):
-    self.__show_zoning_enabled_configuration = YANGDynClass(base=show_zoning_enabled_configuration.show_zoning_enabled_configuration, is_leaf=True, yang_name="show-zoning-enabled-configuration", rest_name="show-zoning-enabled-configuration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions=None, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='rpc', is_config=True)
+    self.__show_zoning_enabled_configuration = YANGDynClass(base=show_zoning_enabled_configuration.show_zoning_enabled_configuration, is_leaf=True, yang_name="show-zoning-enabled-configuration", rest_name="show-zoning-enabled-configuration", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=False, extensions={u'tailf-common': {u'info': u'Display the Zoning Enabled-Configuration', u'hidden': u'rpccmd', u'actionpoint': u'show_zoning_configuration_db'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='rpc', is_config=True)
 
   show_zoning_enabled_configuration = __builtin__.property(_get_show_zoning_enabled_configuration, _set_show_zoning_enabled_configuration)
 

@@ -44,7 +44,7 @@ class connectivity(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__deviceconnectivity = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'NAS': {'value': 2}, u'None': {'value': 0}, u'iSCSI': {'value': 1}, u'DAS': {'value': 3}},), default=unicode("None"), is_leaf=True, yang_name="deviceconnectivity", rest_name="deviceconnectivity", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='enumeration', is_config=True)
+    self.__deviceconnectivity = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'NAS': {'value': 2}, u'None': {'value': 0}, u'iSCSI': {'value': 1}, u'DAS': {'value': 3}},), default=unicode("None"), is_leaf=True, yang_name="deviceconnectivity", rest_name="deviceconnectivity", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Device connectivity to IP storage device', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='enumeration', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -99,12 +99,12 @@ class connectivity(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'NAS': {'value': 2}, u'None': {'value': 0}, u'iSCSI': {'value': 1}, u'DAS': {'value': 3}},), default=unicode("None"), is_leaf=True, yang_name="deviceconnectivity", rest_name="deviceconnectivity", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='enumeration', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'NAS': {'value': 2}, u'None': {'value': 0}, u'iSCSI': {'value': 1}, u'DAS': {'value': 3}},), default=unicode("None"), is_leaf=True, yang_name="deviceconnectivity", rest_name="deviceconnectivity", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Device connectivity to IP storage device', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """deviceconnectivity must be of a type compatible with enumeration""",
           'defined-type': "brocade-maps:enumeration",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'NAS': {'value': 2}, u'None': {'value': 0}, u'iSCSI': {'value': 1}, u'DAS': {'value': 3}},), default=unicode("None"), is_leaf=True, yang_name="deviceconnectivity", rest_name="deviceconnectivity", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='enumeration', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'NAS': {'value': 2}, u'None': {'value': 0}, u'iSCSI': {'value': 1}, u'DAS': {'value': 3}},), default=unicode("None"), is_leaf=True, yang_name="deviceconnectivity", rest_name="deviceconnectivity", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Device connectivity to IP storage device', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='enumeration', is_config=True)""",
         })
 
     self.__deviceconnectivity = t
@@ -112,7 +112,7 @@ class connectivity(PybindBase):
       self._set()
 
   def _unset_deviceconnectivity(self):
-    self.__deviceconnectivity = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'NAS': {'value': 2}, u'None': {'value': 0}, u'iSCSI': {'value': 1}, u'DAS': {'value': 3}},), default=unicode("None"), is_leaf=True, yang_name="deviceconnectivity", rest_name="deviceconnectivity", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='enumeration', is_config=True)
+    self.__deviceconnectivity = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'NAS': {'value': 2}, u'None': {'value': 0}, u'iSCSI': {'value': 1}, u'DAS': {'value': 3}},), default=unicode("None"), is_leaf=True, yang_name="deviceconnectivity", rest_name="deviceconnectivity", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Device connectivity to IP storage device', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='enumeration', is_config=True)
 
   deviceconnectivity = __builtin__.property(_get_deviceconnectivity, _set_deviceconnectivity)
 

@@ -46,7 +46,7 @@ class fabric_dport(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__fabric_dport_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dynamic': {'value': 2}, u'none': {'value': 0}, u'static': {'value': 1}},), default=unicode("dynamic"), is_leaf=True, yang_name="fabric-dport-mode", rest_name="mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'mode'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='enumeration', is_config=True)
+    self.__fabric_dport_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dynamic': {'value': 2}, u'none': {'value': 0}, u'static': {'value': 1}},), default=unicode("dynamic"), is_leaf=True, yang_name="fabric-dport-mode", rest_name="mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure D-Port Mode', u'alt-name': u'mode'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='enumeration', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -101,12 +101,12 @@ class fabric_dport(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dynamic': {'value': 2}, u'none': {'value': 0}, u'static': {'value': 1}},), default=unicode("dynamic"), is_leaf=True, yang_name="fabric-dport-mode", rest_name="mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'mode'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='enumeration', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dynamic': {'value': 2}, u'none': {'value': 0}, u'static': {'value': 1}},), default=unicode("dynamic"), is_leaf=True, yang_name="fabric-dport-mode", rest_name="mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure D-Port Mode', u'alt-name': u'mode'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """fabric_dport_mode must be of a type compatible with enumeration""",
           'defined-type': "brocade-fcoe:enumeration",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dynamic': {'value': 2}, u'none': {'value': 0}, u'static': {'value': 1}},), default=unicode("dynamic"), is_leaf=True, yang_name="fabric-dport-mode", rest_name="mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'mode'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='enumeration', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dynamic': {'value': 2}, u'none': {'value': 0}, u'static': {'value': 1}},), default=unicode("dynamic"), is_leaf=True, yang_name="fabric-dport-mode", rest_name="mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure D-Port Mode', u'alt-name': u'mode'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='enumeration', is_config=True)""",
         })
 
     self.__fabric_dport_mode = t
@@ -114,7 +114,7 @@ class fabric_dport(PybindBase):
       self._set()
 
   def _unset_fabric_dport_mode(self):
-    self.__fabric_dport_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dynamic': {'value': 2}, u'none': {'value': 0}, u'static': {'value': 1}},), default=unicode("dynamic"), is_leaf=True, yang_name="fabric-dport-mode", rest_name="mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'mode'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='enumeration', is_config=True)
+    self.__fabric_dport_mode = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'dynamic': {'value': 2}, u'none': {'value': 0}, u'static': {'value': 1}},), default=unicode("dynamic"), is_leaf=True, yang_name="fabric-dport-mode", rest_name="mode", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure D-Port Mode', u'alt-name': u'mode'}}, namespace='urn:brocade.com:mgmt:brocade-fcoe', defining_module='brocade-fcoe', yang_type='enumeration', is_config=True)
 
   fabric_dport_mode = __builtin__.property(_get_fabric_dport_mode, _set_fabric_dport_mode)
 

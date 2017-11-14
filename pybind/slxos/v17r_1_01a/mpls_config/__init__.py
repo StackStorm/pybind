@@ -18,7 +18,7 @@ class mpls_config(PybindBase):
   __slots__ = ('_pybind_generated_by', '_path_helper', '_yang_name', '_rest_name', '_extmethods', '__router',)
 
   _yang_name = 'mpls-config'
-  _rest_name = 'mpls-config'
+  _rest_name = ''
 
   _pybind_generated_by = 'container'
 
@@ -81,7 +81,7 @@ class mpls_config(PybindBase):
       else:
         return self._parent._rest_path()
     else:
-      return [u'mpls-config']
+      return []
 
   def _get_router(self):
     """

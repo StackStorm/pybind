@@ -44,7 +44,7 @@ class aging_mode(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__conversational = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="conversational", rest_name="conversational", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='empty', is_config=True)
+    self.__conversational = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="conversational", rest_name="conversational", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Age hardware entries based on conversation'}}, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='empty', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -99,12 +99,12 @@ class aging_mode(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="conversational", rest_name="conversational", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='empty', is_config=True)
+      t = YANGDynClass(v,base=YANGBool, is_leaf=True, yang_name="conversational", rest_name="conversational", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Age hardware entries based on conversation'}}, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='empty', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """conversational must be of a type compatible with empty""",
           'defined-type': "empty",
-          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="conversational", rest_name="conversational", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='empty', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGBool, is_leaf=True, yang_name="conversational", rest_name="conversational", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Age hardware entries based on conversation'}}, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='empty', is_config=True)""",
         })
 
     self.__conversational = t
@@ -112,7 +112,7 @@ class aging_mode(PybindBase):
       self._set()
 
   def _unset_conversational(self):
-    self.__conversational = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="conversational", rest_name="conversational", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='empty', is_config=True)
+    self.__conversational = YANGDynClass(base=YANGBool, is_leaf=True, yang_name="conversational", rest_name="conversational", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Age hardware entries based on conversation'}}, namespace='urn:brocade.com:mgmt:brocade-arp', defining_module='brocade-arp', yang_type='empty', is_config=True)
 
   conversational = __builtin__.property(_get_conversational, _set_conversational)
 

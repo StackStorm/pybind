@@ -45,7 +45,7 @@ class sfp(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__alert = YANGDynClass(base=alert.alert, is_container='container', presence=False, yang_name="alert", rest_name="alert", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+    self.__alert = YANGDynClass(base=alert.alert, is_container='container', presence=False, yang_name="alert", rest_name="alert", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure alerts for component:SFP', u'cli-compact-syntax': None, u'callpoint': u'smsetSfpAlert', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class sfp(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=alert.alert, is_container='container', presence=False, yang_name="alert", rest_name="alert", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=alert.alert, is_container='container', presence=False, yang_name="alert", rest_name="alert", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure alerts for component:SFP', u'cli-compact-syntax': None, u'callpoint': u'smsetSfpAlert', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """alert must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=alert.alert, is_container='container', presence=False, yang_name="alert", rest_name="alert", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=alert.alert, is_container='container', presence=False, yang_name="alert", rest_name="alert", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure alerts for component:SFP', u'cli-compact-syntax': None, u'callpoint': u'smsetSfpAlert', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)""",
         })
 
     self.__alert = t
@@ -113,7 +113,7 @@ class sfp(PybindBase):
       self._set()
 
   def _unset_alert(self):
-    self.__alert = YANGDynClass(base=alert.alert, is_container='container', presence=False, yang_name="alert", rest_name="alert", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions=None, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
+    self.__alert = YANGDynClass(base=alert.alert, is_container='container', presence=False, yang_name="alert", rest_name="alert", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure alerts for component:SFP', u'cli-compact-syntax': None, u'callpoint': u'smsetSfpAlert', u'cli-incomplete-no': None}}, namespace='urn:brocade.com:mgmt:brocade-system-monitor', defining_module='brocade-system-monitor', yang_type='container', is_config=True)
 
   alert = __builtin__.property(_get_alert, _set_alert)
 

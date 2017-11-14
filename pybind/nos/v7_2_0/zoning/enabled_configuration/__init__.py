@@ -44,9 +44,9 @@ class enabled_configuration(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__cfg_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="cfg-name", rest_name="cfg-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
-    self.__cfg_action = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'cfg-clear': {'value': 3}, u'cfg-save': {'value': 1}, u'cfg-none': {'value': 0}, u'cfg-disable': {'value': 2}, u'cfg-transaction-abort': {'value': 4}},), is_leaf=True, yang_name="cfg-action", rest_name="cfg-action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='cfg-action-type', is_config=True)
-    self.__default_zone_access = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'allaccess': {'value': 1}, u'noaccess': {'value': 0}},), is_leaf=True, yang_name="default-zone-access", rest_name="default-zone-access", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='default-zone-access-type', is_config=True)
+    self.__cfg_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="cfg-name", rest_name="cfg-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'<WORD>;;Enabled-CFG-Name'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
+    self.__cfg_action = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'cfg-clear': {'value': 3}, u'cfg-save': {'value': 1}, u'cfg-none': {'value': 0}, u'cfg-disable': {'value': 2}, u'cfg-transaction-abort': {'value': 4}},), is_leaf=True, yang_name="cfg-action", rest_name="cfg-action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Cfg action', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='cfg-action-type', is_config=True)
+    self.__default_zone_access = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'allaccess': {'value': 1}, u'noaccess': {'value': 0}},), is_leaf=True, yang_name="default-zone-access", rest_name="default-zone-access", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Default zone access', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='default-zone-access-type', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -101,12 +101,12 @@ class enabled_configuration(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="cfg-name", rest_name="cfg-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="cfg-name", rest_name="cfg-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'<WORD>;;Enabled-CFG-Name'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """cfg_name must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="cfg-name", rest_name="cfg-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="cfg-name", rest_name="cfg-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'<WORD>;;Enabled-CFG-Name'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)""",
         })
 
     self.__cfg_name = t
@@ -114,7 +114,7 @@ class enabled_configuration(PybindBase):
       self._set()
 
   def _unset_cfg_name(self):
-    self.__cfg_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="cfg-name", rest_name="cfg-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
+    self.__cfg_name = YANGDynClass(base=unicode, is_leaf=True, yang_name="cfg-name", rest_name="cfg-name", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'<WORD>;;Enabled-CFG-Name'}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='string', is_config=True)
 
 
   def _get_default_zone_access(self):
@@ -134,12 +134,12 @@ class enabled_configuration(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'allaccess': {'value': 1}, u'noaccess': {'value': 0}},), is_leaf=True, yang_name="default-zone-access", rest_name="default-zone-access", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='default-zone-access-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'allaccess': {'value': 1}, u'noaccess': {'value': 0}},), is_leaf=True, yang_name="default-zone-access", rest_name="default-zone-access", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Default zone access', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='default-zone-access-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """default_zone_access must be of a type compatible with default-zone-access-type""",
           'defined-type': "brocade-zone:default-zone-access-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'allaccess': {'value': 1}, u'noaccess': {'value': 0}},), is_leaf=True, yang_name="default-zone-access", rest_name="default-zone-access", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='default-zone-access-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'allaccess': {'value': 1}, u'noaccess': {'value': 0}},), is_leaf=True, yang_name="default-zone-access", rest_name="default-zone-access", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Default zone access', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='default-zone-access-type', is_config=True)""",
         })
 
     self.__default_zone_access = t
@@ -147,7 +147,7 @@ class enabled_configuration(PybindBase):
       self._set()
 
   def _unset_default_zone_access(self):
-    self.__default_zone_access = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'allaccess': {'value': 1}, u'noaccess': {'value': 0}},), is_leaf=True, yang_name="default-zone-access", rest_name="default-zone-access", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='default-zone-access-type', is_config=True)
+    self.__default_zone_access = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'allaccess': {'value': 1}, u'noaccess': {'value': 0}},), is_leaf=True, yang_name="default-zone-access", rest_name="default-zone-access", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Default zone access', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='default-zone-access-type', is_config=True)
 
 
   def _get_cfg_action(self):
@@ -167,12 +167,12 @@ class enabled_configuration(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'cfg-clear': {'value': 3}, u'cfg-save': {'value': 1}, u'cfg-none': {'value': 0}, u'cfg-disable': {'value': 2}, u'cfg-transaction-abort': {'value': 4}},), is_leaf=True, yang_name="cfg-action", rest_name="cfg-action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='cfg-action-type', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'cfg-clear': {'value': 3}, u'cfg-save': {'value': 1}, u'cfg-none': {'value': 0}, u'cfg-disable': {'value': 2}, u'cfg-transaction-abort': {'value': 4}},), is_leaf=True, yang_name="cfg-action", rest_name="cfg-action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Cfg action', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='cfg-action-type', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """cfg_action must be of a type compatible with cfg-action-type""",
           'defined-type': "brocade-zone:cfg-action-type",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'cfg-clear': {'value': 3}, u'cfg-save': {'value': 1}, u'cfg-none': {'value': 0}, u'cfg-disable': {'value': 2}, u'cfg-transaction-abort': {'value': 4}},), is_leaf=True, yang_name="cfg-action", rest_name="cfg-action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='cfg-action-type', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'cfg-clear': {'value': 3}, u'cfg-save': {'value': 1}, u'cfg-none': {'value': 0}, u'cfg-disable': {'value': 2}, u'cfg-transaction-abort': {'value': 4}},), is_leaf=True, yang_name="cfg-action", rest_name="cfg-action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Cfg action', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='cfg-action-type', is_config=True)""",
         })
 
     self.__cfg_action = t
@@ -180,7 +180,7 @@ class enabled_configuration(PybindBase):
       self._set()
 
   def _unset_cfg_action(self):
-    self.__cfg_action = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'cfg-clear': {'value': 3}, u'cfg-save': {'value': 1}, u'cfg-none': {'value': 0}, u'cfg-disable': {'value': 2}, u'cfg-transaction-abort': {'value': 4}},), is_leaf=True, yang_name="cfg-action", rest_name="cfg-action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='cfg-action-type', is_config=True)
+    self.__cfg_action = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'cfg-clear': {'value': 3}, u'cfg-save': {'value': 1}, u'cfg-none': {'value': 0}, u'cfg-disable': {'value': 2}, u'cfg-transaction-abort': {'value': 4}},), is_leaf=True, yang_name="cfg-action", rest_name="cfg-action", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-full-command': None, u'info': u'Cfg action', u'cli-suppress-no': None}}, namespace='urn:brocade.com:mgmt:brocade-zone', defining_module='brocade-zone', yang_type='cfg-action-type', is_config=True)
 
   cfg_name = __builtin__.property(_get_cfg_name, _set_cfg_name)
   default_zone_access = __builtin__.property(_get_default_zone_access, _set_default_zone_access)

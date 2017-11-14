@@ -45,7 +45,7 @@ class isis(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__router_isis_cmds_holder = YANGDynClass(base=router_isis_cmds_holder.router_isis_cmds_holder, is_container='container', presence=False, yang_name="router-isis-cmds-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'RUNNCFG_LEVEL_PROTOCOL_ISIS_CONFIG_ROUTER_ISIS'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__router_isis_cmds_holder = YANGDynClass(base=router_isis_cmds_holder.router_isis_cmds_holder, is_container='container', presence=False, yang_name="router-isis-cmds-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'81'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -100,12 +100,12 @@ class isis(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=router_isis_cmds_holder.router_isis_cmds_holder, is_container='container', presence=False, yang_name="router-isis-cmds-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'RUNNCFG_LEVEL_PROTOCOL_ISIS_CONFIG_ROUTER_ISIS'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+      t = YANGDynClass(v,base=router_isis_cmds_holder.router_isis_cmds_holder, is_container='container', presence=False, yang_name="router-isis-cmds-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'81'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """router_isis_cmds_holder must be of a type compatible with container""",
           'defined-type': "container",
-          'generated-type': """YANGDynClass(base=router_isis_cmds_holder.router_isis_cmds_holder, is_container='container', presence=False, yang_name="router-isis-cmds-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'RUNNCFG_LEVEL_PROTOCOL_ISIS_CONFIG_ROUTER_ISIS'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
+          'generated-type': """YANGDynClass(base=router_isis_cmds_holder.router_isis_cmds_holder, is_container='container', presence=False, yang_name="router-isis-cmds-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'81'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)""",
         })
 
     self.__router_isis_cmds_holder = t
@@ -113,7 +113,7 @@ class isis(PybindBase):
       self._set()
 
   def _unset_router_isis_cmds_holder(self):
-    self.__router_isis_cmds_holder = YANGDynClass(base=router_isis_cmds_holder.router_isis_cmds_holder, is_container='container', presence=False, yang_name="router-isis-cmds-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'RUNNCFG_LEVEL_PROTOCOL_ISIS_CONFIG_ROUTER_ISIS'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
+    self.__router_isis_cmds_holder = YANGDynClass(base=router_isis_cmds_holder.router_isis_cmds_holder, is_container='container', presence=False, yang_name="router-isis-cmds-holder", rest_name="", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'sort-priority': u'81'}}, namespace='urn:brocade.com:mgmt:brocade-isis', defining_module='brocade-isis', yang_type='container', is_config=True)
 
   router_isis_cmds_holder = __builtin__.property(_get_router_isis_cmds_holder, _set_router_isis_cmds_holder)
 

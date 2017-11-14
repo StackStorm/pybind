@@ -47,7 +47,7 @@ class active_policy(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__policies = YANGDynClass(base=YANGListType("policy",policies.policies, yang_name="policies", rest_name="policies", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='policy', extensions={u'tailf-common': {u'cli-drop-node-name': None}}), is_container='list', yang_name="policies", rest_name="policies", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='list', is_config=True)
+    self.__policies = YANGDynClass(base=YANGListType("policy",policies.policies, yang_name="policies", rest_name="policies", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='policy', extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'secpolicy_active_policy', u'cli-suppress-no': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="policies", rest_name="policies", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'secpolicy_active_policy', u'cli-suppress-no': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='list', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -102,12 +102,12 @@ class active_policy(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=YANGListType("policy",policies.policies, yang_name="policies", rest_name="policies", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='policy', extensions={u'tailf-common': {u'cli-drop-node-name': None}}), is_container='list', yang_name="policies", rest_name="policies", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='list', is_config=True)
+      t = YANGDynClass(v,base=YANGListType("policy",policies.policies, yang_name="policies", rest_name="policies", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='policy', extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'secpolicy_active_policy', u'cli-suppress-no': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="policies", rest_name="policies", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'secpolicy_active_policy', u'cli-suppress-no': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='list', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """policies must be of a type compatible with list""",
           'defined-type': "list",
-          'generated-type': """YANGDynClass(base=YANGListType("policy",policies.policies, yang_name="policies", rest_name="policies", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='policy', extensions={u'tailf-common': {u'cli-drop-node-name': None}}), is_container='list', yang_name="policies", rest_name="policies", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='list', is_config=True)""",
+          'generated-type': """YANGDynClass(base=YANGListType("policy",policies.policies, yang_name="policies", rest_name="policies", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='policy', extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'secpolicy_active_policy', u'cli-suppress-no': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="policies", rest_name="policies", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'secpolicy_active_policy', u'cli-suppress-no': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='list', is_config=True)""",
         })
 
     self.__policies = t
@@ -115,7 +115,7 @@ class active_policy(PybindBase):
       self._set()
 
   def _unset_policies(self):
-    self.__policies = YANGDynClass(base=YANGListType("policy",policies.policies, yang_name="policies", rest_name="policies", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='policy', extensions={u'tailf-common': {u'cli-drop-node-name': None}}), is_container='list', yang_name="policies", rest_name="policies", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='list', is_config=True)
+    self.__policies = YANGDynClass(base=YANGListType("policy",policies.policies, yang_name="policies", rest_name="policies", parent=self, is_container='list', user_ordered=False, path_helper=self._path_helper, yang_keys='policy', extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'secpolicy_active_policy', u'cli-suppress-no': None, u'cli-suppress-list-no': None}}), is_container='list', yang_name="policies", rest_name="policies", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-drop-node-name': None, u'callpoint': u'secpolicy_active_policy', u'cli-suppress-no': None, u'cli-suppress-list-no': None}}, namespace='urn:brocade.com:mgmt:brocade-fc-auth', defining_module='brocade-fc-auth', yang_type='list', is_config=True)
 
   policies = __builtin__.property(_get_policies, _set_policies)
 

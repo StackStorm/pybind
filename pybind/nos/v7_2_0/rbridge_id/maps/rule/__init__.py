@@ -44,12 +44,12 @@ class rule(PybindBase):
       self._extmethods = extmethods
     else:
       self._extmethods = False
-    self.__timebase = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {}, u'day': {}, u'hour': {}, u'min': {}},), is_leaf=True, yang_name="timebase", rest_name="interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'interval'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='enumeration', is_config=True)
-    self.__monitor = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'MEMORY_USAGE': {}, u'FLASH_USAGE': {}, u'HA_SYNC': {}, u'BAD_PWR': {}, u'BAD_TEMP': {}, u'BAD_FAN': {}, u'CPU': {}, u'SFP_TEMP': {}, u'SEC_TELNET': {}, u'TEMP': {}, u'RX_SYM_ERR': {}, u'CRCALN': {}, u'VOLTAGE': {}, u'SFP_STATE': {}, u'ASIC_PKTDROP': {}, u'TXP': {}, u'FAN_STATE': {}, u'CURRENT': {}, u'WWN': {}, u'RX_ABN_FRAME': {}, u'RXP': {}, u'FAULTY_BLADE': {}, u'BLADE_STATE': {}, u'ETH_MGMT_PORT_STATE': {}, u'PS_STATE': {}, u'SEC_LV': {}, u'WWN_DOWN': {}, u'DOWN_SFM': {}},), is_leaf=True, yang_name="monitor", rest_name="monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='enumeration', is_config=True)
-    self.__rulename = YANGDynClass(base=unicode, is_leaf=True, yang_name="rulename", rest_name="rulename", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)
-    self.__threshold = YANGDynClass(base=unicode, is_leaf=True, yang_name="threshold", rest_name="value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'value'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)
-    self.__targetgroup = YANGDynClass(base=unicode, is_leaf=True, yang_name="targetgroup", rest_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'group'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)
-    self.__op = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'le': {}, u'lt': {}, u'gt': {}, u'eq': {}, u'ge': {}},), is_leaf=True, yang_name="op", rest_name="op", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='enumeration', is_config=True)
+    self.__timebase = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {}, u'day': {}, u'hour': {}, u'min': {}},), is_leaf=True, yang_name="timebase", rest_name="interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'interval', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='enumeration', is_config=True)
+    self.__monitor = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'MEMORY_USAGE': {}, u'FLASH_USAGE': {}, u'HA_SYNC': {}, u'BAD_PWR': {}, u'BAD_TEMP': {}, u'BAD_FAN': {}, u'CPU': {}, u'SFP_TEMP': {}, u'SEC_TELNET': {}, u'TEMP': {}, u'RX_SYM_ERR': {}, u'CRCALN': {}, u'VOLTAGE': {}, u'SFP_STATE': {}, u'ASIC_PKTDROP': {}, u'TXP': {}, u'FAN_STATE': {}, u'CURRENT': {}, u'WWN': {}, u'RX_ABN_FRAME': {}, u'RXP': {}, u'FAULTY_BLADE': {}, u'BLADE_STATE': {}, u'ETH_MGMT_PORT_STATE': {}, u'PS_STATE': {}, u'SEC_LV': {}, u'WWN_DOWN': {}, u'DOWN_SFM': {}},), is_leaf=True, yang_name="monitor", rest_name="monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='enumeration', is_config=True)
+    self.__rulename = YANGDynClass(base=unicode, is_leaf=True, yang_name="rulename", rest_name="rulename", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure rule name', u'cli-incomplete-command': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)
+    self.__threshold = YANGDynClass(base=unicode, is_leaf=True, yang_name="threshold", rest_name="value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'threshold value', u'alt-name': u'value'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)
+    self.__targetgroup = YANGDynClass(base=unicode, is_leaf=True, yang_name="targetgroup", rest_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'target group for rule', u'alt-name': u'group', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)
+    self.__op = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'le': {}, u'lt': {}, u'gt': {}, u'eq': {}, u'ge': {}},), is_leaf=True, yang_name="op", rest_name="op", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='enumeration', is_config=True)
 
     load = kwargs.pop("load", None)
     if args:
@@ -109,12 +109,12 @@ class rule(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="rulename", rest_name="rulename", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="rulename", rest_name="rulename", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure rule name', u'cli-incomplete-command': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """rulename must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="rulename", rest_name="rulename", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="rulename", rest_name="rulename", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure rule name', u'cli-incomplete-command': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)""",
         })
 
     self.__rulename = t
@@ -122,7 +122,7 @@ class rule(PybindBase):
       self._set()
 
   def _unset_rulename(self):
-    self.__rulename = YANGDynClass(base=unicode, is_leaf=True, yang_name="rulename", rest_name="rulename", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)
+    self.__rulename = YANGDynClass(base=unicode, is_leaf=True, yang_name="rulename", rest_name="rulename", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'Configure rule name', u'cli-incomplete-command': None}}, is_keyval=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)
 
 
   def _get_targetgroup(self):
@@ -142,12 +142,12 @@ class rule(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="targetgroup", rest_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'group'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="targetgroup", rest_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'target group for rule', u'alt-name': u'group', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """targetgroup must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="targetgroup", rest_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'group'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="targetgroup", rest_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'target group for rule', u'alt-name': u'group', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)""",
         })
 
     self.__targetgroup = t
@@ -155,7 +155,7 @@ class rule(PybindBase):
       self._set()
 
   def _unset_targetgroup(self):
-    self.__targetgroup = YANGDynClass(base=unicode, is_leaf=True, yang_name="targetgroup", rest_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'group'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)
+    self.__targetgroup = YANGDynClass(base=unicode, is_leaf=True, yang_name="targetgroup", rest_name="group", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'target group for rule', u'alt-name': u'group', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)
 
 
   def _get_monitor(self):
@@ -175,12 +175,12 @@ class rule(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'MEMORY_USAGE': {}, u'FLASH_USAGE': {}, u'HA_SYNC': {}, u'BAD_PWR': {}, u'BAD_TEMP': {}, u'BAD_FAN': {}, u'CPU': {}, u'SFP_TEMP': {}, u'SEC_TELNET': {}, u'TEMP': {}, u'RX_SYM_ERR': {}, u'CRCALN': {}, u'VOLTAGE': {}, u'SFP_STATE': {}, u'ASIC_PKTDROP': {}, u'TXP': {}, u'FAN_STATE': {}, u'CURRENT': {}, u'WWN': {}, u'RX_ABN_FRAME': {}, u'RXP': {}, u'FAULTY_BLADE': {}, u'BLADE_STATE': {}, u'ETH_MGMT_PORT_STATE': {}, u'PS_STATE': {}, u'SEC_LV': {}, u'WWN_DOWN': {}, u'DOWN_SFM': {}},), is_leaf=True, yang_name="monitor", rest_name="monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='enumeration', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'MEMORY_USAGE': {}, u'FLASH_USAGE': {}, u'HA_SYNC': {}, u'BAD_PWR': {}, u'BAD_TEMP': {}, u'BAD_FAN': {}, u'CPU': {}, u'SFP_TEMP': {}, u'SEC_TELNET': {}, u'TEMP': {}, u'RX_SYM_ERR': {}, u'CRCALN': {}, u'VOLTAGE': {}, u'SFP_STATE': {}, u'ASIC_PKTDROP': {}, u'TXP': {}, u'FAN_STATE': {}, u'CURRENT': {}, u'WWN': {}, u'RX_ABN_FRAME': {}, u'RXP': {}, u'FAULTY_BLADE': {}, u'BLADE_STATE': {}, u'ETH_MGMT_PORT_STATE': {}, u'PS_STATE': {}, u'SEC_LV': {}, u'WWN_DOWN': {}, u'DOWN_SFM': {}},), is_leaf=True, yang_name="monitor", rest_name="monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """monitor must be of a type compatible with enumeration""",
           'defined-type': "brocade-maps:enumeration",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'MEMORY_USAGE': {}, u'FLASH_USAGE': {}, u'HA_SYNC': {}, u'BAD_PWR': {}, u'BAD_TEMP': {}, u'BAD_FAN': {}, u'CPU': {}, u'SFP_TEMP': {}, u'SEC_TELNET': {}, u'TEMP': {}, u'RX_SYM_ERR': {}, u'CRCALN': {}, u'VOLTAGE': {}, u'SFP_STATE': {}, u'ASIC_PKTDROP': {}, u'TXP': {}, u'FAN_STATE': {}, u'CURRENT': {}, u'WWN': {}, u'RX_ABN_FRAME': {}, u'RXP': {}, u'FAULTY_BLADE': {}, u'BLADE_STATE': {}, u'ETH_MGMT_PORT_STATE': {}, u'PS_STATE': {}, u'SEC_LV': {}, u'WWN_DOWN': {}, u'DOWN_SFM': {}},), is_leaf=True, yang_name="monitor", rest_name="monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='enumeration', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'MEMORY_USAGE': {}, u'FLASH_USAGE': {}, u'HA_SYNC': {}, u'BAD_PWR': {}, u'BAD_TEMP': {}, u'BAD_FAN': {}, u'CPU': {}, u'SFP_TEMP': {}, u'SEC_TELNET': {}, u'TEMP': {}, u'RX_SYM_ERR': {}, u'CRCALN': {}, u'VOLTAGE': {}, u'SFP_STATE': {}, u'ASIC_PKTDROP': {}, u'TXP': {}, u'FAN_STATE': {}, u'CURRENT': {}, u'WWN': {}, u'RX_ABN_FRAME': {}, u'RXP': {}, u'FAULTY_BLADE': {}, u'BLADE_STATE': {}, u'ETH_MGMT_PORT_STATE': {}, u'PS_STATE': {}, u'SEC_LV': {}, u'WWN_DOWN': {}, u'DOWN_SFM': {}},), is_leaf=True, yang_name="monitor", rest_name="monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='enumeration', is_config=True)""",
         })
 
     self.__monitor = t
@@ -188,7 +188,7 @@ class rule(PybindBase):
       self._set()
 
   def _unset_monitor(self):
-    self.__monitor = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'MEMORY_USAGE': {}, u'FLASH_USAGE': {}, u'HA_SYNC': {}, u'BAD_PWR': {}, u'BAD_TEMP': {}, u'BAD_FAN': {}, u'CPU': {}, u'SFP_TEMP': {}, u'SEC_TELNET': {}, u'TEMP': {}, u'RX_SYM_ERR': {}, u'CRCALN': {}, u'VOLTAGE': {}, u'SFP_STATE': {}, u'ASIC_PKTDROP': {}, u'TXP': {}, u'FAN_STATE': {}, u'CURRENT': {}, u'WWN': {}, u'RX_ABN_FRAME': {}, u'RXP': {}, u'FAULTY_BLADE': {}, u'BLADE_STATE': {}, u'ETH_MGMT_PORT_STATE': {}, u'PS_STATE': {}, u'SEC_LV': {}, u'WWN_DOWN': {}, u'DOWN_SFM': {}},), is_leaf=True, yang_name="monitor", rest_name="monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='enumeration', is_config=True)
+    self.__monitor = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'MEMORY_USAGE': {}, u'FLASH_USAGE': {}, u'HA_SYNC': {}, u'BAD_PWR': {}, u'BAD_TEMP': {}, u'BAD_FAN': {}, u'CPU': {}, u'SFP_TEMP': {}, u'SEC_TELNET': {}, u'TEMP': {}, u'RX_SYM_ERR': {}, u'CRCALN': {}, u'VOLTAGE': {}, u'SFP_STATE': {}, u'ASIC_PKTDROP': {}, u'TXP': {}, u'FAN_STATE': {}, u'CURRENT': {}, u'WWN': {}, u'RX_ABN_FRAME': {}, u'RXP': {}, u'FAULTY_BLADE': {}, u'BLADE_STATE': {}, u'ETH_MGMT_PORT_STATE': {}, u'PS_STATE': {}, u'SEC_LV': {}, u'WWN_DOWN': {}, u'DOWN_SFM': {}},), is_leaf=True, yang_name="monitor", rest_name="monitor", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='enumeration', is_config=True)
 
 
   def _get_timebase(self):
@@ -208,12 +208,12 @@ class rule(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {}, u'day': {}, u'hour': {}, u'min': {}},), is_leaf=True, yang_name="timebase", rest_name="interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'interval'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='enumeration', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {}, u'day': {}, u'hour': {}, u'min': {}},), is_leaf=True, yang_name="timebase", rest_name="interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'interval', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """timebase must be of a type compatible with enumeration""",
           'defined-type': "brocade-maps:enumeration",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {}, u'day': {}, u'hour': {}, u'min': {}},), is_leaf=True, yang_name="timebase", rest_name="interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'interval'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='enumeration', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {}, u'day': {}, u'hour': {}, u'min': {}},), is_leaf=True, yang_name="timebase", rest_name="interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'interval', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='enumeration', is_config=True)""",
         })
 
     self.__timebase = t
@@ -221,7 +221,7 @@ class rule(PybindBase):
       self._set()
 
   def _unset_timebase(self):
-    self.__timebase = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {}, u'day': {}, u'hour': {}, u'min': {}},), is_leaf=True, yang_name="timebase", rest_name="interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'interval'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='enumeration', is_config=True)
+    self.__timebase = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'none': {}, u'day': {}, u'hour': {}, u'min': {}},), is_leaf=True, yang_name="timebase", rest_name="interval", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'interval', u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='enumeration', is_config=True)
 
 
   def _get_op(self):
@@ -241,12 +241,12 @@ class rule(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'le': {}, u'lt': {}, u'gt': {}, u'eq': {}, u'ge': {}},), is_leaf=True, yang_name="op", rest_name="op", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='enumeration', is_config=True)
+      t = YANGDynClass(v,base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'le': {}, u'lt': {}, u'gt': {}, u'eq': {}, u'ge': {}},), is_leaf=True, yang_name="op", rest_name="op", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='enumeration', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """op must be of a type compatible with enumeration""",
           'defined-type': "brocade-maps:enumeration",
-          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'le': {}, u'lt': {}, u'gt': {}, u'eq': {}, u'ge': {}},), is_leaf=True, yang_name="op", rest_name="op", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='enumeration', is_config=True)""",
+          'generated-type': """YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'le': {}, u'lt': {}, u'gt': {}, u'eq': {}, u'ge': {}},), is_leaf=True, yang_name="op", rest_name="op", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='enumeration', is_config=True)""",
         })
 
     self.__op = t
@@ -254,7 +254,7 @@ class rule(PybindBase):
       self._set()
 
   def _unset_op(self):
-    self.__op = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'le': {}, u'lt': {}, u'gt': {}, u'eq': {}, u'ge': {}},), is_leaf=True, yang_name="op", rest_name="op", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='enumeration', is_config=True)
+    self.__op = YANGDynClass(base=RestrictedClassType(base_type=unicode,                                     restriction_type="dict_key",                                     restriction_arg={u'le': {}, u'lt': {}, u'gt': {}, u'eq': {}, u'ge': {}},), is_leaf=True, yang_name="op", rest_name="op", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'cli-incomplete-command': None}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='enumeration', is_config=True)
 
 
   def _get_threshold(self):
@@ -274,12 +274,12 @@ class rule(PybindBase):
     if hasattr(v, "_utype"):
       v = v._utype(v)
     try:
-      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="threshold", rest_name="value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'value'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)
+      t = YANGDynClass(v,base=unicode, is_leaf=True, yang_name="threshold", rest_name="value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'threshold value', u'alt-name': u'value'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)
     except (TypeError, ValueError):
       raise ValueError({
           'error-string': """threshold must be of a type compatible with string""",
           'defined-type': "string",
-          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="threshold", rest_name="value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'value'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)""",
+          'generated-type': """YANGDynClass(base=unicode, is_leaf=True, yang_name="threshold", rest_name="value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'threshold value', u'alt-name': u'value'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)""",
         })
 
     self.__threshold = t
@@ -287,7 +287,7 @@ class rule(PybindBase):
       self._set()
 
   def _unset_threshold(self):
-    self.__threshold = YANGDynClass(base=unicode, is_leaf=True, yang_name="threshold", rest_name="value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'alt-name': u'value'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)
+    self.__threshold = YANGDynClass(base=unicode, is_leaf=True, yang_name="threshold", rest_name="value", parent=self, path_helper=self._path_helper, extmethods=self._extmethods, register_paths=True, extensions={u'tailf-common': {u'info': u'threshold value', u'alt-name': u'value'}}, namespace='urn:brocade.com:mgmt:brocade-maps', defining_module='brocade-maps', yang_type='string', is_config=True)
 
   rulename = __builtin__.property(_get_rulename, _set_rulename)
   targetgroup = __builtin__.property(_get_targetgroup, _set_targetgroup)
