@@ -17,6 +17,9 @@ Inside a python program do this:
 
 # DO NOT FORGET
 Please look through the README.md file in pyswitchlib
+## 0.1.35:
+* pip 10.0.0b2 support
+
 ## 0.1.34:
 * Regenerated full bindings.
 
